@@ -49,6 +49,7 @@ A simple map of major infrastructure in Indonesia: roads, airports, seaports and
 | Toll roads (first batch) | English Wikipedia, "Indonesian Toll Road System" (revision 1329385293, last edited 2025-12-25) | Route names, km, operators, status markers | Secondary. No opening years or coordinates. Cites BPJT's BUJT page. Stale for some rows (for example Pandaan–Malang is marked italic but is fully open) |
 | Toll roads (official status) | BPJT `toll-road-list` API: `https://itrams-api.bpjt.pu.go.id/v1/reference/api/toll-road-list` | Status (`Operasi` / `Operasi Sebagian`), total and operating km, construction km, operator, endpoint coordinates, PSN flag | 77 operating or partly operating rows. Construction-only and pre-construction rows are not returned. Endpoint coordinates are sometimes misplaced (for example Bogor Ring Road) |
 | Toll roads (cross-check) | Indonesian Wikipedia, "Daftar jalan tol di Indonesia" (oldid 30025554, 3 October 2026) | Full list including 0-km concessions, operating km, operators | Secondary. Lengths and operating km often differ from BPJT. Includes rows with a concession but no construction |
+| Basemap | Natural Earth 1:50m admin-0 countries and populated places (`ne_50m_admin_0_countries`, `ne_50m_populated_places`) | Land outlines for the map, major city labels | Public domain. Clipped to 92–144°E, 14°S–9°N and simplified to about 500 m. Stored in `site/data/basemap.js` so no tile server is called |
 | Built | BIG Satu Peta, SARANA_PRASARANA: airports (layer 4), public ports (layer 1), national toll roads (layer 14), national non-toll roads (layer 13) | Airport coordinates and ICAO/IATA codes; port build year and operating status; road lines | Service dated 2024. Responses capped at 1,000 records. An explicit field list gave a 400 error on the airport layer; `outFields=*` worked |
 | Built | BIG Satu Peta, KAWASAN_KHUSUS_DAN_TRANSMIGRASI layer 4 | Industrial estate polygons | Existing estates only |
 | Built | data.go.id and data.pu.go.id toll-road datasets | Operating toll roads with opening year; GeoJSON | Newest resource I found is for 2023. Recent openings need a news or BPJT check |
@@ -133,7 +134,9 @@ id,name,sector,status,status_basis,province,route,length_km,operator,opened_year
 - `scripts/build_projects.py` holds the curated list and merges BPJT fields; run it to regenerate `data/projects.csv`.
 - `scripts/validate.py` checks required fields, allowed values, date formats, coordinate bounds and duplicate ids.
 - `scripts/build_site_data.py` writes `site/data/projects.geojson`, `projects.js` and a downloadable `projects.csv`.
+- `scripts/build_basemap.py` clips Natural Earth to the map region and writes `site/data/basemap.geojson` / `basemap.js`.
 - `site/index.html` loads `projects.js` with a normal script tag, so it also works from `file://`. It has status and sector filters, a list, a detail panel, and `#project-id` deep links.
+- The basemap is bundled vector geometry, not raster tiles. OpenStreetMap's tile servers reject `file://` requests, so the page never calls them. Leaflet 1.9.4 is vendored in `site/vendor/leaflet/`; the page needs no network at all.
 - Local preview: `python -m http.server 8765 --directory site`.
 
 ## Phases
@@ -167,6 +170,8 @@ id,name,sector,status,status_basis,province,route,length_km,operator,opened_year
 - **OpenStreetMap:** ODbL. Credit OSM. A derived dataset of OSM geometry must also be ODbL.
 - **GEM:** CC BY 4.0 unless the file says otherwise.
 - **AidData:** ODC-BY. Credit AidData.
+- **Natural Earth:** public domain, no attribution required. The page credits it anyway.
+- **Leaflet 1.9.4:** BSD-2-Clause, vendored in `site/vendor/leaflet/` with its licence file.
 - **Government data:** check each dataset's licence on its portal.
 
 ## Next steps

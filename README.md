@@ -19,13 +19,14 @@ site/                   static Leaflet page and generated data
 ```
 python scripts/build_projects.py     # rebuild data/projects.csv
 python scripts/validate.py           # check the CSV
-python scripts/build_site_data.py    # write site/data/*
+python scripts/build_site_data.py    # write site/data/projects.*
+python scripts/build_basemap.py      # write site/data/basemap.*
 python -m http.server 8765 --directory site
 ```
 
 Then open <http://localhost:8765/>. The page also opens directly from
-`site/index.html`, because it loads `data/projects.js` with a script tag rather
-than `fetch`.
+`site/index.html`: its data, basemap and Leaflet are all local files, so it
+needs no network or tile server.
 
 ## Data rules
 
@@ -44,5 +45,5 @@ toll-road API (`itrams-api.bpjt.pu.go.id`) and the Indonesian Wikipedia list.
 
 ## Licence
 
-Code is unlicensed for now. Wikipedia text is CC BY-SA 4.0; OpenStreetMap data
-is ODbL. See `plan.md` before reusing source text.
+Code is unlicensed for now. Wikipedia text is CC BY-SA 4.0. The basemap is
+Natural Earth, public domain. See `plan.md` before reusing source text.

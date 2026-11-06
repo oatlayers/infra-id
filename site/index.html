@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Indonesia Infrastructure Map</title>
 <meta name="description" content="A curated map of major Indonesian infrastructure projects: toll roads under construction and planned.">
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="vendor/leaflet/leaflet.css">
 <style>
   :root {
     --ink: #16202b;
@@ -172,8 +172,21 @@
   }
   .coverage strong { color: var(--ink); }
 
-  #map { width: 100%; height: 100%; background: #dce7ef; }
+  #map { width: 100%; height: 100%; background: #cfe3ee; }
   .leaflet-container { font: inherit; }
+
+  .city-label {
+    padding: 0;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+    color: #5b6675;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: .01em;
+    opacity: 1;
+  }
+  .city-label::before { display: none; }
 
   .legend {
     padding: 8px 10px;
@@ -311,7 +324,7 @@
       right: 0;
       bottom: 0;
       width: auto;
-      max-height: 78dvh;
+      max-height: 64dvh;
       border-left: 0;
       border-top: 1px solid var(--line);
       border-radius: 16px 16px 0 0;
@@ -373,7 +386,8 @@
   <div id="detail-body"></div>
 </section>
 
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="vendor/leaflet/leaflet.js"></script>
+<script src="data/basemap.js"></script>
 <script src="data/projects.js"></script>
 <script>
 (() => {
@@ -395,13 +409,65 @@
   const selectedSectors = new Set(["road"]);
   let selectedId = null;
 
-  const map = L.map("map", { zoomControl: true, worldCopyJump: false })
-    .setView([-2.4, 118.0], 5);
+  const map = L.map("map", {
+    zoomControl: true,
+    minZoom: 3,
+    maxZoom: 9,
+    worldCopyJump: false
+  }).setView([-2.4, 118.0], 5);
 
-  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-    maxZoom: 18,
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+  // Bundled Natural Earth geometry: no tile requests, so the page works from
+  // file:// (OSM's tile servers block file:// referers). Leaflet is vendored
+  // under site/vendor/leaflet, so the page needs no network at all.
+  const basemap = window.BASEMAP || { countries: { features: [] }, places: [] };
+
+  L.geoJSON(basemap.countries, {
+    interactive: false,
+    style: feature => feature.properties.name === "Indonesia"
+      ? { color: "#b3aa96", weight: 1.1, fillColor: "#f7f4ea", fillOpacity: 1 }
+      : { color: "#d3cec1", weight: 0.8, fillColor: "#ece9e0", fillOpacity: 1 }
   }).addTo(map);
+
+  map.attributionControl.addAttribution(
+    'Base map: <a href="https://www.naturalearthdata.com/">Natural Earth</a> (public domain)'
+  );
+
+  const cityMajor = L.layerGroup();
+  const cityMinor = L.layerGroup();
+  const MAJOR_CITIES = new Set([
+    "Jakarta", "Surabaya", "Medan", "Makassar", "Kuala Lumpur", "Singapore"
+  ]);
+  const LABEL_LEFT = new Set(["Jakarta"]);
+
+  basemap.places.forEach(place => {
+    const toLeft = LABEL_LEFT.has(place.name);
+    const label = L.circleMarker([place.lat, place.lon], {
+      radius: 2.4,
+      stroke: false,
+      fillColor: "#77808d",
+      fillOpacity: 0.9,
+      interactive: false
+    })
+      .bindTooltip(place.name, {
+        permanent: true,
+        direction: toLeft ? "left" : "right",
+        offset: toLeft ? [-3, 0] : [3, 0],
+        className: "city-label"
+      });
+    label.addTo(MAJOR_CITIES.has(place.name) ? cityMajor : cityMinor);
+  });
+
+  function syncCityLabels() {
+    const zoom = map.getZoom();
+    const showMajor = zoom >= 5;
+    const showMinor = zoom >= 7;
+    if (showMajor && !map.hasLayer(cityMajor)) cityMajor.addTo(map);
+    else if (!showMajor && map.hasLayer(cityMajor)) map.removeLayer(cityMajor);
+    if (showMinor && !map.hasLayer(cityMinor)) cityMinor.addTo(map);
+    else if (!showMinor && map.hasLayer(cityMinor)) map.removeLayer(cityMinor);
+  }
+  map.on("zoomend", syncCityLabels);
+  syncCityLabels();
 
   const legend = L.control({ position: "bottomleft" });
   legend.onAdd = () => {
@@ -554,6 +620,17 @@
     });
   }
 
+  // Centre a project in the part of the map that the detail panel does not cover.
+  function focusLatLng(latlng, zoom, animate) {
+    const desktop = window.matchMedia("(min-width: 861px)").matches;
+    const offset = desktop
+      ? [detail.offsetWidth / 2, 0]
+      : [0, map.getSize().y * 0.25];
+    const centre = map.unproject(map.project(latlng, zoom).add(offset), zoom);
+    if (animate) map.flyTo(centre, zoom, { duration: 0.7 });
+    else map.setView(centre, zoom, { animate: false });
+  }
+
   function selectProject(id, pan, animate = true) {
     const feature = byId.get(id);
     if (!feature) return;
@@ -570,11 +647,7 @@
     marker.bringToFront();
     if (pan) {
       const targetZoom = Math.max(map.getZoom(), 7);
-      if (animate) {
-        map.flyTo(marker.getLatLng(), targetZoom, { duration: 0.7 });
-      } else {
-        map.setView(marker.getLatLng(), targetZoom, { animate: false });
-      }
+      focusLatLng(marker.getLatLng(), targetZoom, animate);
     }
 
     if (location.hash.slice(1) !== id) {
