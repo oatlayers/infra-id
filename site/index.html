@@ -15,6 +15,7 @@
     --panel: #ffffff;
     --uc: #e8590c;
     --planned: #1c7ed6;
+    --operating: #0c8599;
     --done: #2f9e44;
     --stalled: #c92a2a;
     --shadow: 0 10px 30px rgba(20, 32, 45, .14);
@@ -138,6 +139,80 @@
     overflow-y: auto;
     list-style: none;
   }
+  .view-switch { display: flex; gap: 4px; }
+  .view-btn {
+    padding: 4px 7px;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    background: transparent;
+    color: var(--muted);
+    font-size: 12px;
+    cursor: pointer;
+  }
+  .view-btn:hover { background: #f1f4f8; }
+  .view-btn.active {
+    background: #eef4fb;
+    border-color: #c9ddf3;
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  .corridors {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    padding: 4px 12px 14px;
+  }
+  .corridor-card {
+    margin: 8px 0;
+    padding: 12px 12px 11px;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    background: #fff;
+  }
+  .corridor-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 8px;
+  }
+  .corridor-card h3 { margin: 0; font-size: 14px; }
+  .corridor-metric {
+    color: var(--muted);
+    font-size: 10px;
+    letter-spacing: .07em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  .corridor-def { margin: 5px 0 8px; color: var(--muted); font-size: 12px; line-height: 1.35; }
+  .corridor-km { color: var(--muted); font-size: 12px; }
+  .corridor-km strong { color: var(--ink); font-size: 15px; }
+  .corridor-meta { margin-top: 7px; color: var(--muted); font-size: 11px; line-height: 1.4; }
+  .corridor-gap {
+    margin-top: 7px;
+    padding: 6px 8px;
+    border-radius: 6px;
+    background: #fff4e6;
+    color: #8a4b08;
+    font-size: 11px;
+    line-height: 1.4;
+  }
+  .bar {
+    display: flex;
+    height: 8px;
+    margin-top: 6px;
+    border-radius: 4px;
+    overflow: hidden;
+    background: #e9edf2;
+  }
+  .bar span { display: block; height: 100%; }
+  .bar .op { background: #2f9e44; }
+  .bar .uc { background: #e8590c; }
+  .bar .planned { background: #1c7ed6; }
+  .bar .rest { background: #dfe5ec; flex: 1; }
+  .km-block { margin: 0 0 18px; }
+  .km-caption { color: var(--muted); font-size: 12px; }
+  .km-caption strong { color: var(--ink); }
   .list li { margin: 2px 0; }
   .project-btn {
     display: grid;
@@ -328,6 +403,7 @@
       border-top: 1px solid var(--line);
     }
     .list { flex: none; overflow: visible; }
+    .corridors { flex: none; overflow: visible; }
     #map {
       order: -1;
       height: 46dvh;
@@ -353,7 +429,7 @@
 <header class="topbar">
   <div>
     <h1>Indonesia Infrastructure Map</h1>
-    <p>Major toll roads under construction and planned in Sumatra, Java and Bali. Curated from public sources, not exhaustive.</p>
+    <p>Major infrastructure under construction, planned and recently completed across Indonesia. Curated from public sources, not exhaustive.</p>
   </div>
   <div class="meta">Last verified<br>6 November 2026</div>
 </header>
@@ -370,6 +446,7 @@
         <div class="filter-title">Status</div>
         <label class="filter-row"><input type="checkbox" data-status="under_construction" checked> <span class="dot" style="--c:var(--uc)"></span> Under construction <span class="count" data-count="under_construction">0</span></label>
         <label class="filter-row"><input type="checkbox" data-status="planned" checked> <span class="dot" style="--c:var(--planned)"></span> Planned <span class="count" data-count="planned">0</span></label>
+        <label class="filter-row"><input type="checkbox" data-status="operating" checked> <span class="dot" style="--c:var(--operating)"></span> Operating <span class="count" data-count="operating">0</span></label>
         <label class="filter-row"><input type="checkbox" data-status="recently_completed" checked> <span class="dot" style="--c:var(--done)"></span> Recently completed <span class="count" data-count="recently_completed">0</span></label>
         <label class="filter-row"><input type="checkbox" data-status="stalled" checked> <span class="dot" style="--c:var(--stalled)"></span> Stalled <span class="count" data-count="stalled">0</span></label>
       </div>
@@ -377,19 +454,27 @@
       <div class="filter-group">
         <div class="filter-title">Sector</div>
         <label class="filter-row"><input type="checkbox" data-sector="road" checked> Roads <span class="count" data-count="road">0</span></label>
-        <label class="filter-row disabled"><input type="checkbox" disabled> Airports <span class="soon">phase 3</span></label>
-        <label class="filter-row disabled"><input type="checkbox" disabled> Seaports <span class="soon">phase 3</span></label>
-        <label class="filter-row disabled"><input type="checkbox" disabled> Factories <span class="soon">phase 3</span></label>
+        <label class="filter-row"><input type="checkbox" data-sector="railway" checked> Railways <span class="count" data-count="railway">0</span></label>
+        <label class="filter-row"><input type="checkbox" data-sector="airport" checked> Airports <span class="count" data-count="airport">0</span></label>
+        <label class="filter-row"><input type="checkbox" data-sector="seaport" checked> Seaports <span class="count" data-count="seaport">0</span></label>
+        <label class="filter-row"><input type="checkbox" data-sector="factory" checked> Factories <span class="count" data-count="factory">0</span></label>
       </div>
     </div>
 
-    <div class="list-head"><span>Projects</span><span id="list-count"></span></div>
+    <div class="list-head">
+      <div class="view-switch" role="tablist" aria-label="View">
+        <button class="view-btn active" id="view-projects" role="tab" aria-selected="true">Projects</button>
+        <button class="view-btn" id="view-corridors" role="tab" aria-selected="false">Trans corridors</button>
+      </div>
+      <span id="list-count"></span>
+    </div>
     <ul class="list" id="list"></ul>
+    <div class="corridors" id="corridors" hidden></div>
 
     <p class="coverage">
-      <strong>Coverage.</strong> <span id="coverage-count">27</span> toll-road corridors from English Wikipedia and BPJT.
+      <strong>Coverage.</strong> <span id="coverage-count">27</span> curated projects.
       No full toll corridor opened between Nov 2024 and Nov 2026; recently opened sections are noted under each corridor.
-      Airports, seaports and factories are not included yet.
+      Railways, airports, seaports and factories are being added.
     </p>
   </aside>
 
@@ -404,6 +489,7 @@
 <script src="vendor/leaflet/leaflet.js"></script>
 <script src="data/basemap.js"></script>
 <script src="data/projects.js"></script>
+<script src="data/corridors.js"></script>
 <script>
 (() => {
   "use strict";
@@ -411,18 +497,21 @@
   const STATUS = {
     under_construction: { label: "Under construction", color: "#e8590c" },
     planned:            { label: "Planned",            color: "#1c7ed6" },
+    operating:          { label: "Operating",          color: "#0c8599" },
     recently_completed: { label: "Recently completed", color: "#2f9e44" },
     stalled:            { label: "Stalled",            color: "#c92a2a" }
   };
-  const STATUS_ORDER = ["under_construction", "planned", "recently_completed", "stalled"];
-  const SECTOR_LABEL = { road: "Road", airport: "Airport", seaport: "Seaport", factory: "Factory" };
+  const STATUS_ORDER = ["under_construction", "planned", "operating", "recently_completed", "stalled"];
+  const SECTOR_LABEL = { road: "Road", railway: "Railway", airport: "Airport", seaport: "Seaport", factory: "Factory" };
 
   const features = (window.PROJECTS && window.PROJECTS.features) || [];
+  const corridors = window.CORRIDORS || [];
   const byId = new Map(features.map(f => [f.properties.id, f]));
 
   const selectedStatuses = new Set(Object.keys(STATUS));
-  const selectedSectors = new Set(["road"]);
+  const selectedSectors = new Set(["road", "railway", "airport", "seaport", "factory"]);
   let selectedId = null;
+  let currentView = "projects";
 
   const map = L.map("map", {
     zoomControl: true,
@@ -546,6 +635,9 @@
   const detailClose = document.getElementById("detail-close");
   const coverageCount = document.getElementById("coverage-count");
   coverageCount.textContent = features.length;
+  const corridorsEl = document.getElementById("corridors");
+  const viewProjects = document.getElementById("view-projects");
+  const viewCorridors = document.getElementById("view-corridors");
 
   function syncHeaderHeight() {
     const header = document.querySelector(".topbar");
@@ -585,10 +677,10 @@
 
     const totalCounts = Object.fromEntries(Object.keys(STATUS).map(s => [s, 0]));
     const visibleCounts = Object.fromEntries(Object.keys(STATUS).map(s => [s, 0]));
-    const sectorCounts = { road: 0, airport: 0, seaport: 0, factory: 0 };
+    const sectorCounts = { road: 0, railway: 0, airport: 0, seaport: 0, factory: 0 };
     features.forEach(f => {
       totalCounts[f.properties.status] += 1;
-      sectorCounts[f.properties.sector] += 1;
+      if (f.properties.sector in sectorCounts) sectorCounts[f.properties.sector] += 1;
     });
     visible.forEach(f => {
       visibleCounts[f.properties.status] += 1;
@@ -603,7 +695,9 @@
       .filter(s => selectedStatuses.has(s) && visibleCounts[s] > 0)
       .map(s => `${visibleCounts[s]} ${STATUS[s].label.toLowerCase()}`);
     summaryStatus.textContent = shown.length ? shown.join(" · ") : "No status selected";
-    listCount.textContent = `${visible.length} of ${features.length}`;
+    listCount.textContent = currentView === "projects"
+      ? `${visible.length} of ${features.length}`
+      : `${corridors.length} corridors`;
 
     listEl.replaceChildren();
     if (!visible.length) {
@@ -634,6 +728,81 @@
       listEl.append(li);
     });
   }
+
+  function formatNum(value) {
+    const n = Number(value);
+    if (!Number.isFinite(n)) return "—";
+    return n.toLocaleString("en-GB", { maximumFractionDigits: 1 });
+  }
+
+  function corridorBar(c) {
+    const total = Number(c.total_km);
+    if (!Number.isFinite(total) || total <= 0) return "";
+    const op = Number(c.operational_km) || 0;
+    const uc = Number(c.construction_km) || 0;
+    const planned = Number(c.planned_km) || 0;
+    const opPct = Math.min(100, (op / total) * 100);
+    const ucPct = Math.min(100 - opPct, (uc / total) * 100);
+    const plannedPct = Math.min(100 - opPct - ucPct, (planned / total) * 100);
+    return `<div class="bar">
+      <span class="op" style="width:${opPct}%"></span>
+      <span class="uc" style="width:${ucPct}%"></span>
+      <span class="planned" style="width:${plannedPct}%"></span>
+      <span class="rest"></span>
+    </div>`;
+  }
+
+  function renderCorridors() {
+    corridorsEl.replaceChildren();
+    corridors.forEach(c => {
+      const total = Number(c.total_km);
+      const hasTotal = Number.isFinite(total) && total > 0;
+      const op = Number(c.operational_km);
+      const label = (c.metric || "").includes("connected") ? "connected" : "operational";
+      const progress = hasTotal && Number.isFinite(op)
+        ? Math.round((op / total) * 100)
+        : null;
+
+      const kmLine = hasTotal && Number.isFinite(op)
+        ? `<div class="corridor-km"><strong>${progress}%</strong> · ${formatNum(op)} / ${formatNum(total)} km ${label}</div>`
+        : `<div class="corridor-km">${hasTotal ? `${formatNum(total)} km total` : "Kilometre data not published"}</div>`;
+
+      const source = c.source_url
+        ? `<a href="${escapeHtml(c.source_url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(hostOf(c.source_url))}</a>`
+        : "";
+
+      const card = document.createElement("article");
+      card.className = "corridor-card";
+      card.innerHTML = `
+        <div class="corridor-head">
+          <h3>${escapeHtml(c.name)}</h3>
+          <span class="corridor-metric">${escapeHtml(c.metric)}</span>
+        </div>
+        <p class="corridor-def">${escapeHtml(c.definition)}</p>
+        ${kmLine}
+        ${hasTotal ? corridorBar(c) : ""}
+        ${hasTotal ? `<div class="corridor-meta">${c.as_of ? `As of ${escapeHtml(c.as_of)} · ` : ""}${source}${c.notes ? `<br>${escapeHtml(c.notes)}` : ""}</div>` : `<div class="corridor-gap">${escapeHtml(c.notes)}</div>`}
+      `;
+      corridorsEl.append(card);
+    });
+  }
+
+  function setView(view) {
+    currentView = view;
+    const projects = view === "projects";
+    listEl.hidden = !projects;
+    corridorsEl.hidden = projects;
+    viewProjects.classList.toggle("active", projects);
+    viewCorridors.classList.toggle("active", !projects);
+    viewProjects.setAttribute("aria-selected", String(projects));
+    viewCorridors.setAttribute("aria-selected", String(!projects));
+    listCount.textContent = projects
+      ? `${visibleFeatures().length} of ${features.length}`
+      : `${corridors.length} corridors`;
+  }
+
+  viewProjects.addEventListener("click", () => setView("projects"));
+  viewCorridors.addEventListener("click", () => setView("corridors"));
 
   // Centre a project in the part of the map that the detail panel does not cover.
   function focusLatLng(latlng, zoom, animate) {
@@ -685,22 +854,47 @@
     }
   }
 
+  function kmBlock(p) {
+    const total = Number(p.length_km);
+    const op = Number(p.operational_km);
+    if (!Number.isFinite(total) || total <= 0 || !Number.isFinite(op)) return "";
+    const opPct = Math.min(100, (op / total) * 100);
+    const uc = Number(p.construction_km);
+    const ucPct = Number.isFinite(uc) ? Math.min(100 - opPct, (uc / total) * 100) : 0;
+    return `<div class="km-block">
+      <div class="km-caption"><strong>${Math.round(opPct)}%</strong> operational · ${formatKm(op)} of ${formatKm(total)}</div>
+      <div class="bar"><span class="op" style="width:${opPct}%"></span><span class="uc" style="width:${ucPct}%"></span><span class="rest"></span></div>
+    </div>`;
+  }
+
   function showDetail(p) {
     const status = STATUS[p.status];
     const official = p.source_type === "official";
-    const opened = p.opened_year ? `<div class="stat"><div class="k">Opened</div><div class="v">${escapeHtml(p.opened_year)}</div></div>` : "";
+
+    const stats = [];
+    if (p.route) stats.push(["Route", p.route]);
+    if (p.length_km) stats.push(["Length", formatKm(p.length_km)]);
+    if (p.operational_km) stats.push(["Operational", formatKm(p.operational_km)]);
+    if (p.construction_km) stats.push(["Under construction", formatKm(p.construction_km)]);
+    if (p.operator) stats.push(["Operator", p.operator]);
+    if (p.investment_idr_t) stats.push(["Investment", `Rp ${formatNum(p.investment_idr_t)}T`]);
+    if (p.capacity) stats.push(["Capacity", `${formatNum(p.capacity)} ${p.capacity_unit}`]);
+    if (p.opened_year) stats.push(["Opened", p.opened_year]);
+
+    const tags = [SECTOR_LABEL[p.sector] || p.sector];
+    if (p.psn === "yes") tags.push("PSN");
+    if (p.psn === "no") tags.push("Non-PSN");
 
     detailBody.innerHTML = `
       <span class="badge" style="background:${status.color}">${escapeHtml(status.label)}</span>
       <h2>${escapeHtml(p.name)}</h2>
-      <p class="where">${escapeHtml(p.province)} · ${escapeHtml(SECTOR_LABEL[p.sector] || p.sector)}</p>
+      <p class="where">${escapeHtml(p.province)} · ${tags.map(t => escapeHtml(t)).join(" · ")}</p>
 
       <div class="stats">
-        <div class="stat"><div class="k">Route</div><div class="v">${escapeHtml(p.route)}</div></div>
-        <div class="stat"><div class="k">Length</div><div class="v">${formatKm(p.length_km)}</div></div>
-        <div class="stat"><div class="k">Operator</div><div class="v">${escapeHtml(p.operator)}</div></div>
-        ${opened}
+        ${stats.map(([key, value]) => `<div class="stat"><div class="k">${escapeHtml(key)}</div><div class="v">${escapeHtml(value)}</div></div>`).join("")}
       </div>
+
+      ${kmBlock(p)}
 
       <h3>Status basis</h3>
       <p class="basis">${escapeHtml(p.status_basis)}</p>
@@ -767,7 +961,9 @@
     if (event.key === "Escape") closeDetail();
   });
 
+  renderCorridors();
   render();
+  setView("projects");
 
   const initialId = decodeURIComponent(location.hash.replace(/^#/, ""));
   if (initialId && byId.has(initialId)) selectProject(initialId, true, false);

@@ -2,7 +2,7 @@
 
 A simple map of major infrastructure in Indonesia: roads, airports, seaports and factories that are under construction, planned, or recently completed.
 
-**Status:** building. Started 2026-11-06. Decisions agreed 2026-11-06. First toll-road batch is in `data/projects.csv` (27 rows, validation passing). The Leaflet page is built and working at `site/index.html`. Not deployed yet.
+**Status:** building. Started 2026-11-06. Decisions agreed 2026-11-06. The v2 data foundation is in place: normalised curated tables, km fields, an `operating` status, and Trans corridor summaries. 27 toll roads are live. Airports, seaports, railways, factories and estates are being added.
 
 ## Goal
 
@@ -143,7 +143,9 @@ this.
 
 **Why not SQLite now?** It adds a binary file to git, a migration tool and a query layer, while the dataset is small and the main need is reviewable diffs. **Why not JSON per project?** It duplicates schema handling and makes cross-project checks and joins harder. CSV plus validation gives most of the relational discipline with none of the infrastructure.
 
-**Decision needed:** adopt the normalised CSV model (recommended), or move to SQLite now?
+**Decided 2026-11-06:** adopt the normalised CSV model. `data/curated/` is the
+editable source of truth; `data/projects.csv` and `site/data/` are generated.
+Revisit SQLite only when the triggers above are met.
 
 **Mapping the Wikipedia article**
 
@@ -181,9 +183,10 @@ this.
 **Built so far**
 
 - `scripts/extract_wikipedia_toll_roads.py` parses the Wikipedia table into `data/raw/2026-11-06/enwiki_toll_roads_parsed.csv`.
-- `scripts/build_projects.py` holds the curated list and merges BPJT fields; run it to regenerate `data/projects.csv`.
-- `scripts/validate.py` checks required fields, allowed values, date formats, coordinate bounds and duplicate ids.
-- `scripts/build_site_data.py` writes `site/data/projects.geojson`, `projects.js` and a downloadable `projects.csv`.
+- `data/curated/` holds the editable tables: projects, organisations, roles, sources, claims, external ids, investments, laws, corridors and segments.
+- `scripts/build_projects.py` reads the curated tables, joins operator and source, fills gaps from BPJT and writes the flat `data/projects.csv`.
+- `scripts/validate.py` checks schemas, enums, dates, coordinates, ranges and foreign keys across the curated tables.
+- `scripts/build_site_data.py` writes project and corridor payloads to `site/data/`.
 - `scripts/build_basemap.py` clips Natural Earth to the map region and writes `site/data/basemap.geojson` / `basemap.js`.
 - `site/index.html` loads `projects.js` with a normal script tag, so it also works from `file://`. It has status and sector filters, a list, a detail panel, and `#project-id` deep links.
 - The basemap is bundled vector geometry, not raster tiles. OpenStreetMap's tile servers reject `file://` requests, so the page never calls them. Leaflet 1.9.4 is vendored in `site/vendor/leaflet/`; the page needs no network at all.
@@ -240,26 +243,30 @@ come after the schema migration.
 bars and investment or capacity in the detail panel; add a corridor progress
 section; show aggregate km by sector in the header. Keep the offline basemap.
 
-**Open decisions.**
+**Decided 2026-11-06.**
 
-1. Adopt the normalised CSV model (recommended), or move to SQLite now?
-2. Add an `operating` status (recommended), or keep the strict two-year window?
-3. For Trans Sulawesi and Trans Kalimantan, publish segment-level progress with a
-   data-gap note (recommended), or wait for a single official series?
+1. Adopt the normalised CSV model. Done.
+2. Add an `operating` status, distinct from `recently_completed`. Done.
+3. Publish segment-level progress with a data-gap note for Trans Sulawesi and
+   Trans Kalimantan until a single official series exists. The site currently
+   shows the data-gap note only.
 
-**Implementation order.** Schema migration → km fields and corridor data/UI →
-Kemenhub transport batch (rail, ports, airports) → factories pilot → docs.
+**Implementation order.** ~~Schema migration~~ → ~~km fields and corridor
+data/UI~~ → Kemenhub transport batch (rail, ports, airports) → industrial estates
+and SEZs (data only) → factories pilot → docs.
 
 ## Phases
 
 0. **Plan and decisions.** Done. This file.
 1. **Toll roads.** Done for batch 1: 27 curated rows in `data/projects.csv`, checked against BPJT. Remaining gaps listed under Batch 1 status.
-2. **Official pipeline.** PSN list, KPBU portal and INAPROC tenders. ← next
-3. **Airports, ports, factories.** Satu Peta airports and ports, Kemenperin estates, GEM steel plants.
-4. **Geocoding.** Replace midpoint coordinates with better points or lines; set precision per row.
-5. **Map page.** Done for v1: `site/index.html`. Revisit once there is more than one sector.
-6. **Publish.** GitHub Pages workflow once the repo is pushed.
-7. **Monthly refresh.** Re-fetch sources, review status changes, update `last_verified`.
+2. **Official pipeline.** Kemenhub transport PSN deck and KPPIP pages snapshotted; the full PSN/KPBU/INAPROC pass is still open. ← in progress
+3. **Industrial estates and SEZs.** Gather all Kawasan Industri and KEK records with location, area, developer, status, sectors and sources. Data only; no map layer yet. ← current
+4. **Transport batch.** Railways, airports and seaports from Kemenhub and KPPIP. Enable the sector filters with real data.
+5. **Factories.** PSN smelters, GEM steel plants, large nickel/aluminium/copper and battery projects.
+6. **Geocoding.** Replace midpoint coordinates with better points or lines; set precision per row.
+7. **Map page.** v2 with km bars, operating status and corridor tab done. Revisit after the transport batch.
+8. **Publish.** GitHub Pages workflow once the repo is pushed.
+9. **Monthly refresh.** Re-fetch sources, review status changes, update `last_verified`.
 
 **Done for v1:** toll roads on the map, each with a source and dates. Validation passes. The page states its coverage.
 
@@ -291,6 +298,8 @@ Kemenhub transport batch (rail, ports, airports) → factories pilot → docs.
 2. ~~Save the Wikipedia snapshot to `data/raw/2026-11-06/`.~~ Done.
 3. ~~Extract the toll roads into `data/projects.csv`.~~ Done: 27 rows, validation passing.
 4. ~~Build the Leaflet page from `data/projects.csv`.~~ Done: `site/index.html`, checked at desktop and mobile widths.
-5. ~~Initialise git and make the first commit.~~ Done.
-6. Publish to GitHub Pages.
-7. Start phase 2: PSN list, KPBU portal and INAPROC tenders.
+5. ~~Normalise the data model and add km/corridor support.~~ Done.
+6. Gather industrial estate and SEZ data. ← current
+7. Add the Kemenhub transport batch (rail, ports, airports).
+8. Add the factories batch.
+9. Publish to GitHub Pages.

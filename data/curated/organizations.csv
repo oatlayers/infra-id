@@ -1,0 +1,20 @@
+id,name,short_name,org_type,country_code,parent_id,website,notes
+org-jasa-marga,PT Jasa Marga (Persero) Tbk,Jasa Marga,soe,ID,,https://www.jasamarga.com,
+org-waskita-karya,PT Waskita Karya (Persero) Tbk,Waskita Karya,soe,ID,,https://www.waskita.co.id,
+org-wijaya-karya,PT Wijaya Karya (Persero) Tbk,Wijaya Karya,soe,ID,,https://www.wika.co.id,
+org-pp,PT Pembangunan Perumahan (Persero) Tbk,PP,soe,ID,,https://www.ptpp.co.id,
+org-hutama-karya,PT Hutama Karya (Persero),Hutama Karya,soe,ID,,https://www.hutamakarya.com,v1 operator string: PT Hutama Karya (Persero)
+org-waskita-sriwijaya-tol,PT Waskita Sriwijaya Tol,Waskita Sriwijaya Tol,private,ID,org-waskita-karya,,v1 operator string: PT. Waskita Sriwijaya Tol
+org-citra-waspphutowa,PT Citra Waspphutowa,Citra Waspphutowa,private,ID,,,v1 operator string: PT Citra Waspphutowa
+org-jakarta-tollroad-development,PT Jakarta Tollroad Development,Jakarta Tollroad Development,consortium,ID,,,v1 operator string: PT Jakarta Tollroad Development
+org-kresna-kusuma-dyandra-marga,PT Kresna Kusuma Dyandra Marga,Kresna Kusuma Dyandra Marga,private,ID,,,v1 operator string: PT Kresna Kusuma Dyandra Marga
+org-citra-marga-nusaphala-persada,PT Citra Marga Nusaphala Persada Tbk,Citra Marga,private,ID,,,v1 operator string: PT. Citra Marga Nusaphala Persada Tbk.
+org-jasamarga-japek-selatan,PT Jasamarga Japek Selatan,Jasamarga Japek Selatan,private,ID,org-jasa-marga,,v1 operator string: PT Jasamarga Japek Selatan
+org-marga-sarana-jabar,PT Marga Sarana Jabar,Marga Sarana Jabar,private,ID,,,v1 operator string: PT. Marga Sarana Jabar
+org-wijaya-karya-serang-panimbang,PT Wijaya Karya Serang Panimbang,Wijaya Karya Serang Panimbang,private,ID,org-wijaya-karya,,v1 operator string: PT Wijaya Karya Serang Panimbang
+org-trans-jabar-tol,PT Trans Jabar Tol,Trans Jabar Tol,private,ID,,,v1 operator string: PT Trans Jabar Tol
+org-pp-semarang-demak,PT PP Semarang Demak,PP Semarang Demak,private,ID,org-pp,,v1 operator string: PT Pembangunan Perumahan Semarang Demak
+org-jasamarga-jogja-solo,PT Jasamarga Jogja Solo,Jasamarga Jogja Solo,private,ID,org-jasa-marga,,v1 operator string: PT Jasamarga Jogja Solo
+org-jasa-marga-jogja-bawen,PT Jasa Marga Jogja Bawen,Jasa Marga Jogja Bawen,private,ID,org-jasa-marga,,v1 operator string: PT Jasa Marga Jogja Bawen
+org-waskita-bumi-wira,PT Waskita Bumi Wira,Waskita Bumi Wira,private,ID,org-waskita-karya,,v1 operator string: PT Waskita Bumi Wira
+org-jasamarga-probolinggo-banyuwangi,PT Jasamarga Probolinggo Banyuwangi,Jasamarga Probolinggo Banyuwangi,private,ID,org-jasa-marga,,v1 operator string: PT Jasamarga Probolinggo Banyuwangi
