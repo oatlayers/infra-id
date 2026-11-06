@@ -6,9 +6,10 @@ curated, not exhaustive**.
 
 - **Live data:** 27 toll-road corridors — 20 under construction, 7 planned —
   plus 4 Trans corridor summaries.
+- **Estate dataset:** 178 industrial estates and SEZs, gathered but not mapped yet.
 - **Last verification:** 6 November 2026.
-- **Status:** v2 data foundation in place. Not deployed. Airports, seaports,
-  railways, factories, industrial estates and SEZs are not on the map yet.
+- **Status:** v2 data foundation in place. Not deployed. The estate/SEZ dataset is
+  gathered; airports, seaports, railways and factories are still to come.
 
 ## What it is, and what it is not
 
@@ -33,7 +34,7 @@ when a source supports that status.
 | Airports | 0 | — | next transport batch |
 | Seaports | 0 | — | next transport batch |
 | Factories | 0 | — | after the estate/SEZ batch |
-| Industrial estates / SEZs | 0 | — | data gathering in progress |
+| Industrial estates / SEZs | 178 | 160 industrial estates (153 industrial-only + 7 shared), 25 SEZs | data only; not mapped |
 
 **Why zero recently completed?** No full toll corridor opened between
 2024-11-06 and 2026-11-06. Sections did open in that window (for example
@@ -85,7 +86,8 @@ infra-id/
 │  │  ├─ laws.csv
 │  │  ├─ project_laws.csv
 │  │  ├─ corridors.csv
-│  │  └─ corridor_segments.csv
+│  │  ├─ corridor_segments.csv
+│  │  └─ estates.csv        industrial estates and SEZs (not mapped yet)
 │  ├─ projects.csv          generated flat export for the site and downloads
 │  ├─ derived/              extracted text and build-time intermediates
 │  └─ raw/YYYY-MM-DD/       sources as fetched, never edited
@@ -93,6 +95,7 @@ infra-id/
 │  ├─ data_model.py         paths, field lists, enums and CSV helpers
 │  ├─ extract_wikipedia_toll_roads.py
 │  ├─ build_projects.py
+│  ├─ build_estates.py
 │  ├─ validate.py
 │  ├─ build_site_data.py
 │  └─ build_basemap.py
@@ -126,6 +129,7 @@ Natural Earth ─────────────► build_basemap.py ──
 Rebuild everything:
 
 ```bash
+python scripts/build_estates.py      # only when the estate sources change
 python scripts/validate.py
 python scripts/build_projects.py
 python scripts/build_site_data.py
@@ -139,6 +143,7 @@ What each script does:
 | `extract_wikipedia_toll_roads.py` | English Wikipedia HTML snapshot | `enwiki_toll_roads_parsed.csv` | Parses the toll-road table; no status decisions |
 | `validate.py` | `data/curated/*.csv` | exit code | Schema, enums, dates, coordinates, foreign keys and range checks |
 | `build_projects.py` | Curated tables + BPJT JSON | `data/projects.csv` | Joins operator and source, fills gaps from BPJT, writes the flat export |
+| `build_estates.py` | KEK HTML + BAJRA table + regency cache | `data/curated/estates.csv` + source rows | Merges the 25 SEZs and 153 industrial estates, handles overlaps |
 | `build_site_data.py` | `data/projects.csv` + `corridors.csv` | GeoJSON, JS, CSV and corridor payloads | Site-ready data |
 | `build_basemap.py` | Natural Earth GeoJSON | `site/data/basemap.*` | Clipped, simplified offline basemap |
 
@@ -163,6 +168,7 @@ The full rationale and target schema are in `plan.md`.
 | `laws.csv` / `project_laws.csv` | regulation / relation | legal basis, kept separate from news |
 | `corridors.csv` | Trans corridor | `total_km`, `operational_km`, `construction_km`, `planned_km`, `metric`, `as_of` |
 | `corridor_segments.csv` | corridor segment | section-level km, status and opening year |
+| `estates.csv` | industrial estate or SEZ | `id`, `name`, `type`, `province`, `regency`, `area_ha`, `developer`, `status`, `source_id` |
 
 Project columns (`data/curated/projects.csv`):
 
@@ -217,14 +223,50 @@ possible.
 | KPPIP PSN pages | <https://kppip.go.id/proyek-strategis-nasional/> | Airport, seaport and industrial-area PSN lists | Names and provinces only; status must come from elsewhere |
 | Hutama Karya via Palpres (4 Oct 2026) | <https://palpres.disway.id/news/read/780474/hutama-karya-buka-bukaan-soal-jtts-di-hadapan-bakn-dpr-ri-ini-progresnya> | Trans Sumatra km | Secondary; figures differ by scope and date |
 | Katadata (21 Jul 2025) | <https://katadata.co.id/berita/industri/687e4748a975f/tni-targetkan-proyek-trans-papua-rampung-di-era-prabowo> | Trans Papua km | Secondary; connected vs paved metrics differ |
+| KEK National Council profiles (25 pages) | <https://kek.go.id/id/investment/distribution> | SEZ name, address, coordinates, area, developer, legal basis, category | Official; one page per zone. Operational maturity is not stated |
+| BAJRA, "Daftar Kawasan Industri Indonesia" (17 Aug 2024) | <https://www.bajra.id/2024/08/daftar-kawasan-industri-indonesia.html> | Industrial estate name, developer, regency, province, area | Secondary mirror of Kemenperin data; 159 estates, not the 179 reported in 2026 |
+| ANTARA, Kemenperin estate count (2026) | <https://www.antaranews.com/berita/5627392/kemenperin-catat-kawasan-industri-serap-235-juta-pekerja> | Coverage benchmark: 179 estates, 101,351.45 ha, 57.20% occupancy | Secondary; used only as a benchmark, not as a row source |
 | Natural Earth 1:50m countries and populated places | <https://www.naturalearthdata.com/> | Land outlines and city labels | Public domain; clipped and simplified |
 
 Raw snapshots are never edited. Current contents include the Wikipedia
-snapshots, the BPJT JSON, the Kemenhub PDF, the KPPIP HTML pages and the Natural
-Earth GeoJSON under `data/raw/2026-11-06/`.
+snapshots, the BPJT JSON, the Kemenhub PDF, the KPPIP HTML pages, the 25 KEK
+profile pages, the BAJRA estate table and the Natural Earth GeoJSON under
+`data/raw/2026-11-06/`.
 
 The KPPIP pages and the Kemenhub PSN deck are saved for the transport batch and
 are **not yet reflected** in `data/curated/projects.csv`.
+
+## Industrial estates and SEZs
+
+`data/curated/estates.csv` holds 178 records, gathered but deliberately **not
+visualised yet**:
+
+- **25 SEZs** from the official KEK National Council profiles. Each has a name,
+  address, province/regency, official zone coordinate, area in hectares,
+  developer, legal basis, establishment year and category.
+- **153 industrial estates** from the 2024 Kemenperin-derived list. Each has a
+  developer, regency/province and area. Coordinates are regency/city centroids,
+  so `precision=regency`. The centroids are cached in
+  `data/derived/regency_coords.json`; the cache lets the build run without
+  network access.
+- **7 zones are both** a SEZ and an industrial estate; they are one row with
+  `type=both`, not duplicates.
+
+The industrial-estate source is a secondary mirror of Kemenperin data. Kemenperin
+reported 179 estates in 2026; the 160-row source table is a 2024 snapshot, so the
+list is close but not complete. The `notes` field says this on every row. SEZ
+rows use `status=operating` as a designation-level default; operational maturity
+is not independently verified.
+
+Estate fields:
+
+```
+id,name,type,province,regency,lat,lon,precision,area_ha,developer,status,
+sector_focus,legal_basis,established_year,website,source_id,last_verified,notes
+```
+
+`type` is `industrial_estate`, `sez` or `both`. The table is validated but is not
+read by the site build yet.
 
 ## Adding or updating a project
 
@@ -297,6 +339,8 @@ map with 403 images.
 - km figures are non-negative and do not exceed the total by more than 5%;
 - coordinates fall inside Indonesia's rough bounding box;
 - operating and recently completed rows have an `opened_year`;
+- estates have valid type/status enums, positive area, plausible coordinates and
+  a known source;
 - archive paths exist when they point into the repo;
 - no duplicate project–organisation roles or external ids.
 
@@ -316,6 +360,12 @@ Validating is not the same as verifying. Validation catches malformed rows; the
 - **BPJT labels are inconsistent.** Some rows marked `Operasi` still have
   unopened length or active construction. Conflicts are recorded, not hidden.
 - **No geometry.** Projects are points, not lines or polygons.
+- **Estate coordinates are coarse.** SEZ points are official zone coordinates but
+  still approximate for an area; industrial-estate points are regency centroids,
+  not estate boundaries.
+- **Estate coverage is partial.** The industrial-estate table is a 2024 secondary
+  mirror with 160 rows; Kemenperin reported 179 estates in 2026. New 2025 estates
+  and exact boundaries still need to be added.
 - **No recently completed toll roads.** See Current coverage.
 - **Trans Sulawesi and Trans Kalimantan have no aggregate.** Published figures
   use different definitions; the site shows a data-gap note instead of inventing
@@ -331,11 +381,11 @@ Validating is not the same as verifying. Validation catches malformed rows; the
 
 1. ~~Plan, decisions, toll-road batch, map page.~~ Done.
 2. ~~Normalised data foundation, km fields, operating status, corridor tab.~~ Done.
-3. **Industrial estates and SEZs.** Gather all Kawasan Industri and KEK records
-   with location, area, developer, status, key sectors and sources. Data only;
-   no new map layer yet. *In progress.*
+3. **Industrial estates and SEZs.** First pass done: 178 records with location,
+   area, developer, status, category and sources. Data only; no map layer yet.
+   Remaining: 2025 additions, exact estate boundaries and better coordinates.
 4. **Transport PSN batch.** Railways, airports and seaports from the Kemenhub
-   deck and KPPIP lists. Enable the sector filters with real data.
+   deck and KPPIP lists. Enable the sector filters with real data. *Next.*
 5. **Factories.** PSN smelters, GEM steel plants, large nickel/aluminium/copper
    and battery projects. Requires `organizations` and `investments` rows.
 6. **Better geometry.** Replace midpoints with lines or exact points; set
@@ -346,9 +396,9 @@ Validating is not the same as verifying. Validation catches malformed rows; the
 
 ## Where to pick up
 
-- **Current task:** gather industrial estate and SEZ data into a new curated
-  table, then extend `validate.py` and `build_projects.py` for it. Do not add it
-  to the map yet.
+- **Current task:** the estate/SEZ first pass is done (178 rows). Refine it by
+  adding the 2025 estates, replacing regency centroids with estate boundaries or
+  site coordinates, and verifying SEZ operational status. Do not map it yet.
 - **Next task:** the transport PSN batch (rail, ports, airports). Start from
   `data/derived/kemenhub_psn_progress_2026.txt` and the KPPIP HTML snapshots.
 - **Before changing schema:** read the Data architecture section in `plan.md`.

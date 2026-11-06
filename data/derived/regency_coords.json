@@ -1,0 +1,332 @@
+{
+  "Kabupaten Aceh Besar, Nangroe Aceh Darussalam": {
+    "lat": 5.4,
+    "lon": 95.45,
+    "source": "manual-fix"
+  },
+  "Kabupaten Bangka Selatan, Kepulauan Bangka Belitung": {
+    "lat": -2.7768975,
+    "lon": 106.2939584,
+    "source": "nominatim"
+  },
+  "Kabupaten Bantul, DI Yogyakarta": {
+    "lat": -7.8982543,
+    "lon": 110.3855534,
+    "source": "nominatim"
+  },
+  "Kabupaten Batang, Jawa Tengah": {
+    "lat": -6.9156873,
+    "lon": 109.7285118,
+    "source": "nominatim"
+  },
+  "Kabupaten Bekasi, Jawa Barat": {
+    "lat": -6.2027897,
+    "lon": 107.1649161,
+    "source": "nominatim"
+  },
+  "Kabupaten Belitung, Kepulauan Bangka Belitung": {
+    "lat": -2.8842812,
+    "lon": 107.6631596,
+    "source": "nominatim"
+  },
+  "Kabupaten Bintan, Kepulauan Riau": {
+    "lat": 1.0196577,
+    "lon": 104.5698189,
+    "source": "nominatim"
+  },
+  "Kabupaten Bogor, Jawa Barat": {
+    "lat": -6.5453875,
+    "lon": 107.001782,
+    "source": "nominatim"
+  },
+  "Kabupaten Bolaang Mongondow, Sulawesi Utara": {
+    "lat": 0.7207701,
+    "lon": 123.9870367,
+    "source": "nominatim"
+  },
+  "Kabupaten Bulungan, Kalimantan Utara": {
+    "lat": 2.7620341,
+    "lon": 117.0743468,
+    "source": "nominatim"
+  },
+  "Kabupaten Deli Serdang, Sumatera Utara": {
+    "lat": 3.4744538,
+    "lon": 98.7158975,
+    "source": "nominatim"
+  },
+  "Kabupaten Demak, Jawa Tengah": {
+    "lat": -6.9230952,
+    "lon": 110.6276667,
+    "source": "nominatim"
+  },
+  "Kabupaten Gresik, Jawa Timur": {
+    "lat": -7.156,
+    "lon": 112.655,
+    "source": "manual-fix"
+  },
+  "Kabupaten Halmahera Selatan, Maluku Utara": {
+    "lat": -1.53437,
+    "lon": 127.716559,
+    "source": "nominatim"
+  },
+  "Kabupaten Halmahera Tengah, Maluku Utara": {
+    "lat": 0.3888811,
+    "lon": 128.5832237,
+    "source": "nominatim"
+  },
+  "Kabupaten Halmahera Timur, Maluku Utara": {
+    "lat": 1.0027852,
+    "lon": 128.2487936,
+    "source": "nominatim"
+  },
+  "Kabupaten Halmahera Utara, Maluku Utara": {
+    "lat": 1.6178705,
+    "lon": 127.8584679,
+    "source": "nominatim"
+  },
+  "Kabupaten Karawang, Jawa Barat": {
+    "lat": -6.3021906,
+    "lon": 107.3046116,
+    "source": "nominatim"
+  },
+  "Kabupaten Karimun, Kepulauan Riau": {
+    "lat": 0.7653871,
+    "lon": 103.4287445,
+    "source": "nominatim"
+  },
+  "Kabupaten Kendal, Jawa Tengah": {
+    "lat": -7.0190965,
+    "lon": 110.1374757,
+    "source": "nominatim"
+  },
+  "Kabupaten Ketapang, Kalimantan Barat": {
+    "lat": -1.8446652,
+    "lon": 109.9784067,
+    "source": "nominatim"
+  },
+  "Kabupaten Konawe Utara, Sulawesi Tenggara": {
+    "lat": -3.4549579,
+    "lon": 121.976257,
+    "source": "nominatim"
+  },
+  "Kabupaten Konawe, Sulawesi Tenggara": {
+    "lat": -3.5116689,
+    "lon": 121.6523287,
+    "source": "nominatim"
+  },
+  "Kabupaten Kota Baru, Kalimantan Selatan": {
+    "lat": -3.4435512,
+    "lon": 114.6977552,
+    "source": "nominatim"
+  },
+  "Kabupaten Kotawaringin Barat, Kalimantan Tengah": {
+    "lat": -2.504212,
+    "lon": 111.6468097,
+    "source": "nominatim"
+  },
+  "Kabupaten Kutai Timur, Kalimantan Timur": {
+    "lat": 0.9453607,
+    "lon": 117.0110884,
+    "source": "nominatim"
+  },
+  "Kabupaten Landak, Kalimantan Barat": {
+    "lat": 0.504635,
+    "lon": 109.7070383,
+    "source": "nominatim"
+  },
+  "Kabupaten Majalengka, Jawa Barat": {
+    "lat": -6.8073627,
+    "lon": 108.278786,
+    "source": "nominatim"
+  },
+  "Kabupaten Mojokerto, Jawa Timur": {
+    "lat": -7.5413377,
+    "lon": 112.5094975,
+    "source": "nominatim"
+  },
+  "Kabupaten Morowali Utara, Sulawesi Tengah": {
+    "lat": -1.8418842,
+    "lon": 121.0771696,
+    "source": "nominatim"
+  },
+  "Kabupaten Morowali, Sulawesi Tengah": {
+    "lat": -2.7151483,
+    "lon": 121.8824104,
+    "source": "nominatim"
+  },
+  "Kabupaten Muara Enim, Sumatera Selatan": {
+    "lat": -3.8467067,
+    "lon": 103.9615719,
+    "source": "nominatim"
+  },
+  "Kabupaten Padang Pariaman, Sumatera Barat": {
+    "lat": -0.5690917,
+    "lon": 100.2770262,
+    "source": "nominatim"
+  },
+  "Kabupaten Parigi Moutong, Sulawesi Tengah": {
+    "lat": -0.2383605,
+    "lon": 119.9599311,
+    "source": "nominatim"
+  },
+  "Kabupaten Pasuruan, Jawa Timur": {
+    "lat": -7.7508114,
+    "lon": 112.818483,
+    "source": "nominatim"
+  },
+  "Kabupaten Purwakarta, Jawa Barat": {
+    "lat": -6.5556692,
+    "lon": 107.4421268,
+    "source": "nominatim"
+  },
+  "Kabupaten SIAK, Riau": {
+    "lat": 0.8275337,
+    "lon": 101.8461936,
+    "source": "nominatim"
+  },
+  "Kabupaten Serang, Banten": {
+    "lat": -6.1057256,
+    "lon": 105.9884196,
+    "source": "nominatim"
+  },
+  "Kabupaten Sidoarjo, Jawa Timur": {
+    "lat": -7.4539769,
+    "lon": 112.6593869,
+    "source": "nominatim"
+  },
+  "Kabupaten Simalungun, Sumatera Utara": {
+    "lat": 2.9507078,
+    "lon": 98.784316,
+    "source": "nominatim"
+  },
+  "Kabupaten Subang, Jawa Barat": {
+    "lat": -6.5689807,
+    "lon": 107.7587397,
+    "source": "nominatim"
+  },
+  "Kabupaten Sukabumi, Jawa Barat": {
+    "lat": -7.0764508,
+    "lon": 106.7346608,
+    "source": "nominatim"
+  },
+  "Kabupaten Sumedang, Jawa Barat": {
+    "lat": -6.8597179,
+    "lon": 107.9207066,
+    "source": "nominatim"
+  },
+  "Kabupaten Takalar, Sulawesi Selatan": {
+    "lat": -5.406654,
+    "lon": 119.5375417,
+    "source": "nominatim"
+  },
+  "Kabupaten Tanah Bumbu, Kalimantan Selatan": {
+    "lat": -3.4473328,
+    "lon": 115.7063933,
+    "source": "nominatim"
+  },
+  "Kabupaten Tanah Laut, Kalimantan Selatan": {
+    "lat": -3.8440385,
+    "lon": 114.9888593,
+    "source": "nominatim"
+  },
+  "Kabupaten Tangerang, Banten": {
+    "lat": -6.1644013,
+    "lon": 106.4679311,
+    "source": "nominatim"
+  },
+  "Kabupaten Tuban, Jawa Timur": {
+    "lat": -6.9596385,
+    "lon": 111.8932266,
+    "source": "nominatim"
+  },
+  "Kota Balikpapan, Kalimantan Timur": {
+    "lat": -1.2398711,
+    "lon": 116.8593379,
+    "source": "nominatim"
+  },
+  "Kota Bandar Lampung, Lampung": {
+    "lat": -5.4293858,
+    "lon": 105.2626169,
+    "source": "nominatim"
+  },
+  "Kota Batam, Kepulauan Riau": {
+    "lat": 1.1030815,
+    "lon": 104.0383696,
+    "source": "nominatim"
+  },
+  "Kota Bontang, Kalimantan Timur": {
+    "lat": 0.1236548,
+    "lon": 117.471708,
+    "source": "nominatim"
+  },
+  "Kota Cilegon, Banten": {
+    "lat": -6.017389,
+    "lon": 106.0537688,
+    "source": "nominatim"
+  },
+  "Kota Dumai, Riau": {
+    "lat": 1.6631967,
+    "lon": 101.4470369,
+    "source": "nominatim"
+  },
+  "Kota Jakarta Timur, DKI Jakarta": {
+    "lat": -6.2628908,
+    "lon": 106.8822289,
+    "source": "nominatim"
+  },
+  "Kota Jakarta Utara, DKI Jakarta": {
+    "lat": -6.1351965,
+    "lon": 106.893488,
+    "source": "nominatim"
+  },
+  "Kota Makassar, Sulawesi Selatan": {
+    "lat": -5.1342962,
+    "lon": 119.4124282,
+    "source": "nominatim"
+  },
+  "Kota Palu, Sulawesi Tengah": {
+    "lat": -0.9051548,
+    "lon": 119.8722373,
+    "source": "nominatim"
+  },
+  "Kota Pekanbaru, Riau": {
+    "lat": 0.5262455,
+    "lon": 101.4515727,
+    "source": "nominatim"
+  },
+  "Kota Semarang, Jawa Tengah": {
+    "lat": -6.9903988,
+    "lon": 110.4229104,
+    "source": "nominatim"
+  },
+  "Kota Surabaya, Jawa Timur": {
+    "lat": -7.2462836,
+    "lon": 112.7377674,
+    "source": "nominatim"
+  },
+  "Kota Tangerang Selatan, Banten": {
+    "lat": -6.3227016,
+    "lon": 106.7085737,
+    "source": "nominatim"
+  },
+  "Kota Tangerang, Banten": {
+    "lat": -6.1761924,
+    "lon": 106.6382161,
+    "source": "nominatim"
+  },
+  "Kabupaten Aceh Besar, Aceh": {
+    "lat": 5.4,
+    "lon": 95.45,
+    "source": "manual-fix"
+  },
+  "Kabupaten Kotabaru, Kalimantan Selatan": {
+    "lat": -3.4435512,
+    "lon": 114.6977552,
+    "source": "nominatim"
+  },
+  "Kabupaten Siak, Riau": {
+    "lat": 0.8275337,
+    "lon": 101.8461936,
+    "source": "nominatim"
+  }
+}

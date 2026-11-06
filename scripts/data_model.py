@@ -65,6 +65,12 @@ SEGMENT_FIELDS = [
     "source_id", "notes",
 ]
 
+ESTATE_FIELDS = [
+    "id", "name", "type", "province", "regency", "lat", "lon", "precision",
+    "area_ha", "developer", "status", "sector_focus", "legal_basis",
+    "established_year", "website", "source_id", "last_verified", "notes",
+]
+
 SECTORS = {"road", "railway", "airport", "seaport", "factory"}
 STATUSES = {"planned", "under_construction", "recently_completed", "operating", "stalled"}
 PSN_VALUES = {"yes", "no", "unknown"}
@@ -75,6 +81,8 @@ SOURCE_TYPES = {"official", "secondary", "company", "multilateral"}
 STAGES = {"announced", "committed", "financial_close", "disbursed"}
 INSTRUMENTS = {"equity", "debt", "grant", "guarantee", "mixed", "other"}
 LAW_LEVELS = {"law", "presidential_regulation", "ministerial_regulation", "other"}
+ESTATE_TYPES = {"industrial_estate", "sez", "both"}
+ESTATE_STATUSES = {"operating", "under_construction", "planned"}
 
 TABLES = {
     "projects.csv": PROJECT_FIELDS,
@@ -88,6 +96,7 @@ TABLES = {
     "project_laws.csv": PROJECT_LAW_FIELDS,
     "corridors.csv": CORRIDOR_FIELDS,
     "corridor_segments.csv": SEGMENT_FIELDS,
+    "estates.csv": ESTATE_FIELDS,
 }
 
 

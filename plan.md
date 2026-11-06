@@ -2,7 +2,7 @@
 
 A simple map of major infrastructure in Indonesia: roads, airports, seaports and factories that are under construction, planned, or recently completed.
 
-**Status:** building. Started 2026-11-06. Decisions agreed 2026-11-06. The v2 data foundation is in place: normalised curated tables, km fields, an `operating` status, and Trans corridor summaries. 27 toll roads are live. Airports, seaports, railways, factories and estates are being added.
+**Status:** building. Started 2026-11-06. Decisions agreed 2026-11-06. The v2 data foundation is in place: normalised curated tables, km fields, an `operating` status, Trans corridor summaries and an estate/SEZ dataset (178 rows, not mapped). 27 toll roads are live. Airports, seaports, railways and factories are being added.
 
 ## Goal
 
@@ -53,7 +53,10 @@ A simple map of major infrastructure in Indonesia: roads, airports, seaports and
 | Built | BIG Satu Peta, SARANA_PRASARANA: airports (layer 4), public ports (layer 1), national toll roads (layer 14), national non-toll roads (layer 13) | Airport coordinates and ICAO/IATA codes; port build year and operating status; road lines | Service dated 2024. Responses capped at 1,000 records. An explicit field list gave a 400 error on the airport layer; `outFields=*` worked |
 | Built | BIG Satu Peta, KAWASAN_KHUSUS_DAN_TRANSMIGRASI layer 4 | Industrial estate polygons | Existing estates only |
 | Built | data.go.id and data.pu.go.id toll-road datasets | Operating toll roads with opening year; GeoJSON | Newest resource I found is for 2023. Recent openings need a news or BPJT check |
-| Built | Kemenperin 2025 industrial estate map (satudata.kemenperin.go.id) | About 150 estates with operator and area (ha) | Existing only |
+| Built | Kemenperin 2025 industrial estate map (satudata.kemenperin.go.id) | About 150 estates with operator and area (ha) | Existing only. The subdomain did not resolve on 2026-11-06, so the BAJRA mirror below was used |
+| Estates/SEZ | KEK National Council profiles: `https://kek.go.id/id/investment/distribution/<slug>` | SEZ name, address, coordinates, area, developer, legal basis, category | Official. 25 zones. Operational maturity is not stated |
+| Estates | BAJRA, "Daftar Kawasan Industri Indonesia" (17 Aug 2024) | Industrial estate name, developer, regency, province, area | Secondary mirror of Kemenperin data. 160 rows; Kemenperin reported 179 estates in 2026 |
+| Estates (coverage) | ANTARA, Kemenperin estate count (2026) | Benchmark: 179 estates, 101,351.45 ha, 57.20% occupancy | Secondary; not a row source |
 | Designated | PSN list: Permenko 7/2021 and its amendments; latest is Permenko 4/2026, in force 24 Feb 2026 | Official designation, sector, province | Province level only. Amended nine times |
 | Pipeline | PPP Book 2026 (76 KPBU projects, US$63.45B, Oct 2026); KPBU portal (kpbu.kemenkeu.go.id) | Stage, capex, responsible agency | Sources disagree (see Risks) |
 | About to start | INAPROC and LPSE tenders (inaproc.id, spse.inaproc.id) | Tender packages, budget ceilings (HPS), closing dates | Named by work. No coordinates |
@@ -120,6 +123,7 @@ this.
 | `laws.csv` | regulation | `id`, `title`, `number`, `year`, `level`, `url`, `status` |
 | `project_laws.csv` | project–law relation | `project_id`, `law_id`, `relation` |
 | `corridors.csv` | Trans corridor | `id`, `name`, `definition`, `total_km`, `operational_km`, `construction_km`, `planned_km`, `metric`, `as_of`, `source_id` |
+| `estates.csv` | industrial estate or SEZ | `id`, `name`, `type`, `province`, `regency`, `area_ha`, `developer`, `status`, `sector_focus`, `legal_basis`, `source_id` |
 | `geometries.csv` | project geometry | `project_id`, `kind` (point, line, polygon), `geojson`, `precision`, `source_id` |
 
 ### Why this shape
@@ -239,6 +243,15 @@ the large nickel, aluminium, copper and battery projects. Investment rows,
 investor organisations and claim-level sources are prerequisites, so factories
 come after the schema migration.
 
+**Industrial estates and SEZs (data only).** `data/curated/estates.csv` holds 178
+records: 25 SEZs from the official KEK profiles, 153 industrial estates from a
+2024 Kemenperin-derived table, and 7 zones marked `both`. SEZ rows carry official
+zone coordinates, area, developer, legal basis and category. Industrial-estate
+rows carry developer, regency/province and area, with regency-centroid
+coordinates (`precision=regency`). The list is close to, but not the same as, the
+179 estates Kemenperin reported in 2026: 2025 additions and exact boundaries are
+still missing. The data is validated but not read by the site build yet.
+
 **Site changes.** Enable railway, airport, seaport and factory filters; show km
 bars and investment or capacity in the detail panel; add a corridor progress
 section; show aggregate km by sector in the header. Keep the offline basemap.
@@ -252,16 +265,16 @@ section; show aggregate km by sector in the header. Keep the offline basemap.
    shows the data-gap note only.
 
 **Implementation order.** ~~Schema migration~~ → ~~km fields and corridor
-data/UI~~ → Kemenhub transport batch (rail, ports, airports) → industrial estates
-and SEZs (data only) → factories pilot → docs.
+data/UI~~ → ~~industrial estates and SEZs (data only)~~ → Kemenhub transport batch
+(rail, ports, airports) → factories pilot → docs.
 
 ## Phases
 
 0. **Plan and decisions.** Done. This file.
 1. **Toll roads.** Done for batch 1: 27 curated rows in `data/projects.csv`, checked against BPJT. Remaining gaps listed under Batch 1 status.
 2. **Official pipeline.** Kemenhub transport PSN deck and KPPIP pages snapshotted; the full PSN/KPBU/INAPROC pass is still open. ← in progress
-3. **Industrial estates and SEZs.** Gather all Kawasan Industri and KEK records with location, area, developer, status, sectors and sources. Data only; no map layer yet. ← current
-4. **Transport batch.** Railways, airports and seaports from Kemenhub and KPPIP. Enable the sector filters with real data.
+3. **Industrial estates and SEZs.** First pass done: 178 records in `data/curated/estates.csv`, validated. Remaining: 2025 additions, exact boundaries and better coordinates. Data only; no map layer yet.
+4. **Transport batch.** Railways, airports and seaports from Kemenhub and KPPIP. Enable the sector filters with real data. ← next
 5. **Factories.** PSN smelters, GEM steel plants, large nickel/aluminium/copper and battery projects.
 6. **Geocoding.** Replace midpoint coordinates with better points or lines; set precision per row.
 7. **Map page.** v2 with km bars, operating status and corridor tab done. Revisit after the transport batch.
@@ -299,7 +312,7 @@ and SEZs (data only) → factories pilot → docs.
 3. ~~Extract the toll roads into `data/projects.csv`.~~ Done: 27 rows, validation passing.
 4. ~~Build the Leaflet page from `data/projects.csv`.~~ Done: `site/index.html`, checked at desktop and mobile widths.
 5. ~~Normalise the data model and add km/corridor support.~~ Done.
-6. Gather industrial estate and SEZ data. ← current
+6. ~~Gather the industrial estate and SEZ first pass.~~ Done: 178 rows, validated.
 7. Add the Kemenhub transport batch (rail, ports, airports).
 8. Add the factories batch.
 9. Publish to GitHub Pages.

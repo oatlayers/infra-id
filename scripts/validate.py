@@ -14,6 +14,8 @@ from pathlib import Path
 
 from data_model import (
     CURATED,
+    ESTATE_STATUSES,
+    ESTATE_TYPES,
     INSTRUMENTS,
     LAW_LEVELS,
     ORG_TYPES,
@@ -112,6 +114,7 @@ def main() -> None:
     project_laws = read_csv(CURATED / "project_laws.csv")
     corridors = read_csv(CURATED / "corridors.csv")
     segments = read_csv(CURATED / "corridor_segments.csv")
+    estates = read_csv(CURATED / "estates.csv")
 
     project_ids = {row["id"] for row in projects}
     org_ids = {row["id"] for row in organizations}
@@ -359,6 +362,42 @@ def main() -> None:
             if year is None or not 1900 <= year <= 2030:
                 err(f"{where}: implausible opened_year")
 
+    seen = set()
+    for row in estates:
+        where = f"estates {row['id'] or '?'}"
+        if row["id"] in seen:
+            err(f"{where}: duplicate id")
+        seen.add(row["id"])
+        check_id(row["id"], where)
+        for field in ("name", "type", "province", "regency", "lat", "lon",
+                      "precision", "area_ha", "developer", "status",
+                      "source_id", "last_verified", "notes"):
+            if is_blank(row[field]):
+                err(f"{where}: missing {field}")
+        check_enum(row["type"], ESTATE_TYPES, "type", where)
+        check_enum(row["status"], ESTATE_STATUSES, "status", where)
+        check_enum(row["precision"], PRECISIONS, "precision", where)
+        if row["source_id"] not in source_ids:
+            err(f"{where}: unknown source")
+        check_date(row["last_verified"], f"{where} last_verified")
+        area = check_number(row["area_ha"], "area_ha", where, minimum=0.0001)
+        if area is None:
+            err(f"{where}: area_ha must be positive")
+        try:
+            lat = float(row["lat"])
+            lon = float(row["lon"])
+        except ValueError:
+            err(f"{where}: lat/lon are not numbers")
+        else:
+            if not (-11.0 <= lat <= 6.0 and 95.0 <= lon <= 141.0):
+                err(f"{where}: coordinates outside Indonesia ({lat}, {lon})")
+        if row["established_year"]:
+            year = as_int(row["established_year"])
+            if year is None or not 1945 <= year <= 2030:
+                err(f"{where}: implausible established_year")
+        if row["website"]:
+            check_url(row["website"], where)
+
     if errors:
         print(f"{len(errors)} error(s):")
         for error in errors:
@@ -366,9 +405,9 @@ def main() -> None:
         sys.exit(1)
 
     print(
-        f"OK: {len(projects)} projects, {len(organizations)} organisations, "
-        f"{len(sources)} sources, {len(corridors)} corridors, "
-        f"{len(investments)} investments"
+        f"OK: {len(projects)} projects, {len(estates)} estates, "
+        f"{len(organizations)} organisations, {len(sources)} sources, "
+        f"{len(corridors)} corridors, {len(investments)} investments"
     )
 
 
