@@ -71,6 +71,7 @@ infra-id/
 ├─ requirements.txt         Python dependencies for the data scripts
 ├─ data/
 │  ├─ projects.csv          curated table, one row per project (source of truth)
+│  ├─ derived/              extracted text and other build-time intermediates
 │  └─ raw/YYYY-MM-DD/       sources as fetched, never edited
 ├─ scripts/
 │  ├─ extract_wikipedia_toll_roads.py
@@ -189,11 +190,13 @@ data/raw/2026-11-06/
 ├─ ne_50m_populated_places.geojson
 ├─ kppip_bandar_udara.html
 ├─ kppip_pelabuhan.html
-└─ kppip_kawasan.html
+├─ kppip_kawasan.html
+├─ kemenhub_psn_progress_2026.pdf
+└─ (extracted text in data/derived/)
 ```
 
-The KPPIP pages are saved for phase 2 and are **not yet reflected** in
-`projects.csv`.
+The KPPIP pages and the Kemenhub PSN progress deck are saved for phase 2 and
+are **not yet reflected** in `projects.csv`.
 
 ## Adding or updating a project
 

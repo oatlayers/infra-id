@@ -95,6 +95,56 @@ id,name,sector,status,status_basis,province,route,length_km,operator,opened_year
 - `source_type`: official | secondary
 - `retrieved_on`: when we fetched the source. `last_verified`: when someone last checked the row.
 
+## Data architecture (proposed 2026-11-06)
+
+A single `projects.csv` is fine for 27 flat rows. It will not carry companies,
+investment rounds, investor countries, laws and claim-level sources without
+turning into a wide table full of duplicated values. The problem is not CSV as a
+format; it is storing every entity in one table.
+
+**Recommendation:** keep text-based CSVs as the editable source of truth, split
+the data into normalised tables with stable ids, and generate the site JSON at
+build time. Revisit SQLite only when the data or the editing workflow outgrows
+this.
+
+### Target tables
+
+| File | One row per | Key fields |
+|---|---|---|
+| `projects.csv` | project | `id`, `name`, `sector`, `status`, `corridor_id`, `province`, `route`, `length_km`, `operational_km`, `construction_km`, `investment_idr_t`, `precision`, `last_verified` |
+| `organizations.csv` | company or agency | `id`, `name`, `short_name`, `org_type`, `country_code`, `parent_id`, `website` |
+| `project_organizations.csv` | project–organisation role | `project_id`, `org_id`, `role` (sponsor, operator, contractor, lender, off-taker), `share_pct`, `start_year`, `end_year`, `source_id` |
+| `investments.csv` | commitment or tranche | `id`, `project_id`, `investor_org_id`, `amount`, `currency`, `amount_idr`, `fx_date`, `year`, `stage`, `instrument`, `share_pct`, `source_id` |
+| `sources.csv` | source document | `id`, `publisher`, `title`, `url`, `published_on`, `retrieved_on`, `source_type`, `archive_path`, `licence`, `notes` |
+| `project_sources.csv` | project–source claim | `project_id`, `source_id`, `claim` (status, length, investment, opening) |
+| `laws.csv` | regulation | `id`, `title`, `number`, `year`, `level`, `url`, `status` |
+| `project_laws.csv` | project–law relation | `project_id`, `law_id`, `relation` |
+| `corridors.csv` | Trans corridor | `id`, `name`, `definition`, `total_km`, `operational_km`, `construction_km`, `planned_km`, `metric`, `as_of`, `source_id` |
+| `geometries.csv` | project geometry | `project_id`, `kind` (point, line, polygon), `geojson`, `precision`, `source_id` |
+
+### Why this shape
+
+- **Companies are not a project column.** A project has sponsors, an operator, contractors and lenders, often several of each, with shares and dates. A join table handles that; an `operator` string does not.
+- **Investments are events, not a total.** Store each commitment or tranche separately, with its original currency. Derive the project total and the investor-country mix. This is what makes "joint venture", "domestic vs foreign" and "which country" answerable later.
+- **Sources are first-class.** One source can support many projects; one project needs several claims. A `source_url` column cannot express which claim a link supports.
+- **Laws are not news.** A regulation and a news article are different objects. Keep `laws` separate from `sources`.
+- **No semicolon lists.** Multi-valued facts become rows in a join table.
+- **Derived data is disposable.** `data/projects.csv` and `site/data/*` are build outputs. Curated inputs live in `data/curated/`; raw snapshots stay in `data/raw/`.
+
+### Migration order
+
+1. Move the curated project list out of `scripts/build_projects.py` into `data/curated/projects.csv`. The script should read, validate, merge and build, not hold the data.
+2. Add `sources.csv` and `project_sources.csv`; replace the free-text `source_url` with references. Keep a generated display URL for the site.
+3. Add `organizations.csv` and `project_organizations.csv`; replace `operator`. Seed with the 20 operators already in batch 1.
+4. Add `investments.csv`, `laws.csv` and `project_laws.csv` before the factories batch, where investor, amount and legal basis are central.
+5. Add `corridors.csv` (and later `corridor_segments.csv`) for the Trans Sumatra, Sulawesi, Papua and Kalimantan progress section.
+6. Keep `data/derived/` and `site/data/` generated. Do not edit them by hand.
+7. Revisit SQLite when any of these is true: more than about 1,000 projects, several concurrent editors, or queries that genuinely need SQL. If that happens, the build script should still export CSV/JSON for review.
+
+**Why not SQLite now?** It adds a binary file to git, a migration tool and a query layer, while the dataset is small and the main need is reviewable diffs. **Why not JSON per project?** It duplicates schema handling and makes cross-project checks and joins harder. CSV plus validation gives most of the relational discipline with none of the infrastructure.
+
+**Decision needed:** adopt the normalised CSV model (recommended), or move to SQLite now?
+
 **Mapping the Wikipedia article**
 
 - "(under construction)" → `under_construction`.
@@ -138,6 +188,67 @@ id,name,sector,status,status_basis,province,route,length_km,operator,opened_year
 - `site/index.html` loads `projects.js` with a normal script tag, so it also works from `file://`. It has status and sector filters, a list, a detail panel, and `#project-id` deep links.
 - The basemap is bundled vector geometry, not raster tiles. OpenStreetMap's tile servers reject `file://` requests, so the page never calls them. Leaflet 1.9.4 is vendored in `site/vendor/leaflet/`; the page needs no network at all.
 - Local preview: `python -m http.server 8765 --directory site`.
+
+## Scope v2 (proposed 2026-11-06)
+
+The next version adds kilometres, railways, airports, seaports, factories and a
+Trans-corridor progress section. The data model changes first (see Data
+architecture).
+
+**Km and progress.** Linear projects get `length_km` (total), `operational_km`,
+`construction_km` and an optional reported `progress_pct`. The site shows a bar
+and the raw figures. Non-linear assets (airports, ports, factories) use
+`investment_idr_t`, `capacity` and `capacity_unit`; km stays blank.
+
+**New sectors.** road, railway, airport, seaport, factory. Industrial estates are
+a factory subtype until there are enough to separate.
+
+**Status.** The strict two-year window excludes almost every airport and port.
+The Kemenhub PSN review of 19 February 2026 counts 35 transport PSNs: 29 are
+complete or operating, 18 are proposed for removal from the PSN list, and only 6
+are still in construction. All seven PSN airports opened between 2018 and 2023.
+Proposal: add an `operating` status for major assets opened before 2024-11-06,
+kept distinct from `recently_completed`. Without it the airports section would
+contain only Bali Utara, which is planned.
+
+**Transport baseline (Kemenhub, 19 February 2026).**
+
+| Mode | PSNs | Status |
+|---|---:|---|
+| Airports | 7 | all operating (2018–2023); no PSN airport under construction |
+| Seaports | 15 | 13 operating (11 completed, plus Patimban and Benoa); Patimban Phase I-2 under construction; New Palembang and Muaro Jambi planned |
+| Railways | 13 | 9 operating; MRT N-S 48.14% (Phase 2A 55.89%); LRT Velodrome–Manggarai 89.22%; MRT E-W and KA logistik Kaltim planned |
+
+**Trans corridor section.** A separate `corridors.csv` and a panel showing total,
+operational, under-construction and planned km, with an as-of date and metric.
+The four corridors are not comparable as published:
+
+| Corridor | Definition | Figures found | Treatment |
+|---|---|---|---|
+| Trans Sumatra | Toll backbone (JTTS) | 2,854 km ultimate; 1,161 km built; 982 km operational (Hutama Karya, Aug 2026) | aggregate bar; Bina Marga's 1,051.84 km Phase I figure conflicts, note it |
+| Trans Papua | National road, Sorong–Merauke | 4,330 km total; 3,446 km connected (Jul 2025); 2,235 km paved (Nov 2025) | two metrics: connected and paved |
+| Trans Sulawesi | National road corridor plus planned toll | no single official total; a JICA corridor study and a 1,300+ km toll plan use different scopes | segment view, no aggregate until defined |
+| Trans Kalimantan | National road corridor | 1,186 km travel route, 1,920 km border-parallel road and 2,100.8 km WPS figure are different things | segment view, no aggregate until defined |
+
+**Factories.** Single plants or estates with investment of at least Rp 1T,
+operating or under construction. Start with PSN smelters, GEM steel plants and
+the large nickel, aluminium, copper and battery projects. Investment rows,
+investor organisations and claim-level sources are prerequisites, so factories
+come after the schema migration.
+
+**Site changes.** Enable railway, airport, seaport and factory filters; show km
+bars and investment or capacity in the detail panel; add a corridor progress
+section; show aggregate km by sector in the header. Keep the offline basemap.
+
+**Open decisions.**
+
+1. Adopt the normalised CSV model (recommended), or move to SQLite now?
+2. Add an `operating` status (recommended), or keep the strict two-year window?
+3. For Trans Sulawesi and Trans Kalimantan, publish segment-level progress with a
+   data-gap note (recommended), or wait for a single official series?
+
+**Implementation order.** Schema migration → km fields and corridor data/UI →
+Kemenhub transport batch (rail, ports, airports) → factories pilot → docs.
 
 ## Phases
 
