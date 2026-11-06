@@ -1,0 +1,72 @@
+island,province,name,length_raw,operator,italic,under_construction,in_preparation
+Sumatra Trans-Sumatra Toll Road,,Sigli–Banda Aceh Toll Road,"49.8 (operational), 74 (total)",Hutama Karya,True,False,False
+North Sumatra,,Medan–Binjai Toll Road,16.8,Hutama Karya,False,False,False
+North Sumatra,,Binjai–Langsa Toll Road,"11.8 (operational), 130.9 (total)",Hutama Karya,True,False,False
+North Sumatra,,Belawan–Tanjung Morawa Toll Road,34.4,Jasa Marga,False,False,False
+North Sumatra,,Medan–Kuala Namu–Tebing Tinggi Toll Road,61.8,Jasamarga Kualanamu Tol,False,False,False
+North Sumatra,,Pekanbaru–Dumai Toll Road,131.5,Hutama Karya,False,False,False
+North Sumatra,,Padang–Pekanbaru Toll Road,"38 (operational), 255 (total)",Hutama Karya,True,False,False
+North Sumatra,,Bengkulu–Lubuk Linggau Toll Road,"18 (operational), 95 (total)",Hutama Karya,True,False,False
+South Sumatra,,Kayu Agung–Palembang–Betung Toll Road,"42.5 (operational), 111.7 (total)",Waskita Sriwijaya Tol,True,False,False
+South Sumatra,,Palembang–Indralaya Toll Road,22.0,Hutama Karya,False,False,False
+Lampung,,Bakauheni–Terbanggi Besar Toll Road,140.9,Hutama Karya,False,False,False
+Lampung,,Terbanggi Besar–Pematang Panggang–Kayuagung Toll Road,189,Hutama Karya,False,False,False
+Java Trans-Java Toll Road,Greater Jakarta,Prof. Dr. Ir. Soedijatmo Toll Road,14,Jasa Marga,False,False,False
+Java Trans-Java Toll Road,Greater Jakarta,Jakarta–Tangerang Toll Road,27,Jasa Marga,False,False,False
+Java Trans-Java Toll Road,Greater Jakarta,Jakarta–Serpong Toll Road,12,Jasa Marga (Ulujami–Pondok Aren) Bintaro Serpong Damai (Ulujami–Pondok Aren),False,False,False
+Java Trans-Java Toll Road,Greater Jakarta,Depok–Antasari Toll Road,"15.7 (operational), 23 (total)",Citra Waspphutowa,True,False,False
+Java Trans-Java Toll Road,Greater Jakarta,Jakarta–Bogor–Ciawi Toll Road,47,Jasa Marga,False,False,False
+Java Trans-Java Toll Road,Greater Jakarta,Jakarta–Cikampek Toll Road,72,Jasa Marga,False,False,False
+Java Trans-Java Toll Road,Greater Jakarta,Jakarta Inner Ring Road,46,Jasa Marga (Pluit–Cawang) Citra Marga Nusaphala Persada (Cawang–Tanjung Priok–Pluit),False,False,False
+Java Trans-Java Toll Road,Greater Jakarta,Jakarta Outer Ring Road,65,Jakarta Lingkar Barat Satu (Penjaringan–Kembangan) (W1) Marga Lingkar Jakarta (Kembangan–Ulujami) (W2) Jasa Marga (Ulujami–Pondok Pinang) (W3) Hutama Karya (Ciputat–TMII) (S) Jasa Marga (TMII–Cikunir–Cilincing) (E1–E2–E3) Hutama Karya ( Tanjung Priok Access Toll Road ) (N),False,False,False
+Java Trans-Java Toll Road,Greater Jakarta,Jakarta Inner Ring Road 2 (6 Inner City Toll Roads),"9.44 (operational), 69.77 (total)",Jakarta Toll Road Development (Sunter– Kelapa Gading–Pulogebang ) (Semanan–Grogol–Sunter) (Duri Pulo–Kampung Melayu) (Kampung Melayu–Kemayoran) (Ulujami–Tanah Abang) (Pasar Minggu–Casablanca Toll Road),True,False,False
+Java Trans-Java Toll Road,Greater Jakarta,Jakarta Outer Ring Road 2,110.4,Jasamarga Kunciran Cengkareng ( Cengkareng – Kunciran ) Marga Trans Nusantara ( Kunciran–Serpong ) Cinere Serpong Jaya ( Serpong–Pamulang ) Translingkar Kita Jaya ( Cinere–Jagorawi ) Cimanggis Cibitung Tollways ( Cimanggis – Cibitung ) Cibitung Tanjung Priok Port Tollways ( Cibitung–Cilincing ),False,False,False
+Java Trans-Java Toll Road,Greater Jakarta,Jakarta Outer Ring Road 3,283.71 (estimation),Duta Graha Karya ( Kamal–Teluk Naga–Rajeg ) Djarum ( Semanan–Balaraja ) Trans Bumi Serbaraja ( Serpong–Balaraja ) tba (Serpong–Bitung–Batu Ceper) Persada Utama Infra ( Bogor–Serpong via Parung [ 3 ] [ circular reference ] ) Marga Sarana Jabar [ BORR ( Bogor Outer Ring Road ) ] Persada Utama Infra ( Sentul–Karawang Barat [ 4 ] [ circular reference ] ) tba (Karawang Barat–Babelan) tba (Babelan–Pulogebang),True,False,False
+Java Trans-Java Toll Road,Greater Jakarta,Bekasi–Cawang–Kampung Melayu Toll Road,"21.49 (operational), 33,89 (total)",Kresna Kusuma Dyandra Marga,True,False,False
+Java Trans-Java Toll Road,Greater Jakarta,Jakarta–Cikampek Elevated Toll Road,36.4,Jasamarga Jalan layang Cikampek,False,False,False
+Java Trans-Java Toll Road,Greater Jakarta,Jakarta Harbour Road 2 (Tanjung Priok–Ancol Timur–Pluit) Toll Road [ 5 ],9.60 ( under construction ),Citra Marga Nusaphala Persada,True,True,False
+Java Trans-Java Toll Road,Greater Jakarta,Jakarta–Cikampek 2 South Toll Road,62 ( under construction ),Jasamarga Japek Selatan,True,True,False
+Java Trans-Java Toll Road,Greater Jakarta,Bogor Ring Road Toll Road,"8.5 (operational), 13 (total)",Marga Sarana Jabar,True,False,False
+Banten,Greater Jakarta,Tangerang–Merak Toll Road,73,Marga Mandala Sakti,False,False,False
+Banten,Greater Jakarta,Serang–Panimbang Toll Road,"26.5 (operational), 83.5 (total)",Wijaya Karya Serang Panimbang,True,False,False
+"West Java (exclude Bogor, Depok, and Bekasi)",Greater Jakarta,Cikampek–Purwakarta–Padalarang Toll Road,58.3,Jasa Marga,False,False,False
+"West Java (exclude Bogor, Depok, and Bekasi)",Greater Jakarta,Padalarang–Cileunyi Toll Road,36,Jasa Marga,False,False,False
+"West Java (exclude Bogor, Depok, and Bekasi)",Greater Jakarta,Cileunyi–Sumedang–Dawuan Toll Road,62.6,Citra Karya Jabar,False,False,False
+"West Java (exclude Bogor, Depok, and Bekasi)",Greater Jakarta,Soreang–Pasir Koja Toll Road,10.6,Citra Marga Lintas Jabar,False,False,False
+"West Java (exclude Bogor, Depok, and Bekasi)",Greater Jakarta,Cikopo–Palimanan Toll Road,116.75,Lintas Marga Sedaya,False,False,False
+"West Java (exclude Bogor, Depok, and Bekasi)",Greater Jakarta,Palimanan–Kanci Toll Road,26,Jasa Marga,False,False,False
+"West Java (exclude Bogor, Depok, and Bekasi)",Greater Jakarta,Kanci–Pejagan Toll Road,35,Semesta Marga Raya,False,False,False
+"West Java (exclude Bogor, Depok, and Bekasi)",Greater Jakarta,Ciawi–Sukabumi,"27.3 (operational), 53.6 (total)",Trans Jabar Tol,True,False,False
+"West Java (exclude Bogor, Depok, and Bekasi)",Greater Jakarta,Gedebage–Tasikmalaya–Cilacap [ 6 ],206.65 (in preparation ),tba,True,False,True
+Central Java & Yogyakarta,Greater Jakarta,Pejagan-Pemalang Toll Road,57.5,Pejagan Pemalang Toll Road,False,False,False
+Central Java & Yogyakarta,Greater Jakarta,Pemalang-Batang Toll Road,39,Pemalang Batang Toll Road,False,False,False
+Central Java & Yogyakarta,Greater Jakarta,Batang-Semarang Toll Road,75,Jasamarga Semarang Batang,False,False,False
+Central Java & Yogyakarta,Greater Jakarta,Semarang ABC Toll Road,25,Jasa Marga,False,False,False
+Central Java & Yogyakarta,Greater Jakarta,Semarang–Demak Toll Road,"16,01 (operational) 24.74 (total)",PP Semarang Demak,True,False,False
+Central Java & Yogyakarta,Greater Jakarta,Demak–Tuban Toll Road,176.99 (in preparation ),tba,True,False,True
+Central Java & Yogyakarta,Greater Jakarta,Harbour Toll Road Semarang (Semarang–Kendal),"20,86 (in preparation )",tba,True,False,True
+Central Java & Yogyakarta,Greater Jakarta,Semarang–Solo Toll Road,72.68,Trans Marga Jateng,False,False,False
+Central Java & Yogyakarta,Greater Jakarta,Solo–Ngawi Toll Road,90.43,Jasamarga Solo Ngawi,False,False,False
+Central Java & Yogyakarta,Greater Jakarta,Yogyakarta–Solo Toll Road,58.01 ( under construction ),Jasamarga Jogja Solo,True,True,False
+Central Java & Yogyakarta,Greater Jakarta,Yogyakarta–Sleman–YIA Kulonprogo Toll Road,35.74 (in preparation ),Jasamarga Jogja Solo,True,False,True
+Central Java & Yogyakarta,Greater Jakarta,Yogyakarta–Bawen Toll Road [ 7 ],75.82 ( under construction ),Jasa Marga Jogja Bawen,True,True,False
+Central Java & Yogyakarta,Greater Jakarta,Pejagan/Tegal–Cilacap Toll Road,141 (in preparation ),tba,True,False,True
+Central Java & Yogyakarta,Greater Jakarta,Cilacap–Yogyakarta Toll Road,167.07 (in preparation ),tba,True,False,True
+East Java,Greater Jakarta,Krian–Legundi–Bunder–Manyar Toll Road,"29 (operational), 38 (total)",Waskita Bumi Wira,True,False,False
+East Java,Greater Jakarta,Waru-Juanda Toll Road,13,Citra Margatama Surabaya,False,False,False
+East Java,Greater Jakarta,Surabaya–Mojokerto Toll Road,36.27,Jasamarga Surabaya Mojokerto,False,False,False
+East Java,Greater Jakarta,Jombang–Mojokerto Toll Road,40.5,Astra Tol Nusantara,False,False,False
+East Java,Greater Jakarta,Ngawi–Kertosono Toll Road,87,Jasamarga Ngawi Kertosono Kediri,False,False,False
+East Java,Greater Jakarta,Surabaya–Gresik Toll Road,21,Margabumi Matraraya,False,False,False
+East Java,Greater Jakarta,Surabaya–Gempol Toll Road,43,Jasa Marga,False,False,False
+East Java,Greater Jakarta,Gempol–Pandaan Toll Road,14,Jasa Marga Pandaan Tol,False,False,False
+East Java,Greater Jakarta,Pandaan-Malang Toll Road,38.5,Jasamarga Pandaan Malang,True,False,False
+East Java,Greater Jakarta,Gempol–Pasuruan Toll Road,34.15,Jasamarga Gempol Pasuruan,False,False,False
+East Java,Greater Jakarta,Pasuruan–Probolinggo Toll Road,39.85,Trans-Jawa Paspro Jalan Tol,False,False,False
+East Java,Greater Jakarta,Probolinggo–Banyuwangi Toll Road,176.4 ( under construction ),Jasamarga Probolinggo Banyuwangi (JPB),True,True,False
+Bali,Bali,Bali Mandara Toll Road,10,Jasamarga Bali Tol,False,False,False
+Bali,Bali,Gilimanuk–Mengwi Toll Road,"96,84 ( in preparation )",tba,True,False,True
+Kalimantan,East Kalimantan,Balikpapan–Samarinda Toll Road,99.3,Jasa Marga,False,False,False
+Sulawesi,East Kalimantan,Manado–Bitung Toll Road,40,Jasamarga Manado Bitung,False,False,False
+South Sulawesi,East Kalimantan,Ir. Sutami Toll Road,12,Jalan Tol Seksi Empat,False,False,False
+South Sulawesi,East Kalimantan,Reformasi Toll Road,6,Bosowa Marga Nusantara,False,False,False

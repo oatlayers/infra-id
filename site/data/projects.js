@@ -1,0 +1,761 @@
+window.PROJECTS = {
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          95.61866,
+          5.47624
+        ]
+      },
+      "properties": {
+        "id": "tol-sigli-banda-aceh",
+        "name": "Sigli–Banda Aceh Toll Road",
+        "sector": "road",
+        "status": "under_construction",
+        "status_basis": "BPJT: Operasi Sebagian, 48.58 of 74.21 km operational, 24.67 km under construction; Section 6 Kuto Baro–Baitussalam (5 km) was complete in June 2025.",
+        "province": "Aceh",
+        "route": "Banda Aceh–Sigli",
+        "length_km": "74.214",
+        "operator": "PT Hutama Karya (Persero)",
+        "opened_year": "",
+        "precision": "approximate",
+        "source_url": "https://itrams-api.bpjt.pu.go.id/v1/reference/api/toll-road-list",
+        "source_type": "official",
+        "retrieved_on": "2026-11-06",
+        "last_verified": "2026-11-06",
+        "notes": "English Wikipedia says 49.8 km operational of 74 km. BPJT gives no full-corridor opening date. Section 1 Padang Tiji–Seulimeum (24.67 km) was targeted for 2026."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          98.22961,
+          4.06697
+        ]
+      },
+      "properties": {
+        "id": "tol-binjai-langsa",
+        "name": "Binjai–Langsa Toll Road",
+        "sector": "road",
+        "status": "under_construction",
+        "status_basis": "BPJT: Operasi, 57.23 of 130.9 km operational; remaining sections under construction. Section 3 Tanjung Pura–Pangkalan Brandan (18.9 km) opened 11 March 2025.",
+        "province": "Aceh; North Sumatra",
+        "route": "Binjai–Langsa",
+        "length_km": "130.9",
+        "operator": "PT Hutama Karya (Persero)",
+        "opened_year": "",
+        "precision": "approximate",
+        "source_url": "https://itrams-api.bpjt.pu.go.id/v1/reference/api/toll-road-list",
+        "source_type": "official",
+        "retrieved_on": "2026-11-06",
+        "last_verified": "2026-11-06",
+        "notes": "BPJT status says Operasi although 73.7 km is not open; idwiki marks the corridor as partly open. Conflict recorded."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.79201,
+          -0.19919
+        ]
+      },
+      "properties": {
+        "id": "tol-padang-pekanbaru",
+        "name": "Padang–Pekanbaru Toll Road",
+        "sector": "road",
+        "status": "under_construction",
+        "status_basis": "BPJT: Operasi Sebagian, 91.04 of 254.8 km operational, 9.11 km under construction. Padang–Sicincin (36 km) opened 28 May 2025.",
+        "province": "West Sumatra; Riau",
+        "route": "Padang–Pekanbaru",
+        "length_km": "254.8",
+        "operator": "PT Hutama Karya (Persero)",
+        "opened_year": "",
+        "precision": "approximate",
+        "source_url": "https://itrams-api.bpjt.pu.go.id/v1/reference/api/toll-road-list",
+        "source_type": "official",
+        "retrieved_on": "2026-11-06",
+        "last_verified": "2026-11-06",
+        "notes": "English Wikipedia says 38 km of 255 km operational (stale). The BPJT row covers the full Padang–Pekanbaru corridor via Bangkinang, Payakumbuh, Bukittinggi and Padang Panjang."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          102.59529,
+          -3.61202
+        ]
+      },
+      "properties": {
+        "id": "tol-bengkulu-lubuk-linggau",
+        "name": "Bengkulu–Lubuk Linggau Toll Road",
+        "sector": "road",
+        "status": "under_construction",
+        "status_basis": "BPJT: Operasi Sebagian, 16.73 of 95.8 km operational; no active construction km recorded.",
+        "province": "Bengkulu; South Sumatra",
+        "route": "Bengkulu–Lubuk Linggau",
+        "length_km": "95.8",
+        "operator": "PT Hutama Karya (Persero)",
+        "opened_year": "",
+        "precision": "approximate",
+        "source_url": "https://itrams-api.bpjt.pu.go.id/v1/reference/api/toll-road-list",
+        "source_type": "official",
+        "retrieved_on": "2026-11-06",
+        "last_verified": "2026-11-06",
+        "notes": "English Wikipedia says 18 km of 95 km operational. BPJT shows no active construction despite the partial status; verify before treating the remaining sections as active."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.78933,
+          -3.20712
+        ]
+      },
+      "properties": {
+        "id": "tol-kayu-agung-palembang-betung",
+        "name": "Kayu Agung–Palembang–Betung Toll Road",
+        "sector": "road",
+        "status": "under_construction",
+        "status_basis": "English Wikipedia: 42.5 of 111.7 km operational. BPJT lists only Kayuagung–Palembang (37.62 of 42.5 km operational); the Palembang–Betung link is covered by the Betung–Tempino–Jambi row.",
+        "province": "South Sumatra",
+        "route": "Kayu Agung–Palembang–Betung",
+        "length_km": "111.7",
+        "operator": "PT. Waskita Sriwijaya Tol",
+        "opened_year": "",
+        "precision": "approximate",
+        "source_url": "https://itrams-api.bpjt.pu.go.id/v1/reference/api/toll-road-list",
+        "source_type": "official",
+        "retrieved_on": "2026-11-06",
+        "last_verified": "2026-11-06",
+        "notes": "The corridor is split across two BPJT rows. Length and operating figures conflict. Palembang–Betung sections were targeted for 2026."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          99.2,
+          3.01
+        ]
+      },
+      "properties": {
+        "id": "tol-kuala-tanjung-tebing-tinggi-parapat",
+        "name": "Kuala Tanjung–Tebing Tinggi–Parapat Toll Road",
+        "sector": "road",
+        "status": "under_construction",
+        "status_basis": "idwiki: 125.45 of 143.25 km operational; remaining sections under construction. Kuala Tanjung–Indrapura (10.15 km) opened in 2025.",
+        "province": "North Sumatra",
+        "route": "Kuala Tanjung–Tebing Tinggi–Parapat",
+        "length_km": "143.25",
+        "operator": "PT Hutama Karya (Persero)",
+        "opened_year": "",
+        "precision": "approximate",
+        "source_url": "https://id.wikipedia.org/w/index.php?oldid=30025554",
+        "source_type": "secondary",
+        "retrieved_on": "2026-11-06",
+        "last_verified": "2026-11-06",
+        "notes": "Not in the BPJT toll-road-list API. English Wikipedia omits this corridor. Source is Indonesian Wikipedia, so treat the status as secondary."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.8459,
+          -2.21329
+        ]
+      },
+      "properties": {
+        "id": "tol-betung-tempino-jambi",
+        "name": "Betung–Tempino–Jambi Toll Road",
+        "sector": "road",
+        "status": "under_construction",
+        "status_basis": "BPJT: Operasi Sebagian, 52.59 of 170.73 km operational, 118.14 km under construction.",
+        "province": "South Sumatra; Jambi",
+        "route": "Betung–Tempino–Jambi",
+        "length_km": "170.73",
+        "operator": "PT Hutama Karya (Persero)",
+        "opened_year": "",
+        "precision": "approximate",
+        "source_url": "https://itrams-api.bpjt.pu.go.id/v1/reference/api/toll-road-list",
+        "source_type": "official",
+        "retrieved_on": "2026-11-06",
+        "last_verified": "2026-11-06",
+        "notes": "Section 4 Tempino–Interchange Ness (18.49 km) was in ULFO in September 2025. Section 2 Tungkal Jaya–Bayung Lencir (54.3 km) was targeted for 2026."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.78616,
+          -6.4053
+        ]
+      },
+      "properties": {
+        "id": "tol-depok-antasari",
+        "name": "Depok–Antasari Toll Road",
+        "sector": "road",
+        "status": "under_construction",
+        "status_basis": "BPJT: Operasi Sebagian, 12.1 of 27.94 km operational; no active construction km recorded.",
+        "province": "DKI Jakarta; West Java",
+        "route": "Depok–Antasari",
+        "length_km": "27.94",
+        "operator": "PT Citra Waspphutowa",
+        "opened_year": "",
+        "precision": "approximate",
+        "source_url": "https://itrams-api.bpjt.pu.go.id/v1/reference/api/toll-road-list",
+        "source_type": "official",
+        "retrieved_on": "2026-11-06",
+        "last_verified": "2026-11-06",
+        "notes": "English Wikipedia says 15.7 of 23 km (stale). BPJT lists no active construction; the remaining section may be delayed. Verify."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.82926,
+          -6.17264
+        ]
+      },
+      "properties": {
+        "id": "tol-jakarta-inner-ring-road-2",
+        "name": "Jakarta Inner Ring Road 2 (6 Inner City Toll Roads)",
+        "sector": "road",
+        "status": "under_construction",
+        "status_basis": "BPJT: 6 Ruas Tol DKI, Operasi Sebagian, 9.287 of 29.67 km operational; no active construction km recorded.",
+        "province": "DKI Jakarta",
+        "route": "Jakarta inner ring, six sections",
+        "length_km": "69.77",
+        "operator": "PT Jakarta Tollroad Development",
+        "opened_year": "",
+        "precision": "approximate",
+        "source_url": "https://itrams-api.bpjt.pu.go.id/v1/reference/api/toll-road-list",
+        "source_type": "official",
+        "retrieved_on": "2026-11-06",
+        "last_verified": "2026-11-06",
+        "notes": "English Wikipedia gives 69.77 km for six inner-city toll roads. Only Sunter–Pulogebang is open; the other five sections have no construction recorded by BPJT. Status may be planned or stalled."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.93568,
+          -6.23366
+        ]
+      },
+      "properties": {
+        "id": "tol-bekasi-cawang-kampung-melayu",
+        "name": "Bekasi–Cawang–Kampung Melayu Toll Road",
+        "sector": "road",
+        "status": "under_construction",
+        "status_basis": "BPJT: Operasi, 15.28 of 21.04 km operational; no active construction km recorded.",
+        "province": "DKI Jakarta; West Java",
+        "route": "Bekasi–Cawang–Kampung Melayu",
+        "length_km": "21.04",
+        "operator": "PT Kresna Kusuma Dyandra Marga",
+        "opened_year": "",
+        "precision": "approximate",
+        "source_url": "https://itrams-api.bpjt.pu.go.id/v1/reference/api/toll-road-list",
+        "source_type": "official",
+        "retrieved_on": "2026-11-06",
+        "last_verified": "2026-11-06",
+        "notes": "English Wikipedia says 21.49 of 33.89 km; idwiki says 11.54 of 21.04 km. The three sources disagree on scope. BPJT status says Operasi despite the shortfall."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.8268,
+          -6.18825
+        ]
+      },
+      "properties": {
+        "id": "tol-jakarta-harbour-road-2",
+        "name": "Jakarta Harbour Road 2 Toll Road",
+        "sector": "road",
+        "status": "under_construction",
+        "status_basis": "BPJT: Cawang–Tanjung Priok–Ancol Timur–Jembatan Tiga/Pluit, Operasi Sebagian, 27.05 of 36 km operational, 8.95 km under construction. BPJT (Sept 2026): Harbour Road II 47.41% complete, functional target Q1 2028.",
+        "province": "DKI Jakarta",
+        "route": "Tanjung Priok–Ancol Timur–Pluit",
+        "length_km": "9.6",
+        "operator": "PT. Citra Marga Nusaphala Persada Tbk.",
+        "opened_year": "",
+        "precision": "approximate",
+        "source_url": "https://itrams-api.bpjt.pu.go.id/v1/reference/api/toll-road-list",
+        "source_type": "official",
+        "retrieved_on": "2026-11-06",
+        "last_verified": "2026-11-06",
+        "notes": "English Wikipedia lists 9.6 km under construction. The BPJT row covers a wider 36 km set of sections; 9.6 km is the Harbour Road II component."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.21,
+          -6.4
+        ]
+      },
+      "properties": {
+        "id": "tol-jakarta-cikampek-2-south",
+        "name": "Jakarta–Cikampek II South Toll Road",
+        "sector": "road",
+        "status": "under_construction",
+        "status_basis": "English Wikipedia: 62 km under construction. idwiki: 7.3 of 64 km operational.",
+        "province": "DKI Jakarta; West Java",
+        "route": "Jakarta–Cikampek (southern route)",
+        "length_km": "62.0",
+        "operator": "PT Jasamarga Japek Selatan",
+        "opened_year": "",
+        "precision": "approximate",
+        "source_url": "https://en.wikipedia.org/w/index.php?oldid=1329385293",
+        "source_type": "secondary",
+        "retrieved_on": "2026-11-06",
+        "last_verified": "2026-11-06",
+        "notes": "The BPJT toll-road-list API has no row for this project. 54.75 km was targeted for 2026. Coordinates are an approximate midpoint of the Setu–Sadang alignment."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.79,
+          -6.58
+        ]
+      },
+      "properties": {
+        "id": "tol-bogor-ring-road",
+        "name": "Bogor Ring Road",
+        "sector": "road",
+        "status": "under_construction",
+        "status_basis": "BPJT: Operasi Sebagian, 11.3 of 11.95 km operational; no active construction km recorded.",
+        "province": "West Java",
+        "route": "Bogor outer ring",
+        "length_km": "11.95",
+        "operator": "PT. Marga Sarana Jabar",
+        "opened_year": "",
+        "precision": "approximate",
+        "source_url": "https://itrams-api.bpjt.pu.go.id/v1/reference/api/toll-road-list",
+        "source_type": "official",
+        "retrieved_on": "2026-11-06",
+        "last_verified": "2026-11-06",
+        "notes": "English Wikipedia says 8.5 of 13 km (stale). Only the BORR 3B section remains. BPJT endpoint coordinates for this row fall west of Bogor city, so the marker uses Bogor city centre."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.01067,
+          -6.32871
+        ]
+      },
+      "properties": {
+        "id": "tol-serang-panimbang",
+        "name": "Serang–Panimbang Toll Road",
+        "sector": "road",
+        "status": "under_construction",
+        "status_basis": "BPJT: Operasi Sebagian, 26.495 of 83.67 km operational, 57.17 km under construction.",
+        "province": "Banten",
+        "route": "Serang–Panimbang",
+        "length_km": "83.67",
+        "operator": "PT Wijaya Karya Serang Panimbang",
+        "opened_year": "",
+        "precision": "approximate",
+        "source_url": "https://itrams-api.bpjt.pu.go.id/v1/reference/api/toll-road-list",
+        "source_type": "official",
+        "retrieved_on": "2026-11-06",
+        "last_verified": "2026-11-06",
+        "notes": "Section 1 Serang–Rangkasbitung (26.5 km) opened in 2021. Sections 2 and 3 were targeted for 2026."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.92329,
+          -6.76874
+        ]
+      },
+      "properties": {
+        "id": "tol-ciawi-sukabumi",
+        "name": "Ciawi–Sukabumi Toll Road",
+        "sector": "road",
+        "status": "under_construction",
+        "status_basis": "BPJT: Operasi Sebagian, 26.4 of 54 km operational, 13.7 km under construction.",
+        "province": "West Java",
+        "route": "Ciawi–Sukabumi",
+        "length_km": "54.0",
+        "operator": "PT Trans Jabar Tol",
+        "opened_year": "",
+        "precision": "approximate",
+        "source_url": "https://itrams-api.bpjt.pu.go.id/v1/reference/api/toll-road-list",
+        "source_type": "official",
+        "retrieved_on": "2026-11-06",
+        "last_verified": "2026-11-06",
+        "notes": "English Wikipedia says 27.3 of 53.6 km. Section 3 Cibadak–Cisaat (13.7 km) was targeted for 2026."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.54799,
+          -6.93745
+        ]
+      },
+      "properties": {
+        "id": "tol-semarang-demak",
+        "name": "Semarang–Demak Toll Road",
+        "sector": "road",
+        "status": "under_construction",
+        "status_basis": "BPJT: Operasi Sebagian, 16.01 of 27 km operational, 10.64 km under construction.",
+        "province": "Central Java",
+        "route": "Semarang–Demak",
+        "length_km": "27.0",
+        "operator": "PT Pembangunan Perumahan Semarang Demak",
+        "opened_year": "",
+        "precision": "approximate",
+        "source_url": "https://itrams-api.bpjt.pu.go.id/v1/reference/api/toll-road-list",
+        "source_type": "official",
+        "retrieved_on": "2026-11-06",
+        "last_verified": "2026-11-06",
+        "notes": "English Wikipedia says 16.01 of 24.74 km. Section 1A/1C (3.66 km) was targeted for 2026."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.37658,
+          -7.70573
+        ]
+      },
+      "properties": {
+        "id": "tol-solo-yogyakarta-nyia",
+        "name": "Solo–Yogyakarta–NYIA Kulon Progo Toll Road",
+        "sector": "road",
+        "status": "under_construction",
+        "status_basis": "BPJT: Operasi Sebagian, 30.15 of 96.57 km operational, 19.11 km under construction. Klaten–Prambanan (7.85 km) opened 2 July 2025; Kartasura–Klaten (22.3 km) opened September 2024.",
+        "province": "DI Yogyakarta; Central Java",
+        "route": "Solo–Yogyakarta–YIA Kulon Progo",
+        "length_km": "96.57",
+        "operator": "PT Jasamarga Jogja Solo",
+        "opened_year": "",
+        "precision": "approximate",
+        "source_url": "https://itrams-api.bpjt.pu.go.id/v1/reference/api/toll-road-list",
+        "source_type": "official",
+        "retrieved_on": "2026-11-06",
+        "last_verified": "2026-11-06",
+        "notes": "English Wikipedia splits the corridor into Yogyakarta–Solo (58.01 km, under construction) and Yogyakarta–Sleman–YIA (35.74 km, in preparation). BPJT treats it as one 96.57 km corridor."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.39,
+          -7.52
+        ]
+      },
+      "properties": {
+        "id": "tol-yogyakarta-bawen",
+        "name": "Yogyakarta–Bawen Toll Road",
+        "sector": "road",
+        "status": "under_construction",
+        "status_basis": "English Wikipedia: 75.82 km under construction. Seksi 6 Ambarawa–Bawen (4.98 km) targeted November 2026; Seksi 1 Sleman–Banyurejo near completion.",
+        "province": "DI Yogyakarta; Central Java",
+        "route": "Yogyakarta–Bawen",
+        "length_km": "75.82",
+        "operator": "PT Jasa Marga Jogja Bawen",
+        "opened_year": "",
+        "precision": "approximate",
+        "source_url": "https://en.wikipedia.org/w/index.php?oldid=1329385293",
+        "source_type": "secondary",
+        "retrieved_on": "2026-11-06",
+        "last_verified": "2026-11-06",
+        "notes": "idwiki lists 0 km operational. The BPJT toll-road-list API has no row. Coordinates are an approximate midpoint of the alignment."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          112.57044,
+          -7.25363
+        ]
+      },
+      "properties": {
+        "id": "tol-krian-legundi-bunder-manyar",
+        "name": "Krian–Legundi–Bunder–Manyar Toll Road",
+        "sector": "road",
+        "status": "under_construction",
+        "status_basis": "BPJT: Operasi, 29 of 38.29 km operational, 9.29 km under construction.",
+        "province": "East Java",
+        "route": "Krian–Legundi–Bunder–Manyar",
+        "length_km": "38.29",
+        "operator": "PT Waskita Bumi Wira",
+        "opened_year": "",
+        "precision": "approximate",
+        "source_url": "https://itrams-api.bpjt.pu.go.id/v1/reference/api/toll-road-list",
+        "source_type": "official",
+        "retrieved_on": "2026-11-06",
+        "last_verified": "2026-11-06",
+        "notes": "BPJT status says Operasi despite 9.29 km under construction. English Wikipedia says 29 of 38 km."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          113.85382,
+          -7.99168
+        ]
+      },
+      "properties": {
+        "id": "tol-probolinggo-banyuwangi",
+        "name": "Probolinggo–Banyuwangi Toll Road",
+        "sector": "road",
+        "status": "under_construction",
+        "status_basis": "BPJT: Operasi Sebagian, 23.515 of 172.9 km operational, 25.6 km under construction. Sections 1–2 Gending–Paiton (24 km) were complete in 2026 and awaiting ULFO.",
+        "province": "East Java",
+        "route": "Probolinggo–Banyuwangi",
+        "length_km": "172.9",
+        "operator": "PT Jasamarga Probolinggo Banyuwangi",
+        "opened_year": "",
+        "precision": "approximate",
+        "source_url": "https://itrams-api.bpjt.pu.go.id/v1/reference/api/toll-road-list",
+        "source_type": "official",
+        "retrieved_on": "2026-11-06",
+        "last_verified": "2026-11-06",
+        "notes": "English Wikipedia says 176.4 km. idwiki says 173 km and 23.515 km operational."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.65,
+          -6.25
+        ]
+      },
+      "properties": {
+        "id": "tol-jorr-3",
+        "name": "Jakarta Outer Ring Road 3",
+        "sector": "road",
+        "status": "planned",
+        "status_basis": "English Wikipedia: italic, 283.71 km estimated, no operational sections.",
+        "province": "DKI Jakarta; Banten; West Java",
+        "route": "Jakarta outer ring 3",
+        "length_km": "283.71",
+        "operator": "Various (see notes)",
+        "opened_year": "",
+        "precision": "approximate",
+        "source_url": "https://en.wikipedia.org/w/index.php?oldid=1329385293",
+        "source_type": "secondary",
+        "retrieved_on": "2026-11-06",
+        "last_verified": "2026-11-06",
+        "notes": "Master-plan ring road with sections at different stages. Kamal–Teluknaga–Rajeg (4.7 of 38.6 km open) and Serpong–Balaraja (9.3 of 30 km open) are under construction; others are planned. BPJT API has no JORR 3 row."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.35,
+          -7.34
+        ]
+      },
+      "properties": {
+        "id": "tol-gedebage-tasikmalaya-cilacap",
+        "name": "Gedebage–Tasikmalaya–Cilacap Toll Road",
+        "sector": "road",
+        "status": "planned",
+        "status_basis": "English Wikipedia: 206.65 km in preparation.",
+        "province": "West Java; Central Java",
+        "route": "Gedebage–Tasikmalaya–Cilacap",
+        "length_km": "206.65",
+        "operator": "tba",
+        "opened_year": "",
+        "precision": "approximate",
+        "source_url": "https://en.wikipedia.org/w/index.php?oldid=1329385293",
+        "source_type": "secondary",
+        "retrieved_on": "2026-11-06",
+        "last_verified": "2026-11-06",
+        "notes": "idwiki: 206.65 km, 0 operational. Not in the BPJT toll-road-list API. Also called Getaci. A 2026 report says it is still at the potential/tender stage."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          111.35,
+          -6.9
+        ]
+      },
+      "properties": {
+        "id": "tol-demak-tuban",
+        "name": "Demak–Tuban Toll Road",
+        "sector": "road",
+        "status": "planned",
+        "status_basis": "English Wikipedia: 176.99 km in preparation.",
+        "province": "Central Java; East Java",
+        "route": "Demak–Tuban",
+        "length_km": "176.99",
+        "operator": "PT HM Sampoerna (idwiki); tba (enwiki)",
+        "opened_year": "",
+        "precision": "approximate",
+        "source_url": "https://en.wikipedia.org/w/index.php?oldid=1329385293",
+        "source_type": "secondary",
+        "retrieved_on": "2026-11-06",
+        "last_verified": "2026-11-06",
+        "notes": "idwiki: 171.93 km, 0 operational. Not in the BPJT toll-road-list API. Operators conflict between the two Wikipedia articles."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.31,
+          -6.95
+        ]
+      },
+      "properties": {
+        "id": "tol-semarang-kendal",
+        "name": "Harbour Toll Road Semarang (Semarang–Kendal)",
+        "sector": "road",
+        "status": "planned",
+        "status_basis": "English Wikipedia: 20.86 km in preparation.",
+        "province": "Central Java",
+        "route": "Semarang–Kendal",
+        "length_km": "20.86",
+        "operator": "tba",
+        "opened_year": "",
+        "precision": "approximate",
+        "source_url": "https://en.wikipedia.org/w/index.php?oldid=1329385293",
+        "source_type": "secondary",
+        "retrieved_on": "2026-11-06",
+        "last_verified": "2026-11-06",
+        "notes": "Not in the BPJT toll-road-list API."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.08,
+          -7.3
+        ]
+      },
+      "properties": {
+        "id": "tol-pejagan-tegal-cilacap",
+        "name": "Pejagan/Tegal–Cilacap Toll Road",
+        "sector": "road",
+        "status": "planned",
+        "status_basis": "English Wikipedia: 141 km in preparation.",
+        "province": "Central Java",
+        "route": "Pejagan/Tegal–Cilacap",
+        "length_km": "141.0",
+        "operator": "tba",
+        "opened_year": "",
+        "precision": "approximate",
+        "source_url": "https://en.wikipedia.org/w/index.php?oldid=1329385293",
+        "source_type": "secondary",
+        "retrieved_on": "2026-11-06",
+        "last_verified": "2026-11-06",
+        "notes": "Not in the BPJT toll-road-list API."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.69,
+          -7.77
+        ]
+      },
+      "properties": {
+        "id": "tol-cilacap-yogyakarta",
+        "name": "Cilacap–Yogyakarta Toll Road",
+        "sector": "road",
+        "status": "planned",
+        "status_basis": "English Wikipedia: 167.07 km in preparation.",
+        "province": "Central Java; DI Yogyakarta",
+        "route": "Cilacap–Yogyakarta",
+        "length_km": "167.07",
+        "operator": "PT Putera Jaya Sakti Perkasa (idwiki); tba (enwiki)",
+        "opened_year": "",
+        "precision": "approximate",
+        "source_url": "https://en.wikipedia.org/w/index.php?oldid=1329385293",
+        "source_type": "secondary",
+        "retrieved_on": "2026-11-06",
+        "last_verified": "2026-11-06",
+        "notes": "idwiki: 121.75 km, 0 operational. Not in the BPJT toll-road-list API. Length and operator conflict between the two Wikipedia articles."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.81,
+          -8.3
+        ]
+      },
+      "properties": {
+        "id": "tol-gilimanuk-mengwi",
+        "name": "Gilimanuk–Mengwi Toll Road",
+        "sector": "road",
+        "status": "planned",
+        "status_basis": "English Wikipedia: 96.84 km in preparation.",
+        "province": "Bali",
+        "route": "Gilimanuk–Mengwi",
+        "length_km": "96.84",
+        "operator": "Tol Jagat Kerthi Bali (idwiki); tba (enwiki)",
+        "opened_year": "",
+        "precision": "approximate",
+        "source_url": "https://en.wikipedia.org/w/index.php?oldid=1329385293",
+        "source_type": "secondary",
+        "retrieved_on": "2026-11-06",
+        "last_verified": "2026-11-06",
+        "notes": "idwiki: 95.51 km, 0 operational. Not in the BPJT toll-road-list API. Also called Tol Bali Barat."
+      }
+    }
+  ]
+};

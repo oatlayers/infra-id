@@ -1,0 +1,801 @@
+{{Infobox road
+| name = Jalan tol di Indonesia
+| marker_image = [[File:ID Rambu petunjuk 4a.svg|52px]] [[File:ID Tol12-1.svg|70px]]
+| map = Map of Indonesian Toll Road System.png
+| maint = berbagai Badan Usaha Jalan Tol (BUJT) dibawah [[konsesi]] dari [[Kementerian Pekerjaan Umum Republik Indonesia|Kementerian Pekerjaan Umum]]
+| length_mi = 
+| length_km = 3116
+| length_round = 
+| length_ref = <ref>{{cite web |last1=BPJT|date=Maret 2026|title= Panjang Jalan Tol di RI hingga Maret 2026, mencapai 3.115,98 Kilometer|url=https://bpjt.pu.go.id/|website=BPJT}}</ref><ref>{{cite web |last2=Kompas|date=March 2023|title=Hingga Maret 2023, Indonesia Punya Jalan Tol Sepanjang 2.623 Kilometer|url= https://www.kompas.com/properti/read/2023/03/28/150000321/hingga-maret-2023-indonesia-punya-jalan-tol-sepanjang-2.623-kilometer|website=Kompas|access-date=14 April 2023}}</ref>
+| established = 1978
+| country = IDN
+| island = [[Sumatra]], [[Jawa]], [[Bali]], [[Kalimantan]], [[Sulawesi]]
+| ahn = ''(seluruhnya paralel dengan jalan nasional)'':<br>{{AHN-AH|2}} ([[Jalan Tol Trans-Jawa]] ruas utama)<br>{{AHN-AH|25}} ([[Jalan Tol Trans-Sumatra]] ruas utama)<br>{{AHN-AH|150}} ([[Jalan Tol Balikpapan-Samarinda]])<br>{{AHN-AH|152}} (Jalan Tol [[Jalan Tol Jakarta–Bogor–Ciawi|Jagorawi]] dan [[Jalan Tol Bogor–Ciawi–Sukabumi|Bocimi]])
+}}
+'''[[Jalan tol]] di [[Indonesia]]''' adalah sistem [[jalan bebas hambatan terkendali]] dan berbayar di seluruh [[Indonesia]] yang terdaftar dan diatur secara resmi oleh [[Badan Pengatur Jalan Tol]] [[Kementerian Pekerjaan Umum dan Perumahan Rakyat Republik Indonesia|Kementerian Pekerjaan Umum dan Perumahan Rakyat (PUPR) RI]]. Jalan tol di Indonesia sebagian besar berada di Pulau [[Jawa]] dan [[Sumatra]]; dengan sebagian ruas berada di Pulau [[Bali]], [[Kalimantan]], dan [[Sulawesi]].
+
+Hingga awal tahun 2022, bedasarkan data yang ada, sepanjang lebih dari 2.499,06&nbsp;km telah terbangun dan beroperasi,<ref name="panjangtol">[https://databoks.katadata.co.id/datapublish/2022/04/18/ini-panjang-jalan-tol-yang-beroperasi-dari-era-soeharto-sampai-jokowi Ini Panjang Jalan Tol yang Beroperasi dari Era Soeharto sampai Jokowi]</ref> dan di awal 2025 ini, berdasarkan pembaruan dari pangkalan data BPJT, menyatakan bahwa panjang Tol di RI, telah mencapai 3.020,5&nbsp;km yang telah beroperasi di seluruh Indonesia.<ref>{{Cite web|last=BPJT|first=Database BPJT|title=Update Data Panjang Jalan Tol di RI per Januari 2025|url=https://bpjt.pu.go.id/|website=BPJT}}</ref><ref>{{Cite web|last=BPJT PU|first=BPJT PU|title=Panjang Jalan Tol di RI sejak libur NATARU 2024/2025|url=https://bpjt.pu.go.id/berita/kesiapan-infrastruktur-jalan-tol-dalam-kondisi-mantap-dukung-kelancaran-arus-mudik-nataru-20242025|website=BPJT PU}}</ref>
+
+Sebagian jalan tol di Indonesia paralel dengan [[Jalan nasional|jalan-jalan nasional]] (non-tol) yang oleh Kementerian PUPR RI dimasukkan sebagai bagian dari [[Jaringan Jalan Asia]].<ref>{{cite web |title=Kelas Jalan ASEAN Highway |url=http://sigpjj.binamarga.pu.go.id/internal/iyo/page/view/?id=3&title=Kelas+Jalan+ASEAN+Highway |website=Direktorat Jenderal Bina Marga Kementerian Pekerjaan Umum dan Perumahan Rakyat RI |access-date=28 Mei 2023}}</ref>
+
+== Sejarah ==
+
+=== Masa Orde Baru ===
+
+Sejarah jalan tol di Indonesia dimulai pada tahun 1978 dengan dioperasikannya jalan tol Jagorawi dengan panjang 59&nbsp;km (termasuk jalan akses), yang menghubungkan Jakarta, Bogor, dan Ciawi. Pembangunan jalan tol yang dimulai tahun 1975 ini, dilakukan oleh pemerintah dengan dana dari anggaran pemerintah dan pinjaman luar negeri yang diserahkan kepada PT Jasa Marga (Persero) Tbk. sebagai penyertaan modal. Selanjutnya PT Jasa Marga ditugasi oleh pemerintah untuk membangun jalan tol dengan tanah yang dibiayai oleh pemerintah.
+
+[[Berkas:Rambuppj.jpg|250px|jmpl|ka|Jalan tol Jagorawi merupakan jalan tol pertama di Indonesia.]]
+
+Mulai tahun 1987 swasta mulai ikut berpartisipasi dalam investasi jalan tol sebagai operator jalan tol dengan menanda tangani perjanjian kuasa pengusahaan (PKP) dengan PT Jasa Marga. Hingga tahun 2007, 553&nbsp;km jalan tol telah dibangun dan dioperasikan di Indonesia. Dari total panjang tersebut 418&nbsp;km jalan tol dioperasikan oleh PT Jasa Marga dan 135&nbsp;km sisanya dioperasikan oleh swasta lain.
+
+Pada periode 1995 hingga 1997 dilakukan upaya percepatan pembangunan jalan tol melalui tender 19 ruas jalan tol sepanjang 762&nbsp;km. Namun, upaya ini terhenti akibat adanya [[Krisis finansial Asia 1997|krisis moneter]] pada Juli 1997 yang mengakibatkan pemerintah harus menunda program pembangunan jalan tol dengan dikeluarkannya Keputusan Presiden No. 39/1997. Akibat penundaan tersebut pembangunan jalan tol di Indonesia mengalami stagnansi, terbukti dengan hanya terbangunnya 13,30&nbsp;km jalan tol pada periode 1997–2001. Pada tahun 1998 Pemerintah mengeluarkan Keputusan Presiden No.7/1998 tentang Kerja sama Pemerintah dan Swasta dalam penyediaan Infrastruktur.
+
+=== Pasca-Reformasi ===
+
+Selanjutnya pada tahun 2002 Pemerintah mengeluarkan Keputusan Presiden No. 15/2002 tentang penerusan proyek-proyek infrastruktur. Pemerintah juga melakukan evaluasi dan penerusan terhadap pengusahaan proyel-proyek jalan tol yang tertunda. Mulai dari tahun 2001 sampai dengan tahun 2004 terbangun 4 ruas jalan dengan panjang total 41,80&nbsp;km.
+
+Pada tahun 2004 diterbitkan Undang-Undang No.38 tahun 2004 tentang Jalan yang mengamanatkan pembentukan BPJT sebagai pengganti peran regulator yang selama ini dipegang oleh PT Jasa Marga.
+
+Proses pembangunan jalan tol kembali memasuki fase percepatan mulai tahun 2005. Pada 29 Juni 2005 dibentuk Badan Pengatur Jalan Tol sebagai regulator jalan tol di Indonesia. Penerusan terhadap 19 proyek jalan tol yang pembangunannya ditunda pada tahun 1997 kembali dilakukan.
+
+Pada masa yang akan datang pemerintah akan mendanai pembangunan jalan tol dengan menggunakan tiga pendekatan, yaitu pembiayaan penuh oleh swasta, program kerja sama swasta-publik (Public Private Partnership/PPP) serta pembiayaan pembangunan oleh Pemerintah dengan operasi-pemeliharaan oleh swasta.
+
+== Daftar jalan tol ==
+Daftar jalan tol berikut memuat jalan tol yang telah beroperasi, sedang dalam tahap pembangunan di lapangan, dan yang telah dimiliki konsesinya oleh operator atau Badan Usaha Jalan Tol (BUJT). Jalan tol dalam tahap lelang atau yang masih sekadar wacana tidak dimasukkan ke dalam daftar. Beberapa ruas yang pernah dioperasikan secara darurat hanya dalam waktu tertentu (misalnya musim [[mudik]]) dalam daftar ini belum terhitung beroperasi (bertanda warna hijau) hingga benar-benar diresmikan.
+
+{| class="wikitable sortable"
+|-
+! Pulau/Kawasan
+! Provinsi/Daerah Istimewa
+! No. Ruas
+<ref>{{citation|author=Pemerintah Indonesia|year=2019|title=Keputusan Direktur Jenderal Perhubungan Darat Nomor KP.2058/AJ.001/DRJD/2019 tentang Penetapan Nomor Rute Jalan Nasional di Pulau Sumatera|url=http://jdih.dephub.go.id/assets/uudocs/kepEI/2019/KP.2058_.AJ_.001_.DRJD_.2019_.pdf|publisher=Kementerian Perhubungan Republik Indonesia|location=Jakarta|ref={{sfnref|Kepdirjenhubdat KP.2058/AJ.001/DRJD/2019}}|accessdate=2020-06-01|archive-date=2020-10-14|archive-url=https://web.archive.org/web/20201014141658/http://jdih.dephub.go.id/assets/uudocs/kepEI/2019/KP.2058_.AJ_.001_.DRJD_.2019_.pdf|url-status=dead}}</ref><ref>{{citation|author=Pemerintah Indonesia|year=2019|title=Keputusan Direktur Jenderal Perhubungan Darat Nomor KP.2072/AJ.001/DRJD/2019 tentang Penetapan Nomor Rute Jalan Nasional di Pulau Jawa|url=http://jdih.dephub.go.id/assets/uudocs/kepEI/2019/KP.2072_.AJ_.001_.DRJD_.2019_.pdf|publisher=Kementerian Perhubungan Republik Indonesia|location=Jakarta|ref={{sfnref|Kepdirjenhubdat KP.2072/AJ.001/DRJD/2019}}|accessdate=2020-06-01|archive-date=2020-10-31|archive-url=https://web.archive.org/web/20201031153658/http://jdih.dephub.go.id/assets/uudocs/kepEI/2019/KP.2072_.AJ_.001_.DRJD_.2019_.pdf|url-status=dead}}</ref><ref>{{citation|author=Pemerintah Indonesia|year=2019|title=Keputusan Direktur Jenderal Perhubungan Darat Nomor KP.2073/AJ.001/DRJD/2019 tentang Penetapan Nomor Rute Jalan Nasional di Pulau Bali|url=http://jdih.dephub.go.id/assets/uudocs/kepEI/2019/KP.2073_.AJ_.001_.DRJD_.2019_.pdf|publisher=Kementerian Perhubungan Republik Indonesia|location=Jakarta|ref={{sfnref|Kepdirjenhubdat KP.2073/AJ.001/DRJD/2019}}|accessdate=2020-06-01|archive-date=2020-12-01|archive-url=https://web.archive.org/web/20201201051410/http://jdih.dephub.go.id/assets/uudocs/kepEI/2019/KP.2073_.AJ_.001_.DRJD_.2019_.pdf|url-status=dead}}</ref>
+! Ruas
+! Keterangan
+! Panjang (km)
+! Beroperasi (km)
+! Operator/BUJT
+|- valign=top
+| rowspan="25" style="font-weight:bold; background:#eee;" | [[Sumatra]]<br>{{small|Kecuali jika dinyatakan lain, BUJT jalan tol di Sumatra adalah [[Hutama Karya|PT Hutama Karya (Persero)]] berdasarkan Perpres 117/2015 (lihat [[Jalan Tol Trans Sumatra]])}}[[Berkas:Trans sumatra map.png|jmpl|Peta Jalan Tol Trans-Sumatra. Trayek dengan warna merah dan biru dioperasikan oleh [[Hutama Karya]] dan entitas terafiliasi.]]
+| rowspan="4" | [[Aceh]]
+|
+|[[Jalan Tol Banda Aceh–Sigli|Sigli – Banda Aceh]]
+|
+| align="right" | 75,00
+| style="background:#FFF7AB;" align="right" | 49,94
+| rowspan="5" | [[Hutama Karya]]
+|-
+|
+| Jalan Tol Lhokseumawe-Sigli|[[Jalan Tol Lhokseumawe-Sigli|Lhokseumawe – Sigli]]
+|
+| align="right" | 157,00
+| style="background:#FFABB9;" align="right" | 0
+|-
+|
+| Jalan Tol Langsa-Lhokseumawe|Langsa – Lhokseumawe
+|
+| align="right" | 135,00
+| style="background:#FFABB9;" align="right" | 0
+|-
+|
+|[[Jalan Tol Binjai-Langsa|Binjai – Langsa]]
+|
+| align="right" | 110,00
+| style="background:#FFF7AB;" align="right" | 57,65
+|- valign=top
+| rowspan="7" | [[Sumatera Utara]]
+|{{rute|T|2|1}}
+| [[Jalan Tol Medan-Binjai|Medan – Binjai]]
+|
+| align="right" | 16,72
+| style="background:#C5FBA8;" align="right" | 16,72
+|- valign=top
+|{{rute|T|2|1}}{{rute|T|2|2}}
+| [[Jalan Tol Belmera|Belawan – Medan – Tanjung Morawa]]
+|
+| align="right" | 34,00
+| style="background:#C5FBA8;" align="right" | 34,00
+| rowspan="2" |  [[Jasa Marga]]
+|- valign=top
+|{{rute|T|2|1}}{{rute|T|2|4}}
+| [[Jalan Tol Medan-Kuala Namu-Tebing Tinggi|Medan – Kualanamu – Tebing Tinggi]]
+|
+| align="right" | 61,70
+| style="background:#C5FBA8;" align="right" | 61,70
+|- valign=top
+|
+| Jalan Tol Kuala Tanjung-Tebing Tinggi-Parapat|[[Jalan Tol Kuala Tanjung-Tebing Tinggi-Parapat|Kuala Tanjung – Tebing Tinggi – Parapat]]
+|
+| align="right" | 143,25
+| style="background:#FFF7AB;" align="right" | 125,45
+| rowspan="2" |  [[Hutama Karya]]
+|- valign=top
+|
+| Jalan Tol Kisaran-Tebing Tinggi|[[Jalan Tol Indrapura-Kisaran|Indrapura – Kisaran]]
+|
+| align="right" | 47,55
+| style="background:#C5FBA8;" align="right" | 47,55
+|-
+|
+| Jalan Tol Rantau Prapat-Kisaran|[[Rantau Prapat – Kisaran]]
+|
+| align="right" | 100,00
+| style="background:#FFABB9;" align="right" | 0
+| [[Tempo Group|Tempo Scan Pacific]]
+|-
+|
+| Jalan Tol Dumai-Rantau Prapat|[[Duri – Rantau Prapat]]
+|
+| align="right" | 175,00
+| style="background:#FFABB9;" align="right" | 0
+|
+|- valign="top"
+| [[Kepulauan Riau]]
+|
+| Jalan Tol Batu Ampar-Muka Kuning-Bandara Hang Nadim|[[Batu Ampar-Muka Kuning-Bandara Hang Nadim]]
+|
+| align="right" | 25,00
+| style="background:#FFABB9;" align="right" | 0
+| [[Sumatera Tobacco Trading Company|Sumatra Tobacco Trading Company]]
+|- valign="top"
+| rowspan="2" |[[Riau]]
+|
+| [[Jalan Tol Pekanbaru-Dumai|Pekanbaru – Dumai]]
+|
+| align="right" | 131,48
+| style="background:#C5FBA8;" align="right" | 131,48
+|Hutama Karya
+|-
+|
+|[[Jalan tol Rengat-Pekanbaru|Rengat – Pekanbaru]]
+|
+| align="right" | 175,00
+| style="background:#FFABB9;" align="right" | 0
+| 
+|- valign=top
+| [[Sumatera Barat]]
+|
+|[[Jalan Tol Padang-Pekanbaru|Padang – Bukittinggi – Pekanbaru]]
+|
+| align="right" | 240,00
+| style="background:#FFF7AB;" align="right" | 100,7
+|Hutama Karya
+|- valign=top
+| [[Bengkulu]]
+|
+| [[Jalan Tol Bengkulu-Lubuk Linggau|Bengkulu – Lubuk Linggau]]
+|
+| align="right" | 95,80
+| style="background:#FFF7AB;" align="right" | 17,6
+|Hutama Karya
+|-
+| rowspan="2" |[[Jambi]]
+|
+| Jalan Tol Jambi-Rengat |[[Jambi – Rengat]]
+|
+| align="right" | 190,00
+| style="background:#FFABB9;" align="right" | 0
+|
+|-
+|
+| Jalan Tol Betung-Jambi |[[Jalan Tol Betung–Jambi|Betung – Jambi]]
+|
+| align="right" | 170,00
+| style="background:#FFF7AB;" align="right" | 52
+|
+|- valign="top"
+| rowspan="5" | [[Sumatera Selatan]]
+|{{rute|T|6|6}}
+| [[Jalan Tol Palembang-Indralaya|Palembang – Indralaya]]
+|
+| align="right" | 22,00
+| style="background:#C5FBA8;" align="right" | 22,00
+|Hutama Karya
+|-
+|
+| Jalan Tol Indralaya-Muara Enim|[[Jalan Tol Indralaya - Muara Enim|Indralaya – Muara Enim]]
+|
+| align="right" | 119,00
+| style="background:#FFF7AB;" align="right" | 64,5
+|
+|-
+|
+| Jalan Tol Muara Enim-Lubuk Linggau|[[Muara Enim – Lubuk Linggau]]
+|
+| align="right" | 114,50
+| style="background:#FFABB9;" align="right" | 0
+|
+|-
+|
+| Jalan Tol Palembang-Tanjung Api-api|[[Palembang – Tanjung Api-api]]
+|
+| align="right" | 70,00
+| style="background:#FFABB9;" align="right" | 0
+|
+|- valign=top
+|{{rute|T|6|3}}
+| [[Jalan Tol Kayuagung-Palembang-Betung|Kayuagung – Palembang – Betung]] 
+|
+| align="right" | 111,90
+| style="background:#FFF7AB;" align="right" | 51,5
+([[Jalan Tol Kayuagung–Jakabaring|Jalan tol Kayuagung-Jakabaring]])
+| rowspan="3" | Hutama Karya 
+|- valign="top"
+| rowspan="2" |[[Lampung]]
+|{{rute|T|8|3}}
+|[[Jalan Tol Terbanggi Besar–Pematang Panggang-Kayu Agung|Terbanggi Besar – Pematang Panggang – Kayu Agung]]
+|
+| align="right" | 189,20
+| style="background:#C5FBA8;" align="right" | 189,2
+|- valign=top
+|{{rute|T|8|3}}
+| [[Jalan Tol Bakauheni-Bandar Lampung-Terbanggi Besar|Bakauheni – Terbanggi Besar]]
+|
+| align="right" | 140,94
+| style="background:#C5FBA8;" align="right" | 140,94
+|- valign=top
+| rowspan="72" style="font-weight:bold; background:#eee;" | [[Jawa (pulau)|Jawa]][[Berkas:Interkoneksi Jalan Tol Trans Jawa.svg|al=2025|pus|jmpl|Peta Jaringan Ruas Tol di Pulau Jawa]]
+| rowspan="2" | [[Banten]]
+|{{rute|T|11|1}}
+|  [[Jalan Tol Tangerang–Merak|Tangerang – Merak]]
+| Merupakan bagian dari [[Jalan Tol Jakarta–Merak]]
+| align="right" | 73,00
+| style="background:#C5FBA8;" align="right" | 73
+| [[Astra Infra Toll Road]]
+|- valign=top
+|
+| [[Jalan Tol Serang-Panimbang|Serang – Panimbang]]
+|
+| align="right" | 83,67
+| style="background:#FFF7AB;" align="right" | 26,50
+|  [[Wijaya Karya]]
+|- valign=top
+| rowspan="37" |[[Jabodetabek]][[Jabodetabekpunjur|punjur]]
+|
+| [[Jalan Tol Serpong-Balaraja|Serpong – Balaraja]]
+|
+| align="right" | 39,80
+| style="background:#FFF7AB;" align="right" | 10,60
+| [[Sinar Mas Land]]
+|- valign=top
+|
+| [[Semanan - Balaraja]]
+|
+| align="right" | 21,00
+| style="background:#FFABB9;" align="right" | 0
+| [[PT Djarum|Djarum]]
+|- valign=top
+|
+| [[Kamal - Teluknaga - Rajeg - Balaraja]]
+|
+| align="right" | 35,60
+| style="background:#FFF7AB;" align="right" | 0
+|[[Gudang Garam]] 
+|- valign=top
+|
+| [[Pakuhaji - Sepatan Timur]]
+|
+| align="right" | 11,50
+| style="background:#FFABB9;" align="right" | 0
+|
+|- valign=top
+|{{rute|T|11|1}}
+| [[Jalan Tol Jakarta-Tangerang|Jakarta – Tangerang]]
+| Merupakan bagian dari [[Jalan Tol Jakarta–Merak]]
+| align="right" | 27,00
+| style="background:#C5FBA8;" align="right" | 27,00
+| rowspan="4" |  Jasa Marga
+|- valign=top
+|{{rute|T|12|2}}
+| [[Jalan Tol Jakarta–Bogor–Ciawi|Jakarta – Bogor – Ciawi]]
+|
+| align="right" | 46,00
+| style="background:#C5FBA8;" align="right" | 46,00
+|- valign=top
+|{{rute|T|12|1}}{{rute|T|13|7}}
+| [[Jalan Tol Jakarta-Cikampek|Jakarta – Cikampek]]
+|
+| align="right" | 73,00
+| style="background:#C5FBA8;" align="right" | 73
+|- valign=top
+|{{rute|T|12|1}}
+| [[Jalan Layang Sheikh Mohammed bin Zayed]]
+|
+| align="right" | 36,84
+| style="background:#C5FBA8;" align="right" | 36,84
+|- valign=top
+|{{rute|T|11|9}}
+|  [[Jalan Tol Ulujami-Serpong|Jakarta – Serpong]]
+|
+| align="right" | 12,00
+| style="background:#C5FBA8;" align="right" | 12,00
+|  Jasa Marga (Ruas Ulujami-Pondok Ranji
+[[Nusantara Infrastructure]] (Ruas Pondok Aren-Serpong)
+|- valign=top
+|{{rute|T|13|3}}
+| [[Jalan Tol Prof. Dr. Sedyatmo|Prof. Dr. Sedyatmo]] / Pluit – Bandara
+| rowspan="4" | Merupakan bagian dari [[Jalan Tol Lingkar Dalam Jakarta]]
+| align="right" | 12,00
+| style="background:#C5FBA8;" align="right" | 12,00
+|  Jasa Marga
+|- valign=top
+|{{rute|T|12|2}}
+| [[Jalan Tol Ir. Wiyoto Wiyono|Ir Wiyoto Wiyono]] / Cawang – Tanjung Priok
+| align="right" | 15,00
+| style="background:#C5FBA8;" align="right" | 15,00
+| [[Citra Marga Nusaphala Persada]] 
+|- valign=top
+|{{rute|T|13|1}}{{rute|T|13|7}}
+|[[Jalan Tol Cawang–Pluit|Cawang – Pluit]]
+| align="right" | 21,00
+| style="background:#C5FBA8;" align="right" | 21,00
+|  Jasa Marga
+|- valign=top
+|{{rute|T|13|1}}
+| [[Jalan Tol Pelabuhan|Tanjung Priok – Pluit]]
+| align="right" | 10,00
+| style="background:#C5FBA8;" align="right" | 10,00
+|  Citra Marga Nusaphala Persada
+|- valign=top
+|
+| [[Semanan – Sunter]]
+|
+| align="right" | 11,00
+| style="background:#FFF7AB;" align="right" | 0
+| rowspan="6" | Pemerintah Provinsi DKI Jakarta ([[Pembangunan Jaya]])
+|- valign=top
+|
+| [[Sunter – Pulogebang]]
+|
+| align="right" | 9,44
+| style="background:#C5FBA8;" align="right" | 9,44
+|- valign=top
+|
+| [[Duri Pulo – Kampung Melayu]]
+|
+| align="right" | 12,65
+| style="background:#FFABB9;" align="right" | 0
+|- valign=top
+|
+| [[Kampung Melayu – Kemayoran]]
+|
+| align="right" | 9,44
+| style="background:#FFABB9;" align="right" | 0
+|- valign=top
+|
+| [[Ulujami – Tanah Abang]]
+|
+| align="right" | 8,70
+| style="background:#FFABB9;" align="right" | 0
+|- valign=top
+|
+| [[Pasar Minggu – Casablanca]]
+|
+| align="right" | 9,15
+| style="background:#FFABB9;" align="right" | 0
+|- valign=top
+|{{rute|T|13|5}}
+| Pondok Pinang – Pasar Rebo
+| rowspan="6" |  Merupakan bagian dari [[Jalan Tol Lingkar Luar Jakarta]] 1
+| align="right" | 13,20
+| style="background:#C5FBA8;" align="right" | 13,20
+|  [[Hutama Karya]]
+|- valign=top
+|{{rute|T|13|1}}{{rute|T|13|5}}
+| Pasar Rebo – Rorotan
+| align="right" | 25,70
+| style="background:#C5FBA8;" align="right" | 25,70
+| Jasa Marga
+|- valign=top
+|{{rute|T|13|5}}
+| Penjaringan – Kembangan
+| align="right" | 9,70
+| style="background:#C5FBA8;" align="right" | 9,70
+|  Bangun Tjipta Sarana
+|- valign=top
+|{{rute|T|13|5}}
+| Kembangan – Ulujami
+| align="right" | 9,50
+| style="background:#C5FBA8;" align="right" | 9,50
+| Jasa Marga
+|- valign="top"
+|{{rute|T|13|1}}
+|[[Jalan Tol Akses Tanjung Priok|Cilincing – Tanjung Priok]]
+| style="background:#FFF7AB; align="right" |11,40 (tidak termasuk seksi W1 dan W2)
+| style="background:#FFF7AB; align="right" |11,40 (tidak termasuk seksi W1 dan W2)
+| Hutama Karya
+|- valign=top
+|
+| [[Ancol Timur - Pluit]]
+| align="right" | 9,60
+| style="background:#FFF7AB;" align="right" | 0
+| Citra Marga Nusaphala Persada 
+|- valign="top"
+|{{rute|T|11|17}}
+|  [[Jalan Tol Cengkareng-Batuceper-Kunciran|Cengkareng-Batu Ceper– Kunciran]]
+| rowspan="6" |  Merupakan bagian dari [[Jalan Tol Lingkar Luar Jakarta 2]]
+| align="right" |15,20
+| align="right" style="background:#C5FBA8;" | 15,20
+| Jasa Marga
+|- valign="top"
+|{{rute|T|11|17}}
+|  [[Jalan Tol Kunciran-Serpong|Kunciran – Serpong]]
+| align="right" |11,20
+| align="right" style="background:#C5FBA8;" | 11,20
+| Astra Infra Toll Road
+|- valign="top"
+|{{rute|T|11|17}}
+|  [[Jalan Tol Serpong-Cinere|Serpong – Cinere]]
+| align="right" |10,10
+| align="right" style="background:#C5FBA8;" | 10,10
+| Jasa Marga
+|- valign="top"
+|{{rute|T|12|17}}
+|  [[Jalan Tol Cinere-Jagorawi|Cinere – Jagorawi]]
+| align="right" | 14,60
+| align="right" style="background:#C5FBA8;" | 14,60
+| [[Kompas Gramedia]]
+|- valign="top"
+|{{rute|T|11|17}}
+|[[Jalan Tol Cimanggis–Cibitung|Cimanggis – Cibitung]]
+| align="right" | 25,40
+| align="right" style="background:#C5FBA8;" | 25,40
+| [[Sarana Multi Infrastruktur]]
+|- valign="top"
+|{{rute|T|11|17}}
+|  [[Jalan Tol Cibitung-Cilincing|Cibitung – Cilincing]]
+| align="right" | 33,90
+| align="right" style="background:#C5FBA8;" | 33,90
+| [[Pelindo]]
+|- valign=top
+|
+|  [[Jalan Tol Depok-Antasari|Depok – Antasari]]
+|
+| align="right" | 22,80
+| style="background:#FFF7AB;" align="right" | 12,10
+| Citra Marga Nusaphala Persada 
+|- valign=top
+|
+|  [[Jalan Tol Bekasi-Cawang-Kampung Melayu|Bekasi – Cawang – Kampung Melayu]]
+|
+| align="right" | 21,04
+| style="background:#FFF7AB;" align="right" | 11,54
+| [[Waskita Karya]]
+|-
+|
+|[[Jalan Tol Bogor-Serpong via Parung|Bogor – Serpong via Parung]]
+|
+| align="right" |32,03
+| style="background:#FFABB9;" align="right" | 0
+|PT Bogor Serpong Infra Selaras
+|-
+|
+|[[Jalan Tol Sentul Selatan–Jonggol–Karawang Barat|Sentul Selatan – Jonggol – Karawang Barat]]
+|
+| align="right" |61,5
+| style="background:#FFABB9;" align="right" | 0
+| [[Bentoel Group|PT Bentoel Internasional Investama]]
+|- valign="top"
+|{{rute|T|12|15}}
+|  [[Jalan Tol Lingkar Luar Bogor|Lingkar Luar Bogor]]
+|
+| align="right" | 13,05
+| style="background:#C5FBA8;" align="right" | 11.36 (Tidak Termasuk BORR 3B)
+| rowspan="2" | Jasa Marga
+|- valign="top"
+|
+|[[Jalan Tol Jakarta–Cikampek II|Jakarta – Cikampek II]]
+|
+| align="right" |64,00
+| align="right" |7,30
+|- valign="top"
+| rowspan="9" |[[Jawa Barat]]
+|{{rute|T|12|2}}
+| [[Jalan Tol Bogor-Ciawi-Sukabumi|Bogor – Ciawi – Sukabumi]]
+|
+| align="right" | 53,00
+| align="right" style="background:#FFF7AB;" | 25
+|Sarana Multi Infrastruktur
+|- valign="top"
+|{{rute|T|12|4}}
+| [[Jalan Tol Cipularang|Cikampek – Purwakarta – Padalarang]]
+| rowspan="2" | Merupakan bagian dari [[Jalan Tol Purbaleunyi]]
+| align="right" | 52,00
+| align="right" style="background:#C5FBA8;" | 52,00
+| rowspan="2" |Jasa Marga
+|- valign="top"
+|{{rute|T|12|4}}
+| [[Jalan Tol Padaleunyi|Padalarang – Cileunyi]]
+| align="right" | 33,00
+| align="right" style="background:#C5FBA8;" | 33,00
+|- valign="top"
+|{{rute|T|12|1}}
+| [[Jalan Tol Cikopo-Palimanan|Cikopo – Palimanan]]
+|
+| align="right" | 116,00
+| align="right" style="background:#C5FBA8;" | 116,00
+| Astra Infra Toll Road
+|- valign="top"
+|{{rute|T|12|1}}
+| [[Jalan Tol Palimanan-Kanci|Palimanan – Kanci]]
+|
+| align="right" | 26,00
+| align="right" style="background:#C5FBA8;" | 26,00
+|  Jasa Marga
+|- valign="top"
+|{{rute|T|12|1}}
+| [[Jalan Tol Kanci-Pejagan|Kanci – Pejagan]]
+|
+| align="right" | 35,00
+| align="right" style="background:#C5FBA8;" | 35,00
+| [[Lembaga Pengelola Investasi]]
+|- valign="top"
+|{{rute|T|12|4}}
+| [[Jalan Tol Soreang-Pasirkoja|Soreang – Pasirkoja]]
+|
+| align="right" | 10,57
+| align="right" style="background:#C5FBA8;" | 10,57
+| rowspan="2" | Citra Nusaphala Marga Persada
+|- valign="top"
+|
+| [[Jalan Tol Cileunyi–Sumedang–Dawuan|Cileunyi – Sumedang – Dawuan]]
+|
+| align="right" | 60,00
+| align="right" style="background:#C5FBA8;" | 60,00
+|-
+|
+| [[Jalan Tol Cileunyi-Garut-Tasikmalaya|Gedebage-Tasikmalaya-Cilacap]]
+|
+| align="right" | 206,65
+| style="background:#FFF7AB;" align="right" | 0
+|–
+|- valign=top
+| rowspan="9" | [[Jawa Tengah]]
+|{{rute|T|14|1}}
+| [[Jalan Tol Pejagan-Pemalang|Pejagan – Pemalang]]
+|
+| align="right" | 57,00
+| style="background:#C5FBA8;" align="right" | 57,00
+| rowspan="2" | Lembaga Pengelola Investasi
+|- valign=top
+|{{rute|T|14|1}}
+| [[Jalan Tol Pemalang–Batang|Pemalang – Batang]]
+|
+| align="right" | 39,00
+| style="background:#C5FBA8;" align="right" | 39,00
+|- valign=top
+|{{rute|T|14|1}}
+| [[Jalan Tol Semarang–Batang|Batang – Semarang]]
+|
+| align="right" | 75,00
+| style="background:#C5FBA8;" align="right" | 75,00
+| rowspan="2" | Jasa Marga
+|- valign=top
+|{{rute|T|14|6}}
+| [[Jalan Tol Semarang|Semarang ABC]]
+|
+| align="right" | 24,75
+| style="background:#C5FBA8;" align="right" | 24,75
+|-
+|
+| [[Jalan Tol Semarang-Demak|Semarang – Demak]]
+|
+| align="right" | 23,99
+| style="background:#FFF7AB;" align="right" | 15,00
+|[[PP Construction & Investment]]
+|- valign=top
+|{{rute|T|14|6}}
+| [[Jalan Tol Semarang-Solo|Semarang – Solo]]
+|
+| align="right" | 72,64
+| style="background:#C5FBA8;" align="right" | 72,64
+| rowspan="2" |  Jasa Marga
+|- valign=top
+|{{rute|T|14|6}}{{rute|T|14|11}}
+| [[Jalan Tol Solo-Ngawi|Solo – Ngawi]]
+|
+| align="right" | 90,00
+| style="background:#C5FBA8;" align="right" | 90,00
+|-
+|
+|[[Cilacap – Yogyakarta]]
+|
+| align="right" |121,75
+| style="background:#FFABB9;" align="right" |0
+| PT [[Putera Jaya Sakti Perkasa]]
+|-
+|
+|[[Jalan Tol Demak-Tuban|Demak – Tuban]]
+|
+| align="right" |171,93
+| style="background:#FFABB9;" align="right" |0
+| [[PT. HM Sampoerna Tbk]]
+|-
+| rowspan="2" |[[Daerah Istimewa Yogyakarta]]
+|
+|[[Jalan Tol Yogyakarta–Magelang–Bawen|Yogyakarta – Bawen]]
+|
+| align="right" | 75,82
+| style="background:#FFF7AB;" align="right" | 0
+| rowspan="3" |Jasa Marga
+|-
+|
+|[[Jalan Tol Solo–Yogyakarta|Solo – Yogyakarta – YIA Kulonprogo]]
+|Joglo
+| align="right" | 96,00
+| style="background:#FFF7AB;" align="right" | 42,38
+|- valign=top
+| rowspan="13" | [[Jawa Timur]]
+|{{rute|T|16|11}}
+| [[Jalan Tol Ngawi-Kertosono|Ngawi – Kertosono]]
+| Soker
+| align="right" | 87,02
+| style="background:#C5FBA8;" align="right" | 87,02
+|- valign=top
+|{{rute|T|16|11}}
+| [[Jalan Tol Mojokerto-Kertosono|Kertosono – Mojokerto]]
+| Kermo
+| align="right" | 40,50
+| style="background:#C5FBA8;" align="right" |40,50
+| Astra Infra Toll Road
+|- valign=top
+|{{rute|T|16|11}}
+| [[Jalan Tol Surabaya-Mojokerto|Surabaya – Mojokerto]]
+| Sumo
+| align="right" | 36,27
+| style="background:#C5FBA8;" align="right" | 36,27
+| Jasa Marga
+|- valign=top
+|{{rute|T|16|8}}
+| [[Jalan Tol Surabaya-Gresik|Surabaya – Gresik]]
+| Surgres
+| align="right" | 20,70
+| style="background:#C5FBA8;" align="right" | 20,70
+| Marga Bumi Mataraya
+|- valign=top
+|{{rute|T|16|8}}
+|  [[Jalan Tol Surabaya–Gempol|Surabaya – Gempol]]
+| Surgem
+| align="right" | 45,00
+| style="background:#C5FBA8;" align="right" | 45,00
+|  Jasa Marga
+|- valign=top
+|{{rute|T|16|11}}
+|  [[Jalan Tol Waru-Juanda|Waru – Juanda]]
+| Warunda
+| align="right" | 12,00
+| style="background:#C5FBA8;" align="right" | 12,00
+| Citra Marga Nusaphala Persada
+|- valign=top
+|{{rute|T|16|8}}
+| [[Jalan Tol Krian-Legundi-Bunder-Manyar|Krian – Legundi – Bunder – Manyar]]
+| KLBM
+| align="right" | 38,39
+| style="background:#FFF7AB;" align="right" | 29,00
+| Waskita Karya
+|- valign=top
+|{{rute|T|16|8}}
+| [[Jalan Tol Gempol-Pandaan|Gempol – Pandaan]]
+| Gempan
+| align="right" | 13,61
+| style="background:#C5FBA8;" align="right" | 13,61
+| rowspan="3" | Jasa Marga 
+|- valign=top
+|{{rute|T|16|8}}
+| [[Jalan Tol Pandaan-Malang|Pandaan – Malang]]
+| Mapan
+| align="right" | 38,48
+| style="background:#C5FBA8;" align="right" | 38,48
+|- valign=top
+|{{rute|T|16|13}}
+| [[Jalan Tol Gempol-Pasuruan|Gempol – Pasuruan]]
+| Gempas
+| align="right" | 34,15
+| style="background:#C5FBA8;" align="right" | 34,15
+|- valign=top
+|{{rute|T|16|13}}
+| [[Jalan Tol Pasuruan-Probolinggo|Pasuruan – Probolinggo]]
+| Paspro
+| align="right" | 40,00
+| style="background:#C5FBA8;" align="right" | 40,00
+| Waskita Karya
+|- valign=top
+|{{rute|T|16|13}}
+|  [[Jalan Tol Probolinggo-Banyuwangi|Probolinggo – Banyuwangi]]
+| Probowangi
+| align="right" | 173,00
+| style="background:#FFF7AB;" align="right" | 23,515
+| Jasa Marga
+|- valign=top
+|
+|  [[Jalan Tol Probolinggo–Lumajang|Probolinggo – Lumajang]]
+| Prolajang
+| align="right" | 32,00
+| style="background:#FFABB9;" align="right" | 0
+| Surya Majapahit Marga Wisata
+|- valign=top
+| rowspan="2" |'''[[Kepulauan Nusa Tenggara|Nusa Tenggara]]'''
+| rowspan="2" |[[Bali]]
+|{{rute|T|17|1}}
+| [[Jalan Tol Bali Mandara|I Gusti Ngurah Rai – Benoa – Nusa Dua]]
+| Bali Mandara
+| align="right" | 12,04
+| style="background:#C5FBA8;" align="right" | 12,04
+| Jasa Marga
+|- valign=top
+|
+| [[Gilimanuk-Mengwi-Denpasar]]
+| Tol Bali Barat
+| align="right" | 95,51
+| style="background:#FFF7AB;" align="right" | 0
+|Tol Jagat Kerthi Bali
+|- valign=top
+| rowspan="2" style="font-weight:bold; background:#eee;" | [[Kalimantan]]
+| rowspan="2" | [[Kalimantan Timur]]
+|
+| [[Jalan Tol Balikpapan-Samarinda|Balikpapan – Samarinda]]
+| Balsam
+| align="right" | 99,02
+| style="background:#C5FBA8;" align="right" | 99,02
+|  Jasa Marga
+|- valign=top
+|
+| [[Balikpapan – Penajam]]
+| Jembatan Teluk Balikpapan
+| align="right" | 11,75
+| style="background:#FFABB9;" align="right" | 0
+| Waskita Karya
+|- valign=top
+| rowspan="4" style="font-weight:bold; background:#eee;" | [[Sulawesi]]
+| rowspan="3" | [[Sulawesi Selatan]]
+|
+| [[Jalan Tol Ujung Pandang|Pelabuhan-Panakkukang]]
+| Jalan Reformasi 
+(Tol Ujung Pandang Seksi I dan II)
+| align="right" | 6,00
+| style="background:#C5FBA8;" align="right" | 6,00
+| rowspan="3" | [[Bosowa Corp]]
+|- valign=top
+|
+| [[Jalan Tol Ujung Pandang|Tallo-Mandai]]
+| Jalan IR Sutami
+(Tol Ujung Pandang Seksi IV)
+| align="right" | 11,00
+| style="background:#C5FBA8;" align="right" | 11,00
+|-
+|
+| [[Jalan Tol Ujung Pandang|Panakkukang-Gunung Sari]]
+| Tol Layang Pettarani
+(Tol Ujung Pandang Seksi III)
+| align="right" | 4,30
+| style="background:#C5FBA8;" align="right" | 4,30
+|- valign=top
+| [[Sulawesi Utara]]
+|
+| [[Jalan Tol Manado–Bitung|Manado – Bitung]]
+| Bima
+| align="right" | 39,90
+| style="background:#C5FBA8;" align="right" | 39,90
+|  Jasa Marga
+|-
+| colspan="5" align="center" | '''Total'''
+| align="right" |6150,56
+| align="right" | 3088,48
+|
+|}
+
+== Referensi ==
+{{Reflist|2}}
+
+== Pranala luar ==
+* [https://sigi.pu.go.id/portalpupr/apps/opsdashboard/index.html#/ad691982b770462d8e236f8ca7e450f4/ '''(GIS BPJT)''' Live Update Roadmap Network]
+* [https://bpjt.pu.go.id/ Situs web Badan Pengatur Jalan Tol]
+* [http://www.pu.go.id/Ditjen_Prasarana%20Wil/jalan_tol.asp Daftar jalan tol di situs Direktorat Jenderal Bina Marga – Departemen PU] {{Webarchive|url=https://web.archive.org/web/20081215015040/http://www.pu.go.id/ditjen_prasarana%20wil/jalan_tol.asp |date=2008-12-15 }}
+* [http://ekonomi.metrotvnews.com/read/2014/10/14/304545/jalan-tol-kertosono-mojokerto-diresmikan Tol Kertosono-Mojokerto seksi I (Bandar-Jombang) beroperasi Oktober 2014]{{Pranala mati|date=Maret 2021 |bot=InternetArchiveBot |fix-attempted=yes }}
+*[https://www.liputan6.com/bisnis/read/4400534/selesai-dibangun-tol-bogor-outer-ring-road-ruas-yasmin-kayu-manis-siap-beroperasi Selesai Dibangun, Tol Bogor Outer Ring Road Ruas Yasmin-Kayu Manis Siap Beroperasi - Bisnis Liputan6.com]
+*[https://delameta.com/blog/daftar-tarif-tol-di-indonesia/ <nowiki>[Lengkap] Daftar Tarif Tol di Indonesia</nowiki>]
+
+{{Jalan tol Indonesia}}
+{{Jalan Tol Asia}}
+
+[[Kategori:Jalan tol di Indonesia| ]]
+[[Kategori:Daftar bertopik Indonesia|Jalan]]

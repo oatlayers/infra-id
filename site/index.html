@@ -1,0 +1,689 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Indonesia Infrastructure Map</title>
+<meta name="description" content="A curated map of major Indonesian infrastructure projects: toll roads under construction and planned.">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<style>
+  :root {
+    --ink: #16202b;
+    --muted: #5d6b7a;
+    --line: #dfe4ea;
+    --paper: #f6f7f9;
+    --panel: #ffffff;
+    --uc: #e8590c;
+    --planned: #1c7ed6;
+    --done: #2f9e44;
+    --stalled: #c92a2a;
+    --shadow: 0 10px 30px rgba(20, 32, 45, .14);
+  }
+  * { box-sizing: border-box; }
+  html, body { height: 100%; }
+  body {
+    display: flex;
+    flex-direction: column;
+    height: 100dvh;
+    margin: 0;
+    overflow: hidden;
+    color: var(--ink);
+    background: var(--paper);
+    font: 15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  button, input { font: inherit; }
+  a { color: #0b5cad; }
+
+  .topbar {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 18px;
+    padding: 18px 22px 16px;
+    background: #0e1b2a;
+    color: #fff;
+  }
+  .topbar h1 {
+    margin: 0;
+    font-size: 23px;
+    line-height: 1.15;
+    letter-spacing: -.01em;
+  }
+  .topbar p {
+    margin: 6px 0 0;
+    color: #b8c6d6;
+    max-width: 720px;
+  }
+  .topbar .meta {
+    color: #9fb0c2;
+    font-size: 13px;
+    text-align: right;
+    white-space: nowrap;
+  }
+
+  .layout {
+    display: grid;
+    flex: 1;
+    min-height: 0;
+    grid-template-columns: 390px minmax(0, 1fr);
+  }
+
+  .panel {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    background: var(--panel);
+    border-right: 1px solid var(--line);
+  }
+  .panel-head {
+    padding: 16px 18px 12px;
+    border-bottom: 1px solid var(--line);
+  }
+  .summary {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 12px;
+    margin-bottom: 14px;
+    color: var(--muted);
+    font-size: 13px;
+  }
+  .summary strong { color: var(--ink); }
+
+  .filter-group { margin-top: 12px; }
+  .filter-title {
+    margin-bottom: 6px;
+    color: var(--muted);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .09em;
+    text-transform: uppercase;
+  }
+  .filter-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 3px 0;
+    cursor: pointer;
+  }
+  .filter-row input { accent-color: #0e1b2a; }
+  .filter-row.disabled { color: #a4afbb; cursor: default; }
+  .filter-row .count { margin-left: auto; color: var(--muted); font-variant-numeric: tabular-nums; }
+  .filter-row.disabled .count { color: #a4afbb; }
+  .dot {
+    width: 9px; height: 9px;
+    border-radius: 50%;
+    background: var(--c, #999);
+    flex: none;
+  }
+  .soon {
+    margin-left: auto;
+    font-size: 11px;
+    color: #a4afbb;
+  }
+
+  .list-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    padding: 12px 18px 8px;
+    color: var(--muted);
+    font-size: 12px;
+    border-top: 1px solid var(--line);
+  }
+  .list {
+    flex: 1;
+    min-height: 0;
+    margin: 0;
+    padding: 0 10px 14px;
+    overflow-y: auto;
+    list-style: none;
+  }
+  .list li { margin: 2px 0; }
+  .project-btn {
+    display: grid;
+    grid-template-columns: 10px minmax(0, 1fr) auto;
+    gap: 9px;
+    align-items: start;
+    width: 100%;
+    padding: 9px 10px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    background: transparent;
+    color: inherit;
+    text-align: left;
+    cursor: pointer;
+  }
+  .project-btn:hover { background: #f1f4f8; }
+  .project-btn[aria-current="true"] {
+    background: #eef4fb;
+    border-color: #c9ddf3;
+  }
+  .project-btn .dot { margin-top: 5px; }
+  .project-name { display: block; font-weight: 600; line-height: 1.3; }
+  .project-sub { display: block; margin-top: 2px; color: var(--muted); font-size: 12px; }
+  .project-km { color: var(--muted); font-size: 12px; white-space: nowrap; margin-top: 3px; }
+
+  .coverage {
+    margin: 0;
+    padding: 12px 18px 16px;
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+    font-size: 12px;
+  }
+  .coverage strong { color: var(--ink); }
+
+  #map { width: 100%; height: 100%; background: #dce7ef; }
+  .leaflet-container { font: inherit; }
+
+  .legend {
+    padding: 8px 10px;
+    background: rgba(255,255,255,.94);
+    border-radius: 8px;
+    box-shadow: 0 1px 6px rgba(0,0,0,.18);
+    color: var(--ink);
+    font-size: 12px;
+    line-height: 1.5;
+  }
+  .legend div { display: flex; align-items: center; gap: 7px; }
+  .legend .dot { width: 9px; height: 9px; }
+
+  .detail {
+    position: fixed;
+    z-index: 1000;
+    top: var(--header-h, 84px);
+    right: 0;
+    bottom: 0;
+    width: 390px;
+    max-width: 100%;
+    overflow-y: auto;
+    padding: 20px 22px 30px;
+    background: var(--panel);
+    border-left: 1px solid var(--line);
+    box-shadow: var(--shadow);
+    transform: translateX(103%);
+    transition: transform .22s ease;
+  }
+  .detail.open { transform: translateX(0); }
+  .detail-close {
+    float: right;
+    width: 30px; height: 30px;
+    margin: -4px -6px 0 12px;
+    border: 0;
+    border-radius: 6px;
+    background: #eef1f4;
+    color: #344250;
+    cursor: pointer;
+    font-size: 18px;
+    line-height: 1;
+  }
+  .detail-close:hover { background: #e2e7ed; }
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 9px;
+    border-radius: 999px;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+  }
+  .detail h2 {
+    margin: 12px 0 4px;
+    font-size: 22px;
+    line-height: 1.2;
+    letter-spacing: -.01em;
+  }
+  .detail .where { margin: 0 0 16px; color: var(--muted); }
+  .stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 14px;
+    margin: 0 0 18px;
+    padding: 14px;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    background: #fafbfc;
+  }
+  .stat .k {
+    color: var(--muted);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .07em;
+    text-transform: uppercase;
+  }
+  .stat .v { margin-top: 2px; font-weight: 600; }
+  .detail h3 {
+    margin: 20px 0 7px;
+    font-size: 12px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .basis {
+    margin: 0;
+    padding: 11px 12px;
+    border-left: 3px solid #b9c6d4;
+    background: #f7f9fb;
+    color: #33414f;
+    font-size: 14px;
+  }
+  .notes { margin: 0; white-space: pre-line; color: #33414f; }
+  .source {
+    margin-top: 8px;
+    padding-top: 14px;
+    border-top: 1px solid var(--line);
+    font-size: 13px;
+    color: var(--muted);
+  }
+  .source a { word-break: break-all; }
+  .source .dates { margin-top: 6px; }
+
+  .empty {
+    padding: 30px 12px;
+    color: var(--muted);
+    text-align: center;
+  }
+
+  @media (max-width: 860px) {
+    body { display: block; height: auto; overflow: visible; }
+    .topbar { align-items: flex-start; padding: 14px 16px; }
+    .topbar h1 { font-size: 19px; }
+    .topbar p { font-size: 13px; }
+    .topbar .meta { display: none; }
+    .layout {
+      display: flex;
+      flex-direction: column;
+      min-height: 0;
+    }
+    .panel {
+      border-right: 0;
+      border-top: 1px solid var(--line);
+    }
+    .list { flex: none; overflow: visible; }
+    #map {
+      order: -1;
+      height: 46dvh;
+      min-height: 300px;
+    }
+    .detail {
+      top: auto;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: auto;
+      max-height: 78dvh;
+      border-left: 0;
+      border-top: 1px solid var(--line);
+      border-radius: 16px 16px 0 0;
+      transform: translateY(103%);
+    }
+    .detail.open { transform: translateY(0); }
+  }
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div>
+    <h1>Indonesia Infrastructure Map</h1>
+    <p>Major toll roads under construction and planned in Sumatra, Java and Bali. Curated from public sources, not exhaustive.</p>
+  </div>
+  <div class="meta">Last verified<br>6 November 2026</div>
+</header>
+
+<div class="layout">
+  <aside class="panel">
+    <div class="panel-head">
+      <div class="summary">
+        <span><strong id="summary-count">0</strong> projects shown</span>
+        <span id="summary-status"></span>
+      </div>
+
+      <div class="filter-group">
+        <div class="filter-title">Status</div>
+        <label class="filter-row"><input type="checkbox" data-status="under_construction" checked> <span class="dot" style="--c:var(--uc)"></span> Under construction <span class="count" data-count="under_construction">0</span></label>
+        <label class="filter-row"><input type="checkbox" data-status="planned" checked> <span class="dot" style="--c:var(--planned)"></span> Planned <span class="count" data-count="planned">0</span></label>
+        <label class="filter-row"><input type="checkbox" data-status="recently_completed" checked> <span class="dot" style="--c:var(--done)"></span> Recently completed <span class="count" data-count="recently_completed">0</span></label>
+        <label class="filter-row"><input type="checkbox" data-status="stalled" checked> <span class="dot" style="--c:var(--stalled)"></span> Stalled <span class="count" data-count="stalled">0</span></label>
+      </div>
+
+      <div class="filter-group">
+        <div class="filter-title">Sector</div>
+        <label class="filter-row"><input type="checkbox" data-sector="road" checked> Roads <span class="count" data-count="road">0</span></label>
+        <label class="filter-row disabled"><input type="checkbox" disabled> Airports <span class="soon">phase 3</span></label>
+        <label class="filter-row disabled"><input type="checkbox" disabled> Seaports <span class="soon">phase 3</span></label>
+        <label class="filter-row disabled"><input type="checkbox" disabled> Factories <span class="soon">phase 3</span></label>
+      </div>
+    </div>
+
+    <div class="list-head"><span>Projects</span><span id="list-count"></span></div>
+    <ul class="list" id="list"></ul>
+
+    <p class="coverage">
+      <strong>Coverage.</strong> <span id="coverage-count">27</span> toll-road corridors from English Wikipedia and BPJT.
+      No full toll corridor opened between Nov 2024 and Nov 2026; recently opened sections are noted under each corridor.
+      Airports, seaports and factories are not included yet.
+    </p>
+  </aside>
+
+  <main id="map" aria-label="Map of Indonesian infrastructure projects"></main>
+</div>
+
+<section class="detail" id="detail" aria-live="polite">
+  <button class="detail-close" id="detail-close" aria-label="Close details">&times;</button>
+  <div id="detail-body"></div>
+</section>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="data/projects.js"></script>
+<script>
+(() => {
+  "use strict";
+
+  const STATUS = {
+    under_construction: { label: "Under construction", color: "#e8590c" },
+    planned:            { label: "Planned",            color: "#1c7ed6" },
+    recently_completed: { label: "Recently completed", color: "#2f9e44" },
+    stalled:            { label: "Stalled",            color: "#c92a2a" }
+  };
+  const STATUS_ORDER = ["under_construction", "planned", "recently_completed", "stalled"];
+  const SECTOR_LABEL = { road: "Road", airport: "Airport", seaport: "Seaport", factory: "Factory" };
+
+  const features = (window.PROJECTS && window.PROJECTS.features) || [];
+  const byId = new Map(features.map(f => [f.properties.id, f]));
+
+  const selectedStatuses = new Set(Object.keys(STATUS));
+  const selectedSectors = new Set(["road"]);
+  let selectedId = null;
+
+  const map = L.map("map", { zoomControl: true, worldCopyJump: false })
+    .setView([-2.4, 118.0], 5);
+
+  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    maxZoom: 18,
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+  }).addTo(map);
+
+  const legend = L.control({ position: "bottomleft" });
+  legend.onAdd = () => {
+    const div = L.DomUtil.create("div", "legend");
+    div.innerHTML = STATUS_ORDER.map(s =>
+      `<div><span class="dot" style="background:${STATUS[s].color}"></span>${STATUS[s].label}</div>`
+    ).join("");
+    return div;
+  };
+  legend.addTo(map);
+
+  const markers = new Map();
+  const allLatLngs = [];
+
+  function baseStyle(status) {
+    return {
+      radius: 7,
+      color: "#ffffff",
+      weight: 1.5,
+      opacity: 1,
+      fillColor: STATUS[status].color,
+      fillOpacity: 0.9
+    };
+  }
+
+  function selectedStyle(status) {
+    return {
+      radius: 11,
+      color: "#16202b",
+      weight: 2.5,
+      opacity: 1,
+      fillColor: STATUS[status].color,
+      fillOpacity: 1
+    };
+  }
+
+  features.forEach(feature => {
+    const p = feature.properties;
+    const [lon, lat] = feature.geometry.coordinates;
+    const marker = L.circleMarker([lat, lon], baseStyle(p.status));
+    marker.bindTooltip(p.name, { direction: "top", offset: [0, -6] });
+    marker.on("click", () => selectProject(p.id, false));
+    marker.addTo(map);
+    markers.set(p.id, marker);
+    allLatLngs.push([lat, lon]);
+  });
+
+  function fitAll() {
+    if (selectedId || !allLatLngs.length) return;
+    map.invalidateSize();
+    map.fitBounds(L.latLngBounds(allLatLngs), { padding: [52, 52], maxZoom: 7 });
+  }
+  requestAnimationFrame(fitAll);
+
+  const listEl = document.getElementById("list");
+  const summaryCount = document.getElementById("summary-count");
+  const summaryStatus = document.getElementById("summary-status");
+  const listCount = document.getElementById("list-count");
+  const detail = document.getElementById("detail");
+  const detailBody = document.getElementById("detail-body");
+  const detailClose = document.getElementById("detail-close");
+  const coverageCount = document.getElementById("coverage-count");
+  coverageCount.textContent = features.length;
+
+  function syncHeaderHeight() {
+    const header = document.querySelector(".topbar");
+    document.documentElement.style.setProperty("--header-h", `${header.offsetHeight}px`);
+  }
+  syncHeaderHeight();
+  window.addEventListener("resize", syncHeaderHeight);
+
+  function visibleFeatures() {
+    return features.filter(f =>
+      selectedStatuses.has(f.properties.status) && selectedSectors.has(f.properties.sector)
+    );
+  }
+
+  function sortFeatures(items) {
+    return items.slice().sort((a, b) => {
+      const sa = STATUS_ORDER.indexOf(a.properties.status);
+      const sb = STATUS_ORDER.indexOf(b.properties.status);
+      if (sa !== sb) return sa - sb;
+      return a.properties.name.localeCompare(b.properties.name);
+    });
+  }
+
+  function render() {
+    const visible = visibleFeatures();
+    const ids = new Set(visible.map(f => f.properties.id));
+
+    markers.forEach((marker, id) => {
+      if (ids.has(id)) {
+        if (!map.hasLayer(marker)) marker.addTo(map);
+      } else if (map.hasLayer(marker)) {
+        map.removeLayer(marker);
+      }
+    });
+
+    if (selectedId && !ids.has(selectedId)) closeDetail();
+
+    const totalCounts = Object.fromEntries(Object.keys(STATUS).map(s => [s, 0]));
+    const visibleCounts = Object.fromEntries(Object.keys(STATUS).map(s => [s, 0]));
+    const sectorCounts = { road: 0, airport: 0, seaport: 0, factory: 0 };
+    features.forEach(f => {
+      totalCounts[f.properties.status] += 1;
+      sectorCounts[f.properties.sector] += 1;
+    });
+    visible.forEach(f => {
+      visibleCounts[f.properties.status] += 1;
+    });
+    document.querySelectorAll("[data-count]").forEach(el => {
+      const key = el.dataset.count;
+      el.textContent = key in totalCounts ? totalCounts[key] : (sectorCounts[key] ?? 0);
+    });
+
+    summaryCount.textContent = visible.length;
+    const shown = STATUS_ORDER
+      .filter(s => selectedStatuses.has(s) && visibleCounts[s] > 0)
+      .map(s => `${visibleCounts[s]} ${STATUS[s].label.toLowerCase()}`);
+    summaryStatus.textContent = shown.length ? shown.join(" · ") : "No status selected";
+    listCount.textContent = `${visible.length} of ${features.length}`;
+
+    listEl.replaceChildren();
+    if (!visible.length) {
+      const li = document.createElement("li");
+      li.className = "empty";
+      li.textContent = "No projects match these filters.";
+      listEl.append(li);
+      return;
+    }
+
+    sortFeatures(visible).forEach(feature => {
+      const p = feature.properties;
+      const li = document.createElement("li");
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "project-btn";
+      btn.setAttribute("aria-current", p.id === selectedId ? "true" : "false");
+      btn.innerHTML = `
+        <span class="dot" style="--c:${STATUS[p.status].color}"></span>
+        <span>
+          <span class="project-name">${escapeHtml(p.name)}</span>
+          <span class="project-sub">${escapeHtml(p.province)} · ${escapeHtml(STATUS[p.status].label)}</span>
+        </span>
+        <span class="project-km">${formatKm(p.length_km)}</span>
+      `;
+      btn.addEventListener("click", () => selectProject(p.id, true));
+      li.append(btn);
+      listEl.append(li);
+    });
+  }
+
+  function selectProject(id, pan, animate = true) {
+    const feature = byId.get(id);
+    if (!feature) return;
+    const p = feature.properties;
+
+    if (selectedId && markers.has(selectedId)) {
+      const prev = byId.get(selectedId).properties;
+      markers.get(selectedId).setStyle(baseStyle(prev.status));
+    }
+
+    selectedId = id;
+    const marker = markers.get(id);
+    marker.setStyle(selectedStyle(p.status));
+    marker.bringToFront();
+    if (pan) {
+      const targetZoom = Math.max(map.getZoom(), 7);
+      if (animate) {
+        map.flyTo(marker.getLatLng(), targetZoom, { duration: 0.7 });
+      } else {
+        map.setView(marker.getLatLng(), targetZoom, { animate: false });
+      }
+    }
+
+    if (location.hash.slice(1) !== id) {
+      history.replaceState(null, "", "#" + encodeURIComponent(id));
+    }
+
+    showDetail(p);
+    render();
+    // render() rebuilds the list; keep the selected row visible without
+    // scrolling the document (mobile shows the list inline, not in a pane).
+    const current = listEl.querySelector('[aria-current="true"]');
+    if (current && listEl.scrollHeight > listEl.clientHeight) {
+      const listRect = listEl.getBoundingClientRect();
+      const rowRect = current.getBoundingClientRect();
+      if (rowRect.top < listRect.top) {
+        listEl.scrollTop += rowRect.top - listRect.top;
+      } else if (rowRect.bottom > listRect.bottom) {
+        listEl.scrollTop += rowRect.bottom - listRect.bottom;
+      }
+    }
+  }
+
+  function showDetail(p) {
+    const status = STATUS[p.status];
+    const official = p.source_type === "official";
+    const opened = p.opened_year ? `<div class="stat"><div class="k">Opened</div><div class="v">${escapeHtml(p.opened_year)}</div></div>` : "";
+
+    detailBody.innerHTML = `
+      <span class="badge" style="background:${status.color}">${escapeHtml(status.label)}</span>
+      <h2>${escapeHtml(p.name)}</h2>
+      <p class="where">${escapeHtml(p.province)} · ${escapeHtml(SECTOR_LABEL[p.sector] || p.sector)}</p>
+
+      <div class="stats">
+        <div class="stat"><div class="k">Route</div><div class="v">${escapeHtml(p.route)}</div></div>
+        <div class="stat"><div class="k">Length</div><div class="v">${formatKm(p.length_km)}</div></div>
+        <div class="stat"><div class="k">Operator</div><div class="v">${escapeHtml(p.operator)}</div></div>
+        ${opened}
+      </div>
+
+      <h3>Status basis</h3>
+      <p class="basis">${escapeHtml(p.status_basis)}</p>
+
+      <h3>Notes</h3>
+      <p class="notes">${escapeHtml(p.notes)}</p>
+
+      <div class="source">
+        <div><strong>${official ? "Official source" : "Secondary source"}</strong>: <a href="${escapeHtml(p.source_url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(hostOf(p.source_url))}</a></div>
+        <div class="dates">Retrieved ${escapeHtml(p.retrieved_on)} · Last verified ${escapeHtml(p.last_verified)} · Coordinate precision: ${escapeHtml(p.precision)}</div>
+      </div>
+    `;
+    detail.classList.add("open");
+  }
+
+  function closeDetail() {
+    if (selectedId && markers.has(selectedId)) {
+      const prev = byId.get(selectedId).properties;
+      markers.get(selectedId).setStyle(baseStyle(prev.status));
+    }
+    selectedId = null;
+    detail.classList.remove("open");
+    if (location.hash) {
+      history.replaceState(null, "", location.pathname + location.search);
+    }
+    render();
+  }
+
+  function hostOf(url) {
+    try { return new URL(url).hostname.replace(/^www\./, ""); }
+    catch { return url; }
+  }
+
+  function formatKm(value) {
+    const n = Number(value);
+    if (!Number.isFinite(n)) return "";
+    return `${n.toLocaleString("en-GB", { maximumFractionDigits: 2 })} km`;
+  }
+
+  function escapeHtml(value) {
+    return String(value ?? "").replace(/[&<>"']/g, ch => ({
+      "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
+    }[ch]));
+  }
+
+  document.querySelectorAll("[data-status]").forEach(input => {
+    input.addEventListener("change", () => {
+      if (input.checked) selectedStatuses.add(input.dataset.status);
+      else selectedStatuses.delete(input.dataset.status);
+      render();
+    });
+  });
+
+  document.querySelectorAll("[data-sector]").forEach(input => {
+    input.addEventListener("change", () => {
+      if (input.checked) selectedSectors.add(input.dataset.sector);
+      else selectedSectors.delete(input.dataset.sector);
+      render();
+    });
+  });
+
+  detailClose.addEventListener("click", closeDetail);
+  document.addEventListener("keydown", event => {
+    if (event.key === "Escape") closeDetail();
+  });
+
+  render();
+
+  const initialId = decodeURIComponent(location.hash.replace(/^#/, ""));
+  if (initialId && byId.has(initialId)) selectProject(initialId, true, false);
+})();
+</script>
+</body>
+</html>

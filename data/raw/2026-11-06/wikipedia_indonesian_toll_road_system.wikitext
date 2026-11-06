@@ -1,0 +1,497 @@
+{{Short description|none}}
+{{Infobox highway system
+| country    = IDN
+| type       = Toll
+| title      = Indonesian Toll Road System<br />''Sistem Jalan Tol Indonesia''
+| markers    = [[File:ID Rambu petunjuk 4a.svg|52px]] [[File:ID Tol12-1.svg|70px]]
+| caption    = Toll road sign (left) and number shield example (right)
+| map        = [[File:Map of Indonesian Toll Road System.png|300px]]
+| map_alt    = 
+| map_notes  = 
+| maint      = various companies under [[concession (contract)|concession]] from the [[Ministry of Public Works (Indonesia)|Ministry of Public Works]]
+| formed     = 1978
+| length_km = 3115
+| length_ref = <ref>{{cite web |last1=Kompas|date=December 2025|title= Ini jalan tol terpanjang di Indonesia, membenteng 189.4 km |url= https://www.kompas.com/lampung/read/2025/12/21/150000288/ini-jalan-tol-terpanjang-di-indonesia-membentang-189-4-kilometer?page=all#}}</ref>
+| notes      = 
+| label1     = Sumatra
+| field1     = [[Trans-Sumatra Toll Road]]
+| label2     = Java
+| field2     = [[Trans-Java Toll Road]]
+| label3     = Bali
+| field3     = [[Bali Mandara Toll Road]]
+| label4     = Kalimantan
+| field4     = [[Balikpapan-Samarinda Toll Road]]
+| label5     = Sulawesi
+| field5     = [[Manado-Bitung Toll Road]]<br>Makassar toll roads
+}}
+
+The '''Indonesian Toll Road System''' ({{langx|id|'''Sistem Jalan Tol Indonesia'''}}) is a network of [[controlled-access highways]] that forms a key component of the country's national road infrastructure. Managed under a combination of public and private sector arrangements, the system facilitates faster and more efficient travel across major islands, particularly [[Java]] and [[Sumatra]]. 
+
+Toll roads in Indonesia are overseen by the Toll Road Regulatory Agency (''Badan Pengatur Jalan Tol'' or BPJT), under the [[Ministry of Public Works and Housing (Indonesia)|Ministry of Public Works and Housing]] (''Kementerian Pekerjaan Umum''), and are primarily operated by [[State-owned enterprises of Indonesia|state-owned enterprises]], mainly Jasa Marga, Hutama Karya, Waskita Toll Road, and various private companies like Citra Marga Nusaphala Persada and [[Astra International|Astra Infra]]. 
+
+During the presidency of [[Joko Widodo]] from 2014 to 2024, Indonesia experienced a substantial expansion of its toll road network. Infrastructure development was a prominent focus of his administration, and by the end of his tenure, 72.7% of the country's operational toll roads had been constructed during this period. The expansion was part of a broader effort to enhance national connectivity and support economic development.<ref>{{cite web |title=72.7 Pct of Indonesian Toll Roads Built during Jokowi’s Era |url=https://jakartaglobe.id/news/727-pct-of-indonesian-toll-roads-built-during-jokowis-era |website=Jakarta Globe |access-date=12 June 2025 |date=24 September 2024}}</ref>
+
+==Lists==
+This is a '''list of toll roads in Indonesia''' grouped per [[Provinces of Indonesia|province]]. Partially opened, under-construction, and proposed toll roads are listed in ''italics''.
+
+{| class="wikitable sortable" style="font-size:95%;"
+|- valign=baseline
+! style="text-align:left; white-space:nowrap;" | Island
+! style="text-align:left;" | Province
+! style="text-align:left; white-space:nowrap;" | Toll Road name
+! style="white-space:nowrap;" | Length (km)
+! style="text-align:left; white-space:nowrap;" | Operator
+|-
+| rowspan="12" |'''[[Sumatra]]''' [[File:Trans sumatra map.png|thumb|220x220px|Trans-Sumatra Toll Road|center]]
+| [[Aceh]]
+| ''[[Sigli–Banda Aceh Toll Road]]''
+| 49.8 (operational), 74 (total)
+|Hutama Karya
+|-
+| rowspan="4" | [[North Sumatra]]
+| [[Medan–Binjai Toll Road]]
+|16.8 
+| Hutama Karya
+|-
+| ''Binjai–Langsa Toll Road''
+|11.8 (operational), 130.9 (total)
+| Hutama Karya
+|-
+| [[Belmera Toll Road|Belawan–Tanjung Morawa Toll Road]]
+| 34.4
+| Jasa Marga
+|-
+| [[Medan–Kuala Namu–Tebing Tinggi Toll Road]]
+| 61.8 
+| Jasamarga Kualanamu Tol
+|-
+| [[Riau]]
+| [[Pekanbaru–Dumai Toll Road]]
+| 131.5
+|Hutama Karya
+|-
+| [[West Sumatra]]
+| ''Padang–Pekanbaru Toll Road''
+| 38 (operational), 255 (total)
+|Hutama Karya
+|-
+| [[Bengkulu]]
+| ''Bengkulu–Lubuk Linggau Toll Road''
+| 18 (operational), 95 (total)
+|Hutama Karya
+|-
+| rowspan=2 | [[South Sumatra]] 
+| ''[[Kayu Agung–Palembang–Betung Toll Road]]''
+|42.5 (operational), 111.7 (total)
+|Waskita Sriwijaya Tol
+|-
+| [[Palembang–Indralaya Toll Road]]
+|22.0
+| Hutama Karya
+|-
+| rowspan=2 | [[Lampung]] 
+| [[Bakauheni–Terbanggi Besar Toll Road]]
+|140.9
+| Hutama Karya
+|-
+| [[Terbanggi Besar–Pematang Panggang Toll Road|Terbanggi Besar–Pematang Panggang–Kayuagung Toll Road]]
+|189
+| Hutama Karya
+|-
+| colspan="5" |
+|- valign=top
+| rowspan="53" style="background:#eee;" | '''[[Java]]''' [[File:Interconnection of Trans-Java Toll-Roads.svg|alt=Toll Networks in island of Java|thumb|220x220px|Trans-Java Toll Road|center]]
+| rowspan="16" | [[Greater Jakarta]]
+| [[Prof. Dr. Ir. Soedijatmo Toll Road]]
+| 14
+| Jasa Marga
+|-
+| [[Jakarta–Tangerang Toll Road]]
+| 27
+| Jasa Marga
+|-
+| [[Jakarta–Serpong Toll Road]]
+| 12
+| Jasa Marga 
+(Ulujami–Pondok Aren)
+
+Bintaro Serpong Damai
+
+(Ulujami–Pondok Aren)
+|- 
+| ''[[Depok–Antasari Toll Road]]''
+| 15.7 (operational), 23 (total)
+| Citra Waspphutowa
+|- 
+| [[Jagorawi Toll Road|Jakarta–Bogor–Ciawi Toll Road]]
+| 47
+| Jasa Marga
+|- 
+| [[Jakarta–Cikampek Toll Road]]
+| 72
+| Jasa Marga
+|-
+| [[Jakarta Inner Ring Road]]
+| 46
+| Jasa Marga 
+(Pluit–Cawang)
+
+<br>Citra Marga Nusaphala Persada 
+
+(Cawang–Tanjung Priok–Pluit)
+|- 
+| [[Jakarta Outer Ring Road]]
+| 65
+| Jakarta Lingkar Barat Satu 
+(Penjaringan–Kembangan) (W1)
+
+<br>Marga Lingkar Jakarta 
+
+(Kembangan–Ulujami) (W2)
+
+<br>Jasa Marga 
+
+(Ulujami–Pondok Pinang) (W3)
+
+<br>Hutama Karya 
+
+(Ciputat–TMII) (S)
+
+<br>Jasa Marga 
+
+(TMII–Cikunir–Cilincing) (E1–E2–E3)
+
+<br>Hutama Karya 
+
+([[Tanjung Priok Access Toll Road]]) (N)
+|-
+|[[Jakarta Elevated Toll Road|''Jakarta Inner Ring Road 2'']]
+''(6 Inner City Toll Roads)''
+|9.44 (operational),
+69.77 (total)
+|Jakarta Toll Road Development
+(Sunter–[[Jalan Tol Sunter - Pulogebang|Kelapa Gading–Pulogebang]])
+
+(Semanan–Grogol–Sunter)
+
+(Duri Pulo–Kampung Melayu)
+
+(Kampung Melayu–Kemayoran)
+
+(Ulujami–Tanah Abang)
+
+(Pasar Minggu–Casablanca Toll Road)
+|- 
+| [[Jakarta Outer Ring Road 2]]
+| 110.4
+| Jasamarga Kunciran Cengkareng
+([[Cengkareng–Batu Ceper–Kunciran Toll Road|Cengkareng'''–'''Kunciran]])
+
+Marga Trans Nusantara
+
+([[Kunciran–Serpong Toll Road|Kunciran–Serpong]])
+
+Cinere Serpong Jaya
+
+([[Cinere–Serpong Toll Road|Serpong–Pamulang]])
+
+Translingkar Kita Jaya
+
+([[Cinere–Jagorawi Toll Road|Cinere–Jagorawi]])
+
+Cimanggis Cibitung Tollways
+
+([[Cimanggis–Cibitung Toll Road|Cimanggis'''–'''Cibitung]])
+
+Cibitung Tanjung Priok Port Tollways
+
+([[Cibitung–Cilincing Toll Road|Cibitung–Cilincing]])
+|-
+|[[Jakarta Outer Ring Road 3 (JORR 3)|''Jakarta Outer Ring Road 3'']]
+|283.71
+''(estimation)''
+|Duta Graha Karya
+([[:id:Jalan_Tol_Kamal–Teluknaga–Rajeg|Kamal–Teluk Naga–Rajeg]])
+
+Djarum
+
+([[Semanan–Balaraja Toll Road|Semanan–Balaraja]])
+
+Trans Bumi Serbaraja
+
+([[Serpong–Balaraja Toll Road|Serpong–Balaraja]])
+
+''tba''
+
+(Serpong–Bitung–Batu Ceper)
+
+''Persada Utama Infra''
+
+([[Bogor–Serpong (via Parung) Toll Road|Bogor–Serpong ''via Parung'']]<ref>{{Cite web |title=Jalan_Tol_Bogor-Serpong_via_Parung |url=https://id.wikipedia.org/wiki/Jalan_Tol_Bogor-Serpong_via_Parung}}</ref>{{Circular reference|date=August 2024}})
+
+''Marga Sarana Jabar''
+
+[<nowiki/>[[Bogor Ring Road|'''BORR''' (''Bogor Outer Ring Road'')]]]
+
+''Persada Utama Infra''
+
+([[Sentul–Karawang Barat Toll Road|Sentul–Karawang Barat]]<ref>{{Cite web |title=Jalan_Tol_Sentul_Selatan-Jonggol-Karawang_Barat |url=https://id.wikipedia.org/wiki/Jalan_Tol_Sentul_Selatan-Jonggol-Karawang_Barat}}</ref>{{Circular reference|date=August 2024}})
+
+''tba''
+
+(Karawang Barat–Babelan)
+
+''tba''
+
+(Babelan–Pulogebang)
+|- 
+| ''[[Bekasi–Cawang–Kampung Melayu Toll Road]]''
+| 21.49 (operational), 33,89 (total)
+| Kresna Kusuma Dyandra Marga
+|- 
+| [[Jakarta–Cikampek Elevated Toll Road]]
+| 36.4
+| Jasamarga Jalan layang Cikampek 
+|-
+|''[[Jakarta Harbour Road 2 (Tanjung Priok–Ancol Timur–Pluit) Toll Road]]''<ref>{{Citation |title=Jalan Tol Pelabuhan |date=2024-06-23 |work=Wikipedia bahasa Indonesia, ensiklopedia bebas |url=https://id.wikipedia.org/w/index.php?title=Jalan_Tol_Pelabuhan&oldid=25899461 |access-date=2024-07-15 |language=id}}</ref>
+|9.60 (''under construction'')
+|Citra Marga Nusaphala Persada
+|-
+|[[Jakarta-Cikampek II South Toll Road|''Jakarta–Cikampek 2 South Toll Road'']]
+|62 (''under construction'')
+|Jasamarga Japek Selatan
+|-
+| ''[[Bogor Ring Road|Bogor Ring Road Toll Road]]''
+| 8.5 (operational), 13 (total)
+| Marga Sarana Jabar
+|-
+| rowspan=2 | [[Banten]]
+| [[Tangerang–Merak Toll Road]]
+| 73
+| Marga Mandala Sakti
+|-
+| ''[[Serang–Panimbang Toll Road]]''
+| 26.5 (operational), 83.5 (total)
+| Wijaya Karya Serang Panimbang
+|-
+| rowspan="9" | [[West Java]] (exclude Bogor, Depok, and Bekasi)
+| [[Cipularang Toll Road|Cikampek–Purwakarta–Padalarang Toll Road]]
+| 58.3
+| Jasa Marga
+|-
+| [[Padaleunyi Toll Road|Padalarang–Cileunyi Toll Road]]
+| 36
+| Jasa Marga
+|-
+| [[Cileunyi-Sumedang-Dawuan Toll Road|Cileunyi–Sumedang–Dawuan Toll Road]]
+| 62.6
+| Citra Karya Jabar
+|-
+| [[Soreang–Pasir Koja Toll Road]]
+| 10.6
+| Citra Marga Lintas Jabar
+|-
+|[[Cikopo–Palimanan Toll Road]]
+|116.75
+|Lintas Marga Sedaya
+|-
+| [[Palimanan–Kanci Toll Road]]
+| 26
+| Jasa Marga
+|- 
+| [[Kanci–Pejagan Toll Road]]
+| 35
+| Semesta Marga Raya
+|-
+| ''[[Bogor–Ciawi–Sukabumi Toll Road|Ciawi–Sukabumi]]''
+| 27.3 (operational), 53.6 (total)
+| Trans Jabar Tol
+|-
+| ''[[Gedebage–Tasikmalaya–Cilacap Toll Road|Gedebage–Tasikmalaya–Cilacap]]''<ref>{{Citation |title=Jalan Tol Gedebage–Tasikmalaya–Cilacap |date=2024-06-16 |work=Wikipedia bahasa Indonesia, ensiklopedia bebas |url=https://id.wikipedia.org/w/index.php?title=Jalan_Tol_Gedebage%E2%80%93Tasikmalaya%E2%80%93Cilacap&oldid=25840306 |access-date=2024-07-14 |language=id}}</ref>
+| 206.65 (in ''preparation'')
+| ''tba''
+|-
+| rowspan="14" | [[Central Java]] & [[Special Region of Yogyakarta|Yogyakarta]]
+| [[Pejagan-Pemalang Toll Road]]
+| 57.5
+| Pejagan Pemalang Toll Road
+|-
+| [[Pemalang-Batang Toll Road]]
+| 39
+| Pemalang Batang Toll Road
+|-
+| [[Batang-Semarang Toll Road]]
+| 75
+| Jasamarga Semarang Batang
+|- 
+| [[Semarang Toll Road|Semarang ABC Toll Road]]
+| 25
+| Jasa Marga
+|-
+|''[[Semarang–Demak Toll Road]]''
+|16,01 (operational)
+24.74 (total)
+|PP Semarang Demak
+|-
+|''[[Demak–Tuban Toll Road]]''
+|176.99 (in ''preparation'')
+|''tba''
+|-
+|''[[Harbour Toll Road Semarang (Semarang–Kendal)]]''
+|20,86
+(in ''preparation'')
+|''tba''
+|-
+| [[Semarang–Solo Toll Road]]
+| 72.68
+| Trans Marga Jateng
+|-
+|[[Solo–Kertosono Toll Road|Solo–Ngawi Toll Road]]
+|90.43
+|Jasamarga Solo Ngawi
+|-
+|''[[Solo–Yogyakarta Toll Road|Yogyakarta–Solo Toll Road]]''
+|58.01 (''under construction'')
+|Jasamarga Jogja Solo
+|-
+|''[[Solo-Yogyakarta Toll Road|Yogyakarta–Sleman–YIA Kulonprogo Toll Road]]''
+|35.74 (in ''preparation'')
+|Jasamarga Jogja Solo
+|-
+|''[[Yogyakarta–Bawen Toll Road]]''<ref>{{Citation |title=Jalan Tol Yogyakarta–Magelang–Bawen |date=2024-05-25 |work=Wikipedia bahasa Indonesia, ensiklopedia bebas |url=https://id.wikipedia.org/w/index.php?title=Jalan_Tol_Yogyakarta%E2%80%93Magelang%E2%80%93Bawen&oldid=25753283 |access-date=2024-07-14 |language=id}}</ref>
+|75.82 (''under construction'')
+|Jasa Marga Jogja Bawen
+|-
+|''[[Pejagan/Tegal–Cilacap Toll Road]]''
+|141 (in ''preparation'')
+|''tba''
+|- 
+| ''[[Cilacap–Yogyakarta Toll Road]]''
+| 167.07 (in ''preparation'')
+| ''tba''
+|- 
+| rowspan="12" |[[East Java]]
+| ''[[Krian–Legundi–Bunder–Manyar Toll Road]]''
+| 29 (operational), 38 (total)
+| Waskita Bumi Wira
+|-
+| [[Waru-Juanda Toll Road]]
+| 13
+| Citra Margatama Surabaya
+|-
+| [[Surabaya–Mojokerto Toll Road]]
+| 36.27
+| Jasamarga Surabaya Mojokerto
+|-
+| [[Kertosono–Mojokerto Toll Road|Jombang–Mojokerto Toll Road]]
+| 40.5
+| Astra Tol Nusantara
+|-
+| [[Solo–Kertosono Toll Road|Ngawi–Kertosono Toll Road]]
+| 87
+| Jasamarga Ngawi Kertosono Kediri
+|-
+| [[Surabaya–Gresik Toll Road]]
+| 21
+| Margabumi Matraraya
+|-
+| [[Surabaya–Gempol Toll Road]]
+| 43
+| Jasa Marga
+|-
+| [[Gempol–Pandaan Toll Road]]
+| 14
+| Jasa Marga Pandaan Tol
+|-
+| ''[[Pandaan-Malang Toll Road]]''
+| 38.5
+| Jasamarga Pandaan Malang
+|-
+| [[Gempol–Pasuruan Toll Road]]
+| 34.15
+| Jasamarga Gempol Pasuruan
+|-
+|[[Pasuruan–Probolinggo Toll Road]]
+|39.85 
+|Trans-Jawa Paspro Jalan Tol
+|-
+| ''[[Probolinggo–Banyuwangi Toll Road]]''
+| 176.4 (''under construction'')
+| Jasamarga Probolinggo Banyuwangi (JPB)
+|-
+| colspan="5" |
+|- valign=top
+| rowspan="2" style="background:#eee;" | '''[[Bali]]'''
+| rowspan="2" | [[Bali]] 
+| [[Bali Mandara Toll Road]]
+| 10
+| Jasamarga Bali Tol
+|-
+|''[[Gilimanuk–Mengwi Toll Road]]''
+|96,84 (''in preparation'')
+|''tba''
+|-
+| colspan="5" |
+|- valign=top
+| style="background:#eee;" rowspan=1 | '''[[Kalimantan]]'''
+| rowspan=1 | [[East Kalimantan]]
+| [[Samarinda-Balikpapan Toll Road|Balikpapan–Samarinda Toll Road]]
+| 99.3
+| Jasa Marga
+|-
+| colspan="5" |
+|- valign=top
+| rowspan="4" style="font-weight:bold; background:#eee;" | [[Sulawesi]]
+| [[North Sulawesi]]
+| [[Manado–Bitung Toll Road]]
+| 40
+| Jasamarga Manado Bitung
+|-
+| rowspan="3" | [[South Sulawesi]] 
+| Ir. Sutami Toll Road
+| 12
+| Jalan Tol Seksi Empat
+|-
+| Reformasi Toll Road
+| 6
+| rowspan="2" | Bosowa Marga Nusantara
+|-
+|Pettarani Elevated Toll Road
+|4.3
+|}
+Source : [https://bpjt.pu.go.id/konten/bujt BUJT]
+
+==Gallery==
+<gallery>
+File:Bali Mandara Toll road.JPG|Bali Mandara Toll Road
+File:Jakarta-Bogor-Ciawi (JBC) Toll Road (Jalan Tol 2), August 2019 (7).jpg|Jagorawi Toll Road
+File:Tol Jakarta-Cikampek KM 04.jpg|Jakarta-Cikampek toll road
+File:Jalan Tol Cikampek-Jakarta.jpg|Jakarta-Cikampek toll road, before widening
+File:Gerbang Tol Ciawi.JPG|Ciawi toll plaza
+File:Tol-JORR2.JPG|Jakarta Outer Ring Road
+File:Indonesia Road Sign Toll Road exit 3.png|Toll road exit sign
+File:Indonesian Road Sign Toll road distance.png|Toll road distance sign
+File:Trans-Sumatran Toll Road South (Asian Highway 25), Lampung (December 2019) (38).jpg|Bakauheni - Terbanggi Besar Toll Road
+</gallery>
+
+==See also==
+* [[Trans-Java Toll Road]]
+* [[Trans-Sumatra Toll Road]]
+
+==References==
+{{reflist}}
+* [https://sigi.pu.go.id/portalpupr/apps/opsdashboard/index.html#/ad691982b770462d8e236f8ca7e450f4/ (''GIS BPJT'') live update webpage map]
+
+==External links==
+* [http://www.bpjt.pu.go.id Toll Road Regulatory Agency (''Badan Pengatur Jalan Tol'') website]
+* [http://www.jasamarga.com Jasa Marga] {{Webarchive|url=https://web.archive.org/web/20170619024035/http://jasamarga.com/ |date=2017-06-19 }}
+* [http://id.citramarga.com CMNP]
+
+{{Toll Roads in Indonesia|state=expanded}}
+{{Motorways in Asia}}
+{{DEFAULTSORT:List Of Toll Roads In Indonesia}}
+[[Category:Infrastructure in Indonesia]]
+[[Category:Toll roads in Indonesia]]
+[[Category:Lists of roads by country|Indonesia Toll Roads]]
+[[Category:Lists of buildings and structures in Indonesia|Toll roads]]
+[[Category:Indonesia transport-related lists|Toll roads]]
