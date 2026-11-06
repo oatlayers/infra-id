@@ -268,6 +268,13 @@ sector_focus,legal_basis,established_year,website,source_id,last_verified,notes
 `type` is `industrial_estate`, `sez` or `both`. The table is validated but is not
 read by the site build yet.
 
+**Known gap.** Kemenperin announced nine new estates in 2025. They are not in the
+table yet because each needs its own source for area, developer and coordinates:
+IPIP (Kemenperin lists it under Central Sulawesi; the Pomalaa project is in
+Southeast Sulawesi), I-Sentra Lamongan, Huadi Bantaeng, Cikembar II, Losarang,
+Purwakarta Integrated Industrial Park, Pulau Penebang, Seafer and Tembesi. Add
+them with individual sources rather than copying the press release.
+
 ## Adding or updating a project
 
 1. Save the source snapshot to `data/raw/<YYYY-MM-DD>/` (raw, unedited).

@@ -252,6 +252,12 @@ coordinates (`precision=regency`). The list is close to, but not the same as, th
 179 estates Kemenperin reported in 2026: 2025 additions and exact boundaries are
 still missing. The data is validated but not read by the site build yet.
 
+**Known gap.** Nine estates announced in 2025 are not in the table: IPIP (listed
+by Kemenperin under Central Sulawesi, though Pomalaa is in Southeast Sulawesi),
+I-Sentra Lamongan, Huadi Bantaeng, Cikembar II, Losarang, Purwakarta Integrated
+Industrial Park, Pulau Penebang, Seafer and Tembesi. Add them with individual
+sources for area, developer and coordinates.
+
 **Site changes.** Enable railway, airport, seaport and factory filters; show km
 bars and investment or capacity in the detail panel; add a corridor progress
 section; show aggregate km by sector in the header. Keep the offline basemap.
