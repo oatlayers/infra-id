@@ -653,7 +653,7 @@ source parse. Same pattern for transport rows if extraction is re-run.
 
 | Layer | Now | Target | Gap | Source of truth |
 |---|---:|---:|---:|---|
-| Roads | 42 | 40–50 major corridors | 0–8 (45 target: 3) | BPJT + PSN |
+| Roads | 42 | 45 target (40–50 range) | 3 | BPJT + PSN |
 | Railways | 13 | 13 PSN | 0 | Kemenhub deck |
 | Airports | 7 | 7 PSN | 0 | Kemenhub deck |
 | Seaports | 15 | 15 PSN | 0 | Kemenhub deck |
