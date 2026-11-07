@@ -3596,6 +3596,876 @@
           }
         ]
       }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.23478,
+          -3.40851
+        ]
+      },
+      "properties": {
+        "id": "tol-simpang-indralaya-muara-enim",
+        "name": "Simpang Indralaya–Muara Enim Toll Road",
+        "sector": "road",
+        "subsector": "toll",
+        "status": "under_construction",
+        "status_basis": "BPJT toll-road list (6 Nov 2026): Operasi, 63.5 of 119 km operational.",
+        "corridor_id": "trans-sumatera",
+        "island": "Sumatra",
+        "province": "South Sumatra",
+        "route": "Indralaya–Muara Enim, South Sumatra",
+        "length_km": "119",
+        "operational_km": "63.5",
+        "construction_km": "",
+        "progress_pct": "",
+        "investment_idr_t": "",
+        "capacity": "",
+        "capacity_unit": "",
+        "psn": "yes",
+        "opened_year": "",
+        "opened_date": "",
+        "expected_open_year": "",
+        "status_as_of": "2026-11-06",
+        "verification": "official",
+        "precision": "approximate",
+        "operator": "PT Hutama Karya (Persero)",
+        "source_url": "https://itrams-api.bpjt.pu.go.id/v1/reference/api/toll-road-list",
+        "source_type": "official",
+        "retrieved_on": "2026-11-06",
+        "last_verified": "2026-11-08",
+        "notes": "Coordinates are the midpoint of the BPJT start and end points, approximate. BPJT labels the corridor Operasi, but only part of the recorded length is open; the remainder is not recorded as operational.",
+        "corridor_name": "Trans Sumatra",
+        "sources": [
+          {
+            "id": "src-bpjt-toll-road-list-2026-11-06",
+            "publisher": "Badan Pengatur Jalan Tol (BPJT)",
+            "title": "Toll road list API",
+            "url": "https://itrams-api.bpjt.pu.go.id/v1/reference/api/toll-road-list",
+            "published_on": "",
+            "retrieved_on": "2026-11-06",
+            "source_type": "official",
+            "language": "id",
+            "archive_path": "data/raw/2026-11-06/bpjt_toll_road_list.json",
+            "notes": "77 operating or partly operating rows.",
+            "claim": "status; length; operational; operator; location"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.57568,
+          -6.25837
+        ]
+      },
+      "properties": {
+        "id": "tol-serpong-balaraja",
+        "name": "Serpong–Balaraja Toll Road",
+        "sector": "road",
+        "subsector": "toll",
+        "status": "under_construction",
+        "status_basis": "BPJT toll-road list (6 Nov 2026): Operasi Sebagian, 9.335 of 30 km operational.",
+        "corridor_id": "",
+        "island": "Java",
+        "province": "Banten",
+        "route": "Serpong–Balaraja, Banten",
+        "length_km": "30",
+        "operational_km": "9.335",
+        "construction_km": "",
+        "progress_pct": "",
+        "investment_idr_t": "",
+        "capacity": "",
+        "capacity_unit": "",
+        "psn": "yes",
+        "opened_year": "",
+        "opened_date": "",
+        "expected_open_year": "",
+        "status_as_of": "2026-11-06",
+        "verification": "official",
+        "precision": "approximate",
+        "operator": "PT Trans Bumi Serbaraja",
+        "source_url": "https://itrams-api.bpjt.pu.go.id/v1/reference/api/toll-road-list",
+        "source_type": "official",
+        "retrieved_on": "2026-11-06",
+        "last_verified": "2026-11-08",
+        "notes": "Coordinates are the midpoint of the BPJT start and end points, approximate. BPJT labels the corridor Operasi Sebagian; the recorded operational length does not mean the whole corridor is open.",
+        "corridor_name": "",
+        "sources": [
+          {
+            "id": "src-bpjt-toll-road-list-2026-11-06",
+            "publisher": "Badan Pengatur Jalan Tol (BPJT)",
+            "title": "Toll road list API",
+            "url": "https://itrams-api.bpjt.pu.go.id/v1/reference/api/toll-road-list",
+            "published_on": "",
+            "retrieved_on": "2026-11-06",
+            "source_type": "official",
+            "language": "id",
+            "archive_path": "data/raw/2026-11-06/bpjt_toll_road_list.json",
+            "notes": "77 operating or partly operating rows.",
+            "claim": "status; length; operational; operator; location"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.93405,
+          -6.81646
+        ]
+      },
+      "properties": {
+        "id": "tol-cileunyi-sumedang-dawuan",
+        "name": "Cileunyi–Sumedang–Dawuan Toll Road",
+        "sector": "road",
+        "subsector": "toll",
+        "status": "operating",
+        "status_basis": "BPJT toll-road list (6 Nov 2026): Operasi, 61.665 of 60.1 km operational; operation decree 2022.",
+        "corridor_id": "",
+        "island": "Java",
+        "province": "West Java",
+        "route": "Cileunyi–Sumedang–Dawuan, West Java",
+        "length_km": "60.1",
+        "operational_km": "61.665",
+        "construction_km": "",
+        "progress_pct": "",
+        "investment_idr_t": "",
+        "capacity": "",
+        "capacity_unit": "",
+        "psn": "yes",
+        "opened_year": "2022",
+        "opened_date": "",
+        "expected_open_year": "",
+        "status_as_of": "2026-11-06",
+        "verification": "official",
+        "precision": "approximate",
+        "operator": "PT Citra Karya Jabar Tol",
+        "source_url": "https://itrams-api.bpjt.pu.go.id/v1/reference/api/toll-road-list",
+        "source_type": "official",
+        "retrieved_on": "2026-11-06",
+        "last_verified": "2026-11-08",
+        "notes": "Coordinates are the midpoint of the BPJT start and end points, approximate.",
+        "corridor_name": "",
+        "sources": [
+          {
+            "id": "src-bpjt-toll-road-list-2026-11-06",
+            "publisher": "Badan Pengatur Jalan Tol (BPJT)",
+            "title": "Toll road list API",
+            "url": "https://itrams-api.bpjt.pu.go.id/v1/reference/api/toll-road-list",
+            "published_on": "",
+            "retrieved_on": "2026-11-06",
+            "source_type": "official",
+            "language": "id",
+            "archive_path": "data/raw/2026-11-06/bpjt_toll_road_list.json",
+            "notes": "77 operating or partly operating rows.",
+            "claim": "status; length; operational; operator; location"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.00845,
+          -6.21229
+        ]
+      },
+      "properties": {
+        "id": "tol-cibitung-cilincing",
+        "name": "Cibitung–Cilincing Toll Road",
+        "sector": "road",
+        "subsector": "toll",
+        "status": "operating",
+        "status_basis": "BPJT toll-road list (6 Nov 2026): Operasi, 34.76 of 34.76 km operational; operation decree 2021.",
+        "corridor_id": "",
+        "island": "Java",
+        "province": "West Java; DKI Jakarta",
+        "route": "Cibitung–Cilincing, Bekasi–Jakarta",
+        "length_km": "34.76",
+        "operational_km": "34.76",
+        "construction_km": "",
+        "progress_pct": "",
+        "investment_idr_t": "",
+        "capacity": "",
+        "capacity_unit": "",
+        "psn": "yes",
+        "opened_year": "2021",
+        "opened_date": "",
+        "expected_open_year": "",
+        "status_as_of": "2026-11-06",
+        "verification": "official",
+        "precision": "approximate",
+        "operator": "PT Cibitung Tanjung Priok Port Tollways",
+        "source_url": "https://itrams-api.bpjt.pu.go.id/v1/reference/api/toll-road-list",
+        "source_type": "official",
+        "retrieved_on": "2026-11-06",
+        "last_verified": "2026-11-08",
+        "notes": "Coordinates are the midpoint of the BPJT start and end points, approximate.",
+        "corridor_name": "",
+        "sources": [
+          {
+            "id": "src-bpjt-toll-road-list-2026-11-06",
+            "publisher": "Badan Pengatur Jalan Tol (BPJT)",
+            "title": "Toll road list API",
+            "url": "https://itrams-api.bpjt.pu.go.id/v1/reference/api/toll-road-list",
+            "published_on": "",
+            "retrieved_on": "2026-11-06",
+            "source_type": "official",
+            "language": "id",
+            "archive_path": "data/raw/2026-11-06/bpjt_toll_road_list.json",
+            "notes": "77 operating or partly operating rows.",
+            "claim": "status; length; operational; operator; location"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.678,
+          -6.16723
+        ]
+      },
+      "properties": {
+        "id": "tol-cengkareng-batu-ceper-kunciran",
+        "name": "Cengkareng–Batu Ceper–Kunciran Toll Road",
+        "sector": "road",
+        "subsector": "toll",
+        "status": "operating",
+        "status_basis": "BPJT toll-road list (6 Nov 2026): Operasi, 14.19 of 14.19 km operational; operation decree 2021.",
+        "corridor_id": "",
+        "island": "Java",
+        "province": "DKI Jakarta; Banten",
+        "route": "Cengkareng–Kunciran, Jakarta–Tangerang",
+        "length_km": "14.19",
+        "operational_km": "14.19",
+        "construction_km": "",
+        "progress_pct": "",
+        "investment_idr_t": "",
+        "capacity": "",
+        "capacity_unit": "",
+        "psn": "yes",
+        "opened_year": "2021",
+        "opened_date": "",
+        "expected_open_year": "",
+        "status_as_of": "2026-11-06",
+        "verification": "official",
+        "precision": "approximate",
+        "operator": "PT Jasamarga Kunciran Cengkareng",
+        "source_url": "https://itrams-api.bpjt.pu.go.id/v1/reference/api/toll-road-list",
+        "source_type": "official",
+        "retrieved_on": "2026-11-06",
+        "last_verified": "2026-11-08",
+        "notes": "Coordinates are the midpoint of the BPJT start and end points, approximate.",
+        "corridor_name": "",
+        "sources": [
+          {
+            "id": "src-bpjt-toll-road-list-2026-11-06",
+            "publisher": "Badan Pengatur Jalan Tol (BPJT)",
+            "title": "Toll road list API",
+            "url": "https://itrams-api.bpjt.pu.go.id/v1/reference/api/toll-road-list",
+            "published_on": "",
+            "retrieved_on": "2026-11-06",
+            "source_type": "official",
+            "language": "id",
+            "archive_path": "data/raw/2026-11-06/bpjt_toll_road_list.json",
+            "notes": "77 operating or partly operating rows.",
+            "claim": "status; length; operational; operator; location"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.35669,
+          1.0234
+        ]
+      },
+      "properties": {
+        "id": "tol-pekanbaru-kandis-dumai",
+        "name": "Pekanbaru–Kandis–Dumai Toll Road",
+        "sector": "road",
+        "subsector": "toll",
+        "status": "under_construction",
+        "status_basis": "BPJT toll-road list (6 Nov 2026): Operasi, 131.69 of 143.092 km operational.",
+        "corridor_id": "trans-sumatera",
+        "island": "Sumatra",
+        "province": "Riau",
+        "route": "Pekanbaru–Dumai, Riau",
+        "length_km": "143.092",
+        "operational_km": "131.69",
+        "construction_km": "",
+        "progress_pct": "",
+        "investment_idr_t": "",
+        "capacity": "",
+        "capacity_unit": "",
+        "psn": "yes",
+        "opened_year": "",
+        "opened_date": "",
+        "expected_open_year": "",
+        "status_as_of": "2026-11-06",
+        "verification": "official",
+        "precision": "approximate",
+        "operator": "PT Hutama Karya (Persero)",
+        "source_url": "https://itrams-api.bpjt.pu.go.id/v1/reference/api/toll-road-list",
+        "source_type": "official",
+        "retrieved_on": "2026-11-06",
+        "last_verified": "2026-11-08",
+        "notes": "Coordinates are the midpoint of the BPJT start and end points, approximate. BPJT labels the corridor Operasi, but only part of the recorded length is open; the remainder is not recorded as operational.",
+        "corridor_name": "Trans Sumatra",
+        "sources": [
+          {
+            "id": "src-bpjt-toll-road-list-2026-11-06",
+            "publisher": "Badan Pengatur Jalan Tol (BPJT)",
+            "title": "Toll road list API",
+            "url": "https://itrams-api.bpjt.pu.go.id/v1/reference/api/toll-road-list",
+            "published_on": "",
+            "retrieved_on": "2026-11-06",
+            "source_type": "official",
+            "language": "id",
+            "archive_path": "data/raw/2026-11-06/bpjt_toll_road_list.json",
+            "notes": "77 operating or partly operating rows.",
+            "claim": "status; length; operational; operator; location"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          125.04453,
+          1.46061
+        ]
+      },
+      "properties": {
+        "id": "tol-manado-bitung",
+        "name": "Manado–Bitung Toll Road",
+        "sector": "road",
+        "subsector": "toll",
+        "status": "operating",
+        "status_basis": "BPJT toll-road list (6 Nov 2026): Operasi, 39.775 of 39.9 km operational; operation decree 2020.",
+        "corridor_id": "",
+        "island": "Sulawesi",
+        "province": "North Sulawesi",
+        "route": "Manado–Bitung, North Sulawesi",
+        "length_km": "39.9",
+        "operational_km": "39.775",
+        "construction_km": "",
+        "progress_pct": "",
+        "investment_idr_t": "",
+        "capacity": "",
+        "capacity_unit": "",
+        "psn": "yes",
+        "opened_year": "2020",
+        "opened_date": "",
+        "expected_open_year": "",
+        "status_as_of": "2026-11-06",
+        "verification": "official",
+        "precision": "approximate",
+        "operator": "PT Jasamarga Manado Bitung",
+        "source_url": "https://itrams-api.bpjt.pu.go.id/v1/reference/api/toll-road-list",
+        "source_type": "official",
+        "retrieved_on": "2026-11-06",
+        "last_verified": "2026-11-08",
+        "notes": "Coordinates are the midpoint of the BPJT start and end points, approximate.",
+        "corridor_name": "",
+        "sources": [
+          {
+            "id": "src-bpjt-toll-road-list-2026-11-06",
+            "publisher": "Badan Pengatur Jalan Tol (BPJT)",
+            "title": "Toll road list API",
+            "url": "https://itrams-api.bpjt.pu.go.id/v1/reference/api/toll-road-list",
+            "published_on": "",
+            "retrieved_on": "2026-11-06",
+            "source_type": "official",
+            "language": "id",
+            "archive_path": "data/raw/2026-11-06/bpjt_toll_road_list.json",
+            "notes": "77 operating or partly operating rows.",
+            "claim": "status; length; operational; operator; location"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          117.05572,
+          -0.88368
+        ]
+      },
+      "properties": {
+        "id": "tol-balikpapan-samarinda",
+        "name": "Balikpapan–Samarinda Toll Road",
+        "sector": "road",
+        "subsector": "toll",
+        "status": "under_construction",
+        "status_basis": "BPJT toll-road list (6 Nov 2026): Operasi Sebagian, 97.27 of 97.27 km operational.",
+        "corridor_id": "",
+        "island": "Kalimantan",
+        "province": "East Kalimantan",
+        "route": "Balikpapan–Samarinda, East Kalimantan",
+        "length_km": "97.27",
+        "operational_km": "97.27",
+        "construction_km": "",
+        "progress_pct": "",
+        "investment_idr_t": "",
+        "capacity": "",
+        "capacity_unit": "",
+        "psn": "yes",
+        "opened_year": "",
+        "opened_date": "",
+        "expected_open_year": "",
+        "status_as_of": "2026-11-06",
+        "verification": "official",
+        "precision": "approximate",
+        "operator": "PT Jasamarga Balikpapan Samarinda",
+        "source_url": "https://itrams-api.bpjt.pu.go.id/v1/reference/api/toll-road-list",
+        "source_type": "official",
+        "retrieved_on": "2026-11-06",
+        "last_verified": "2026-11-08",
+        "notes": "Coordinates are the midpoint of the BPJT start and end points, approximate. BPJT labels the corridor Operasi Sebagian; the recorded operational length does not mean the whole corridor is open.",
+        "corridor_name": "",
+        "sources": [
+          {
+            "id": "src-bpjt-toll-road-list-2026-11-06",
+            "publisher": "Badan Pengatur Jalan Tol (BPJT)",
+            "title": "Toll road list API",
+            "url": "https://itrams-api.bpjt.pu.go.id/v1/reference/api/toll-road-list",
+            "published_on": "",
+            "retrieved_on": "2026-11-06",
+            "source_type": "official",
+            "language": "id",
+            "archive_path": "data/raw/2026-11-06/bpjt_toll_road_list.json",
+            "notes": "77 operating or partly operating rows.",
+            "claim": "status; length; operational; operator; location"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.68488,
+          -6.25985
+        ]
+      },
+      "properties": {
+        "id": "tol-kunciran-serpong",
+        "name": "Kunciran–Serpong Toll Road",
+        "sector": "road",
+        "subsector": "toll",
+        "status": "operating",
+        "status_basis": "BPJT toll-road list (6 Nov 2026): Operasi, 11.135 of 11.19 km operational; operation decree 2019.",
+        "corridor_id": "",
+        "island": "Java",
+        "province": "Banten",
+        "route": "Kunciran–Serpong, Banten",
+        "length_km": "11.19",
+        "operational_km": "11.135",
+        "construction_km": "",
+        "progress_pct": "",
+        "investment_idr_t": "",
+        "capacity": "",
+        "capacity_unit": "",
+        "psn": "yes",
+        "opened_year": "2019",
+        "opened_date": "",
+        "expected_open_year": "",
+        "status_as_of": "2026-11-06",
+        "verification": "official",
+        "precision": "approximate",
+        "operator": "PT Marga Trans Nusantara",
+        "source_url": "https://itrams-api.bpjt.pu.go.id/v1/reference/api/toll-road-list",
+        "source_type": "official",
+        "retrieved_on": "2026-11-06",
+        "last_verified": "2026-11-08",
+        "notes": "Coordinates are the midpoint of the BPJT start and end points, approximate.",
+        "corridor_name": "",
+        "sources": [
+          {
+            "id": "src-bpjt-toll-road-list-2026-11-06",
+            "publisher": "Badan Pengatur Jalan Tol (BPJT)",
+            "title": "Toll road list API",
+            "url": "https://itrams-api.bpjt.pu.go.id/v1/reference/api/toll-road-list",
+            "published_on": "",
+            "retrieved_on": "2026-11-06",
+            "source_type": "official",
+            "language": "id",
+            "archive_path": "data/raw/2026-11-06/bpjt_toll_road_list.json",
+            "notes": "77 operating or partly operating rows.",
+            "claim": "status; length; operational; operator; location"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          113.15686,
+          -7.76931
+        ]
+      },
+      "properties": {
+        "id": "tol-pasuruan-probolinggo",
+        "name": "Pasuruan–Probolinggo Toll Road",
+        "sector": "road",
+        "subsector": "toll",
+        "status": "operating",
+        "status_basis": "BPJT toll-road list (6 Nov 2026): Operasi, 40.375 of 39.875 km operational; operation decree 2019.",
+        "corridor_id": "",
+        "island": "Java",
+        "province": "East Java",
+        "route": "Pasuruan–Probolinggo, East Java",
+        "length_km": "39.875",
+        "operational_km": "40.375",
+        "construction_km": "",
+        "progress_pct": "",
+        "investment_idr_t": "",
+        "capacity": "",
+        "capacity_unit": "",
+        "psn": "yes",
+        "opened_year": "2019",
+        "opened_date": "",
+        "expected_open_year": "",
+        "status_as_of": "2026-11-06",
+        "verification": "official",
+        "precision": "approximate",
+        "operator": "PT Trans Jawa Paspro Jalan Tol",
+        "source_url": "https://itrams-api.bpjt.pu.go.id/v1/reference/api/toll-road-list",
+        "source_type": "official",
+        "retrieved_on": "2026-11-06",
+        "last_verified": "2026-11-08",
+        "notes": "Coordinates are the midpoint of the BPJT start and end points, approximate.",
+        "corridor_name": "",
+        "sources": [
+          {
+            "id": "src-bpjt-toll-road-list-2026-11-06",
+            "publisher": "Badan Pengatur Jalan Tol (BPJT)",
+            "title": "Toll road list API",
+            "url": "https://itrams-api.bpjt.pu.go.id/v1/reference/api/toll-road-list",
+            "published_on": "",
+            "retrieved_on": "2026-11-06",
+            "source_type": "official",
+            "language": "id",
+            "archive_path": "data/raw/2026-11-06/bpjt_toll_road_list.json",
+            "notes": "77 operating or partly operating rows.",
+            "claim": "status; length; operational; operator; location"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          112.69327,
+          -7.82964
+        ]
+      },
+      "properties": {
+        "id": "tol-pandaan-malang",
+        "name": "Pandaan–Malang Toll Road",
+        "sector": "road",
+        "subsector": "toll",
+        "status": "operating",
+        "status_basis": "BPJT toll-road list (6 Nov 2026): Operasi, 38.46 of 38.48 km operational; operation decree 2019.",
+        "corridor_id": "",
+        "island": "Java",
+        "province": "East Java",
+        "route": "Pandaan–Malang, East Java",
+        "length_km": "38.48",
+        "operational_km": "38.46",
+        "construction_km": "",
+        "progress_pct": "",
+        "investment_idr_t": "",
+        "capacity": "",
+        "capacity_unit": "",
+        "psn": "yes",
+        "opened_year": "2019",
+        "opened_date": "",
+        "expected_open_year": "",
+        "status_as_of": "2026-11-06",
+        "verification": "official",
+        "precision": "approximate",
+        "operator": "PT Jasamarga Pandaan Malang",
+        "source_url": "https://itrams-api.bpjt.pu.go.id/v1/reference/api/toll-road-list",
+        "source_type": "official",
+        "retrieved_on": "2026-11-06",
+        "last_verified": "2026-11-08",
+        "notes": "Coordinates are the midpoint of the BPJT start and end points, approximate.",
+        "corridor_name": "",
+        "sources": [
+          {
+            "id": "src-bpjt-toll-road-list-2026-11-06",
+            "publisher": "Badan Pengatur Jalan Tol (BPJT)",
+            "title": "Toll road list API",
+            "url": "https://itrams-api.bpjt.pu.go.id/v1/reference/api/toll-road-list",
+            "published_on": "",
+            "retrieved_on": "2026-11-06",
+            "source_type": "official",
+            "language": "id",
+            "archive_path": "data/raw/2026-11-06/bpjt_toll_road_list.json",
+            "notes": "77 operating or partly operating rows.",
+            "claim": "status; length; operational; operator; location"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          111.65,
+          -7.55
+        ]
+      },
+      "properties": {
+        "id": "tol-ngawi-kertosono-kediri",
+        "name": "Ngawi–Kertosono–Kediri Toll Road",
+        "sector": "road",
+        "subsector": "toll",
+        "status": "under_construction",
+        "status_basis": "BPJT toll-road list (6 Nov 2026): Operasi Sebagian, 87.05 of 87.02 km operational.",
+        "corridor_id": "",
+        "island": "Java",
+        "province": "East Java",
+        "route": "Ngawi–Kertosono–Kediri, East Java",
+        "length_km": "87.02",
+        "operational_km": "87.05",
+        "construction_km": "",
+        "progress_pct": "",
+        "investment_idr_t": "",
+        "capacity": "",
+        "capacity_unit": "",
+        "psn": "yes",
+        "opened_year": "",
+        "opened_date": "",
+        "expected_open_year": "",
+        "status_as_of": "2026-11-06",
+        "verification": "official",
+        "precision": "approximate",
+        "operator": "PT Jasamarga Ngawi Kertosono Kediri",
+        "source_url": "https://itrams-api.bpjt.pu.go.id/v1/reference/api/toll-road-list",
+        "source_type": "official",
+        "retrieved_on": "2026-11-06",
+        "last_verified": "2026-11-08",
+        "notes": "Coordinates are the midpoint of the BPJT start and end points, approximate. BPJT labels the corridor Operasi Sebagian; the recorded operational length does not mean the whole corridor is open.",
+        "corridor_name": "",
+        "sources": [
+          {
+            "id": "src-bpjt-toll-road-list-2026-11-06",
+            "publisher": "Badan Pengatur Jalan Tol (BPJT)",
+            "title": "Toll road list API",
+            "url": "https://itrams-api.bpjt.pu.go.id/v1/reference/api/toll-road-list",
+            "published_on": "",
+            "retrieved_on": "2026-11-06",
+            "source_type": "official",
+            "language": "id",
+            "archive_path": "data/raw/2026-11-06/bpjt_toll_road_list.json",
+            "notes": "77 operating or partly operating rows.",
+            "claim": "status; length; operational; operator; location"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          98.61749,
+          3.64632
+        ]
+      },
+      "properties": {
+        "id": "tol-medan-binjai",
+        "name": "Medan–Binjai Toll Road",
+        "sector": "road",
+        "subsector": "toll",
+        "status": "operating",
+        "status_basis": "BPJT toll-road list (6 Nov 2026): Operasi, 17.42 of 17.32 km operational; operation decree 2017.",
+        "corridor_id": "trans-sumatera",
+        "island": "Sumatra",
+        "province": "North Sumatra",
+        "route": "Medan–Binjai, North Sumatra",
+        "length_km": "17.32",
+        "operational_km": "17.42",
+        "construction_km": "",
+        "progress_pct": "",
+        "investment_idr_t": "",
+        "capacity": "",
+        "capacity_unit": "",
+        "psn": "yes",
+        "opened_year": "2017",
+        "opened_date": "",
+        "expected_open_year": "",
+        "status_as_of": "2026-11-06",
+        "verification": "official",
+        "precision": "approximate",
+        "operator": "PT Medan Binjai Tol",
+        "source_url": "https://itrams-api.bpjt.pu.go.id/v1/reference/api/toll-road-list",
+        "source_type": "official",
+        "retrieved_on": "2026-11-06",
+        "last_verified": "2026-11-08",
+        "notes": "Coordinates are the midpoint of the BPJT start and end points, approximate.",
+        "corridor_name": "Trans Sumatra",
+        "sources": [
+          {
+            "id": "src-bpjt-toll-road-list-2026-11-06",
+            "publisher": "Badan Pengatur Jalan Tol (BPJT)",
+            "title": "Toll road list API",
+            "url": "https://itrams-api.bpjt.pu.go.id/v1/reference/api/toll-road-list",
+            "published_on": "",
+            "retrieved_on": "2026-11-06",
+            "source_type": "official",
+            "language": "id",
+            "archive_path": "data/raw/2026-11-06/bpjt_toll_road_list.json",
+            "notes": "77 operating or partly operating rows.",
+            "claim": "status; length; operational; operator; location"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.9168,
+          -6.13481
+        ]
+      },
+      "properties": {
+        "id": "tol-akses-tanjung-priok",
+        "name": "Akses Tanjung Priok Toll Road",
+        "sector": "road",
+        "subsector": "toll",
+        "status": "operating",
+        "status_basis": "BPJT toll-road list (6 Nov 2026): Operasi, 11.4 of 11.4 km operational; operation decree 2017.",
+        "corridor_id": "",
+        "island": "Java",
+        "province": "DKI Jakarta",
+        "route": "Tanjung Priok access, Jakarta",
+        "length_km": "11.4",
+        "operational_km": "11.4",
+        "construction_km": "",
+        "progress_pct": "",
+        "investment_idr_t": "",
+        "capacity": "",
+        "capacity_unit": "",
+        "psn": "yes",
+        "opened_year": "2017",
+        "opened_date": "",
+        "expected_open_year": "",
+        "status_as_of": "2026-11-06",
+        "verification": "official",
+        "precision": "approximate",
+        "operator": "PT Hutama Karya (Persero)",
+        "source_url": "https://itrams-api.bpjt.pu.go.id/v1/reference/api/toll-road-list",
+        "source_type": "official",
+        "retrieved_on": "2026-11-06",
+        "last_verified": "2026-11-08",
+        "notes": "Coordinates are the midpoint of the BPJT start and end points, approximate.",
+        "corridor_name": "",
+        "sources": [
+          {
+            "id": "src-bpjt-toll-road-list-2026-11-06",
+            "publisher": "Badan Pengatur Jalan Tol (BPJT)",
+            "title": "Toll road list API",
+            "url": "https://itrams-api.bpjt.pu.go.id/v1/reference/api/toll-road-list",
+            "published_on": "",
+            "retrieved_on": "2026-11-06",
+            "source_type": "official",
+            "language": "id",
+            "archive_path": "data/raw/2026-11-06/bpjt_toll_road_list.json",
+            "notes": "77 operating or partly operating rows.",
+            "claim": "status; length; operational; operator; location"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.84212,
+          -6.37574
+        ]
+      },
+      "properties": {
+        "id": "tol-cinere-jagorawi",
+        "name": "Cinere–Jagorawi Toll Road",
+        "sector": "road",
+        "subsector": "toll",
+        "status": "operating",
+        "status_basis": "BPJT toll-road list (6 Nov 2026): Operasi, 14.886 of 14.64 km operational; operation decree 2014.",
+        "corridor_id": "",
+        "island": "Java",
+        "province": "West Java; DKI Jakarta",
+        "route": "Cinere–Jagorawi, Depok–Jakarta",
+        "length_km": "14.64",
+        "operational_km": "14.886",
+        "construction_km": "",
+        "progress_pct": "",
+        "investment_idr_t": "",
+        "capacity": "",
+        "capacity_unit": "",
+        "psn": "yes",
+        "opened_year": "2014",
+        "opened_date": "",
+        "expected_open_year": "",
+        "status_as_of": "2026-11-06",
+        "verification": "official",
+        "precision": "approximate",
+        "operator": "PT Translingkar Kita Jaya",
+        "source_url": "https://itrams-api.bpjt.pu.go.id/v1/reference/api/toll-road-list",
+        "source_type": "official",
+        "retrieved_on": "2026-11-06",
+        "last_verified": "2026-11-08",
+        "notes": "Coordinates are the midpoint of the BPJT start and end points, approximate.",
+        "corridor_name": "",
+        "sources": [
+          {
+            "id": "src-bpjt-toll-road-list-2026-11-06",
+            "publisher": "Badan Pengatur Jalan Tol (BPJT)",
+            "title": "Toll road list API",
+            "url": "https://itrams-api.bpjt.pu.go.id/v1/reference/api/toll-road-list",
+            "published_on": "",
+            "retrieved_on": "2026-11-06",
+            "source_type": "official",
+            "language": "id",
+            "archive_path": "data/raw/2026-11-06/bpjt_toll_road_list.json",
+            "notes": "77 operating or partly operating rows.",
+            "claim": "status; length; operational; operator; location"
+          }
+        ]
+      }
     }
   ]
 }

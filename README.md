@@ -4,16 +4,17 @@ A curated, source-linked map of major Indonesian infrastructure. Every project
 carries a source and a verification date. The map is deliberately **major and
 curated, not exhaustive**.
 
-- **Live data:** 62 projects — 27 toll-road corridors, 13 railways, 7 airports
+- **Live data:** 77 projects — 42 toll-road corridors, 13 railways, 7 airports
   and 15 seaports — plus 4 Trans corridor summaries.
 - **Transport PSN:** 35 of 35 represented. Status is as of 19 February 2026, the
   date of the Kemenhub review.
 - **Estate dataset:** 178 industrial estates and SEZs, shown as a table; the map
   layer is deliberately off until coordinates are verified.
-- **Last verification:** 7 November 2026 (transport batch); earlier road and
-  estate rows were verified on 6 November 2026.
-- **Status:** Phase 1 is complete. Phase 2 Track 2A (transport PSN) is complete
-  as of 7 November 2026. The site is **not published** and has no GitHub remote.
+- **Last verification:** 8 November 2026 (road and estate batches); the
+  transport batch was verified on 7 November 2026; earlier rows on 6 November.
+- **Status:** Phase 1 is complete. Phase 2 Track 2A (transport PSN) is complete;
+  Track 2B (estates) is partial; Track 2D has 42 of the 45 target road corridors.
+  The site is **not published** and has no GitHub remote.
 - **Overhaul plan:** [`plan-v3.md`](plan-v3.md) is the execution backlog. Phase 2
   is data completion; Phase 3 is the trust layer and a local release. Publishing
   is explicitly deferred. Phase 1 decisions are recorded in
@@ -39,7 +40,7 @@ when a source supports that status.
 
 | Layer | Rows | Status | Notes |
 |---|---:|---|---|
-| Toll roads | 27 | 20 under construction, 7 planned | Sumatra, Java and Bali corridors |
+| Toll roads | 42 | 10 operating, 25 under construction, 7 planned | 27 from batch 1 plus 15 PSN corridors from the BPJT snapshot |
 | Railways | 13 | 6 operating, 5 under construction, 2 planned | 13/13 PSN railways; no rail length or capacity in the source deck |
 | Airports | 7 | 7 operating | 7/7 PSN airports; inaugurated 2020–2023 |
 | Seaports | 15 | 11 operating, 1 under construction, 1 recently completed, 2 planned | 15/15 PSN seaports; Patimban Phase I-2 still building, Benoa expansion completed 2025 |
@@ -101,7 +102,8 @@ infra-id/
 ├─ docs/
 │  ├─ phase-1-decisions.md  confirmed design, scope, schema and budgets
 │  ├─ phase-2-transport.md  transport PSN extraction, mapping and conflicts
-│  └─ phase-2-estates.md    estate gap ledger and coordinate work
+│  ├─ phase-2-estates.md    estate gap ledger and coordinate work
+│  └─ phase-2-roads.md      BPJT PSN road additions and status mapping
 ├─ requirements.txt         Python dependencies for the data scripts
 ├─ data/
 │  ├─ curated/              editable source of truth
@@ -136,6 +138,7 @@ infra-id/
 │  ├─ extract_transport_psn.py   checked Kemenhub extraction
 │  ├─ extract_estate_gap.py     19-row estate gap ledger
 │  ├─ geocode_estates.py        OSM/Nominatim coordinates for large estates
+│  ├─ add_bpjt_psn_roads.py     15 missing PSN toll corridors
 │  ├─ build_transport.py    imports the 35 transport rows
 │  ├─ build_projects.py
 │  ├─ build_estates.py
@@ -188,6 +191,7 @@ python scripts/extract_estate_gap.py     # 19-row 179-vs-160 ledger
 python scripts/geocode_estates.py        # optional; uses cached OSM results
 python scripts/extract_transport_psn.py  # checked Kemenhub extraction
 python scripts/build_transport.py        # import the 35 transport rows
+python scripts/add_bpjt_psn_roads.py     # 15 missing PSN toll corridors
 python scripts/validate.py
 python scripts/build_projects.py
 python scripts/build_site_data.py
@@ -204,6 +208,7 @@ What each script does:
 | `extract_estate_gap.py` | Kemenperin 179 count + 2024 table | `data/derived/estate_gap_2026.csv` | 19-row reconciliation; names only where a source supports them |
 | `geocode_estates.py` | Top 40 industrial estates + Nominatim | `data/derived/nominatim_estates.json`, updated estate coordinates | One request per second; accepts only industrial-landuse matches |
 | `build_transport.py` | `transport_psn.csv` + curated tables | Project, claim, link and alias rows | Idempotent transport import; does not touch roads or estates |
+| `add_bpjt_psn_roads.py` | BPJT snapshot + curated tables | 15 new PSN road rows, operators, claims and external IDs | Idempotent; leaves the 27 batch-1 roads in place |
 | `validate.py` | `data/curated/*.csv` | exit code | Schema, enums, dates, coordinates, foreign keys, events, geometry, claims and coverage checks |
 | `build_projects.py` | Curated tables + BPJT JSON | `data/projects.csv` | Joins operator and source, fills gaps from BPJT, writes the flat export |
 | `build_estates.py` | KEK HTML + BAJRA table + regency cache | `data/curated/estates.csv` + source rows | Merges the 25 SEZs and 153 industrial estates, handles overlaps |
@@ -482,9 +487,9 @@ Validating is not the same as verifying. Validation catches malformed rows; the
   unopened length or active construction. Conflicts are recorded, not hidden.
 - **No geometry.** Projects are points, not lines or polygons. `project_geometry`
   exists but is empty.
-- **Factories and the expanded road batch are still empty.** The 35 transport
-  PSN projects are in; 20–30 factories, the 40–50 road audit and the corridor
-  segments remain Phase 2 work.
+- **Factories and corridor segments are still empty.** The 42 road corridors and
+  35 transport PSN projects are in; 20–30 factories, five corridor segment
+  tables and the three-road gap to the 45 target remain Phase 2 work.
 - **Transport status is dated.** It reflects the Kemenhub review of 19 February
   2026, not a live check. `last_verified` is the curation date.
 - **PSN status is incomplete for roads.** 10 of 27 road rows have `psn=unknown`.
@@ -529,7 +534,8 @@ Validating is not the same as verifying. Validation catches malformed rows; the
 4. **Phase 2: data completion.** Transport PSN (13 rail, 7 airports, 15
    seaports) is done. Estates: the 19-name gap ledger is done and 20 of the 40
    largest are geocoded; the nine 2025 additions remain blocked by the
-   unavailable Kemenperin list. *Next:* factories, roads and corridor segments.
+   unavailable Kemenperin list. Roads: 42 of 45 target corridors. *Next:*
+   factories, corridor segments and the three remaining road gaps.
 5. **Phase 3: trust and local release.** Per-fact claims, freshness, Data view
    v2, downloads, conflicts, local CI, smoke tests and hand-off. **No GitHub push
    or Pages deployment.**
@@ -546,6 +552,9 @@ Validating is not the same as verifying. Validation catches malformed rows; the
   `data/derived/transport_psn.csv`; the importer is
   `scripts/build_transport.py`; the mapping and conflicts are in
   [`docs/phase-2-transport.md`](docs/phase-2-transport.md).
+- **Roads:** 42 of 45 target corridors. The 15 new PSN corridors and their status
+  mapping are in [`docs/phase-2-roads.md`](docs/phase-2-roads.md). Next: the
+  non-toll/0-km road candidates and the corridor segment tables.
 - **Estates:** 178 rows in `data/curated/estates.csv`; the 19-name gap ledger is
   `data/derived/estate_gap_2026.csv` and the coordinate work is documented in
   [`docs/phase-2-estates.md`](docs/phase-2-estates.md). Next: resolve the

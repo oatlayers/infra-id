@@ -1,5 +1,5 @@
 layer,label,unit,target_count,universe,source_id,notes
-roads,Toll and major PSN roads,corridors,45,"Major toll-road corridors plus PSN national roads; excludes the Bali, Malacca and Sunda strait bridges",src-bpjt-toll-road-list-2026-11-06,"Target range 40-50. Batch 1 carries 27 toll-road corridors."
+roads,Toll and major PSN roads,corridors,45,"Major toll-road corridors plus PSN national roads; excludes the Bali, Malacca and Sunda strait bridges",src-bpjt-toll-road-list-2026-11-06,"Target range 40-50. 42 toll-road corridors: the 27-row batch 1 plus 15 PSN corridors from the BPJT snapshot."
 railways,PSN railways,projects,13,"Kemenhub transport PSN list, 19 February 2026",src-kemenhub-psn-progress-2026-02-19,"13 railway projects curated in Phase 2."
 airports,PSN airports,projects,7,"Kemenhub transport PSN list, 19 February 2026",src-kemenhub-psn-progress-2026-02-19,"7 airport projects curated in Phase 2."
 seaports,PSN seaports,projects,15,"Kemenhub transport PSN list, 19 February 2026",src-kemenhub-psn-progress-2026-02-19,"15 seaport projects curated in Phase 2."

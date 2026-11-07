@@ -114,8 +114,10 @@ Both changes are documented in `scripts/validate.py` and the README.
   organisations, 38 sources, 4 corridors, 0 segments, 0 events, 0 geometry, 0
   investments`.
 - Coverage: railways 13/13, airports 7/7, seaports 15/15, transport PSN 35/35.
-- Payloads: shell 85.3 KB gz, initial data 98.8 KB gz, basemap 75.2 KB gz,
-  estates 10.8 KB gz, total including fonts 350.7 KB gz.
+- Payloads at the end of Track 2A: shell 85.3 KB gz, initial data 98.8 KB gz,
+  basemap 75.2 KB gz, estates 10.8 KB gz, total including fonts 350.7 KB gz.
+  The road and estate batches that followed raised the current total to 354 KB
+  gz, still inside the 200 KB data budget.
 - The site still works from `file://` and makes no external request.
 
 ## Next

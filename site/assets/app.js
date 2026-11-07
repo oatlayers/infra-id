@@ -1250,6 +1250,7 @@
       '<section class="data-section"><h3>Downloads</h3>' + downloadList() + '</section>' +
 
       '<section class="data-section"><h3>Changelog</h3><ul class="changelog">' +
+      '<li><time>8 Nov 2026</time><span>Added 15 PSN toll corridors from BPJT; roads now 42 of the 45 target corridors.</span></li>' +
       '<li><time>8 Nov 2026</time><span>Estate reconciliation: a 19-name gap ledger and OSM/Nominatim coordinates for 20 of the 40 largest industrial estates.</span></li>' +
       '<li><time>7 Nov 2026</time><span>Added the 35 transport PSN projects: 13 railways, 7 airports and 15 seaports, with status and investment claims from the Kemenhub review.</span></li>' +
       '<li><time>7 Nov 2026</time><span>New shell: four views, search, filters, map v2 and this data page.</span></li>' +

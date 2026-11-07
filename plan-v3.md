@@ -653,7 +653,7 @@ source parse. Same pattern for transport rows if extraction is re-run.
 
 | Layer | Now | Target | Gap | Source of truth |
 |---|---:|---:|---:|---|
-| Roads | 27 | 40–50 major corridors | 13–23 | BPJT + PSN |
+| Roads | 42 | 40–50 major corridors | 0–8 (45 target: 3) | BPJT + PSN |
 | Railways | 13 | 13 PSN | 0 | Kemenhub deck |
 | Airports | 7 | 7 PSN | 0 | Kemenhub deck |
 | Seaports | 15 | 15 PSN | 0 | Kemenhub deck |
@@ -992,9 +992,11 @@ tables); no preview deployment was made; the formal Lighthouse/axe audit and the
 
 ### Phase 2 — Data completion
 
-**Status: in progress, 8 November 2026. Track 2A complete; Track 2B partial.**
-See `docs/phase-2-transport.md` for the extraction, status mapping and conflicts,
-and `docs/phase-2-estates.md` for the 19-name gap ledger and coordinate work.
+**Status: in progress, 8 November 2026. Track 2A complete; Track 2B partial;
+Track 2D partial (42/45 roads).** See `docs/phase-2-transport.md` for the
+extraction, status mapping and conflicts, `docs/phase-2-estates.md` for the
+19-name gap ledger and coordinate work, and `docs/phase-2-roads.md` for the
+BPJT additions.
 
 **Goal:** every layer meets its coverage target or has a documented gap. This
 phase adds the views that consume the new data: the corridor segment view and
@@ -1068,6 +1070,19 @@ See `docs/phase-2-estates.md`.
 | R4 | Events | Recent openings and stalled/resumed events recorded | M | R3 |
 | R5 | Corridor UI v2 | Segment table, timeline, stacked bar, gap states | M | R3 |
 | R6 | Geometry | Simplified lines for 10 major corridors with attribution | L | R5 |
+
+**Track 2D status — 8 November 2026**
+
+| Item | Status | Evidence |
+|---|---|---|
+| R1 | Done for PSN toll roads | 15 missing PSN corridors added from the BPJT snapshot; roads 42/45 |
+| R2 | Not started | Trans Java and open Trans Sumatra operating context |
+| R3 | Not started | `corridor_segments.csv` still empty |
+| R4 | Not started | Events table still empty |
+| R5 | Not started | Corridor UI v2 |
+| R6 | Not started | Project geometry still empty |
+
+See `docs/phase-2-roads.md`.
 
 **Exit criteria**
 

@@ -8,7 +8,7 @@ phase-by-phase backlog for the site overhaul and the data-completeness work.
 Phase 1 decisions and budgets are recorded in
 [`docs/phase-1-decisions.md`](docs/phase-1-decisions.md).
 
-**Status:** Phase 1 of the v3 overhaul is complete (2026-11-07). Phase 2 Track 2A (transport PSN) is complete: 35 projects — 13 railways, 7 airports and 15 seaports — are in the curated tables, for 62 projects total. Phase 2 Track 2B is partial: the 19-name estate gap ledger is done and 20 of the 40 largest industrial estates are geocoded; the nine 2025 additions remain blocked by the unavailable Kemenperin list. The site has four views, search, filters, a detail drawer, a new basemap, a mobile bottom sheet and a generated Data page. Schema v3 is frozen. 27 toll roads and 178 estates/SEZs are also in the curated tables. **Not published:** there is no GitHub remote or Pages deployment, and publishing is explicitly deferred.
+**Status:** Phase 1 of the v3 overhaul is complete (2026-11-07). Phase 2 Track 2A (transport PSN) is complete: 35 projects — 13 railways, 7 airports and 15 seaports — are in the curated tables. Phase 2 Track 2B is partial: the 19-name estate gap ledger is done and 20 of the 40 largest industrial estates are geocoded; the nine 2025 additions remain blocked by the unavailable Kemenperin list. Phase 2 Track 2D has 42 of the 45 target road corridors after adding 15 PSN toll roads from BPJT. The atlas now has 77 projects and 178 estates/SEZs. The site has four views, search, filters, a detail drawer, a new basemap, a mobile bottom sheet and a generated Data page. Schema v3 is frozen. **Not published:** there is no GitHub remote or Pages deployment, and publishing is explicitly deferred.
 
 **Publishing constraint:** do not create a GitHub remote, push the repository, deploy GitHub Pages or publish the site until the repository owner asks for it explicitly. The release target is a local build that works from `file://` and a local HTTP server.
 
@@ -297,7 +297,7 @@ data/UI~~ → ~~industrial estates and SEZs (data only)~~ → Kemenhub transport
 2. **Official pipeline.** Kemenhub transport PSN deck and KPPIP pages snapshotted; the full PSN/KPBU/INAPROC pass is still open.
 3. **Industrial estates and SEZs.** First pass done: 178 records in `data/curated/estates.csv`, validated and shown as a table. Remaining: 2025 additions, exact boundaries and better coordinates. Map layer still off.
 4. **v3 Phase 1 — foundation and experience.** Done 2026-11-07: design tokens, bundled fonts, four-view shell, search, filters, detail drawer, map v2, mobile sheet, Data view and schema v3. See `docs/phase-1-decisions.md`.
-5. **v3 Phase 2 - data completion.** Transport PSN (35/35) is done. Estates: 19-name gap ledger done; 20/40 large estates geocoded; nine 2025 additions blocked. Next: factories, roads and corridor segments. ← in progress
+5. **v3 Phase 2 - data completion.** Transport PSN (35/35) is done. Estates: 19-name gap ledger done; 20/40 large estates geocoded; nine 2025 additions blocked. Roads: 42/45 after 15 BPJT PSN additions. Next: factories and corridor segments. ← in progress
 6. **v3 Phase 3 — trust and local release.** Claims, freshness, Data view v2, downloads, conflicts, local CI and hand-off. **Do not push to GitHub or publish.**
 7. **Monthly refresh.** Re-fetch sources, review status changes, update `last_verified`, rebuild and verify locally.
 

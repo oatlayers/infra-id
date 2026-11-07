@@ -72,10 +72,10 @@ were backfilled from existing rows. No status or numeric claim was guessed.
 | Budget | Target | Measured 7 Nov 2026 |
 |---|---|---|
 | Shell HTML + CSS + JS | ≤ 120 KB gzipped | 85.3 KB |
-| Initial data payloads | ≤ 200 KB gzipped | 98.8 KB |
+| Initial data payloads | ≤ 200 KB gzipped | 101.7 KB |
 | Basemap | ≤ 150 KB gzipped | 75.2 KB |
-| Estate layer (lazy) | ≤ 80 KB gzipped | 10.8 KB |
-| Total initial including fonts | — | 351 KB gzipped |
+| Estate layer (lazy) | ≤ 80 KB gzipped | 11.0 KB |
+| Total initial including fonts | — | 354 KB gzipped |
 | Time to interactive, local file, mid-range phone | ≤ 1.5 s | 0.71 s load and 0.60 s first contentful paint in headless Edge from `file://`; physical-phone test pending |
 | Map pan/zoom with 300 markers | 60 fps | pending 300-row test |
 | Console errors | zero | zero observed |
