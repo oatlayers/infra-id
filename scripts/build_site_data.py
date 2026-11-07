@@ -26,6 +26,7 @@ from pathlib import Path
 from data_model import (
     CORRIDOR_FIELDS,
     CURATED,
+    DERIVED,
     DERIVED_FIELDS,
     ROOT,
     SITE_DATA,
@@ -77,6 +78,7 @@ def main() -> None:
     sources = {row["id"]: row for row in read_csv(CURATED / "sources.csv")}
     claims = read_csv(CURATED / "project_sources.csv")
     estates = read_csv(CURATED / "estates.csv")
+    estate_gap = read_csv(DERIVED / "estate_gap_2026.csv")
     corridors = read_csv(CURATED / "corridors.csv")
     segments = read_csv(CURATED / "corridor_segments.csv")
     targets = read_csv(CURATED / "coverage_targets.csv")
@@ -172,6 +174,7 @@ def main() -> None:
     estate_types = Counter(row["type"] for row in estates)
     estate_provinces = {row["province"] for row in estates if row["province"]}
     estate_area = sum(float(row["area_ha"]) for row in estates if row["area_ha"])
+    estate_coord_sources = Counter(row["coordinate_source"] for row in estates)
 
     last_verified_projects = max((row["last_verified"] for row in rows), default="")
     last_verified_estates = max((row["last_verified"] for row in estates), default="")
@@ -250,6 +253,8 @@ def main() -> None:
             "both": estate_types.get("both", 0),
             "area_ha": round(estate_area, 1),
             "provinces": len(estate_provinces),
+            "coordinate_sources": dict(sorted(estate_coord_sources.items())),
+            "gap_rows": len(estate_gap),
             "last_verified": last_verified_estates,
         },
         "coverage": coverage,
@@ -272,6 +277,11 @@ def main() -> None:
                 "label": "Estates and SEZs",
                 "file": "data/estates.csv",
                 "meta": f"{len(estates)} rows · table only",
+            },
+            {
+                "label": "Estate gap ledger",
+                "file": "data/estate-gap.csv",
+                "meta": f"{len(estate_gap)} rows · 179-vs-160 reconciliation",
             },
             {
                 "label": "Corridors",
@@ -353,6 +363,11 @@ def main() -> None:
         SITE_DATA / "estates.csv",
         list(estates[0].keys()) if estates else [],
         estate_payload,
+    )
+    write_csv(
+        SITE_DATA / "estate-gap.csv",
+        list(estate_gap[0].keys()) if estate_gap else [],
+        estate_gap,
     )
 
     write_csv(SITE_DATA / "sources.csv", SOURCE_FIELDS, list(sources.values()))

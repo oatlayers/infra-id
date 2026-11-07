@@ -1,1 +1,21 @@
 estate_id,source_id,claim,claim_value,claim_date,notes
+ki-java-integrated-industrial-and-port-estate,src-osm-nominatim-2026-11-08,coordinates,"-7.07187, 112.61846",2026-11-08,Industrial landuse point from OpenStreetMap/Nominatim; approximate.
+ki-suryacipta-ie,src-osm-nominatim-2026-11-08,coordinates,"-6.40758, 107.33849",2026-11-08,Industrial landuse point from OpenStreetMap/Nominatim; approximate.
+ki-greenland-international-industrial-center-giic,src-osm-nominatim-2026-11-08,coordinates,"-6.38356, 107.19114",2026-11-08,Industrial landuse point from OpenStreetMap/Nominatim; approximate.
+ki-kota-bukit-indah-industrial-city,src-osm-nominatim-2026-11-08,coordinates,"-6.45053, 107.45108",2026-11-08,Industrial landuse point from OpenStreetMap/Nominatim; approximate.
+ki-jatiluhur-industrial-smart-city,src-osm-nominatim-2026-11-08,coordinates,"-6.49889, 107.43205",2026-11-08,Industrial landuse point from OpenStreetMap/Nominatim; approximate.
+ki-millenium-industrial-estate,src-osm-nominatim-2026-11-08,coordinates,"-6.25762, 106.50042",2026-11-08,Industrial landuse point from OpenStreetMap/Nominatim; approximate.
+ki-kawasan-industri-dumai,src-osm-nominatim-2026-11-08,coordinates,"1.63117, 101.62332",2026-11-08,Industrial landuse point from OpenStreetMap/Nominatim; approximate.
+ki-pertiwi-lestari-industrial-estate,src-osm-nominatim-2026-11-08,coordinates,"-6.40243, 107.25463",2026-11-08,Industrial landuse point from OpenStreetMap/Nominatim; approximate.
+ki-modern-cikande-industrial-estate-2,src-osm-nominatim-2026-11-08,coordinates,"-6.19707, 106.31670",2026-11-08,Industrial landuse point from OpenStreetMap/Nominatim; approximate.
+ki-mm2100-industrial-town-mmid,src-osm-nominatim-2026-11-08,coordinates,"-6.31931, 107.10035",2026-11-08,Industrial landuse point from OpenStreetMap/Nominatim; approximate.
+ki-kawasan-industri-terpadu-wilmar,src-osm-nominatim-2026-11-08,coordinates,"-6.00427, 106.10550",2026-11-08,Industrial landuse point from OpenStreetMap/Nominatim; approximate.
+ki-kawasan-industri-medan,src-osm-nominatim-2026-11-08,coordinates,"3.67556, 98.69042",2026-11-08,Industrial landuse point from OpenStreetMap/Nominatim; approximate.
+ki-kawasan-industri-indotaisei-kota-bukit-indah,src-osm-nominatim-2026-11-08,coordinates,"-6.43938, 107.42988",2026-11-08,Industrial landuse point from OpenStreetMap/Nominatim; approximate.
+ki-krakatau-industrial-estate-cilegon,src-osm-nominatim-2026-11-08,coordinates,"-6.00864, 105.99779",2026-11-08,Industrial landuse point from OpenStreetMap/Nominatim; approximate.
+ki-karawang-international-industrial-city-2,src-osm-nominatim-2026-11-08,coordinates,"-6.37176, 107.27309",2026-11-08,Industrial landuse point from OpenStreetMap/Nominatim; approximate.
+ki-kawasan-berikat-nusantara,src-osm-nominatim-2026-11-08,coordinates,"-6.09977, 106.96650",2026-11-08,Industrial landuse point from OpenStreetMap/Nominatim; approximate.
+ki-pasuruan-industrial-estate-rembang,src-osm-nominatim-2026-11-08,coordinates,"-7.63498, 112.82487",2026-11-08,Industrial landuse point from OpenStreetMap/Nominatim; approximate.
+ki-karawang-international-industrial-city,src-osm-nominatim-2026-11-08,coordinates,"-6.37176, 107.27309",2026-11-08,Industrial landuse point from OpenStreetMap/Nominatim; approximate.
+ki-jakarta-industrial-estate-pulogadung,src-osm-nominatim-2026-11-08,coordinates,"-6.19865, 106.91289",2026-11-08,Industrial landuse point from OpenStreetMap/Nominatim; approximate.
+ki-maspion-industrial-estate,src-osm-nominatim-2026-11-08,coordinates,"-7.11487, 112.61628",2026-11-08,Industrial landuse point from OpenStreetMap/Nominatim; approximate.

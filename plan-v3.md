@@ -659,11 +659,12 @@ source parse. Same pattern for transport rows if extraction is re-run.
 | Seaports | 15 | 15 PSN | 0 | Kemenhub deck |
 | Transport PSN (all modes) | 35 | 35 | 0 | Kemenhub deck |
 | Factories | 0 | 20–30 major plants | 20–30 | PSN + Rp 1T |
-| Industrial estates | 160 | 179 | 19 | Kemenperin 2026 |
+| Industrial estates | 160 | 179 | 19 | Kemenperin 2026; gap ledger in `data/derived/estate_gap_2026.csv` |
 | SEZs | 25 | 25 | 0 | KEK National Council |
 | Unique estates | 178 | ~197 | ~19 | Dedupe 179 + 25 − 7 |
+| Estate coordinates | 45 official/OSM of 178 | 178 verified | 133 regency | KEK profiles, OpenStreetMap/Nominatim |
 | Corridors | 4 | 5 with segments | 2–3 data gaps | Hutama Karya, Bina Marga |
-| Sources | 38 | 80–100 | 42–62 | — |
+| Sources | 39 | 80–100 | 41–61 | — |
 
 ### 5.2 Transport PSN: the 35 projects
 
@@ -991,8 +992,9 @@ tables); no preview deployment was made; the formal Lighthouse/axe audit and the
 
 ### Phase 2 — Data completion
 
-**Status: in progress, 7 November 2026. Track 2A complete.** See
-`docs/phase-2-transport.md` for the extraction, status mapping and conflicts.
+**Status: in progress, 8 November 2026. Track 2A complete; Track 2B partial.**
+See `docs/phase-2-transport.md` for the extraction, status mapping and conflicts,
+and `docs/phase-2-estates.md` for the 19-name gap ledger and coordinate work.
 
 **Goal:** every layer meets its coverage target or has a documented gap. This
 phase adds the views that consume the new data: the corridor segment view and
@@ -1032,6 +1034,19 @@ the refined estate attributes. The estate table itself shipped in Phase 1.
 | E4 | Attributes and status | Top 100 estates have sector, website, legal basis, verified status | L | E3 |
 | E5 | Estates table | Summary, filters, sortable table, row detail, CSV, mobile layout — **shipped in Phase 1** | M | E4 |
 | E6 | Optional map layer | Off by default; clusters; nearby projects; works offline | M | E5 |
+
+**Track 2B status — 8 November 2026**
+
+| Item | Status | Evidence |
+|---|---|---|
+| E1 | Done | `data/derived/estate_gap_2026.csv`: 9 named + 10 unidentified, with dispositions |
+| E2 | Blocked | Kemenperin list HTTP 502 and `satudata` DNS failure; nine named additions lack area/location sources |
+| E3 | Partial | 25 SEZs official, 20 of the 40 largest industrial estates OSM/Nominatim, 133 regency centroids |
+| E4 | Not started | 160 industrial estates still `operating` from the 2024 table; attributes mostly blank |
+| E5 | Shipped | Table with 178 rows, detail, filters, CSV, gap-ledger download |
+| E6 | Deferred | Coordinate coverage is not enough to justify a map layer |
+
+See `docs/phase-2-estates.md`.
 
 **Track 2C — Factories**
 

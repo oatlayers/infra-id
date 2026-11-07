@@ -46,8 +46,8 @@ when a source supports that status.
 | Transport PSN total | 35 | 24 operating, 1 recently completed, 6 under construction, 4 planned | 35/35; status as of 19 February 2026 |
 | Trans corridor summaries | 4 | 2 with km data, 2 data gaps | Sumatra and Papua have figures; Sulawesi and Kalimantan need segment definitions |
 | Factories | 0 | — | Phase 2: 20–30 plants |
-| Industrial estates / SEZs | 178 | 160 industrial-estate designations (153 industrial-only + 7 shared), 25 SEZs | table view only; map layer waits for verified coordinates |
-| Sources | 38 | 32 official, 6 secondary | 25 individual SEZ profiles plus the national source register |
+| Industrial estates / SEZs | 178 | 160 industrial-estate designations (153 industrial-only + 7 shared), 25 SEZs | table view only; 25 official SEZ points, 20 OSM points, 133 regency centroids; 19-name gap ledger |
+| Sources | 39 | 32 official, 7 secondary | 25 individual SEZ profiles, the national register and OSM/Nominatim |
 
 **Why the transport status counts differ from Kemenhub's summary.** The deck's
 headline says 29 complete and 6 under construction. The atlas uses its own
@@ -100,7 +100,8 @@ infra-id/
 ├─ README.md
 ├─ docs/
 │  ├─ phase-1-decisions.md  confirmed design, scope, schema and budgets
-│  └─ phase-2-transport.md  transport PSN extraction, mapping and conflicts
+│  ├─ phase-2-transport.md  transport PSN extraction, mapping and conflicts
+│  └─ phase-2-estates.md    estate gap ledger and coordinate work
 ├─ requirements.txt         Python dependencies for the data scripts
 ├─ data/
 │  ├─ curated/              editable source of truth
@@ -124,6 +125,8 @@ infra-id/
 │  ├─ projects.csv          generated flat export for the site and downloads
 │  ├─ derived/              extracted text and build-time intermediates
 │  │  ├─ transport_psn.csv  35-row checked transport extraction
+│  │  ├─ estate_gap_2026.csv  19-row 179-vs-160 reconciliation
+│  │  ├─ nominatim_estates.json  cached OSM search results
 │  │  └─ kemenhub_psn_progress_2026.txt
 │  └─ raw/YYYY-MM-DD/       sources as fetched, never edited
 ├─ scripts/
@@ -131,6 +134,8 @@ infra-id/
 │  ├─ migrate_schema_v3.py  one-off schema migration
 │  ├─ extract_wikipedia_toll_roads.py
 │  ├─ extract_transport_psn.py   checked Kemenhub extraction
+│  ├─ extract_estate_gap.py     19-row estate gap ledger
+│  ├─ geocode_estates.py        OSM/Nominatim coordinates for large estates
 │  ├─ build_transport.py    imports the 35 transport rows
 │  ├─ build_projects.py
 │  ├─ build_estates.py
@@ -150,6 +155,7 @@ infra-id/
    ├─ data/                 generated payloads and downloads
    │  ├─ projects.js/.geojson/.csv
    │  ├─ estates.js/.json/.csv
+   │  ├─ estate-gap.csv
    │  ├─ corridors.js/.json
    │  ├─ stats.js
    │  ├─ search.js
@@ -178,6 +184,8 @@ Rebuild everything:
 
 ```bash
 python scripts/build_estates.py          # only when the estate sources change
+python scripts/extract_estate_gap.py     # 19-row 179-vs-160 ledger
+python scripts/geocode_estates.py        # optional; uses cached OSM results
 python scripts/extract_transport_psn.py  # checked Kemenhub extraction
 python scripts/build_transport.py        # import the 35 transport rows
 python scripts/validate.py
@@ -193,6 +201,8 @@ What each script does:
 | `migrate_schema_v3.py` | Old curated tables | Schema-v3 headers and backfilled fields | One-off migration; idempotent enough to re-run |
 | `extract_wikipedia_toll_roads.py` | English Wikipedia HTML snapshot | `enwiki_toll_roads_parsed.csv` | Parses the toll-road table; no status decisions |
 | `extract_transport_psn.py` | Kemenhub PSN deck, checked transcription | `data/derived/transport_psn.csv` | 35 transport rows with page references and conflict notes |
+| `extract_estate_gap.py` | Kemenperin 179 count + 2024 table | `data/derived/estate_gap_2026.csv` | 19-row reconciliation; names only where a source supports them |
+| `geocode_estates.py` | Top 40 industrial estates + Nominatim | `data/derived/nominatim_estates.json`, updated estate coordinates | One request per second; accepts only industrial-landuse matches |
 | `build_transport.py` | `transport_psn.csv` + curated tables | Project, claim, link and alias rows | Idempotent transport import; does not touch roads or estates |
 | `validate.py` | `data/curated/*.csv` | exit code | Schema, enums, dates, coordinates, foreign keys, events, geometry, claims and coverage checks |
 | `build_projects.py` | Curated tables + BPJT JSON | `data/projects.csv` | Joins operator and source, fills gaps from BPJT, writes the flat export |
@@ -400,7 +410,8 @@ Features:
 - **Corridors:** Trans Sumatra, Trans Papua, Trans Sulawesi and Trans Kalimantan
   with km bars, as-of dates, sources and explicit data-gap states.
 - **Estates:** 178-row table with type/province filters, sort, inline detail,
-  area totals and a CSV download. No map layer yet.
+  area totals, coordinate provenance and CSV downloads (including the 19-row gap
+  ledger). No map layer yet.
 - **Data:** generated coverage matrix, status definitions, inclusion rules,
   source register, downloads, known gaps and changelog.
 - **Mobile:** full-viewport map and a draggable bottom sheet with peek, half and
@@ -477,12 +488,17 @@ Validating is not the same as verifying. Validation catches malformed rows; the
 - **Transport status is dated.** It reflects the Kemenhub review of 19 February
   2026, not a live check. `last_verified` is the curation date.
 - **PSN status is incomplete for roads.** 10 of 27 road rows have `psn=unknown`.
-- **Estate coordinates are coarse.** SEZ points are official zone coordinates but
-  still approximate for an area; industrial-estate points are regency centroids,
-  not estate boundaries.
+- **Estate coordinates are mixed.** 25 SEZ/shared zones use official KEK points,
+  20 large industrial estates use OSM/Nominatim industrial points, and 133 still
+  use regency centroids, not estate boundaries. 20 of the 40 largest were
+  geocoded; the rest had no reliable OSM match.
 - **Estate coverage is partial.** The industrial-estate table is a 2024 secondary
-  mirror with 160 rows; Kemenperin reported 179 estates in 2026. New 2025 estates
-  and exact boundaries still need to be added.
+  mirror with 160 rows; Kemenperin reported 179 estates in 2026. The 19-name gap
+  ledger is downloadable: nine named 2025 additions and ten unidentified names.
+  The Kemenperin list was unreachable on 8 November 2026 (HTTP 502 / DNS failure).
+- **Estate status is still blanket `operating`.** The 160 industrial-estate rows
+  come from the 2024 table and have not been individually re-verified. Their
+  sector focus, website, legal basis and established year are mostly blank.
 - **No recently completed toll roads.** Benoa Port is the only
   `recently_completed` row; see Current coverage.
 - **Trans Sulawesi and Trans Kalimantan have no aggregate.** Published figures
@@ -511,8 +527,9 @@ Validating is not the same as verifying. Validation catches malformed rows; the
 3. ~~Phase 1: design foundation, four-view shell, search, filters, drawer, map v2,
    mobile sheet, data page, schema v3.~~ Done 7 November 2026.
 4. **Phase 2: data completion.** Transport PSN (13 rail, 7 airports, 15
-   seaports) is done. *Next:* estate reconciliation and exact coordinates,
-   factories, roads and corridor segments.
+   seaports) is done. Estates: the 19-name gap ledger is done and 20 of the 40
+   largest are geocoded; the nine 2025 additions remain blocked by the
+   unavailable Kemenperin list. *Next:* factories, roads and corridor segments.
 5. **Phase 3: trust and local release.** Per-fact claims, freshness, Data view
    v2, downloads, conflicts, local CI, smoke tests and hand-off. **No GitHub push
    or Pages deployment.**
@@ -529,10 +546,12 @@ Validating is not the same as verifying. Validation catches malformed rows; the
   `data/derived/transport_psn.csv`; the importer is
   `scripts/build_transport.py`; the mapping and conflicts are in
   [`docs/phase-2-transport.md`](docs/phase-2-transport.md).
-- **Estates:** 178 rows in `data/curated/estates.csv`. Next: reconcile the
-  179-vs-160 gap, add the nine 2025 estates, replace regency centroids with
-  estate boundaries or site coordinates, and verify SEZ operational status. Keep
-  the map layer off until then.
+- **Estates:** 178 rows in `data/curated/estates.csv`; the 19-name gap ledger is
+  `data/derived/estate_gap_2026.csv` and the coordinate work is documented in
+  [`docs/phase-2-estates.md`](docs/phase-2-estates.md). Next: resolve the
+  Kemenperin list or a dated 2025 provincial announcement, add the nine named
+  estates, geocode the remaining 20 large estates, and verify status and
+  attributes. Keep the map layer off until then.
 - **Before changing schema:** read the Data architecture section in `plan.md`,
   `docs/phase-1-decisions.md` and the schema section in `plan-v3.md`.
 - **Before adding a status:** the allowed set is in `scripts/data_model.py` and

@@ -85,6 +85,14 @@
     return new Intl.NumberFormat('en-US', { maximumFractionDigits: 1 }).format(number);
   }
 
+  function fmtCoord(value) {
+    const number = Number(value);
+    if (!isFinite(number)) return esc(value);
+    return new Intl.NumberFormat('en-US', {
+      minimumFractionDigits: 4, maximumFractionDigits: 5
+    }).format(number);
+  }
+
   function fmtDate(value) {
     if (!value) return '';
     const parsed = new Date(value + 'T00:00:00');
@@ -768,7 +776,7 @@
 
     body += '<section class="detail-section"><h3>Data quality</h3><ul class="evidence-list">' +
       '<li><time>Coordinates</time><span>' + esc(project.precision) + ' precision · ' +
-      fmtNum(project.lat) + ', ' + fmtNum(project.lon) + '</span></li>' +
+      fmtCoord(project.lat) + ', ' + fmtCoord(project.lon) + '</span></li>' +
       '<li><time>PSN</time><span>' + esc(project.psn === 'yes' ? 'National Strategic Project' :
         project.psn === 'no' ? 'Not a PSN' : 'PSN status unknown') + '</span></li>' +
       '<li><time>Verification</time><span>' + esc(project.verification) +
@@ -1020,7 +1028,7 @@
   function estateRow(estate) {
     const expanded = state.expandedEstate === estate.id;
     const source = estate.source_publisher || 'Source';
-    const coords = fmtNum(estate.lat) + ', ' + fmtNum(estate.lon);
+    const coords = fmtCoord(estate.lat) + ', ' + fmtCoord(estate.lon);
     return '<div class="estate-row"><button type="button" data-estate="' + esc(estate.id) +
       '" aria-expanded="' + expanded + '"><span><span class="estate-name">' + esc(estate.name) +
       '<span class="type-tag">' + esc(estateTypeLabel(estate.type)) + '</span></span>' +
@@ -1109,7 +1117,7 @@
       fmtNum(estates.length) + ' zones shown</div></div>' +
       '<div class="estate-list">' + (list.length ? list.map(estateRow).join('') :
         '<div class="list-empty"><h3>No estates match</h3><p>Try another province or type.</p></div>') + '</div>' +
-      '<p class="estate-note">Coordinates for industrial estates are regency centroids, not estate boundaries. The 2025 additions are documented as a gap rather than guessed. Source: Kemenperin-derived estate list and official KEK profiles.</p>';
+      '<p class="estate-note">Coordinates: 25 SEZs use official KEK points, 20 large industrial estates use OSM/Nominatim points, and the rest are regency centroids. The 19-name 2025 gap is documented in the Data view rather than guessed. Sources: Kemenperin-derived estate list, KEK profiles and <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap (ODbL)</a>.</p>';
 
     const chips = dom.viewPanel.querySelectorAll('[data-estate-type]');
     chips.forEach(function (chip) {
@@ -1215,8 +1223,17 @@
       ' airports, ' + fmtNum(sectorCounts.seaport || 0) +
       ' seaports). Status is as of 19 February 2026, the date of the Kemenhub review.</li>' +
       '<li>Factories are not on the map yet. Transport points are approximate; the PSN review gives no rail length or asset capacity.</li>' +
-      '<li>Estate coverage: ' + fmtNum(estateStats.total || 0) + ' rows against a 2026 benchmark of 179 industrial estates; the nine 2025 additions are unresearched.</li>' +
-      '<li>Estate coordinates: SEZ points are official zone coordinates; industrial estates use regency centroids.</li>' +
+      '<li>Estate coverage: ' + fmtNum(estateStats.industrial || 0) +
+      ' industrial-estate designations and ' + fmtNum(estateStats.sez || 0) +
+      ' SEZs (' + fmtNum(estateStats.total || 0) + ' rows, ' + fmtNum(estateStats.both || 0) +
+      ' shared) against a 2026 benchmark of 179 industrial estates. The ' +
+      fmtNum(estateStats.gap_rows || 0) + '-name gap ledger is in Downloads: nine named 2025 additions and ten unidentified names.</li>' +
+      '<li>Estate coordinates: ' + fmtNum((estateStats.coordinate_sources || {}).official || 0) +
+      ' SEZ/shared zones use official KEK points, ' +
+      fmtNum((estateStats.coordinate_sources || {}).osm || 0) +
+      ' large industrial estates use OSM/Nominatim points, and ' +
+      fmtNum((estateStats.coordinate_sources || {}).regency || 0) +
+      ' still use regency centroids.</li>' +
       '<li>Trans Sulawesi and Trans Kalimantan have no single official kilometre series.</li>' +
       '<li>' + fmtNum((projectStats.psn && projectStats.psn.unknown) || 0) + ' of ' +
       fmtNum(roadCount) + ' road rows have unknown PSN status; ' +
@@ -1233,6 +1250,7 @@
       '<section class="data-section"><h3>Downloads</h3>' + downloadList() + '</section>' +
 
       '<section class="data-section"><h3>Changelog</h3><ul class="changelog">' +
+      '<li><time>8 Nov 2026</time><span>Estate reconciliation: a 19-name gap ledger and OSM/Nominatim coordinates for 20 of the 40 largest industrial estates.</span></li>' +
       '<li><time>7 Nov 2026</time><span>Added the 35 transport PSN projects: 13 railways, 7 airports and 15 seaports, with status and investment claims from the Kemenhub review.</span></li>' +
       '<li><time>7 Nov 2026</time><span>New shell: four views, search, filters, map v2 and this data page.</span></li>' +
       '<li><time>6 Nov 2026</time><span>178 estates and SEZs gathered; 25 official SEZ profiles and the Kemenperin-derived list.</span></li>' +

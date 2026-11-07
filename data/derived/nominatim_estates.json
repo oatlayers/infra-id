@@ -1,0 +1,1818 @@
+{
+  "ki-kipi": {
+    "check_date": "2026-11-08",
+    "queries": [
+      {
+        "query": "KIPI, Kabupaten Bulungan, Kalimantan Utara, Indonesia",
+        "results": []
+      },
+      {
+        "query": "KIPI, Kabupaten Bulungan, Indonesia",
+        "results": []
+      }
+    ]
+  },
+  "ki-indonesia-konawe-industrial-park": {
+    "check_date": "2026-11-08",
+    "queries": [
+      {
+        "query": "Indonesia Konawe Industrial Park, Kabupaten Konawe, Sulawesi Tenggara, Indonesia",
+        "results": []
+      },
+      {
+        "query": "Indonesia Konawe Industrial Park, Kabupaten Konawe, Indonesia",
+        "results": []
+      }
+    ]
+  },
+  "ki-kawasan-industri-kbs": {
+    "check_date": "2026-11-08",
+    "queries": [
+      {
+        "query": "Kawasan Industri KBS, Kabupaten Ketapang, Kalimantan Barat, Indonesia",
+        "results": []
+      },
+      {
+        "query": "Kawasan Industri KBS, Kabupaten Ketapang, Indonesia",
+        "results": []
+      }
+    ]
+  },
+  "ki-kawasan-industri-morowali": {
+    "check_date": "2026-11-08",
+    "queries": [
+      {
+        "query": "Kawasan Industri Morowali, Kabupaten Morowali, Sulawesi Tengah, Indonesia",
+        "results": []
+      },
+      {
+        "query": "Kawasan Industri Morowali, Kabupaten Morowali, Indonesia",
+        "results": []
+      }
+    ]
+  },
+  "ki-java-integrated-industrial-and-port-estate": {
+    "check_date": "2026-11-08",
+    "queries": [
+      {
+        "query": "Java Integrated Industrial and Port Estate, Kabupaten Gresik, Jawa Timur, Indonesia",
+        "results": [
+          {
+            "place_id": 29722170,
+            "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+            "osm_type": "relation",
+            "osm_id": 8877146,
+            "lat": "-7.0718746",
+            "lon": "112.6184591",
+            "category": "landuse",
+            "type": "industrial",
+            "place_rank": 24,
+            "importance": 0.08004500114442661,
+            "addresstype": "industrial",
+            "name": "Java Integrated Industrial and Port Estate",
+            "display_name": "Java Integrated Industrial and Port Estate, Gresik, East Java, 61151, Indonesia",
+            "address": {
+              "industrial": "Java Integrated Industrial and Port Estate",
+              "county": "Gresik",
+              "state": "East Java",
+              "ISO3166-2-lvl4": "ID-JI",
+              "postcode": "61151",
+              "country": "Indonesia",
+              "country_code": "id"
+            },
+            "boundingbox": [
+              "-7.1077170",
+              "-7.0349858",
+              "112.5879121",
+              "112.6485259"
+            ]
+          }
+        ]
+      }
+    ],
+    "accepted": {
+      "place_id": 29722170,
+      "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "osm_type": "relation",
+      "osm_id": 8877146,
+      "lat": "-7.0718746",
+      "lon": "112.6184591",
+      "category": "landuse",
+      "type": "industrial",
+      "place_rank": 24,
+      "importance": 0.08004500114442661,
+      "addresstype": "industrial",
+      "name": "Java Integrated Industrial and Port Estate",
+      "display_name": "Java Integrated Industrial and Port Estate, Gresik, East Java, 61151, Indonesia",
+      "address": {
+        "industrial": "Java Integrated Industrial and Port Estate",
+        "county": "Gresik",
+        "state": "East Java",
+        "ISO3166-2-lvl4": "ID-JI",
+        "postcode": "61151",
+        "country": "Indonesia",
+        "country_code": "id"
+      },
+      "boundingbox": [
+        "-7.1077170",
+        "-7.0349858",
+        "112.5879121",
+        "112.6485259"
+      ]
+    }
+  },
+  "ki-kawasan-industri-konawe": {
+    "check_date": "2026-11-08",
+    "queries": [
+      {
+        "query": "Kawasan Industri Konawe, Kabupaten Konawe, Sulawesi Tenggara, Indonesia",
+        "results": []
+      },
+      {
+        "query": "Kawasan Industri Konawe, Kabupaten Konawe, Indonesia",
+        "results": []
+      }
+    ]
+  },
+  "ki-suryacipta-ie": {
+    "check_date": "2026-11-08",
+    "queries": [
+      {
+        "query": "Suryacipta IE, Kabupaten Karawang, Jawa Barat, Indonesia",
+        "results": []
+      },
+      {
+        "query": "Suryacipta IE, Kabupaten Karawang, Indonesia",
+        "results": []
+      },
+      {
+        "query": "Kawasan Industri Suryacipta, Kabupaten Karawang, Indonesia",
+        "results": [
+          {
+            "place_id": 31134703,
+            "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+            "osm_type": "way",
+            "osm_id": 415390634,
+            "lat": "-6.4075787",
+            "lon": "107.3384878",
+            "category": "landuse",
+            "type": "industrial",
+            "place_rank": 24,
+            "importance": 0.0800550019073777,
+            "addresstype": "industrial",
+            "name": "Kawasan Industri Suryacipta",
+            "display_name": "Kawasan Industri Suryacipta, Kutanegara, Karawang, West Java, Indonesia",
+            "address": {
+              "industrial": "Kawasan Industri Suryacipta",
+              "village": "Kutanegara",
+              "town": "Karawang",
+              "state": "West Java",
+              "ISO3166-2-lvl4": "ID-JB",
+              "country": "Indonesia",
+              "country_code": "id"
+            },
+            "boundingbox": [
+              "-6.4478697",
+              "-6.3682167",
+              "107.3187254",
+              "107.3681107"
+            ]
+          }
+        ]
+      }
+    ],
+    "accepted": {
+      "place_id": 31134703,
+      "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "osm_type": "way",
+      "osm_id": 415390634,
+      "lat": "-6.4075787",
+      "lon": "107.3384878",
+      "category": "landuse",
+      "type": "industrial",
+      "place_rank": 24,
+      "importance": 0.0800550019073777,
+      "addresstype": "industrial",
+      "name": "Kawasan Industri Suryacipta",
+      "display_name": "Kawasan Industri Suryacipta, Kutanegara, Karawang, West Java, Indonesia",
+      "address": {
+        "industrial": "Kawasan Industri Suryacipta",
+        "village": "Kutanegara",
+        "town": "Karawang",
+        "state": "West Java",
+        "ISO3166-2-lvl4": "ID-JB",
+        "country": "Indonesia",
+        "country_code": "id"
+      },
+      "boundingbox": [
+        "-6.4478697",
+        "-6.3682167",
+        "107.3187254",
+        "107.3681107"
+      ]
+    }
+  },
+  "ki-sinar-primera-industrial-karawang-eco-city-spike": {
+    "check_date": "2026-11-08",
+    "queries": [
+      {
+        "query": "Sinar Primera Industrial Karawang Eco City (SPIKE), Kabupaten Karawang, Jawa Barat, Indonesia",
+        "results": []
+      },
+      {
+        "query": "Sinar Primera Industrial Karawang Eco City, Kabupaten Karawang, Indonesia",
+        "results": []
+      }
+    ]
+  },
+  "ki-greenland-international-industrial-center-giic": {
+    "check_date": "2026-11-08",
+    "queries": [
+      {
+        "query": "Greenland International Industrial Center (GIIC), Kabupaten Bekasi, Jawa Barat, Indonesia",
+        "results": []
+      },
+      {
+        "query": "Greenland International Industrial Center, Kabupaten Bekasi, Indonesia",
+        "results": [
+          {
+            "place_id": 31265549,
+            "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+            "osm_type": "way",
+            "osm_id": 568349989,
+            "lat": "-6.3835583",
+            "lon": "107.1911448",
+            "category": "landuse",
+            "type": "industrial",
+            "place_rank": 24,
+            "importance": 0.0800550019073777,
+            "addresstype": "industrial",
+            "name": "Greenland International Industrial Center",
+            "display_name": "Greenland International Industrial Center, Pasirpanji, Kab Bekasi, West Java, Indonesia",
+            "address": {
+              "industrial": "Greenland International Industrial Center",
+              "village": "Pasirpanji",
+              "regency": "Kab Bekasi",
+              "state": "West Java",
+              "ISO3166-2-lvl4": "ID-JB",
+              "country": "Indonesia",
+              "country_code": "id"
+            },
+            "boundingbox": [
+              "-6.4118709",
+              "-6.3550404",
+              "107.1501567",
+              "107.2210438"
+            ]
+          }
+        ]
+      }
+    ],
+    "accepted": {
+      "place_id": 31265549,
+      "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "osm_type": "way",
+      "osm_id": 568349989,
+      "lat": "-6.3835583",
+      "lon": "107.1911448",
+      "category": "landuse",
+      "type": "industrial",
+      "place_rank": 24,
+      "importance": 0.0800550019073777,
+      "addresstype": "industrial",
+      "name": "Greenland International Industrial Center",
+      "display_name": "Greenland International Industrial Center, Pasirpanji, Kab Bekasi, West Java, Indonesia",
+      "address": {
+        "industrial": "Greenland International Industrial Center",
+        "village": "Pasirpanji",
+        "regency": "Kab Bekasi",
+        "state": "West Java",
+        "ISO3166-2-lvl4": "ID-JB",
+        "country": "Indonesia",
+        "country_code": "id"
+      },
+      "boundingbox": [
+        "-6.4118709",
+        "-6.3550404",
+        "107.1501567",
+        "107.2210438"
+      ]
+    }
+  },
+  "ki-kota-bukit-indah-industrial-city": {
+    "check_date": "2026-11-08",
+    "queries": [
+      {
+        "query": "Kota Bukit Indah Industrial City, Kabupaten Purwakarta, Jawa Barat, Indonesia",
+        "results": [
+          {
+            "place_id": 31358057,
+            "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+            "osm_type": "way",
+            "osm_id": 762323746,
+            "lat": "-6.4505296",
+            "lon": "107.4510838",
+            "category": "landuse",
+            "type": "industrial",
+            "place_rank": 24,
+            "importance": 0.08004549401083387,
+            "addresstype": "industrial",
+            "name": "Kota Bukit Indah Industrial City",
+            "display_name": "Kota Bukit Indah Industrial City, Wanakerta, Purwakarta, West Java, 41138, Indonesia",
+            "address": {
+              "industrial": "Kota Bukit Indah Industrial City",
+              "village": "Wanakerta",
+              "town": "Purwakarta",
+              "state": "West Java",
+              "ISO3166-2-lvl4": "ID-JB",
+              "postcode": "41138",
+              "country": "Indonesia",
+              "country_code": "id"
+            },
+            "boundingbox": [
+              "-6.4773746",
+              "-6.4237175",
+              "107.4201653",
+              "107.4735547"
+            ]
+          }
+        ]
+      }
+    ],
+    "accepted": {
+      "place_id": 31358057,
+      "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "osm_type": "way",
+      "osm_id": 762323746,
+      "lat": "-6.4505296",
+      "lon": "107.4510838",
+      "category": "landuse",
+      "type": "industrial",
+      "place_rank": 24,
+      "importance": 0.08004549401083387,
+      "addresstype": "industrial",
+      "name": "Kota Bukit Indah Industrial City",
+      "display_name": "Kota Bukit Indah Industrial City, Wanakerta, Purwakarta, West Java, 41138, Indonesia",
+      "address": {
+        "industrial": "Kota Bukit Indah Industrial City",
+        "village": "Wanakerta",
+        "town": "Purwakarta",
+        "state": "West Java",
+        "ISO3166-2-lvl4": "ID-JB",
+        "postcode": "41138",
+        "country": "Indonesia",
+        "country_code": "id"
+      },
+      "boundingbox": [
+        "-6.4773746",
+        "-6.4237175",
+        "107.4201653",
+        "107.4735547"
+      ]
+    }
+  },
+  "ki-jatiluhur-industrial-smart-city": {
+    "check_date": "2026-11-08",
+    "queries": [
+      {
+        "query": "Jatiluhur Industrial Smart City, Kabupaten Purwakarta, Jawa Barat, Indonesia",
+        "results": [
+          {
+            "place_id": 31403476,
+            "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+            "osm_type": "way",
+            "osm_id": 1105002743,
+            "lat": "-6.4988907",
+            "lon": "107.4320509",
+            "category": "landuse",
+            "type": "industrial",
+            "place_rank": 24,
+            "importance": 0.08004549401083387,
+            "addresstype": "industrial",
+            "name": "Jatiluhur Industrial Smart City",
+            "display_name": "Jatiluhur Industrial Smart City, Babakancikao, Purwakarta, West Java, Indonesia",
+            "address": {
+              "industrial": "Jatiluhur Industrial Smart City",
+              "village": "Babakancikao",
+              "town": "Purwakarta",
+              "state": "West Java",
+              "ISO3166-2-lvl4": "ID-JB",
+              "country": "Indonesia",
+              "country_code": "id"
+            },
+            "boundingbox": [
+              "-6.5119069",
+              "-6.4858085",
+              "107.4110829",
+              "107.4398444"
+            ]
+          }
+        ]
+      }
+    ],
+    "accepted": {
+      "place_id": 31403476,
+      "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "osm_type": "way",
+      "osm_id": 1105002743,
+      "lat": "-6.4988907",
+      "lon": "107.4320509",
+      "category": "landuse",
+      "type": "industrial",
+      "place_rank": 24,
+      "importance": 0.08004549401083387,
+      "addresstype": "industrial",
+      "name": "Jatiluhur Industrial Smart City",
+      "display_name": "Jatiluhur Industrial Smart City, Babakancikao, Purwakarta, West Java, Indonesia",
+      "address": {
+        "industrial": "Jatiluhur Industrial Smart City",
+        "village": "Babakancikao",
+        "town": "Purwakarta",
+        "state": "West Java",
+        "ISO3166-2-lvl4": "ID-JB",
+        "country": "Indonesia",
+        "country_code": "id"
+      },
+      "boundingbox": [
+        "-6.5119069",
+        "-6.4858085",
+        "107.4110829",
+        "107.4398444"
+      ]
+    }
+  },
+  "ki-millenium-industrial-estate": {
+    "check_date": "2026-11-08",
+    "queries": [
+      {
+        "query": "Millenium Industrial Estate, Kabupaten Tangerang, Banten, Indonesia",
+        "results": [
+          {
+            "place_id": 30810479,
+            "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+            "osm_type": "way",
+            "osm_id": 700897337,
+            "lat": "-6.2576206",
+            "lon": "106.5004154",
+            "category": "landuse",
+            "type": "industrial",
+            "place_rank": 24,
+            "importance": 0.08004071488517583,
+            "addresstype": "industrial",
+            "name": "Millenium Industrial Estate",
+            "display_name": "Millenium Industrial Estate, Peusar, Panongan, Tangerang Regency, Banten, Indonesia",
+            "address": {
+              "industrial": "Millenium Industrial Estate",
+              "village": "Peusar",
+              "municipality": "Panongan",
+              "county": "Tangerang Regency",
+              "state": "Banten",
+              "ISO3166-2-lvl4": "ID-BT",
+              "country": "Indonesia",
+              "country_code": "id"
+            },
+            "boundingbox": [
+              "-6.2732804",
+              "-6.2418469",
+              "106.4899689",
+              "106.5076755"
+            ]
+          },
+          {
+            "place_id": 30920969,
+            "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+            "osm_type": "way",
+            "osm_id": 598120109,
+            "lat": "-6.2542344",
+            "lon": "106.4980291",
+            "category": "boundary",
+            "type": "special_economic_zone",
+            "place_rank": 25,
+            "importance": 0.06670738155184253,
+            "addresstype": "special_economic_zone",
+            "name": "Millenium Industrial Estate",
+            "display_name": "Millenium Industrial Estate, Peusar, Panongan, Tangerang Regency, Banten, Indonesia",
+            "address": {
+              "special_economic_zone": "Millenium Industrial Estate",
+              "village": "Peusar",
+              "municipality": "Panongan",
+              "county": "Tangerang Regency",
+              "state": "Banten",
+              "ISO3166-2-lvl4": "ID-BT",
+              "country": "Indonesia",
+              "country_code": "id"
+            },
+            "boundingbox": [
+              "-6.2659098",
+              "-6.2425401",
+              "106.4878178",
+              "106.5071243"
+            ]
+          }
+        ]
+      }
+    ],
+    "accepted": {
+      "place_id": 30810479,
+      "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "osm_type": "way",
+      "osm_id": 700897337,
+      "lat": "-6.2576206",
+      "lon": "106.5004154",
+      "category": "landuse",
+      "type": "industrial",
+      "place_rank": 24,
+      "importance": 0.08004071488517583,
+      "addresstype": "industrial",
+      "name": "Millenium Industrial Estate",
+      "display_name": "Millenium Industrial Estate, Peusar, Panongan, Tangerang Regency, Banten, Indonesia",
+      "address": {
+        "industrial": "Millenium Industrial Estate",
+        "village": "Peusar",
+        "municipality": "Panongan",
+        "county": "Tangerang Regency",
+        "state": "Banten",
+        "ISO3166-2-lvl4": "ID-BT",
+        "country": "Indonesia",
+        "country_code": "id"
+      },
+      "boundingbox": [
+        "-6.2732804",
+        "-6.2418469",
+        "106.4899689",
+        "106.5076755"
+      ]
+    }
+  },
+  "ki-kawasan-industri-dumai": {
+    "check_date": "2026-11-08",
+    "queries": [
+      {
+        "query": "Kawasan Industri Dumai, Kota Dumai, Riau, Indonesia",
+        "results": [
+          {
+            "place_id": 256571508,
+            "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+            "osm_type": "way",
+            "osm_id": 1360215370,
+            "lat": "1.6311729",
+            "lon": "101.6233212",
+            "category": "landuse",
+            "type": "industrial",
+            "place_rank": 24,
+            "importance": 0.08005000152590216,
+            "addresstype": "industrial",
+            "name": "Kawasan Industri Dumai",
+            "display_name": "Kawasan Industri Dumai, Medang Kampai, Dumai City, Riau, Indonesia",
+            "address": {
+              "industrial": "Kawasan Industri Dumai",
+              "city_district": "Medang Kampai",
+              "city": "Dumai City",
+              "state": "Riau",
+              "ISO3166-2-lvl4": "ID-RI",
+              "country": "Indonesia",
+              "country_code": "id"
+            },
+            "boundingbox": [
+              "1.6023585",
+              "1.6599586",
+              "101.5951299",
+              "101.6600162"
+            ]
+          }
+        ]
+      }
+    ],
+    "accepted": {
+      "place_id": 256571508,
+      "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "osm_type": "way",
+      "osm_id": 1360215370,
+      "lat": "1.6311729",
+      "lon": "101.6233212",
+      "category": "landuse",
+      "type": "industrial",
+      "place_rank": 24,
+      "importance": 0.08005000152590216,
+      "addresstype": "industrial",
+      "name": "Kawasan Industri Dumai",
+      "display_name": "Kawasan Industri Dumai, Medang Kampai, Dumai City, Riau, Indonesia",
+      "address": {
+        "industrial": "Kawasan Industri Dumai",
+        "city_district": "Medang Kampai",
+        "city": "Dumai City",
+        "state": "Riau",
+        "ISO3166-2-lvl4": "ID-RI",
+        "country": "Indonesia",
+        "country_code": "id"
+      },
+      "boundingbox": [
+        "1.6023585",
+        "1.6599586",
+        "101.5951299",
+        "101.6600162"
+      ]
+    }
+  },
+  "ki-kawasan-industri-efi": {
+    "check_date": "2026-11-08",
+    "queries": [
+      {
+        "query": "Kawasan Industri EFI, Kabupaten Halmahera Utara, Maluku Utara, Indonesia",
+        "results": []
+      },
+      {
+        "query": "Kawasan Industri EFI, Kabupaten Halmahera Utara, Indonesia",
+        "results": []
+      }
+    ]
+  },
+  "ki-eski-enam-sembilan-kawasan-industri": {
+    "check_date": "2026-11-08",
+    "queries": [
+      {
+        "query": "ESKI (Enam Sembilan Kawasan Industri), Kabupaten Morowali Utara, Sulawesi Tengah, Indonesia",
+        "results": []
+      },
+      {
+        "query": "ESKI, Kabupaten Morowali Utara, Indonesia",
+        "results": []
+      }
+    ]
+  },
+  "ki-anugrah-sambalagi-industrial-park-asip": {
+    "check_date": "2026-11-08",
+    "queries": [
+      {
+        "query": "Anugrah Sambalagi Industrial Park (ASIP), Kabupaten Morowali, Sulawesi Tengah, Indonesia",
+        "results": []
+      },
+      {
+        "query": "Anugrah Sambalagi Industrial Park, Kabupaten Morowali, Indonesia",
+        "results": []
+      }
+    ]
+  },
+  "ki-pertiwi-lestari-industrial-estate": {
+    "check_date": "2026-11-08",
+    "queries": [
+      {
+        "query": "Pertiwi Lestari Industrial Estate, Kabupaten Karawang, Jawa Barat, Indonesia",
+        "results": [
+          {
+            "place_id": 31304805,
+            "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+            "osm_type": "way",
+            "osm_id": 1105002742,
+            "lat": "-6.4024306",
+            "lon": "107.2546314",
+            "category": "landuse",
+            "type": "industrial",
+            "place_rank": 24,
+            "importance": 0.0800550019073777,
+            "addresstype": "industrial",
+            "name": "Pertiwi Lestari Industrial Estate",
+            "display_name": "Pertiwi Lestari Industrial Estate, Karawang, West Java, Indonesia",
+            "address": {
+              "industrial": "Pertiwi Lestari Industrial Estate",
+              "town": "Karawang",
+              "state": "West Java",
+              "ISO3166-2-lvl4": "ID-JB",
+              "country": "Indonesia",
+              "country_code": "id"
+            },
+            "boundingbox": [
+              "-6.4140988",
+              "-6.3902297",
+              "107.2441775",
+              "107.2602223"
+            ]
+          }
+        ]
+      }
+    ],
+    "accepted": {
+      "place_id": 31304805,
+      "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "osm_type": "way",
+      "osm_id": 1105002742,
+      "lat": "-6.4024306",
+      "lon": "107.2546314",
+      "category": "landuse",
+      "type": "industrial",
+      "place_rank": 24,
+      "importance": 0.0800550019073777,
+      "addresstype": "industrial",
+      "name": "Pertiwi Lestari Industrial Estate",
+      "display_name": "Pertiwi Lestari Industrial Estate, Karawang, West Java, Indonesia",
+      "address": {
+        "industrial": "Pertiwi Lestari Industrial Estate",
+        "town": "Karawang",
+        "state": "West Java",
+        "ISO3166-2-lvl4": "ID-JB",
+        "country": "Indonesia",
+        "country_code": "id"
+      },
+      "boundingbox": [
+        "-6.4140988",
+        "-6.3902297",
+        "107.2441775",
+        "107.2602223"
+      ]
+    }
+  },
+  "ki-modern-cikande-industrial-estate-2": {
+    "check_date": "2026-11-08",
+    "queries": [
+      {
+        "query": "Modern Cikande Industrial Estate, Kabupaten Serang, Banten, Indonesia",
+        "results": [
+          {
+            "place_id": 30790634,
+            "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+            "osm_type": "relation",
+            "osm_id": 19550810,
+            "lat": "-6.1970750",
+            "lon": "106.3167050",
+            "category": "landuse",
+            "type": "industrial",
+            "place_rank": 24,
+            "importance": 0.08003750133516438,
+            "addresstype": "industrial",
+            "name": "Modern Cikande Industrial Estate",
+            "display_name": "Modern Cikande Industrial Estate, Barengkok, Kab Serang, Banten, Indonesia",
+            "address": {
+              "industrial": "Modern Cikande Industrial Estate",
+              "village": "Barengkok",
+              "county": "Kab Serang",
+              "state": "Banten",
+              "ISO3166-2-lvl4": "ID-BT",
+              "country": "Indonesia",
+              "country_code": "id"
+            },
+            "boundingbox": [
+              "-6.2189428",
+              "-6.1752189",
+              "106.3014740",
+              "106.3417974"
+            ]
+          }
+        ]
+      }
+    ],
+    "accepted": {
+      "place_id": 30790634,
+      "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "osm_type": "relation",
+      "osm_id": 19550810,
+      "lat": "-6.1970750",
+      "lon": "106.3167050",
+      "category": "landuse",
+      "type": "industrial",
+      "place_rank": 24,
+      "importance": 0.08003750133516438,
+      "addresstype": "industrial",
+      "name": "Modern Cikande Industrial Estate",
+      "display_name": "Modern Cikande Industrial Estate, Barengkok, Kab Serang, Banten, Indonesia",
+      "address": {
+        "industrial": "Modern Cikande Industrial Estate",
+        "village": "Barengkok",
+        "county": "Kab Serang",
+        "state": "Banten",
+        "ISO3166-2-lvl4": "ID-BT",
+        "country": "Indonesia",
+        "country_code": "id"
+      },
+      "boundingbox": [
+        "-6.2189428",
+        "-6.1752189",
+        "106.3014740",
+        "106.3417974"
+      ]
+    }
+  },
+  "ki-mm2100-industrial-town-mmid": {
+    "check_date": "2026-11-08",
+    "queries": [
+      {
+        "query": "MM2100 Industrial Town MMID, Kabupaten Bekasi, Jawa Barat, Indonesia",
+        "results": []
+      },
+      {
+        "query": "MM2100 Industrial Town MMID, Kabupaten Bekasi, Indonesia",
+        "results": []
+      },
+      {
+        "query": "MM2100 Industrial Town, Kabupaten Bekasi, Indonesia",
+        "results": [
+          {
+            "place_id": 31600577,
+            "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+            "osm_type": "relation",
+            "osm_id": 8081922,
+            "lat": "-6.3193107",
+            "lon": "107.1003540",
+            "category": "landuse",
+            "type": "industrial",
+            "place_rank": 24,
+            "importance": 0.0800550019073777,
+            "addresstype": "industrial",
+            "name": "MM2100 Industrial Town",
+            "display_name": "MM2100 Industrial Town, Jatiwangi, Kab Bekasi, West Java, Indonesia",
+            "address": {
+              "industrial": "MM2100 Industrial Town",
+              "village": "Jatiwangi",
+              "regency": "Kab Bekasi",
+              "state": "West Java",
+              "ISO3166-2-lvl4": "ID-JB",
+              "country": "Indonesia",
+              "country_code": "id"
+            },
+            "boundingbox": [
+              "-6.3515006",
+              "-6.2871240",
+              "107.0590210",
+              "107.1168923"
+            ]
+          }
+        ]
+      }
+    ],
+    "accepted": {
+      "place_id": 31600577,
+      "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "osm_type": "relation",
+      "osm_id": 8081922,
+      "lat": "-6.3193107",
+      "lon": "107.1003540",
+      "category": "landuse",
+      "type": "industrial",
+      "place_rank": 24,
+      "importance": 0.0800550019073777,
+      "addresstype": "industrial",
+      "name": "MM2100 Industrial Town",
+      "display_name": "MM2100 Industrial Town, Jatiwangi, Kab Bekasi, West Java, Indonesia",
+      "address": {
+        "industrial": "MM2100 Industrial Town",
+        "village": "Jatiwangi",
+        "regency": "Kab Bekasi",
+        "state": "West Java",
+        "ISO3166-2-lvl4": "ID-JB",
+        "country": "Indonesia",
+        "country_code": "id"
+      },
+      "boundingbox": [
+        "-6.3515006",
+        "-6.2871240",
+        "107.0590210",
+        "107.1168923"
+      ]
+    }
+  },
+  "ki-kawasan-industri-buli": {
+    "check_date": "2026-11-08",
+    "queries": [
+      {
+        "query": "Kawasan Industri Buli, Kabupaten Halmahera Timur, Maluku Utara, Indonesia",
+        "results": []
+      },
+      {
+        "query": "Kawasan Industri Buli, Kabupaten Halmahera Timur, Indonesia",
+        "results": []
+      }
+    ]
+  },
+  "ki-kawasan-industri-terpadu-wilmar": {
+    "check_date": "2026-11-08",
+    "queries": [
+      {
+        "query": "Kawasan Industri Terpadu Wilmar, Kabupaten Serang, Banten, Indonesia",
+        "results": [
+          {
+            "place_id": 30580320,
+            "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+            "osm_type": "way",
+            "osm_id": 530117995,
+            "lat": "-6.0042681",
+            "lon": "106.1055036",
+            "category": "landuse",
+            "type": "industrial",
+            "place_rank": 24,
+            "importance": 0.08003750133516438,
+            "addresstype": "industrial",
+            "name": "Kawasan Industri Terpadu Wilmar",
+            "display_name": "Kawasan Industri Terpadu Wilmar, Terate, Kab Serang, Banten, Indonesia",
+            "address": {
+              "industrial": "Kawasan Industri Terpadu Wilmar",
+              "village": "Terate",
+              "county": "Kab Serang",
+              "state": "Banten",
+              "ISO3166-2-lvl4": "ID-BT",
+              "country": "Indonesia",
+              "country_code": "id"
+            },
+            "boundingbox": [
+              "-6.0223216",
+              "-5.9855529",
+              "106.0850680",
+              "106.1230745"
+            ]
+          }
+        ]
+      }
+    ],
+    "accepted": {
+      "place_id": 30580320,
+      "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "osm_type": "way",
+      "osm_id": 530117995,
+      "lat": "-6.0042681",
+      "lon": "106.1055036",
+      "category": "landuse",
+      "type": "industrial",
+      "place_rank": 24,
+      "importance": 0.08003750133516438,
+      "addresstype": "industrial",
+      "name": "Kawasan Industri Terpadu Wilmar",
+      "display_name": "Kawasan Industri Terpadu Wilmar, Terate, Kab Serang, Banten, Indonesia",
+      "address": {
+        "industrial": "Kawasan Industri Terpadu Wilmar",
+        "village": "Terate",
+        "county": "Kab Serang",
+        "state": "Banten",
+        "ISO3166-2-lvl4": "ID-BT",
+        "country": "Indonesia",
+        "country_code": "id"
+      },
+      "boundingbox": [
+        "-6.0223216",
+        "-5.9855529",
+        "106.0850680",
+        "106.1230745"
+      ]
+    }
+  },
+  "ki-kawasan-industri-medan": {
+    "check_date": "2026-11-08",
+    "queries": [
+      {
+        "query": "Kawasan Industri Medan, Kabupaten Deli Serdang, Sumatera Utara, Indonesia",
+        "results": [
+          {
+            "place_id": 252358617,
+            "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+            "osm_type": "way",
+            "osm_id": 1064373109,
+            "lat": "3.6755635",
+            "lon": "98.6904159",
+            "category": "landuse",
+            "type": "industrial",
+            "place_rank": 24,
+            "importance": 0.08003750133516438,
+            "addresstype": "industrial",
+            "name": "Kawasan Industri Medan",
+            "display_name": "Kawasan Industri Medan, Labuhan Deli, Kabupaten Deli Serdang, North Sumatra, Indonesia",
+            "address": {
+              "industrial": "Kawasan Industri Medan",
+              "municipality": "Labuhan Deli",
+              "county": "Kabupaten Deli Serdang",
+              "state": "North Sumatra",
+              "ISO3166-2-lvl4": "ID-SU",
+              "country": "Indonesia",
+              "country_code": "id"
+            },
+            "boundingbox": [
+              "3.6725570",
+              "3.6785175",
+              "98.6840491",
+              "98.6965861"
+            ]
+          }
+        ]
+      }
+    ],
+    "accepted": {
+      "place_id": 252358617,
+      "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "osm_type": "way",
+      "osm_id": 1064373109,
+      "lat": "3.6755635",
+      "lon": "98.6904159",
+      "category": "landuse",
+      "type": "industrial",
+      "place_rank": 24,
+      "importance": 0.08003750133516438,
+      "addresstype": "industrial",
+      "name": "Kawasan Industri Medan",
+      "display_name": "Kawasan Industri Medan, Labuhan Deli, Kabupaten Deli Serdang, North Sumatra, Indonesia",
+      "address": {
+        "industrial": "Kawasan Industri Medan",
+        "municipality": "Labuhan Deli",
+        "county": "Kabupaten Deli Serdang",
+        "state": "North Sumatra",
+        "ISO3166-2-lvl4": "ID-SU",
+        "country": "Indonesia",
+        "country_code": "id"
+      },
+      "boundingbox": [
+        "3.6725570",
+        "3.6785175",
+        "98.6840491",
+        "98.6965861"
+      ]
+    }
+  },
+  "ki-kawasan-industri-stardust": {
+    "check_date": "2026-11-08",
+    "queries": [
+      {
+        "query": "Kawasan Industri Stardust, Kabupaten Morowali Utara, Sulawesi Tengah, Indonesia",
+        "results": []
+      },
+      {
+        "query": "Kawasan Industri Stardust, Kabupaten Morowali Utara, Indonesia",
+        "results": []
+      }
+    ]
+  },
+  "ki-kawasan-industri-indotaisei-kota-bukit-indah": {
+    "check_date": "2026-11-08",
+    "queries": [
+      {
+        "query": "Kawasan Industri Indotaisei (Kota Bukit Indah), Kabupaten Karawang, Jawa Barat, Indonesia",
+        "results": []
+      },
+      {
+        "query": "Kawasan Industri Indotaisei, Kabupaten Karawang, Indonesia",
+        "results": [
+          {
+            "place_id": 31094903,
+            "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+            "osm_type": "way",
+            "osm_id": 762323744,
+            "lat": "-6.4393757",
+            "lon": "107.4298794",
+            "category": "landuse",
+            "type": "industrial",
+            "place_rank": 24,
+            "importance": 0.0800550019073777,
+            "addresstype": "industrial",
+            "name": "Kawasan Industri Indotaisei",
+            "display_name": "Kawasan Industri Indotaisei, Karawang, West Java, Indonesia",
+            "address": {
+              "industrial": "Kawasan Industri Indotaisei",
+              "town": "Karawang",
+              "state": "West Java",
+              "ISO3166-2-lvl4": "ID-JB",
+              "country": "Indonesia",
+              "country_code": "id"
+            },
+            "boundingbox": [
+              "-6.4703814",
+              "-6.4080993",
+              "107.4007932",
+              "107.4367574"
+            ]
+          }
+        ]
+      }
+    ],
+    "accepted": {
+      "place_id": 31094903,
+      "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "osm_type": "way",
+      "osm_id": 762323744,
+      "lat": "-6.4393757",
+      "lon": "107.4298794",
+      "category": "landuse",
+      "type": "industrial",
+      "place_rank": 24,
+      "importance": 0.0800550019073777,
+      "addresstype": "industrial",
+      "name": "Kawasan Industri Indotaisei",
+      "display_name": "Kawasan Industri Indotaisei, Karawang, West Java, Indonesia",
+      "address": {
+        "industrial": "Kawasan Industri Indotaisei",
+        "town": "Karawang",
+        "state": "West Java",
+        "ISO3166-2-lvl4": "ID-JB",
+        "country": "Indonesia",
+        "country_code": "id"
+      },
+      "boundingbox": [
+        "-6.4703814",
+        "-6.4080993",
+        "107.4007932",
+        "107.4367574"
+      ]
+    }
+  },
+  "ki-kawasan-industri-batuta-bcip": {
+    "check_date": "2026-11-08",
+    "queries": [
+      {
+        "query": "Kawasan Industri Batuta / BCIP, Kabupaten Kutai Timur, Kalimantan Timur, Indonesia",
+        "results": []
+      },
+      {
+        "query": "Kawasan Industri Batuta / BCIP, Kabupaten Kutai Timur, Indonesia",
+        "results": []
+      },
+      {
+        "query": "Kawasan Industri Batuta /, Kabupaten Kutai Timur, Indonesia",
+        "results": []
+      }
+    ]
+  },
+  "ki-krakatau-industrial-estate-cilegon": {
+    "check_date": "2026-11-08",
+    "queries": [
+      {
+        "query": "Krakatau Industrial Estate Cilegon, Kota Cilegon, Banten, Indonesia",
+        "results": [
+          {
+            "place_id": 30389549,
+            "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+            "osm_type": "way",
+            "osm_id": 1052533718,
+            "lat": "-6.0086441",
+            "lon": "105.9977883",
+            "category": "landuse",
+            "type": "industrial",
+            "place_rank": 24,
+            "importance": 0.08004992980849925,
+            "addresstype": "industrial",
+            "name": "Krakatau Industrial Estate Cilegon",
+            "display_name": "Krakatau Industrial Estate Cilegon, Makamkalong, Samangraya, Cilegon, Banten, 42443, Indonesia",
+            "address": {
+              "industrial": "Krakatau Industrial Estate Cilegon",
+              "hamlet": "Makamkalong",
+              "village": "Samangraya",
+              "city": "Cilegon",
+              "state": "Banten",
+              "ISO3166-2-lvl4": "ID-BT",
+              "postcode": "42443",
+              "country": "Indonesia",
+              "country_code": "id"
+            },
+            "boundingbox": [
+              "-6.0312147",
+              "-5.9861237",
+              "105.9557077",
+              "106.0406613"
+            ]
+          }
+        ]
+      }
+    ],
+    "accepted": {
+      "place_id": 30389549,
+      "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "osm_type": "way",
+      "osm_id": 1052533718,
+      "lat": "-6.0086441",
+      "lon": "105.9977883",
+      "category": "landuse",
+      "type": "industrial",
+      "place_rank": 24,
+      "importance": 0.08004992980849925,
+      "addresstype": "industrial",
+      "name": "Krakatau Industrial Estate Cilegon",
+      "display_name": "Krakatau Industrial Estate Cilegon, Makamkalong, Samangraya, Cilegon, Banten, 42443, Indonesia",
+      "address": {
+        "industrial": "Krakatau Industrial Estate Cilegon",
+        "hamlet": "Makamkalong",
+        "village": "Samangraya",
+        "city": "Cilegon",
+        "state": "Banten",
+        "ISO3166-2-lvl4": "ID-BT",
+        "postcode": "42443",
+        "country": "Indonesia",
+        "country_code": "id"
+      },
+      "boundingbox": [
+        "-6.0312147",
+        "-5.9861237",
+        "105.9557077",
+        "106.0406613"
+      ]
+    }
+  },
+  "ki-sebuku-indonesia-industrial-park": {
+    "check_date": "2026-11-08",
+    "queries": [
+      {
+        "query": "Sebuku Indonesia Industrial Park, Kabupaten Kotabaru, Kalimantan Selatan, Indonesia",
+        "results": []
+      },
+      {
+        "query": "Sebuku Indonesia Industrial Park, Kabupaten Kotabaru, Indonesia",
+        "results": []
+      }
+    ]
+  },
+  "ki-kawasan-industri-bolaang-mongondow-kimong": {
+    "check_date": "2026-11-08",
+    "queries": [
+      {
+        "query": "Kawasan Industri Bolaang Mongondow (KIMONG), Kabupaten Bolaang Mongondow, Sulawesi Utara, Indonesia",
+        "results": []
+      },
+      {
+        "query": "Kawasan Industri Bolaang Mongondow, Kabupaten Bolaang Mongondow, Indonesia",
+        "results": []
+      }
+    ]
+  },
+  "ki-karawang-international-industrial-city-2": {
+    "check_date": "2026-11-08",
+    "queries": [
+      {
+        "query": "Karawang International Industrial City, Kabupaten Karawang, Jawa Barat, Indonesia",
+        "results": [
+          {
+            "place_id": 31330180,
+            "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+            "osm_type": "way",
+            "osm_id": 348133276,
+            "lat": "-6.3717599",
+            "lon": "107.2730857",
+            "category": "landuse",
+            "type": "industrial",
+            "place_rank": 24,
+            "importance": 0.0800550019073777,
+            "addresstype": "industrial",
+            "name": "Karawang International Industrial City",
+            "display_name": "Karawang International Industrial City, Karawang, West Java, Indonesia",
+            "address": {
+              "industrial": "Karawang International Industrial City",
+              "town": "Karawang",
+              "state": "West Java",
+              "ISO3166-2-lvl4": "ID-JB",
+              "country": "Indonesia",
+              "country_code": "id"
+            },
+            "boundingbox": [
+              "-6.3937616",
+              "-6.3498265",
+              "107.2480094",
+              "107.3055321"
+            ]
+          }
+        ]
+      }
+    ],
+    "accepted": {
+      "place_id": 31330180,
+      "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "osm_type": "way",
+      "osm_id": 348133276,
+      "lat": "-6.3717599",
+      "lon": "107.2730857",
+      "category": "landuse",
+      "type": "industrial",
+      "place_rank": 24,
+      "importance": 0.0800550019073777,
+      "addresstype": "industrial",
+      "name": "Karawang International Industrial City",
+      "display_name": "Karawang International Industrial City, Karawang, West Java, Indonesia",
+      "address": {
+        "industrial": "Karawang International Industrial City",
+        "town": "Karawang",
+        "state": "West Java",
+        "ISO3166-2-lvl4": "ID-JB",
+        "country": "Indonesia",
+        "country_code": "id"
+      },
+      "boundingbox": [
+        "-6.3937616",
+        "-6.3498265",
+        "107.2480094",
+        "107.3055321"
+      ]
+    }
+  },
+  "ki-kawasan-berikat-nusantara": {
+    "check_date": "2026-11-08",
+    "queries": [
+      {
+        "query": "Kawasan Berikat Nusantara, Kota Jakarta Utara, DKI Jakarta, Indonesia",
+        "results": [
+          {
+            "place_id": 425783186,
+            "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+            "osm_type": "way",
+            "osm_id": 376781754,
+            "lat": "-6.0997686",
+            "lon": "106.9664997",
+            "category": "landuse",
+            "type": "industrial",
+            "place_rank": 24,
+            "importance": 0.0800550019073777,
+            "addresstype": "industrial",
+            "name": "Kawasan Berikat Nusantara",
+            "display_name": "Kawasan Berikat Nusantara, Marunda, Cilincing, North Jakarta, Special Capital Region of Jakarta, 14150, Indonesia",
+            "address": {
+              "industrial": "Kawasan Berikat Nusantara",
+              "village": "Marunda",
+              "suburb": "Cilincing",
+              "city": "North Jakarta",
+              "ISO3166-2-lvl4": "ID-JK",
+              "postcode": "14150",
+              "country": "Indonesia",
+              "country_code": "id"
+            },
+            "boundingbox": [
+              "-6.1071210",
+              "-6.0922114",
+              "106.9607072",
+              "106.9689971"
+            ]
+          },
+          {
+            "place_id": 30913070,
+            "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+            "osm_type": "way",
+            "osm_id": 30048980,
+            "lat": "-6.0985556",
+            "lon": "106.9481912",
+            "category": "landuse",
+            "type": "industrial",
+            "place_rank": 24,
+            "importance": 0.08008313649195084,
+            "addresstype": "industrial",
+            "name": "Nusantara Bonded Zone",
+            "display_name": "Nusantara Bonded Zone, Cilincing, North Jakarta, Special Capital Region of Jakarta, 14120, Indonesia",
+            "address": {
+              "industrial": "Nusantara Bonded Zone",
+              "village": "Cilincing",
+              "suburb": "Cilincing",
+              "city": "North Jakarta",
+              "ISO3166-2-lvl4": "ID-JK",
+              "postcode": "14120",
+              "country": "Indonesia",
+              "country_code": "id"
+            },
+            "boundingbox": [
+              "-6.1100802",
+              "-6.0870051",
+              "106.9396858",
+              "106.9574672"
+            ]
+          },
+          {
+            "place_id": 31006945,
+            "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+            "osm_type": "way",
+            "osm_id": 491746262,
+            "lat": "-6.1421535",
+            "lon": "106.9316256",
+            "category": "landuse",
+            "type": "industrial",
+            "place_rank": 24,
+            "importance": 0.08008313649195084,
+            "addresstype": "industrial",
+            "name": "Nusantara Bonded Zone",
+            "display_name": "Nusantara Bonded Zone, Sukapura, Cilincing, North Jakarta, Special Capital Region of Jakarta, 14140, Indonesia",
+            "address": {
+              "industrial": "Nusantara Bonded Zone",
+              "village": "Sukapura",
+              "suburb": "Cilincing",
+              "city": "North Jakarta",
+              "ISO3166-2-lvl4": "ID-JK",
+              "postcode": "14140",
+              "country": "Indonesia",
+              "country_code": "id"
+            },
+            "boundingbox": [
+              "-6.1473605",
+              "-6.1369225",
+              "106.9230797",
+              "106.9398665"
+            ]
+          }
+        ]
+      }
+    ],
+    "accepted": {
+      "place_id": 425783186,
+      "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "osm_type": "way",
+      "osm_id": 376781754,
+      "lat": "-6.0997686",
+      "lon": "106.9664997",
+      "category": "landuse",
+      "type": "industrial",
+      "place_rank": 24,
+      "importance": 0.0800550019073777,
+      "addresstype": "industrial",
+      "name": "Kawasan Berikat Nusantara",
+      "display_name": "Kawasan Berikat Nusantara, Marunda, Cilincing, North Jakarta, Special Capital Region of Jakarta, 14150, Indonesia",
+      "address": {
+        "industrial": "Kawasan Berikat Nusantara",
+        "village": "Marunda",
+        "suburb": "Cilincing",
+        "city": "North Jakarta",
+        "ISO3166-2-lvl4": "ID-JK",
+        "postcode": "14150",
+        "country": "Indonesia",
+        "country_code": "id"
+      },
+      "boundingbox": [
+        "-6.1071210",
+        "-6.0922114",
+        "106.9607072",
+        "106.9689971"
+      ]
+    }
+  },
+  "ki-kawasan-industri-tanjung-enim": {
+    "check_date": "2026-11-08",
+    "queries": [
+      {
+        "query": "Kawasan Industri Tanjung Enim, Kabupaten Muara Enim, Sumatera Selatan, Indonesia",
+        "results": []
+      },
+      {
+        "query": "Kawasan Industri Tanjung Enim, Kabupaten Muara Enim, Indonesia",
+        "results": []
+      }
+    ]
+  },
+  "ki-pasuruan-industrial-estate-rembang": {
+    "check_date": "2026-11-08",
+    "queries": [
+      {
+        "query": "Pasuruan Industrial Estate Rembang, Kabupaten Pasuruan, Jawa Timur, Indonesia",
+        "results": [
+          {
+            "place_id": 29900847,
+            "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+            "osm_type": "way",
+            "osm_id": 762324409,
+            "lat": "-7.6349805",
+            "lon": "112.8248728",
+            "category": "landuse",
+            "type": "industrial",
+            "place_rank": 24,
+            "importance": 0.08003874189364459,
+            "addresstype": "industrial",
+            "name": "Pasuruan Industrial Estate Rembang",
+            "display_name": "Pasuruan Industrial Estate Rembang, Pejangkungan, Pasuruan, East Java, Indonesia",
+            "address": {
+              "industrial": "Pasuruan Industrial Estate Rembang",
+              "village": "Pejangkungan",
+              "county": "Pasuruan",
+              "state": "East Java",
+              "ISO3166-2-lvl4": "ID-JI",
+              "country": "Indonesia",
+              "country_code": "id"
+            },
+            "boundingbox": [
+              "-7.6580066",
+              "-7.6119751",
+              "112.8088105",
+              "112.8342786"
+            ]
+          }
+        ]
+      }
+    ],
+    "accepted": {
+      "place_id": 29900847,
+      "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "osm_type": "way",
+      "osm_id": 762324409,
+      "lat": "-7.6349805",
+      "lon": "112.8248728",
+      "category": "landuse",
+      "type": "industrial",
+      "place_rank": 24,
+      "importance": 0.08003874189364459,
+      "addresstype": "industrial",
+      "name": "Pasuruan Industrial Estate Rembang",
+      "display_name": "Pasuruan Industrial Estate Rembang, Pejangkungan, Pasuruan, East Java, Indonesia",
+      "address": {
+        "industrial": "Pasuruan Industrial Estate Rembang",
+        "village": "Pejangkungan",
+        "county": "Pasuruan",
+        "state": "East Java",
+        "ISO3166-2-lvl4": "ID-JI",
+        "country": "Indonesia",
+        "country_code": "id"
+      },
+      "boundingbox": [
+        "-7.6580066",
+        "-7.6119751",
+        "112.8088105",
+        "112.8342786"
+      ]
+    }
+  },
+  "ki-kawasan-industri-teluk-weda": {
+    "check_date": "2026-11-08",
+    "queries": [
+      {
+        "query": "Kawasan Industri Teluk Weda, Kabupaten Halmahera Tengah, Maluku Utara, Indonesia",
+        "results": []
+      },
+      {
+        "query": "Kawasan Industri Teluk Weda, Kabupaten Halmahera Tengah, Indonesia",
+        "results": []
+      }
+    ]
+  },
+  "ki-kawasan-industri-mitrakarawang": {
+    "check_date": "2026-11-08",
+    "queries": [
+      {
+        "query": "Kawasan Industri Mitrakarawang, Kabupaten Karawang, Jawa Barat, Indonesia",
+        "results": []
+      },
+      {
+        "query": "Kawasan Industri Mitrakarawang, Kabupaten Karawang, Indonesia",
+        "results": []
+      }
+    ]
+  },
+  "ki-karawang-international-industrial-city": {
+    "check_date": "2026-11-08",
+    "queries": [
+      {
+        "query": "Karawang International Industrial City, Kabupaten Karawang, Jawa Barat, Indonesia",
+        "results": [
+          {
+            "place_id": 31330180,
+            "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+            "osm_type": "way",
+            "osm_id": 348133276,
+            "lat": "-6.3717599",
+            "lon": "107.2730857",
+            "category": "landuse",
+            "type": "industrial",
+            "place_rank": 24,
+            "importance": 0.0800550019073777,
+            "addresstype": "industrial",
+            "name": "Karawang International Industrial City",
+            "display_name": "Karawang International Industrial City, Karawang, West Java, Indonesia",
+            "address": {
+              "industrial": "Karawang International Industrial City",
+              "town": "Karawang",
+              "state": "West Java",
+              "ISO3166-2-lvl4": "ID-JB",
+              "country": "Indonesia",
+              "country_code": "id"
+            },
+            "boundingbox": [
+              "-6.3937616",
+              "-6.3498265",
+              "107.2480094",
+              "107.3055321"
+            ]
+          }
+        ]
+      }
+    ],
+    "accepted": {
+      "place_id": 31330180,
+      "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "osm_type": "way",
+      "osm_id": 348133276,
+      "lat": "-6.3717599",
+      "lon": "107.2730857",
+      "category": "landuse",
+      "type": "industrial",
+      "place_rank": 24,
+      "importance": 0.0800550019073777,
+      "addresstype": "industrial",
+      "name": "Karawang International Industrial City",
+      "display_name": "Karawang International Industrial City, Karawang, West Java, Indonesia",
+      "address": {
+        "industrial": "Karawang International Industrial City",
+        "town": "Karawang",
+        "state": "West Java",
+        "ISO3166-2-lvl4": "ID-JB",
+        "country": "Indonesia",
+        "country_code": "id"
+      },
+      "boundingbox": [
+        "-6.3937616",
+        "-6.3498265",
+        "107.2480094",
+        "107.3055321"
+      ]
+    }
+  },
+  "ki-mm2100-industrial-town-bfie": {
+    "check_date": "2026-11-08",
+    "queries": [
+      {
+        "query": "MM2100 Industrial Town BFIE, Kabupaten Bekasi, Jawa Barat, Indonesia",
+        "results": []
+      },
+      {
+        "query": "MM2100 Industrial Town BFIE, Kabupaten Bekasi, Indonesia",
+        "results": []
+      }
+    ]
+  },
+  "ki-jakarta-industrial-estate-pulogadung": {
+    "check_date": "2026-11-08",
+    "queries": [
+      {
+        "query": "Jakarta Industrial Estate Pulogadung, Kota Jakarta Timur, DKI Jakarta, Indonesia",
+        "results": [
+          {
+            "place_id": 31058729,
+            "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+            "osm_type": "way",
+            "osm_id": 1103691684,
+            "lat": "-6.1986482",
+            "lon": "106.9128897",
+            "category": "landuse",
+            "type": "industrial",
+            "place_rank": 24,
+            "importance": 0.08008313649195084,
+            "addresstype": "industrial",
+            "name": "Jakarta Industrial Estate Pulogadung",
+            "display_name": "Jakarta Industrial Estate Pulogadung, Jatinegara, Cakung, East Jakarta, Special Capital Region of Jakarta, Indonesia",
+            "address": {
+              "industrial": "Jakarta Industrial Estate Pulogadung",
+              "village": "Jatinegara",
+              "suburb": "Cakung",
+              "city_district": "East Jakarta",
+              "city": "Special Capital Region of Jakarta",
+              "ISO3166-2-lvl4": "ID-JK",
+              "country": "Indonesia",
+              "country_code": "id"
+            },
+            "boundingbox": [
+              "-6.2148225",
+              "-6.1825125",
+              "106.9059017",
+              "106.9207115"
+            ]
+          }
+        ]
+      }
+    ],
+    "accepted": {
+      "place_id": 31058729,
+      "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "osm_type": "way",
+      "osm_id": 1103691684,
+      "lat": "-6.1986482",
+      "lon": "106.9128897",
+      "category": "landuse",
+      "type": "industrial",
+      "place_rank": 24,
+      "importance": 0.08008313649195084,
+      "addresstype": "industrial",
+      "name": "Jakarta Industrial Estate Pulogadung",
+      "display_name": "Jakarta Industrial Estate Pulogadung, Jatinegara, Cakung, East Jakarta, Special Capital Region of Jakarta, Indonesia",
+      "address": {
+        "industrial": "Jakarta Industrial Estate Pulogadung",
+        "village": "Jatinegara",
+        "suburb": "Cakung",
+        "city_district": "East Jakarta",
+        "city": "Special Capital Region of Jakarta",
+        "ISO3166-2-lvl4": "ID-JK",
+        "country": "Indonesia",
+        "country_code": "id"
+      },
+      "boundingbox": [
+        "-6.2148225",
+        "-6.1825125",
+        "106.9059017",
+        "106.9207115"
+      ]
+    }
+  },
+  "ki-maspion-industrial-estate": {
+    "check_date": "2026-11-08",
+    "queries": [
+      {
+        "query": "Maspion Industrial Estate, Kabupaten Gresik, Jawa Timur, Indonesia",
+        "results": [
+          {
+            "place_id": 29586998,
+            "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+            "osm_type": "way",
+            "osm_id": 640066051,
+            "lat": "-7.1148740",
+            "lon": "112.6162821",
+            "category": "landuse",
+            "type": "industrial",
+            "place_rank": 24,
+            "importance": 0.08004500114442661,
+            "addresstype": "industrial",
+            "name": "Maspion Industrial Estate",
+            "display_name": "Maspion Industrial Estate, Manyarsidorukun, Gresik, East Java, Indonesia",
+            "address": {
+              "industrial": "Maspion Industrial Estate",
+              "village": "Manyarsidorukun",
+              "county": "Gresik",
+              "state": "East Java",
+              "ISO3166-2-lvl4": "ID-JI",
+              "country": "Indonesia",
+              "country_code": "id"
+            },
+            "boundingbox": [
+              "-7.1307499",
+              "-7.0991839",
+              "112.6039249",
+              "112.6474792"
+            ]
+          }
+        ]
+      }
+    ],
+    "accepted": {
+      "place_id": 29586998,
+      "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "osm_type": "way",
+      "osm_id": 640066051,
+      "lat": "-7.1148740",
+      "lon": "112.6162821",
+      "category": "landuse",
+      "type": "industrial",
+      "place_rank": 24,
+      "importance": 0.08004500114442661,
+      "addresstype": "industrial",
+      "name": "Maspion Industrial Estate",
+      "display_name": "Maspion Industrial Estate, Manyarsidorukun, Gresik, East Java, Indonesia",
+      "address": {
+        "industrial": "Maspion Industrial Estate",
+        "village": "Manyarsidorukun",
+        "county": "Gresik",
+        "state": "East Java",
+        "ISO3166-2-lvl4": "ID-JI",
+        "country": "Indonesia",
+        "country_code": "id"
+      },
+      "boundingbox": [
+        "-7.1307499",
+        "-7.0991839",
+        "112.6039249",
+        "112.6474792"
+      ]
+    }
+  },
+  "ki-karawang-jabar-industrial-estate": {
+    "check_date": "2026-11-08",
+    "queries": [
+      {
+        "query": "Karawang Jabar Industrial Estate, Kabupaten Karawang, Jawa Barat, Indonesia",
+        "results": []
+      },
+      {
+        "query": "Karawang Jabar Industrial Estate, Kabupaten Karawang, Indonesia",
+        "results": []
+      }
+    ]
+  },
+  "ki-greenland-international-industrial-center-2-giic-2": {
+    "check_date": "2026-11-08",
+    "queries": [
+      {
+        "query": "Greenland International Industrial Center 2 (GIIC 2), Kabupaten Bekasi, Jawa Barat, Indonesia",
+        "results": []
+      },
+      {
+        "query": "Greenland International Industrial Center 2, Kabupaten Bekasi, Indonesia",
+        "results": [
+          {
+            "place_id": 31265549,
+            "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+            "osm_type": "way",
+            "osm_id": 568349989,
+            "lat": "-6.3835583",
+            "lon": "107.1911448",
+            "category": "landuse",
+            "type": "industrial",
+            "place_rank": 24,
+            "importance": 0.0800550019073777,
+            "addresstype": "industrial",
+            "name": "Greenland International Industrial Center",
+            "display_name": "Greenland International Industrial Center, Pasirpanji, Kab Bekasi, West Java, Indonesia",
+            "address": {
+              "industrial": "Greenland International Industrial Center",
+              "village": "Pasirpanji",
+              "regency": "Kab Bekasi",
+              "state": "West Java",
+              "ISO3166-2-lvl4": "ID-JB",
+              "country": "Indonesia",
+              "country_code": "id"
+            },
+            "boundingbox": [
+              "-6.4118709",
+              "-6.3550404",
+              "107.1501567",
+              "107.2210438"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
