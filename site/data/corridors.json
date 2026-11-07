@@ -12,9 +12,13 @@
     "progress_pct": "",
     "as_of": "2026-08-31",
     "notes": "About 1,161 km built, of which 982 km operational. Bina Marga reports 1,051.84 km Phase I operational (Aug 2026); the figures differ by scope and date.",
+    "source_id": "src-hutama-karya-jtts-2026-10-04",
+    "source_publisher": "Hutama Karya, reported by Palpres/Disway",
+    "source_title": "Hutama Karya buka-bukaan soal JTTS di hadapan BAKN DPR RI",
     "source_url": "https://palpres.disway.id/news/read/780474/hutama-karya-buka-bukaan-soal-jtts-di-hadapan-bakn-dpr-ri-ini-progresnya",
     "source_type": "secondary",
-    "retrieved_on": "2026-11-06"
+    "retrieved_on": "2026-11-06",
+    "segments": []
   },
   {
     "id": "trans-papua",
@@ -29,9 +33,13 @@
     "progress_pct": "",
     "as_of": "2025-07-21",
     "notes": "3,446 km connected; 2,235 km paved and 1,132 km still soil as of November 2025. About 50 km remains on Jayapura-Wamena (December 2025).",
+    "source_id": "src-katadata-trans-papua-2025-07-21",
+    "source_publisher": "Katadata",
+    "source_title": "TNI targetkan proyek Trans Papua rampung di era Prabowo",
     "source_url": "https://katadata.co.id/berita/industri/687e4748a975f/tni-targetkan-proyek-trans-papua-rampung-di-era-prabowo",
     "source_type": "secondary",
-    "retrieved_on": "2026-11-06"
+    "retrieved_on": "2026-11-06",
+    "segments": []
   },
   {
     "id": "trans-sulawesi",
@@ -46,9 +54,13 @@
     "progress_pct": "",
     "as_of": "",
     "notes": "No single official km series found. Road and toll plans use different scopes; needs segment-level data before publishing a progress bar.",
+    "source_id": "",
+    "source_publisher": "",
+    "source_title": "",
     "source_url": "",
     "source_type": "",
-    "retrieved_on": ""
+    "retrieved_on": "",
+    "segments": []
   },
   {
     "id": "trans-kalimantan",
@@ -63,8 +75,12 @@
     "progress_pct": "",
     "as_of": "",
     "notes": "Definitions conflict: 1,186 km travel route, 1,920 km border-parallel road and 2,100.8 km WPS figure are different things. Needs segment-level data.",
+    "source_id": "",
+    "source_publisher": "",
+    "source_title": "",
     "source_url": "",
     "source_type": "",
-    "retrieved_on": ""
+    "retrieved_on": "",
+    "segments": []
   }
 ]

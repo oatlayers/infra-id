@@ -35,6 +35,8 @@ OPTIONAL_BLANK = {
     "capacity",
     "capacity_unit",
     "opened_year",
+    "opened_date",
+    "expected_open_year",
 }
 
 

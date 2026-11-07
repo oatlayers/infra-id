@@ -6,21 +6,26 @@ curated, not exhaustive**.
 
 - **Live data:** 27 toll-road corridors — 20 under construction, 7 planned —
   plus 4 Trans corridor summaries.
-- **Estate dataset:** 178 industrial estates and SEZs, gathered but not mapped yet.
+- **Estate dataset:** 178 industrial estates and SEZs, shown as a table; the map
+  layer is deliberately off until coordinates are verified.
 - **Last verification:** 6 November 2026.
-- **Status:** v2 data foundation in place. Not deployed. The estate/SEZ dataset is
-  gathered; airports, seaports, railways and factories are still to come.
-- **Overhaul plan:** [`plan-v3.md`](plan-v3.md) is the execution backlog for the
-  site redesign and the data-completeness work (7 November 2026). Read it before
-  starting a new batch.
+- **Status:** Phase 1 of the v3 overhaul is complete (7 November 2026): new
+  shell, four views, search, filters, detail drawer, map v2, mobile sheet and a
+  generated data page. The site is **not published** and has no GitHub remote.
+- **Overhaul plan:** [`plan-v3.md`](plan-v3.md) is the execution backlog. Phase 2
+  is data completion; Phase 3 is the trust layer and a local release. Publishing
+  is explicitly deferred. Phase 1 decisions are recorded in
+  [`docs/phase-1-decisions.md`](docs/phase-1-decisions.md).
 
 ## What it is, and what it is not
 
-It is a single static page with a map of Indonesia. Projects are coloured by
-status, can be filtered by status and sector, and open a detail panel with the
-evidence behind the status, the operator, the length, the source and the dates.
-A second tab summarises progress on the Trans Sumatra, Trans Papua, Trans
-Sulawesi and Trans Kalimantan corridors.
+It is a static site with four views: **Explore** (map, search, filters and a
+detail drawer), **Corridors** (Trans network summaries), **Estates** (the
+industrial-estate and SEZ table) and **Data** (coverage, methods, sources,
+downloads and known gaps). Projects are coloured by status, filtered by sector,
+status, island, province, PSN, corridor, precision and verification age, and
+open a drawer with the evidence behind the status, the operator, the length,
+every source and the dates.
 
 It is **not** a live project tracker, an official government dataset, or a
 complete list of Indonesian infrastructure. Rows are included only when they are
@@ -33,11 +38,12 @@ when a source supports that status.
 |---|---:|---|---|
 | Toll roads | 27 | 20 under construction, 7 planned | Sumatra, Java and Bali corridors |
 | Trans corridor summaries | 4 | 2 with km data, 2 data gaps | Sumatra and Papua have figures; Sulawesi and Kalimantan need segment definitions |
-| Railways | 0 | — | next transport batch |
-| Airports | 0 | — | next transport batch |
-| Seaports | 0 | — | next transport batch |
-| Factories | 0 | — | after the estate/SEZ batch |
-| Industrial estates / SEZs | 178 | 160 industrial estates (153 industrial-only + 7 shared), 25 SEZs | data only; not mapped |
+| Railways | 0 | — | Phase 2: 13 PSN railways |
+| Airports | 0 | — | Phase 2: 7 PSN airports |
+| Seaports | 0 | — | Phase 2: 15 PSN seaports |
+| Factories | 0 | — | Phase 2: 20–30 plants |
+| Industrial estates / SEZs | 178 | 160 industrial-estate designations (153 industrial-only + 7 shared), 25 SEZs | table view only; map layer waits for verified coordinates |
+| Sources | 38 | 32 official, 6 secondary | 25 individual SEZ profiles plus the national source register |
 
 **Why zero recently completed?** No full toll corridor opened between
 2024-11-06 and 2026-11-06. Sections did open in that window (for example
@@ -64,18 +70,25 @@ The page needs **no network**: Leaflet is vendored, project data is loaded from 
 JavaScript file instead of `fetch`, and the basemap is bundled GeoJSON. It works
 from `file://` and from any static host.
 
-Deep links use the project id, for example:
+Deep links use hash routes, for example:
 
 ```
-site/index.html#tol-solo-yogyakarta-nyia
+site/index.html#/project/tol-solo-yogyakarta-nyia
+site/index.html#/explore?sector=road&island=Sumatra
+site/index.html#/data
 ```
+
+The old `#project-id` form still opens the project.
 
 ## Repository layout
 
 ```
 infra-id/
 ├─ plan.md                  scope, decisions, architecture, phase status
+├─ plan-v3.md               three-phase execution backlog
 ├─ README.md
+├─ docs/
+│  └─ phase-1-decisions.md  confirmed design, scope, schema and budgets
 ├─ requirements.txt         Python dependencies for the data scripts
 ├─ data/
 │  ├─ curated/              editable source of truth
@@ -85,17 +98,23 @@ infra-id/
 │  │  ├─ sources.csv
 │  │  ├─ project_sources.csv
 │  │  ├─ project_external_ids.csv
+│  │  ├─ project_aliases.csv
+│  │  ├─ project_events.csv
+│  │  ├─ project_geometry.csv
 │  │  ├─ investments.csv
 │  │  ├─ laws.csv
 │  │  ├─ project_laws.csv
 │  │  ├─ corridors.csv
 │  │  ├─ corridor_segments.csv
-│  │  └─ estates.csv        industrial estates and SEZs (not mapped yet)
+│  │  ├─ estates.csv
+│  │  ├─ estate_sources.csv
+│  │  └─ coverage_targets.csv
 │  ├─ projects.csv          generated flat export for the site and downloads
 │  ├─ derived/              extracted text and build-time intermediates
 │  └─ raw/YYYY-MM-DD/       sources as fetched, never edited
 ├─ scripts/
 │  ├─ data_model.py         paths, field lists, enums and CSV helpers
+│  ├─ migrate_schema_v3.py  one-off schema migration
 │  ├─ extract_wikipedia_toll_roads.py
 │  ├─ build_projects.py
 │  ├─ build_estates.py
@@ -103,16 +122,26 @@ infra-id/
 │  ├─ build_site_data.py
 │  └─ build_basemap.py
 └─ site/
-   ├─ index.html            Leaflet page (HTML, CSS, JS in one file)
-   ├─ data/
-   │  ├─ projects.geojson   generated
-   │  ├─ projects.js        generated, window.PROJECTS
-   │  ├─ projects.csv       generated download copy
-   │  ├─ corridors.js       generated, window.CORRIDORS
-   │  ├─ corridors.json     generated
-   │  ├─ basemap.geojson    generated
-   │  └─ basemap.js         generated, window.BASEMAP
-   └─ vendor/leaflet/       Leaflet 1.9.4, vendored with its BSD licence
+   ├─ index.html            shell, inline SVG sprite and mount points
+   ├─ assets/
+   │  ├─ fonts.css          local @font-face rules
+   │  ├─ fonts/             bundled OFL WOFF2 files
+   │  ├─ tokens.css         design tokens
+   │  ├─ app.css            layout and components
+   │  ├─ constants.js       shared status and sector vocabulary
+   │  ├─ app.js             boot, routing, views and drawer
+   │  └─ map.js             Leaflet basemap, markers and clusters
+   ├─ data/                 generated payloads and downloads
+   │  ├─ projects.js/.geojson/.csv
+   │  ├─ estates.js/.json/.csv
+   │  ├─ corridors.js/.json
+   │  ├─ stats.js
+   │  ├─ search.js
+   │  ├─ sources.csv
+   │  ├─ basemap.js/.geojson
+   └─ vendor/
+      ├─ leaflet/           Leaflet 1.9.4, BSD licence
+      └─ markercluster/     Leaflet.markercluster 1.5.3, MIT licence
 ```
 
 **Do not edit `data/projects.csv`.** It is generated from `data/curated/` by
@@ -143,12 +172,13 @@ What each script does:
 
 | Script | Input | Output | Purpose |
 |---|---|---|---|
+| `migrate_schema_v3.py` | Old curated tables | Schema-v3 headers and backfilled fields | One-off migration; idempotent enough to re-run |
 | `extract_wikipedia_toll_roads.py` | English Wikipedia HTML snapshot | `enwiki_toll_roads_parsed.csv` | Parses the toll-road table; no status decisions |
-| `validate.py` | `data/curated/*.csv` | exit code | Schema, enums, dates, coordinates, foreign keys and range checks |
+| `validate.py` | `data/curated/*.csv` | exit code | Schema, enums, dates, coordinates, foreign keys, events, geometry, claims and coverage checks |
 | `build_projects.py` | Curated tables + BPJT JSON | `data/projects.csv` | Joins operator and source, fills gaps from BPJT, writes the flat export |
 | `build_estates.py` | KEK HTML + BAJRA table + regency cache | `data/curated/estates.csv` + source rows | Merges the 25 SEZs and 153 industrial estates, handles overlaps |
-| `build_site_data.py` | `data/projects.csv` + `corridors.csv` | GeoJSON, JS, CSV and corridor payloads | Site-ready data |
-| `build_basemap.py` | Natural Earth GeoJSON | `site/data/basemap.*` | Clipped, simplified offline basemap |
+| `build_site_data.py` | Flat projects + curated corridors, estates, sources and coverage targets | GeoJSON, JS, CSV, stats and search payloads | Site-ready data; the search index and coverage matrix are generated here |
+| `build_basemap.py` | Natural Earth countries, provinces, lakes, rivers, urban areas and places | `site/data/basemap.*` | Clipped, simplified offline basemap |
 
 `build_projects.py` expects the BPJT snapshot in
 `data/raw/2026-11-06/bpjt_toll_road_list.json`. If it is missing, re-fetch it
@@ -161,17 +191,22 @@ The full rationale and target schema are in `plan.md`.
 
 | Table | One row per | Key fields |
 |---|---|---|
-| `projects.csv` | project | `id`, `name`, `sector`, `status`, `corridor_id`, km, investment, location |
+| `projects.csv` | project | `id`, `name`, `sector`, `status`, `corridor_id`, `island`, km, investment, location, `status_as_of`, `verification` |
 | `organizations.csv` | company or agency | `id`, `name`, `org_type`, `country_code`, `parent_id`, `website` |
 | `project_organizations.csv` | project–organisation role | `project_id`, `org_id`, `role`, `share_pct`, `source_id` |
 | `investments.csv` | commitment or tranche | `project_id`, `investor_org_id`, `amount`, `currency`, `amount_idr_t`, `stage`, `instrument` |
-| `sources.csv` | source document | `id`, `publisher`, `title`, `url`, `published_on`, `retrieved_on`, `source_type`, `archive_path` |
-| `project_sources.csv` | project–source claim | `project_id`, `source_id`, `claim` |
+| `sources.csv` | source document | `id`, `publisher`, `title`, `url`, `published_on`, `retrieved_on`, `source_type`, `language`, `archive_path` |
+| `project_sources.csv` | project–source claim | `project_id`, `source_id`, `claim`, `claim_value`, `claim_date` |
 | `project_external_ids.csv` | external key | `project_id`, `system`, `external_id` |
+| `project_aliases.csv` | project alias | `project_id`, `alias`, `source_id` |
+| `project_events.csv` | dated event | `project_id`, `event_date`, `event_type`, `description`, `source_id` |
+| `project_geometry.csv` | geometry | `project_id`, `kind`, GeoJSON `geometry`, `precision`, `source_id` |
 | `laws.csv` / `project_laws.csv` | regulation / relation | legal basis, kept separate from news |
 | `corridors.csv` | Trans corridor | `total_km`, `operational_km`, `construction_km`, `planned_km`, `metric`, `as_of` |
-| `corridor_segments.csv` | corridor segment | section-level km, status and opening year |
-| `estates.csv` | industrial estate or SEZ | `id`, `name`, `type`, `province`, `regency`, `area_ha`, `developer`, `status`, `source_id` |
+| `corridor_segments.csv` | corridor segment | `segment_type`, section-level km, progress, status, opening year, geometry |
+| `estates.csv` | industrial estate or SEZ | `id`, `name`, `type`, `province`, `regency`, `island`, `area_ha`, `developer`, `status`, `coordinate_source`, `source_id` |
+| `estate_sources.csv` | estate–source claim | `estate_id`, `source_id`, `claim`, `claim_value`, `claim_date` |
+| `coverage_targets.csv` | coverage layer | `layer`, `label`, `unit`, `target_count`, `universe`, `source_id` |
 
 Project columns (`data/curated/projects.csv`):
 
@@ -184,6 +219,7 @@ Project columns (`data/curated/projects.csv`):
 | `status` | yes | `planned`, `under_construction`, `operating`, `recently_completed`, `stalled` |
 | `status_basis` | yes | The evidence for the status, with figures where possible |
 | `corridor_id` | no | Links to `corridors.csv` |
+| `island` | yes | `Sumatra`, `Java`, `Kalimantan`, `Sulawesi`, `Papua`, `Bali-Nusa Tenggara`, `Maluku` |
 | `province` | yes | Province or provinces, semicolon-separated |
 | `route` | yes | Route, corridor or location description |
 | `length_km` | linear only | Total length; required for roads and railways |
@@ -194,6 +230,10 @@ Project columns (`data/curated/projects.csv`):
 | `capacity` / `capacity_unit` | no | For airports, ports and factories; set both or neither |
 | `psn` | yes | `yes`, `no`, `unknown` |
 | `opened_year` | no | Required for `operating` and `recently_completed` |
+| `opened_date` | no | Exact opening date when the source gives one |
+| `expected_open_year` | no | Target year for planned or under-construction rows |
+| `status_as_of` | yes | Date of the evidence behind the current status |
+| `verification` | yes | `official`, `dual`, `single`, `unverified` |
 | `lat`, `lon` | yes | Decimal degrees, inside 95–141°E and 11°S–6°N |
 | `precision` | yes | `exact`, `approximate`, `regency`, `province` |
 | `last_verified` | yes | Date the row was last checked (`YYYY-MM-DD`) |
@@ -229,7 +269,7 @@ possible.
 | KEK National Council profiles (25 pages) | <https://kek.go.id/id/investment/distribution> | SEZ name, address, coordinates, area, developer, legal basis, category | Official; one page per zone. Operational maturity is not stated |
 | BAJRA, "Daftar Kawasan Industri Indonesia" (17 Aug 2024) | <https://www.bajra.id/2024/08/daftar-kawasan-industri-indonesia.html> | Industrial estate name, developer, regency, province, area | Secondary mirror of Kemenperin data; 159 estates, not the 179 reported in 2026 |
 | ANTARA, Kemenperin estate count (2026) | <https://www.antaranews.com/berita/5627392/kemenperin-catat-kawasan-industri-serap-235-juta-pekerja> | Coverage benchmark: 179 estates, 101,351.45 ha, 57.20% occupancy | Secondary; used only as a benchmark, not as a row source |
-| Natural Earth 1:50m countries and populated places | <https://www.naturalearthdata.com/> | Land outlines and city labels | Public domain; clipped and simplified |
+| Natural Earth 1:50m countries, provinces, lakes, rivers, urban areas and populated places | <https://www.naturalearthdata.com/> | Basemap layers and city labels | Public domain; clipped and simplified |
 
 Raw snapshots are never edited. Current contents include the Wikipedia
 snapshots, the BPJT JSON, the Kemenhub PDF, the KPPIP HTML pages, the 25 KEK
@@ -264,12 +304,16 @@ is not independently verified.
 Estate fields:
 
 ```
-id,name,type,province,regency,lat,lon,precision,area_ha,developer,status,
-sector_focus,legal_basis,established_year,website,source_id,last_verified,notes
+id,name,type,province,regency,island,lat,lon,precision,coordinate_source,
+area_ha,developer,developer_org_id,status,sector_focus,legal_basis,
+established_year,website,occupancy_pct,kemenperin_id,sez_id,source_id,
+last_verified,notes
 ```
 
-`type` is `industrial_estate`, `sez` or `both`. The table is validated but is not
-read by the site build yet.
+`type` is `industrial_estate`, `sez` or `both`. `coordinate_source` is
+`official`, `osm`, `regency`, `manual` or `unknown`. The site reads the table
+into `site/data/estates.js`; the map layer is still gated on verified
+coordinates.
 
 **Known gap.** Kemenperin announced nine new estates in 2025. They are not in the
 table yet because each needs its own source for area, developer and coordinates:
@@ -289,8 +333,10 @@ them with individual sources rather than copying the press release.
    `project_organizations.csv`. Do not put company names in `projects.csv`.
 6. Set `status_basis` to the actual evidence, not just the status word. Include
    figures (km operational, completion date, decree number) where possible.
-7. Put disagreements and caveats in `notes`. Do not resolve conflicts silently.
-8. Run:
+7. Set `island`, `status_as_of` and `verification` (`official`, `dual`, `single`
+   or `unverified`).
+8. Put disagreements and caveats in `notes`. Do not resolve conflicts silently.
+9. Run:
 
    ```bash
    python scripts/validate.py
@@ -298,10 +344,10 @@ them with individual sources rather than copying the press release.
    python scripts/build_site_data.py
    ```
 
-9. Reload the page and check the marker, the detail panel, the filters and the
-   corridor tab.
-10. Update this README if the coverage, schema or behaviour changed.
-11. Commit the curated rows, rebuilt exports and site data together.
+10. Reload the page and check the marker, the drawer, the filters, the Estates
+    table and the Data view.
+11. Update this README if the coverage, schema or behaviour changed.
+12. Commit the curated rows, rebuilt exports and site data together. Do not push.
 
 Rules that apply to every row:
 
@@ -315,26 +361,44 @@ Rules that apply to every row:
 
 ## The site
 
-`site/index.html` is a single page with inline CSS and JavaScript. Features:
+`site/index.html` is the shell; CSS and JavaScript live under `site/assets/`.
+Features:
 
-- Colour-coded markers by status, with status and sector filters.
-- A **Projects / Trans corridors** switch in the list panel.
-- Trans corridor cards with km bars, as-of dates, sources and data-gap notes.
-- A scrollable project list, sorted by status then name.
-- A detail panel with route, km breakdown (operational vs under construction),
-  investment or capacity, operator, status basis, notes, source, retrieval and
-  verification dates, and coordinate precision.
-- Deep links via `#project-id`; closing the panel clears the hash.
-- Responsive layout: side panel on desktop, stacked map and filters on mobile,
-  bottom sheet for details.
-- A compact layout for short desktop windows.
-- Offline-capable: no tile server, no CDN, no `fetch`.
+- **Explore:** search across name, province, corridor and operator; sector,
+  status, island, province, PSN, corridor, precision and freshness filters;
+  five sort modes; URL state; map/list selection; keyboard navigation.
+- **Map:** Natural Earth provinces, lakes, rivers, urban areas and city labels;
+  sector glyphs inside status-coloured markers; status-ring clusters below zoom
+  7; selected marker label; drawer-aware panning.
+- **Detail drawer:** key figures, operational share, why-this-status, evidence,
+  every source with claim and retrieval date, notes, related corridor,
+  previous/next and share.
+- **Corridors:** Trans Sumatra, Trans Papua, Trans Sulawesi and Trans Kalimantan
+  with km bars, as-of dates, sources and explicit data-gap states.
+- **Estates:** 178-row table with type/province filters, sort, inline detail,
+  area totals and a CSV download. No map layer yet.
+- **Data:** generated coverage matrix, status definitions, inclusion rules,
+  source register, downloads, known gaps and changelog.
+- **Mobile:** full-viewport map and a draggable bottom sheet with peek, half and
+  full snap points; filters stay in the sheet.
+- **Offline:** no tile server, CDN or `fetch`. Leaflet and markercluster are
+  vendored; fonts and all payloads are local; the page works from `file://`.
 
-The basemap is Natural Earth geometry clipped to 92–144°E, 14°S–9°N and
-simplified to roughly 500 m. It shows land, borders and 13 major cities — not
-roads, terrain or small settlements. This is a deliberate trade for reliability:
-OpenStreetMap's tile servers block `file://` pages, which previously filled the
-map with 403 images.
+Deep links are hash routes:
+
+```
+site/index.html#/explore?sector=road&status=under_construction&island=Sumatra
+site/index.html#/project/tol-bekasi-cawang-kampung-melayu
+site/index.html#/corridors/trans-sumatera
+site/index.html#/estates?type=sez
+site/index.html#/data
+```
+
+The basemap is Natural Earth 1:50m geometry clipped to 92–144°E, 14°S–9°N and
+simplified for offline use. It shows land, Indonesian provinces, lakes, rivers,
+urban areas and major cities — not roads, terrain or small settlements. This is
+a deliberate trade for reliability: OpenStreetMap's tile servers block
+`file://` pages.
 
 ## Validation and quality rules
 
@@ -344,15 +408,22 @@ map with 403 images.
 - required fields are present and enums are valid;
 - dates are real `YYYY-MM-DD` values and years are plausible;
 - ids are unique, lowercase and hyphenated;
-- every foreign key resolves (project, organisation, source, corridor, law);
+- every foreign key resolves (project, organisation, source, corridor, law,
+  estate, event, geometry);
 - every project has at least one source claim;
 - km figures are non-negative and do not exceed the total by more than 5%;
 - coordinates fall inside Indonesia's rough bounding box;
 - operating and recently completed rows have an `opened_year`;
-- estates have valid type/status enums, positive area, plausible coordinates and
-  a known source;
+- `island`, `status_as_of` and `verification` are present and valid;
+- estates have valid type/status/island/coordinate-source enums, positive area,
+  plausible coordinates and a known source;
+- estate–source claims, project events, project aliases and project geometry
+  have valid foreign keys;
+- project geometry is valid JSON;
 - archive paths exist when they point into the repo;
-- no duplicate project–organisation roles or external ids.
+- coverage targets are unique, positive and reference a known source when one is
+  supplied;
+- no duplicate project–organisation roles, external ids, aliases or claims.
 
 Validating is not the same as verifying. Validation catches malformed rows; the
 `status_basis`, `notes` and source rows are what make a project trustworthy.
@@ -369,7 +440,11 @@ Validating is not the same as verifying. Validation catches malformed rows; the
   Wikipedia or a single secondary source.
 - **BPJT labels are inconsistent.** Some rows marked `Operasi` still have
   unopened length or active construction. Conflicts are recorded, not hidden.
-- **No geometry.** Projects are points, not lines or polygons.
+- **No geometry.** Projects are points, not lines or polygons. `project_geometry`
+  exists but is empty.
+- **Transport and factories are still empty.** The 35 transport PSN projects,
+  20–30 factories and the expanded road/corridor batch are Phase 2.
+- **PSN status is incomplete.** 10 of 27 road rows have `psn=unknown`.
 - **Estate coordinates are coarse.** SEZ points are official zone coordinates but
   still approximate for an area; industrial-estate points are regency centroids,
   not estate boundaries.
@@ -386,38 +461,53 @@ Validating is not the same as verifying. Validation catches malformed rows; the
   and non-toll PSN roads and bridges.
 - **Wikipedia is secondary.** It is useful for discovery and cross-checking, not
   as the final authority on a status change.
+- **Performance at 300 markers is untested.** The current 27-row dataset is
+  clustered, but the 300-marker 60 fps target needs the Phase 2 dataset.
+- **Formal accessibility audit pending.** Keyboard, focus, skip link, reduced
+  motion and text status labels are in place; Lighthouse/axe results are not yet
+  recorded.
+- **Not published.** There is no GitHub remote or Pages deployment. The site is
+  verified from `file://` only.
 
 ## Roadmap
 
 1. ~~Plan, decisions, toll-road batch, map page.~~ Done.
 2. ~~Normalised data foundation, km fields, operating status, corridor tab.~~ Done.
-3. **Industrial estates and SEZs.** First pass done: 178 records with location,
-   area, developer, status, category and sources. Data only; no map layer yet.
-   Remaining: 2025 additions, exact estate boundaries and better coordinates.
-4. **Transport PSN batch.** Railways, airports and seaports from the Kemenhub
-   deck and KPPIP lists. Enable the sector filters with real data. *Next.*
-5. **Factories.** PSN smelters, GEM steel plants, large nickel/aluminium/copper
-   and battery projects. Requires `organizations` and `investments` rows.
-6. **Better geometry.** Replace midpoints with lines or exact points; set
-   precision per row.
-7. **Publish.** GitHub Pages workflow for `site/`.
-8. **Monthly refresh.** Re-fetch sources, review status changes, update
-   `last_verified`.
+3. ~~Phase 1: design foundation, four-view shell, search, filters, drawer, map v2,
+   mobile sheet, data page, schema v3.~~ Done 7 November 2026.
+4. **Phase 2: data completion.** Transport PSN (13 rail, 7 airports, 15
+   seaports), estate reconciliation and exact coordinates, factories, roads and
+   corridor segments. *Next.*
+5. **Phase 3: trust and local release.** Per-fact claims, freshness, Data view
+   v2, downloads, conflicts, local CI, smoke tests and hand-off. **No GitHub push
+   or Pages deployment.**
+6. **Monthly refresh.** Re-fetch sources, review status changes, update
+   `last_verified`, rebuild and verify locally.
 
 ## Where to pick up
 
-- **Current plan:** [`plan-v3.md`](plan-v3.md). Phase 1 is the shell, design
-  foundation and map using the current 27 rows. Phase 2 is data completion:
-  transport PSN, estates, factories and roads/corridors. Phase 3 is the trust
-  layer, CI and GitHub Pages.
-- **Estate first pass:** 178 rows in `data/curated/estates.csv`. Refine it by
-  adding the 2025 estates, replacing regency centroids with estate boundaries or
-  site coordinates, and verifying SEZ operational status. Do not map it yet.
-- **Before changing schema:** read the Data architecture section in `plan.md`
-  and the schema section in `plan-v3.md`.
+- **Current plan:** [`plan-v3.md`](plan-v3.md). Phase 1 is complete. Phase 2 is
+  data completion; Phase 3 is the trust layer and a local release. Publishing is
+  explicitly deferred.
+- **Phase 1 decisions:** [`docs/phase-1-decisions.md`](docs/phase-1-decisions.md).
+- **Transport PSN batch:** the extracted 35-row baseline is in
+  `data/derived/kemenhub_psn_progress_2026.txt` and the full table is in
+  `plan-v3.md` section 5.2. This is the next data win.
+- **Estates:** 178 rows in `data/curated/estates.csv`. Add the 2025 estates,
+  replace regency centroids with estate boundaries or site coordinates, and
+  verify SEZ operational status. Keep the map layer off until then.
+- **Before changing schema:** read the Data architecture section in `plan.md`,
+  `docs/phase-1-decisions.md` and the schema section in `plan-v3.md`.
 - **Before adding a status:** the allowed set is in `scripts/data_model.py` and
   enforced by `validate.py`.
 - **When in doubt:** record the conflict in `notes` and cite both sources.
+
+## Publishing
+
+The site is **not published**. Do not create a GitHub remote, push the
+repository, deploy GitHub Pages or publish the site until the repository owner
+asks for it explicitly. The current release target is a local build that works
+from `file://` and a local HTTP server.
 
 ## Requirements
 
@@ -435,6 +525,12 @@ Validating is not the same as verifying. Validation catches malformed rows; the
 - **Natural Earth:** public domain. Credited in the map attribution.
 - **Leaflet 1.9.4:** BSD-2-Clause. Licence file at
   `site/vendor/leaflet/LICENSE`.
+- **Leaflet.markercluster 1.5.3:** MIT. Licence file at
+  `site/vendor/markercluster/LICENSE`.
+- **Inter:** SIL Open Font License 1.1. Licence at
+  `site/assets/fonts/OFL-Inter.txt`.
+- **Source Serif 4:** SIL Open Font License 1.1. Licence at
+  `site/assets/fonts/OFL-Source-Serif.txt`.
 - **Government data:** check each portal's terms before redistribution.
 
 `plan.md` is the working document for scope, decisions, architecture and source

@@ -2,972 +2,202 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Indonesia Infrastructure Map</title>
-<meta name="description" content="A curated map of major Indonesian infrastructure projects: toll roads under construction and planned.">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Indonesia Infrastructure Atlas</title>
+<meta name="description" content="A curated, source-linked atlas of major Indonesian infrastructure: roads, railways, airports, seaports and factories that are operating, under construction, planned or stalled.">
+<meta name="theme-color" content="#0b1f33">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%230b1f33'/%3E%3Ccircle cx='16' cy='16' r='10' fill='none' stroke='%23f3c99a' stroke-width='1.5'/%3E%3Cpath d='m21 11-3 7-7 3 3-7 7-3Z' fill='%23f3c99a'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/fonts.css">
+<link rel="stylesheet" href="assets/tokens.css">
 <link rel="stylesheet" href="vendor/leaflet/leaflet.css">
-<style>
-  :root {
-    --ink: #16202b;
-    --muted: #5d6b7a;
-    --line: #dfe4ea;
-    --paper: #f6f7f9;
-    --panel: #ffffff;
-    --uc: #e8590c;
-    --planned: #1c7ed6;
-    --operating: #0c8599;
-    --done: #2f9e44;
-    --stalled: #c92a2a;
-    --shadow: 0 10px 30px rgba(20, 32, 45, .14);
-  }
-  * { box-sizing: border-box; }
-  html, body { height: 100%; }
-  body {
-    display: flex;
-    flex-direction: column;
-    height: 100dvh;
-    margin: 0;
-    overflow: hidden;
-    color: var(--ink);
-    background: var(--paper);
-    font: 15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  }
-  button, input { font: inherit; }
-  a { color: #0b5cad; }
-
-  .topbar {
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    gap: 18px;
-    padding: 18px 22px 16px;
-    background: #0e1b2a;
-    color: #fff;
-  }
-  .topbar h1 {
-    margin: 0;
-    font-size: 23px;
-    line-height: 1.15;
-    letter-spacing: -.01em;
-  }
-  .topbar p {
-    margin: 6px 0 0;
-    color: #b8c6d6;
-    max-width: 720px;
-  }
-  .topbar .meta {
-    color: #9fb0c2;
-    font-size: 13px;
-    text-align: right;
-    white-space: nowrap;
-  }
-
-  .layout {
-    display: grid;
-    flex: 1;
-    min-height: 0;
-    grid-template-columns: 390px minmax(0, 1fr);
-  }
-
-  .panel {
-    display: flex;
-    flex-direction: column;
-    min-height: 0;
-    background: var(--panel);
-    border-right: 1px solid var(--line);
-  }
-  .panel-head {
-    padding: 16px 18px 12px;
-    border-bottom: 1px solid var(--line);
-  }
-  .summary {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px 12px;
-    margin-bottom: 14px;
-    color: var(--muted);
-    font-size: 13px;
-  }
-  .summary strong { color: var(--ink); }
-
-  .filter-group { margin-top: 12px; }
-  .filter-title {
-    margin-bottom: 6px;
-    color: var(--muted);
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: .09em;
-    text-transform: uppercase;
-  }
-  .filter-row {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 3px 0;
-    cursor: pointer;
-  }
-  .filter-row input { accent-color: #0e1b2a; }
-  .filter-row.disabled { color: #a4afbb; cursor: default; }
-  .filter-row .count { margin-left: auto; color: var(--muted); font-variant-numeric: tabular-nums; }
-  .filter-row.disabled .count { color: #a4afbb; }
-  .dot {
-    width: 9px; height: 9px;
-    border-radius: 50%;
-    background: var(--c, #999);
-    flex: none;
-  }
-  .soon {
-    margin-left: auto;
-    font-size: 11px;
-    color: #a4afbb;
-  }
-
-  .list-head {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    padding: 12px 18px 8px;
-    color: var(--muted);
-    font-size: 12px;
-    border-top: 1px solid var(--line);
-  }
-  .list {
-    flex: 1;
-    min-height: 0;
-    margin: 0;
-    padding: 0 10px 14px;
-    overflow-y: auto;
-    list-style: none;
-  }
-  .view-switch { display: flex; gap: 4px; }
-  .view-btn {
-    padding: 4px 7px;
-    border: 1px solid transparent;
-    border-radius: 6px;
-    background: transparent;
-    color: var(--muted);
-    font-size: 12px;
-    cursor: pointer;
-  }
-  .view-btn:hover { background: #f1f4f8; }
-  .view-btn.active {
-    background: #eef4fb;
-    border-color: #c9ddf3;
-    color: var(--ink);
-    font-weight: 600;
-  }
-
-  .corridors {
-    flex: 1;
-    min-height: 0;
-    overflow-y: auto;
-    padding: 4px 12px 14px;
-  }
-  .corridor-card {
-    margin: 8px 0;
-    padding: 12px 12px 11px;
-    border: 1px solid var(--line);
-    border-radius: 10px;
-    background: #fff;
-  }
-  .corridor-head {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    gap: 8px;
-  }
-  .corridor-card h3 { margin: 0; font-size: 14px; }
-  .corridor-metric {
-    color: var(--muted);
-    font-size: 10px;
-    letter-spacing: .07em;
-    text-transform: uppercase;
-    white-space: nowrap;
-  }
-  .corridor-def { margin: 5px 0 8px; color: var(--muted); font-size: 12px; line-height: 1.35; }
-  .corridor-km { color: var(--muted); font-size: 12px; }
-  .corridor-km strong { color: var(--ink); font-size: 15px; }
-  .corridor-meta { margin-top: 7px; color: var(--muted); font-size: 11px; line-height: 1.4; }
-  .corridor-gap {
-    margin-top: 7px;
-    padding: 6px 8px;
-    border-radius: 6px;
-    background: #fff4e6;
-    color: #8a4b08;
-    font-size: 11px;
-    line-height: 1.4;
-  }
-  .bar {
-    display: flex;
-    height: 8px;
-    margin-top: 6px;
-    border-radius: 4px;
-    overflow: hidden;
-    background: #e9edf2;
-  }
-  .bar span { display: block; height: 100%; }
-  .bar .op { background: #2f9e44; }
-  .bar .uc { background: #e8590c; }
-  .bar .planned { background: #1c7ed6; }
-  .bar .rest { background: #dfe5ec; flex: 1; }
-  .km-block { margin: 0 0 18px; }
-  .km-caption { color: var(--muted); font-size: 12px; }
-  .km-caption strong { color: var(--ink); }
-  .list li { margin: 2px 0; }
-  .project-btn {
-    display: grid;
-    grid-template-columns: 10px minmax(0, 1fr) auto;
-    gap: 9px;
-    align-items: start;
-    width: 100%;
-    padding: 9px 10px;
-    border: 1px solid transparent;
-    border-radius: 8px;
-    background: transparent;
-    color: inherit;
-    text-align: left;
-    cursor: pointer;
-  }
-  .project-btn:hover { background: #f1f4f8; }
-  .project-btn[aria-current="true"] {
-    background: #eef4fb;
-    border-color: #c9ddf3;
-  }
-  .project-btn .dot { margin-top: 5px; }
-  .project-name { display: block; font-weight: 600; line-height: 1.3; }
-  .project-sub { display: block; margin-top: 2px; color: var(--muted); font-size: 12px; }
-  .project-km { color: var(--muted); font-size: 12px; white-space: nowrap; margin-top: 3px; }
-
-  .coverage {
-    margin: 0;
-    padding: 12px 18px 16px;
-    border-top: 1px solid var(--line);
-    color: var(--muted);
-    font-size: 12px;
-  }
-  .coverage strong { color: var(--ink); }
-
-  #map { width: 100%; height: 100%; background: #cfe3ee; }
-  .leaflet-container { font: inherit; }
-
-  .city-label {
-    padding: 0;
-    border: 0;
-    background: transparent;
-    box-shadow: none;
-    color: #5b6675;
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: .01em;
-    opacity: 1;
-  }
-  .city-label::before { display: none; }
-
-  .legend {
-    padding: 8px 10px;
-    background: rgba(255,255,255,.94);
-    border-radius: 8px;
-    box-shadow: 0 1px 6px rgba(0,0,0,.18);
-    color: var(--ink);
-    font-size: 12px;
-    line-height: 1.5;
-  }
-  .legend div { display: flex; align-items: center; gap: 7px; }
-  .legend .dot { width: 9px; height: 9px; }
-
-  .detail {
-    position: fixed;
-    z-index: 1000;
-    top: var(--header-h, 84px);
-    right: 0;
-    bottom: 0;
-    width: 390px;
-    max-width: 100%;
-    overflow-y: auto;
-    padding: 20px 22px 30px;
-    background: var(--panel);
-    border-left: 1px solid var(--line);
-    box-shadow: var(--shadow);
-    transform: translateX(103%);
-    transition: transform .22s ease;
-  }
-  .detail.open { transform: translateX(0); }
-  .detail-close {
-    float: right;
-    width: 30px; height: 30px;
-    margin: -4px -6px 0 12px;
-    border: 0;
-    border-radius: 6px;
-    background: #eef1f4;
-    color: #344250;
-    cursor: pointer;
-    font-size: 18px;
-    line-height: 1;
-  }
-  .detail-close:hover { background: #e2e7ed; }
-  .badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 4px 9px;
-    border-radius: 999px;
-    color: #fff;
-    font-size: 12px;
-    font-weight: 700;
-  }
-  .detail h2 {
-    margin: 12px 0 4px;
-    font-size: 22px;
-    line-height: 1.2;
-    letter-spacing: -.01em;
-  }
-  .detail .where { margin: 0 0 16px; color: var(--muted); }
-  .stats {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px 14px;
-    margin: 0 0 18px;
-    padding: 14px;
-    border: 1px solid var(--line);
-    border-radius: 10px;
-    background: #fafbfc;
-  }
-  .stat .k {
-    color: var(--muted);
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: .07em;
-    text-transform: uppercase;
-  }
-  .stat .v { margin-top: 2px; font-weight: 600; }
-  .detail h3 {
-    margin: 20px 0 7px;
-    font-size: 12px;
-    letter-spacing: .08em;
-    text-transform: uppercase;
-    color: var(--muted);
-  }
-  .basis {
-    margin: 0;
-    padding: 11px 12px;
-    border-left: 3px solid #b9c6d4;
-    background: #f7f9fb;
-    color: #33414f;
-    font-size: 14px;
-  }
-  .notes { margin: 0; white-space: pre-line; color: #33414f; }
-  .source {
-    margin-top: 8px;
-    padding-top: 14px;
-    border-top: 1px solid var(--line);
-    font-size: 13px;
-    color: var(--muted);
-  }
-  .source a { word-break: break-all; }
-  .source .dates { margin-top: 6px; }
-
-  .empty {
-    padding: 30px 12px;
-    color: var(--muted);
-    text-align: center;
-  }
-
-  @media (min-width: 861px) and (max-height: 720px) {
-    .topbar { padding: 9px 18px 11px; }
-    .topbar h1 { font-size: 20px; }
-    .topbar p { display: none; }
-    .panel-head { padding: 10px 14px 8px; }
-    .summary { margin-bottom: 8px; gap: 4px 10px; }
-    .filter-group { margin-top: 8px; }
-    .filter-row { padding: 2px 0; }
-    .filter-row.disabled { display: none; }
-    .list-head { padding: 8px 14px 6px; }
-    .project-btn { padding: 7px 10px; }
-    .coverage { padding: 8px 14px 10px; font-size: 11.5px; line-height: 1.35; }
-    .detail { padding: 16px 20px 24px; }
-  }
-
-  @media (max-width: 860px) {
-    body { display: block; height: auto; overflow: visible; }
-    .topbar { align-items: flex-start; padding: 14px 16px; }
-    .topbar h1 { font-size: 19px; }
-    .topbar p { font-size: 13px; }
-    .topbar .meta { display: none; }
-    .layout {
-      display: flex;
-      flex-direction: column;
-      min-height: 0;
-    }
-    .panel {
-      border-right: 0;
-      border-top: 1px solid var(--line);
-    }
-    .list { flex: none; overflow: visible; }
-    .corridors { flex: none; overflow: visible; }
-    #map {
-      order: -1;
-      height: 46dvh;
-      min-height: 300px;
-    }
-    .detail {
-      top: auto;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      width: auto;
-      max-height: 64dvh;
-      border-left: 0;
-      border-top: 1px solid var(--line);
-      border-radius: 16px 16px 0 0;
-      transform: translateY(103%);
-    }
-    .detail.open { transform: translateY(0); }
-  }
-</style>
+<link rel="stylesheet" href="vendor/markercluster/MarkerCluster.css">
+<link rel="stylesheet" href="vendor/markercluster/MarkerCluster.Default.css">
+<link rel="stylesheet" href="assets/app.css">
 </head>
 <body>
-<header class="topbar">
-  <div>
-    <h1>Indonesia Infrastructure Map</h1>
-    <p>Major infrastructure under construction, planned and recently completed across Indonesia. Curated from public sources, not exhaustive.</p>
+<a class="skip-link" href="#project-list">Skip to project list</a>
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+  <symbol id="i-compass" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2 5-5 2 2-5 5-2Z"/>
+  </symbol>
+  <symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="11" cy="11" r="7"/><path d="m20 20-3.2-3.2"/>
+  </symbol>
+  <symbol id="i-filter" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M3 5h18M6 12h12M10 19h4"/>
+  </symbol>
+  <symbol id="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M6 6l12 12M18 6 6 18"/>
+  </symbol>
+  <symbol id="i-chevron-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="m9 5 7 7-7 7"/>
+  </symbol>
+  <symbol id="i-chevron-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="m15 5-7 7 7 7"/>
+  </symbol>
+  <symbol id="i-external" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M14 4h6v6M20 4 10 14M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/>
+  </symbol>
+  <symbol id="i-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 3v12m0 0 4-4m-4 4-4-4M4 19h16"/>
+  </symbol>
+  <symbol id="i-database" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <ellipse cx="12" cy="5.5" rx="8" ry="3"/><path d="M4 5.5v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6M4 11.5v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/>
+  </symbol>
+  <symbol id="i-road" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M5 21 9 3M19 21l-4-18M12 6v3M12 13v3M12 20v1"/>
+  </symbol>
+  <symbol id="i-railway" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="6" y="3" width="12" height="13" rx="3"/><path d="M6 9h12M9 16l-2 5M15 16l2 5M8 19h8"/>
+  </symbol>
+  <symbol id="i-airport" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M10.5 3.2a1.5 1.5 0 0 1 3 0v5.6l7 4.1v2.1l-7-2v3.7l2 1.5V20l-3.5-1-3.5 1v-1.8l2-1.5V13l-7 2v-2.1l7-4.1V3.2Z"/>
+  </symbol>
+  <symbol id="i-seaport" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="5" r="2.5"/><path d="M12 8v13M5 12H2a10 10 0 0 0 20 0h-3M8 12h8"/>
+  </symbol>
+  <symbol id="i-factory" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M3 21V9l6 4V9l6 4V3h4v18H3Z"/><path d="M7 17h2M13 17h2M19 17h1"/>
+  </symbol>
+  <symbol id="i-share" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 10.6 6.8-4.2M8.6 13.4l6.8 4.2"/>
+  </symbol>
+  <symbol id="i-place" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 21s7-5.1 7-11a7 7 0 1 0-14 0c0 5.9 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/>
+  </symbol>
+  <symbol id="i-info" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/>
+  </symbol>
+  <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="m5 12 4.5 4.5L19 7"/>
+  </symbol>
+</svg>
+
+<header class="app-header">
+  <a class="brand" href="#/explore" aria-label="Indonesia Infrastructure Atlas — Explore">
+    <span class="brand-mark"><svg><use href="#i-compass"/></svg></span>
+    <span class="brand-text">
+      <span class="brand-name">Indonesia Infrastructure Atlas</span>
+      <span class="brand-sub">Curated · sourced · offline</span>
+    </span>
+  </a>
+
+  <div class="header-search">
+    <svg aria-hidden="true"><use href="#i-search"/></svg>
+    <label class="sr-only" for="search">Search projects, provinces, corridors and estates</label>
+    <input id="search" type="search" placeholder="Search projects, provinces, corridors…" autocomplete="off" spellcheck="false">
+    <kbd aria-hidden="true">Ctrl K</kbd>
   </div>
-  <div class="meta">Last verified<br>6 November 2026</div>
+
+  <div class="header-meta">
+    <div class="header-stat"><span>Projects</span><strong id="stat-projects">—</strong></div>
+    <div class="header-stat"><span>Corridors</span><strong id="stat-corridors">—</strong></div>
+    <div class="header-stat"><span>Estates &amp; SEZs</span><strong id="stat-estates">—</strong></div>
+    <a class="header-link" href="#/data"><svg aria-hidden="true"><use href="#i-database"/></svg> Data</a>
+  </div>
 </header>
 
-<div class="layout">
-  <aside class="panel">
-    <div class="panel-head">
-      <div class="summary">
-        <span><strong id="summary-count">0</strong> projects shown</span>
-        <span id="summary-status"></span>
-      </div>
+<main class="app-main">
+  <aside class="rail" id="rail" aria-label="Explore and filters">
+    <button class="sheet-handle" id="sheet-handle" type="button" aria-label="Resize panel" aria-controls="rail-body"></button>
+    <nav class="tabs" role="tablist" aria-label="Views">
+      <button class="tab" role="tab" data-view="explore" aria-selected="true" aria-controls="rail-body">Explore<span class="tab-count" id="tab-count-explore"></span></button>
+      <button class="tab" role="tab" data-view="corridors" aria-selected="false" aria-controls="rail-body">Corridors</button>
+      <button class="tab" role="tab" data-view="estates" aria-selected="false" aria-controls="rail-body">Estates</button>
+      <button class="tab" role="tab" data-view="data" aria-selected="false" aria-controls="rail-body">Data</button>
+    </nav>
 
-      <div class="filter-group">
-        <div class="filter-title">Status</div>
-        <label class="filter-row"><input type="checkbox" data-status="under_construction" checked> <span class="dot" style="--c:var(--uc)"></span> Under construction <span class="count" data-count="under_construction">0</span></label>
-        <label class="filter-row"><input type="checkbox" data-status="planned" checked> <span class="dot" style="--c:var(--planned)"></span> Planned <span class="count" data-count="planned">0</span></label>
-        <label class="filter-row"><input type="checkbox" data-status="operating" checked> <span class="dot" style="--c:var(--operating)"></span> Operating <span class="count" data-count="operating">0</span></label>
-        <label class="filter-row"><input type="checkbox" data-status="recently_completed" checked> <span class="dot" style="--c:var(--done)"></span> Recently completed <span class="count" data-count="recently_completed">0</span></label>
-        <label class="filter-row"><input type="checkbox" data-status="stalled" checked> <span class="dot" style="--c:var(--stalled)"></span> Stalled <span class="count" data-count="stalled">0</span></label>
+    <div class="rail-body" id="rail-body">
+      <div class="explore-content" id="explore-content">
+      <div class="rail-tools" id="rail-tools">
+        <div class="filter-label">Sector</div>
+        <div class="chip-row nowrap" id="sector-chips"></div>
+        <div class="filter-label">Status</div>
+        <div class="chip-row nowrap" id="status-chips"></div>
+        <div class="filter-actions">
+          <button class="filter-button" id="more-filters" aria-expanded="false" aria-controls="filter-popover">
+            <svg aria-hidden="true"><use href="#i-filter"/></svg> More filters
+            <span class="filter-badge" id="filter-badge" hidden>0</span>
+          </button>
+          <button class="filter-clear" id="clear-filters" hidden>Clear all</button>
+        </div>
+        <div class="filter-popover" id="filter-popover" hidden>
+          <div class="filter-grid" id="filter-grid"></div>
+          <div class="popover-foot">
+            <span id="popover-summary">All projects</span>
+            <button class="filter-clear" id="popover-close">Done</button>
+          </div>
+        </div>
       </div>
-
-      <div class="filter-group">
-        <div class="filter-title">Sector</div>
-        <label class="filter-row"><input type="checkbox" data-sector="road" checked> Roads <span class="count" data-count="road">0</span></label>
-        <label class="filter-row"><input type="checkbox" data-sector="railway" checked> Railways <span class="count" data-count="railway">0</span></label>
-        <label class="filter-row"><input type="checkbox" data-sector="airport" checked> Airports <span class="count" data-count="airport">0</span></label>
-        <label class="filter-row"><input type="checkbox" data-sector="seaport" checked> Seaports <span class="count" data-count="seaport">0</span></label>
-        <label class="filter-row"><input type="checkbox" data-sector="factory" checked> Factories <span class="count" data-count="factory">0</span></label>
+      <div class="active-filters" id="active-filters" hidden></div>
+      <div class="list-meta">
+        <span id="result-count" aria-live="polite">Loading…</span>
+        <label class="sort">Sort
+          <select id="sort" aria-label="Sort projects">
+            <option value="status">Status</option>
+            <option value="name">Name A–Z</option>
+            <option value="verified">Recently verified</option>
+            <option value="length">Longest</option>
+            <option value="progress">Progress</option>
+          </select>
+        </label>
       </div>
+      <div class="list-scroll" id="list-scroll">
+        <ul class="project-list" id="project-list" tabindex="-1"></ul>
+      </div>
+      <div class="rail-foot" id="rail-foot">
+        <span><strong id="foot-count">—</strong> of <span id="foot-total">—</span> projects shown</span>
+        <a class="foot-link" href="#/data">Coverage &amp; methods →</a>
+      </div>
+      </div>
+      <div class="view-scroll" id="view-panel" tabindex="0" hidden></div>
     </div>
-
-    <div class="list-head">
-      <div class="view-switch" role="tablist" aria-label="View">
-        <button class="view-btn active" id="view-projects" role="tab" aria-selected="true">Projects</button>
-        <button class="view-btn" id="view-corridors" role="tab" aria-selected="false">Trans corridors</button>
-      </div>
-      <span id="list-count"></span>
-    </div>
-    <ul class="list" id="list"></ul>
-    <div class="corridors" id="corridors" hidden></div>
-
-    <p class="coverage">
-      <strong>Coverage.</strong> <span id="coverage-count">27</span> curated projects.
-      No full toll corridor opened between Nov 2024 and Nov 2026; recently opened sections are noted under each corridor.
-      Railways, airports, seaports and factories are being added.
-    </p>
   </aside>
 
-  <main id="map" aria-label="Map of Indonesian infrastructure projects"></main>
-</div>
+  <div class="map-wrap">
+    <div id="map" role="region" aria-label="Map of Indonesian infrastructure projects"></div>
+    <div class="map-caption"><svg aria-hidden="true" width="11" height="11"><use href="#i-place"/></svg><strong id="map-count">—</strong> projects · Indonesia</div>
+    <details class="layer-control">
+      <summary>Layers</summary>
+      <div class="layer-body">
+        <label class="layer-row"><input type="checkbox" id="layer-projects" checked> Projects</label>
+        <label class="layer-row"><input type="checkbox" id="layer-labels" checked> City labels</label>
+        <label class="layer-row is-disabled"><input type="checkbox" disabled> Estates <small>Phase 2</small></label>
+        <label class="layer-row is-disabled"><input type="checkbox" disabled> Corridor lines <small>Phase 2</small></label>
+      </div>
+    </details>
+    <details class="map-legend" open>
+      <summary>Legend</summary>
+      <div class="legend-body" id="legend-body"></div>
+    </details>
+  </div>
+</main>
 
-<section class="detail" id="detail" aria-live="polite">
-  <button class="detail-close" id="detail-close" aria-label="Close details">&times;</button>
-  <div id="detail-body"></div>
-</section>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="drawer-title" hidden>
+  <div class="drawer-head">
+    <div class="drawer-topline" id="drawer-topline">
+      <div class="drawer-pills" id="drawer-pills"></div>
+      <button class="drawer-close" id="drawer-close" aria-label="Close details"><svg aria-hidden="true"><use href="#i-close"/></svg></button>
+    </div>
+    <h2 id="drawer-title"></h2>
+    <p class="drawer-loc" id="drawer-loc"></p>
+  </div>
+  <div class="drawer-body" id="drawer-body"></div>
+  <div class="drawer-foot" id="drawer-foot"></div>
+</aside>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <script src="vendor/leaflet/leaflet.js"></script>
+<script src="vendor/markercluster/leaflet.markercluster.js"></script>
 <script src="data/basemap.js"></script>
 <script src="data/projects.js"></script>
 <script src="data/corridors.js"></script>
-<script>
-(() => {
-  "use strict";
-
-  const STATUS = {
-    under_construction: { label: "Under construction", color: "#e8590c" },
-    planned:            { label: "Planned",            color: "#1c7ed6" },
-    operating:          { label: "Operating",          color: "#0c8599" },
-    recently_completed: { label: "Recently completed", color: "#2f9e44" },
-    stalled:            { label: "Stalled",            color: "#c92a2a" }
-  };
-  const STATUS_ORDER = ["under_construction", "planned", "operating", "recently_completed", "stalled"];
-  const SECTOR_LABEL = { road: "Road", railway: "Railway", airport: "Airport", seaport: "Seaport", factory: "Factory" };
-
-  const features = (window.PROJECTS && window.PROJECTS.features) || [];
-  const corridors = window.CORRIDORS || [];
-  const byId = new Map(features.map(f => [f.properties.id, f]));
-
-  const selectedStatuses = new Set(Object.keys(STATUS));
-  const selectedSectors = new Set(["road", "railway", "airport", "seaport", "factory"]);
-  let selectedId = null;
-  let currentView = "projects";
-
-  const map = L.map("map", {
-    zoomControl: true,
-    minZoom: 3,
-    maxZoom: 9,
-    worldCopyJump: false
-  }).setView([-2.4, 118.0], 5);
-
-  // Bundled Natural Earth geometry: no tile requests, so the page works from
-  // file:// (OSM's tile servers block file:// referers). Leaflet is vendored
-  // under site/vendor/leaflet, so the page needs no network at all.
-  const basemap = window.BASEMAP || { countries: { features: [] }, places: [] };
-
-  L.geoJSON(basemap.countries, {
-    interactive: false,
-    style: feature => feature.properties.name === "Indonesia"
-      ? { color: "#b3aa96", weight: 1.1, fillColor: "#f7f4ea", fillOpacity: 1 }
-      : { color: "#d3cec1", weight: 0.8, fillColor: "#ece9e0", fillOpacity: 1 }
-  }).addTo(map);
-
-  map.attributionControl.addAttribution(
-    'Base map: <a href="https://www.naturalearthdata.com/">Natural Earth</a> (public domain)'
-  );
-
-  const cityMajor = L.layerGroup();
-  const cityMinor = L.layerGroup();
-  const MAJOR_CITIES = new Set([
-    "Jakarta", "Surabaya", "Medan", "Makassar", "Kuala Lumpur", "Singapore"
-  ]);
-  const LABEL_LEFT = new Set(["Jakarta"]);
-
-  basemap.places.forEach(place => {
-    const toLeft = LABEL_LEFT.has(place.name);
-    const label = L.circleMarker([place.lat, place.lon], {
-      radius: 2.4,
-      stroke: false,
-      fillColor: "#77808d",
-      fillOpacity: 0.9,
-      interactive: false
-    })
-      .bindTooltip(place.name, {
-        permanent: true,
-        direction: toLeft ? "left" : "right",
-        offset: toLeft ? [-3, 0] : [3, 0],
-        className: "city-label"
-      });
-    label.addTo(MAJOR_CITIES.has(place.name) ? cityMajor : cityMinor);
-  });
-
-  function syncCityLabels() {
-    const zoom = map.getZoom();
-    const showMajor = zoom >= 5;
-    const showMinor = zoom >= 7;
-    if (showMajor && !map.hasLayer(cityMajor)) cityMajor.addTo(map);
-    else if (!showMajor && map.hasLayer(cityMajor)) map.removeLayer(cityMajor);
-    if (showMinor && !map.hasLayer(cityMinor)) cityMinor.addTo(map);
-    else if (!showMinor && map.hasLayer(cityMinor)) map.removeLayer(cityMinor);
-  }
-  map.on("zoomend", syncCityLabels);
-  syncCityLabels();
-
-  const legend = L.control({ position: "bottomleft" });
-  legend.onAdd = () => {
-    const div = L.DomUtil.create("div", "legend");
-    div.innerHTML = STATUS_ORDER.map(s =>
-      `<div><span class="dot" style="background:${STATUS[s].color}"></span>${STATUS[s].label}</div>`
-    ).join("");
-    return div;
-  };
-  legend.addTo(map);
-
-  const markers = new Map();
-  const allLatLngs = [];
-
-  function baseStyle(status) {
-    return {
-      radius: 7,
-      color: "#ffffff",
-      weight: 1.5,
-      opacity: 1,
-      fillColor: STATUS[status].color,
-      fillOpacity: 0.9
-    };
-  }
-
-  function selectedStyle(status) {
-    return {
-      radius: 11,
-      color: "#16202b",
-      weight: 2.5,
-      opacity: 1,
-      fillColor: STATUS[status].color,
-      fillOpacity: 1
-    };
-  }
-
-  features.forEach(feature => {
-    const p = feature.properties;
-    const [lon, lat] = feature.geometry.coordinates;
-    const marker = L.circleMarker([lat, lon], baseStyle(p.status));
-    marker.bindTooltip(p.name, { direction: "top", offset: [0, -6] });
-    marker.on("click", () => selectProject(p.id, false));
-    marker.addTo(map);
-    markers.set(p.id, marker);
-    allLatLngs.push([lat, lon]);
-  });
-
-  function fitAll() {
-    if (selectedId || !allLatLngs.length) return;
-    map.invalidateSize();
-    map.fitBounds(L.latLngBounds(allLatLngs), { padding: [52, 52], maxZoom: 7 });
-  }
-  requestAnimationFrame(fitAll);
-
-  const listEl = document.getElementById("list");
-  const summaryCount = document.getElementById("summary-count");
-  const summaryStatus = document.getElementById("summary-status");
-  const listCount = document.getElementById("list-count");
-  const detail = document.getElementById("detail");
-  const detailBody = document.getElementById("detail-body");
-  const detailClose = document.getElementById("detail-close");
-  const coverageCount = document.getElementById("coverage-count");
-  coverageCount.textContent = features.length;
-  const corridorsEl = document.getElementById("corridors");
-  const viewProjects = document.getElementById("view-projects");
-  const viewCorridors = document.getElementById("view-corridors");
-
-  function syncHeaderHeight() {
-    const header = document.querySelector(".topbar");
-    document.documentElement.style.setProperty("--header-h", `${header.offsetHeight}px`);
-  }
-  syncHeaderHeight();
-  window.addEventListener("resize", syncHeaderHeight);
-
-  function visibleFeatures() {
-    return features.filter(f =>
-      selectedStatuses.has(f.properties.status) && selectedSectors.has(f.properties.sector)
-    );
-  }
-
-  function sortFeatures(items) {
-    return items.slice().sort((a, b) => {
-      const sa = STATUS_ORDER.indexOf(a.properties.status);
-      const sb = STATUS_ORDER.indexOf(b.properties.status);
-      if (sa !== sb) return sa - sb;
-      return a.properties.name.localeCompare(b.properties.name);
-    });
-  }
-
-  function render() {
-    const visible = visibleFeatures();
-    const ids = new Set(visible.map(f => f.properties.id));
-
-    markers.forEach((marker, id) => {
-      if (ids.has(id)) {
-        if (!map.hasLayer(marker)) marker.addTo(map);
-      } else if (map.hasLayer(marker)) {
-        map.removeLayer(marker);
-      }
-    });
-
-    if (selectedId && !ids.has(selectedId)) closeDetail();
-
-    const totalCounts = Object.fromEntries(Object.keys(STATUS).map(s => [s, 0]));
-    const visibleCounts = Object.fromEntries(Object.keys(STATUS).map(s => [s, 0]));
-    const sectorCounts = { road: 0, railway: 0, airport: 0, seaport: 0, factory: 0 };
-    features.forEach(f => {
-      totalCounts[f.properties.status] += 1;
-      if (f.properties.sector in sectorCounts) sectorCounts[f.properties.sector] += 1;
-    });
-    visible.forEach(f => {
-      visibleCounts[f.properties.status] += 1;
-    });
-    document.querySelectorAll("[data-count]").forEach(el => {
-      const key = el.dataset.count;
-      el.textContent = key in totalCounts ? totalCounts[key] : (sectorCounts[key] ?? 0);
-    });
-
-    summaryCount.textContent = visible.length;
-    const shown = STATUS_ORDER
-      .filter(s => selectedStatuses.has(s) && visibleCounts[s] > 0)
-      .map(s => `${visibleCounts[s]} ${STATUS[s].label.toLowerCase()}`);
-    summaryStatus.textContent = shown.length ? shown.join(" · ") : "No status selected";
-    listCount.textContent = currentView === "projects"
-      ? `${visible.length} of ${features.length}`
-      : `${corridors.length} corridors`;
-
-    listEl.replaceChildren();
-    if (!visible.length) {
-      const li = document.createElement("li");
-      li.className = "empty";
-      li.textContent = "No projects match these filters.";
-      listEl.append(li);
-      return;
-    }
-
-    sortFeatures(visible).forEach(feature => {
-      const p = feature.properties;
-      const li = document.createElement("li");
-      const btn = document.createElement("button");
-      btn.type = "button";
-      btn.className = "project-btn";
-      btn.setAttribute("aria-current", p.id === selectedId ? "true" : "false");
-      btn.innerHTML = `
-        <span class="dot" style="--c:${STATUS[p.status].color}"></span>
-        <span>
-          <span class="project-name">${escapeHtml(p.name)}</span>
-          <span class="project-sub">${escapeHtml(p.province)} · ${escapeHtml(STATUS[p.status].label)}</span>
-        </span>
-        <span class="project-km">${formatKm(p.length_km)}</span>
-      `;
-      btn.addEventListener("click", () => selectProject(p.id, true));
-      li.append(btn);
-      listEl.append(li);
-    });
-  }
-
-  function formatNum(value) {
-    const n = Number(value);
-    if (!Number.isFinite(n)) return "—";
-    return n.toLocaleString("en-GB", { maximumFractionDigits: 1 });
-  }
-
-  function corridorBar(c) {
-    const total = Number(c.total_km);
-    if (!Number.isFinite(total) || total <= 0) return "";
-    const op = Number(c.operational_km) || 0;
-    const uc = Number(c.construction_km) || 0;
-    const planned = Number(c.planned_km) || 0;
-    const opPct = Math.min(100, (op / total) * 100);
-    const ucPct = Math.min(100 - opPct, (uc / total) * 100);
-    const plannedPct = Math.min(100 - opPct - ucPct, (planned / total) * 100);
-    return `<div class="bar">
-      <span class="op" style="width:${opPct}%"></span>
-      <span class="uc" style="width:${ucPct}%"></span>
-      <span class="planned" style="width:${plannedPct}%"></span>
-      <span class="rest"></span>
-    </div>`;
-  }
-
-  function renderCorridors() {
-    corridorsEl.replaceChildren();
-    corridors.forEach(c => {
-      const total = Number(c.total_km);
-      const hasTotal = Number.isFinite(total) && total > 0;
-      const op = Number(c.operational_km);
-      const label = (c.metric || "").includes("connected") ? "connected" : "operational";
-      const progress = hasTotal && Number.isFinite(op)
-        ? Math.round((op / total) * 100)
-        : null;
-
-      const kmLine = hasTotal && Number.isFinite(op)
-        ? `<div class="corridor-km"><strong>${progress}%</strong> · ${formatNum(op)} / ${formatNum(total)} km ${label}</div>`
-        : `<div class="corridor-km">${hasTotal ? `${formatNum(total)} km total` : "Kilometre data not published"}</div>`;
-
-      const source = c.source_url
-        ? `<a href="${escapeHtml(c.source_url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(hostOf(c.source_url))}</a>`
-        : "";
-
-      const card = document.createElement("article");
-      card.className = "corridor-card";
-      card.innerHTML = `
-        <div class="corridor-head">
-          <h3>${escapeHtml(c.name)}</h3>
-          <span class="corridor-metric">${escapeHtml(c.metric)}</span>
-        </div>
-        <p class="corridor-def">${escapeHtml(c.definition)}</p>
-        ${kmLine}
-        ${hasTotal ? corridorBar(c) : ""}
-        ${hasTotal ? `<div class="corridor-meta">${c.as_of ? `As of ${escapeHtml(c.as_of)} · ` : ""}${source}${c.notes ? `<br>${escapeHtml(c.notes)}` : ""}</div>` : `<div class="corridor-gap">${escapeHtml(c.notes)}</div>`}
-      `;
-      corridorsEl.append(card);
-    });
-  }
-
-  function setView(view) {
-    currentView = view;
-    const projects = view === "projects";
-    listEl.hidden = !projects;
-    corridorsEl.hidden = projects;
-    viewProjects.classList.toggle("active", projects);
-    viewCorridors.classList.toggle("active", !projects);
-    viewProjects.setAttribute("aria-selected", String(projects));
-    viewCorridors.setAttribute("aria-selected", String(!projects));
-    listCount.textContent = projects
-      ? `${visibleFeatures().length} of ${features.length}`
-      : `${corridors.length} corridors`;
-  }
-
-  viewProjects.addEventListener("click", () => setView("projects"));
-  viewCorridors.addEventListener("click", () => setView("corridors"));
-
-  // Centre a project in the part of the map that the detail panel does not cover.
-  function focusLatLng(latlng, zoom, animate) {
-    const desktop = window.matchMedia("(min-width: 861px)").matches;
-    const offset = desktop
-      ? [detail.offsetWidth / 2, 0]
-      : [0, map.getSize().y * 0.25];
-    const centre = map.unproject(map.project(latlng, zoom).add(offset), zoom);
-    if (animate) map.flyTo(centre, zoom, { duration: 0.7 });
-    else map.setView(centre, zoom, { animate: false });
-  }
-
-  function selectProject(id, pan, animate = true) {
-    const feature = byId.get(id);
-    if (!feature) return;
-    const p = feature.properties;
-
-    if (selectedId && markers.has(selectedId)) {
-      const prev = byId.get(selectedId).properties;
-      markers.get(selectedId).setStyle(baseStyle(prev.status));
-    }
-
-    selectedId = id;
-    const marker = markers.get(id);
-    marker.setStyle(selectedStyle(p.status));
-    marker.bringToFront();
-    if (pan) {
-      const targetZoom = Math.max(map.getZoom(), 7);
-      focusLatLng(marker.getLatLng(), targetZoom, animate);
-    }
-
-    if (location.hash.slice(1) !== id) {
-      history.replaceState(null, "", "#" + encodeURIComponent(id));
-    }
-
-    showDetail(p);
-    render();
-    // render() rebuilds the list; keep the selected row visible without
-    // scrolling the document (mobile shows the list inline, not in a pane).
-    const current = listEl.querySelector('[aria-current="true"]');
-    if (current && listEl.scrollHeight > listEl.clientHeight) {
-      const listRect = listEl.getBoundingClientRect();
-      const rowRect = current.getBoundingClientRect();
-      if (rowRect.top < listRect.top) {
-        listEl.scrollTop += rowRect.top - listRect.top;
-      } else if (rowRect.bottom > listRect.bottom) {
-        listEl.scrollTop += rowRect.bottom - listRect.bottom;
-      }
-    }
-  }
-
-  function kmBlock(p) {
-    const total = Number(p.length_km);
-    const op = Number(p.operational_km);
-    if (!Number.isFinite(total) || total <= 0 || !Number.isFinite(op)) return "";
-    const opPct = Math.min(100, (op / total) * 100);
-    const uc = Number(p.construction_km);
-    const ucPct = Number.isFinite(uc) ? Math.min(100 - opPct, (uc / total) * 100) : 0;
-    return `<div class="km-block">
-      <div class="km-caption"><strong>${Math.round(opPct)}%</strong> operational · ${formatKm(op)} of ${formatKm(total)}</div>
-      <div class="bar"><span class="op" style="width:${opPct}%"></span><span class="uc" style="width:${ucPct}%"></span><span class="rest"></span></div>
-    </div>`;
-  }
-
-  function showDetail(p) {
-    const status = STATUS[p.status];
-    const official = p.source_type === "official";
-
-    const stats = [];
-    if (p.route) stats.push(["Route", p.route]);
-    if (p.length_km) stats.push(["Length", formatKm(p.length_km)]);
-    if (p.operational_km) stats.push(["Operational", formatKm(p.operational_km)]);
-    if (p.construction_km) stats.push(["Under construction", formatKm(p.construction_km)]);
-    if (p.operator) stats.push(["Operator", p.operator]);
-    if (p.investment_idr_t) stats.push(["Investment", `Rp ${formatNum(p.investment_idr_t)}T`]);
-    if (p.capacity) stats.push(["Capacity", `${formatNum(p.capacity)} ${p.capacity_unit}`]);
-    if (p.opened_year) stats.push(["Opened", p.opened_year]);
-
-    const tags = [SECTOR_LABEL[p.sector] || p.sector];
-    if (p.psn === "yes") tags.push("PSN");
-    if (p.psn === "no") tags.push("Non-PSN");
-
-    detailBody.innerHTML = `
-      <span class="badge" style="background:${status.color}">${escapeHtml(status.label)}</span>
-      <h2>${escapeHtml(p.name)}</h2>
-      <p class="where">${escapeHtml(p.province)} · ${tags.map(t => escapeHtml(t)).join(" · ")}</p>
-
-      <div class="stats">
-        ${stats.map(([key, value]) => `<div class="stat"><div class="k">${escapeHtml(key)}</div><div class="v">${escapeHtml(value)}</div></div>`).join("")}
-      </div>
-
-      ${kmBlock(p)}
-
-      <h3>Status basis</h3>
-      <p class="basis">${escapeHtml(p.status_basis)}</p>
-
-      <h3>Notes</h3>
-      <p class="notes">${escapeHtml(p.notes)}</p>
-
-      <div class="source">
-        <div><strong>${official ? "Official source" : "Secondary source"}</strong>: <a href="${escapeHtml(p.source_url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(hostOf(p.source_url))}</a></div>
-        <div class="dates">Retrieved ${escapeHtml(p.retrieved_on)} · Last verified ${escapeHtml(p.last_verified)} · Coordinate precision: ${escapeHtml(p.precision)}</div>
-      </div>
-    `;
-    detail.classList.add("open");
-  }
-
-  function closeDetail() {
-    if (selectedId && markers.has(selectedId)) {
-      const prev = byId.get(selectedId).properties;
-      markers.get(selectedId).setStyle(baseStyle(prev.status));
-    }
-    selectedId = null;
-    detail.classList.remove("open");
-    if (location.hash) {
-      history.replaceState(null, "", location.pathname + location.search);
-    }
-    render();
-  }
-
-  function hostOf(url) {
-    try { return new URL(url).hostname.replace(/^www\./, ""); }
-    catch { return url; }
-  }
-
-  function formatKm(value) {
-    const n = Number(value);
-    if (!Number.isFinite(n)) return "";
-    return `${n.toLocaleString("en-GB", { maximumFractionDigits: 2 })} km`;
-  }
-
-  function escapeHtml(value) {
-    return String(value ?? "").replace(/[&<>"']/g, ch => ({
-      "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
-    }[ch]));
-  }
-
-  document.querySelectorAll("[data-status]").forEach(input => {
-    input.addEventListener("change", () => {
-      if (input.checked) selectedStatuses.add(input.dataset.status);
-      else selectedStatuses.delete(input.dataset.status);
-      render();
-    });
-  });
-
-  document.querySelectorAll("[data-sector]").forEach(input => {
-    input.addEventListener("change", () => {
-      if (input.checked) selectedSectors.add(input.dataset.sector);
-      else selectedSectors.delete(input.dataset.sector);
-      render();
-    });
-  });
-
-  detailClose.addEventListener("click", closeDetail);
-  document.addEventListener("keydown", event => {
-    if (event.key === "Escape") closeDetail();
-  });
-
-  renderCorridors();
-  render();
-  setView("projects");
-
-  const initialId = decodeURIComponent(location.hash.replace(/^#/, ""));
-  if (initialId && byId.has(initialId)) selectProject(initialId, true, false);
-})();
-</script>
+<script src="data/stats.js"></script>
+<script src="data/search.js"></script>
+<script src="assets/constants.js"></script>
+<script src="assets/map.js"></script>
+<script src="assets/app.js"></script>
 </body>
 </html>

@@ -1,11 +1,16 @@
 # V3 Overhaul Plan — Site Experience and Data Completeness
 
-**Status:** proposed, 7 November 2026.
+**Status:** Phase 1 complete, 7 November 2026. Phase 2 is next.
 **Supersedes:** the roadmap and "Where to pick up" sections of `plan.md`.
-**Scope:** the public site (`site/`) and the curated dataset (`data/curated/`).
+**Scope:** the site (`site/`) and the curated dataset (`data/curated/`).
 **Hard constraints that do not change:** English UI with Indonesian proper names;
 plain HTML, CSS and classic JavaScript; Leaflet; works offline and from `file://`;
 no tile server, CDN or `fetch`; every row has a source and a verification date.
+
+**Publishing constraint (7 November 2026):** do **not** push this repository to
+GitHub, add a remote, publish the site or deploy GitHub Pages. Phase 3 ends with
+a local release that works from `file://` and a local HTTP server. Publishing is
+deferred until the repository owner asks for it explicitly.
 
 This is an execution backlog, not a vision deck. Work top to bottom. Each item
 has an ID, a concrete outcome, acceptance criteria and a size. Do not start an
@@ -51,7 +56,7 @@ interface around it.
 | SEZs | 25 | Official profiles complete for name, area, developer, legal basis and coordinates |
 | Estate unique rows | 178 | Target is about 197 after reconciling 179 industrial estates and 25 SEZs with 7 overlaps |
 | Corridors | 4 | Only Trans Sumatra and Trans Papua have kilometre series; Trans Sulawesi and Trans Kalimantan are data-gap notes; `corridor_segments.csv` is empty |
-| Sources | 37 | 31 official, 6 secondary; one claim per project on average |
+| Sources | 38 | 32 official, 6 secondary; one claim per project on average |
 
 Other concrete gaps:
 
@@ -111,7 +116,7 @@ what is planned and what has stalled — and check the evidence.
   URL state, a detail timeline and a source register.
 - The page passes a WCAG 2.2 AA audit and loads in under 1.5 s on a mid-range
   phone from a local file.
-- CI validates, builds and deploys to GitHub Pages.
+- CI validates and builds; publishing is explicitly deferred until requested.
 
 **Non-goals**
 
@@ -657,7 +662,7 @@ source parse. Same pattern for transport rows if extraction is re-run.
 | SEZs | 25 | 25 | 0 | KEK National Council |
 | Unique estates | 178 | ~197 | ~19 | Dedupe 179 + 25 − 7 |
 | Corridors | 4 | 5 with segments | 2–3 data gaps | Hutama Karya, Bina Marga |
-| Sources | 37 | 80–100 | 43–63 | — |
+| Sources | 38 | 80–100 | 42–62 | — |
 
 ### 5.2 Transport PSN: the 35 projects
 
@@ -825,38 +830,37 @@ The site must keep working from `file://`. That rules out ES modules and
 
 ```
 site/
-├─ index.html                 shell only
+├─ index.html                 shell, SVG sprite and mount points
 ├─ assets/
+│  ├─ fonts.css               local @font-face rules
+│  ├─ fonts/                  Inter and Source Serif 4 WOFF2 files
 │  ├─ tokens.css              design tokens
 │  ├─ app.css                 layout and components
-│  ├─ fonts/                  local WOFF2 files
-│  ├─ icons.svg               inline sprite
-│  ├─ app.js                  boot, routing, state
-│  ├─ data.js                 loaders and caches
-│  ├─ map.js                  Leaflet setup, layers, markers
-│  ├─ ui.js                   render list, filters, detail, tabs
-│  └─ search.js               client-side search
+│  ├─ constants.js            status, sector and vocabulary data
+│  ├─ app.js                  boot, routing, state, views and drawer
+│  └─ map.js                  Leaflet setup, basemap, markers, clusters
 ├─ data/
-│  ├─ projects.js             window.INFRA.projects
-│  ├─ estates.js              window.INFRA.estates (lazy)
-│  ├─ corridors.js            window.INFRA.corridors
-│  ├─ stats.js                window.INFRA.stats
-│  ├─ search.js               window.INFRA.search
-│  └─ basemap.js              window.INFRA.basemap
+│  ├─ projects.js             window.PROJECTS, with per-row sources
+│  ├─ estates.js              window.INFRA_ESTATES (lazy)
+│  ├─ corridors.js            window.CORRIDORS
+│  ├─ stats.js                window.INFRA_STATS: counts, coverage, sources
+│  ├─ search.js               window.INFRA_SEARCH
+│  └─ basemap.js              window.BASEMAP
 └─ vendor/
    ├─ leaflet/                Leaflet 1.9.4
-   └─ markercluster/          vendored clustering plugin
+   └─ markercluster/          vendored Leaflet.markercluster 1.5.3
 ```
 
 - `index.html` loads tokens, app CSS, Leaflet, markercluster, data scripts and
   then the app scripts in order. No bundler, no build step to view.
-- `window.INFRA` is the only global. Each file adds one property.
+- Data files write one global each: `window.PROJECTS`, `window.CORRIDORS`,
+  `window.INFRA_STATS`, `window.INFRA_SEARCH`, and lazily
+  `window.INFRA_ESTATES`.
 - Estate data loads by injecting a `<script src="data/estates.js">` when the
-  Estates tab or layer is first opened. Works from `file://`.
-- Keep a single-file fallback? No. External local files are fine and easier to
-  maintain.
-- Vendor markercluster with its licence. If the plugin is too heavy, write a
-  small grid clusterer in `map.js`; prefer the vendored plugin.
+  Estates tab is first opened. Works from `file://`.
+- The SVG sprite is inline in `index.html` so `<use href="#i-road">` works from
+  `file://` without an external SVG fetch.
+- Vendor markercluster with its licence.
 
 ### 6.2 Build and validation
 
@@ -882,20 +886,6 @@ site/
 - Unit tests for parsers (area, dates, slugs, status mapping) with `unittest`.
   No heavy test framework needed.
 
-### 6.3 CI and deployment
-
-`.github/workflows/ci.yml`
-
-- On push and pull request: Python 3.12, install requirements, run
-  `python scripts/build_all.py`, fail if `git diff --exit-code` is non-empty.
-- On `main`: deploy `site/` to GitHub Pages with `actions/upload-pages-artifact`
-  and `actions/deploy-pages`.
-- Add `site/.nojekyll`.
-- The Pages build must include `site/data/` and `site/vendor/`.
-
-Deployment is not blocked on data completeness. Ship the shell after Phase 1,
-then ship data increments.
-
 ### 6.4 Documentation
 
 - `README.md` stays the front door: current counts, how to run, schema, sources,
@@ -918,6 +908,9 @@ phase. Sizes: **S** = one focused session, **M** = 2–3 sessions, **L** = 4–6
 sessions.
 
 ### Phase 1 — Foundation and experience
+
+**Status: complete, 7 November 2026.** See the completion log after the exit
+criteria.
 
 **Goal:** the current 27 rows look and behave like a published product. The
 shell, four views, search, filters, detail drawer, map and mobile sheet are
@@ -963,19 +956,40 @@ ready. No new data rows in this phase.
 **Exit criteria**
 
 - Decisions recorded; `coverage_targets.csv` exists; schema v3 agreed.
-- Four views exist and hash routing works from `file://`; Estates may be a
-  summary placeholder until Phase 2.
+- Four views exist and hash routing works from `file://`.
 - Search, filters, sort and URL state work with the 27 existing rows.
 - The detail drawer shows evidence, sources and notes; the mobile sheet works.
 - The map has the new basemap, sector markers and clusters; no network requests.
-- Lighthouse accessibility ≥ 95; no console errors; works from `file://`.
-- A preview build is signed off with desktop and mobile screenshots.
+- Keyboard, focus, contrast and reduced-motion checks pass; no console errors;
+  works from `file://`.
+- A local preview was signed off with desktop and mobile screenshots.
+
+**Phase 1 completion log — 7 November 2026**
+
+| Item | Evidence |
+|---|---|
+| D1–D5 | `docs/phase-1-decisions.md`; `data/curated/coverage_targets.csv`; schema v3 in `data_model.py`; migration in `migrate_schema_v3.py` |
+| U1 | `site/assets/tokens.css`, `fonts.css`, bundled WOFF2 files, inline SVG sprite |
+| U2–U4 | Four-tab shell, hash router, sector/status chips, island/province/PSN/corridor/precision/freshness filters, URL state |
+| U5 | Search, five sort modes, compact list rows, empty state, arrow-key navigation |
+| U6 | Detail drawer with metrics, open share, why-this-status, evidence, every source, notes, related corridor, previous/next, share |
+| U7 | Full-viewport mobile map and draggable three-snap bottom sheet; peek shows two rows |
+| U8 | Focus trap, skip link, `aria-live` counts, text status labels, reduced motion, loading/error/empty states; axe-core 0 violations on four views, one map-marker target-size exception in the drawer |
+| U9–U10 | Data view with coverage matrix, definitions, inclusion rules, source register, downloads, gaps, changelog; stale toll-road copy removed |
+| M1–M3 | Natural Earth provinces, lakes, rivers, urban areas and city labels; sector markers; status-ring clusters |
+| M4–M6 | List ↔ map selection, drawer offset, zoom/scale controls, collapsible legend, layer control, lazy estates |
+| M7 | `file://` verified; no external resource hosts; shell 84.7 KB gz, initial data 93.0 KB gz, basemap 75.2 KB gz, estates 10.8 KB gz; 0.71 s load from `file://` in headless Edge |
+
+Deviations: the estates table shipped early (it was already in the curated
+tables); no preview deployment was made; the formal Lighthouse/axe audit and the
+300-marker performance test move to Phase 2. See
+`docs/phase-1-decisions.md`.
 
 ### Phase 2 — Data completion
 
 **Goal:** every layer meets its coverage target or has a documented gap. This
-phase also adds the views that consume the new data: the estates table and the
-corridor segment view.
+phase adds the views that consume the new data: the corridor segment view and
+the refined estate attributes. The estate table itself shipped in Phase 1.
 
 **Track 2A — Transport PSN**
 
@@ -998,7 +1012,7 @@ corridor segment view.
 | E2 | Add 2025 estates | Nine rows with area, developer, location, coordinates, source | L | E1 |
 | E3 | Exact coordinates | 25 SEZs + 40 largest estates at exact/approximate precision | L | E2 |
 | E4 | Attributes and status | Top 100 estates have sector, website, legal basis, verified status | L | E3 |
-| E5 | Estates table | Summary, filters, sortable table, row detail, CSV, mobile layout | M | E4 |
+| E5 | Estates table | Summary, filters, sortable table, row detail, CSV, mobile layout — **shipped in Phase 1** | M | E4 |
 | E6 | Optional map layer | Off by default; clusters; nearby projects; works offline | M | E5 |
 
 **Track 2C — Factories**
@@ -1033,9 +1047,10 @@ corridor segment view.
 - Every row has coordinates, a source and a verification date; validation
   passes; the coverage report shows current/target/gap for every layer.
 
-### Phase 3 — Trust and ship
+### Phase 3 — Trust and local release
 
-**Goal:** the site is public, verifiable and maintainable by another agent.
+**Goal:** the site is verifiable, maintainable and locally releasable by another
+agent. It is **not** pushed to GitHub or published in this phase.
 
 **Track 3A — Trust layer**
 
@@ -1047,30 +1062,31 @@ corridor segment view.
 | Q4 | Downloads | Filtered CSV and GeoJSON, data dictionary | S | Q3 |
 | Q5 | Conflict register | Known conflicts listed with both values and sources | S | Q3 |
 
-**Track 3B — Ship**
+**Track 3B — Local release and hand-off**
 
 | ID | Item | Outcome / acceptance | Size | Depends |
 |---|---|---|---|---|
-| S1 | Build all + CI | `build_all.py`, GitHub Actions validate and diff check | M | Q3 |
-| S2 | Pages deployment | Site live on GitHub Pages; relative paths; `.nojekyll` | S | S1 |
-| S3 | Smoke tests | Desktop/mobile screenshots, keyboard, `file://`, no network | M | S2 |
-| S4 | Refresh runbook | Monthly steps: fetch, diff, review, update, rebuild, deploy | S | S2 |
-| S5 | Hand-off | README current, changelog current, open gaps listed | S | S4 |
+| S1 | Build all + local CI | `build_all.py`, validation, deterministic rebuild and a diff check; no remote, no push | M | Q3 |
+| S2 | Local release build | `site/` loads from `file://` and a local HTTP server; relative paths; no CDN or tile requests | S | S1 |
+| S3 | Smoke tests | Desktop/mobile screenshots, keyboard, `file://`, no network requests | M | S2 |
+| S4 | Refresh runbook | Monthly steps: fetch, diff, review, update, rebuild, verify locally | S | S2 |
+| S5 | Hand-off | README, changelog and this plan current; open gaps listed | S | S4 |
 
 **Exit criteria**
 
 - Every status and numeric claim traces to a source.
 - Stale rows are flagged and the monthly refresh runbook exists.
 - The Data view has coverage, methodology, sources, downloads and conflicts.
-- CI validates, rebuilds and checks for drift; GitHub Pages deploys on `main`.
+- CI validates, rebuilds and checks for drift.
 - Desktop, mobile, keyboard and offline smoke tests pass.
+- **No GitHub remote, push, Pages deployment or public release is performed.**
 - README, changelog and this plan agree with the data.
 
 ---
 
 ## 8. Delivery order and milestones
 
-**Milestone A — end of Phase 1: usable preview**
+**Milestone A — end of Phase 1: local preview (complete 7 Nov 2026)**
 
 Order:
 
@@ -1095,18 +1111,13 @@ Order:
 4. R1–R5 — road audit, operating context, segments, events, corridor UI.
 5. E6 and R6 — optional map layers and geometry, if time allows.
 
-**Milestone C — end of Phase 3: public launch**
+**Milestone C — end of Phase 3: local release**
 
 Order:
 
 1. Q1–Q5 — claims, freshness, Data view, downloads, conflicts.
-2. S1–S2 — CI and GitHub Pages.
-3. S3–S5 — smoke tests, runbook, hand-off.
-
-The order is deliberate: adding 35 transport rows to the current interface would
-make the interface problem worse. Fix the container first, then fill it. Do not
-start Phase 2 before the Phase 1 list, filters, detail and mobile views are
-usable.
+2. S1–S5 — local CI, release build, smoke tests, runbook and hand-off.
+3. Stop. Do not push to GitHub, create a remote or publish the site.
 
 ---
 
@@ -1129,21 +1140,20 @@ usable.
 
 ---
 
-## 10. Open decisions
+## 10. Decisions confirmed
 
-These need a yes/no before Phase 1 starts. Defaults are recommended.
+All Phase 1 decisions are closed in `docs/phase-1-decisions.md`.
 
-1. **Design direction:** editorial atlas with bundled serif/sans (recommended)
-   or a utilitarian dashboard with system fonts?
-2. **Fonts:** bundle two OFL families locally, about 150–250 KB (recommended),
-   or stay with system fonts and accept a more generic look?
-3. **Estates on the map:** table-only until E3, then an off-by-default layer
-   (recommended), or show the coarse regency centroids now?
-4. **Factory scope:** PSN + private investment ≥ Rp 1T, 20–30 plants
-   (recommended), or a broader list?
-5. **Deployment timing:** deploy the shell after Phase 1 (recommended), or wait
-   until the transport batch is in?
-6. **Dark mode:** skip for v3 (recommended), revisit after launch.
+1. **Design direction:** editorial atlas with bundled serif/sans. **Confirmed.**
+2. **Fonts:** two OFL families bundled locally (Inter, Source Serif 4).
+   **Confirmed.**
+3. **Estates on the map:** table-only until E3, then an off-by-default layer.
+   **Confirmed.**
+4. **Factory scope:** PSN + private investment ≥ Rp 1T, 20–30 plants.
+   **Confirmed.**
+5. **Publishing:** no GitHub remote, push, Pages deployment or public release.
+   **Deferred by the repository owner on 7 November 2026.**
+6. **Dark mode:** skip for v3. **Confirmed.**
 
 ---
 
@@ -1168,10 +1178,3 @@ A view is done when:
 - its counts are generated, not typed;
 - it makes no network request;
 - it has a screenshot in the phase log.
-
-The project is done when:
-
-- the coverage targets in section 5.1 are met or the gap is documented;
-- the Data view reports current/target/gap honestly;
-- CI validates, builds and deploys;
-- the README, changelog and this plan agree with the data.

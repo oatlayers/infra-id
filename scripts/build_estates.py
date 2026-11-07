@@ -21,20 +21,12 @@ from pathlib import Path
 
 from bs4 import BeautifulSoup
 
+from data_model import ESTATE_FIELDS, SOURCE_FIELDS, island_for
+
 ROOT = Path(r"D:\Workspace\infra-id")
 RAW = ROOT / "data" / "raw" / "2026-11-06"
 CURATED = ROOT / "data" / "curated"
 DERIVED = ROOT / "data" / "derived"
-
-ESTATE_FIELDS = [
-    "id", "name", "type", "province", "regency", "lat", "lon", "precision",
-    "area_ha", "developer", "status", "sector_focus", "legal_basis",
-    "established_year", "website", "source_id", "last_verified", "notes",
-]
-SOURCE_FIELDS = [
-    "id", "publisher", "title", "url", "published_on", "retrieved_on",
-    "source_type", "archive_path", "licence", "notes",
-]
 
 SEZ_LOCATION = {
     "batam-tourism-and-international-healthcare": ("Kepulauan Riau", "Kota Batam"),
@@ -207,16 +199,22 @@ def main() -> None:
                 "type": "both" if overlap else "sez",
                 "province": province,
                 "regency": regency,
+                "island": island_for(province),
                 "lat": f"{detail['latitude']:.5f}",
                 "lon": f"{detail['longitude']:.5f}",
                 "precision": "approximate",
+                "coordinate_source": "official",
                 "area_ha": fmt_num(area),
                 "developer": detail["developer"],
+                "developer_org_id": "",
                 "status": "operating",
                 "sector_focus": detail["category"],
                 "legal_basis": detail["legalBasis"],
                 "established_year": parse_year(detail["legalBasis"]),
                 "website": "",
+                "occupancy_pct": "",
+                "kemenperin_id": "",
+                "sez_id": slug,
                 "source_id": source_id,
                 "last_verified": "2026-11-06",
                 "notes": notes,
@@ -231,6 +229,9 @@ def main() -> None:
                 "published_on": "",
                 "retrieved_on": "2026-11-06",
                 "source_type": "official",
+                "language": "id",
+                "snapshot_hash": "",
+                "accessed_via": "",
                 "archive_path": f"data/raw/2026-11-06/kek_{slug}.html",
                 "licence": "Government public data; check portal terms",
                 "notes": "Area, developer, legal basis and coordinates parsed from the page payload.",
@@ -270,16 +271,22 @@ def main() -> None:
                 "type": "industrial_estate",
                 "province": row["province"],
                 "regency": row["regency"],
+                "island": island_for(row["province"]),
                 "lat": f'{coord["lat"]:.5f}',
                 "lon": f'{coord["lon"]:.5f}',
                 "precision": "regency",
+                "coordinate_source": "regency",
                 "area_ha": fmt_num(parse_area(row["area"])),
                 "developer": row["developer"],
+                "developer_org_id": "",
                 "status": "operating",
                 "sector_focus": "",
                 "legal_basis": "",
                 "established_year": "",
                 "website": "",
+                "occupancy_pct": "",
+                "kemenperin_id": "",
+                "sez_id": "",
                 "source_id": "src-bajra-kawasan-industri-2024",
                 "last_verified": "2026-11-06",
                 "notes": note,
@@ -295,6 +302,9 @@ def main() -> None:
             "published_on": "2024-08-17",
             "retrieved_on": "2026-11-06",
             "source_type": "secondary",
+            "language": "id",
+            "snapshot_hash": "",
+            "accessed_via": "",
             "archive_path": "data/raw/2026-11-06/bajra_kawasan_industri.html",
             "licence": "Article; data attributed to Kemenperin",
             "notes": "159 estates. Kemenperin reported 179 estates in 2026, so this is a partial snapshot.",

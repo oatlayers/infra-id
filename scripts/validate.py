@@ -7,16 +7,22 @@ Exits non-zero on any error.
 from __future__ import annotations
 
 import csv
+import json
 import re
 import sys
 from datetime import date
 from pathlib import Path
 
 from data_model import (
+    COORDINATE_SOURCES,
     CURATED,
     ESTATE_STATUSES,
     ESTATE_TYPES,
+    EVENT_TYPES,
+    GEOMETRY_KINDS,
     INSTRUMENTS,
+    ISLANDS,
+    LANGUAGES,
     LAW_LEVELS,
     ORG_TYPES,
     PRECISIONS,
@@ -24,10 +30,12 @@ from data_model import (
     ROOT,
     ROLES,
     SECTORS,
+    SEGMENT_TYPES,
     SOURCE_TYPES,
     STAGES,
     STATUSES,
     TABLES,
+    VERIFICATIONS,
     as_int,
     is_blank,
     read_csv,
@@ -95,6 +103,14 @@ def check_number(value: str, field: str, where: str, minimum: float = 0.0) -> fl
     return number
 
 
+def check_year(value: str, field: str, where: str) -> int | None:
+    year = as_int(value)
+    if year is None or not 1900 <= year <= 2030:
+        err(f"{where}: {field} is not a plausible year")
+        return None
+    return year
+
+
 def main() -> None:
     check_columns()
     if errors:
@@ -109,18 +125,25 @@ def main() -> None:
     sources = read_csv(CURATED / "sources.csv")
     project_sources = read_csv(CURATED / "project_sources.csv")
     external_ids = read_csv(CURATED / "project_external_ids.csv")
+    aliases = read_csv(CURATED / "project_aliases.csv")
     investments = read_csv(CURATED / "investments.csv")
     laws = read_csv(CURATED / "laws.csv")
     project_laws = read_csv(CURATED / "project_laws.csv")
+    events = read_csv(CURATED / "project_events.csv")
+    geometry = read_csv(CURATED / "project_geometry.csv")
     corridors = read_csv(CURATED / "corridors.csv")
     segments = read_csv(CURATED / "corridor_segments.csv")
     estates = read_csv(CURATED / "estates.csv")
+    estate_sources = read_csv(CURATED / "estate_sources.csv")
+    coverage = read_csv(CURATED / "coverage_targets.csv")
 
     project_ids = {row["id"] for row in projects}
     org_ids = {row["id"] for row in organizations}
     source_ids = {row["id"] for row in sources}
     corridor_ids = {row["id"] for row in corridors}
     law_ids = {row["id"] for row in laws}
+    estate_ids = {row["id"] for row in estates}
+    geometry_ids = {row["id"] for row in geometry}
 
     seen: set[str] = set()
     for row in projects:
@@ -130,8 +153,9 @@ def main() -> None:
         seen.add(row["id"])
         check_id(row["id"], where)
 
-        for field in ("name", "status_basis", "province", "route", "lat", "lon",
-                      "precision", "psn", "last_verified", "notes"):
+        for field in ("name", "status_basis", "island", "province", "route", "lat",
+                      "lon", "precision", "psn", "status_as_of", "verification",
+                      "last_verified", "notes"):
             if is_blank(row[field]):
                 err(f"{where}: missing {field}")
 
@@ -139,7 +163,10 @@ def main() -> None:
         check_enum(row["status"], STATUSES, "status", where)
         check_enum(row["precision"], PRECISIONS, "precision", where)
         check_enum(row["psn"], PSN_VALUES, "psn", where)
+        check_enum(row["island"], ISLANDS, "island", where)
+        check_enum(row["verification"], VERIFICATIONS, "verification", where)
         check_date(row["last_verified"], f"{where} last_verified")
+        check_date(row["status_as_of"], f"{where} status_as_of")
 
         if row["corridor_id"] and row["corridor_id"] not in corridor_ids:
             err(f"{where}: unknown corridor_id {row['corridor_id']!r}")
@@ -170,6 +197,10 @@ def main() -> None:
             err(f"{where}: {row['status']} requires opened_year")
         if row["status"] == "recently_completed" and opened is not None and opened < 2024:
             err(f"{where}: recently_completed must have opened_year >= 2024")
+        if row["opened_date"]:
+            check_date(row["opened_date"], f"{where} opened_date")
+        if row["expected_open_year"]:
+            check_year(row["expected_open_year"], "expected_open_year", where)
 
         if bool(row["capacity"]) != bool(row["capacity_unit"]):
             err(f"{where}: capacity and capacity_unit must be set together")
@@ -228,7 +259,7 @@ def main() -> None:
             err(f"{where}: duplicate id")
         seen.add(row["id"])
         check_id(row["id"], where)
-        for field in ("publisher", "title", "url", "retrieved_on", "source_type"):
+        for field in ("publisher", "title", "url", "retrieved_on", "source_type", "language"):
             if is_blank(row[field]):
                 err(f"{where}: missing {field}")
         check_url(row["url"], where)
@@ -236,6 +267,7 @@ def main() -> None:
         if row["published_on"]:
             check_date(row["published_on"], f"{where} published_on")
         check_enum(row["source_type"], SOURCE_TYPES, "source_type", where)
+        check_enum(row["language"], LANGUAGES, "language", where)
         if row["archive_path"] and not (ROOT / row["archive_path"]).exists():
             err(f"{where}: archive_path does not exist: {row['archive_path']}")
 
@@ -249,6 +281,8 @@ def main() -> None:
             err(f"{where}: unknown source")
         if not row["claim"]:
             err(f"{where}: missing claim")
+        if row["claim_date"]:
+            check_date(row["claim_date"], f"{where} claim_date")
         projects_with_source.add(row["project_id"])
         key = (row["project_id"], row["source_id"], row["claim"])
         if key in seen:
@@ -267,6 +301,20 @@ def main() -> None:
         key = (row["project_id"], row["system"])
         if key in seen:
             err(f"{where}: duplicate external id")
+        seen.add(key)
+
+    seen = set()
+    for row in aliases:
+        where = f"project_aliases {row['project_id']}/{row['alias']}"
+        if row["project_id"] not in project_ids:
+            err(f"{where}: unknown project")
+        if not row["alias"]:
+            err(f"{where}: missing alias")
+        if row["source_id"] and row["source_id"] not in source_ids:
+            err(f"{where}: unknown source")
+        key = (row["project_id"], row["alias"])
+        if key in seen:
+            err(f"{where}: duplicate alias")
         seen.add(key)
 
     seen = set()
@@ -323,6 +371,46 @@ def main() -> None:
             err(f"{where}: missing relation")
 
     seen = set()
+    for row in events:
+        where = f"project_events {row['id'] or '?'}"
+        if row["id"] in seen:
+            err(f"{where}: duplicate id")
+        seen.add(row["id"])
+        check_id(row["id"], where)
+        if row["project_id"] not in project_ids:
+            err(f"{where}: unknown project")
+        if row["source_id"] and row["source_id"] not in source_ids:
+            err(f"{where}: unknown source")
+        if is_blank(row["event_date"]):
+            err(f"{where}: missing event_date")
+        else:
+            check_date(row["event_date"], f"{where} event_date")
+        check_enum(row["event_type"], EVENT_TYPES, "event_type", where)
+        if not row["description"]:
+            err(f"{where}: missing description")
+
+    seen = set()
+    for row in geometry:
+        where = f"project_geometry {row['id'] or '?'}"
+        if row["id"] in seen:
+            err(f"{where}: duplicate id")
+        seen.add(row["id"])
+        check_id(row["id"], where)
+        if row["project_id"] not in project_ids:
+            err(f"{where}: unknown project")
+        check_enum(row["kind"], GEOMETRY_KINDS, "kind", where)
+        check_enum(row["precision"], PRECISIONS, "precision", where)
+        if row["source_id"] and row["source_id"] not in source_ids:
+            err(f"{where}: unknown source")
+        if not row["geometry"]:
+            err(f"{where}: missing geometry")
+        else:
+            try:
+                json.loads(row["geometry"])
+            except json.JSONDecodeError:
+                err(f"{where}: geometry is not valid JSON")
+
+    seen = set()
     for row in corridors:
         where = f"corridors {row['id'] or '?'}"
         if row["id"] in seen:
@@ -355,12 +443,22 @@ def main() -> None:
             err(f"{where}: unknown corridor")
         if row["source_id"] and row["source_id"] not in source_ids:
             err(f"{where}: unknown source")
+        if row["geometry_id"] and row["geometry_id"] not in geometry_ids:
+            err(f"{where}: unknown geometry")
         check_number(row["length_km"], "length_km", where, minimum=0.000001)
+        if row["segment_type"]:
+            check_enum(row["segment_type"], SEGMENT_TYPES, "segment_type", where)
         check_enum(row["status"], STATUSES, "status", where)
         if row["opened_year"]:
-            year = as_int(row["opened_year"])
-            if year is None or not 1900 <= year <= 2030:
-                err(f"{where}: implausible opened_year")
+            check_year(row["opened_year"], "opened_year", where)
+        if row["expected_open_year"]:
+            check_year(row["expected_open_year"], "expected_open_year", where)
+        check_number(row["operational_km"], "operational_km", where)
+        check_number(row["construction_km"], "construction_km", where)
+        if row["progress_pct"]:
+            progress = check_number(row["progress_pct"], "progress_pct", where)
+            if progress is not None and not 0 <= progress <= 100:
+                err(f"{where}: progress_pct must be 0-100")
 
     seen = set()
     for row in estates:
@@ -369,20 +467,28 @@ def main() -> None:
             err(f"{where}: duplicate id")
         seen.add(row["id"])
         check_id(row["id"], where)
-        for field in ("name", "type", "province", "regency", "lat", "lon",
-                      "precision", "area_ha", "developer", "status",
-                      "source_id", "last_verified", "notes"):
+        for field in ("name", "type", "province", "regency", "island", "lat", "lon",
+                      "precision", "coordinate_source", "area_ha", "developer",
+                      "status", "source_id", "last_verified", "notes"):
             if is_blank(row[field]):
                 err(f"{where}: missing {field}")
         check_enum(row["type"], ESTATE_TYPES, "type", where)
         check_enum(row["status"], ESTATE_STATUSES, "status", where)
         check_enum(row["precision"], PRECISIONS, "precision", where)
+        check_enum(row["island"], ISLANDS, "island", where)
+        check_enum(row["coordinate_source"], COORDINATE_SOURCES, "coordinate_source", where)
         if row["source_id"] not in source_ids:
             err(f"{where}: unknown source")
+        if row["developer_org_id"] and row["developer_org_id"] not in org_ids:
+            err(f"{where}: unknown developer_org_id")
         check_date(row["last_verified"], f"{where} last_verified")
         area = check_number(row["area_ha"], "area_ha", where, minimum=0.0001)
         if area is None:
             err(f"{where}: area_ha must be positive")
+        if row["occupancy_pct"]:
+            occupancy = check_number(row["occupancy_pct"], "occupancy_pct", where)
+            if occupancy is not None and occupancy > 100:
+                err(f"{where}: occupancy_pct must be <= 100")
         try:
             lat = float(row["lat"])
             lon = float(row["lon"])
@@ -398,6 +504,39 @@ def main() -> None:
         if row["website"]:
             check_url(row["website"], where)
 
+    seen = set()
+    for row in estate_sources:
+        where = f"estate_sources {row['estate_id']}/{row['source_id']}"
+        if row["estate_id"] not in estate_ids:
+            err(f"{where}: unknown estate")
+        if row["source_id"] not in source_ids:
+            err(f"{where}: unknown source")
+        if not row["claim"]:
+            err(f"{where}: missing claim")
+        if row["claim_date"]:
+            check_date(row["claim_date"], f"{where} claim_date")
+        key = (row["estate_id"], row["source_id"], row["claim"])
+        if key in seen:
+            err(f"{where}: duplicate claim")
+        seen.add(key)
+
+    seen = set()
+    for row in coverage:
+        where = f"coverage_targets {row['layer'] or '?'}"
+        if not row["layer"]:
+            err(f"{where}: missing layer")
+        if row["layer"] in seen:
+            err(f"{where}: duplicate layer")
+        seen.add(row["layer"])
+        for field in ("label", "unit", "universe"):
+            if is_blank(row[field]):
+                err(f"{where}: missing {field}")
+        target = as_int(row["target_count"])
+        if target is None or target <= 0:
+            err(f"{where}: target_count must be a positive integer")
+        if row["source_id"] and row["source_id"] not in source_ids:
+            err(f"{where}: unknown source")
+
     if errors:
         print(f"{len(errors)} error(s):")
         for error in errors:
@@ -407,7 +546,8 @@ def main() -> None:
     print(
         f"OK: {len(projects)} projects, {len(estates)} estates, "
         f"{len(organizations)} organisations, {len(sources)} sources, "
-        f"{len(corridors)} corridors, {len(investments)} investments"
+        f"{len(corridors)} corridors, {len(segments)} segments, "
+        f"{len(events)} events, {len(geometry)} geometry, {len(investments)} investments"
     )
 
 

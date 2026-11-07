@@ -1,18 +1,23 @@
 # Indonesia Infrastructure Map
 
-A simple map of major infrastructure in Indonesia: roads, airports, seaports and factories that are under construction, planned, or recently completed.
+A curated static atlas of major infrastructure in Indonesia: roads, airports, seaports, railways and factories that are operating, under construction, planned or stalled.
 
 **Current execution plan:** [`plan-v3.md`](plan-v3.md) (7 November 2026). This
 file records scope, decisions, architecture and history; `plan-v3.md` is the
 phase-by-phase backlog for the site overhaul and the data-completeness work.
+Phase 1 decisions and budgets are recorded in
+[`docs/phase-1-decisions.md`](docs/phase-1-decisions.md).
 
-**Status:** building. Started 2026-11-06. Decisions agreed 2026-11-06. The v2 data foundation is in place: normalised curated tables, km fields, an `operating` status, Trans corridor summaries and an estate/SEZ dataset (178 rows, not mapped). 27 toll roads are live. Airports, seaports, railways and factories are being added.
+**Status:** Phase 1 of the v3 overhaul is complete (2026-11-07). The site has four views, search, filters, a detail drawer, a new basemap, a mobile bottom sheet and a generated Data page. Schema v3 is frozen. 27 toll roads and 178 estates/SEZs are in the curated tables. **Not published:** there is no GitHub remote or Pages deployment, and publishing is explicitly deferred.
+
+**Publishing constraint:** do not create a GitHub remote, push the repository, deploy GitHub Pages or publish the site until the repository owner asks for it explicitly. The release target is a local build that works from `file://` and a local HTTP server.
 
 ## Goal
 
-- One page with a map of Indonesia. Projects are coloured by status and can be filtered by sector.
-- Clicking a project shows its details, its sources, and when it was last verified.
-- The site says it is "major, curated, not exhaustive".
+- A static atlas of Indonesia with four views: Explore, Corridors, Estates and Data.
+- Projects are coloured by status and filterable by sector, status, island, province, PSN, corridor, precision and verification age.
+- Clicking a project shows its details, every source, the evidence behind the status and when it was last verified.
+- The site says it is "major, curated, not exhaustive" and reports its coverage honestly.
 
 ## Scope
 
@@ -43,7 +48,7 @@ phase-by-phase backlog for the site overhaul and the data-completeness work.
 - Include `stalled` projects.
 - v1 covers toll roads only. PSN roads and bridges, airports, ports and factories come after.
 - Leave out the three planned strait bridges (Bali, Malacca, Sunda) for now.
-- Language: English with Indonesian names. Stack: Python scripts, plain HTML with Leaflet, GitHub Pages.
+- Language: English with Indonesian names. Stack: Python scripts, plain HTML with Leaflet, offline static site. Publishing is deferred; do not push to GitHub.
 - Run `git init` in this folder.
 
 ## Sources
@@ -118,17 +123,22 @@ this.
 
 | File | One row per | Key fields |
 |---|---|---|
-| `projects.csv` | project | `id`, `name`, `sector`, `status`, `corridor_id`, `province`, `route`, `length_km`, `operational_km`, `construction_km`, `investment_idr_t`, `precision`, `last_verified` |
+| `projects.csv` | project | `id`, `name`, `sector`, `status`, `corridor_id`, `island`, `province`, `route`, km fields, `investment_idr_t`, `psn`, `status_as_of`, `verification`, `precision`, `last_verified` |
 | `organizations.csv` | company or agency | `id`, `name`, `short_name`, `org_type`, `country_code`, `parent_id`, `website` |
 | `project_organizations.csv` | project–organisation role | `project_id`, `org_id`, `role` (sponsor, operator, contractor, lender, off-taker), `share_pct`, `start_year`, `end_year`, `source_id` |
-| `investments.csv` | commitment or tranche | `id`, `project_id`, `investor_org_id`, `amount`, `currency`, `amount_idr`, `fx_date`, `year`, `stage`, `instrument`, `share_pct`, `source_id` |
-| `sources.csv` | source document | `id`, `publisher`, `title`, `url`, `published_on`, `retrieved_on`, `source_type`, `archive_path`, `licence`, `notes` |
-| `project_sources.csv` | project–source claim | `project_id`, `source_id`, `claim` (status, length, investment, opening) |
+| `investments.csv` | commitment or tranche | `id`, `project_id`, `investor_org_id`, `amount`, `currency`, `amount_idr_t`, `fx_date`, `year`, `stage`, `instrument`, `share_pct`, `source_id` |
+| `sources.csv` | source document | `id`, `publisher`, `title`, `url`, `published_on`, `retrieved_on`, `source_type`, `language`, `snapshot_hash`, `accessed_via`, `archive_path`, `licence`, `notes` |
+| `project_sources.csv` | project–source claim | `project_id`, `source_id`, `claim` (status, length, investment, opening), `claim_value`, `claim_date` |
+| `project_aliases.csv` | project alias | `project_id`, `alias`, `source_id` |
+| `project_events.csv` | dated event | `project_id`, `event_date`, `event_type`, `description`, `source_id` |
+| `project_geometry.csv` | project geometry | `project_id`, `kind` (point, line, polygon), GeoJSON `geometry`, `precision`, `source_id` |
 | `laws.csv` | regulation | `id`, `title`, `number`, `year`, `level`, `url`, `status` |
 | `project_laws.csv` | project–law relation | `project_id`, `law_id`, `relation` |
 | `corridors.csv` | Trans corridor | `id`, `name`, `definition`, `total_km`, `operational_km`, `construction_km`, `planned_km`, `metric`, `as_of`, `source_id` |
-| `estates.csv` | industrial estate or SEZ | `id`, `name`, `type`, `province`, `regency`, `area_ha`, `developer`, `status`, `sector_focus`, `legal_basis`, `source_id` |
-| `geometries.csv` | project geometry | `project_id`, `kind` (point, line, polygon), `geojson`, `precision`, `source_id` |
+| `corridor_segments.csv` | corridor segment | `segment_type`, km fields, progress, status, opening year, geometry link |
+| `estates.csv` | industrial estate or SEZ | `id`, `name`, `type`, `province`, `regency`, `island`, `area_ha`, `developer`, `status`, `coordinate_source`, `sector_focus`, `legal_basis`, external ids, `source_id` |
+| `estate_sources.csv` | estate–source claim | `estate_id`, `source_id`, `claim`, `claim_value`, `claim_date` |
+| `coverage_targets.csv` | coverage layer | `layer`, `label`, `unit`, `target_count`, `universe`, `source_id` |
 
 ### Why this shape
 
@@ -217,7 +227,7 @@ a factory subtype until there are enough to separate.
 **Status.** The strict two-year window excludes almost every airport and port.
 The Kemenhub PSN review of 19 February 2026 counts 35 transport PSNs: 29 are
 complete or operating, 18 are proposed for removal from the PSN list, and only 6
-are still in construction. All seven PSN airports opened between 2018 and 2023.
+are still in construction. All seven PSN airports opened between 2020 and 2023.
 Proposal: add an `operating` status for major assets opened before 2024-11-06,
 kept distinct from `recently_completed`. Without it the airports section would
 contain only Bali Utara, which is planned.
@@ -226,7 +236,7 @@ contain only Bali Utara, which is planned.
 
 | Mode | PSNs | Status |
 |---|---:|---|
-| Airports | 7 | all operating (2018–2023); no PSN airport under construction |
+| Airports | 7 | all operating (2020–2023); no PSN airport under construction |
 | Seaports | 15 | 13 operating (11 completed, plus Patimban and Benoa); Patimban Phase I-2 under construction; New Palembang and Muaro Jambi planned |
 | Railways | 13 | 9 operating; MRT N-S 48.14% (Phase 2A 55.89%); LRT Velodrome–Manggarai 89.22%; MRT E-W and KA logistik Kaltim planned |
 
@@ -254,7 +264,8 @@ zone coordinates, area, developer, legal basis and category. Industrial-estate
 rows carry developer, regency/province and area, with regency-centroid
 coordinates (`precision=regency`). The list is close to, but not the same as, the
 179 estates Kemenperin reported in 2026: 2025 additions and exact boundaries are
-still missing. The data is validated but not read by the site build yet.
+still missing. The data is validated, read by the site build and shown in the
+Estates table; the map layer remains off.
 
 **Known gap.** Nine estates announced in 2025 are not in the table: IPIP (listed
 by Kemenperin under Central Sulawesi, though Pomalaa is in Southeast Sulawesi),
@@ -262,9 +273,10 @@ I-Sentra Lamongan, Huadi Bantaeng, Cikembar II, Losarang, Purwakarta Integrated
 Industrial Park, Pulau Penebang, Seafer and Tembesi. Add them with individual
 sources for area, developer and coordinates.
 
-**Site changes.** Enable railway, airport, seaport and factory filters; show km
-bars and investment or capacity in the detail panel; add a corridor progress
-section; show aggregate km by sector in the header. Keep the offline basemap.
+**Site changes.** Done in v3 Phase 1: four views, sector/status/island filters,
+search, km and operational-share bars, investment or capacity in the drawer, a
+corridor section, generated coverage in the header and Data view, and the
+offline basemap. Railway, airport, seaport and factory rows arrive in Phase 2.
 
 **Decided 2026-11-06.**
 
@@ -280,16 +292,14 @@ data/UI~~ → ~~industrial estates and SEZs (data only)~~ → Kemenhub transport
 
 ## Phases
 
-0. **Plan and decisions.** Done. This file.
+0. **Plan and decisions.** Done. This file and `plan-v3.md`.
 1. **Toll roads.** Done for batch 1: 27 curated rows in `data/projects.csv`, checked against BPJT. Remaining gaps listed under Batch 1 status.
-2. **Official pipeline.** Kemenhub transport PSN deck and KPPIP pages snapshotted; the full PSN/KPBU/INAPROC pass is still open. ← in progress
-3. **Industrial estates and SEZs.** First pass done: 178 records in `data/curated/estates.csv`, validated. Remaining: 2025 additions, exact boundaries and better coordinates. Data only; no map layer yet.
-4. **Transport batch.** Railways, airports and seaports from Kemenhub and KPPIP. Enable the sector filters with real data. ← next
-5. **Factories.** PSN smelters, GEM steel plants, large nickel/aluminium/copper and battery projects.
-6. **Geocoding.** Replace midpoint coordinates with better points or lines; set precision per row.
-7. **Map page.** v2 with km bars, operating status and corridor tab done. Revisit after the transport batch.
-8. **Publish.** GitHub Pages workflow once the repo is pushed.
-9. **Monthly refresh.** Re-fetch sources, review status changes, update `last_verified`.
+2. **Official pipeline.** Kemenhub transport PSN deck and KPPIP pages snapshotted; the full PSN/KPBU/INAPROC pass is still open.
+3. **Industrial estates and SEZs.** First pass done: 178 records in `data/curated/estates.csv`, validated and shown as a table. Remaining: 2025 additions, exact boundaries and better coordinates. Map layer still off.
+4. **v3 Phase 1 — foundation and experience.** Done 2026-11-07: design tokens, bundled fonts, four-view shell, search, filters, detail drawer, map v2, mobile sheet, Data view and schema v3. See `docs/phase-1-decisions.md`.
+5. **v3 Phase 2 — data completion.** Transport PSN, estate reconciliation and coordinates, factories, roads and corridor segments. ← next
+6. **v3 Phase 3 — trust and local release.** Claims, freshness, Data view v2, downloads, conflicts, local CI and hand-off. **Do not push to GitHub or publish.**
+7. **Monthly refresh.** Re-fetch sources, review status changes, update `last_verified`, rebuild and verify locally.
 
 **Done for v1:** toll roads on the map, each with a source and dates. Validation passes. The page states its coverage.
 
@@ -313,6 +323,8 @@ data/UI~~ → ~~industrial estates and SEZs (data only)~~ → Kemenhub transport
 - **AidData:** ODC-BY. Credit AidData.
 - **Natural Earth:** public domain, no attribution required. The page credits it anyway.
 - **Leaflet 1.9.4:** BSD-2-Clause, vendored in `site/vendor/leaflet/` with its licence file.
+- **Leaflet.markercluster 1.5.3:** MIT, vendored in `site/vendor/markercluster/`.
+- **Inter and Source Serif 4:** SIL OFL 1.1, bundled under `site/assets/fonts/` with their licence files.
 - **Government data:** check each dataset's licence on its portal.
 
 ## Next steps
@@ -320,9 +332,10 @@ data/UI~~ → ~~industrial estates and SEZs (data only)~~ → Kemenhub transport
 1. ~~Answer the open decisions.~~ Done 2026-11-06.
 2. ~~Save the Wikipedia snapshot to `data/raw/2026-11-06/`.~~ Done.
 3. ~~Extract the toll roads into `data/projects.csv`.~~ Done: 27 rows, validation passing.
-4. ~~Build the Leaflet page from `data/projects.csv`.~~ Done: `site/index.html`, checked at desktop and mobile widths.
+4. ~~Build the Leaflet page from `data/projects.csv`.~~ Done and superseded by the v3 shell.
 5. ~~Normalise the data model and add km/corridor support.~~ Done.
 6. ~~Gather the industrial estate and SEZ first pass.~~ Done: 178 rows, validated.
-7. Add the Kemenhub transport batch (rail, ports, airports).
-8. Add the factories batch.
-9. Publish to GitHub Pages.
+7. ~~v3 Phase 1: shell, experience, map v2, schema v3.~~ Done 2026-11-07.
+8. Add the Kemenhub transport batch (rail, ports, airports). ← next
+9. Add the factories batch.
+10. Complete Phase 2, then Phase 3. Do **not** publish or push to GitHub.

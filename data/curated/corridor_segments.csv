@@ -1,1 +1,1 @@
-id,corridor_id,name,length_km,status,opened_year,source_id,notes
+id,corridor_id,name,segment_type,length_km,operational_km,construction_km,progress_pct,status,opened_year,expected_open_year,geometry_id,source_id,notes
