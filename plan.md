@@ -2,6 +2,10 @@
 
 A simple map of major infrastructure in Indonesia: roads, airports, seaports and factories that are under construction, planned, or recently completed.
 
+**Current execution plan:** [`plan-v3.md`](plan-v3.md) (7 November 2026). This
+file records scope, decisions, architecture and history; `plan-v3.md` is the
+phase-by-phase backlog for the site overhaul and the data-completeness work.
+
 **Status:** building. Started 2026-11-06. Decisions agreed 2026-11-06. The v2 data foundation is in place: normalised curated tables, km fields, an `operating` status, Trans corridor summaries and an estate/SEZ dataset (178 rows, not mapped). 27 toll roads are live. Airports, seaports, railways and factories are being added.
 
 ## Goal

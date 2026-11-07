@@ -10,6 +10,9 @@ curated, not exhaustive**.
 - **Last verification:** 6 November 2026.
 - **Status:** v2 data foundation in place. Not deployed. The estate/SEZ dataset is
   gathered; airports, seaports, railways and factories are still to come.
+- **Overhaul plan:** [`plan-v3.md`](plan-v3.md) is the execution backlog for the
+  site redesign and the data-completeness work (7 November 2026). Read it before
+  starting a new batch.
 
 ## What it is, and what it is not
 
@@ -403,12 +406,14 @@ Validating is not the same as verifying. Validation catches malformed rows; the
 
 ## Where to pick up
 
-- **Current task:** the estate/SEZ first pass is done (178 rows). Refine it by
+- **Current plan:** [`plan-v3.md`](plan-v3.md). Start with Phase 0 (decisions
+  and coverage targets), then Phase 1 (shell and design foundation). The
+  transport PSN batch is Phase 3; the estate refinement is Phase 4.
+- **Estate first pass:** 178 rows in `data/curated/estates.csv`. Refine it by
   adding the 2025 estates, replacing regency centroids with estate boundaries or
   site coordinates, and verifying SEZ operational status. Do not map it yet.
-- **Next task:** the transport PSN batch (rail, ports, airports). Start from
-  `data/derived/kemenhub_psn_progress_2026.txt` and the KPPIP HTML snapshots.
-- **Before changing schema:** read the Data architecture section in `plan.md`.
+- **Before changing schema:** read the Data architecture section in `plan.md`
+  and the schema section in `plan-v3.md`.
 - **Before adding a status:** the allowed set is in `scripts/data_model.py` and
   enforced by `validate.py`.
 - **When in doubt:** record the conflict in `notes` and cite both sources.
