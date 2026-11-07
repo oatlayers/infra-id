@@ -1211,7 +1211,7 @@
       }).join('') + '</ul></section>' +
 
       '<section class="data-section"><h3>Inclusion rules</h3>' +
-      '<p><b>Roads:</b> major toll corridors and PSN national roads. <b>Airports, seaports and factories:</b> PSN or KPBU designated, or investment of at least Rp 1 trillion. <b>Estates:</b> the Kemenperin industrial-estate list and official SEZ profiles, one row per zone.</p>' +
+      '<p><b>Roads:</b> major toll corridors and PSN national roads. <b>Airports and seaports:</b> PSN or KPBU designated. <b>Factories:</b> PSN manufacturing plants or private plants with investment of at least Rp 1 trillion; estates and pure mining pits are excluded. <b>Estates:</b> the Kemenperin industrial-estate list and official SEZ profiles, one row per zone.</p>' +
       '<p>The Bali, Malacca and Sunda strait bridges are excluded by scope. Estates remain table-only until their coordinates are verified.</p></section>' +
 
       '<section class="data-section"><h3>Known gaps</h3><ul class="gap-list">' +
@@ -1222,7 +1222,8 @@
       fmtNum(sectorCounts.railway || 0) + ' rail, ' + fmtNum(sectorCounts.airport || 0) +
       ' airports, ' + fmtNum(sectorCounts.seaport || 0) +
       ' seaports). Status is as of 19 February 2026, the date of the Kemenhub review.</li>' +
-      '<li>Factories are not on the map yet. Transport points are approximate; the PSN review gives no rail length or asset capacity.</li>' +
+      '<li>Factories and smelters: ' + fmtNum(sectorCounts.factory || 0) +
+      ' plants mapped. Plant points are approximate; capacity and investment are only as good as the cited company or press source. Transport points are also approximate, and the PSN review gives no rail length or asset capacity.</li>' +
       '<li>Estate coverage: ' + fmtNum(estateStats.industrial || 0) +
       ' industrial-estate designations and ' + fmtNum(estateStats.sez || 0) +
       ' SEZs (' + fmtNum(estateStats.total || 0) + ' rows, ' + fmtNum(estateStats.both || 0) +
@@ -1250,6 +1251,7 @@
       '<section class="data-section"><h3>Downloads</h3>' + downloadList() + '</section>' +
 
       '<section class="data-section"><h3>Changelog</h3><ul class="changelog">' +
+      '<li><time>8 Nov 2026</time><span>Added 27 factories and smelters: 19 operating, 3 recently completed, 4 under construction and 1 stalled, with operators, capacity, investment and source claims.</span></li>' +
       '<li><time>8 Nov 2026</time><span>Added 15 PSN toll corridors from BPJT; roads now 42 of the 45 target corridors.</span></li>' +
       '<li><time>8 Nov 2026</time><span>Estate reconciliation: a 19-name gap ledger and OSM/Nominatim coordinates for 20 of the 40 largest industrial estates.</span></li>' +
       '<li><time>7 Nov 2026</time><span>Added the 35 transport PSN projects: 13 railways, 7 airports and 15 seaports, with status and investment claims from the Kemenhub review.</span></li>' +

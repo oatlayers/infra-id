@@ -575,7 +575,7 @@ data/curated/              human-reviewed source of truth
         ├─ validate.py     schema, enums, FKs, ranges, freshness
         ├─ build_projects.py
         ├─ build_estates.py
-        ├─ build_factories.py
+        ├─ add_factories.py
         ├─ build_events.py
         └─ build_coverage.py
         │
@@ -596,7 +596,9 @@ New scripts:
 |---|---|
 | `scripts/build_all.py` | Run validate → build → site in the correct order; used by CI |
 | `scripts/build_transport.py` | Extract the 35 PSN transport rows from the Kemenhub deck and KPPIP snapshots into staging |
-| `scripts/build_factories.py` | Extract and join the factory universe |
+| `scripts/add_factories.py` | Import the frozen factory universe, organisations, investments and claims |
+| `scripts/geocode_factories.py` | Refresh the cached Nominatim checks for factory coordinates (provenance only) |
+| `scripts/build_factories_ledger.py` | Write the reviewable 27-row factory ledger to `data/derived/` |
 | `scripts/build_events.py` | Build `project_events.csv` from curated event rows and status transitions |
 | `scripts/build_coverage.py` | Compare curated counts with `coverage_targets.csv`; write `data/coverage.csv` and site stats |
 | `scripts/freshness.py` | List rows older than six months; write a stale report |
@@ -658,13 +660,13 @@ source parse. Same pattern for transport rows if extraction is re-run.
 | Airports | 7 | 7 PSN | 0 | Kemenhub deck |
 | Seaports | 15 | 15 PSN | 0 | Kemenhub deck |
 | Transport PSN (all modes) | 35 | 35 | 0 | Kemenhub deck |
-| Factories | 0 | 20–30 major plants | 20–30 | PSN + Rp 1T |
+| Factories | 27 | 25 target (20–30 range) | 0 | PSN + Rp 1T; frozen universe in `data/derived/factories_2026.csv` |
 | Industrial estates | 160 | 179 | 19 | Kemenperin 2026; gap ledger in `data/derived/estate_gap_2026.csv` |
 | SEZs | 25 | 25 | 0 | KEK National Council |
 | Unique estates | 178 | ~197 | ~19 | Dedupe 179 + 25 − 7 |
 | Estate coordinates | 45 official/OSM of 178 | 178 verified | 133 regency | KEK profiles, OpenStreetMap/Nominatim |
 | Corridors | 4 | 5 with segments | 2–3 data gaps | Hutama Karya, Bina Marga |
-| Sources | 39 | 80–100 | 41–61 | — |
+| Sources | 82 | 80–100 | 0 | In range; 34 official, 25 secondary, 23 company |
 
 ### 5.2 Transport PSN: the 35 projects
 
@@ -736,7 +738,7 @@ the curated tables.
 | T4 | Curate the 15 seaport rows | Each has port type, capacity (TEU or tonnes), opened year, operator, coordinates |
 | T5 | Enrich investment, capacity, operators and aliases | Investment from the deck or an official source; capacity only when stated; operators added to `organizations.csv` |
 | T6 | Add sources and claims | Every row has a `project_sources` claim for status and for each numeric figure; conflicts in notes |
-| T7 | Validate and rebuild | `validate.py` passes; site payload contains 62 projects; filters return correct counts |
+| T7 | Validate and rebuild | `validate.py` passes; site payload contains every curated project; filters return correct counts |
 | T8 | Coverage check | 35/35 represented; any exclusion documented in the Data view |
 
 ### 5.3 Factories
@@ -993,10 +995,11 @@ tables); no preview deployment was made; the formal Lighthouse/axe audit and the
 ### Phase 2 — Data completion
 
 **Status: in progress, 8 November 2026. Track 2A complete; Track 2B partial;
-Track 2D partial (42/45 roads).** See `docs/phase-2-transport.md` for the
-extraction, status mapping and conflicts, `docs/phase-2-estates.md` for the
-19-name gap ledger and coordinate work, and `docs/phase-2-roads.md` for the
-BPJT additions.
+Track 2C complete; Track 2D partial (42/45 roads).** See
+`docs/phase-2-transport.md` for the extraction, status mapping and conflicts,
+`docs/phase-2-estates.md` for the 19-name gap ledger and coordinate work,
+`docs/phase-2-factories.md` for the factory universe, and
+`docs/phase-2-roads.md` for the BPJT additions.
 
 **Goal:** every layer meets its coverage target or has a documented gap. This
 phase adds the views that consume the new data: the corridor segment view and
@@ -1012,7 +1015,7 @@ the refined estate attributes. The estate table itself shipped in Phase 1.
 | T4 | Seaports | 15 curated rows with port type, capacity, opened year, operator | L | T1 |
 | T5 | Enrichment | Investment, capacity, aliases, organisations | M | T2–T4 |
 | T6 | Sources and claims | Every row has status and numeric claims; conflicts recorded | M | T5 |
-| T7 | Build and QA | Validation passes; 62 projects; filters and map correct | M | T6 |
+| T7 | Build and QA | Validation passes; every curated project in the payload; filters and map correct | M | T6 |
 | T8 | Coverage check | 35/35 represented; exclusions documented | S | T7 |
 
 **Track 2A completion log — 7 November 2026**
@@ -1023,7 +1026,7 @@ the refined estate attributes. The estate table itself shipped in Phase 1.
 | T2–T4 | 13 railways, 7 airports and 15 seaports in `data/curated/projects.csv`; status, location, coordinates, operators and years |
 | T5 | 13 new organisations, sponsor/owner/operator links, 67 aliases, investment for 14 rows |
 | T6 | 145 project claims; conflicts recorded in `notes` and `docs/phase-2-transport.md` |
-| T7 | `validate.py` passes; 62 projects; site rebuilt; filters show 13 rail, 7 air, 15 sea |
+| T7 | `validate.py` passes; site rebuilt; filters show 13 rail, 7 air, 15 sea |
 | T8 | Coverage 35/35; transport PSN row added to `coverage_targets.csv`; gaps for rail length, capacity and approximate coordinates documented |
 
 **Track 2B — Estates**
@@ -1060,6 +1063,19 @@ See `docs/phase-2-estates.md`.
 | F4 | Site integration | Factory filter, markers, detail figures | M | F2 |
 | F5 | Coverage check | 20–30 rows; every row has investment or capacity | S | F4 |
 
+**Track 2C status — 8 November 2026**
+
+| Item | Status | Evidence |
+|---|---|---|
+| F1 | Done | 27 plants frozen against the 20–30 target; inclusion/exclusion log in `docs/phase-2-factories.md` |
+| F2 | Done | 27 rows with status, capacity, approximate coordinates, status basis and notes; 18 with investment |
+| F3 | Done | 26 organisations and 18 investment rows; USD converted at Rp 16,500/USD for ranking |
+| F4 | Done | Factory sector filter, map glyph, clustering and drawer metrics; Data view copy updated |
+| F5 | Met | 27/25 coverage; all 27 have capacity; 17 official, 8 dual, 2 single-source |
+
+See `docs/phase-2-factories.md` and the frozen ledger
+`data/derived/factories_2026.csv`.
+
 **Track 2D — Roads and corridors**
 
 | ID | Item | Outcome / acceptance | Size | Depends |
@@ -1086,10 +1102,11 @@ See `docs/phase-2-roads.md`.
 
 **Exit criteria**
 
-- 35/35 transport PSN; 62 projects in the flat export.
+- 35/35 transport PSN; 104 projects in the flat export.
 - 179 industrial estates and 25 SEZs; the 19-name gap list is resolved or
   explained; no blanket `operating` status.
-- 20–30 factories, each with investment or capacity.
+- 27 factories, each with capacity and at least one source; investment where a
+  dated figure exists (18 of 27).
 - 40–50 road corridors; five corridors with segment tables; recent openings
   and stalled projects recorded.
 - Every row has coordinates, a source and a verification date; validation

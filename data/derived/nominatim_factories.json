@@ -1,0 +1,333 @@
+{
+  "Java Integrated Industrial and Port Estate Gresik": [
+    {
+      "name": "Java Integrated Industrial and Port Estate",
+      "display": "Java Integrated Industrial and Port Estate, Gresik, East Java, 61151, Indonesia",
+      "lat": "-7.0718746",
+      "lon": "112.6184591",
+      "type": "industrial"
+    }
+  ],
+  "PT Smelting Gresik": [
+    {
+      "name": "Smelting",
+      "display": "Smelting, Roomo, Gresik, East Java, Indonesia",
+      "lat": "-7.1367036",
+      "lon": "112.6370928",
+      "type": "industrial"
+    }
+  ],
+  "Benete Sumbawa Barat": [
+    {
+      "name": "Benete",
+      "display": "Benete, Sumbawa Barat, West Nusa Tenggara, 84356, Indonesia",
+      "lat": "-8.8962512",
+      "lon": "116.7716109",
+      "type": "village"
+    },
+    {
+      "name": "Benete",
+      "display": "Benete, Jalan Dermaga Benete, batas desa benete, Sumbawa Barat, West Nusa Tenggara, 84356, Indonesia",
+      "lat": "-8.8946739",
+      "lon": "116.7495389",
+      "type": "ferry_terminal"
+    },
+    {
+      "name": "batas desa benete",
+      "display": "batas desa benete, Sumbawa Barat, West Nusa Tenggara, Indonesia",
+      "lat": "-8.8948900",
+      "lon": "116.7767105",
+      "type": "administrative"
+    }
+  ],
+  "Indonesia Morowali Industrial Park": [
+    {
+      "name": "Indonesia Morowali Industrial Park",
+      "display": "Indonesia Morowali Industrial Park, Fatufia, Bahodopi, Morowali, Central Sulawesi, 94974, Indonesia",
+      "lat": "-2.8368497",
+      "lon": "122.1640256",
+      "type": "industrial"
+    }
+  ],
+  "IMIP Morowali": [
+    {
+      "name": "Bandar Udara IMIP",
+      "display": "Bandar Udara IMIP, Jalan Trans Bahomakmur, Bahomakmur, Bahodopi, Morowali, Central Sulawesi, 94974, Indonesia",
+      "lat": "-2.7997380",
+      "lon": "122.1404812",
+      "type": "aerodrome"
+    }
+  ],
+  "Dexin Steel Morowali": [],
+  "Weda Bay Industrial Park": [],
+  "Lelilef Sawai": [
+    {
+      "name": "Lelilef Sawai",
+      "display": "Lelilef Sawai, Halmahera Tengah, North Maluku, Indonesia",
+      "lat": "0.5866272",
+      "lon": "127.9860048",
+      "type": "village"
+    }
+  ],
+  "Tanjung Kawasi": [
+    {
+      "name": "Tanjung Kawasi",
+      "display": "Tanjung Kawasi, North Maluku, Indonesia",
+      "lat": "-1.6175766",
+      "lon": "127.3895399",
+      "type": "cape"
+    }
+  ],
+  "Morosi Konawe": [
+    {
+      "name": "Sampara/morosi",
+      "display": "Sampara/morosi, Konawe, Southeast Sulawesi, 93461, Indonesia",
+      "lat": "-3.9009679",
+      "lon": "122.3766083",
+      "type": "village"
+    },
+    {
+      "name": "Apotek Morosi Farma",
+      "display": "Apotek Morosi Farma, Rumbia, Konawe, Southeast Sulawesi, 93461, Indonesia",
+      "lat": "-3.9107764",
+      "lon": "122.4336008",
+      "type": "pharmacy"
+    }
+  ],
+  "Pajukukang Bantaeng": [
+    {
+      "name": "Pajukukang",
+      "display": "Pajukukang, Bantaeng, South Sulawesi, Indonesia",
+      "lat": "-5.5484130",
+      "lon": "120.0310528",
+      "type": "administrative"
+    }
+  ],
+  "Pomalaa Kolaka": [
+    {
+      "name": "Pomalaa",
+      "display": "Pomalaa, Kolaka, Southeast Sulawesi, Indonesia",
+      "lat": "-4.0500000",
+      "lon": "121.6000000",
+      "type": "village"
+    }
+  ],
+  "Bahodopi Morowali": [
+    {
+      "name": "Bahodopi",
+      "display": "Bahodopi, Morowali, Central Sulawesi, Indonesia",
+      "lat": "-2.7900000",
+      "lon": "122.1249000",
+      "type": "village"
+    },
+    {
+      "name": "Bahodopi",
+      "display": "Bahodopi, Morowali, Central Sulawesi, 94974, Indonesia",
+      "lat": "-2.9120551",
+      "lon": "121.9501904",
+      "type": "administrative"
+    }
+  ],
+  "Sorowako": [
+    {
+      "name": "Sorowako",
+      "display": "Sorowako, Luwu Timur, South Sulawesi, 92983, Indonesia",
+      "lat": "-2.5297864",
+      "lon": "121.3584581",
+      "type": "town"
+    },
+    {
+      "name": "Sorowako",
+      "display": "Sorowako, Luwu Timur, South Sulawesi, 91984, Indonesia",
+      "lat": "-2.5222569",
+      "lon": "121.3596453",
+      "type": "hamlet"
+    }
+  ],
+  "Kendawangan Ketapang": [
+    {
+      "name": "Kendawangan",
+      "display": "Kendawangan, Ketapang, West Kalimantan, Indonesia",
+      "lat": "-2.5470730",
+      "lon": "110.4246927",
+      "type": "administrative"
+    }
+  ],
+  "Well Harvest Winning Kendawangan": [
+    {
+      "name": "Well Harvest Winning Alumina Refinery",
+      "display": "Well Harvest Winning Alumina Refinery, Kendawangan, Ketapang, West Kalimantan, Indonesia",
+      "lat": "-2.3596658",
+      "lon": "110.1613084",
+      "type": "industrial"
+    },
+    {
+      "name": "Ketapang WHW Smelter Power Plant",
+      "display": "Ketapang WHW Smelter Power Plant, Kendawangan, Ketapang, West Kalimantan, Indonesia",
+      "lat": "-2.3666342",
+      "lon": "110.1572199",
+      "type": "industrial"
+    }
+  ],
+  "SGAR Mempawah": [],
+  "Sungai Kunyit Mempawah": [
+    {
+      "name": "Sungai Kunyit",
+      "display": "Sungai Kunyit, Mempawah, West Kalimantan, Indonesia",
+      "lat": "0.5100369",
+      "lon": "109.0070686",
+      "type": "administrative"
+    }
+  ],
+  "Kuala Tanjung Batu Bara": [
+    {
+      "name": "Kuala Tanjung",
+      "display": "Kuala Tanjung, Jalan Akses Inalum Kuala Tanjung, Indonesia Asahan Aluminium, Kwala Tanjung, Sei Suka, Batu Bara, North Sumatra, 21657, Indonesia",
+      "lat": "3.3595967",
+      "lon": "99.4499268",
+      "type": "station"
+    }
+  ],
+  "Inalum Kuala Tanjung": [
+    {
+      "name": "Jalan Akses Inalum Kuala Tanjung",
+      "display": "Jalan Akses Inalum Kuala Tanjung, Tanjung Gading, Tanjunggading, Sei Suka, Batu Bara, North Sumatra, 21657, Indonesia",
+      "lat": "3.3158256",
+      "lon": "99.3528836",
+      "type": "trunk"
+    },
+    {
+      "name": "Jalan Akses Inalum Kuala Tanjung",
+      "display": "Jalan Akses Inalum Kuala Tanjung, Kwala Tanjung, Sei Suka, Batu Bara, North Sumatra, 21658, Indonesia",
+      "lat": "3.3665338",
+      "lon": "99.4324983",
+      "type": "trunk"
+    },
+    {
+      "name": "Jalan Akses Inalum Kuala Tanjung",
+      "display": "Jalan Akses Inalum Kuala Tanjung, Indonesia Asahan Aluminium, Kwala Tanjung, Sei Suka, Batu Bara, North Sumatra, 21658, Indonesia",
+      "lat": "3.3546673",
+      "lon": "99.4517222",
+      "type": "service"
+    }
+  ],
+  "Krakatau Steel Cilegon": [
+    {
+      "name": "Krakatau Steel Reservoir",
+      "display": "Krakatau Steel Reservoir, Rawagondang, Kebonsari, Cilegon, Banten, Indonesia",
+      "lat": "-6.0182079",
+      "lon": "106.0292951",
+      "type": "reservoir"
+    },
+    {
+      "name": "Perumahan Krakatau Steel",
+      "display": "Perumahan Krakatau Steel, Kotasari, Cilegon, Banten, 42436, Indonesia",
+      "lat": "-5.9929633",
+      "lon": "106.0346532",
+      "type": "hamlet"
+    },
+    {
+      "name": "KAWASAN INDUSTRI BAJA KRAKATAU STEEL",
+      "display": "KAWASAN INDUSTRI BAJA KRAKATAU STEEL, Kubangsepatjalan, Citangkil, Cilegon, Banten, Indonesia",
+      "lat": "-6.0059522",
+      "lon": "106.0359075",
+      "type": "industrial"
+    }
+  ],
+  "Gunung Raja Paksi": [
+    {
+      "name": "Gunung Raja Paksi",
+      "display": "Gunung Raja Paksi, Jalan Raya Imam Bonjol, Sukadanau, Kab Bekasi, West Java, 17520, Indonesia",
+      "lat": "-6.2763052",
+      "lon": "107.1114051",
+      "type": "works"
+    }
+  ],
+  "Kendal Industrial Park": [
+    {
+      "name": "Kendal Industrial Park",
+      "display": "Kendal Industrial Park, Wonorejo, Kendal, Central Java, Indonesia",
+      "lat": "-6.9237350",
+      "lon": "110.2684677",
+      "type": "industrial"
+    }
+  ],
+  "Karawang New Industry City": [
+    {
+      "name": "Karawang New Industry City",
+      "display": "Karawang New Industry City, Desa Tamanmekar, Karawang, West Java, Indonesia",
+      "lat": "-6.4159312",
+      "lon": "107.2336766",
+      "type": "industrial"
+    }
+  ],
+  "Lotte Chemical Cilegon": [
+    {
+      "name": "PT LOTTE Chemical Indonesia",
+      "display": "PT LOTTE Chemical Indonesia, Gerem, Cilegon, Banten, Indonesia",
+      "lat": "-5.9802996",
+      "lon": "105.9937989",
+      "type": "industrial"
+    },
+    {
+      "name": "PT LOTTE Chemical Titan Nusantara",
+      "display": "PT LOTTE Chemical Titan Nusantara, Gerem, Cilegon, Banten, Indonesia",
+      "lat": "-5.9781842",
+      "lon": "105.9952423",
+      "type": "industrial"
+    },
+    {
+      "name": "Jalan Utama Lotte Chemical Indonesia",
+      "display": "Jalan Utama Lotte Chemical Indonesia, PT LOTTE Chemical Indonesia, Gerem, Cilegon, Banten, 42436, Indonesia",
+      "lat": "-5.9782708",
+      "lon": "105.9986375",
+      "type": "service"
+    }
+  ],
+  "Chandra Asri Cilegon": [
+    {
+      "name": "PT Chandra Asri Petrochemical",
+      "display": "PT Chandra Asri Petrochemical, Jalan Brigadir Jenderal Katamso, Gentong, Gunungsugih, Cilegon, Banten, 42446, Indonesia",
+      "lat": "-6.0391002",
+      "lon": "105.9339693",
+      "type": "works"
+    }
+  ],
+  "OKI Pulp Ogan Komering Ilir": [],
+  "Air Sugihan": [
+    {
+      "name": "Air Sugihan",
+      "display": "Air Sugihan, Ogan Komering Ilir, South Sumatra, Indonesia",
+      "lat": "-2.6071967",
+      "lon": "105.4126911",
+      "type": "administrative"
+    },
+    {
+      "name": "Air Sugihan",
+      "display": "Air Sugihan, Ogan Komering Ilir, South Sumatra, Indonesia",
+      "lat": "-2.7538900",
+      "lon": "105.2534649",
+      "type": "river"
+    }
+  ],
+  "Pupuk Kaltim Bontang": [
+    {
+      "name": "Pupuk Kaltim",
+      "display": "Pupuk Kaltim, Jalan James Simanjuntak, Kaltim Industrial Estate, Guntung, Bontang, East Kalimantan, 75331, Indonesia",
+      "lat": "0.1816322",
+      "lon": "117.4902313",
+      "type": "works"
+    }
+  ],
+  "Bunta Morowali Utara": [
+    {
+      "name": "Bunta",
+      "display": "Bunta, Morowali Utara, Central Sulawesi, Indonesia",
+      "lat": "-2.0459781",
+      "lon": "121.3663875",
+      "type": "village"
+    }
+  ],
+  "Gunbuster Nickel": [],
+  "Bantaeng Industrial Park": []
+}

@@ -43,3 +43,29 @@ org-jasamarga-pandaan-malang,PT Jasamarga Pandaan Malang,,private,ID,,,Toll-road
 org-jasamarga-ngawi-kertosono-kediri,PT Jasamarga Ngawi Kertosono Kediri,,private,ID,,,Toll-road concession operator from the BPJT list.
 org-medan-binjai-tol,PT Medan Binjai Tol,,private,ID,,,Toll-road concession operator from the BPJT list.
 org-translingkar-kita-jaya,PT Translingkar Kita Jaya,,private,ID,,,Toll-road concession operator from the BPJT list.
+org-freeport-indonesia,PT Freeport Indonesia,Freeport Indonesia,private,ID,,https://ptfi.co.id,Operator of the Manyar smelter; subsidiary of Freeport-McMoRan and MIND ID.
+org-pt-smelting,PT Smelting,PT Smelting,private,ID,org-freeport-indonesia,https://www.ptsmelting.com,Gresik copper smelter and refinery; Freeport Indonesia is the majority shareholder.
+org-amman-mineral-international,PT Amman Mineral Internasional Tbk,Amman,private,ID,,https://www.amman.co.id,Parent of PT Amman Mineral Industri.
+org-amman-mineral-industri,PT Amman Mineral Industri,AMIN,private,ID,org-amman-mineral-international,https://www.amman.co.id/amman-mineral-industri,Owner and operator of the Benete copper smelter and precious metal refinery.
+org-itss,PT Indonesia Tsingshan Stainless Steel,ITSS,private,ID,,,Tsingshan stainless steel unit in IMIP.
+org-dexin-steel,PT Dexin Steel Indonesia,Dexin Steel,private,ID,,https://www.dexin-steel.com,Delong and Tsingshan carbon steel joint venture in IMIP.
+org-huafei,PT Huafei Nickel Cobalt,Huafei,private,ID,,,"Huayou, Tsingshan and EVE HPAL joint venture in IWIP."
+org-angel-nickel,PT Angel Nickel Industry,Angel Nickel,private,ID,,https://nickelindustries.com,Nickel Industries 80% owned RKEF project in IWIP.
+org-hpl,PT Halmahera Persada Lygend,HPL,private,ID,,https://hpalnickel.com,Harita Nickel and Lygend HPAL joint venture on Obi Island.
+org-onc,PT Obi Nickel Cobalt,ONC,private,ID,,https://tbpnickel.com,Harita Nickel and Lygend second Obi refinery.
+org-vdni,PT Virtue Dragon Nickel Industry,VDNI,private,ID,,https://vdni.co.id,Operator of the Morosi nickel smelter and industrial park.
+org-oss,PT Obsidian Stainless Steel,OSS,private,ID,,https://oss.co.id,Xiangyu and Delong stainless steel joint venture in Morosi.
+org-gni,PT Gunbuster Nickel Industry,GNI,private,ID,,https://gunbusternickelindustry.com,Delong-backed NPI smelter in North Morowali; under PKPU in 2026.
+org-huadi,PT Huadi Nickel-Alloy Indonesia,Huadi,private,ID,,,"Nickel-alloy smelter at Pajukukang, Bantaeng."
+org-vale,PT Vale Indonesia Tbk,Vale Indonesia,private,ID,,https://www.valeindonesia.com,"MIND ID-controlled nickel miner and processor; operator of the Pomalaa, Bahodopi and Sorowako projects."
+org-whw,PT Well Harvest Winning Alumina Refinery,WHW,private,ID,,https://whwalumina.com,"Harita, China Hongqiao and Winning alumina joint venture in Ketapang."
+org-borneo-alumina,PT Borneo Alumina Indonesia,BAI,private,ID,org-inalum,https://www.bai.officespace.co.id,INALUM 60% and ANTAM 40% SGAR joint venture.
+org-inalum,PT Indonesia Asahan Aluminium (Persero),INALUM,soe,ID,,https://www.inalum.id,State aluminium smelter at Kuala Tanjung; MIND ID subsidiary.
+org-krakatau-steel,PT Krakatau Steel (Persero) Tbk,Krakatau Steel,soe,ID,,https://krakatausteel.com,Integrated steel producer in Cilegon.
+org-gunung-raja-paksi,PT Gunung Raja Paksi Tbk,GRP,private,ID,,https://gunungrajapaksi.com,Private steel producer at Cikarang Barat.
+org-btr,PT Indonesia BTR New Energy Material,BTR Indonesia,private,ID,,https://www.btrchina.com,BTR New Material Group anode plant in Kendal Industrial Park.
+org-cbl,"Ningbo Contemporary Brunp Lygend Co., Ltd.",CBL,private,CN,,https://www.catl.com,CATL subsidiary and joint-venture partner with ANTAM and IBC.
+org-lotte-chemical-indonesia,PT Lotte Chemical Indonesia,LCI,private,ID,,https://www.lottechem.com,"Operator of the LINE naphtha cracker at Merak, Cilegon."
+org-chandra-asri,PT Chandra Asri Pacific Tbk,Chandra Asri,private,ID,,https://chandra-asri.com,Operator of the Cilegon naphtha cracker and petrochemical complex.
+org-oki-pulp,PT OKI Pulp & Paper Mills,OKI Pulp,private,ID,,https://okipulppaper.co.id,APP/Sinar Mas pulp and tissue mill in Ogan Komering Ilir.
+org-pupuk-kaltim,PT Pupuk Kalimantan Timur,Pupuk Kaltim,soe,ID,,https://pupukkaltim.com,State fertiliser producer at Bontang.

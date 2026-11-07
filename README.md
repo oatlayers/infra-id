@@ -4,22 +4,26 @@ A curated, source-linked map of major Indonesian infrastructure. Every project
 carries a source and a verification date. The map is deliberately **major and
 curated, not exhaustive**.
 
-- **Live data:** 77 projects — 42 toll-road corridors, 13 railways, 7 airports
-  and 15 seaports — plus 4 Trans corridor summaries.
+- **Live data:** 104 projects — 42 toll-road corridors, 13 railways, 7 airports,
+  15 seaports and 27 factories — plus 4 Trans corridor summaries.
 - **Transport PSN:** 35 of 35 represented. Status is as of 19 February 2026, the
   date of the Kemenhub review.
+- **Factories:** 27 plants and smelters: 19 operating, 3 recently completed,
+  4 under construction and 1 stalled. All have capacity, 18 have investment.
 - **Estate dataset:** 178 industrial estates and SEZs, shown as a table; the map
   layer is deliberately off until coordinates are verified.
-- **Last verification:** 8 November 2026 (road and estate batches); the
+- **Last verification:** 8 November 2026 (road, estate and factory batches); the
   transport batch was verified on 7 November 2026; earlier rows on 6 November.
-- **Status:** Phase 1 is complete. Phase 2 Track 2A (transport PSN) is complete;
-  Track 2B (estates) is partial; Track 2D has 42 of the 45 target road corridors.
-  The site is **not published** and has no GitHub remote.
+- **Status:** Phase 1 is complete. Phase 2 Track 2A (transport PSN) and Track 2C
+  (factories) are complete; Track 2B (estates) is partial; Track 2D has 42 of the
+  45 target road corridors. The site is **not published** and has no GitHub
+  remote.
 - **Overhaul plan:** [`plan-v3.md`](plan-v3.md) is the execution backlog. Phase 2
   is data completion; Phase 3 is the trust layer and a local release. Publishing
   is explicitly deferred. Phase 1 decisions are recorded in
   [`docs/phase-1-decisions.md`](docs/phase-1-decisions.md); the transport batch
-  is documented in [`docs/phase-2-transport.md`](docs/phase-2-transport.md).
+  is documented in [`docs/phase-2-transport.md`](docs/phase-2-transport.md), the
+  factory batch in [`docs/phase-2-factories.md`](docs/phase-2-factories.md).
 
 ## What it is, and what it is not
 
@@ -45,10 +49,11 @@ when a source supports that status.
 | Airports | 7 | 7 operating | 7/7 PSN airports; inaugurated 2020–2023 |
 | Seaports | 15 | 11 operating, 1 under construction, 1 recently completed, 2 planned | 15/15 PSN seaports; Patimban Phase I-2 still building, Benoa expansion completed 2025 |
 | Transport PSN total | 35 | 24 operating, 1 recently completed, 6 under construction, 4 planned | 35/35; status as of 19 February 2026 |
+| All projects | 104 | 53 operating, 4 recently completed, 35 under construction, 11 planned, 1 stalled | 42 roads, 13 railways, 7 airports, 15 seaports and 27 factories |
 | Trans corridor summaries | 4 | 2 with km data, 2 data gaps | Sumatra and Papua have figures; Sulawesi and Kalimantan need segment definitions |
-| Factories | 0 | — | Phase 2: 20–30 plants |
+| Factories | 27 | 19 operating, 3 recently completed, 4 under construction, 1 stalled | 27 capacity figures, 18 investment figures; 17 official, 8 dual, 2 single-source |
 | Industrial estates / SEZs | 178 | 160 industrial-estate designations (153 industrial-only + 7 shared), 25 SEZs | table view only; 25 official SEZ points, 20 OSM points, 133 regency centroids; 19-name gap ledger |
-| Sources | 39 | 32 official, 7 secondary | 25 individual SEZ profiles, the national register and OSM/Nominatim |
+| Sources | 82 | 34 official, 25 secondary, 23 company | 43 factory-batch sources, 25 individual SEZ profiles, the national register and OSM/Nominatim |
 
 **Why the transport status counts differ from Kemenhub's summary.** The deck's
 headline says 29 complete and 6 under construction. The atlas uses its own
@@ -59,10 +64,20 @@ physical construction. The result is 24 operating, 1 recently completed, 6 under
 construction and 4 planned. The full mapping and conflicts are in
 [`docs/phase-2-transport.md`](docs/phase-2-transport.md).
 
-**Recently completed.** Benoa Port (BMTH) is the only `recently_completed` row:
-its expansion works were reported 100% in 2025. No full toll corridor opened
-between 2024-11-06 and 2026-11-06, so the road rows stay `under_construction`
-even where sections opened. Those section openings are in each row's `notes`.
+**Factory universe.** The 27 plants are PSN manufacturing projects plus private
+plants with investment of at least Rp 1 trillion. The list covers copper, nickel,
+steel, alumina, aluminium, battery, petrochemical, pulp and fertiliser plants.
+Industrial estates and pure mining pits are excluded; KIPI Bulungan remains an
+estate gap, while GEM steel and Hailiang announcements did not meet the dated
+status-and-capacity rule. See
+[`docs/phase-2-factories.md`](docs/phase-2-factories.md) for the full inclusion
+log, conflicts and coordinate provenance.
+
+**Recently completed.** Benoa Port (BMTH), the Amman copper smelter, the SGAR
+Mempawah alumina refinery and the Lotte LINE petrochemical complex are the four
+`recently_completed` rows. No full toll corridor opened between 2024-11-06 and
+2026-11-06, so the road rows stay `under_construction` even where sections
+opened. Those section openings are in each row's `notes`.
 
 ## Quick start
 
@@ -103,6 +118,7 @@ infra-id/
 │  ├─ phase-1-decisions.md  confirmed design, scope, schema and budgets
 │  ├─ phase-2-transport.md  transport PSN extraction, mapping and conflicts
 │  ├─ phase-2-estates.md    estate gap ledger and coordinate work
+│  ├─ phase-2-factories.md  factory universe, exclusions and conflicts
 │  └─ phase-2-roads.md      BPJT PSN road additions and status mapping
 ├─ requirements.txt         Python dependencies for the data scripts
 ├─ data/
@@ -128,7 +144,9 @@ infra-id/
 │  ├─ derived/              extracted text and build-time intermediates
 │  │  ├─ transport_psn.csv  35-row checked transport extraction
 │  │  ├─ estate_gap_2026.csv  19-row 179-vs-160 reconciliation
+│  │  ├─ factories_2026.csv  frozen 27-row factory ledger
 │  │  ├─ nominatim_estates.json  cached OSM search results
+│  │  ├─ nominatim_factories.json  cached factory coordinate checks
 │  │  └─ kemenhub_psn_progress_2026.txt
 │  └─ raw/YYYY-MM-DD/       sources as fetched, never edited
 ├─ scripts/
@@ -139,6 +157,9 @@ infra-id/
 │  ├─ extract_estate_gap.py     19-row estate gap ledger
 │  ├─ geocode_estates.py        OSM/Nominatim coordinates for large estates
 │  ├─ add_bpjt_psn_roads.py     15 missing PSN toll corridors
+│  ├─ add_factories.py     27-plant factory import
+│  ├─ build_factories_ledger.py  frozen factory ledger
+│  ├─ geocode_factories.py  cached factory coordinate checks
 │  ├─ build_transport.py    imports the 35 transport rows
 │  ├─ build_projects.py
 │  ├─ build_estates.py
@@ -192,9 +213,12 @@ python scripts/geocode_estates.py        # optional; uses cached OSM results
 python scripts/extract_transport_psn.py  # checked Kemenhub extraction
 python scripts/build_transport.py        # import the 35 transport rows
 python scripts/add_bpjt_psn_roads.py     # 15 missing PSN toll corridors
+python scripts/add_factories.py          # import the 27 factory rows
+python scripts/geocode_factories.py      # optional; refresh the coordinate cache
 python scripts/validate.py
 python scripts/build_projects.py
 python scripts/build_site_data.py
+python scripts/build_factories_ledger.py # frozen 27-row factory ledger
 python scripts/build_basemap.py
 ```
 
@@ -209,6 +233,9 @@ What each script does:
 | `geocode_estates.py` | Top 40 industrial estates + Nominatim | `data/derived/nominatim_estates.json`, updated estate coordinates | One request per second; accepts only industrial-landuse matches |
 | `build_transport.py` | `transport_psn.csv` + curated tables | Project, claim, link and alias rows | Idempotent transport import; does not touch roads or estates |
 | `add_bpjt_psn_roads.py` | BPJT snapshot + curated tables | 15 new PSN road rows, operators, claims and external IDs | Idempotent; leaves the 27 batch-1 roads in place |
+| `add_factories.py` | Factory research + curated tables | 27 plant rows, 43 sources, 26 organisations and 18 investment rows | Idempotent; replaces each factory’s claims on rerun |
+| `geocode_factories.py` | Nominatim + factory queries | `data/derived/nominatim_factories.json` | Provenance cache only; does not change curated coordinates |
+| `build_factories_ledger.py` | Curated project, organisation, link and claim tables | `data/derived/factories_2026.csv` | Frozen review ledger for the 27 plants |
 | `validate.py` | `data/curated/*.csv` | exit code | Schema, enums, dates, coordinates, foreign keys, events, geometry, claims and coverage checks |
 | `build_projects.py` | Curated tables + BPJT JSON | `data/projects.csv` | Joins operator and source, fills gaps from BPJT, writes the flat export |
 | `build_estates.py` | KEK HTML + BAJRA table + regency cache | `data/curated/estates.csv` + source rows | Merges the 25 SEZs and 153 industrial estates, handles overlaps |
@@ -251,7 +278,7 @@ Project columns (`data/curated/projects.csv`):
 | `id` | yes | Lowercase, hyphenated, unique. Used in deep links |
 | `name` | yes | Project name, English with Indonesian proper names |
 | `sector` | yes | `road`, `railway`, `airport`, `seaport`, `factory` |
-| `subsector` | no | For example `toll`, `urban_rail`, `new_build`, `expansion` |
+| `subsector` | no | For example `toll`, `urban_rail`, `new_build`, `expansion`, `smelter`, `steel`, `alumina`, `battery`, `petrochemical`, `pulp`, `fertiliser` |
 | `status` | yes | `planned`, `under_construction`, `operating`, `recently_completed`, `stalled` |
 | `status_basis` | yes | The evidence for the status, with figures where possible |
 | `corridor_id` | no | Links to `corridors.csv` |
@@ -313,7 +340,12 @@ profile pages, the BAJRA estate table and the Natural Earth GeoJSON under
 `data/raw/2026-11-06/`.
 
 The KPPIP pages and the Kemenhub PSN deck are saved for the transport batch and
-are **not yet reflected** in `data/curated/projects.csv`.
+are reflected in the 35 transport rows. Factory sources are the 43 source rows
+listed in the source register and mapped in
+[`docs/phase-2-factories.md`](docs/phase-2-factories.md): company and official
+pages for capacity, location and status, plus secondary reporting for ramp-up,
+investment and disputes. The coordinate checks use Nominatim; the cached
+responses are in `data/derived/nominatim_factories.json`.
 
 ## Industrial estates and SEZs
 
@@ -409,6 +441,8 @@ Features:
   modal detail drawer is open.
 - **Transport:** 35 PSN railways, airports and seaports with status, opening or
   target year, investment where stated, aliases and source claims.
+- **Factories:** 27 plants and smelters on the map with a factory glyph, capacity
+  and investment figures, operators, status basis and every source claim.
 - **Detail drawer:** key figures, operational share, why-this-status, evidence,
   every source with claim and retrieval date, notes, related corridor,
   previous/next and share.
@@ -479,20 +513,30 @@ Validating is not the same as verifying. Validation catches malformed rows; the
 - **Approximate coordinates.** Batch 1 uses the midpoint of each BPJT endpoint
   pair, so every road row is `precision=approximate`. Bogor Ring Road uses Bogor
   city centre because the BPJT endpoints are misplaced. All 35 transport points
-  are airport, port or city reference points, not surveyed boundaries.
-- **Mixed source quality.** 17 road rows are BPJT-backed (`official`); 10 rely on
+  are airport, port or city reference points, and all 27 factory points are
+  plant or industrial-park locators, not surveyed boundaries.
+- **Mixed source quality.** 32 road rows are BPJT-backed (`official`); 10 rely on
   Wikipedia or a single secondary source. All 35 transport rows are backed by the
-  Kemenhub deck, but that deck does not give rail lengths or asset capacity.
+  Kemenhub deck, but that deck does not give rail lengths or asset capacity. The
+  factory batch draws on 43 source rows: 23 company, 18 secondary and 2 official;
+  Dexin and Huadi are single-source.
 - **BPJT labels are inconsistent.** Some rows marked `Operasi` still have
   unopened length or active construction. Conflicts are recorded, not hidden.
 - **No geometry.** Projects are points, not lines or polygons. `project_geometry`
   exists but is empty.
-- **Factories and corridor segments are still empty.** The 42 road corridors and
-  35 transport PSN projects are in; 20–30 factories, five corridor segment
-  tables and the three-road gap to the 45 target remain Phase 2 work.
+- **Factory figures are nameplate or project-level.** Capacity is not verified
+  output. Investment is total project capex where the source gives one; 9 of 27
+  rows have no investment figure. USD values are converted at Rp 16,500/USD for
+  ranking, not at a transaction-date rate.
+- **Factory coordinates are mixed.** 18 rows use an OSM/Nominatim point and 9 use
+  a manual approximate plant or park point. Where Nominatim returned a village,
+  estate or access point, that point is used instead of a plant boundary.
+- **Corridor segments are still empty.** The five-corridor segment table, the
+  recent-opening events and the three-road gap to the 45 target remain Phase 2
+  work.
 - **Transport status is dated.** It reflects the Kemenhub review of 19 February
   2026, not a live check. `last_verified` is the curation date.
-- **PSN status is incomplete for roads.** 10 of 27 road rows have `psn=unknown`.
+- **PSN status is incomplete for roads.** 10 of 42 road rows have `psn=unknown`.
 - **Estate coordinates are mixed.** 25 SEZ/shared zones use official KEK points,
   20 large industrial estates use OSM/Nominatim industrial points, and 133 still
   use regency centroids, not estate boundaries. 20 of the 40 largest were
@@ -504,20 +548,21 @@ Validating is not the same as verifying. Validation catches malformed rows; the
 - **Estate status is still blanket `operating`.** The 160 industrial-estate rows
   come from the 2024 table and have not been individually re-verified. Their
   sector focus, website, legal basis and established year are mostly blank.
-- **No recently completed toll roads.** Benoa Port is the only
-  `recently_completed` row; see Current coverage.
+- **No recently completed toll roads.** The four `recently_completed` rows are
+  Benoa Port and three factories; see Current coverage.
 - **Trans Sulawesi and Trans Kalimantan have no aggregate.** Published figures
   use different definitions; the site shows a data-gap note instead of inventing
   a total.
 - **Incomplete universe.** Construction-only and pre-construction BPJT rows are
   not returned by the API; 0-km concessions are not yet included.
-- **Excluded for now:** the three planned strait bridges (Bali, Malacca, Sunda)
-  and non-toll PSN roads and bridges.
+- **Excluded for now:** the three planned strait bridges (Bali, Malacca, Sunda),
+  non-toll PSN roads and bridges, and announced factories that lack a dated
+  status-and-capacity source (for example GEM steel and Hailiang).
 - **Wikipedia is secondary.** It is useful for discovery and cross-checking, not
   as the final authority on a status change.
-- **Performance at 300 markers is untested.** The 62-project dataset is clustered
-  and loads quickly, but the 300-marker 60 fps target needs the full Phase 2
-  dataset.
+- **Performance at 300 markers is untested.** The 104-project dataset is clustered
+  and loads quickly, but the 300-marker 60 fps target still needs a dedicated
+  measurement run and a larger test set.
 - **Lighthouse is not run.** axe-core 4.10.3 with WCAG A/AA tags reports zero
   violations on Explore at desktop and mobile widths, and on the project drawer.
   The map is inert while the modal drawer is open; the list is the accessible
@@ -532,10 +577,11 @@ Validating is not the same as verifying. Validation catches malformed rows; the
 3. ~~Phase 1: design foundation, four-view shell, search, filters, drawer, map v2,
    mobile sheet, data page, schema v3.~~ Done 7 November 2026.
 4. **Phase 2: data completion.** Transport PSN (13 rail, 7 airports, 15
-   seaports) is done. Estates: the 19-name gap ledger is done and 20 of the 40
-   largest are geocoded; the nine 2025 additions remain blocked by the
-   unavailable Kemenperin list. Roads: 42 of 45 target corridors. *Next:*
-   factories, corridor segments and the three remaining road gaps.
+   seaports) and the 27-plant factory universe are done. Estates: the 19-name gap
+   ledger is done and 20 of the 40 largest are geocoded; the nine 2025 additions
+   remain blocked by the unavailable Kemenperin list. Roads: 42 of 45 target
+   corridors. *Next:* corridor segments, events and the three remaining road
+   gaps.
 5. **Phase 3: trust and local release.** Per-fact claims, freshness, Data view
    v2, downloads, conflicts, local CI, smoke tests and hand-off. **No GitHub push
    or Pages deployment.**
@@ -552,6 +598,12 @@ Validating is not the same as verifying. Validation catches malformed rows; the
   `data/derived/transport_psn.csv`; the importer is
   `scripts/build_transport.py`; the mapping and conflicts are in
   [`docs/phase-2-transport.md`](docs/phase-2-transport.md).
+- **Factories:** Track 2C complete for the frozen 27-plant universe. The ledger
+  is `data/derived/factories_2026.csv`, the importer is
+  `scripts/add_factories.py`, and the inclusion log and conflicts are in
+  [`docs/phase-2-factories.md`](docs/phase-2-factories.md). Next: plant geometry,
+  milestone events and a dated status check for GEM steel, Hailiang and other
+  announced plants.
 - **Roads:** 42 of 45 target corridors. The 15 new PSN corridors and their status
   mapping are in [`docs/phase-2-roads.md`](docs/phase-2-roads.md). Next: the
   non-toll/0-km road candidates and the corridor segment tables.
@@ -588,6 +640,9 @@ from `file://` and a local HTTP server.
 - **Wikipedia text:** CC BY-SA 4.0. Reuse requires attribution and share-alike.
   Facts still need a primary source.
 - **Natural Earth:** public domain. Credited in the map attribution.
+- **OpenStreetMap / Nominatim:** data © OpenStreetMap contributors, ODbL 1.0.
+  Used for estate and factory coordinate checks; attribution is carried in the
+  Data view and the source register.
 - **Leaflet 1.9.4:** BSD-2-Clause. Licence file at
   `site/vendor/leaflet/LICENSE`.
 - **Leaflet.markercluster 1.5.3:** MIT. Licence file at
