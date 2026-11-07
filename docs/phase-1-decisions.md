@@ -71,15 +71,15 @@ were backfilled from existing rows. No status or numeric claim was guessed.
 
 | Budget | Target | Measured 7 Nov 2026 |
 |---|---|---|
-| Shell HTML + CSS + JS | ≤ 120 KB gzipped | 84.7 KB |
-| Initial data payloads | ≤ 200 KB gzipped | 93.0 KB |
+| Shell HTML + CSS + JS | ≤ 120 KB gzipped | 85.3 KB |
+| Initial data payloads | ≤ 200 KB gzipped | 98.8 KB |
 | Basemap | ≤ 150 KB gzipped | 75.2 KB |
 | Estate layer (lazy) | ≤ 80 KB gzipped | 10.8 KB |
-| Total initial including fonts | — | 344 KB gzipped |
+| Total initial including fonts | — | 351 KB gzipped |
 | Time to interactive, local file, mid-range phone | ≤ 1.5 s | 0.71 s load and 0.60 s first contentful paint in headless Edge from `file://`; physical-phone test pending |
 | Map pan/zoom with 300 markers | 60 fps | pending 300-row test |
 | Console errors | zero | zero observed |
-| Accessibility | WCAG 2.2 AA | axe-core WCAG A/AA tags: 0 violations on Explore, Corridors, Estates and Data at 1440 px and 390 px; 1 target-size exception on overlapping approximate map markers in the project drawer |
+| Accessibility | WCAG 2.2 AA | axe-core WCAG A/AA tags: 0 violations on Explore, Corridors, Estates and Data at 1440 px and 390 px. The Phase 1 map-marker target-size exception was fixed in Phase 2 (modal map is inert and cluster radius is 60 px) |
 
 The shell budget excludes data payloads and fonts. Fonts are two bundled WOFF2
 files (Inter and Source Serif 4, 166.6 KB together), inside the 150–250 KB
@@ -100,7 +100,7 @@ completion log. Phase 2 and Phase 3 remain open.
 - **No 300-marker performance test yet.** The current 27-row dataset is
   clustered; the 300-marker test moves to Phase 2 when transport data lands.
 - **Accessibility audit is partial.** axe-core 4.10.3 with WCAG A/AA tags found
-  zero violations on Explore, Corridors, Estates and Data. The project drawer has
-  one `target-size` exception: overlapping approximate map markers sit closer
-  than 24 px at the working zoom. The list is the accessible equivalent; a
-  clustering or spiderfy fix moves to Phase 2. Lighthouse was not run.
+  zero violations on Explore, Corridors, Estates and Data. The Phase 1 project
+  drawer had one `target-size` exception from overlapping approximate markers.
+  Phase 2 closed it by making the map inert while the modal drawer is open and
+  raising the cluster radius to 60 px. Lighthouse was not run.

@@ -81,13 +81,15 @@ def main() -> None:
     segments = read_csv(CURATED / "corridor_segments.csv")
     targets = read_csv(CURATED / "coverage_targets.csv")
 
-    claims_by_project: dict[str, list[dict[str, str]]] = {}
+    # One source entry per project, with all of its claims joined. A row may
+    # have several claims against the same document (status, location, opening,
+    # investment), and the drawer should not repeat the document four times.
+    claims_by_project: dict[str, dict[str, list[str]]] = {}
     for claim in claims:
-        source = sources.get(claim["source_id"])
-        if source:
-            claims_by_project.setdefault(claim["project_id"], []).append(
-                source_record(source, claim["claim"])
-            )
+        if claim["source_id"] in sources:
+            claims_by_project.setdefault(claim["project_id"], {}).setdefault(
+                claim["source_id"], []
+            ).append(claim["claim"])
 
     corridor_names = {row["id"]: row["name"] for row in corridors}
 
@@ -97,7 +99,10 @@ def main() -> None:
             field: row[field] for field in DERIVED_FIELDS if field not in {"lat", "lon"}
         }
         properties["corridor_name"] = corridor_names.get(row["corridor_id"], "")
-        properties["sources"] = claims_by_project.get(row["id"], [])
+        properties["sources"] = [
+            source_record(sources[source_id], "; ".join(dict.fromkeys(kinds)))
+            for source_id, kinds in claims_by_project.get(row["id"], {}).items()
+        ]
         features.append(
             {
                 "type": "Feature",
@@ -178,6 +183,10 @@ def main() -> None:
         "airports": by_sector.get("airport", 0),
         "seaports": by_sector.get("seaport", 0),
         "factories": by_sector.get("factory", 0),
+        "transport_psn": sum(
+            1 for row in rows
+            if row["sector"] in {"railway", "airport", "seaport"} and row["psn"] == "yes"
+        ),
         "industrial_estates": estate_types.get("industrial_estate", 0)
         + estate_types.get("both", 0),
         "sezs": estate_types.get("sez", 0) + estate_types.get("both", 0),

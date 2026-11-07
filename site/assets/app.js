@@ -583,6 +583,8 @@
     if (project.operational_km) bits.push(fmtNum(project.operational_km) + ' km open');
     if (!bits.length && project.investment_idr_t) bits.push('Rp ' + fmtNum(project.investment_idr_t) + ' T');
     if (!bits.length && project.capacity) bits.push(fmtNum(project.capacity) + ' ' + project.capacity_unit);
+    if (!bits.length && project.opened_year) bits.push('Opened ' + project.opened_year);
+    if (!bits.length && project.expected_open_year) bits.push('Target ' + project.expected_open_year);
     return bits.join(' · ') || 'No figure yet';
   }
 
@@ -667,6 +669,11 @@
       requestAnimationFrame(function () { dom.drawer.classList.add('open'); });
     }
     dom.drawer.setAttribute('aria-hidden', 'false');
+    // The drawer is modal. Make the map behind it inert so its overlapping
+    // approximate markers are not competing focus targets. The project list
+    // stays available as the accessible equivalent and the drawer has
+    // previous/next controls.
+    if (dom.mapWrap) dom.mapWrap.inert = true;
     if (wasHidden) {
       setTimeout(function () { dom.drawerClose.focus(); }, 40);
     }
@@ -676,6 +683,7 @@
     if (dom.drawer.hidden) return;
     dom.drawer.classList.remove('open');
     dom.drawer.setAttribute('aria-hidden', 'true');
+    if (dom.mapWrap) dom.mapWrap.inert = false;
     setTimeout(function () {
       if (!dom.drawer.classList.contains('open')) dom.drawer.hidden = true;
     }, 260);
@@ -740,11 +748,11 @@
 
     body += '<section class="detail-section"><h3>Why this status</h3>' +
       '<p class="basis">' + esc(project.status_basis) + '</p>' +
-      '<div class="basis-meta">Status checked ' + esc(fmtDate(project.last_verified)) +
+      '<div class="basis-meta">Status as of ' + esc(fmtDate(project.status_as_of || project.last_verified)) +
       (basisSource ? ' · ' + esc(basisSource.publisher) : '') + '</div></section>';
 
     body += '<section class="detail-section"><h3>Evidence</h3><ul class="evidence-list">' +
-      '<li><time>' + esc(fmtDate(project.last_verified)) + '</time><span>Status and figures verified' +
+      '<li><time>' + esc(fmtDate(project.last_verified)) + '</time><span>Record verified' +
       (basisSource ? ' against ' + esc(basisSource.title) : '') + '.</span></li>' +
       (project.opened_year ? '<li><time>' + esc(project.opened_year) + '</time><span>Opened to service.</span></li>' : '') +
       (project.corridor_name ? '<li><time>Corridor</time><span>Part of ' + esc(project.corridor_name) +
@@ -1163,6 +1171,10 @@
 
     const projectStats = stats.projects || {};
     const estateStats = stats.estates || {};
+    const sectorCounts = projectStats.by_sector || {};
+    const transportCount = (sectorCounts.railway || 0) + (sectorCounts.airport || 0) +
+      (sectorCounts.seaport || 0);
+    const roadCount = sectorCounts.road || 0;
     const generated = stats.generated_on ? fmtDate(stats.generated_on) : fmtDate(new Date().toISOString().slice(0, 10));
 
     dom.viewPanel.innerHTML =
@@ -1196,16 +1208,20 @@
 
       '<section class="data-section"><h3>Known gaps</h3><ul class="gap-list">' +
       '<li>' + fmtNum(projectStats.total || 0) + ' projects: ' + fmtNum(projectStats.with_investment || 0) +
-      ' with an investment figure and ' + fmtNum(projectStats.with_progress || 0) + ' with reported progress.</li>' +
-      '<li>Transport PSN: 35 projects identified (13 rail, 7 airports, 15 seaports); none are in the curated table yet.</li>' +
-      '<li>Railways, airports, seaports and factories are not on the map yet.</li>' +
+      ' with an investment figure, ' + fmtNum(projectStats.with_progress || 0) +
+      ' with reported progress and ' + fmtNum(projectStats.with_length || 0) + ' with a route length.</li>' +
+      '<li>Transport PSN: ' + fmtNum(transportCount) + ' of 35 represented (' +
+      fmtNum(sectorCounts.railway || 0) + ' rail, ' + fmtNum(sectorCounts.airport || 0) +
+      ' airports, ' + fmtNum(sectorCounts.seaport || 0) +
+      ' seaports). Status is as of 19 February 2026, the date of the Kemenhub review.</li>' +
+      '<li>Factories are not on the map yet. Transport points are approximate; the PSN review gives no rail length or asset capacity.</li>' +
       '<li>Estate coverage: ' + fmtNum(estateStats.total || 0) + ' rows against a 2026 benchmark of 179 industrial estates; the nine 2025 additions are unresearched.</li>' +
       '<li>Estate coordinates: SEZ points are official zone coordinates; industrial estates use regency centroids.</li>' +
       '<li>Trans Sulawesi and Trans Kalimantan have no single official kilometre series.</li>' +
       '<li>' + fmtNum((projectStats.psn && projectStats.psn.unknown) || 0) + ' of ' +
-      fmtNum(projectStats.total || 0) + ' rows have unknown PSN status; ' +
-      fmtNum(projectStats.precision && projectStats.precision.approximate || 0) +
-      ' use approximate coordinates.</li>' +
+      fmtNum(roadCount) + ' road rows have unknown PSN status; ' +
+      fmtNum(projectStats.precision && projectStats.precision.approximate || 0) + ' of ' +
+      fmtNum(projectStats.total || 0) + ' rows use approximate coordinates.</li>' +
       '<li>Verification: ' + fmtNum((projectStats.verification && projectStats.verification.official) || 0) +
       ' official, ' + fmtNum((projectStats.verification && projectStats.verification.single) || 0) +
       ' single-source, ' + fmtNum((projectStats.verification && projectStats.verification.dual) || 0) +
@@ -1217,6 +1233,7 @@
       '<section class="data-section"><h3>Downloads</h3>' + downloadList() + '</section>' +
 
       '<section class="data-section"><h3>Changelog</h3><ul class="changelog">' +
+      '<li><time>7 Nov 2026</time><span>Added the 35 transport PSN projects: 13 railways, 7 airports and 15 seaports, with status and investment claims from the Kemenhub review.</span></li>' +
       '<li><time>7 Nov 2026</time><span>New shell: four views, search, filters, map v2 and this data page.</span></li>' +
       '<li><time>6 Nov 2026</time><span>178 estates and SEZs gathered; 25 official SEZ profiles and the Kemenperin-derived list.</span></li>' +
       '<li><time>6 Nov 2026</time><span>27 toll-road corridors, four Trans corridor summaries and the v2 data foundation.</span></li>' +
@@ -1678,6 +1695,7 @@
     dom.layerProjects = $('layer-projects');
     dom.layerLabels = $('layer-labels');
     dom.legendBody = $('legend-body');
+    dom.mapWrap = document.querySelector('.map-wrap');
 
     if (!features.length) {
       dom.resultCount.textContent = 'Data not loaded';

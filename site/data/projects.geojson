@@ -1566,6 +1566,2036 @@
           }
         ]
       }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.0575,
+          -7.9006
+        ]
+      },
+      "properties": {
+        "id": "air-yogyakarta-international",
+        "name": "Yogyakarta International Airport (YIA)",
+        "sector": "airport",
+        "subsector": "international airport",
+        "status": "operating",
+        "status_basis": "Kemenhub PSN review (19 Feb 2026): inaugurated in 2020 and operating; one of 18 completed projects proposed for removal from the PSN list.",
+        "corridor_id": "",
+        "island": "Java",
+        "province": "DI Yogyakarta",
+        "route": "Kulon Progo, DI Yogyakarta",
+        "length_km": "",
+        "operational_km": "",
+        "construction_km": "",
+        "progress_pct": "",
+        "investment_idr_t": "",
+        "capacity": "",
+        "capacity_unit": "",
+        "psn": "yes",
+        "opened_year": "2020",
+        "opened_date": "",
+        "expected_open_year": "",
+        "status_as_of": "2026-02-19",
+        "verification": "official",
+        "precision": "approximate",
+        "operator": "PT Angkasa Pura I (Persero)",
+        "source_url": "https://ppid.kemenhub.go.id/fileupload/informasi-berkala/20260406102830.R1_19022026_Update_PSN_Kemenhub_compressed.pdf",
+        "source_type": "official",
+        "retrieved_on": "2026-11-06",
+        "last_verified": "2026-11-07",
+        "notes": "Inauguration year per Kemenhub. Coordinates are the airport reference point, approximate. No capacity figure is stated in the PSN review.",
+        "corridor_name": "",
+        "sources": [
+          {
+            "id": "src-kemenhub-psn-progress-2026-02-19",
+            "publisher": "Kementerian Perhubungan",
+            "title": "Capaian Progres Proyek Strategis Nasional Sektor Transportasi",
+            "url": "https://ppid.kemenhub.go.id/fileupload/informasi-berkala/20260406102830.R1_19022026_Update_PSN_Kemenhub_compressed.pdf",
+            "published_on": "2026-02-19",
+            "retrieved_on": "2026-11-06",
+            "source_type": "official",
+            "language": "id",
+            "archive_path": "data/raw/2026-11-06/kemenhub_psn_progress_2026.pdf",
+            "notes": "35 transport PSNs; progress as of February 2026.",
+            "claim": "status; location; opening"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          119.8892,
+          -8.4867
+        ]
+      },
+      "properties": {
+        "id": "air-komodo-labuan-bajo",
+        "name": "Komodo Airport – Labuan Bajo",
+        "sector": "airport",
+        "subsector": "international airport",
+        "status": "operating",
+        "status_basis": "Kemenhub PSN review (19 Feb 2026): inaugurated in 2022 and operating; one of 18 completed projects proposed for removal from the PSN list.",
+        "corridor_id": "",
+        "island": "Bali-Nusa Tenggara",
+        "province": "East Nusa Tenggara",
+        "route": "Manggarai, East Nusa Tenggara",
+        "length_km": "",
+        "operational_km": "",
+        "construction_km": "",
+        "progress_pct": "",
+        "investment_idr_t": "",
+        "capacity": "",
+        "capacity_unit": "",
+        "psn": "yes",
+        "opened_year": "2022",
+        "opened_date": "",
+        "expected_open_year": "",
+        "status_as_of": "2026-02-19",
+        "verification": "official",
+        "precision": "approximate",
+        "operator": "PT Angkasa Pura I (Persero)",
+        "source_url": "https://ppid.kemenhub.go.id/fileupload/informasi-berkala/20260406102830.R1_19022026_Update_PSN_Kemenhub_compressed.pdf",
+        "source_type": "official",
+        "retrieved_on": "2026-11-06",
+        "last_verified": "2026-11-07",
+        "notes": "Inauguration year per Kemenhub. Coordinates are the airport reference point, approximate. No capacity figure is stated in the PSN review.",
+        "corridor_name": "",
+        "sources": [
+          {
+            "id": "src-kemenhub-psn-progress-2026-02-19",
+            "publisher": "Kementerian Perhubungan",
+            "title": "Capaian Progres Proyek Strategis Nasional Sektor Transportasi",
+            "url": "https://ppid.kemenhub.go.id/fileupload/informasi-berkala/20260406102830.R1_19022026_Update_PSN_Kemenhub_compressed.pdf",
+            "published_on": "2026-02-19",
+            "retrieved_on": "2026-11-06",
+            "source_type": "official",
+            "language": "id",
+            "archive_path": "data/raw/2026-11-06/kemenhub_psn_progress_2026.pdf",
+            "notes": "35 transport PSNs; progress as of February 2026.",
+            "claim": "status; location; opening"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          116.2767,
+          -8.7573
+        ]
+      },
+      "properties": {
+        "id": "air-lombok-praya",
+        "name": "Lombok Praya Airport",
+        "sector": "airport",
+        "subsector": "international airport",
+        "status": "operating",
+        "status_basis": "Kemenhub PSN review (19 Feb 2026): inaugurated in 2020 and operating; one of 18 completed projects proposed for removal from the PSN list.",
+        "corridor_id": "",
+        "island": "Bali-Nusa Tenggara",
+        "province": "West Nusa Tenggara",
+        "route": "Lombok Tengah, West Nusa Tenggara",
+        "length_km": "",
+        "operational_km": "",
+        "construction_km": "",
+        "progress_pct": "",
+        "investment_idr_t": "",
+        "capacity": "",
+        "capacity_unit": "",
+        "psn": "yes",
+        "opened_year": "2020",
+        "opened_date": "",
+        "expected_open_year": "",
+        "status_as_of": "2026-02-19",
+        "verification": "official",
+        "precision": "approximate",
+        "operator": "PT Angkasa Pura I (Persero)",
+        "source_url": "https://ppid.kemenhub.go.id/fileupload/informasi-berkala/20260406102830.R1_19022026_Update_PSN_Kemenhub_compressed.pdf",
+        "source_type": "official",
+        "retrieved_on": "2026-11-06",
+        "last_verified": "2026-11-07",
+        "notes": "Inauguration year per Kemenhub. Coordinates are the airport reference point, approximate. No capacity figure is stated in the PSN review.",
+        "corridor_name": "",
+        "sources": [
+          {
+            "id": "src-kemenhub-psn-progress-2026-02-19",
+            "publisher": "Kementerian Perhubungan",
+            "title": "Capaian Progres Proyek Strategis Nasional Sektor Transportasi",
+            "url": "https://ppid.kemenhub.go.id/fileupload/informasi-berkala/20260406102830.R1_19022026_Update_PSN_Kemenhub_compressed.pdf",
+            "published_on": "2026-02-19",
+            "retrieved_on": "2026-11-06",
+            "source_type": "official",
+            "language": "id",
+            "archive_path": "data/raw/2026-11-06/kemenhub_psn_progress_2026.pdf",
+            "notes": "35 transport PSNs; progress as of February 2026.",
+            "claim": "status; location; opening"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.4967,
+          -3.3682
+        ]
+      },
+      "properties": {
+        "id": "air-nabire",
+        "name": "Nabire New Airport",
+        "sector": "airport",
+        "subsector": "domestic airport",
+        "status": "operating",
+        "status_basis": "Kemenhub PSN review (19 Feb 2026): inaugurated in 2022 and operating; one of 18 completed projects proposed for removal from the PSN list.",
+        "corridor_id": "",
+        "island": "Papua",
+        "province": "Central Papua",
+        "route": "Nabire, Central Papua",
+        "length_km": "",
+        "operational_km": "",
+        "construction_km": "",
+        "progress_pct": "",
+        "investment_idr_t": "",
+        "capacity": "",
+        "capacity_unit": "",
+        "psn": "yes",
+        "opened_year": "2022",
+        "opened_date": "",
+        "expected_open_year": "",
+        "status_as_of": "2026-02-19",
+        "verification": "official",
+        "precision": "approximate",
+        "operator": "PT Angkasa Pura I (Persero)",
+        "source_url": "https://ppid.kemenhub.go.id/fileupload/informasi-berkala/20260406102830.R1_19022026_Update_PSN_Kemenhub_compressed.pdf",
+        "source_type": "official",
+        "retrieved_on": "2026-11-06",
+        "last_verified": "2026-11-07",
+        "notes": "Inauguration year per Kemenhub. Coordinates are the airport reference point, approximate. No capacity figure is stated in the PSN review.",
+        "corridor_name": "",
+        "sources": [
+          {
+            "id": "src-kemenhub-psn-progress-2026-02-19",
+            "publisher": "Kementerian Perhubungan",
+            "title": "Capaian Progres Proyek Strategis Nasional Sektor Transportasi",
+            "url": "https://ppid.kemenhub.go.id/fileupload/informasi-berkala/20260406102830.R1_19022026_Update_PSN_Kemenhub_compressed.pdf",
+            "published_on": "2026-02-19",
+            "retrieved_on": "2026-11-06",
+            "source_type": "official",
+            "language": "id",
+            "archive_path": "data/raw/2026-11-06/kemenhub_psn_progress_2026.pdf",
+            "notes": "35 transport PSNs; progress as of February 2026.",
+            "claim": "status; location; opening"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.267,
+          -2.922
+        ]
+      },
+      "properties": {
+        "id": "air-siboru-fakfak",
+        "name": "Siboru Fakfak Airport",
+        "sector": "airport",
+        "subsector": "domestic airport",
+        "status": "operating",
+        "status_basis": "Kemenhub PSN review (19 Feb 2026): inaugurated in 2023 and operating; one of 18 completed projects proposed for removal from the PSN list.",
+        "corridor_id": "",
+        "island": "Papua",
+        "province": "West Papua",
+        "route": "Fakfak, West Papua",
+        "length_km": "",
+        "operational_km": "",
+        "construction_km": "",
+        "progress_pct": "",
+        "investment_idr_t": "",
+        "capacity": "",
+        "capacity_unit": "",
+        "psn": "yes",
+        "opened_year": "2023",
+        "opened_date": "",
+        "expected_open_year": "",
+        "status_as_of": "2026-02-19",
+        "verification": "official",
+        "precision": "approximate",
+        "operator": "PT Angkasa Pura I (Persero)",
+        "source_url": "https://ppid.kemenhub.go.id/fileupload/informasi-berkala/20260406102830.R1_19022026_Update_PSN_Kemenhub_compressed.pdf",
+        "source_type": "official",
+        "retrieved_on": "2026-11-06",
+        "last_verified": "2026-11-07",
+        "notes": "Inauguration year per Kemenhub. Coordinates are the airport reference point, approximate. No capacity figure is stated in the PSN review.",
+        "corridor_name": "",
+        "sources": [
+          {
+            "id": "src-kemenhub-psn-progress-2026-02-19",
+            "publisher": "Kementerian Perhubungan",
+            "title": "Capaian Progres Proyek Strategis Nasional Sektor Transportasi",
+            "url": "https://ppid.kemenhub.go.id/fileupload/informasi-berkala/20260406102830.R1_19022026_Update_PSN_Kemenhub_compressed.pdf",
+            "published_on": "2026-02-19",
+            "retrieved_on": "2026-11-06",
+            "source_type": "official",
+            "language": "id",
+            "archive_path": "data/raw/2026-11-06/kemenhub_psn_progress_2026.pdf",
+            "notes": "35 transport PSNs; progress as of February 2026.",
+            "claim": "status; location; opening"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          111.9479,
+          -7.7486
+        ]
+      },
+      "properties": {
+        "id": "air-kediri",
+        "name": "Kediri Airport (Dhoho)",
+        "sector": "airport",
+        "subsector": "domestic airport",
+        "status": "operating",
+        "status_basis": "Kemenhub PSN review (19 Feb 2026): inaugurated in 2023 and operating; one of 18 completed projects proposed for removal from the PSN list.",
+        "corridor_id": "",
+        "island": "Java",
+        "province": "East Java",
+        "route": "Kediri, East Java",
+        "length_km": "",
+        "operational_km": "",
+        "construction_km": "",
+        "progress_pct": "",
+        "investment_idr_t": "",
+        "capacity": "",
+        "capacity_unit": "",
+        "psn": "yes",
+        "opened_year": "2023",
+        "opened_date": "",
+        "expected_open_year": "",
+        "status_as_of": "2026-02-19",
+        "verification": "official",
+        "precision": "approximate",
+        "operator": "PT Angkasa Pura I (Persero)",
+        "source_url": "https://ppid.kemenhub.go.id/fileupload/informasi-berkala/20260406102830.R1_19022026_Update_PSN_Kemenhub_compressed.pdf",
+        "source_type": "official",
+        "retrieved_on": "2026-11-06",
+        "last_verified": "2026-11-07",
+        "notes": "Inauguration year per Kemenhub. Coordinates are the airport reference point, approximate. No capacity figure is stated in the PSN review.",
+        "corridor_name": "",
+        "sources": [
+          {
+            "id": "src-kemenhub-psn-progress-2026-02-19",
+            "publisher": "Kementerian Perhubungan",
+            "title": "Capaian Progres Proyek Strategis Nasional Sektor Transportasi",
+            "url": "https://ppid.kemenhub.go.id/fileupload/informasi-berkala/20260406102830.R1_19022026_Update_PSN_Kemenhub_compressed.pdf",
+            "published_on": "2026-02-19",
+            "retrieved_on": "2026-11-06",
+            "source_type": "official",
+            "language": "id",
+            "archive_path": "data/raw/2026-11-06/kemenhub_psn_progress_2026.pdf",
+            "notes": "35 transport PSNs; progress as of February 2026.",
+            "claim": "status; location; opening"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.3833,
+          0.9167
+        ]
+      },
+      "properties": {
+        "id": "air-raja-haji-abdullah-karimun",
+        "name": "Raja Haji Abdullah Airport – Karimun",
+        "sector": "airport",
+        "subsector": "domestic airport",
+        "status": "operating",
+        "status_basis": "Kemenhub PSN review (19 Feb 2026): inaugurated in 2023 and operating; one of 18 completed projects proposed for removal from the PSN list.",
+        "corridor_id": "",
+        "island": "Sumatra",
+        "province": "Riau Islands",
+        "route": "Karimun, Riau Islands",
+        "length_km": "",
+        "operational_km": "",
+        "construction_km": "",
+        "progress_pct": "",
+        "investment_idr_t": "",
+        "capacity": "",
+        "capacity_unit": "",
+        "psn": "yes",
+        "opened_year": "2023",
+        "opened_date": "",
+        "expected_open_year": "",
+        "status_as_of": "2026-02-19",
+        "verification": "official",
+        "precision": "approximate",
+        "operator": "PT Angkasa Pura II (Persero)",
+        "source_url": "https://ppid.kemenhub.go.id/fileupload/informasi-berkala/20260406102830.R1_19022026_Update_PSN_Kemenhub_compressed.pdf",
+        "source_type": "official",
+        "retrieved_on": "2026-11-06",
+        "last_verified": "2026-11-07",
+        "notes": "Inauguration year per Kemenhub. Coordinates are the airport reference point, approximate. No capacity figure is stated in the PSN review.",
+        "corridor_name": "",
+        "sources": [
+          {
+            "id": "src-kemenhub-psn-progress-2026-02-19",
+            "publisher": "Kementerian Perhubungan",
+            "title": "Capaian Progres Proyek Strategis Nasional Sektor Transportasi",
+            "url": "https://ppid.kemenhub.go.id/fileupload/informasi-berkala/20260406102830.R1_19022026_Update_PSN_Kemenhub_compressed.pdf",
+            "published_on": "2026-02-19",
+            "retrieved_on": "2026-11-06",
+            "source_type": "official",
+            "language": "id",
+            "archive_path": "data/raw/2026-11-06/kemenhub_psn_progress_2026.pdf",
+            "notes": "35 transport PSNs; progress as of February 2026.",
+            "claim": "status; location; opening"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          117.5,
+          0.5833
+        ]
+      },
+      "properties": {
+        "id": "port-kek-maloy",
+        "name": "KEK Maloy Port",
+        "sector": "seaport",
+        "subsector": "multipurpose port",
+        "status": "operating",
+        "status_basis": "Kemenhub PSN review (19 Feb 2026): inaugurated in 2020 and operating; one of 18 completed projects proposed for removal from the PSN list.",
+        "corridor_id": "",
+        "island": "Kalimantan",
+        "province": "East Kalimantan",
+        "route": "Kutai Timur, East Kalimantan",
+        "length_km": "",
+        "operational_km": "",
+        "construction_km": "",
+        "progress_pct": "",
+        "investment_idr_t": "",
+        "capacity": "",
+        "capacity_unit": "",
+        "psn": "yes",
+        "opened_year": "2020",
+        "opened_date": "",
+        "expected_open_year": "",
+        "status_as_of": "2026-02-19",
+        "verification": "official",
+        "precision": "approximate",
+        "operator": "PT Pelabuhan Indonesia (Persero)",
+        "source_url": "https://ppid.kemenhub.go.id/fileupload/informasi-berkala/20260406102830.R1_19022026_Update_PSN_Kemenhub_compressed.pdf",
+        "source_type": "official",
+        "retrieved_on": "2026-11-06",
+        "last_verified": "2026-11-07",
+        "notes": "Inauguration year per Kemenhub. Serves the Maloy Batuta Trans Kalimantan SEZ. Coordinates are approximate.",
+        "corridor_name": "",
+        "sources": [
+          {
+            "id": "src-kemenhub-psn-progress-2026-02-19",
+            "publisher": "Kementerian Perhubungan",
+            "title": "Capaian Progres Proyek Strategis Nasional Sektor Transportasi",
+            "url": "https://ppid.kemenhub.go.id/fileupload/informasi-berkala/20260406102830.R1_19022026_Update_PSN_Kemenhub_compressed.pdf",
+            "published_on": "2026-02-19",
+            "retrieved_on": "2026-11-06",
+            "source_type": "official",
+            "language": "id",
+            "archive_path": "data/raw/2026-11-06/kemenhub_psn_progress_2026.pdf",
+            "notes": "35 transport PSNs; progress as of February 2026.",
+            "claim": "status; location; opening"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          119.887,
+          -8.496
+        ]
+      },
+      "properties": {
+        "id": "port-labuan-bajo-multipurpose",
+        "name": "Labuan Bajo Multipurpose Terminal",
+        "sector": "seaport",
+        "subsector": "multipurpose port",
+        "status": "operating",
+        "status_basis": "Kemenhub PSN review (19 Feb 2026): inaugurated in 2021 and operating; one of 18 completed projects proposed for removal from the PSN list.",
+        "corridor_id": "",
+        "island": "Bali-Nusa Tenggara",
+        "province": "East Nusa Tenggara",
+        "route": "Manggarai Barat, East Nusa Tenggara",
+        "length_km": "",
+        "operational_km": "",
+        "construction_km": "",
+        "progress_pct": "",
+        "investment_idr_t": "",
+        "capacity": "",
+        "capacity_unit": "",
+        "psn": "yes",
+        "opened_year": "2021",
+        "opened_date": "",
+        "expected_open_year": "",
+        "status_as_of": "2026-02-19",
+        "verification": "official",
+        "precision": "approximate",
+        "operator": "PT Pelabuhan Indonesia (Persero)",
+        "source_url": "https://ppid.kemenhub.go.id/fileupload/informasi-berkala/20260406102830.R1_19022026_Update_PSN_Kemenhub_compressed.pdf",
+        "source_type": "official",
+        "retrieved_on": "2026-11-06",
+        "last_verified": "2026-11-07",
+        "notes": "Inauguration year per Kemenhub. Coordinates are approximate.",
+        "corridor_name": "",
+        "sources": [
+          {
+            "id": "src-kemenhub-psn-progress-2026-02-19",
+            "publisher": "Kementerian Perhubungan",
+            "title": "Capaian Progres Proyek Strategis Nasional Sektor Transportasi",
+            "url": "https://ppid.kemenhub.go.id/fileupload/informasi-berkala/20260406102830.R1_19022026_Update_PSN_Kemenhub_compressed.pdf",
+            "published_on": "2026-02-19",
+            "retrieved_on": "2026-11-06",
+            "source_type": "official",
+            "language": "id",
+            "archive_path": "data/raw/2026-11-06/kemenhub_psn_progress_2026.pdf",
+            "notes": "35 transport PSNs; progress as of February 2026.",
+            "claim": "status; location; opening"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          125.123,
+          1.44
+        ]
+      },
+      "properties": {
+        "id": "port-bitung",
+        "name": "Bitung International Hub Port",
+        "sector": "seaport",
+        "subsector": "hub port",
+        "status": "operating",
+        "status_basis": "Kemenhub PSN review (19 Feb 2026): inaugurated in 2018 and operating; one of 18 completed projects proposed for removal from the PSN list.",
+        "corridor_id": "",
+        "island": "Sulawesi",
+        "province": "North Sulawesi",
+        "route": "Bitung, North Sulawesi",
+        "length_km": "",
+        "operational_km": "",
+        "construction_km": "",
+        "progress_pct": "",
+        "investment_idr_t": "",
+        "capacity": "",
+        "capacity_unit": "",
+        "psn": "yes",
+        "opened_year": "2018",
+        "opened_date": "",
+        "expected_open_year": "",
+        "status_as_of": "2026-02-19",
+        "verification": "official",
+        "precision": "approximate",
+        "operator": "PT Pelabuhan Indonesia (Persero)",
+        "source_url": "https://ppid.kemenhub.go.id/fileupload/informasi-berkala/20260406102830.R1_19022026_Update_PSN_Kemenhub_compressed.pdf",
+        "source_type": "official",
+        "retrieved_on": "2026-11-06",
+        "last_verified": "2026-11-07",
+        "notes": "Inauguration year per Kemenhub. Supporting hub works continue after the inauguration. Coordinates are approximate.",
+        "corridor_name": "",
+        "sources": [
+          {
+            "id": "src-kemenhub-psn-progress-2026-02-19",
+            "publisher": "Kementerian Perhubungan",
+            "title": "Capaian Progres Proyek Strategis Nasional Sektor Transportasi",
+            "url": "https://ppid.kemenhub.go.id/fileupload/informasi-berkala/20260406102830.R1_19022026_Update_PSN_Kemenhub_compressed.pdf",
+            "published_on": "2026-02-19",
+            "retrieved_on": "2026-11-06",
+            "source_type": "official",
+            "language": "id",
+            "archive_path": "data/raw/2026-11-06/kemenhub_psn_progress_2026.pdf",
+            "notes": "35 transport PSNs; progress as of February 2026.",
+            "claim": "status; location; opening"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          123.5667,
+          -10.1833
+        ]
+      },
+      "properties": {
+        "id": "port-kupang",
+        "name": "Kupang Port",
+        "sector": "seaport",
+        "subsector": "multipurpose port",
+        "status": "operating",
+        "status_basis": "Kemenhub PSN review (19 Feb 2026): inaugurated in 2018 and operating; one of 18 completed projects proposed for removal from the PSN list.",
+        "corridor_id": "",
+        "island": "Bali-Nusa Tenggara",
+        "province": "East Nusa Tenggara",
+        "route": "Kupang, East Nusa Tenggara",
+        "length_km": "",
+        "operational_km": "",
+        "construction_km": "",
+        "progress_pct": "",
+        "investment_idr_t": "",
+        "capacity": "",
+        "capacity_unit": "",
+        "psn": "yes",
+        "opened_year": "2018",
+        "opened_date": "",
+        "expected_open_year": "",
+        "status_as_of": "2026-02-19",
+        "verification": "official",
+        "precision": "approximate",
+        "operator": "PT Pelabuhan Indonesia (Persero)",
+        "source_url": "https://ppid.kemenhub.go.id/fileupload/informasi-berkala/20260406102830.R1_19022026_Update_PSN_Kemenhub_compressed.pdf",
+        "source_type": "official",
+        "retrieved_on": "2026-11-06",
+        "last_verified": "2026-11-07",
+        "notes": "Tenau–Kupang port. Inauguration year per Kemenhub. Coordinates are approximate.",
+        "corridor_name": "",
+        "sources": [
+          {
+            "id": "src-kemenhub-psn-progress-2026-02-19",
+            "publisher": "Kementerian Perhubungan",
+            "title": "Capaian Progres Proyek Strategis Nasional Sektor Transportasi",
+            "url": "https://ppid.kemenhub.go.id/fileupload/informasi-berkala/20260406102830.R1_19022026_Update_PSN_Kemenhub_compressed.pdf",
+            "published_on": "2026-02-19",
+            "retrieved_on": "2026-11-06",
+            "source_type": "official",
+            "language": "id",
+            "archive_path": "data/raw/2026-11-06/kemenhub_psn_progress_2026.pdf",
+            "notes": "35 transport PSNs; progress as of February 2026.",
+            "claim": "status; location; opening"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          99.45,
+          3.35
+        ]
+      },
+      "properties": {
+        "id": "port-kuala-tanjung",
+        "name": "Kuala Tanjung International Hub Port",
+        "sector": "seaport",
+        "subsector": "hub port",
+        "status": "operating",
+        "status_basis": "Kemenhub PSN review (19 Feb 2026): inaugurated in 2018 and operating; one of 18 completed projects proposed for removal from the PSN list.",
+        "corridor_id": "",
+        "island": "Sumatra",
+        "province": "North Sumatra",
+        "route": "Batu Bara, North Sumatra",
+        "length_km": "",
+        "operational_km": "",
+        "construction_km": "",
+        "progress_pct": "",
+        "investment_idr_t": "",
+        "capacity": "",
+        "capacity_unit": "",
+        "psn": "yes",
+        "opened_year": "2018",
+        "opened_date": "",
+        "expected_open_year": "",
+        "status_as_of": "2026-02-19",
+        "verification": "official",
+        "precision": "approximate",
+        "operator": "PT Pelabuhan Indonesia (Persero)",
+        "source_url": "https://ppid.kemenhub.go.id/fileupload/informasi-berkala/20260406102830.R1_19022026_Update_PSN_Kemenhub_compressed.pdf",
+        "source_type": "official",
+        "retrieved_on": "2026-11-06",
+        "last_verified": "2026-11-07",
+        "notes": "Inauguration year per Kemenhub. Coordinates are approximate.",
+        "corridor_name": "",
+        "sources": [
+          {
+            "id": "src-kemenhub-psn-progress-2026-02-19",
+            "publisher": "Kementerian Perhubungan",
+            "title": "Capaian Progres Proyek Strategis Nasional Sektor Transportasi",
+            "url": "https://ppid.kemenhub.go.id/fileupload/informasi-berkala/20260406102830.R1_19022026_Update_PSN_Kemenhub_compressed.pdf",
+            "published_on": "2026-02-19",
+            "retrieved_on": "2026-11-06",
+            "source_type": "official",
+            "language": "id",
+            "archive_path": "data/raw/2026-11-06/kemenhub_psn_progress_2026.pdf",
+            "notes": "35 transport PSNs; progress as of February 2026.",
+            "claim": "status; location; opening"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.95,
+          0.2833
+        ]
+      },
+      "properties": {
+        "id": "port-kijing",
+        "name": "Kijing Terminal",
+        "sector": "seaport",
+        "subsector": "multipurpose port",
+        "status": "operating",
+        "status_basis": "Kemenhub PSN review (19 Feb 2026): inaugurated in 2022 and operating; one of 18 completed projects proposed for removal from the PSN list.",
+        "corridor_id": "",
+        "island": "Kalimantan",
+        "province": "West Kalimantan",
+        "route": "Mempawah, West Kalimantan",
+        "length_km": "",
+        "operational_km": "",
+        "construction_km": "",
+        "progress_pct": "",
+        "investment_idr_t": "",
+        "capacity": "",
+        "capacity_unit": "",
+        "psn": "yes",
+        "opened_year": "2022",
+        "opened_date": "",
+        "expected_open_year": "",
+        "status_as_of": "2026-02-19",
+        "verification": "official",
+        "precision": "approximate",
+        "operator": "PT Pelabuhan Indonesia (Persero)",
+        "source_url": "https://ppid.kemenhub.go.id/fileupload/informasi-berkala/20260406102830.R1_19022026_Update_PSN_Kemenhub_compressed.pdf",
+        "source_type": "official",
+        "retrieved_on": "2026-11-06",
+        "last_verified": "2026-11-07",
+        "notes": "Inauguration year per Kemenhub. Coordinates are approximate.",
+        "corridor_name": "",
+        "sources": [
+          {
+            "id": "src-kemenhub-psn-progress-2026-02-19",
+            "publisher": "Kementerian Perhubungan",
+            "title": "Capaian Progres Proyek Strategis Nasional Sektor Transportasi",
+            "url": "https://ppid.kemenhub.go.id/fileupload/informasi-berkala/20260406102830.R1_19022026_Update_PSN_Kemenhub_compressed.pdf",
+            "published_on": "2026-02-19",
+            "retrieved_on": "2026-11-06",
+            "source_type": "official",
+            "language": "id",
+            "archive_path": "data/raw/2026-11-06/kemenhub_psn_progress_2026.pdf",
+            "notes": "35 transport PSNs; progress as of February 2026.",
+            "claim": "status; location; opening"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.267,
+          -8.7
+        ]
+      },
+      "properties": {
+        "id": "port-sanur",
+        "name": "Sanur Port",
+        "sector": "seaport",
+        "subsector": "ferry port",
+        "status": "operating",
+        "status_basis": "Kemenhub PSN review (19 Feb 2026): inaugurated in 2022 and operating; one of 18 completed projects proposed for removal from the PSN list.",
+        "corridor_id": "",
+        "island": "Bali-Nusa Tenggara",
+        "province": "Bali",
+        "route": "Denpasar, Bali",
+        "length_km": "",
+        "operational_km": "",
+        "construction_km": "",
+        "progress_pct": "",
+        "investment_idr_t": "",
+        "capacity": "",
+        "capacity_unit": "",
+        "psn": "yes",
+        "opened_year": "2022",
+        "opened_date": "",
+        "expected_open_year": "",
+        "status_as_of": "2026-02-19",
+        "verification": "official",
+        "precision": "approximate",
+        "operator": "PT Pelabuhan Indonesia (Persero)",
+        "source_url": "https://ppid.kemenhub.go.id/fileupload/informasi-berkala/20260406102830.R1_19022026_Update_PSN_Kemenhub_compressed.pdf",
+        "source_type": "official",
+        "retrieved_on": "2026-11-06",
+        "last_verified": "2026-11-07",
+        "notes": "Sanur–Nusa Ceningan crossing. Inauguration year per Kemenhub. Coordinates are approximate.",
+        "corridor_name": "",
+        "sources": [
+          {
+            "id": "src-kemenhub-psn-progress-2026-02-19",
+            "publisher": "Kementerian Perhubungan",
+            "title": "Capaian Progres Proyek Strategis Nasional Sektor Transportasi",
+            "url": "https://ppid.kemenhub.go.id/fileupload/informasi-berkala/20260406102830.R1_19022026_Update_PSN_Kemenhub_compressed.pdf",
+            "published_on": "2026-02-19",
+            "retrieved_on": "2026-11-06",
+            "source_type": "official",
+            "language": "id",
+            "archive_path": "data/raw/2026-11-06/kemenhub_psn_progress_2026.pdf",
+            "notes": "35 transport PSNs; progress as of February 2026.",
+            "claim": "status; location; opening"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          125.067,
+          1.667
+        ]
+      },
+      "properties": {
+        "id": "port-likupang",
+        "name": "Likupang Port",
+        "sector": "seaport",
+        "subsector": "ferry port",
+        "status": "operating",
+        "status_basis": "Kemenhub PSN review (19 Feb 2026): inaugurated in 2022 and operating; one of 18 completed projects proposed for removal from the PSN list.",
+        "corridor_id": "",
+        "island": "Sulawesi",
+        "province": "North Sulawesi",
+        "route": "Minahasa Utara, North Sulawesi",
+        "length_km": "",
+        "operational_km": "",
+        "construction_km": "",
+        "progress_pct": "",
+        "investment_idr_t": "",
+        "capacity": "",
+        "capacity_unit": "",
+        "psn": "yes",
+        "opened_year": "2022",
+        "opened_date": "",
+        "expected_open_year": "",
+        "status_as_of": "2026-02-19",
+        "verification": "official",
+        "precision": "approximate",
+        "operator": "PT Pelabuhan Indonesia (Persero)",
+        "source_url": "https://ppid.kemenhub.go.id/fileupload/informasi-berkala/20260406102830.R1_19022026_Update_PSN_Kemenhub_compressed.pdf",
+        "source_type": "official",
+        "retrieved_on": "2026-11-06",
+        "last_verified": "2026-11-07",
+        "notes": "Inauguration year per Kemenhub. Coordinates are approximate.",
+        "corridor_name": "",
+        "sources": [
+          {
+            "id": "src-kemenhub-psn-progress-2026-02-19",
+            "publisher": "Kementerian Perhubungan",
+            "title": "Capaian Progres Proyek Strategis Nasional Sektor Transportasi",
+            "url": "https://ppid.kemenhub.go.id/fileupload/informasi-berkala/20260406102830.R1_19022026_Update_PSN_Kemenhub_compressed.pdf",
+            "published_on": "2026-02-19",
+            "retrieved_on": "2026-11-06",
+            "source_type": "official",
+            "language": "id",
+            "archive_path": "data/raw/2026-11-06/kemenhub_psn_progress_2026.pdf",
+            "notes": "35 transport PSNs; progress as of February 2026.",
+            "claim": "status; location; opening"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          119.383,
+          -5.1
+        ]
+      },
+      "properties": {
+        "id": "port-makassar-new-port",
+        "name": "Makassar New Port",
+        "sector": "seaport",
+        "subsector": "container port",
+        "status": "operating",
+        "status_basis": "Kemenhub PSN review (19 Feb 2026): inaugurated in 2023 and operating; one of 18 completed projects proposed for removal from the PSN list.",
+        "corridor_id": "",
+        "island": "Sulawesi",
+        "province": "South Sulawesi",
+        "route": "Makassar, South Sulawesi",
+        "length_km": "",
+        "operational_km": "",
+        "construction_km": "",
+        "progress_pct": "",
+        "investment_idr_t": "",
+        "capacity": "",
+        "capacity_unit": "",
+        "psn": "yes",
+        "opened_year": "2023",
+        "opened_date": "",
+        "expected_open_year": "",
+        "status_as_of": "2026-02-19",
+        "verification": "official",
+        "precision": "approximate",
+        "operator": "PT Pelabuhan Indonesia (Persero)",
+        "source_url": "https://ppid.kemenhub.go.id/fileupload/informasi-berkala/20260406102830.R1_19022026_Update_PSN_Kemenhub_compressed.pdf",
+        "source_type": "official",
+        "retrieved_on": "2026-11-06",
+        "last_verified": "2026-11-07",
+        "notes": "Inauguration year per Kemenhub. Coordinates are approximate.",
+        "corridor_name": "",
+        "sources": [
+          {
+            "id": "src-kemenhub-psn-progress-2026-02-19",
+            "publisher": "Kementerian Perhubungan",
+            "title": "Capaian Progres Proyek Strategis Nasional Sektor Transportasi",
+            "url": "https://ppid.kemenhub.go.id/fileupload/informasi-berkala/20260406102830.R1_19022026_Update_PSN_Kemenhub_compressed.pdf",
+            "published_on": "2026-02-19",
+            "retrieved_on": "2026-11-06",
+            "source_type": "official",
+            "language": "id",
+            "archive_path": "data/raw/2026-11-06/kemenhub_psn_progress_2026.pdf",
+            "notes": "35 transport PSNs; progress as of February 2026.",
+            "claim": "status; location; opening"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          119.733,
+          -0.883
+        ]
+      },
+      "properties": {
+        "id": "port-teluk-palu",
+        "name": "Teluk Palu Port",
+        "sector": "seaport",
+        "subsector": "multipurpose port",
+        "status": "operating",
+        "status_basis": "Kemenhub PSN review (19 Feb 2026): inaugurated in 2023 and operating; one of 18 completed projects proposed for removal from the PSN list.",
+        "corridor_id": "",
+        "island": "Sulawesi",
+        "province": "Central Sulawesi",
+        "route": "Palu, Central Sulawesi",
+        "length_km": "",
+        "operational_km": "",
+        "construction_km": "",
+        "progress_pct": "",
+        "investment_idr_t": "",
+        "capacity": "",
+        "capacity_unit": "",
+        "psn": "yes",
+        "opened_year": "2023",
+        "opened_date": "",
+        "expected_open_year": "",
+        "status_as_of": "2026-02-19",
+        "verification": "official",
+        "precision": "approximate",
+        "operator": "PT Pelabuhan Indonesia (Persero)",
+        "source_url": "https://ppid.kemenhub.go.id/fileupload/informasi-berkala/20260406102830.R1_19022026_Update_PSN_Kemenhub_compressed.pdf",
+        "source_type": "official",
+        "retrieved_on": "2026-11-06",
+        "last_verified": "2026-11-07",
+        "notes": "Inauguration year per Kemenhub. Coordinates are approximate.",
+        "corridor_name": "",
+        "sources": [
+          {
+            "id": "src-kemenhub-psn-progress-2026-02-19",
+            "publisher": "Kementerian Perhubungan",
+            "title": "Capaian Progres Proyek Strategis Nasional Sektor Transportasi",
+            "url": "https://ppid.kemenhub.go.id/fileupload/informasi-berkala/20260406102830.R1_19022026_Update_PSN_Kemenhub_compressed.pdf",
+            "published_on": "2026-02-19",
+            "retrieved_on": "2026-11-06",
+            "source_type": "official",
+            "language": "id",
+            "archive_path": "data/raw/2026-11-06/kemenhub_psn_progress_2026.pdf",
+            "notes": "35 transport PSNs; progress as of February 2026.",
+            "claim": "status; location; opening"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.267,
+          -0.883
+        ]
+      },
+      "properties": {
+        "id": "port-sorong",
+        "name": "Sorong Port",
+        "sector": "seaport",
+        "subsector": "multipurpose port",
+        "status": "operating",
+        "status_basis": "Kemenhub PSN review (19 Feb 2026): inaugurated in 2023 and operating; one of 18 completed projects proposed for removal from the PSN list.",
+        "corridor_id": "",
+        "island": "Papua",
+        "province": "Southwest Papua",
+        "route": "Sorong, Southwest Papua",
+        "length_km": "",
+        "operational_km": "",
+        "construction_km": "",
+        "progress_pct": "",
+        "investment_idr_t": "",
+        "capacity": "",
+        "capacity_unit": "",
+        "psn": "yes",
+        "opened_year": "2023",
+        "opened_date": "",
+        "expected_open_year": "",
+        "status_as_of": "2026-02-19",
+        "verification": "official",
+        "precision": "approximate",
+        "operator": "PT Pelabuhan Indonesia (Persero)",
+        "source_url": "https://ppid.kemenhub.go.id/fileupload/informasi-berkala/20260406102830.R1_19022026_Update_PSN_Kemenhub_compressed.pdf",
+        "source_type": "official",
+        "retrieved_on": "2026-11-06",
+        "last_verified": "2026-11-07",
+        "notes": "Inauguration year per Kemenhub. Coordinates are approximate.",
+        "corridor_name": "",
+        "sources": [
+          {
+            "id": "src-kemenhub-psn-progress-2026-02-19",
+            "publisher": "Kementerian Perhubungan",
+            "title": "Capaian Progres Proyek Strategis Nasional Sektor Transportasi",
+            "url": "https://ppid.kemenhub.go.id/fileupload/informasi-berkala/20260406102830.R1_19022026_Update_PSN_Kemenhub_compressed.pdf",
+            "published_on": "2026-02-19",
+            "retrieved_on": "2026-11-06",
+            "source_type": "official",
+            "language": "id",
+            "archive_path": "data/raw/2026-11-06/kemenhub_psn_progress_2026.pdf",
+            "notes": "35 transport PSNs; progress as of February 2026.",
+            "claim": "status; location; opening"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.867,
+          -6.233
+        ]
+      },
+      "properties": {
+        "id": "port-patimban",
+        "name": "Patimban Port",
+        "sector": "seaport",
+        "subsector": "container port",
+        "status": "under_construction",
+        "status_basis": "Kemenhub PSN review (19 Feb 2026): Phase I complete and operating; Phase I-2 packages 5 and 6 at 95.48% and 93.02% in late 2025; project still under construction.",
+        "corridor_id": "",
+        "island": "Java",
+        "province": "West Java",
+        "route": "Subang, West Java",
+        "length_km": "",
+        "operational_km": "",
+        "construction_km": "",
+        "progress_pct": "",
+        "investment_idr_t": "18.189",
+        "capacity": "",
+        "capacity_unit": "",
+        "psn": "yes",
+        "opened_year": "",
+        "opened_date": "",
+        "expected_open_year": "",
+        "status_as_of": "2026-02-19",
+        "verification": "official",
+        "precision": "approximate",
+        "operator": "PT Pelabuhan Indonesia (Persero)",
+        "source_url": "https://ppid.kemenhub.go.id/fileupload/informasi-berkala/20260406102830.R1_19022026_Update_PSN_Kemenhub_compressed.pdf",
+        "source_type": "official",
+        "retrieved_on": "2026-11-06",
+        "last_verified": "2026-11-07",
+        "notes": "The summary lists Patimban among 29 completed projects, but the project page reports Phase I-2 still under construction. Two JICA loans: Rp 8.979T (IP-577) and Rp 9.210T (IP-577 and IP-588); total 18.189T. Phase I opened in 2021; the full project is not complete. Coordinates approximate.",
+        "corridor_name": "",
+        "sources": [
+          {
+            "id": "src-kemenhub-psn-progress-2026-02-19",
+            "publisher": "Kementerian Perhubungan",
+            "title": "Capaian Progres Proyek Strategis Nasional Sektor Transportasi",
+            "url": "https://ppid.kemenhub.go.id/fileupload/informasi-berkala/20260406102830.R1_19022026_Update_PSN_Kemenhub_compressed.pdf",
+            "published_on": "2026-02-19",
+            "retrieved_on": "2026-11-06",
+            "source_type": "official",
+            "language": "id",
+            "archive_path": "data/raw/2026-11-06/kemenhub_psn_progress_2026.pdf",
+            "notes": "35 transport PSNs; progress as of February 2026.",
+            "claim": "status; location; investment"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.217,
+          -8.75
+        ]
+      },
+      "properties": {
+        "id": "port-benoa",
+        "name": "Benoa Port (BMTH)",
+        "sector": "seaport",
+        "subsector": "multipurpose port",
+        "status": "recently_completed",
+        "status_basis": "Kemenhub PSN review (19 Feb 2026): all listed BMTH development works reported 100% in 2025, including the cruise terminal, international passenger terminal expansion, revetments and dredging.",
+        "corridor_id": "",
+        "island": "Bali-Nusa Tenggara",
+        "province": "Bali",
+        "route": "Denpasar, Bali",
+        "length_km": "",
+        "operational_km": "",
+        "construction_km": "",
+        "progress_pct": "100",
+        "investment_idr_t": "6.06",
+        "capacity": "",
+        "capacity_unit": "",
+        "psn": "yes",
+        "opened_year": "2025",
+        "opened_date": "",
+        "expected_open_year": "",
+        "status_as_of": "2026-02-19",
+        "verification": "official",
+        "precision": "approximate",
+        "operator": "PT Pelabuhan Indonesia (Persero)",
+        "source_url": "https://ppid.kemenhub.go.id/fileupload/informasi-berkala/20260406102830.R1_19022026_Update_PSN_Kemenhub_compressed.pdf",
+        "source_type": "official",
+        "retrieved_on": "2026-11-06",
+        "last_verified": "2026-11-07",
+        "notes": "The status refers to the BMTH expansion completed in 2025, not the original port, which has operated for decades. Coordinates are approximate.",
+        "corridor_name": "",
+        "sources": [
+          {
+            "id": "src-kemenhub-psn-progress-2026-02-19",
+            "publisher": "Kementerian Perhubungan",
+            "title": "Capaian Progres Proyek Strategis Nasional Sektor Transportasi",
+            "url": "https://ppid.kemenhub.go.id/fileupload/informasi-berkala/20260406102830.R1_19022026_Update_PSN_Kemenhub_compressed.pdf",
+            "published_on": "2026-02-19",
+            "retrieved_on": "2026-11-06",
+            "source_type": "official",
+            "language": "id",
+            "archive_path": "data/raw/2026-11-06/kemenhub_psn_progress_2026.pdf",
+            "notes": "35 transport PSNs; progress as of February 2026.",
+            "claim": "status; location; opening; investment; progress"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.9,
+          -2.383
+        ]
+      },
+      "properties": {
+        "id": "port-palembang-baru",
+        "name": "New Palembang Port",
+        "sector": "seaport",
+        "subsector": "multipurpose port",
+        "status": "planned",
+        "status_basis": "Kemenhub PSN review (19 Feb 2026): no physical construction; 599,500 m2 of land was granted by the South Sumatra government on 31 October 2025.",
+        "corridor_id": "",
+        "island": "Sumatra",
+        "province": "South Sumatra",
+        "route": "Banyuasin, South Sumatra",
+        "length_km": "",
+        "operational_km": "",
+        "construction_km": "",
+        "progress_pct": "",
+        "investment_idr_t": "1.450",
+        "capacity": "",
+        "capacity_unit": "",
+        "psn": "yes",
+        "opened_year": "",
+        "opened_date": "",
+        "expected_open_year": "2025",
+        "status_as_of": "2026-02-19",
+        "verification": "official",
+        "precision": "approximate",
+        "operator": "tba",
+        "source_url": "https://ppid.kemenhub.go.id/fileupload/informasi-berkala/20260406102830.R1_19022026_Update_PSN_Kemenhub_compressed.pdf",
+        "source_type": "official",
+        "retrieved_on": "2026-11-06",
+        "last_verified": "2026-11-07",
+        "notes": "The deck's 2025 target has already passed and no physical work had started at the review date. Location is the Tanjung Carat/Sungsang area; coordinates approximate.",
+        "corridor_name": "",
+        "sources": [
+          {
+            "id": "src-kemenhub-psn-progress-2026-02-19",
+            "publisher": "Kementerian Perhubungan",
+            "title": "Capaian Progres Proyek Strategis Nasional Sektor Transportasi",
+            "url": "https://ppid.kemenhub.go.id/fileupload/informasi-berkala/20260406102830.R1_19022026_Update_PSN_Kemenhub_compressed.pdf",
+            "published_on": "2026-02-19",
+            "retrieved_on": "2026-11-06",
+            "source_type": "official",
+            "language": "id",
+            "archive_path": "data/raw/2026-11-06/kemenhub_psn_progress_2026.pdf",
+            "notes": "35 transport PSNs; progress as of February 2026.",
+            "claim": "status; location; target; investment"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.617,
+          -1.5
+        ]
+      },
+      "properties": {
+        "id": "port-muaro-jambi",
+        "name": "Muaro Jambi Container Terminal",
+        "sector": "seaport",
+        "subsector": "container port",
+        "status": "planned",
+        "status_basis": "Kemenhub PSN review (19 Feb 2026): construction contract signed on 17 December 2025; no physical construction at the review date.",
+        "corridor_id": "",
+        "island": "Sumatra",
+        "province": "Jambi",
+        "route": "Muaro Jambi, Jambi",
+        "length_km": "",
+        "operational_km": "",
+        "construction_km": "",
+        "progress_pct": "",
+        "investment_idr_t": "3.948",
+        "capacity": "",
+        "capacity_unit": "",
+        "psn": "yes",
+        "opened_year": "",
+        "opened_date": "",
+        "expected_open_year": "2028",
+        "status_as_of": "2026-02-19",
+        "verification": "official",
+        "precision": "approximate",
+        "operator": "tba",
+        "source_url": "https://ppid.kemenhub.go.id/fileupload/informasi-berkala/20260406102830.R1_19022026_Update_PSN_Kemenhub_compressed.pdf",
+        "source_type": "official",
+        "retrieved_on": "2026-11-06",
+        "last_verified": "2026-11-07",
+        "notes": "Contract awarded to PT Nusa Konstruksi Enjiniring for the WSI terminal. Coordinates are approximate.",
+        "corridor_name": "",
+        "sources": [
+          {
+            "id": "src-kemenhub-psn-progress-2026-02-19",
+            "publisher": "Kementerian Perhubungan",
+            "title": "Capaian Progres Proyek Strategis Nasional Sektor Transportasi",
+            "url": "https://ppid.kemenhub.go.id/fileupload/informasi-berkala/20260406102830.R1_19022026_Update_PSN_Kemenhub_compressed.pdf",
+            "published_on": "2026-02-19",
+            "retrieved_on": "2026-11-06",
+            "source_type": "official",
+            "language": "id",
+            "archive_path": "data/raw/2026-11-06/kemenhub_psn_progress_2026.pdf",
+            "notes": "35 transport PSNs; progress as of February 2026.",
+            "claim": "status; location; target; investment"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.75,
+          -2.983
+        ]
+      },
+      "properties": {
+        "id": "rail-lrt-sumsel",
+        "name": "LRT South Sumatra",
+        "sector": "railway",
+        "subsector": "urban rail",
+        "status": "operating",
+        "status_basis": "Kemenhub PSN review (19 Feb 2026): construction 100% and operating since 2018; asset regularisation at the depot remains open.",
+        "corridor_id": "",
+        "island": "Sumatra",
+        "province": "South Sumatra",
+        "route": "Palembang, South Sumatra",
+        "length_km": "",
+        "operational_km": "",
+        "construction_km": "",
+        "progress_pct": "",
+        "investment_idr_t": "12.13",
+        "capacity": "",
+        "capacity_unit": "",
+        "psn": "yes",
+        "opened_year": "2018",
+        "opened_date": "",
+        "expected_open_year": "",
+        "status_as_of": "2026-02-19",
+        "verification": "official",
+        "precision": "approximate",
+        "operator": "PT LRT Sumatera Selatan",
+        "source_url": "https://ppid.kemenhub.go.id/fileupload/informasi-berkala/20260406102830.R1_19022026_Update_PSN_Kemenhub_compressed.pdf",
+        "source_type": "official",
+        "retrieved_on": "2026-11-06",
+        "last_verified": "2026-11-07",
+        "notes": "Length is not stated in the PSN review. Coordinates are approximate. The depot land certificate is still being resolved.",
+        "corridor_name": "",
+        "sources": [
+          {
+            "id": "src-kemenhub-psn-progress-2026-02-19",
+            "publisher": "Kementerian Perhubungan",
+            "title": "Capaian Progres Proyek Strategis Nasional Sektor Transportasi",
+            "url": "https://ppid.kemenhub.go.id/fileupload/informasi-berkala/20260406102830.R1_19022026_Update_PSN_Kemenhub_compressed.pdf",
+            "published_on": "2026-02-19",
+            "retrieved_on": "2026-11-06",
+            "source_type": "official",
+            "language": "id",
+            "archive_path": "data/raw/2026-11-06/kemenhub_psn_progress_2026.pdf",
+            "notes": "35 transport PSNs; progress as of February 2026.",
+            "claim": "status; location; opening; investment"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.567,
+          -6.717
+        ]
+      },
+      "properties": {
+        "id": "rail-double-track-java-south",
+        "name": "Double Track Java South",
+        "sector": "railway",
+        "subsector": "intercity rail",
+        "status": "under_construction",
+        "status_basis": "Kemenhub PSN review (19 Feb 2026): the summary reports 100% but describes the work as partly complete; the Sepanjang–Wonokromo continuation is still in technical planning and land acquisition.",
+        "corridor_id": "",
+        "island": "Java",
+        "province": "West Java; Central Java; DI Yogyakarta; East Java",
+        "route": "Cirebon–Sepanjang–Wonokromo, Java",
+        "length_km": "",
+        "operational_km": "",
+        "construction_km": "",
+        "progress_pct": "",
+        "investment_idr_t": "",
+        "capacity": "",
+        "capacity_unit": "",
+        "psn": "yes",
+        "opened_year": "",
+        "opened_date": "",
+        "expected_open_year": "",
+        "status_as_of": "2026-02-19",
+        "verification": "official",
+        "precision": "approximate",
+        "operator": "PT Kereta Api Indonesia (Persero)",
+        "source_url": "https://ppid.kemenhub.go.id/fileupload/informasi-berkala/20260406102830.R1_19022026_Update_PSN_Kemenhub_compressed.pdf",
+        "source_type": "official",
+        "retrieved_on": "2026-11-06",
+        "last_verified": "2026-11-07",
+        "notes": "The deck repeats 'Rp 86 T private investment, excluding cost overrun' from the KCJB row; treated as a copy error and not used. No single length is stated because the programme covers multiple segments. Coordinates mark Cirebon, approximate.",
+        "corridor_name": "",
+        "sources": [
+          {
+            "id": "src-kemenhub-psn-progress-2026-02-19",
+            "publisher": "Kementerian Perhubungan",
+            "title": "Capaian Progres Proyek Strategis Nasional Sektor Transportasi",
+            "url": "https://ppid.kemenhub.go.id/fileupload/informasi-berkala/20260406102830.R1_19022026_Update_PSN_Kemenhub_compressed.pdf",
+            "published_on": "2026-02-19",
+            "retrieved_on": "2026-11-06",
+            "source_type": "official",
+            "language": "id",
+            "archive_path": "data/raw/2026-11-06/kemenhub_psn_progress_2026.pdf",
+            "notes": "35 transport PSNs; progress as of February 2026.",
+            "claim": "status; location"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          99.3,
+          3.34
+        ]
+      },
+      "properties": {
+        "id": "rail-tebing-tinggi-kuala-tanjung",
+        "name": "Tebing Tinggi–Kuala Tanjung Railway",
+        "sector": "railway",
+        "subsector": "freight rail",
+        "status": "operating",
+        "status_basis": "Kemenhub PSN review (19 Feb 2026): construction 100% in 2020 and operating since 2022; utility and land completion works continue.",
+        "corridor_id": "",
+        "island": "Sumatra",
+        "province": "North Sumatra",
+        "route": "Tebing Tinggi–Kuala Tanjung, North Sumatra",
+        "length_km": "",
+        "operational_km": "",
+        "construction_km": "",
+        "progress_pct": "",
+        "investment_idr_t": "0.874",
+        "capacity": "",
+        "capacity_unit": "",
+        "psn": "yes",
+        "opened_year": "2022",
+        "opened_date": "",
+        "expected_open_year": "",
+        "status_as_of": "2026-02-19",
+        "verification": "official",
+        "precision": "approximate",
+        "operator": "PT Kereta Api Indonesia (Persero)",
+        "source_url": "https://ppid.kemenhub.go.id/fileupload/informasi-berkala/20260406102830.R1_19022026_Update_PSN_Kemenhub_compressed.pdf",
+        "source_type": "official",
+        "retrieved_on": "2026-11-06",
+        "last_verified": "2026-11-07",
+        "notes": "Length is not stated in the PSN review. Coordinates are the midpoint, approximate.",
+        "corridor_name": "",
+        "sources": [
+          {
+            "id": "src-kemenhub-psn-progress-2026-02-19",
+            "publisher": "Kementerian Perhubungan",
+            "title": "Capaian Progres Proyek Strategis Nasional Sektor Transportasi",
+            "url": "https://ppid.kemenhub.go.id/fileupload/informasi-berkala/20260406102830.R1_19022026_Update_PSN_Kemenhub_compressed.pdf",
+            "published_on": "2026-02-19",
+            "retrieved_on": "2026-11-06",
+            "source_type": "official",
+            "language": "id",
+            "archive_path": "data/raw/2026-11-06/kemenhub_psn_progress_2026.pdf",
+            "notes": "35 transport PSNs; progress as of February 2026.",
+            "claim": "status; location; opening; investment"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.37,
+          -7.8
+        ]
+      },
+      "properties": {
+        "id": "rail-yogyakarta-airport",
+        "name": "Yogyakarta Airport Rail Link",
+        "sector": "railway",
+        "subsector": "airport rail",
+        "status": "operating",
+        "status_basis": "Kemenhub PSN review (19 Feb 2026): construction 100% in 2021 and commercial operation since September 2021.",
+        "corridor_id": "",
+        "island": "Java",
+        "province": "DI Yogyakarta",
+        "route": "Yogyakarta–Yogyakarta International Airport",
+        "length_km": "",
+        "operational_km": "",
+        "construction_km": "",
+        "progress_pct": "",
+        "investment_idr_t": "7",
+        "capacity": "",
+        "capacity_unit": "",
+        "psn": "yes",
+        "opened_year": "2021",
+        "opened_date": "",
+        "expected_open_year": "",
+        "status_as_of": "2026-02-19",
+        "verification": "official",
+        "precision": "approximate",
+        "operator": "PT Kereta Api Indonesia (Persero)",
+        "source_url": "https://ppid.kemenhub.go.id/fileupload/informasi-berkala/20260406102830.R1_19022026_Update_PSN_Kemenhub_compressed.pdf",
+        "source_type": "official",
+        "retrieved_on": "2026-11-06",
+        "last_verified": "2026-11-07",
+        "notes": "Investment: APBN Rp 6T plus KPBU Rp 1T. Length is not stated in the PSN review. Coordinates are approximate.",
+        "corridor_name": "",
+        "sources": [
+          {
+            "id": "src-kemenhub-psn-progress-2026-02-19",
+            "publisher": "Kementerian Perhubungan",
+            "title": "Capaian Progres Proyek Strategis Nasional Sektor Transportasi",
+            "url": "https://ppid.kemenhub.go.id/fileupload/informasi-berkala/20260406102830.R1_19022026_Update_PSN_Kemenhub_compressed.pdf",
+            "published_on": "2026-02-19",
+            "retrieved_on": "2026-11-06",
+            "source_type": "official",
+            "language": "id",
+            "archive_path": "data/raw/2026-11-06/kemenhub_psn_progress_2026.pdf",
+            "notes": "35 transport PSNs; progress as of February 2026.",
+            "claim": "status; location; opening; investment"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          119.53,
+          -4.58
+        ]
+      },
+      "properties": {
+        "id": "rail-makassar-parepare",
+        "name": "Makassar–Parepare Railway",
+        "sector": "railway",
+        "subsector": "intercity rail",
+        "status": "operating",
+        "status_basis": "Kemenhub PSN review (19 Feb 2026): construction 100% and operating since 2023; the Mandai–Palanro section is reported at 95.91%.",
+        "corridor_id": "",
+        "island": "Sulawesi",
+        "province": "South Sulawesi",
+        "route": "Makassar–Parepare, South Sulawesi",
+        "length_km": "",
+        "operational_km": "",
+        "construction_km": "",
+        "progress_pct": "",
+        "investment_idr_t": "7",
+        "capacity": "",
+        "capacity_unit": "",
+        "psn": "yes",
+        "opened_year": "2023",
+        "opened_date": "",
+        "expected_open_year": "",
+        "status_as_of": "2026-02-19",
+        "verification": "official",
+        "precision": "approximate",
+        "operator": "PT Kereta Api Indonesia (Persero)",
+        "source_url": "https://ppid.kemenhub.go.id/fileupload/informasi-berkala/20260406102830.R1_19022026_Update_PSN_Kemenhub_compressed.pdf",
+        "source_type": "official",
+        "retrieved_on": "2026-11-06",
+        "last_verified": "2026-11-07",
+        "notes": "Conflict: the summary calls the project complete, but the project page reports Mandai–Palanro at 95.91% with the Tonasa overpass land issue continuing in 2025. Investment: APBN Rp 6T plus KPBU Rp 1T. Length is not stated in the PSN review. Coordinates approximate.",
+        "corridor_name": "",
+        "sources": [
+          {
+            "id": "src-kemenhub-psn-progress-2026-02-19",
+            "publisher": "Kementerian Perhubungan",
+            "title": "Capaian Progres Proyek Strategis Nasional Sektor Transportasi",
+            "url": "https://ppid.kemenhub.go.id/fileupload/informasi-berkala/20260406102830.R1_19022026_Update_PSN_Kemenhub_compressed.pdf",
+            "published_on": "2026-02-19",
+            "retrieved_on": "2026-11-06",
+            "source_type": "official",
+            "language": "id",
+            "archive_path": "data/raw/2026-11-06/kemenhub_psn_progress_2026.pdf",
+            "notes": "35 transport PSNs; progress as of February 2026.",
+            "claim": "status; location; opening; investment"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.87,
+          -6.35
+        ]
+      },
+      "properties": {
+        "id": "rail-lrt-jabodebek",
+        "name": "Jabodebek LRT",
+        "sector": "railway",
+        "subsector": "urban rail",
+        "status": "operating",
+        "status_basis": "Kemenhub PSN review (19 Feb 2026): construction 100% and operating since 2023.",
+        "corridor_id": "",
+        "island": "Java",
+        "province": "DKI Jakarta; West Java",
+        "route": "Jakarta–Bogor–Depok–Bekasi",
+        "length_km": "",
+        "operational_km": "",
+        "construction_km": "",
+        "progress_pct": "",
+        "investment_idr_t": "29.9",
+        "capacity": "",
+        "capacity_unit": "",
+        "psn": "yes",
+        "opened_year": "2023",
+        "opened_date": "",
+        "expected_open_year": "",
+        "status_as_of": "2026-02-19",
+        "verification": "official",
+        "precision": "approximate",
+        "operator": "PT Kereta Api Indonesia (Persero)",
+        "source_url": "https://ppid.kemenhub.go.id/fileupload/informasi-berkala/20260406102830.R1_19022026_Update_PSN_Kemenhub_compressed.pdf",
+        "source_type": "official",
+        "retrieved_on": "2026-11-06",
+        "last_verified": "2026-11-07",
+        "notes": "Investment figure is BUMN investment for stage I. Length is not stated in the PSN review. Coordinates are approximate.",
+        "corridor_name": "",
+        "sources": [
+          {
+            "id": "src-kemenhub-psn-progress-2026-02-19",
+            "publisher": "Kementerian Perhubungan",
+            "title": "Capaian Progres Proyek Strategis Nasional Sektor Transportasi",
+            "url": "https://ppid.kemenhub.go.id/fileupload/informasi-berkala/20260406102830.R1_19022026_Update_PSN_Kemenhub_compressed.pdf",
+            "published_on": "2026-02-19",
+            "retrieved_on": "2026-11-06",
+            "source_type": "official",
+            "language": "id",
+            "archive_path": "data/raw/2026-11-06/kemenhub_psn_progress_2026.pdf",
+            "notes": "35 transport PSNs; progress as of February 2026.",
+            "claim": "status; location; opening; investment"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.65,
+          -6.55
+        ]
+      },
+      "properties": {
+        "id": "rail-kcj-jakarta-bandung",
+        "name": "Jakarta–Bandung High-Speed Rail",
+        "sector": "railway",
+        "subsector": "high-speed rail",
+        "status": "operating",
+        "status_basis": "Kemenhub PSN review (19 Feb 2026): construction 100% and operating since 2023.",
+        "corridor_id": "",
+        "island": "Java",
+        "province": "DKI Jakarta; West Java",
+        "route": "Jakarta–Bandung",
+        "length_km": "",
+        "operational_km": "",
+        "construction_km": "",
+        "progress_pct": "",
+        "investment_idr_t": "86",
+        "capacity": "",
+        "capacity_unit": "",
+        "psn": "yes",
+        "opened_year": "2023",
+        "opened_date": "",
+        "expected_open_year": "",
+        "status_as_of": "2026-02-19",
+        "verification": "official",
+        "precision": "approximate",
+        "operator": "PT Kereta Cepat Indonesia China",
+        "source_url": "https://ppid.kemenhub.go.id/fileupload/informasi-berkala/20260406102830.R1_19022026_Update_PSN_Kemenhub_compressed.pdf",
+        "source_type": "official",
+        "retrieved_on": "2026-11-06",
+        "last_verified": "2026-11-07",
+        "notes": "Deck figure Rp 86T excludes cost overrun. Also known as Whoosh. Length is not stated in the PSN review. Coordinates are approximate.",
+        "corridor_name": "",
+        "sources": [
+          {
+            "id": "src-kemenhub-psn-progress-2026-02-19",
+            "publisher": "Kementerian Perhubungan",
+            "title": "Capaian Progres Proyek Strategis Nasional Sektor Transportasi",
+            "url": "https://ppid.kemenhub.go.id/fileupload/informasi-berkala/20260406102830.R1_19022026_Update_PSN_Kemenhub_compressed.pdf",
+            "published_on": "2026-02-19",
+            "retrieved_on": "2026-11-06",
+            "source_type": "official",
+            "language": "id",
+            "archive_path": "data/raw/2026-11-06/kemenhub_psn_progress_2026.pdf",
+            "notes": "35 transport PSNs; progress as of February 2026.",
+            "claim": "status; location; opening; investment"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          99.94,
+          2.0
+        ]
+      },
+      "properties": {
+        "id": "rail-rantau-prapat-kota-pinang",
+        "name": "Rantau Prapat–Kota Pinang Railway",
+        "sector": "railway",
+        "subsector": "freight rail",
+        "status": "under_construction",
+        "status_basis": "Kemenhub PSN review (19 Feb 2026): construction reached Pondok S5 in 2024; the Pondok S5–Kota Pinang section remains, with 93.3% of land acquired.",
+        "corridor_id": "",
+        "island": "Sumatra",
+        "province": "North Sumatra",
+        "route": "Rantau Prapat–Kota Pinang, North Sumatra",
+        "length_km": "",
+        "operational_km": "",
+        "construction_km": "",
+        "progress_pct": "",
+        "investment_idr_t": "",
+        "capacity": "",
+        "capacity_unit": "",
+        "psn": "yes",
+        "opened_year": "",
+        "opened_date": "",
+        "expected_open_year": "",
+        "status_as_of": "2026-02-19",
+        "verification": "official",
+        "precision": "approximate",
+        "operator": "PT Kereta Api Indonesia (Persero)",
+        "source_url": "https://ppid.kemenhub.go.id/fileupload/informasi-berkala/20260406102830.R1_19022026_Update_PSN_Kemenhub_compressed.pdf",
+        "source_type": "official",
+        "retrieved_on": "2026-11-06",
+        "last_verified": "2026-11-07",
+        "notes": "The summary lists the project among 29 completed, but the project page says the line stops at Pondok S5 and 52 land parcels are still unresolved. The deck repeats the KCJB Rp 86T investment line; treated as a copy error and not used. Length is not stated. Coordinates are approximate.",
+        "corridor_name": "",
+        "sources": [
+          {
+            "id": "src-kemenhub-psn-progress-2026-02-19",
+            "publisher": "Kementerian Perhubungan",
+            "title": "Capaian Progres Proyek Strategis Nasional Sektor Transportasi",
+            "url": "https://ppid.kemenhub.go.id/fileupload/informasi-berkala/20260406102830.R1_19022026_Update_PSN_Kemenhub_compressed.pdf",
+            "published_on": "2026-02-19",
+            "retrieved_on": "2026-11-06",
+            "source_type": "official",
+            "language": "id",
+            "archive_path": "data/raw/2026-11-06/kemenhub_psn_progress_2026.pdf",
+            "notes": "35 transport PSNs; progress as of February 2026.",
+            "claim": "status; location"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.14,
+          -3.38
+        ]
+      },
+      "properties": {
+        "id": "rail-lahat-kertapati",
+        "name": "Lahat–Kertapati Logistics Railway",
+        "sector": "railway",
+        "subsector": "freight rail",
+        "status": "under_construction",
+        "status_basis": "Kemenhub PSN review (19 Feb 2026): the double track is complete and operating; the Coal Terminal Unloading System is 33.65% complete and was targeted for end-2025.",
+        "corridor_id": "",
+        "island": "Sumatra",
+        "province": "South Sumatra",
+        "route": "Lahat–Kertapati, South Sumatra",
+        "length_km": "",
+        "operational_km": "",
+        "construction_km": "",
+        "progress_pct": "",
+        "investment_idr_t": "11.52",
+        "capacity": "",
+        "capacity_unit": "",
+        "psn": "yes",
+        "opened_year": "",
+        "opened_date": "",
+        "expected_open_year": "",
+        "status_as_of": "2026-02-19",
+        "verification": "official",
+        "precision": "approximate",
+        "operator": "PT Kereta Api Indonesia (Persero)",
+        "source_url": "https://ppid.kemenhub.go.id/fileupload/informasi-berkala/20260406102830.R1_19022026_Update_PSN_Kemenhub_compressed.pdf",
+        "source_type": "official",
+        "retrieved_on": "2026-11-06",
+        "last_verified": "2026-11-07",
+        "notes": "The summary lists the project among 29 completed, but the coal terminal is still under construction. Length is not stated in the PSN review. Coordinates are the midpoint, approximate.",
+        "corridor_name": "",
+        "sources": [
+          {
+            "id": "src-kemenhub-psn-progress-2026-02-19",
+            "publisher": "Kementerian Perhubungan",
+            "title": "Capaian Progres Proyek Strategis Nasional Sektor Transportasi",
+            "url": "https://ppid.kemenhub.go.id/fileupload/informasi-berkala/20260406102830.R1_19022026_Update_PSN_Kemenhub_compressed.pdf",
+            "published_on": "2026-02-19",
+            "retrieved_on": "2026-11-06",
+            "source_type": "official",
+            "language": "id",
+            "archive_path": "data/raw/2026-11-06/kemenhub_psn_progress_2026.pdf",
+            "notes": "35 transport PSNs; progress as of February 2026.",
+            "claim": "status; location; investment"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          116.83,
+          -1.27
+        ]
+      },
+      "properties": {
+        "id": "rail-kaltim-logistics",
+        "name": "East Kalimantan Logistics Railway",
+        "sector": "railway",
+        "subsector": "freight rail",
+        "status": "planned",
+        "status_basis": "Kemenhub PSN review (19 Feb 2026): no physical construction; PT Bayan Laju Trans Kalimantan is still preparing the feasibility study and planning documents.",
+        "corridor_id": "",
+        "island": "Kalimantan",
+        "province": "East Kalimantan",
+        "route": "Balikpapan, East Kalimantan",
+        "length_km": "",
+        "operational_km": "",
+        "construction_km": "",
+        "progress_pct": "",
+        "investment_idr_t": "",
+        "capacity": "",
+        "capacity_unit": "",
+        "psn": "yes",
+        "opened_year": "",
+        "opened_date": "",
+        "expected_open_year": "2028",
+        "status_as_of": "2026-02-19",
+        "verification": "official",
+        "precision": "approximate",
+        "operator": "PT Bayan Laju Trans Kalimantan",
+        "source_url": "https://ppid.kemenhub.go.id/fileupload/informasi-berkala/20260406102830.R1_19022026_Update_PSN_Kemenhub_compressed.pdf",
+        "source_type": "official",
+        "retrieved_on": "2026-11-06",
+        "last_verified": "2026-11-07",
+        "notes": "Conflict: page 5 gives a 2028 target, page 6 gives 2027. The deck says investment is not yet stated. Coordinates mark Balikpapan, approximate.",
+        "corridor_name": "",
+        "sources": [
+          {
+            "id": "src-kemenhub-psn-progress-2026-02-19",
+            "publisher": "Kementerian Perhubungan",
+            "title": "Capaian Progres Proyek Strategis Nasional Sektor Transportasi",
+            "url": "https://ppid.kemenhub.go.id/fileupload/informasi-berkala/20260406102830.R1_19022026_Update_PSN_Kemenhub_compressed.pdf",
+            "published_on": "2026-02-19",
+            "retrieved_on": "2026-11-06",
+            "source_type": "official",
+            "language": "id",
+            "archive_path": "data/raw/2026-11-06/kemenhub_psn_progress_2026.pdf",
+            "notes": "35 transport PSNs; progress as of February 2026.",
+            "claim": "status; location; target"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.82,
+          -6.2
+        ]
+      },
+      "properties": {
+        "id": "rail-mrt-jakarta-north-south",
+        "name": "MRT Jakarta North–South",
+        "sector": "railway",
+        "subsector": "urban rail",
+        "status": "under_construction",
+        "status_basis": "Kemenhub PSN review (19 Feb 2026): 48.14% overall; Phase 2A at 55.89% (Segment 1 77.03%, Segment 2 45.73%); commercial operation targeted for March 2028 and full operation for 2030.",
+        "corridor_id": "",
+        "island": "Java",
+        "province": "DKI Jakarta",
+        "route": "Lebak Bulus–Kota, Jakarta",
+        "length_km": "",
+        "operational_km": "",
+        "construction_km": "",
+        "progress_pct": "48.14",
+        "investment_idr_t": "11.48",
+        "capacity": "",
+        "capacity_unit": "",
+        "psn": "yes",
+        "opened_year": "",
+        "opened_date": "",
+        "expected_open_year": "2030",
+        "status_as_of": "2026-02-19",
+        "verification": "official",
+        "precision": "approximate",
+        "operator": "PT MRT Jakarta (Persero)",
+        "source_url": "https://ppid.kemenhub.go.id/fileupload/informasi-berkala/20260406102830.R1_19022026_Update_PSN_Kemenhub_compressed.pdf",
+        "source_type": "official",
+        "retrieved_on": "2026-11-06",
+        "last_verified": "2026-11-07",
+        "notes": "Length is not stated in the PSN review. Coordinates are approximate.",
+        "corridor_name": "",
+        "sources": [
+          {
+            "id": "src-kemenhub-psn-progress-2026-02-19",
+            "publisher": "Kementerian Perhubungan",
+            "title": "Capaian Progres Proyek Strategis Nasional Sektor Transportasi",
+            "url": "https://ppid.kemenhub.go.id/fileupload/informasi-berkala/20260406102830.R1_19022026_Update_PSN_Kemenhub_compressed.pdf",
+            "published_on": "2026-02-19",
+            "retrieved_on": "2026-11-06",
+            "source_type": "official",
+            "language": "id",
+            "archive_path": "data/raw/2026-11-06/kemenhub_psn_progress_2026.pdf",
+            "notes": "35 transport PSNs; progress as of February 2026.",
+            "claim": "status; location; target; investment; progress"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.8,
+          -6.2
+        ]
+      },
+      "properties": {
+        "id": "rail-mrt-jakarta-east-west",
+        "name": "MRT Jakarta East–West",
+        "sector": "railway",
+        "subsector": "urban rail",
+        "status": "planned",
+        "status_basis": "Kemenhub PSN review (19 Feb 2026): no physical construction; DPPT verification and re-baseline are ongoing, with land acquisition and contractor procurement still ahead.",
+        "corridor_id": "",
+        "island": "Java",
+        "province": "DKI Jakarta",
+        "route": "Jakarta East–West",
+        "length_km": "",
+        "operational_km": "",
+        "construction_km": "",
+        "progress_pct": "",
+        "investment_idr_t": "34",
+        "capacity": "",
+        "capacity_unit": "",
+        "psn": "yes",
+        "opened_year": "",
+        "opened_date": "",
+        "expected_open_year": "2032",
+        "status_as_of": "2026-02-19",
+        "verification": "official",
+        "precision": "approximate",
+        "operator": "PT MRT Jakarta (Persero)",
+        "source_url": "https://ppid.kemenhub.go.id/fileupload/informasi-berkala/20260406102830.R1_19022026_Update_PSN_Kemenhub_compressed.pdf",
+        "source_type": "official",
+        "retrieved_on": "2026-11-06",
+        "last_verified": "2026-11-07",
+        "notes": "Length is not stated in the PSN review. Coordinates are approximate.",
+        "corridor_name": "",
+        "sources": [
+          {
+            "id": "src-kemenhub-psn-progress-2026-02-19",
+            "publisher": "Kementerian Perhubungan",
+            "title": "Capaian Progres Proyek Strategis Nasional Sektor Transportasi",
+            "url": "https://ppid.kemenhub.go.id/fileupload/informasi-berkala/20260406102830.R1_19022026_Update_PSN_Kemenhub_compressed.pdf",
+            "published_on": "2026-02-19",
+            "retrieved_on": "2026-11-06",
+            "source_type": "official",
+            "language": "id",
+            "archive_path": "data/raw/2026-11-06/kemenhub_psn_progress_2026.pdf",
+            "notes": "35 transport PSNs; progress as of February 2026.",
+            "claim": "status; location; target; investment"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.87,
+          -6.2
+        ]
+      },
+      "properties": {
+        "id": "rail-lrt-jakarta-velodrome-manggarai",
+        "name": "LRT Jakarta Velodrome–Manggarai",
+        "sector": "railway",
+        "subsector": "urban rail",
+        "status": "under_construction",
+        "status_basis": "Kemenhub PSN review (19 Feb 2026): 89.22% physical progress; track trials with the maintenance rail vehicle completed; target 2026.",
+        "corridor_id": "",
+        "island": "Java",
+        "province": "DKI Jakarta",
+        "route": "Velodrome–Manggarai, Jakarta",
+        "length_km": "",
+        "operational_km": "",
+        "construction_km": "",
+        "progress_pct": "89.22",
+        "investment_idr_t": "7",
+        "capacity": "",
+        "capacity_unit": "",
+        "psn": "yes",
+        "opened_year": "",
+        "opened_date": "",
+        "expected_open_year": "2026",
+        "status_as_of": "2026-02-19",
+        "verification": "official",
+        "precision": "approximate",
+        "operator": "PT LRT Jakarta",
+        "source_url": "https://ppid.kemenhub.go.id/fileupload/informasi-berkala/20260406102830.R1_19022026_Update_PSN_Kemenhub_compressed.pdf",
+        "source_type": "official",
+        "retrieved_on": "2026-11-06",
+        "last_verified": "2026-11-07",
+        "notes": "Groundbreaking 30 October 2023. Length is not stated in the PSN review. Coordinates are approximate.",
+        "corridor_name": "",
+        "sources": [
+          {
+            "id": "src-kemenhub-psn-progress-2026-02-19",
+            "publisher": "Kementerian Perhubungan",
+            "title": "Capaian Progres Proyek Strategis Nasional Sektor Transportasi",
+            "url": "https://ppid.kemenhub.go.id/fileupload/informasi-berkala/20260406102830.R1_19022026_Update_PSN_Kemenhub_compressed.pdf",
+            "published_on": "2026-02-19",
+            "retrieved_on": "2026-11-06",
+            "source_type": "official",
+            "language": "id",
+            "archive_path": "data/raw/2026-11-06/kemenhub_psn_progress_2026.pdf",
+            "notes": "35 transport PSNs; progress as of February 2026.",
+            "claim": "status; location; target; investment; progress"
+          }
+        ]
+      }
     }
   ]
 }

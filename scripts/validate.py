@@ -105,7 +105,8 @@ def check_number(value: str, field: str, where: str, minimum: float = 0.0) -> fl
 
 def check_year(value: str, field: str, where: str) -> int | None:
     year = as_int(value)
-    if year is None or not 1900 <= year <= 2030:
+    # Targets can sit beyond 2030 (MRT Jakarta East-West is 2032).
+    if year is None or not 1900 <= year <= 2040:
         err(f"{where}: {field} is not a plausible year")
         return None
     return year
@@ -177,8 +178,14 @@ def main() -> None:
         check_number(row["progress_pct"], "progress_pct", where)
         check_number(row["investment_idr_t"], "investment_idr_t", where)
 
-        if row["sector"] in {"road", "railway"} and length is None:
-            err(f"{where}: linear projects need length_km")
+        # Road corridors are defined by length. Some transport PSNs are
+        # programmes or single assets whose official source gives no km figure
+        # (the Kemenhub deck does not), so railway length is required only when
+        # a km breakdown is supplied.
+        if row["sector"] == "road" and length is None:
+            err(f"{where}: road projects need length_km")
+        if row["sector"] == "railway" and length is None and (operational is not None or construction is not None):
+            err(f"{where}: railway km breakdown needs length_km")
         if length is not None:
             used = (operational or 0) + (construction or 0)
             if used > length * 1.05:

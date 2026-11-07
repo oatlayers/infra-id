@@ -4,18 +4,21 @@ A curated, source-linked map of major Indonesian infrastructure. Every project
 carries a source and a verification date. The map is deliberately **major and
 curated, not exhaustive**.
 
-- **Live data:** 27 toll-road corridors — 20 under construction, 7 planned —
-  plus 4 Trans corridor summaries.
+- **Live data:** 62 projects — 27 toll-road corridors, 13 railways, 7 airports
+  and 15 seaports — plus 4 Trans corridor summaries.
+- **Transport PSN:** 35 of 35 represented. Status is as of 19 February 2026, the
+  date of the Kemenhub review.
 - **Estate dataset:** 178 industrial estates and SEZs, shown as a table; the map
   layer is deliberately off until coordinates are verified.
-- **Last verification:** 6 November 2026.
-- **Status:** Phase 1 of the v3 overhaul is complete (7 November 2026): new
-  shell, four views, search, filters, detail drawer, map v2, mobile sheet and a
-  generated data page. The site is **not published** and has no GitHub remote.
+- **Last verification:** 7 November 2026 (transport batch); earlier road and
+  estate rows were verified on 6 November 2026.
+- **Status:** Phase 1 is complete. Phase 2 Track 2A (transport PSN) is complete
+  as of 7 November 2026. The site is **not published** and has no GitHub remote.
 - **Overhaul plan:** [`plan-v3.md`](plan-v3.md) is the execution backlog. Phase 2
   is data completion; Phase 3 is the trust layer and a local release. Publishing
   is explicitly deferred. Phase 1 decisions are recorded in
-  [`docs/phase-1-decisions.md`](docs/phase-1-decisions.md).
+  [`docs/phase-1-decisions.md`](docs/phase-1-decisions.md); the transport batch
+  is documented in [`docs/phase-2-transport.md`](docs/phase-2-transport.md).
 
 ## What it is, and what it is not
 
@@ -37,20 +40,28 @@ when a source supports that status.
 | Layer | Rows | Status | Notes |
 |---|---:|---|---|
 | Toll roads | 27 | 20 under construction, 7 planned | Sumatra, Java and Bali corridors |
+| Railways | 13 | 6 operating, 5 under construction, 2 planned | 13/13 PSN railways; no rail length or capacity in the source deck |
+| Airports | 7 | 7 operating | 7/7 PSN airports; inaugurated 2020–2023 |
+| Seaports | 15 | 11 operating, 1 under construction, 1 recently completed, 2 planned | 15/15 PSN seaports; Patimban Phase I-2 still building, Benoa expansion completed 2025 |
+| Transport PSN total | 35 | 24 operating, 1 recently completed, 6 under construction, 4 planned | 35/35; status as of 19 February 2026 |
 | Trans corridor summaries | 4 | 2 with km data, 2 data gaps | Sumatra and Papua have figures; Sulawesi and Kalimantan need segment definitions |
-| Railways | 0 | — | Phase 2: 13 PSN railways |
-| Airports | 0 | — | Phase 2: 7 PSN airports |
-| Seaports | 0 | — | Phase 2: 15 PSN seaports |
 | Factories | 0 | — | Phase 2: 20–30 plants |
 | Industrial estates / SEZs | 178 | 160 industrial-estate designations (153 industrial-only + 7 shared), 25 SEZs | table view only; map layer waits for verified coordinates |
 | Sources | 38 | 32 official, 6 secondary | 25 individual SEZ profiles plus the national source register |
 
-**Why zero recently completed?** No full toll corridor opened between
-2024-11-06 and 2026-11-06. Sections did open in that window (for example
-Binjai–Langsa Section 3 in March 2025, Padang–Sicincin in May 2025,
-Solo–Yogyakarta Klaten–Prambanan in July 2025, Probolinggo–Banyuwangi Sections
-1–2 in 2026), but their corridors remain under construction. Those openings are
-recorded in each row's `notes`.
+**Why the transport status counts differ from Kemenhub's summary.** The deck's
+headline says 29 complete and 6 under construction. The atlas uses its own
+definitions and the deck's project pages: Patimban, the Java south double track,
+Rantau Prapat–Kota Pinang and Lahat–Kertapati still have active work, while the
+East Kalimantan railway, MRT East–West, New Palembang Port and Muaro Jambi had no
+physical construction. The result is 24 operating, 1 recently completed, 6 under
+construction and 4 planned. The full mapping and conflicts are in
+[`docs/phase-2-transport.md`](docs/phase-2-transport.md).
+
+**Recently completed.** Benoa Port (BMTH) is the only `recently_completed` row:
+its expansion works were reported 100% in 2025. No full toll corridor opened
+between 2024-11-06 and 2026-11-06, so the road rows stay `under_construction`
+even where sections opened. Those section openings are in each row's `notes`.
 
 ## Quick start
 
@@ -88,7 +99,8 @@ infra-id/
 ├─ plan-v3.md               three-phase execution backlog
 ├─ README.md
 ├─ docs/
-│  └─ phase-1-decisions.md  confirmed design, scope, schema and budgets
+│  ├─ phase-1-decisions.md  confirmed design, scope, schema and budgets
+│  └─ phase-2-transport.md  transport PSN extraction, mapping and conflicts
 ├─ requirements.txt         Python dependencies for the data scripts
 ├─ data/
 │  ├─ curated/              editable source of truth
@@ -111,11 +123,15 @@ infra-id/
 │  │  └─ coverage_targets.csv
 │  ├─ projects.csv          generated flat export for the site and downloads
 │  ├─ derived/              extracted text and build-time intermediates
+│  │  ├─ transport_psn.csv  35-row checked transport extraction
+│  │  └─ kemenhub_psn_progress_2026.txt
 │  └─ raw/YYYY-MM-DD/       sources as fetched, never edited
 ├─ scripts/
 │  ├─ data_model.py         paths, field lists, enums and CSV helpers
 │  ├─ migrate_schema_v3.py  one-off schema migration
 │  ├─ extract_wikipedia_toll_roads.py
+│  ├─ extract_transport_psn.py   checked Kemenhub extraction
+│  ├─ build_transport.py    imports the 35 transport rows
 │  ├─ build_projects.py
 │  ├─ build_estates.py
 │  ├─ validate.py
@@ -161,7 +177,9 @@ Natural Earth ─────────────► build_basemap.py ──
 Rebuild everything:
 
 ```bash
-python scripts/build_estates.py      # only when the estate sources change
+python scripts/build_estates.py          # only when the estate sources change
+python scripts/extract_transport_psn.py  # checked Kemenhub extraction
+python scripts/build_transport.py        # import the 35 transport rows
 python scripts/validate.py
 python scripts/build_projects.py
 python scripts/build_site_data.py
@@ -174,6 +192,8 @@ What each script does:
 |---|---|---|---|
 | `migrate_schema_v3.py` | Old curated tables | Schema-v3 headers and backfilled fields | One-off migration; idempotent enough to re-run |
 | `extract_wikipedia_toll_roads.py` | English Wikipedia HTML snapshot | `enwiki_toll_roads_parsed.csv` | Parses the toll-road table; no status decisions |
+| `extract_transport_psn.py` | Kemenhub PSN deck, checked transcription | `data/derived/transport_psn.csv` | 35 transport rows with page references and conflict notes |
+| `build_transport.py` | `transport_psn.csv` + curated tables | Project, claim, link and alias rows | Idempotent transport import; does not touch roads or estates |
 | `validate.py` | `data/curated/*.csv` | exit code | Schema, enums, dates, coordinates, foreign keys, events, geometry, claims and coverage checks |
 | `build_projects.py` | Curated tables + BPJT JSON | `data/projects.csv` | Joins operator and source, fills gaps from BPJT, writes the flat export |
 | `build_estates.py` | KEK HTML + BAJRA table + regency cache | `data/curated/estates.csv` + source rows | Merges the 25 SEZs and 153 industrial estates, handles overlaps |
@@ -186,8 +206,9 @@ from the API listed below before rebuilding.
 
 ## Data model
 
-The curated data is normalised. One fact per row; no semicolon-separated lists.
-The full rationale and target schema are in `plan.md`.
+The curated data is normalised: one entity per row. Multi-province projects use
+semicolon-separated province names; every other list has its own table. The full
+rationale and target schema are in `plan.md`.
 
 | Table | One row per | Key fields |
 |---|---|---|
@@ -369,7 +390,10 @@ Features:
   five sort modes; URL state; map/list selection; keyboard navigation.
 - **Map:** Natural Earth provinces, lakes, rivers, urban areas and city labels;
   sector glyphs inside status-coloured markers; status-ring clusters below zoom
-  7; selected marker label; drawer-aware panning.
+  7; selected marker label; drawer-aware panning. The map is inert while the
+  modal detail drawer is open.
+- **Transport:** 35 PSN railways, airports and seaports with status, opening or
+  target year, investment where stated, aliases and source claims.
 - **Detail drawer:** key figures, operational share, why-this-status, evidence,
   every source with claim and retrieval date, notes, related corridor,
   previous/next and share.
@@ -412,8 +436,11 @@ a deliberate trade for reliability: OpenStreetMap's tile servers block
   estate, event, geometry);
 - every project has at least one source claim;
 - km figures are non-negative and do not exceed the total by more than 5%;
+- roads have a `length_km`; a railway may omit it when the official source gives
+  no km figure, but a km breakdown still requires a total;
 - coordinates fall inside Indonesia's rough bounding box;
-- operating and recently completed rows have an `opened_year`;
+- operating and recently completed rows have an `opened_year`, and target years
+  may run to 2040;
 - `island`, `status_as_of` and `verification` are present and valid;
 - estates have valid type/status/island/coordinate-source enums, positive area,
   plausible coordinates and a known source;
@@ -435,23 +462,29 @@ Validating is not the same as verifying. Validation catches malformed rows; the
   `notes`.
 - **Approximate coordinates.** Batch 1 uses the midpoint of each BPJT endpoint
   pair, so every road row is `precision=approximate`. Bogor Ring Road uses Bogor
-  city centre because the BPJT endpoints are misplaced.
+  city centre because the BPJT endpoints are misplaced. All 35 transport points
+  are airport, port or city reference points, not surveyed boundaries.
 - **Mixed source quality.** 17 road rows are BPJT-backed (`official`); 10 rely on
-  Wikipedia or a single secondary source.
+  Wikipedia or a single secondary source. All 35 transport rows are backed by the
+  Kemenhub deck, but that deck does not give rail lengths or asset capacity.
 - **BPJT labels are inconsistent.** Some rows marked `Operasi` still have
   unopened length or active construction. Conflicts are recorded, not hidden.
 - **No geometry.** Projects are points, not lines or polygons. `project_geometry`
   exists but is empty.
-- **Transport and factories are still empty.** The 35 transport PSN projects,
-  20–30 factories and the expanded road/corridor batch are Phase 2.
-- **PSN status is incomplete.** 10 of 27 road rows have `psn=unknown`.
+- **Factories and the expanded road batch are still empty.** The 35 transport
+  PSN projects are in; 20–30 factories, the 40–50 road audit and the corridor
+  segments remain Phase 2 work.
+- **Transport status is dated.** It reflects the Kemenhub review of 19 February
+  2026, not a live check. `last_verified` is the curation date.
+- **PSN status is incomplete for roads.** 10 of 27 road rows have `psn=unknown`.
 - **Estate coordinates are coarse.** SEZ points are official zone coordinates but
   still approximate for an area; industrial-estate points are regency centroids,
   not estate boundaries.
 - **Estate coverage is partial.** The industrial-estate table is a 2024 secondary
   mirror with 160 rows; Kemenperin reported 179 estates in 2026. New 2025 estates
   and exact boundaries still need to be added.
-- **No recently completed toll roads.** See Current coverage.
+- **No recently completed toll roads.** Benoa Port is the only
+  `recently_completed` row; see Current coverage.
 - **Trans Sulawesi and Trans Kalimantan have no aggregate.** Published figures
   use different definitions; the site shows a data-gap note instead of inventing
   a total.
@@ -461,11 +494,13 @@ Validating is not the same as verifying. Validation catches malformed rows; the
   and non-toll PSN roads and bridges.
 - **Wikipedia is secondary.** It is useful for discovery and cross-checking, not
   as the final authority on a status change.
-- **Performance at 300 markers is untested.** The current 27-row dataset is
-  clustered, but the 300-marker 60 fps target needs the Phase 2 dataset.
-- **Formal accessibility audit pending.** Keyboard, focus, skip link, reduced
-  motion and text status labels are in place; Lighthouse/axe results are not yet
-  recorded.
+- **Performance at 300 markers is untested.** The 62-project dataset is clustered
+  and loads quickly, but the 300-marker 60 fps target needs the full Phase 2
+  dataset.
+- **Lighthouse is not run.** axe-core 4.10.3 with WCAG A/AA tags reports zero
+  violations on Explore at desktop and mobile widths, and on the project drawer.
+  The map is inert while the modal drawer is open; the list is the accessible
+  equivalent.
 - **Not published.** There is no GitHub remote or Pages deployment. The site is
   verified from `file://` only.
 
@@ -476,8 +511,8 @@ Validating is not the same as verifying. Validation catches malformed rows; the
 3. ~~Phase 1: design foundation, four-view shell, search, filters, drawer, map v2,
    mobile sheet, data page, schema v3.~~ Done 7 November 2026.
 4. **Phase 2: data completion.** Transport PSN (13 rail, 7 airports, 15
-   seaports), estate reconciliation and exact coordinates, factories, roads and
-   corridor segments. *Next.*
+   seaports) is done. *Next:* estate reconciliation and exact coordinates,
+   factories, roads and corridor segments.
 5. **Phase 3: trust and local release.** Per-fact claims, freshness, Data view
    v2, downloads, conflicts, local CI, smoke tests and hand-off. **No GitHub push
    or Pages deployment.**
@@ -490,12 +525,14 @@ Validating is not the same as verifying. Validation catches malformed rows; the
   data completion; Phase 3 is the trust layer and a local release. Publishing is
   explicitly deferred.
 - **Phase 1 decisions:** [`docs/phase-1-decisions.md`](docs/phase-1-decisions.md).
-- **Transport PSN batch:** the extracted 35-row baseline is in
-  `data/derived/kemenhub_psn_progress_2026.txt` and the full table is in
-  `plan-v3.md` section 5.2. This is the next data win.
-- **Estates:** 178 rows in `data/curated/estates.csv`. Add the 2025 estates,
-  replace regency centroids with estate boundaries or site coordinates, and
-  verify SEZ operational status. Keep the map layer off until then.
+- **Transport PSN batch:** complete. The checked 35-row extraction is
+  `data/derived/transport_psn.csv`; the importer is
+  `scripts/build_transport.py`; the mapping and conflicts are in
+  [`docs/phase-2-transport.md`](docs/phase-2-transport.md).
+- **Estates:** 178 rows in `data/curated/estates.csv`. Next: reconcile the
+  179-vs-160 gap, add the nine 2025 estates, replace regency centroids with
+  estate boundaries or site coordinates, and verify SEZ operational status. Keep
+  the map layer off until then.
 - **Before changing schema:** read the Data architecture section in `plan.md`,
   `docs/phase-1-decisions.md` and the schema section in `plan-v3.md`.
 - **Before adding a status:** the allowed set is in `scripts/data_model.py` and

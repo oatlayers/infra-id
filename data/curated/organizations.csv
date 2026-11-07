@@ -18,3 +18,16 @@ org-jasamarga-jogja-solo,PT Jasamarga Jogja Solo,Jasamarga Jogja Solo,private,ID
 org-jasa-marga-jogja-bawen,PT Jasa Marga Jogja Bawen,Jasa Marga Jogja Bawen,private,ID,org-jasa-marga,,v1 operator string: PT Jasa Marga Jogja Bawen
 org-waskita-bumi-wira,PT Waskita Bumi Wira,Waskita Bumi Wira,private,ID,org-waskita-karya,,v1 operator string: PT Waskita Bumi Wira
 org-jasamarga-probolinggo-banyuwangi,PT Jasamarga Probolinggo Banyuwangi,Jasamarga Probolinggo Banyuwangi,private,ID,org-jasa-marga,,v1 operator string: PT Jasamarga Probolinggo Banyuwangi
+org-kemenhub,Ministry of Transportation,Kemenhub,government,ID,,https://www.kemenhub.go.id,National transport ministry; sponsor of the 35 transport PSNs.
+org-ditjen-perkeretaapian,Directorate General of Railways,DJKA,government,ID,org-kemenhub,,Owner of the railway PSNs.
+org-ditjen-perhubungan-laut,Directorate General of Sea Transportation,Hubla,government,ID,org-kemenhub,,Owner of the seaport PSNs.
+org-ditjen-perhubungan-udara,Directorate General of Civil Aviation,Hubud,government,ID,org-kemenhub,,Owner of the airport PSNs.
+org-kai,PT Kereta Api Indonesia (Persero),KAI,soe,ID,,https://www.kai.id,State railway operator.
+org-kcic,PT Kereta Cepat Indonesia China,KCIC,consortium,ID,,https://whoosh.co.id,Jakarta–Bandung high-speed rail consortium.
+org-mrt-jakarta,PT MRT Jakarta (Persero),MRT Jakarta,soe,ID,,https://www.mrtjakarta.co.id,Jakarta metro operator and developer.
+org-lrt-jakarta,PT LRT Jakarta,LRT Jakarta,soe,ID,,https://www.lrtjakarta.co.id,Jakarta LRT operator.
+org-lrt-sumsel,PT LRT Sumatera Selatan,LRT Sumsel,soe,ID,,,South Sumatra LRT operator.
+org-bayan-laju-trans-kalimantan,PT Bayan Laju Trans Kalimantan,BLTK,private,ID,,,Developer of the East Kalimantan logistics railway.
+org-angakasa-pura-i,PT Angkasa Pura I (Persero),AP I,soe,ID,,https://www.angkasapura1.co.id,Airport operator for central and eastern Indonesia.
+org-angakasa-pura-ii,PT Angkasa Pura II (Persero),AP II,soe,ID,,https://www.angkasapura2.co.id,Airport operator for western Indonesia.
+org-pelindo,PT Pelabuhan Indonesia (Persero),Pelindo,soe,ID,,https://www.pelindo.co.id,State port operator formed by the 2021 merger of Pelindo I–IV.

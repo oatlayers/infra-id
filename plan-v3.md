@@ -654,9 +654,10 @@ source parse. Same pattern for transport rows if extraction is re-run.
 | Layer | Now | Target | Gap | Source of truth |
 |---|---:|---:|---:|---|
 | Roads | 27 | 40–50 major corridors | 13–23 | BPJT + PSN |
-| Railways | 0 | 13 PSN | 13 | Kemenhub deck |
-| Airports | 0 | 7 PSN | 7 | Kemenhub deck |
-| Seaports | 0 | 15 PSN | 15 | Kemenhub deck |
+| Railways | 13 | 13 PSN | 0 | Kemenhub deck |
+| Airports | 7 | 7 PSN | 0 | Kemenhub deck |
+| Seaports | 15 | 15 PSN | 0 | Kemenhub deck |
+| Transport PSN (all modes) | 35 | 35 | 0 | Kemenhub deck |
 | Factories | 0 | 20–30 major plants | 20–30 | PSN + Rp 1T |
 | Industrial estates | 160 | 179 | 19 | Kemenperin 2026 |
 | SEZs | 25 | 25 | 0 | KEK National Council |
@@ -667,9 +668,12 @@ source parse. Same pattern for transport rows if extraction is re-run.
 ### 5.2 Transport PSN: the 35 projects
 
 The Kemenhub deck (19 Feb 2026) is the authoritative list: 7 airports, 15
-seaports, 13 railway projects. 29 are complete/operating; 6 are under
-construction. This is the single biggest data win and should follow the UI
-shell.
+seaports, 13 railway projects. The deck's summary says 29 are complete/operating
+and 6 are under construction. The curated batch uses the atlas definitions and
+the deck's project pages: 24 operating, 1 recently completed (Benoa expansion),
+6 under construction and 4 planned. The differences are itemised in
+`docs/phase-2-transport.md`. This is the single biggest data win and is now in
+the curated tables.
 
 **Airports (7)**
 
@@ -974,7 +978,7 @@ ready. No new data rows in this phase.
 | U5 | Search, five sort modes, compact list rows, empty state, arrow-key navigation |
 | U6 | Detail drawer with metrics, open share, why-this-status, evidence, every source, notes, related corridor, previous/next, share |
 | U7 | Full-viewport mobile map and draggable three-snap bottom sheet; peek shows two rows |
-| U8 | Focus trap, skip link, `aria-live` counts, text status labels, reduced motion, loading/error/empty states; axe-core 0 violations on four views, one map-marker target-size exception in the drawer |
+| U8 | Focus trap, skip link, `aria-live` counts, text status labels, reduced motion, loading/error/empty states; axe-core 0 violations on four views. The Phase 1 map-marker target-size exception was fixed in Phase 2 |
 | U9–U10 | Data view with coverage matrix, definitions, inclusion rules, source register, downloads, gaps, changelog; stale toll-road copy removed |
 | M1–M3 | Natural Earth provinces, lakes, rivers, urban areas and city labels; sector markers; status-ring clusters |
 | M4–M6 | List ↔ map selection, drawer offset, zoom/scale controls, collapsible legend, layer control, lazy estates |
@@ -986,6 +990,9 @@ tables); no preview deployment was made; the formal Lighthouse/axe audit and the
 `docs/phase-1-decisions.md`.
 
 ### Phase 2 — Data completion
+
+**Status: in progress, 7 November 2026. Track 2A complete.** See
+`docs/phase-2-transport.md` for the extraction, status mapping and conflicts.
 
 **Goal:** every layer meets its coverage target or has a documented gap. This
 phase adds the views that consume the new data: the corridor segment view and
@@ -1003,6 +1010,17 @@ the refined estate attributes. The estate table itself shipped in Phase 1.
 | T6 | Sources and claims | Every row has status and numeric claims; conflicts recorded | M | T5 |
 | T7 | Build and QA | Validation passes; 62 projects; filters and map correct | M | T6 |
 | T8 | Coverage check | 35/35 represented; exclusions documented | S | T7 |
+
+**Track 2A completion log — 7 November 2026**
+
+| Item | Evidence |
+|---|---|
+| T1 | `scripts/extract_transport_psn.py` → `data/derived/transport_psn.csv`, 35 checked rows with page references |
+| T2–T4 | 13 railways, 7 airports and 15 seaports in `data/curated/projects.csv`; status, location, coordinates, operators and years |
+| T5 | 13 new organisations, sponsor/owner/operator links, 67 aliases, investment for 14 rows |
+| T6 | 145 project claims; conflicts recorded in `notes` and `docs/phase-2-transport.md` |
+| T7 | `validate.py` passes; 62 projects; site rebuilt; filters show 13 rail, 7 air, 15 sea |
+| T8 | Coverage 35/35; transport PSN row added to `coverage_targets.csv`; gaps for rail length, capacity and approximate coordinates documented |
 
 **Track 2B — Estates**
 

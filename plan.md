@@ -8,7 +8,7 @@ phase-by-phase backlog for the site overhaul and the data-completeness work.
 Phase 1 decisions and budgets are recorded in
 [`docs/phase-1-decisions.md`](docs/phase-1-decisions.md).
 
-**Status:** Phase 1 of the v3 overhaul is complete (2026-11-07). The site has four views, search, filters, a detail drawer, a new basemap, a mobile bottom sheet and a generated Data page. Schema v3 is frozen. 27 toll roads and 178 estates/SEZs are in the curated tables. **Not published:** there is no GitHub remote or Pages deployment, and publishing is explicitly deferred.
+**Status:** Phase 1 of the v3 overhaul is complete (2026-11-07). Phase 2 Track 2A (transport PSN) is also complete: 35 projects — 13 railways, 7 airports and 15 seaports — are in the curated tables, for 62 projects total. The site has four views, search, filters, a detail drawer, a new basemap, a mobile bottom sheet and a generated Data page. Schema v3 is frozen. 27 toll roads and 178 estates/SEZs are also in the curated tables. **Not published:** there is no GitHub remote or Pages deployment, and publishing is explicitly deferred.
 
 **Publishing constraint:** do not create a GitHub remote, push the repository, deploy GitHub Pages or publish the site until the repository owner asks for it explicitly. The release target is a local build that works from `file://` and a local HTTP server.
 
@@ -183,7 +183,7 @@ Revisit SQLite only when the triggers above are met.
 **Batch 1 status (2026-11-06)**
 
 - 27 toll-road rows: 20 `under_construction`, 7 `planned`, 0 `recently_completed`.
-- No toll-road corridor was fully opened between 2024-11-06 and 2026-11-06. Several sections opened in that window (for example Binjai–Langsa Section 3 in March 2025, Padang–Sicincin in May 2025, Solo–Yogyakarta Klaten–Prambanan in July 2025, Probolinggo–Banyuwangi Sections 1–2 in 2026). They are recorded in the `notes` of their corridor, which stays `under_construction`. `recently_completed` will be populated by airports, ports and factories in Phase 2 of `plan-v3.md`.
+- No toll-road corridor was fully opened between 2024-11-06 and 2026-11-06. Several sections opened in that window (for example Binjai-Langsa Section 3 in March 2025, Padang-Sicincin in May 2025, Solo-Yogyakarta Klaten-Prambanan in July 2025, Probolinggo-Banyuwangi Sections 1-2 in 2026). They are recorded in the `notes` of their corridor, which stays `under_construction`. The `recently_completed` status is now used by the Benoa Port expansion (2025).
 - Inclusion rule: the italic rows in the English table, with two corrections. Pandaan–Malang is dropped because BPJT shows it fully open and past the 2-year window. Yogyakarta–Solo and Yogyakarta–Sleman–YIA are merged into the single BPJT corridor Solo–Yogyakarta–NYIA Kulonprogo.
 - Two under-construction rows from Indonesian Wikipedia were added because they are large Trans-Sumatra sections missing from the English table: Kuala Tanjung–Tebing Tinggi–Parapat and Betung–Tempino–Jambi.
 - JORR 3 is kept as one `planned` master-plan row. Its active sections (Kamal–Teluknaga–Rajeg, Serpong–Balaraja) are noted there rather than mapped separately.
@@ -276,7 +276,7 @@ sources for area, developer and coordinates.
 **Site changes.** Done in v3 Phase 1: four views, sector/status/island filters,
 search, km and operational-share bars, investment or capacity in the drawer, a
 corridor section, generated coverage in the header and Data view, and the
-offline basemap. Railway, airport, seaport and factory rows arrive in Phase 2.
+offline basemap. Railway, airport and seaport rows arrived in Phase 2; factory rows are still to come.
 
 **Decided 2026-11-06.**
 
@@ -297,7 +297,7 @@ data/UI~~ → ~~industrial estates and SEZs (data only)~~ → Kemenhub transport
 2. **Official pipeline.** Kemenhub transport PSN deck and KPPIP pages snapshotted; the full PSN/KPBU/INAPROC pass is still open.
 3. **Industrial estates and SEZs.** First pass done: 178 records in `data/curated/estates.csv`, validated and shown as a table. Remaining: 2025 additions, exact boundaries and better coordinates. Map layer still off.
 4. **v3 Phase 1 — foundation and experience.** Done 2026-11-07: design tokens, bundled fonts, four-view shell, search, filters, detail drawer, map v2, mobile sheet, Data view and schema v3. See `docs/phase-1-decisions.md`.
-5. **v3 Phase 2 — data completion.** Transport PSN, estate reconciliation and coordinates, factories, roads and corridor segments. ← next
+5. **v3 Phase 2 - data completion.** Transport PSN (35/35) is done. Next: estate reconciliation and coordinates, factories, roads and corridor segments. ← in progress
 6. **v3 Phase 3 — trust and local release.** Claims, freshness, Data view v2, downloads, conflicts, local CI and hand-off. **Do not push to GitHub or publish.**
 7. **Monthly refresh.** Re-fetch sources, review status changes, update `last_verified`, rebuild and verify locally.
 

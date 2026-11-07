@@ -183,7 +183,7 @@
 
     cluster = L.markerClusterGroup({
       showCoverageOnHover: false,
-      maxClusterRadius: 44,
+      maxClusterRadius: 60,
       disableClusteringAtZoom: 7,
       spiderfyOnMaxZoom: true,
       zoomToBoundsOnClick: true,

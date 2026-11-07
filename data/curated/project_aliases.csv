@@ -1,1 +1,68 @@
 project_id,alias,source_id,notes
+air-yogyakarta-international,YIA,,Common alternate name.
+air-yogyakarta-international,Bandar Udara Internasional Yogyakarta,,Common alternate name.
+air-komodo-labuan-bajo,LBJ,,Common alternate name.
+air-komodo-labuan-bajo,Bandar Udara Komodo,,Common alternate name.
+air-lombok-praya,LOP,,Common alternate name.
+air-lombok-praya,Bandar Udara Lombok,,Common alternate name.
+air-nabire,Nabire Baru,,Common alternate name.
+air-nabire,Bandar Udara Nabire,,Common alternate name.
+air-siboru-fakfak,Siboru,,Common alternate name.
+air-siboru-fakfak,Bandar Udara Siboru Fakfak,,Common alternate name.
+air-kediri,Dhoho,,Common alternate name.
+air-kediri,Bandar Udara Kediri,,Common alternate name.
+air-raja-haji-abdullah-karimun,Karimun,,Common alternate name.
+air-raja-haji-abdullah-karimun,Bandar Udara Raja Haji Abdullah,,Common alternate name.
+port-kek-maloy,Pelabuhan Maloy,,Common alternate name.
+port-kek-maloy,Maloy Batuta Port,,Common alternate name.
+port-labuan-bajo-multipurpose,Terminal Multipurpose Labuan Bajo,,Common alternate name.
+port-labuan-bajo-multipurpose,Pelabuhan Labuan Bajo,,Common alternate name.
+port-bitung,Pelabuhan Bitung,,Common alternate name.
+port-bitung,Bitung Hub Port,,Common alternate name.
+port-kupang,Pelabuhan Kupang,,Common alternate name.
+port-kupang,Tenau Kupang,,Common alternate name.
+port-kuala-tanjung,Pelabuhan Kuala Tanjung,,Common alternate name.
+port-kuala-tanjung,Kuala Tanjung Hub,,Common alternate name.
+port-kijing,Terminal Kijing,,Common alternate name.
+port-kijing,Pelabuhan Kijing,,Common alternate name.
+port-sanur,Pelabuhan Sanur,,Common alternate name.
+port-sanur,Sanur–Nusa Ceningan,,Common alternate name.
+port-likupang,Pelabuhan Likupang,,Common alternate name.
+port-makassar-new-port,Makassar New Port,,Common alternate name.
+port-makassar-new-port,MNP,,Common alternate name.
+port-teluk-palu,Pelabuhan Teluk Palu,,Common alternate name.
+port-teluk-palu,Pelabuhan Palu,,Common alternate name.
+port-sorong,Pelabuhan Sorong,,Common alternate name.
+port-patimban,Pelabuhan Patimban,,Common alternate name.
+port-patimban,Patimban,,Common alternate name.
+port-benoa,Pelabuhan Benoa,,Common alternate name.
+port-benoa,BMTH,,Common alternate name.
+port-palembang-baru,Pelabuhan Palembang Baru,,Common alternate name.
+port-palembang-baru,New Palembang Port,,Common alternate name.
+port-muaro-jambi,Terminal Peti Kemas Muaro Jambi,,Common alternate name.
+port-muaro-jambi,Muaro Jambi Container Terminal,,Common alternate name.
+rail-lrt-sumsel,LRT Palembang,,Common alternate name.
+rail-lrt-sumsel,Light Rail Transit Sumatera Selatan,,Common alternate name.
+rail-double-track-java-south,Double-Double Track Java,,Common alternate name.
+rail-double-track-java-south,Jalur Ganda Jawa Selatan,,Common alternate name.
+rail-tebing-tinggi-kuala-tanjung,KA Tebing Tinggi–Kuala Tanjung,,Common alternate name.
+rail-yogyakarta-airport,KA Bandara YIA,,Common alternate name.
+rail-yogyakarta-airport,Yogyakarta International Airport Rail Link,,Common alternate name.
+rail-makassar-parepare,KA Trans Sulawesi,,Common alternate name.
+rail-makassar-parepare,Makassar–Parepare,,Common alternate name.
+rail-lrt-jabodebek,LRT Jabodetabek,,Common alternate name.
+rail-lrt-jabodebek,LRT Jabodebek,,Common alternate name.
+rail-kcj-jakarta-bandung,KCJB,,Common alternate name.
+rail-kcj-jakarta-bandung,Whoosh,,Common alternate name.
+rail-kcj-jakarta-bandung,Kereta Cepat Jakarta–Bandung,,Common alternate name.
+rail-rantau-prapat-kota-pinang,KA Rantau Prapat–Kota Pinang,,Common alternate name.
+rail-lahat-kertapati,KA Logistik Lahat–Kertapati,,Common alternate name.
+rail-lahat-kertapati,Lahat–Kertapati,,Common alternate name.
+rail-kaltim-logistics,KA Logistik Kalimantan Timur,,Common alternate name.
+rail-kaltim-logistics,Bayan Rail,,Common alternate name.
+rail-mrt-jakarta-north-south,MRT Jakarta,,Common alternate name.
+rail-mrt-jakarta-north-south,MRT North–South,,Common alternate name.
+rail-mrt-jakarta-east-west,MRT East–West,,Common alternate name.
+rail-mrt-jakarta-east-west,MRT Timur–Barat,,Common alternate name.
+rail-lrt-jakarta-velodrome-manggarai,LRT Jakarta Fase 1B,,Common alternate name.
+rail-lrt-jakarta-velodrome-manggarai,LRT Velodrome–Manggarai,,Common alternate name.
