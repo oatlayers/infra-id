@@ -255,8 +255,8 @@ default.
 | **Data** | Trust and reuse | Coverage matrix, methodology, status definitions, source register, downloads, changelog, known gaps |
 
 The current two-tab switch becomes four tabs. Estates remain a **table view**
-until Phase 4 is complete; the map layer is added only after coordinates are
-refined and is off by default.
+until their data is refined in Phase 2; the map layer is added only after
+coordinates are verified and is off by default.
 
 ### 3.5 Explore view
 
@@ -910,11 +910,20 @@ then ship data increments.
 
 ---
 
-## 7. Phased execution plan
+## 7. Three-phase execution plan
 
-Sizes: **S** = one focused session, **M** = 2–3 sessions, **L** = 4–6 sessions.
+The work is grouped into **three phases**. Each phase has parallel tracks; the
+phase is the unit of delivery. Finish the exit criteria before starting the next
+phase. Sizes: **S** = one focused session, **M** = 2–3 sessions, **L** = 4–6
+sessions.
 
-### Phase 0 — Decisions and guardrails
+### Phase 1 — Foundation and experience
+
+**Goal:** the current 27 rows look and behave like a published product. The
+shell, four views, search, filters, detail drawer, map and mobile sheet are
+ready. No new data rows in this phase.
+
+**Track 1A — Decisions and guardrails**
 
 | ID | Item | Outcome / acceptance | Size | Depends |
 |---|---|---|---|---|
@@ -924,10 +933,7 @@ Sizes: **S** = one focused session, **M** = 2–3 sessions, **L** = 4–6 sessio
 | D4 | Set budgets | Accessibility, performance and payload budgets written into this plan | S | D1 |
 | D5 | Set up tracking | This file's checklist becomes the single source of work status | S | — |
 
-**Exit:** no open question about what is in scope, what "complete" means, or
-which design direction is being built.
-
-### Phase 1 — Shell and design foundation
+**Track 1B — Shell and design**
 
 | ID | Item | Outcome / acceptance | Size | Depends |
 |---|---|---|---|---|
@@ -942,10 +948,7 @@ which design direction is being built.
 | U9 | Data view skeleton | Coverage, definitions, sources, downloads, changelog; generated counts | M | U3 |
 | U10 | Copy pass | Remove stale toll-road copy; data-driven dates and counts; metadata | S | U9 |
 
-**Exit:** the current 27 rows look and behave like a published product on
-desktop and mobile; Lighthouse accessibility ≥ 95; no console errors.
-
-### Phase 2 — Map experience
+**Track 1C — Map experience**
 
 | ID | Item | Outcome / acceptance | Size | Depends |
 |---|---|---|---|---|
@@ -957,10 +960,24 @@ desktop and mobile; Lighthouse accessibility ≥ 95; no console errors.
 | M6 | Layer manager | Projects on; estates off; corridor geometry; lazy estate load | M | M3 |
 | M7 | Performance and offline QA | 300 markers at 60 fps; `file://` and localhost; no network requests | M | M6 |
 
-**Exit:** the map works as the primary navigation surface at 300+ features and
-still makes no network calls.
+**Exit criteria**
 
-### Phase 3 — Transport PSN data
+- Decisions recorded; `coverage_targets.csv` exists; schema v3 agreed.
+- Four views exist and hash routing works from `file://`; Estates may be a
+  summary placeholder until Phase 2.
+- Search, filters, sort and URL state work with the 27 existing rows.
+- The detail drawer shows evidence, sources and notes; the mobile sheet works.
+- The map has the new basemap, sector markers and clusters; no network requests.
+- Lighthouse accessibility ≥ 95; no console errors; works from `file://`.
+- A preview build is signed off with desktop and mobile screenshots.
+
+### Phase 2 — Data completion
+
+**Goal:** every layer meets its coverage target or has a documented gap. This
+phase also adds the views that consume the new data: the estates table and the
+corridor segment view.
+
+**Track 2A — Transport PSN**
 
 | ID | Item | Outcome / acceptance | Size | Depends |
 |---|---|---|---|---|
@@ -973,10 +990,7 @@ still makes no network calls.
 | T7 | Build and QA | Validation passes; 62 projects; filters and map correct | M | T6 |
 | T8 | Coverage check | 35/35 represented; exclusions documented | S | T7 |
 
-**Exit:** all 35 transport PSN projects are on the site with evidence; the
-sector filters are no longer empty.
-
-### Phase 4 — Estates
+**Track 2B — Estates**
 
 | ID | Item | Outcome / acceptance | Size | Depends |
 |---|---|---|---|---|
@@ -987,9 +1001,7 @@ sector filters are no longer empty.
 | E5 | Estates table | Summary, filters, sortable table, row detail, CSV, mobile layout | M | E4 |
 | E6 | Optional map layer | Off by default; clusters; nearby projects; works offline | M | E5 |
 
-**Exit:** 197 unique estates, no blanket `operating`, and a usable table view.
-
-### Phase 5 — Factories
+**Track 2C — Factories**
 
 | ID | Item | Outcome / acceptance | Size | Depends |
 |---|---|---|---|---|
@@ -999,9 +1011,7 @@ sector filters are no longer empty.
 | F4 | Site integration | Factory filter, markers, detail figures | M | F2 |
 | F5 | Coverage check | 20–30 rows; every row has investment or capacity | S | F4 |
 
-**Exit:** the factory layer is credible, sourced and filterable.
-
-### Phase 6 — Roads and corridors
+**Track 2D — Roads and corridors**
 
 | ID | Item | Outcome / acceptance | Size | Depends |
 |---|---|---|---|---|
@@ -1012,9 +1022,22 @@ sector filters are no longer empty.
 | R5 | Corridor UI v2 | Segment table, timeline, stacked bar, gap states | M | R3 |
 | R6 | Geometry | Simplified lines for 10 major corridors with attribution | L | R5 |
 
-**Exit:** corridor progress is segment-backed, not a single contested number.
+**Exit criteria**
 
-### Phase 7 — Trust layer
+- 35/35 transport PSN; 62 projects in the flat export.
+- 179 industrial estates and 25 SEZs; the 19-name gap list is resolved or
+  explained; no blanket `operating` status.
+- 20–30 factories, each with investment or capacity.
+- 40–50 road corridors; five corridors with segment tables; recent openings
+  and stalled projects recorded.
+- Every row has coordinates, a source and a verification date; validation
+  passes; the coverage report shows current/target/gap for every layer.
+
+### Phase 3 — Trust and ship
+
+**Goal:** the site is public, verifiable and maintainable by another agent.
+
+**Track 3A — Trust layer**
 
 | ID | Item | Outcome / acceptance | Size | Depends |
 |---|---|---|---|---|
@@ -1024,9 +1047,7 @@ sector filters are no longer empty.
 | Q4 | Downloads | Filtered CSV and GeoJSON, data dictionary | S | Q3 |
 | Q5 | Conflict register | Known conflicts listed with both values and sources | S | Q3 |
 
-**Exit:** a sceptical reader can verify any status in two clicks.
-
-### Phase 8 — Ship
+**Track 3B — Ship**
 
 | ID | Item | Outcome / acceptance | Size | Depends |
 |---|---|---|---|---|
@@ -1036,46 +1057,56 @@ sector filters are no longer empty.
 | S4 | Refresh runbook | Monthly steps: fetch, diff, review, update, rebuild, deploy | S | S2 |
 | S5 | Hand-off | README current, changelog current, open gaps listed | S | S4 |
 
-**Exit:** the site is public, reproducible and maintainable by another agent.
+**Exit criteria**
+
+- Every status and numeric claim traces to a source.
+- Stale rows are flagged and the monthly refresh runbook exists.
+- The Data view has coverage, methodology, sources, downloads and conflicts.
+- CI validates, rebuilds and checks for drift; GitHub Pages deploys on `main`.
+- Desktop, mobile, keyboard and offline smoke tests pass.
+- README, changelog and this plan agree with the data.
 
 ---
 
-## 8. Recommended first sprint
+## 8. Delivery order and milestones
 
-The fastest route to a visibly better product without wasting the transport
-data work:
+**Milestone A — end of Phase 1: usable preview**
 
-**Sprint 1 (about two weeks of sessions)**
+Order:
 
-1. D1–D5 — decisions and coverage targets.
+1. D1–D5 — decisions, coverage targets, schema, budgets.
 2. U1 — tokens, fonts, icons.
-3. U2–U3 — shell, tabs and hash routing.
+3. U2–U3 — shell, tabs, hash routing.
 4. U4–U5 — filters, search, sort, list.
 5. U6 — detail drawer.
 6. M1–M3 — basemap, markers, clustering.
 7. U7–U8 — mobile and accessibility.
-8. Deploy a preview.
+8. U9–U10 — Data view skeleton and copy pass.
+9. M4–M7 — interaction, controls, layers, performance.
 
-**Sprint 2**
+**Milestone B — end of Phase 2: complete dataset**
 
-1. T1–T8 — transport PSN.
-2. U9–U10 — Data view and copy.
-3. M4–M7 — map interaction and performance.
+Order:
 
-**Sprint 3**
+1. T1–T8 — transport PSN. This is the largest visible win and the data is
+   already extracted.
+2. E1–E5 — estate reconciliation, coordinates, table view.
+3. F1–F5 — factory universe and rows.
+4. R1–R5 — road audit, operating context, segments, events, corridor UI.
+5. E6 and R6 — optional map layers and geometry, if time allows.
 
-1. E1–E5 — estate reconciliation and table.
-2. F1–F4 — factory batch.
+**Milestone C — end of Phase 3: public launch**
 
-**Sprint 4**
+Order:
 
-1. R1–R5 — road and corridor depth.
-2. Q1–Q5 — trust layer.
-3. S1–S5 — CI, Pages, runbook.
+1. Q1–Q5 — claims, freshness, Data view, downloads, conflicts.
+2. S1–S2 — CI and GitHub Pages.
+3. S3–S5 — smoke tests, runbook, hand-off.
 
-If data credibility is more urgent than polish, swap Sprint 1 and Sprint 2.
-The recommended order is deliberate: adding 35 transport rows to the current
-interface would make the interface problem worse, not better.
+The order is deliberate: adding 35 transport rows to the current interface would
+make the interface problem worse. Fix the container first, then fill it. Do not
+start Phase 2 before the Phase 1 list, filters, detail and mobile views are
+usable.
 
 ---
 

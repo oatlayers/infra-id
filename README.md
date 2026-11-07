@@ -406,9 +406,10 @@ Validating is not the same as verifying. Validation catches malformed rows; the
 
 ## Where to pick up
 
-- **Current plan:** [`plan-v3.md`](plan-v3.md). Start with Phase 0 (decisions
-  and coverage targets), then Phase 1 (shell and design foundation). The
-  transport PSN batch is Phase 3; the estate refinement is Phase 4.
+- **Current plan:** [`plan-v3.md`](plan-v3.md). Phase 1 is the shell, design
+  foundation and map using the current 27 rows. Phase 2 is data completion:
+  transport PSN, estates, factories and roads/corridors. Phase 3 is the trust
+  layer, CI and GitHub Pages.
 - **Estate first pass:** 178 rows in `data/curated/estates.csv`. Refine it by
   adding the 2025 estates, replacing regency centroids with estate boundaries or
   site coordinates, and verifying SEZ operational status. Do not map it yet.

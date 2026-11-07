@@ -173,11 +173,11 @@ Revisit SQLite only when the triggers above are met.
 **Batch 1 status (2026-11-06)**
 
 - 27 toll-road rows: 20 `under_construction`, 7 `planned`, 0 `recently_completed`.
-- No toll-road corridor was fully opened between 2024-11-06 and 2026-11-06. Several sections opened in that window (for example Binjai–Langsa Section 3 in March 2025, Padang–Sicincin in May 2025, Solo–Yogyakarta Klaten–Prambanan in July 2025, Probolinggo–Banyuwangi Sections 1–2 in 2026). They are recorded in the `notes` of their corridor, which stays `under_construction`. `recently_completed` will be populated by airports, ports and factories in phase 3.
+- No toll-road corridor was fully opened between 2024-11-06 and 2026-11-06. Several sections opened in that window (for example Binjai–Langsa Section 3 in March 2025, Padang–Sicincin in May 2025, Solo–Yogyakarta Klaten–Prambanan in July 2025, Probolinggo–Banyuwangi Sections 1–2 in 2026). They are recorded in the `notes` of their corridor, which stays `under_construction`. `recently_completed` will be populated by airports, ports and factories in Phase 2 of `plan-v3.md`.
 - Inclusion rule: the italic rows in the English table, with two corrections. Pandaan–Malang is dropped because BPJT shows it fully open and past the 2-year window. Yogyakarta–Solo and Yogyakarta–Sleman–YIA are merged into the single BPJT corridor Solo–Yogyakarta–NYIA Kulonprogo.
 - Two under-construction rows from Indonesian Wikipedia were added because they are large Trans-Sumatra sections missing from the English table: Kuala Tanjung–Tebing Tinggi–Parapat and Betung–Tempino–Jambi.
 - JORR 3 is kept as one `planned` master-plan row. Its active sections (Kamal–Teluknaga–Rajeg, Serpong–Balaraja) are noted there rather than mapped separately.
-- Not yet included: 0-km concession roads such as Lhokseumawe–Sigli, Langsa–Lhokseumawe, Rengat–Pekanbaru, Jambi–Rengat, Muara Enim–Lubuk Linggau, Palembang–Tanjung Api-api, Bogor–Serpong, Sentul–Jonggol–Karawang, Balikpapan–Penajam, the IKN toll road and the Patimban access road. Add them in phase 2 when the PSN list is in place.
+- Not yet included: 0-km concession roads such as Lhokseumawe–Sigli, Langsa–Lhokseumawe, Rengat–Pekanbaru, Jambi–Rengat, Muara Enim–Lubuk Linggau, Palembang–Tanjung Api-api, Bogor–Serpong, Sentul–Jonggol–Karawang, Balikpapan–Penajam, the IKN toll road and the Patimban access road. Add them with the road batch in Phase 2 of `plan-v3.md`.
 - Coordinates are midpoints of BPJT start/end points, so `precision` is `approximate` for every row. Bogor Ring Road uses Bogor city centre because the BPJT endpoints are misplaced.
 
 ## Pipeline
