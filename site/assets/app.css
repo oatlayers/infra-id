@@ -732,6 +732,135 @@ svg { display: block; }
   font-size: 10px;
   line-height: 1.45;
 }
+.corridor-bar .gap { background: #d9dde3; }
+.corridor-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 10px;
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 9px;
+  line-height: 1.4;
+}
+.corridor-legend span { display: inline-flex; align-items: center; gap: 4px; }
+.corridor-legend .sw {
+  width: 7px;
+  height: 7px;
+  border-radius: 2px;
+  background: #d9dde3;
+}
+.corridor-legend .sw.op { background: var(--operating); }
+.corridor-legend .sw.uc { background: var(--uc); }
+.corridor-legend .sw.planned { background: var(--planned); }
+.corridor-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 8px;
+  padding-top: 7px;
+  border-top: 1px solid #f1f2f4;
+  color: var(--muted);
+  font-size: 9px;
+  line-height: 1.4;
+}
+.corridor-state {
+  display: inline-block;
+  padding: 2px 6px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-pill);
+  background: var(--surface-warm);
+  color: var(--muted);
+  font-size: 8.5px;
+  font-weight: 600;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.corridor-state.full { border-color: var(--operating-line); background: var(--operating-soft); color: var(--operating); }
+.corridor-state.partial { border-color: var(--accent-line); background: var(--accent-soft); color: var(--accent); }
+.corridor-state.none { border-color: var(--stalled-line); background: var(--stalled-soft); color: var(--stalled); }
+
+/* ---------- Corridor and project timelines ---------- */
+
+.segment-wrap {
+  overflow-x: auto;
+  margin-top: 2px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-sm);
+}
+.segment-table {
+  width: 100%;
+  min-width: 340px;
+  border-collapse: collapse;
+  font-size: 10px;
+  line-height: 1.4;
+}
+.segment-table th,
+.segment-table td {
+  padding: 6px 7px;
+  border-bottom: 1px solid #f1f2f4;
+  text-align: left;
+  vertical-align: top;
+}
+.segment-table thead th {
+  position: sticky;
+  top: 0;
+  background: var(--surface-warm);
+  color: var(--muted);
+  font-size: 8.5px;
+  font-weight: 600;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+.segment-table tbody tr:last-child th,
+.segment-table tbody tr:last-child td { border-bottom: 0; }
+.segment-table tbody th { font-weight: 500; }
+.segment-table .num { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.segment-note {
+  display: block;
+  margin-top: 2px;
+  color: var(--muted);
+  font-size: 9px;
+  font-weight: 400;
+}
+.status-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin-right: 4px;
+  border-radius: 50%;
+  background: var(--c, var(--muted));
+  vertical-align: 1px;
+}
+.timeline { margin: 0; padding: 0; list-style: none; }
+.timeline-year {
+  display: grid;
+  grid-template-columns: 40px minmax(0, 1fr);
+  gap: 8px;
+  padding: 7px 0;
+  border-bottom: 1px solid #f1f2f4;
+}
+.timeline-year:last-child { border-bottom: 0; }
+.timeline-year-label {
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 15px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+.timeline-year ul { margin: 0; padding: 0; list-style: none; }
+.timeline-year li + li { margin-top: 7px; }
+.timeline-date {
+  color: var(--muted);
+  font-size: 8.5px;
+  font-weight: 600;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+.timeline-body { color: var(--ink); font-size: 10px; line-height: 1.45; }
+.timeline-body a { color: var(--accent); }
+.event-list b { font-weight: 600; }
 
 /* ---------- Estates view ---------- */
 

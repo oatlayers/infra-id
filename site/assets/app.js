@@ -117,6 +117,22 @@
     return (STATUS[status] && STATUS[status].label) || status || 'Unknown';
   }
 
+  function eventLabel(type) {
+    const labels = {
+      announced: 'Announced',
+      groundbreaking: 'Groundbreaking',
+      contract: 'Contract',
+      financial_close: 'Financial close',
+      section_opened: 'Section opened',
+      opened: 'Opened',
+      stalled: 'Stalled',
+      resumed: 'Resumed',
+      target_changed: 'Target changed',
+      other: 'Event'
+    };
+    return labels[type] || String(type || 'Event').replace(/_/g, ' ');
+  }
+
   function sectorLabel(sector, plural) {
     const record = SECTORS[sector];
     if (!record) return sector || '';
@@ -767,6 +783,16 @@
         '. <a class="related-link" href="#/corridors/' + esc(project.corridor_id) + '">Open corridor ↗</a></span></li>' : '') +
       '</ul></section>';
 
+    if (project.events && project.events.length) {
+      body += '<section class="detail-section"><h3>Timeline</h3>' +
+        '<ul class="evidence-list event-list">' + project.events.map(function (event) {
+          return '<li><time>' + esc(fmtDate(event.event_date)) + '</time><span><b>' +
+            esc(eventLabel(event.event_type)) + '</b> · ' + esc(event.description) +
+            (event.source_url ? ' <a href="' + esc(event.source_url) + '" target="_blank" rel="noopener">Source ↗</a>' : '') +
+            '</span></li>';
+        }).join('') + '</ul></section>';
+    }
+
     body += '<section class="detail-section"><h3>Sources</h3>' + projectSourceList(project) + '</section>';
 
     if (project.notes) {
@@ -810,57 +836,109 @@
     openDrawer();
   }
 
+  function corridorSegmentTable(corridor) {
+    const segments = corridor.segments || [];
+    if (!segments.length) {
+      return '<p class="basis">No section list has been published for this corridor. The route total is the only verified figure; no progress share is inferred.</p>';
+    }
+    return '<div class="segment-wrap"><table class="segment-table"><thead><tr>' +
+      '<th scope="col">Section</th><th scope="col">Length</th><th scope="col">Status</th><th scope="col">Opened</th>' +
+      '</tr></thead><tbody>' + segments.map(function (segment) {
+        const color = (STATUS[segment.status] && STATUS[segment.status].color) || '#667085';
+        const note = segment.notes ? '<span class="segment-note">' + esc(segment.notes) + '</span>' : '';
+        const opened = segment.opened_year ? esc(segment.opened_year) :
+          (segment.expected_open_year ? 'by ' + esc(segment.expected_open_year) : '—');
+        return '<tr><th scope="row">' + esc(segment.name) + note + '</th>' +
+          '<td class="num">' + fmtNum(segment.length_km) + ' km</td>' +
+          '<td><span class="status-dot" style="--c:' + esc(color) + '"></span>' + esc(statusLabel(segment.status)) + '</td>' +
+          '<td class="num">' + opened + '</td></tr>';
+      }).join('') + '</tbody></table></div>';
+  }
+
+  function corridorTimeline(corridor) {
+    const events = corridor.events || [];
+    if (!events.length) {
+      return '<p class="basis">No dated event is recorded for this corridor yet. Openings are tracked at project level where an exact date is available.</p>';
+    }
+    const groups = [];
+    events.forEach(function (event) {
+      const year = String(event.event_date || '').slice(0, 4) || 'Undated';
+      let group = groups[groups.length - 1];
+      if (!group || group.year !== year) {
+        group = { year: year, items: [] };
+        groups.push(group);
+      }
+      group.items.push(event);
+    });
+    return '<ol class="timeline">' + groups.map(function (group) {
+      return '<li class="timeline-year"><div class="timeline-year-label">' + esc(group.year) + '</div>' +
+        '<ul>' + group.items.map(function (event) {
+          return '<li><div class="timeline-date">' + esc(fmtDate(event.event_date)) + '</div>' +
+            '<div class="timeline-body"><b>' + esc(eventLabel(event.event_type)) + '</b> · ' +
+            esc(event.project_name) + '. ' + esc(event.description) +
+            (event.source_url ? ' <a href="' + esc(event.source_url) + '" target="_blank" rel="noopener">Source ↗</a>' : '') +
+            '</div></li>';
+        }).join('') + '</ul></li>';
+    }).join('') + '</ol>';
+  }
+
   function renderCorridorDrawer(corridor) {
     dom.drawerPills.innerHTML = '<span class="status-pill plain">Trans corridor</span>' +
       '<span class="status-pill plain">' + esc(corridor.island) + '</span>';
     dom.drawerTitle.textContent = corridor.name;
     dom.drawerLoc.textContent = corridor.definition;
 
-    const total = Number(corridor.total_km);
-    const operational = Number(corridor.operational_km);
-    const construction = Number(corridor.construction_km);
-    const planned = Number(corridor.planned_km);
-    const share = total && isFinite(operational) ? (operational / total) * 100 : null;
+    const parts = corridorParts(corridor);
     const word = corridorWord(corridor);
-    const metricTitle = word === 'connected' ? 'Connected' : word === 'paved' ? 'Paved' : 'Operational';
+    const metricTitle = word === 'connected' ? 'Connected' : word === 'paved' ? 'Paved' : 'Operating';
+    const share = parts.hasTotal && parts.operational ? (parts.operational / parts.total) * 100 : null;
+    const remaining = parts.hasTotal && (parts.operational || parts.construction)
+      ? Math.max(parts.total - parts.operational - parts.construction, 0)
+      : null;
+    const segments = corridor.segments || [];
+    const segmentKm = Number(corridor.segment_km) || 0;
+    const state = corridorState(corridor);
 
     let body = '<div class="metric-grid">';
-    body += metricCard('Total', isFinite(total) && total ? fmtNum(total) + ' <small>km</small>' : 'Not defined');
-    body += metricCard(metricTitle, isFinite(operational) && operational ? fmtNum(operational) + ' <small>km</small>' : '—');
-    body += metricCard('Construction', isFinite(construction) && construction ? fmtNum(construction) + ' <small>km</small>' : '—');
-    body += metricCard('Planned', isFinite(planned) && planned ? fmtNum(planned) + ' <small>km</small>' : '—');
+    body += metricCard('Total', parts.hasTotal ? fmtNum(parts.total) + ' <small>km</small>' : 'Not defined');
+    body += metricCard(metricTitle, parts.operational ? fmtNum(parts.operational) + ' <small>km</small>' : '—');
+    body += metricCard('Under construction', parts.construction ? fmtNum(parts.construction) + ' <small>km</small>' : '—');
+    body += metricCard('Not yet open', remaining ? fmtNum(remaining) + ' <small>km</small>' : '—');
     body += '</div>';
+
+    if (parts.hasTotal && hasBreakdown(parts)) {
+      body += corridorBar(corridor) + corridorLegend(corridor);
+    }
 
     if (share !== null) {
       body += '<div class="progress-block"><div class="progress-head"><span>' + esc(corridor.metric) +
         '</span><strong>' + fmtNum(share) + '%</strong></div><div class="progress-track">' +
-        '<span style="width:' + Math.max(0, Math.min(100, share)) + '%;--c:var(--operating)"></span></div></div>';
-    }
-
-    if (!total) {
-      body += '<section class="detail-section"><h3>Data gap</h3><p class="notes-callout">' +
-        esc(corridor.notes) + '</p></section>';
+        '<span style="width:' + pctOf(parts.operational, parts.total) +
+        '%;--c:var(--operating)"></span></div></div>';
     }
 
     body += '<section class="detail-section"><h3>Definition and scope</h3><p class="basis">' +
       esc(corridor.definition) + '</p><div class="basis-meta">Metric: ' + esc(corridor.metric) +
       (corridor.as_of ? ' · as of ' + esc(fmtDate(corridor.as_of)) : '') + '</div></section>';
 
+    body += '<section class="detail-section"><h3>Series coverage</h3><p class="basis">' +
+      (segments.length
+        ? segments.length + ' sections covering ' + fmtNum(segmentKm) + ' km' +
+          (parts.hasTotal ? ', ' + fmtNum(corridor.segment_share) + '% of the route total' : '') + '. ' +
+          (state.key === 'partial'
+            ? 'The section table is partial: the unlisted length stays in the corridor total rather than being assigned to a section.'
+            : 'The section lengths reconcile to the published corridor total.')
+        : 'No segment table. The route total is published, but no operational-km series exists, so no percentage is estimated.') +
+      '</p><div class="basis-meta"><span class="corridor-state ' + esc(state.key) + '">' +
+      esc(state.label) + '</span></div></section>';
+
     if (corridor.notes) {
       body += '<section class="detail-section"><h3>Notes and conflicts</h3><p class="notes-callout">' +
         esc(corridor.notes) + '</p></section>';
     }
 
-    if (corridor.segments && corridor.segments.length) {
-      body += '<section class="detail-section"><h3>Segments</h3><ul class="evidence-list">' +
-        corridor.segments.map(function (segment) {
-          return '<li><time>' + esc(segment.opened_year || '—') + '</time><span>' +
-            esc(segment.name) + ' · ' + fmtNum(segment.length_km) + ' km · ' +
-            esc(statusLabel(segment.status)) + '</span></li>';
-        }).join('') + '</ul></section>';
-    } else {
-      body += '<section class="detail-section"><h3>Segments</h3><p class="basis">Segment-level data is not published yet. The corridor total is the only verified figure.</p></section>';
-    }
+    body += '<section class="detail-section"><h3>Segments</h3>' + corridorSegmentTable(corridor) + '</section>';
+    body += '<section class="detail-section"><h3>Timeline</h3>' + corridorTimeline(corridor) + '</section>';
 
     body += '<section class="detail-section"><h3>Source</h3><ul class="source-list"><li>' +
       '<div class="src-head"><span class="src-name">' + esc(corridor.source_title || corridor.source_publisher) +
@@ -934,33 +1012,100 @@
     return 'operational';
   }
 
-  function corridorCard(corridor) {
-    const total = Number(corridor.total_km);
-    const operational = Number(corridor.operational_km);
-    const construction = Number(corridor.construction_km);
-    const planned = Number(corridor.planned_km);
-    const share = total && isFinite(operational) ? Math.max(0, Math.min(100, (operational / total) * 100)) : null;
-    const word = corridorWord(corridor);
+  function corridorParts(corridor) {
+    const total = Number(corridor.total_km) || 0;
+    const operational = Number(corridor.operational_km) || 0;
+    const construction = Number(corridor.construction_km) || 0;
+    const planned = Number(corridor.planned_km) || 0;
+    const gap = total ? Math.max(total - operational - construction - planned, 0) : 0;
+    return {
+      total: total,
+      operational: operational,
+      construction: construction,
+      planned: planned,
+      gap: gap,
+      hasTotal: total > 0
+    };
+  }
 
+  function pctOf(value, total) {
+    if (!total) return 0;
+    return Math.max(0, Math.min(100, (value / total) * 100));
+  }
+
+  function corridorBar(corridor) {
+    const parts = corridorParts(corridor);
+    if (!parts.hasTotal) return '';
     let bar = '';
-    if (total) {
-      const opPct = isFinite(operational) ? (operational / total) * 100 : 0;
-      const ucPct = isFinite(construction) ? (construction / total) * 100 : 0;
-      const planPct = isFinite(planned) ? (planned / total) * 100 : 0;
-      bar = '<div class="corridor-bar"><span class="op" style="width:' + opPct +
-        '%"></span><span class="uc" style="width:' + ucPct +
-        '%"></span><span class="planned" style="width:' + planPct + '%"></span></div>';
+    if (parts.operational) bar += '<span class="op" style="width:' + pctOf(parts.operational, parts.total) + '%"></span>';
+    if (parts.construction) bar += '<span class="uc" style="width:' + pctOf(parts.construction, parts.total) + '%"></span>';
+    if (parts.planned) bar += '<span class="planned" style="width:' + pctOf(parts.planned, parts.total) + '%"></span>';
+    if (parts.gap) bar += '<span class="gap" style="width:' + pctOf(parts.gap, parts.total) + '%"></span>';
+    return '<div class="corridor-bar" role="img" aria-label="' + esc(corridor.name) + ' status shares">' + bar + '</div>';
+  }
+
+  function corridorLegend(corridor) {
+    const parts = corridorParts(corridor);
+    const gapLabel = corridorWord(corridor) === 'connected' ? 'Not connected' : 'Unallocated';
+    const items = [];
+    if (parts.operational) items.push('<span><i class="sw op"></i>Operating ' + fmtNum(parts.operational) + ' km</span>');
+    if (parts.construction) items.push('<span><i class="sw uc"></i>Construction ' + fmtNum(parts.construction) + ' km</span>');
+    if (parts.planned) items.push('<span><i class="sw planned"></i>Planned ' + fmtNum(parts.planned) + ' km</span>');
+    if (parts.gap) items.push('<span><i class="sw gap"></i>' + gapLabel + ' ' + fmtNum(parts.gap) + ' km</span>');
+    return items.length ? '<div class="corridor-legend">' + items.join('') + '</div>' : '';
+  }
+
+  function hasBreakdown(parts) {
+    return Boolean(parts.operational || parts.construction || parts.planned);
+  }
+
+  function corridorState(corridor) {
+    const parts = corridorParts(corridor);
+    if (!parts.hasTotal) return { key: 'none', label: 'No series' };
+    if (!parts.operational) return { key: 'total', label: 'Route total only' };
+    const share = Number(corridor.segment_share);
+    if (corridor.segment_share !== null && corridor.segment_share !== undefined && isFinite(share) && share < 99.5) {
+      return { key: 'partial', label: 'Partial segment table' };
     }
+    return { key: 'full', label: 'Complete series' };
+  }
+
+  function corridorCard(corridor) {
+    const parts = corridorParts(corridor);
+    const word = corridorWord(corridor);
+    const state = corridorState(corridor);
+    const share = parts.hasTotal && parts.operational ? (parts.operational / parts.total) * 100 : null;
+    const segments = corridor.segments || [];
+    const segmentKm = Number(corridor.segment_km) || 0;
+
+    let figure;
+    if (parts.hasTotal && parts.operational) {
+      figure = '<strong>' + fmtNum(parts.operational) + '</strong> of ' + fmtNum(parts.total) + ' km ' + word;
+    } else if (parts.hasTotal) {
+      figure = '<strong>' + fmtNum(parts.total) + ' km</strong> route · no progress series';
+    } else {
+      figure = '<strong>No series</strong> · aggregate withheld';
+    }
+
+    let meta = '';
+    if (share !== null) meta = fmtNum(share) + '% ' + word;
+    else if (parts.hasTotal) meta = 'Route total only';
+    if (corridor.as_of) meta += (meta ? ' · ' : '') + 'as of ' + fmtDate(corridor.as_of);
+
+    const coverage = segments.length
+      ? segments.length + ' sections · ' + fmtNum(segmentKm) + ' km' +
+        (parts.hasTotal && segmentKm ? ' (' + fmtNum(corridor.segment_share) + '% of route)' : '')
+      : 'No segment table';
 
     return '<button type="button" class="corridor-card" data-corridor="' + esc(corridor.id) + '">' +
       '<div class="corridor-head"><h3>' + esc(corridor.name) + '</h3>' +
       '<span class="corridor-metric">' + esc(corridor.metric) + '</span></div>' +
-      '<div class="corridor-figure">' +
-      (total ? '<strong>' + fmtNum(operational) + '</strong> of ' + fmtNum(total) + ' km ' + word :
-        '<strong>No series</strong> · aggregate withheld') + '</div>' +
-      (share !== null ? '<div class="corridor-meta">' + fmtNum(share) + '% ' + word +
-        (corridor.as_of ? ' · as of ' + esc(fmtDate(corridor.as_of)) : '') + '</div>' : '') +
-      '<p class="corridor-def">' + esc(corridor.definition) + '</p>' + bar +
+      '<div class="corridor-figure">' + figure + '</div>' +
+      (meta ? '<div class="corridor-meta">' + esc(meta) + '</div>' : '') +
+      '<p class="corridor-def">' + esc(corridor.definition) + '</p>' +
+      (hasBreakdown(parts) ? corridorBar(corridor) + corridorLegend(corridor) : '') +
+      '<div class="corridor-foot"><span class="corridor-state ' + esc(state.key) + '">' + esc(state.label) + '</span>' +
+      '<span>' + esc(coverage) + '</span></div>' +
       (corridor.notes ? '<div class="corridor-gap">' + esc(corridor.notes) + '</div>' : '') +
       '</button>';
   }
@@ -971,7 +1116,7 @@
     dom.viewPanel.hidden = false;
     dom.viewPanel.innerHTML =
       '<div class="corridor-intro"><h2>Trans corridors</h2>' +
-      '<p>Network progress where an official kilometre series exists. Where definitions conflict, the gap is shown instead of a guessed number.</p></div>' +
+      '<p>Five defined corridors. Network progress is shown where a published kilometre breakdown exists; where it does not, the route total is published without a guessed percentage. Segment coverage and unallocated length stay visible.</p></div>' +
       '<div class="corridor-list">' + corridors.map(corridorCard).join('') + '</div>';
   }
 
@@ -1235,7 +1380,7 @@
       ' large industrial estates use OSM/Nominatim points, and ' +
       fmtNum((estateStats.coordinate_sources || {}).regency || 0) +
       ' still use regency centroids.</li>' +
-      '<li>Trans Sulawesi and Trans Kalimantan have no single official kilometre series.</li>' +
+      '<li>Trans Sulawesi and Trans Kalimantan publish a route total only: no current operational-km series or segment table was found. Trans Sumatra and Trans Papua segment tables are partial and say so.</li>' +
       '<li>' + fmtNum((projectStats.psn && projectStats.psn.unknown) || 0) + ' of ' +
       fmtNum(roadCount) + ' road rows have unknown PSN status; ' +
       fmtNum(projectStats.precision && projectStats.precision.approximate || 0) + ' of ' +
@@ -1251,6 +1396,7 @@
       '<section class="data-section"><h3>Downloads</h3>' + downloadList() + '</section>' +
 
       '<section class="data-section"><h3>Changelog</h3><ul class="changelog">' +
+      '<li><time>8 Nov 2026</time><span>Five Trans corridors, 44 dated segments and six project events. Trans Java joins as the fifth corridor; roads reach the 45-corridor target with three planned Trans Sumatra concessions.</span></li>' +
       '<li><time>8 Nov 2026</time><span>Added 27 factories and smelters: 19 operating, 3 recently completed, 4 under construction and 1 stalled, with operators, capacity, investment and source claims.</span></li>' +
       '<li><time>8 Nov 2026</time><span>Added 15 PSN toll corridors from BPJT; roads now 42 of the 45 target corridors.</span></li>' +
       '<li><time>8 Nov 2026</time><span>Estate reconciliation: a 19-name gap ledger and OSM/Nominatim coordinates for 20 of the 40 largest industrial estates.</span></li>' +

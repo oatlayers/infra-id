@@ -1,1 +1,45 @@
 id,corridor_id,name,segment_type,length_km,operational_km,construction_km,progress_pct,status,opened_year,expected_open_year,geometry_id,source_id,notes
+seg-trans-sumatera-sigli-banda-aceh,trans-sumatera,Sigli–Banda Aceh,section,74.214,48.584,,,under_construction,,,,src-bpjt-toll-road-list-2026-11-06,Segment mirrors the curated corridor row; the 13-section table is partial.
+seg-trans-sumatera-binjai-langsa,trans-sumatera,Binjai–Langsa,section,130.9,57.225,,,under_construction,,,,src-bpjt-toll-road-list-2026-11-06,Segment mirrors the curated corridor row; the 13-section table is partial.
+seg-trans-sumatera-padang-pekanbaru,trans-sumatera,Padang–Pekanbaru,section,254.8,91.041,,,under_construction,,,,src-bpjt-toll-road-list-2026-11-06,Segment mirrors the curated corridor row; the 13-section table is partial.
+seg-trans-sumatera-bengkulu-lubuk-linggau,trans-sumatera,Bengkulu–Lubuk Linggau,section,95.8,16.725,,,under_construction,,,,src-bpjt-toll-road-list-2026-11-06,Segment mirrors the curated corridor row; the 13-section table is partial.
+seg-trans-sumatera-kayu-agung-palembang-betung,trans-sumatera,Kayu Agung–Palembang–Betung,section,111.7,37.615,,,under_construction,,,,src-bpjt-toll-road-list-2026-11-06,Segment mirrors the curated corridor row; the 13-section table is partial.
+seg-trans-sumatera-kuala-tanjung-tebing-tinggi-parapat,trans-sumatera,Kuala Tanjung–Tebing Tinggi–Parapat,section,143.25,,,,under_construction,,,,src-bpjt-toll-road-list-2026-11-06,Segment mirrors the curated corridor row; the 13-section table is partial.
+seg-trans-sumatera-betung-tempino-jambi,trans-sumatera,Betung–Tempino–Jambi,section,170.73,52.59,,,under_construction,,,,src-bpjt-toll-road-list-2026-11-06,Segment mirrors the curated corridor row; the 13-section table is partial.
+seg-trans-sumatera-simpang-indralaya-muara-enim,trans-sumatera,Simpang Indralaya–Muara Enim,section,119,63.5,,,under_construction,,,,src-bpjt-toll-road-list-2026-11-06,Segment mirrors the curated corridor row; the 13-section table is partial.
+seg-trans-sumatera-pekanbaru-kandis-dumai,trans-sumatera,Pekanbaru–Kandis–Dumai,section,143.092,131.69,,,under_construction,,,,src-bpjt-toll-road-list-2026-11-06,Segment mirrors the curated corridor row; the 13-section table is partial.
+seg-trans-sumatera-medan-binjai,trans-sumatera,Medan–Binjai,section,17.32,17.42,,,operating,2017,,,src-bpjt-toll-road-list-2026-11-06,Segment mirrors the curated corridor row; the 13-section table is partial.
+seg-trans-sumatera-lhokseumawe-sigli,trans-sumatera,Lhokseumawe–Sigli,section,157,,,,planned,,,,src-idwiki-daftar-jalan-tol-30025554,Segment mirrors the curated corridor row; the 13-section table is partial.
+seg-trans-sumatera-langsa-lhokseumawe,trans-sumatera,Langsa–Lhokseumawe,section,135,,,,planned,,,,src-idwiki-daftar-jalan-tol-30025554,Segment mirrors the curated corridor row; the 13-section table is partial.
+seg-trans-sumatera-muara-enim-lubuk-linggau,trans-sumatera,Muara Enim–Lubuk Linggau,section,114.5,,,,planned,,,,src-idwiki-daftar-jalan-tol-30025554,Segment mirrors the curated corridor row; the 13-section table is partial.
+seg-trans-java-tangerang-merak,trans-java,Tangerang–Merak,section,73,73,,,operating,1992,,,src-bpjt-trans-java-2025-01-26,"Western end of the network, connecting to the Merak ferry."
+seg-trans-java-jakarta-tangerang,trans-java,Jakarta–Tangerang,section,33,33,,,operating,1984,,,src-bpjt-trans-java-2025-01-26,
+seg-trans-java-jakarta-cikampek,trans-java,Jakarta–Cikampek,section,83,83,,,operating,1988,,,src-bpjt-trans-java-2025-01-26,
+seg-trans-java-mbz,trans-java,Jalan Layang Sheikh Mohammed bin Zayed (MBZ),section,38,38,,,operating,2019,,,src-bpjt-trans-java-2025-01-26,Elevated parallel section; counted separately in the BPJT series.
+seg-trans-java-cikopo-palimanan,trans-java,Cikopo–Palimanan,section,116.75,116.75,,,operating,2015,,,src-bpjt-trans-java-2025-01-26,
+seg-trans-java-palimanan-kanci,trans-java,Palimanan–Kanci,section,26.3,26.3,,,operating,1998,,,src-bpjt-trans-java-2025-01-26,
+seg-trans-java-kanci-pejagan,trans-java,Kanci–Pejagan,section,35,35,,,operating,2010,,,src-bpjt-trans-java-2025-01-26,
+seg-trans-java-pejagan-pemalang,trans-java,Pejagan–Pemalang,section,57.5,57.5,,,operating,2018,,,src-bpjt-trans-java-2025-01-26,
+seg-trans-java-pemalang-batang,trans-java,Pemalang–Batang,section,39.2,39.2,,,operating,2018,,,src-bpjt-trans-java-2025-01-26,
+seg-trans-java-batang-semarang,trans-java,Batang–Semarang,section,75,75,,,operating,2018,,,src-bpjt-trans-java-2025-01-26,
+seg-trans-java-semarang-abc,trans-java,Semarang ABC,section,24.75,24.75,,,operating,1983,,,src-bpjt-trans-java-2025-01-26,
+seg-trans-java-semarang-solo,trans-java,Semarang–Solo,section,72.95,72.95,,,operating,2018,,,src-bpjt-trans-java-2025-01-26,Opened in stages between 2011 and 2018.
+seg-trans-java-solo-ngawi,trans-java,Solo–Ngawi,section,90.12,90.12,,,operating,2018,,,src-bpjt-trans-java-2025-01-26,Opened in stages in 2018.
+seg-trans-java-ngawi-kertosono,trans-java,Ngawi–Kertosono,section,87.05,87.05,,,operating,2018,,,src-bpjt-trans-java-2025-01-26,Wilangan–Kertosono opened on 20 December 2018.
+seg-trans-java-kertosono-mojokerto,trans-java,Kertosono–Mojokerto,section,40.23,40.23,,,operating,2018,,,src-bpjt-trans-java-2025-01-26,
+seg-trans-java-mojokerto-surabaya,trans-java,Mojokerto–Surabaya,section,36.27,36.27,,,operating,2017,,,src-bpjt-trans-java-2025-01-26,
+seg-trans-java-surabaya-gempol,trans-java,Surabaya–Gempol,section,48.85,48.85,,,operating,1986,,,src-bpjt-trans-java-2025-01-26,Includes the 2018 Gempol–Porong relocation.
+seg-trans-java-gempol-pasuruan,trans-java,Gempol–Pasuruan (Grati),section,34.5,34.5,,,operating,2018,,,src-bpjt-trans-java-2025-01-26,
+seg-trans-java-gempol-pandaan,trans-java,Gempol–Pandaan,section,13.61,13.61,,,operating,2015,,,src-bpjt-trans-java-2025-01-26,Branch section; counted in the BPJT series.
+seg-trans-java-pasuruan-gending,trans-java,Pasuruan (Grati)–Gending,section,31.3,31.3,,,operating,2019,,,src-bpjt-trans-java-2025-01-26,
+seg-trans-java-gending-paiton,trans-java,Gending–Paiton,section,23.515,23.515,,,operating,2026,,,src-bpjt-toll-road-list-2026-11-06,Operational part of the Gending–Besuki package; BPJT operation decree 7 September 2026.
+seg-trans-java-paiton-besuki,trans-java,Paiton–Besuki,section,26.185,,26.185,,under_construction,,,,src-bpjt-toll-road-list-2026-11-06,Derived as Gending–Besuki 49.70 km minus Gending–Paiton 23.515 km. The section list reports Section 3 as 25.60 km; the 0.585 km difference is unresolved.
+seg-trans-java-besuki-banyuwangi,trans-java,Besuki–Banyuwangi,section,126.72,,126.72,,under_construction,,,,src-bpjt-toll-road-list-2026-11-06,"Sections 4-7: Besuki–Situbondo 43.30, Situbondo–Asembagus 16.76, Asembagus–Bajulmati 37.45, Bajulmati–Ketapang 29.21 km."
+seg-trans-papua-kwatisore-nabire,trans-papua,Kwatisore–Nabire,section,208.10,208.10,,,operating,,,,src-enwiki-trans-papua-1383657791,Connected road; surface partly unpaved. Central Papua.
+seg-trans-papua-nabire-enarotali,trans-papua,Nabire–Wagete–Enarotali,section,275.50,275.50,,,operating,,,,src-enwiki-trans-papua-1383657791,Connected road; surface partly unpaved. Central Papua.
+seg-trans-papua-enarotali-wamena,trans-papua,Enarotali–Ilaga–Mulia–Wamena,section,469.48,469.48,,,operating,,,,src-enwiki-trans-papua-1383657791,Connected road; surface partly unpaved. Central Papua; Highland Papua.
+seg-trans-papua-wamena-jayapura,trans-papua,Wamena–Elelim–Jayapura,section,447.22,447.22,,,operating,,,,src-enwiki-trans-papua-1383657791,Connected road; surface partly unpaved. Highland Papua; Papua.
+seg-trans-papua-wamena-kenyam-mumugu,trans-papua,Wamena–Habema–Kenyam–Mumugu,section,271.60,271.60,,,operating,,,,src-enwiki-trans-papua-1383657791,Connected road; surface partly unpaved. Highland Papua; South Papua.
+seg-trans-papua-kenyam-dekai,trans-papua,Kenyam–Dekai,section,217.90,217.90,,,operating,,,,src-enwiki-trans-papua-1383657791,Connected road; surface partly unpaved. Highland Papua.
+seg-trans-papua-dekai-oksibil,trans-papua,Dekai–Oksibil,section,231.60,231.60,,,operating,,,,src-enwiki-trans-papua-1383657791,Connected road; surface partly unpaved. Highland Papua.
+seg-trans-papua-wagete-timika,trans-papua,Wagete–Timika,section,224.00,224.00,,,operating,,,,src-enwiki-trans-papua-1383657791,Connected road; surface partly unpaved. Central Papua.

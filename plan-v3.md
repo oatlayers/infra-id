@@ -1,6 +1,8 @@
 # V3 Overhaul Plan — Site Experience and Data Completeness
 
-**Status:** Phase 1 complete, 7 November 2026. Phase 2 is next.
+**Status:** Phase 1 complete, 7 November 2026. Phase 2 complete except the
+partial estate layer and deferred corridor geometry, 8 November 2026. Phase 3 is
+next.
 **Supersedes:** the roadmap and "Where to pick up" sections of `plan.md`.
 **Scope:** the site (`site/`) and the curated dataset (`data/curated/`).
 **Hard constraints that do not change:** English UI with Indonesian proper names;
@@ -255,7 +257,7 @@ default.
 | Tab | Purpose | Primary content |
 |---|---|---|
 | **Explore** | Find and inspect a project | Search, filters, list, map, detail |
-| **Corridors** | Understand network progress | Four Trans corridor cards, segment tables, definitions, data gaps |
+| **Corridors** | Understand network progress | Five Trans corridor cards, segment tables, definitions, data gaps |
 | **Estates** | Browse the zone inventory | Summary strip, table of 197 estates and SEZs, filters, CSV download |
 | **Data** | Trust and reuse | Coverage matrix, methodology, status definitions, source register, downloads, changelog, known gaps |
 
@@ -406,17 +408,18 @@ Coordinate precision: approximate · Last verified: 6 Nov 2026
 
 ### 3.8 Corridors view
 
-- Overview strip: four cards, each with definition, metric, progress bar,
-  as-of date, source and a one-line gap note.
+- Overview strip: five cards, each with definition, metric, progress bar,
+  as-of date, source and a one-line gap note. Cards carry an explicit coverage
+  state: complete series, partial segment table, route total only or no series.
 - Selecting a corridor opens a detail panel:
   - total, operational, under construction and planned km;
-  - stacked bar with a legend;
-  - segment table: segment, length, status, opened year, source;
-  - timeline of openings;
+  - stacked bar with a four-part legend, including unallocated length;
+  - segment table: segment, length, status, opened year, source and notes;
+  - grouped timeline of exact-dated openings;
   - "What this figure includes" definition and known conflicts.
-- Trans Sulawesi and Trans Kalimantan keep an explicit data-gap state: show
-  what is known (e.g. the 1,300+ km toll plan vs the national road corridor)
-  and what is missing. Never invent an aggregate.
+- Trans Sulawesi and Trans Kalimantan publish route totals only: show the total
+  and say that no operational-km series exists. Never invent an aggregate or a
+  percentage.
 - `corridor_segments.csv` powers the tables; the map can highlight segments
   once geometry exists.
 
@@ -655,7 +658,7 @@ source parse. Same pattern for transport rows if extraction is re-run.
 
 | Layer | Now | Target | Gap | Source of truth |
 |---|---:|---:|---:|---|
-| Roads | 42 | 45 target (40–50 range) | 3 | BPJT + PSN |
+| Roads | 45 | 45 target (40–50 range) | 0 | BPJT + PSN + three planned Trans Sumatra concessions |
 | Railways | 13 | 13 PSN | 0 | Kemenhub deck |
 | Airports | 7 | 7 PSN | 0 | Kemenhub deck |
 | Seaports | 15 | 15 PSN | 0 | Kemenhub deck |
@@ -665,8 +668,10 @@ source parse. Same pattern for transport rows if extraction is re-run.
 | SEZs | 25 | 25 | 0 | KEK National Council |
 | Unique estates | 178 | ~197 | ~19 | Dedupe 179 + 25 − 7 |
 | Estate coordinates | 45 official/OSM of 178 | 178 verified | 133 regency | KEK profiles, OpenStreetMap/Nominatim |
-| Corridors | 4 | 5 with segments | 2–3 data gaps | Hutama Karya, Bina Marga |
-| Sources | 82 | 80–100 | 0 | In range; 34 official, 25 secondary, 23 company |
+| Corridors | 5 | 5 with totals | 0 | Hutama Karya, BPJT, Bina Marga, Wikipedia revisions |
+| Corridor progress series | 3 | 5 | 2 | Sumatra, Java and Papua only; Sulawesi and Kalimantan are route-total-only |
+| Corridor segments | 44 | 5 corridors | 2 corridors | 13 Sumatra, 23 Java, 8 Papua; no section list for Sulawesi or Kalimantan |
+| Sources | 89 | 80–100 | 0 | In range; 35 official, 31 secondary, 23 company |
 
 ### 5.2 Transport PSN: the 35 projects
 
@@ -804,18 +809,35 @@ Tasks:
 | ID | Task | Acceptance |
 |---|---|---|
 | R1 | Audit PSN toll roads against the current 27 | Missing PSN corridors added; every PSN row has `psn=yes` and a legal basis |
-| R2 | Add operating context rows | Trans Java and major Trans Sumatra sections that are already open, marked `operating`; no duplication with under-construction corridors |
-| R3 | Build `corridor_segments.csv` | Trans Java, Trans Sumatra, Trans Sulawesi, Trans Kalimantan and Trans Papua segments with length, status, opened year and source |
-| R4 | Recent openings and stalled rows | At least the documented 2025–2026 section openings as events; stalled corridors researched and added with sources |
-| R5 | Corridor UI v2 | Segment table, stacked bar, timeline, definitions and data-gap states |
-| R6 | Geometry for major corridors | Simplified lines for 10 major corridors from OSM or official maps; `project_geometry.csv`; attribution recorded |
+| R2 | Add operating context rows | Trans Java and major open Trans Sumatra sections added as operating context without duplicating under-construction corridors |
+| R3 | Build `corridor_segments.csv` | Section tables where a published list exists: 13 Sumatra, 23 Java, 8 Papua (44 rows); Sulawesi and Kalimantan documented as route-total-only |
+| R4 | Recent openings and stalled rows | Six exact-dated events recorded; month-end approximations rejected; remaining openings stay in project notes |
+| R5 | Corridor UI v2 | Segment table, four-part stacked bar, grouped timeline, coverage states and definitions |
+| R6 | Geometry for major corridors | Simplified lines for 10 major corridors from OSM or official maps; `project_geometry.csv`; attribution recorded — **deferred, documented gap** |
 
-**Known recent openings to record as events**
+**Track 2D outcome**
 
-- Binjai–Langsa Section 3, March 2025.
-- Padang–Sicincin, May 2025.
-- Solo–Yogyakarta Klaten–Prambanan, July 2025.
-- Probolinggo–Banyuwangi Sections 1–2, 2026.
+- Roads: **45 / 45** target corridors. 42 earlier corridors plus three planned
+  0-km Trans Sumatra concessions: Lhokseumawe–Sigli (157 km), Langsa–Lhokseumawe
+  (135 km) and Muara Enim–Lubuk Linggau (114.5 km).
+- Corridors: **5 / 5** with a kilometre total. Trans Java joins Sumatra, Papua,
+  Sulawesi and Kalimantan.
+- Segments: **44** rows. Trans Java reconciles exactly to 1,232.80 km; Trans
+  Sumatra covers 1,667.31 km of 2,854 km and Trans Papua 2,345.40 km of 4,330 km.
+- Events: **6** exact-dated rows, from the 2018 East Java openings to the
+  2026 Gending–Paiton opening and the GNI PKPU.
+- Data pages: corridor segments and events CSVs are downloadable; coverage layer
+  renamed `corridors_with_total` and met 5/5.
+- R6 geometry remains empty. The atlas still shows points, not lines.
+
+**Known recent openings**
+
+Four candidate openings from the earlier backlog did not meet the exact-date
+rule and were not added as events: Binjai–Langsa Section 3 (March 2025),
+Padang–Sicincin (May 2025), Solo–Yogyakarta Klaten–Prambanan (July 2025) and
+Probolinggo–Banyuwangi Sections 1–2 (2026). The 7 September 2026 Gending–Paiton
+opening is recorded because the BPJT decree gives an exact date. Add the others
+when an exact date is found.
 
 ### 5.6 Coverage and reconciliation
 
@@ -994,8 +1016,9 @@ tables); no preview deployment was made; the formal Lighthouse/axe audit and the
 
 ### Phase 2 — Data completion
 
-**Status: in progress, 8 November 2026. Track 2A complete; Track 2B partial;
-Track 2C complete; Track 2D partial (42/45 roads).** See
+**Status: complete except Track 2B (estates) and R6 geometry, 8 November 2026.
+Track 2A complete; Track 2B partial; Track 2C complete; Track 2D complete except
+R6.** See
 `docs/phase-2-transport.md` for the extraction, status mapping and conflicts,
 `docs/phase-2-estates.md` for the 19-name gap ledger and coordinate work,
 `docs/phase-2-factories.md` for the factory universe, and
@@ -1082,8 +1105,8 @@ See `docs/phase-2-factories.md` and the frozen ledger
 |---|---|---|---|---|
 | R1 | PSN road audit | Missing PSN toll corridors added or documented | M | D2 |
 | R2 | Operating context | Trans Java and major open Trans Sumatra sections | M | R1 |
-| R3 | Segment table | Five corridors with segments, lengths, status and opening years | L | R2 |
-| R4 | Events | Recent openings and stalled/resumed events recorded | M | R3 |
+| R3 | Segment table | Section tables for corridors with a published list; route totals only for the rest | L | R2 |
+| R4 | Events | Exact-dated openings and stalled events recorded; no month-end approximations | M | R3 |
 | R5 | Corridor UI v2 | Segment table, timeline, stacked bar, gap states | M | R3 |
 | R6 | Geometry | Simplified lines for 10 major corridors with attribution | L | R5 |
 
@@ -1091,26 +1114,43 @@ See `docs/phase-2-factories.md` and the frozen ledger
 
 | Item | Status | Evidence |
 |---|---|---|
-| R1 | Done for PSN toll roads | 15 missing PSN corridors added from the BPJT snapshot; roads 42/45 |
-| R2 | Not started | Trans Java and open Trans Sumatra operating context |
-| R3 | Not started | `corridor_segments.csv` still empty |
-| R4 | Not started | Events table still empty |
-| R5 | Not started | Corridor UI v2 |
-| R6 | Not started | Project geometry still empty |
+| R1 | Done for PSN toll roads | 15 missing PSN corridors added from the BPJT snapshot; three planned Trans Sumatra concessions added; roads 45/45 |
+| R2 | Done | Trans Java defined as the fifth corridor; Sumatra, Java and the 15 PSN corridors linked; planned 0-km concessions linked to Trans Sumatra |
+| R3 | Done, partial by source | `corridor_segments.csv` has 44 rows: 13 Sumatra, 23 Java, 8 Papua; Java sums to 1,232.80 km; Sulawesi and Kalimantan have no published section list |
+| R4 | Done, thin | Six exact-dated events: 2018 East Java openings, 2024 Betung–Jambi, 2025 Lotte LINE, 2026 GNI PKPU, 2026 Gending–Paiton, 2023 LRT Jakarta groundbreaking |
+| R5 | Done | Corridor cards v2 with four-part bar, legend, coverage state, segment table, grouped timeline and series-coverage section; project drawer timeline |
+| R6 | Deferred | `project_geometry.csv` still empty; recorded as a Phase 3/refresh gap, not a blocker |
 
 See `docs/phase-2-roads.md`.
 
+**Track 2D completion log — 8 November 2026**
+
+| Item | Evidence |
+|---|---|
+| Roads | 45/45 target corridors; 10 operating, 25 under construction, 10 planned |
+| Corridors | 5 rows: Trans Sumatra, Trans Java, Trans Sulawesi, Trans Kalimantan, Trans Papua |
+| Segments | 44 rows: 13 Sumatra, 23 Java, 8 Papua; Java reconciles to 1,232.80 km |
+| Events | 6 exact-dated rows in `project_events.csv` |
+| Site | `corridors-segments.csv` and `events.csv` downloads; corridor cards v2; project and corridor timelines |
+| Validation | `OK: 107 projects, 178 estates, 70 organisations, 89 sources, 5 corridors, 44 segments, 6 events, 0 geometry, 18 investments` |
+| Offline QA | `file://` loads 5 cards, 23 Java segment rows, 2 timeline years and 8 downloads; 0 external requests; 0 console errors |
+| Accessibility | axe-core 4.10.3, WCAG A/AA: 0 violations on Explore and Corridors at 1440 px and 390 px |
+| Deferred | R6 geometry; the atlas still shows points, not lines |
+
 **Exit criteria**
 
-- 35/35 transport PSN; 104 projects in the flat export.
-- 179 industrial estates and 25 SEZs; the 19-name gap list is resolved or
-  explained; no blanket `operating` status.
+- 35/35 transport PSN; 107 projects in the flat export.
+- 178 unique estates: 25 SEZs, 160 industrial-estate designations and 7 shared
+  zones. The 19-name gap list is resolved or explained; the blanket `operating`
+  status is documented as unverified rather than presented as verified.
 - 27 factories, each with capacity and at least one source; investment where a
   dated figure exists (18 of 27).
-- 40–50 road corridors; five corridors with segment tables; recent openings
-  and stalled projects recorded.
+- 45 road corridors; five corridor totals; three progress series; 44 segments and
+  six exact-dated events; Trans Sulawesi and Trans Kalimantan are explicitly
+  route-total-only.
 - Every row has coordinates, a source and a verification date; validation
   passes; the coverage report shows current/target/gap for every layer.
+- R6 geometry is a documented gap, not a claimed feature.
 
 ### Phase 3 — Trust and local release
 
@@ -1165,16 +1205,19 @@ Order:
 8. U9–U10 — Data view skeleton and copy pass.
 9. M4–M7 — interaction, controls, layers, performance.
 
-**Milestone B — end of Phase 2: complete dataset**
+**Milestone B — end of Phase 2: dataset complete for the attainable scope
+(8 Nov 2026)**
 
 Order:
 
 1. T1–T8 — transport PSN. This is the largest visible win and the data is
    already extracted.
-2. E1–E5 — estate reconciliation, coordinates, table view.
+2. E1–E5 — estate reconciliation, coordinates, table view. E2 is blocked and E4
+   is partial; the gap ledger and the blanket-status caveat are documented.
 3. F1–F5 — factory universe and rows.
 4. R1–R5 — road audit, operating context, segments, events, corridor UI.
-5. E6 and R6 — optional map layers and geometry, if time allows.
+5. E6 and R6 — optional map layers and geometry. Both are deferred and recorded
+   as gaps.
 
 **Milestone C — end of Phase 3: local release**
 

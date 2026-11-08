@@ -242,14 +242,15 @@ contain only Bali Utara, which is planned.
 
 **Trans corridor section.** A separate `corridors.csv` and a panel showing total,
 operational, under-construction and planned km, with an as-of date and metric.
-The four corridors are not comparable as published:
+The five corridors are not comparable as published:
 
 | Corridor | Definition | Figures found | Treatment |
 |---|---|---|---|
 | Trans Sumatra | Toll backbone (JTTS) | 2,854 km ultimate; 1,161 km built; 982 km operational (Hutama Karya, Aug 2026) | aggregate bar; Bina Marga's 1,051.84 km Phase I figure conflicts, note it |
-| Trans Papua | National road, Sorong–Merauke | 4,330 km total; 3,446 km connected (Jul 2025); 2,235 km paved (Nov 2025) | two metrics: connected and paved |
-| Trans Sulawesi | National road corridor plus planned toll | no single official total; a JICA corridor study and a 1,300+ km toll plan use different scopes | segment view, no aggregate until defined |
-| Trans Kalimantan | National road corridor | 1,186 km travel route, 1,920 km border-parallel road and 2,100.8 km WPS figure are different things | segment view, no aggregate until defined |
+| Trans Java | Toll network, Merak–Banyuwangi | 1,232.80 km total; 1,079.895 km operating after Gending–Paiton (Sep 2026) | composite series: 20 sections at Jan 2025 plus the 2026 opening; 152.905 km remains |
+| Trans Papua | National road, Sorong–Merauke | 4,330 km total; 3,446 km connected (Jul 2025); 2,235 km paved (Nov 2025) | two metrics: connected and paved; partial section table |
+| Trans Sulawesi | National road (Lintas Sulawesi) | 2,000 km Manado–Makassar; no current progress series | route total only; 3,900 km figure is the wider network |
+| Trans Kalimantan | Southern national route, Aruk–Malinau | 3,901 km; no current progress series | route total only; 1,186 km, 1,920 km and 2,100.8 km are different definitions |
 
 **Factories.** Single plants or estates with investment of at least Rp 1T,
 operating or under construction. Start with PSN smelters, GEM steel plants and
@@ -276,15 +277,16 @@ sources for area, developer and coordinates.
 **Site changes.** Done in v3 Phase 1: four views, sector/status/island filters,
 search, km and operational-share bars, investment or capacity in the drawer, a
 corridor section, generated coverage in the header and Data view, and the
-offline basemap. Railway, airport and seaport rows arrived in Phase 2; factory rows are still to come.
+offline basemap. Railway, airport, seaport and factory rows arrived in Phase 2,
+along with five corridor cards, 44 segments and six exact-dated events.
 
 **Decided 2026-11-06.**
 
 1. Adopt the normalised CSV model. Done.
 2. Add an `operating` status, distinct from `recently_completed`. Done.
 3. Publish segment-level progress with a data-gap note for Trans Sulawesi and
-   Trans Kalimantan until a single official series exists. The site currently
-   shows the data-gap note only.
+   Trans Kalimantan until a single official series exists. Done: five corridor
+   totals, 44 segments, explicit route-total-only states.
 
 **Implementation order.** ~~Schema migration~~ → ~~km fields and corridor
 data/UI~~ → ~~industrial estates and SEZs (data only)~~ → Kemenhub transport batch
@@ -297,7 +299,7 @@ data/UI~~ → ~~industrial estates and SEZs (data only)~~ → Kemenhub transport
 2. **Official pipeline.** Kemenhub transport PSN deck and KPPIP pages snapshotted; the full PSN/KPBU/INAPROC pass is still open.
 3. **Industrial estates and SEZs.** First pass done: 178 records in `data/curated/estates.csv`, validated and shown as a table. Remaining: 2025 additions, exact boundaries and better coordinates. Map layer still off.
 4. **v3 Phase 1 — foundation and experience.** Done 2026-11-07: design tokens, bundled fonts, four-view shell, search, filters, detail drawer, map v2, mobile sheet, Data view and schema v3. See `docs/phase-1-decisions.md`.
-5. **v3 Phase 2 - data completion.** Transport PSN (35/35) is done. Estates: 19-name gap ledger done; 20/40 large estates geocoded; nine 2025 additions blocked. Roads: 42/45 after 15 BPJT PSN additions. Next: factories and corridor segments. ← in progress
+5. **v3 Phase 2 - data completion.** Done 2026-11-08 except Track 2B (estates) and R6 geometry. Transport PSN 35/35; factories 27/27; roads 45/45; five corridors with 44 segments and six exact-dated events. Estates: 19-name gap ledger done; 20/40 large estates geocoded; nine 2025 additions blocked by the unavailable Kemenperin list. Next: Phase 3 trust layer and local release.
 6. **v3 Phase 3 — trust and local release.** Claims, freshness, Data view v2, downloads, conflicts, local CI and hand-off. **Do not push to GitHub or publish.**
 7. **Monthly refresh.** Re-fetch sources, review status changes, update `last_verified`, rebuild and verify locally.
 

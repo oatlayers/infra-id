@@ -279,3 +279,6 @@ factory-oki-pulp,src-eco-business-oki-2021,"status, current capacity",,,
 factory-pupuk-kaltim-bontang,src-wikipedia-pupuk-kaltim,"status, capacity",,,
 factory-pupuk-kaltim-bontang,src-pupuk-kaltim-official,"operator, location",,,
 factory-pupuk-kaltim-bontang,src-osm-nominatim-factories-2026-11-08,coordinates,,,
+tol-lhokseumawe-sigli,src-idwiki-daftar-jalan-tol-30025554,"status, length",planned; 157 km,2026-10-03,Not in the BPJT toll-road-list API.
+tol-langsa-lhokseumawe,src-idwiki-daftar-jalan-tol-30025554,"status, length",planned; 135 km,2026-10-03,Not in the BPJT toll-road-list API.
+tol-muara-enim-lubuk-linggau,src-idwiki-daftar-jalan-tol-30025554,"status, length",planned; 114.5 km,2026-10-03,Not in the BPJT toll-road-list API.

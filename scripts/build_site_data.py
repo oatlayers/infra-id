@@ -28,7 +28,9 @@ from data_model import (
     CURATED,
     DERIVED,
     DERIVED_FIELDS,
+    EVENT_FIELDS,
     ROOT,
+    SEGMENT_FIELDS,
     SITE_DATA,
     SOURCE_FIELDS,
     read_csv,
@@ -81,6 +83,7 @@ def main() -> None:
     estate_gap = read_csv(DERIVED / "estate_gap_2026.csv")
     corridors = read_csv(CURATED / "corridors.csv")
     segments = read_csv(CURATED / "corridor_segments.csv")
+    events = read_csv(CURATED / "project_events.csv")
     targets = read_csv(CURATED / "coverage_targets.csv")
 
     # One source entry per project, with all of its claims joined. A row may
@@ -95,6 +98,24 @@ def main() -> None:
 
     corridor_names = {row["id"]: row["name"] for row in corridors}
 
+    events_by_project: dict[str, list[dict[str, str]]] = {}
+    for event in events:
+        source = sources.get(event["source_id"])
+        events_by_project.setdefault(event["project_id"], []).append(
+            {
+                "id": event["id"],
+                "event_date": event["event_date"],
+                "event_type": event["event_type"],
+                "description": event["description"],
+                "source_id": event["source_id"],
+                "source_title": source["title"] if source else "",
+                "source_url": source["url"] if source else "",
+                "notes": event["notes"],
+            }
+        )
+    for records in events_by_project.values():
+        records.sort(key=lambda record: record["event_date"])
+
     features = []
     for row in rows:
         properties = {
@@ -105,6 +126,7 @@ def main() -> None:
             source_record(sources[source_id], "; ".join(dict.fromkeys(kinds)))
             for source_id, kinds in claims_by_project.get(row["id"], {}).items()
         ]
+        properties["events"] = events_by_project.get(row["id"], [])
         features.append(
             {
                 "type": "Feature",
@@ -121,18 +143,42 @@ def main() -> None:
     corridor_payload = []
     for row in corridors:
         source = sources.get(row["source_id"])
-        corridor_segments = [
-            {
-                "id": segment["id"],
-                "name": segment["name"],
-                "length_km": segment["length_km"],
-                "status": segment["status"],
-                "opened_year": segment["opened_year"],
-                "notes": segment["notes"],
-            }
-            for segment in segments
-            if segment["corridor_id"] == row["id"]
-        ]
+        corridor_segments = []
+        for segment in segments:
+            if segment["corridor_id"] != row["id"]:
+                continue
+            segment_source = sources.get(segment["source_id"])
+            corridor_segments.append(
+                {
+                    **{
+                        field: segment[field]
+                        for field in SEGMENT_FIELDS
+                        if field != "source_id"
+                    },
+                    "source_id": segment["source_id"],
+                    "source_title": segment_source["title"] if segment_source else "",
+                    "source_url": segment_source["url"] if segment_source else "",
+                }
+            )
+        segment_km = sum(float(segment["length_km"]) for segment in corridor_segments)
+        segment_operational = sum(
+            float(segment["operational_km"])
+            for segment in corridor_segments
+            if segment["operational_km"]
+        )
+        corridor_events = []
+        for project_row in rows:
+            if project_row["corridor_id"] != row["id"]:
+                continue
+            for event in events_by_project.get(project_row["id"], []):
+                corridor_events.append(
+                    {
+                        **event,
+                        "project_id": project_row["id"],
+                        "project_name": project_row["name"],
+                    }
+                )
+        corridor_events.sort(key=lambda event: event["event_date"])
         corridor_payload.append(
             {
                 **{field: row[field] for field in CORRIDOR_FIELDS if field != "source_id"},
@@ -142,7 +188,15 @@ def main() -> None:
                 "source_url": source["url"] if source else "",
                 "source_type": source["source_type"] if source else "",
                 "retrieved_on": source["retrieved_on"] if source else "",
+                "segment_km": round(segment_km, 3),
+                "segment_operational_km": round(segment_operational, 3),
+                "segment_share": (
+                    round(segment_km / float(row["total_km"]) * 100, 1)
+                    if row["total_km"] and segment_km
+                    else None
+                ),
                 "segments": corridor_segments,
+                "events": corridor_events,
             }
         )
 
@@ -194,7 +248,7 @@ def main() -> None:
         + estate_types.get("both", 0),
         "sezs": estate_types.get("sez", 0) + estate_types.get("both", 0),
         "unique_estates": len(estates),
-        "corridors_with_series": sum(1 for row in corridors if row["total_km"]),
+        "corridors_with_total": sum(1 for row in corridors if row["total_km"]),
         "sources": len(sources),
     }
 
@@ -243,8 +297,9 @@ def main() -> None:
         },
         "corridors": {
             "total": len(corridors),
-            "with_series": current_counts["corridors_with_series"],
+            "with_total": current_counts["corridors_with_total"],
             "segments": len(segments),
+            "events": len(events),
         },
         "estates": {
             "total": len(estates),
@@ -287,6 +342,16 @@ def main() -> None:
                 "label": "Corridors",
                 "file": "data/corridors.json",
                 "meta": f"{len(corridors)} corridor summaries",
+            },
+            {
+                "label": "Corridor segments",
+                "file": "data/corridors-segments.csv",
+                "meta": f"{len(segments)} sections · five corridors",
+            },
+            {
+                "label": "Project events",
+                "file": "data/events.csv",
+                "meta": f"{len(events)} dated events",
             },
             {
                 "label": "Sources",
@@ -371,6 +436,8 @@ def main() -> None:
     )
 
     write_csv(SITE_DATA / "sources.csv", SOURCE_FIELDS, list(sources.values()))
+    write_csv(SITE_DATA / "corridors-segments.csv", SEGMENT_FIELDS, segments)
+    write_csv(SITE_DATA / "events.csv", EVENT_FIELDS, events)
 
     write_global("stats.js", "INFRA_STATS", stats)
     write_global("search.js", "INFRA_SEARCH", search)
