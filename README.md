@@ -28,14 +28,14 @@ curated, not exhaustive**.
   Phase 3 ends with a **local release only**: the site is verified from `file://`
   and a local HTTP server. There is **no GitHub remote, push, Pages deployment or
   published URL**.
-- **Overhaul plan:** [`plan-v3.md`](plan-v3.md) is the execution backlog. Phase 1
-  decisions are in [`docs/phase-1-decisions.md`](docs/phase-1-decisions.md); the
-  transport batch is in [`docs/phase-2-transport.md`](docs/phase-2-transport.md),
-  factories in [`docs/phase-2-factories.md`](docs/phase-2-factories.md), estates
-  in [`docs/phase-2-estates.md`](docs/phase-2-estates.md) and roads in
-  [`docs/phase-2-roads.md`](docs/phase-2-roads.md). The Phase 3 trust evidence is
-  in [`docs/phase-3-trust.md`](docs/phase-3-trust.md), and the monthly procedure
-  is [`docs/refresh-runbook.md`](docs/refresh-runbook.md).
+- **Overhaul plan:** [`docs/plan/plan-v3.md`](docs/plan/plan-v3.md) is the execution backlog. Phase 1
+  decisions are in [`docs/phases/phase-1-decisions.md`](docs/phases/phase-1-decisions.md); the
+  transport batch is in [`docs/phases/phase-2-transport.md`](docs/phases/phase-2-transport.md),
+  factories in [`docs/phases/phase-2-factories.md`](docs/phases/phase-2-factories.md), estates
+  in [`docs/phases/phase-2-estates.md`](docs/phases/phase-2-estates.md) and roads in
+  [`docs/phases/phase-2-roads.md`](docs/phases/phase-2-roads.md). The Phase 3 trust evidence is
+  in [`docs/phases/phase-3-trust.md`](docs/phases/phase-3-trust.md), and the monthly procedure
+  is [`docs/operations/refresh-runbook.md`](docs/operations/refresh-runbook.md).
 
 ## What it is, and what it is not
 
@@ -80,7 +80,7 @@ Rantau Prapat–Kota Pinang and Lahat–Kertapati still have active work, while 
 East Kalimantan railway, MRT East–West, New Palembang Port and Muaro Jambi had no
 physical construction. The result is 24 operating, 1 recently completed, 6 under
 construction and 4 planned. The full mapping and conflicts are in
-[`docs/phase-2-transport.md`](docs/phase-2-transport.md).
+[`docs/phases/phase-2-transport.md`](docs/phases/phase-2-transport.md).
 
 **Factory universe.** The 27 plants are PSN manufacturing projects plus private
 plants with investment of at least Rp 1 trillion. The list covers copper, nickel,
@@ -88,7 +88,7 @@ steel, alumina, aluminium, battery, petrochemical, pulp and fertiliser plants.
 Industrial estates and pure mining pits are excluded; KIPI Bulungan remains an
 estate gap, while GEM steel and Hailiang announcements did not meet the dated
 status-and-capacity rule. See
-[`docs/phase-2-factories.md`](docs/phase-2-factories.md) for the full inclusion
+[`docs/phases/phase-2-factories.md`](docs/phases/phase-2-factories.md) for the full inclusion
 log, conflicts and coordinate provenance.
 
 **Recently completed.** Benoa Port (BMTH), the Amman copper smelter, the SGAR
@@ -107,7 +107,7 @@ Gending–Paiton opened on 7 September 2026, against a 1,232.80 km total. The
 Sumatra table is partial (1,667.31 km of 2,854 km, 58.4%); the Papua table covers
 the eight Papua-side sections only (2,345.40 km of 4,330 km). No percentage is
 estimated where the series is missing. Details are in
-[`docs/phase-2-roads.md`](docs/phase-2-roads.md).
+[`docs/phases/phase-2-roads.md`](docs/phases/phase-2-roads.md).
 
 ## Quick start
 
@@ -138,13 +138,13 @@ The optional browser smoke test needs Playwright and an installed Microsoft Edge
 neither is needed to view or ship the site:
 
 ```bash
-python scripts/smoke_site.py
+python scripts/dev/smoke_site.py
 ```
 
 It checks the four views, keyboard access, filtered downloads, `file://`, a local
 HTTP server and the no-network rule, then writes screenshots to
 `docs/evidence/phase-3/`. The monthly procedure is
-[`docs/refresh-runbook.md`](docs/refresh-runbook.md).
+[`docs/operations/refresh-runbook.md`](docs/operations/refresh-runbook.md).
 
 Deep links use hash routes, for example:
 
@@ -160,119 +160,65 @@ The old `#project-id` form still opens the project.
 
 ```
 infra-id/
-├─ plan.md                  scope, decisions, architecture, phase status
-├─ plan-v3.md               three-phase execution backlog
 ├─ README.md
-├─ CHANGELOG.md             public change log, parsed into the Data view
+├─ CHANGELOG.md              public change log, parsed into the Data view
+├─ requirements.txt          Python dependencies for the data scripts
 ├─ docs/
-│  ├─ phase-1-decisions.md  confirmed design, scope, schema and budgets
-│  ├─ phase-2-transport.md  transport PSN extraction, mapping and conflicts
-│  ├─ phase-2-estates.md    estate gap ledger and coordinate work
-│  ├─ phase-2-factories.md  factory universe, exclusions and conflicts
-│  ├─ phase-2-roads.md      BPJT PSN road additions and status mapping
-│  ├─ phase-3-trust.md      claims, freshness, conflicts and release evidence
-│  ├─ refresh-runbook.md    monthly fetch, diff, review, rebuild and verify
-│  └─ evidence/phase-3/     desktop/mobile screenshots and smoke report
-├─ requirements.txt         Python dependencies for the data scripts
+│  ├─ README.md              index of plans, phase records, operations and evidence
+│  ├─ plan/
+│  │  ├─ plan.md             scope, decisions, architecture, history
+│  │  └─ plan-v3.md          three-phase execution backlog and status
+│  ├─ phases/
+│  │  ├─ phase-1-decisions.md
+│  │  ├─ phase-2-transport.md
+│  │  ├─ phase-2-estates.md
+│  │  ├─ phase-2-factories.md
+│  │  ├─ phase-2-roads.md
+│  │  └─ phase-3-trust.md
+│  ├─ operations/refresh-runbook.md
+│  └─ evidence/phase-3/      desktop/mobile screenshots and smoke report
 ├─ data/
-│  ├─ curated/              editable source of truth
-│  │  ├─ projects.csv
-│  │  ├─ organizations.csv
-│  │  ├─ project_organizations.csv
-│  │  ├─ sources.csv
-│  │  ├─ project_sources.csv
-│  │  ├─ project_external_ids.csv
-│  │  ├─ project_aliases.csv
-│  │  ├─ project_events.csv
-│  │  ├─ project_geometry.csv
-│  │  ├─ investments.csv
-│  │  ├─ laws.csv
-│  │  ├─ project_laws.csv
-│  │  ├─ corridors.csv
-│  │  ├─ corridor_segments.csv
-│  │  ├─ estates.csv
-│  │  ├─ estate_sources.csv
-│  │  ├─ coverage_targets.csv
-│  │  └─ conflicts.csv      19-row conflict register, both values and sources
-│  ├─ projects.csv          generated flat export for the site and downloads
-│  ├─ derived/              extracted text and build-time intermediates
-│  │  ├─ transport_psn.csv  35-row checked transport extraction
-│  │  ├─ estate_gap_2026.csv  19-row 179-vs-160 reconciliation
-│  │  ├─ factories_2026.csv  frozen 27-row factory ledger
-│  │  ├─ claims_audit.csv    per-project claim coverage
-│  │  ├─ freshness_report.csv  row-level verification age
-│  │  ├─ data_dictionary.csv  189 field definitions across 18 tables
-│  │  ├─ nominatim_estates.json  cached OSM search results
-│  │  ├─ nominatim_factories.json  cached factory coordinate checks
-│  │  └─ kemenhub_psn_progress_2026.txt
-│  └─ raw/YYYY-MM-DD/       sources as fetched, never edited
+│  ├─ curated/               editable source of truth (18 tables)
+│  ├─ derived/               generated reports, caches and extracted text
+│  ├─ exports/projects.csv   generated flat export
+│  └─ raw/2026-11-06/        sources as fetched, never edited
 ├─ scripts/
-│  ├─ data_model.py         paths, field lists, enums and CSV helpers
-│  ├─ migrate_schema_v3.py  one-off schema migration
-│  ├─ extract_wikipedia_toll_roads.py
-│  ├─ extract_transport_psn.py   checked Kemenhub extraction
-│  ├─ extract_estate_gap.py     19-row estate gap ledger
-│  ├─ geocode_estates.py        OSM/Nominatim coordinates for large estates
-│  ├─ add_bpjt_psn_roads.py     15 missing PSN toll corridors
-│  ├─ add_factories.py     27-plant factory import
-│  ├─ build_factories_ledger.py  frozen factory ledger
-│  ├─ geocode_factories.py  cached factory coordinate checks
-│  ├─ build_transport.py    imports the 35 transport rows
-│  ├─ normalize_claims.py   splits claims into one atomic fact per row
-│  ├─ build_projects.py
-│  ├─ build_estates.py
-│  ├─ validate.py
-│  ├─ freshness.py          writes the row-level freshness report
-│  ├─ audit_claims.py       writes the per-project claim coverage audit
-│  ├─ build_dictionary.py   writes the generated data dictionary
-│  ├─ build_site_data.py
-│  ├─ check_site.py         payload, download and offline-resource checks
-│  ├─ build_all.py          local CI: build order and deterministic --check
-│  ├─ smoke_site.py         optional Playwright/Edge browser smoke test
-│  └─ build_basemap.py
+│  ├─ README.md              index: pipeline, batch importers, tools, dev
+│  ├─ data_model.py          shared paths, fields, enums and CSV helpers
+│  ├─ build_all.py           local CI and deterministic --check
+│  ├─ pipeline/              deterministic build steps
+│  ├─ imports/               batch import and extraction tools
+│  ├─ tools/                 optional geocoding, migration and claim cleanup
+│  └─ dev/smoke_site.py      optional Playwright/Edge browser smoke test
 └─ site/
-   ├─ index.html            shell, inline SVG sprite and mount points
-   ├─ assets/
-   │  ├─ fonts.css          local @font-face rules
-   │  ├─ fonts/             bundled OFL WOFF2 files
-   │  ├─ tokens.css         design tokens
-   │  ├─ app.css            layout and components
-   │  ├─ constants.js       shared status and sector vocabulary
-   │  ├─ app.js             boot, routing, views and drawer
-   │  └─ map.js             Leaflet basemap, markers and clusters
-   ├─ data/                 generated payloads and downloads
-   │  ├─ projects.js/.geojson/.csv
-   │  ├─ estates.js/.json/.csv
-   │  ├─ estate-gap.csv
-   │  ├─ corridors.js/.json
-   │  ├─ corridors-segments.csv
-   │  ├─ events.csv
-   │  ├─ claims.csv
-   │  ├─ conflicts.csv
-   │  ├─ freshness.csv
-   │  ├─ dictionary.csv
-   │  ├─ stats.js
-   │  ├─ search.js
-   │  ├─ sources.csv
-   │  ├─ basemap.js/.geojson
-   └─ vendor/
-      ├─ leaflet/           Leaflet 1.9.4, BSD licence
-      └─ markercluster/     Leaflet.markercluster 1.5.3, MIT licence
+   ├─ index.html             shell, inline SVG sprite and mount points
+   ├─ assets/                local CSS, JS, fonts and design tokens
+   ├─ data/                  runtime JS payload (works from file://)
+   ├─ downloads/             CSV, GeoJSON and JSON downloads
+   └─ vendor/                Leaflet 1.9.4 and Leaflet.markercluster 1.5.3
 ```
 
-**Do not edit `data/projects.csv`.** It is generated from `data/curated/` by
-`scripts/build_projects.py`. Edit the curated tables and rebuild.
+**Do not edit `data/exports/projects.csv`.** It is generated from `data/curated/` by
+`scripts/pipeline/build_projects.py`. Edit the curated tables and rebuild.
 
 ## How the data is built
 
 ```
-data/curated/*.csv ──► validate.py ──► build_projects.py ──► data/projects.csv
-                                            │
-freshness.py, audit_claims.py,              ▼
-build_dictionary.py ──────────────► build_site_data.py ──► site/data/*
-                                            │
-                                            ▼
-                                       check_site.py
+data/curated/*.csv ──► pipeline/validate.py ──► pipeline/build_projects.py
+                                                     │
+                                                     ▼
+                                        data/exports/projects.csv
+                                                     │
+pipeline/freshness.py, pipeline/audit_claims.py,     ▼
+pipeline/build_dictionary.py ─────────► pipeline/build_site_data.py
+                                                     │
+                                      ┌──────────────┴──────────────┐
+                                      ▼                             ▼
+                                 site/data/                   site/downloads/
+                                 runtime JS                   CSV / GeoJSON
+                                      │
+                                      ▼
+                              pipeline/check_site.py
 ```
 
 Rebuild and check the normal pipeline:
@@ -282,54 +228,56 @@ python scripts/build_all.py          # validate, rebuild, site checks
 python scripts/build_all.py --check  # fail if a rebuild changes any generated byte
 ```
 
-`build_all.py` runs, in order: `validate.py` → `build_projects.py` →
-`build_dictionary.py` → `freshness.py` → `audit_claims.py` →
-`build_site_data.py` → `build_factories_ledger.py` → `check_site.py`.
+`build_all.py` runs, in order: `pipeline/validate.py` →
+`pipeline/build_projects.py` → `pipeline/build_dictionary.py` →
+`pipeline/freshness.py` → `pipeline/audit_claims.py` →
+`pipeline/build_site_data.py` → `pipeline/build_factories_ledger.py` →
+`pipeline/check_site.py`.
 
 Source-import and extraction scripts are **one-off batch tools**, not part of the
 monthly pipeline. Run them only when re-importing their batch; they are
 idempotent, but they are not needed to rebuild the site:
 
 ```bash
-python scripts/build_estates.py          # only when the estate sources change
-python scripts/extract_estate_gap.py     # 19-row 179-vs-160 ledger
-python scripts/geocode_estates.py        # optional; uses cached OSM results
-python scripts/extract_transport_psn.py  # checked Kemenhub extraction
-python scripts/build_transport.py        # import the 35 transport rows
-python scripts/add_bpjt_psn_roads.py     # 15 missing PSN toll corridors
-python scripts/add_factories.py          # import the 27 factory rows
-python scripts/geocode_factories.py      # optional; refresh the coordinate cache
-python scripts/build_basemap.py          # only when Natural Earth inputs change
+python scripts/imports/build_estates.py           # only when estate sources change
+python scripts/imports/extract_estate_gap.py      # 19-row 179-vs-160 ledger
+python scripts/tools/geocode_estates.py           # optional; cached OSM results
+python scripts/imports/extract_transport_psn.py   # checked Kemenhub extraction
+python scripts/imports/build_transport.py         # import the 35 transport rows
+python scripts/imports/add_bpjt_psn_roads.py      # 15 missing PSN toll corridors
+python scripts/imports/add_factories.py           # import the 27 factory rows
+python scripts/tools/geocode_factories.py         # optional; coordinate cache
+python scripts/imports/build_basemap.py           # only when Natural Earth changes
 ```
 
 What each script does:
 
 | Script | Input | Output | Purpose |
 |---|---|---|---|
-| `migrate_schema_v3.py` | Old curated tables | Schema-v3 headers and backfilled fields | One-off migration; idempotent enough to re-run |
-| `extract_wikipedia_toll_roads.py` | English Wikipedia HTML snapshot | `enwiki_toll_roads_parsed.csv` | Parses the toll-road table; no status decisions |
-| `extract_transport_psn.py` | Kemenhub PSN deck, checked transcription | `data/derived/transport_psn.csv` | 35 transport rows with page references and conflict notes |
-| `extract_estate_gap.py` | Kemenperin 179 count + 2024 table | `data/derived/estate_gap_2026.csv` | 19-row reconciliation; names only where a source supports them |
-| `geocode_estates.py` | Top 40 industrial estates + Nominatim | `data/derived/nominatim_estates.json`, updated estate coordinates | One request per second; accepts only industrial-landuse matches |
-| `build_transport.py` | `transport_psn.csv` + curated tables | Project, claim, link and alias rows | Idempotent transport import; does not touch roads or estates |
-| `add_bpjt_psn_roads.py` | BPJT snapshot + curated tables | 15 new PSN road rows, operators, claims and external IDs | Idempotent; leaves the 27 batch-1 roads in place |
-| `add_factories.py` | Factory research + curated tables | 27 plant rows, 43 sources, 26 organisations and 18 investment rows | Idempotent; replaces each factory’s claims on rerun |
-| `geocode_factories.py` | Nominatim + factory queries | `data/derived/nominatim_factories.json` | Provenance cache only; does not change curated coordinates |
-| `build_factories_ledger.py` | Curated project, organisation, link and claim tables | `data/derived/factories_2026.csv` | Frozen review ledger for the 27 plants |
-| `validate.py` | `data/curated/*.csv` | exit code | Schema, enums, dates, coordinates, foreign keys, events, geometry, atomic claims, conflicts and coverage checks |
-| `normalize_claims.py` | Project and estate claim tables | Split claim rows | One atomic fact per row; backfills missing investment, operational, opening and location claims |
-| `build_projects.py` | Curated tables + BPJT JSON | `data/projects.csv` | Joins operator and source, fills gaps from BPJT, writes the flat export |
-| `build_estates.py` | KEK HTML + BAJRA table + regency cache | `data/curated/estates.csv` + source rows | Merges the 25 SEZs and 153 industrial estates, handles overlaps |
-| `freshness.py` | Curated projects and estates | `data/derived/freshness_report.csv` | Fresh / due soon / stale by `last_verified`; deterministic as-of date |
-| `audit_claims.py` | Curated projects and claims | `data/derived/claims_audit.csv` | Checks that status and every populated numeric fact has an atomic claim |
-| `build_dictionary.py` | Schema field lists | `data/derived/data_dictionary.csv`, `site/data/dictionary.csv` | 189 field definitions across 18 tables |
-| `build_site_data.py` | Flat projects + curated corridors, estates, sources, conflicts and derived reports | GeoJSON, JS, CSV, stats and search payloads | Site-ready data; claims, freshness, conflicts and changelog are joined here |
-| `check_site.py` | Generated payload | exit code | Payload counts, IDs, search coverage, downloads and local-only assets |
+| `tools/migrate_schema_v3.py` | Old curated tables | Schema-v3 headers and backfilled fields | One-off migration; idempotent enough to re-run |
+| `imports/extract_wikipedia_toll_roads.py` | English Wikipedia HTML snapshot | `enwiki_toll_roads_parsed.csv` | Parses the toll-road table; no status decisions |
+| `imports/extract_transport_psn.py` | Kemenhub PSN deck, checked transcription | `data/derived/transport_psn.csv` | 35 transport rows with page references and conflict notes |
+| `imports/extract_estate_gap.py` | Kemenperin 179 count + 2024 table | `data/derived/estate_gap_2026.csv` | 19-row reconciliation; names only where a source supports them |
+| `tools/geocode_estates.py` | Top 40 industrial estates + Nominatim | `data/derived/nominatim_estates.json`, updated estate coordinates | One request per second; accepts only industrial-landuse matches |
+| `imports/build_transport.py` | `transport_psn.csv` + curated tables | Project, claim, link and alias rows | Idempotent transport import; does not touch roads or estates |
+| `imports/add_bpjt_psn_roads.py` | BPJT snapshot + curated tables | 15 new PSN road rows, operators, claims and external IDs | Idempotent; leaves the 27 batch-1 roads in place |
+| `imports/add_factories.py` | Factory research + curated tables | 27 plant rows, 43 sources, 26 organisations and 18 investment rows | Idempotent; replaces each factory’s claims on rerun |
+| `tools/geocode_factories.py` | Nominatim + factory queries | `data/derived/nominatim_factories.json` | Provenance cache only; does not change curated coordinates |
+| `pipeline/build_factories_ledger.py` | Curated project, organisation, link and claim tables | `data/derived/factories_2026.csv` | Frozen review ledger for the 27 plants |
+| `pipeline/validate.py` | `data/curated/*.csv` | exit code | Schema, enums, dates, coordinates, foreign keys, events, geometry, atomic claims, conflicts and coverage checks |
+| `tools/normalize_claims.py` | Project and estate claim tables | Split claim rows | One atomic fact per row; backfills missing investment, operational, opening and location claims |
+| `pipeline/build_projects.py` | Curated tables + BPJT JSON | `data/exports/projects.csv` | Joins operator and source, fills gaps from BPJT, writes the flat export |
+| `imports/build_estates.py` | KEK HTML + BAJRA table + regency cache | `data/curated/estates.csv` + source rows | Merges the 25 SEZs and 153 industrial estates, handles overlaps |
+| `pipeline/freshness.py` | Curated projects and estates | `data/derived/freshness_report.csv` | Fresh / due soon / stale by `last_verified`; deterministic as-of date |
+| `pipeline/audit_claims.py` | Curated projects and claims | `data/derived/claims_audit.csv` | Checks that status and every populated numeric fact has an atomic claim |
+| `pipeline/build_dictionary.py` | Schema field lists | `data/derived/data_dictionary.csv`, `site/downloads/dictionary.csv` | 189 field definitions across 18 tables |
+| `pipeline/build_site_data.py` | Flat projects + curated corridors, estates, sources, conflicts and derived reports | `site/data/*.js` and `site/downloads/*` | Site-ready runtime payload and downloads |
+| `pipeline/check_site.py` | Generated payload | exit code | Payload counts, IDs, search coverage, downloads and local-only assets |
 | `build_all.py` | The build scripts above | exit code | Local CI order plus deterministic `--check` hashing |
-| `smoke_site.py` | Generated site | screenshots and JSON report | Optional Playwright/Edge browser, keyboard, download and offline check |
-| `build_basemap.py` | Natural Earth countries, provinces, lakes, rivers, urban areas and places | `site/data/basemap.*` | Clipped, simplified offline basemap |
+| `dev/smoke_site.py` | Generated site | screenshots and JSON report | Optional Playwright/Edge browser, keyboard, download and offline check |
+| `imports/build_basemap.py` | Natural Earth countries, provinces, lakes, rivers, urban areas and places | `site/data/basemap.js`, `site/downloads/basemap.geojson` | Clipped, simplified offline basemap |
 
-`build_projects.py` expects the BPJT snapshot in
+`pipeline/build_projects.py` expects the BPJT snapshot in
 `data/raw/2026-11-06/bpjt_toll_road_list.json`. If it is missing, re-fetch it
 from the API listed below before rebuilding.
 
@@ -337,7 +285,7 @@ from the API listed below before rebuilding.
 
 The curated data is normalised: one entity per row. Multi-province projects use
 semicolon-separated province names; every other list has its own table. The full
-rationale and target schema are in `plan.md`.
+rationale and target schema are in `docs/plan/plan.md`.
 
 | Table | One row per | Key fields |
 |---|---|---|
@@ -433,14 +381,14 @@ profile pages, the BAJRA estate table and the Natural Earth GeoJSON under
 The KPPIP pages and the Kemenhub PSN deck are saved for the transport batch and
 are reflected in the 35 transport rows. Factory sources are the 43 source rows
 listed in the source register and mapped in
-[`docs/phase-2-factories.md`](docs/phase-2-factories.md): company and official
+[`docs/phases/phase-2-factories.md`](docs/phases/phase-2-factories.md): company and official
 pages for capacity, location and status, plus secondary reporting for ramp-up,
 investment and disputes. The coordinate checks use Nominatim; the cached
 responses are in `data/derived/nominatim_factories.json`. The corridor batch adds
 the Hutama Karya statement, the BPJT Trans Java section list, the Setneg East
 Java opening, the Katadata Trans Papua report and the Trans corridor Wikipedia
 revisions. Its mapping and conflicts are in
-[`docs/phase-2-roads.md`](docs/phase-2-roads.md).
+[`docs/phases/phase-2-roads.md`](docs/phases/phase-2-roads.md).
 
 ## Industrial estates and SEZs
 
@@ -524,7 +472,8 @@ Rules that apply to every row:
 - A row not re-checked within six months should be treated as unverified.
 - Do not include test, placeholder or duplicate entries.
 - Use only the status values above.
-- Keep `data/projects.csv` and `site/data/` generated; never hand-edit them.
+- Keep `data/exports/projects.csv`, `site/data/` and `site/downloads/` generated;
+  never hand-edit them.
 - Every populated status and numeric fact needs a matching atomic claim. Check
   `data/derived/claims_audit.csv` after a build; it must say `missing=none`.
 
@@ -556,7 +505,7 @@ Features:
   (including the 19-row gap ledger). No map layer yet.
 - **Data:** generated coverage matrix; claims coverage; freshness; status
   definitions; inclusion rules; conflict register with both values and sources;
-  source register; 12 static downloads plus filtered project CSV/GeoJSON and
+  source register; 13 static downloads plus filtered project CSV/GeoJSON and
   estate CSV; the 189-field data dictionary; known gaps; and the changelog parsed
   from `CHANGELOG.md`.
 - **Mobile:** full-viewport map and a draggable bottom sheet with peek, half and
@@ -582,7 +531,7 @@ a deliberate trade for reliability: OpenStreetMap's tile servers block
 
 ## Validation and quality rules
 
-`python scripts/validate.py` checks:
+`python scripts/pipeline/validate.py` checks:
 
 - every curated table has the expected header;
 - required fields are present and enums are valid;
@@ -619,14 +568,14 @@ project trustworthy.
 The local CI gate adds three checks on top of validation:
 
 ```bash
-python scripts/build_all.py --check  # 25 generated files must be byte-identical
-python scripts/check_site.py         # payload counts, IDs, search, downloads, offline assets
-python scripts/smoke_site.py         # optional browser, keyboard and download smoke test
+python scripts/build_all.py --check       # 25 generated files must be byte-identical
+python scripts/pipeline/check_site.py     # payload counts, IDs, search, downloads, offline assets
+python scripts/dev/smoke_site.py          # optional browser, keyboard and download smoke test
 ```
 
-`build_all.py --check` is the drift check. `check_site.py` verifies that the
+`build_all.py --check` is the drift check. `scripts/pipeline/check_site.py` verifies that the
 browser payload matches the curated tables and that no app asset uses `fetch`, a
-CDN or a remote URL. `smoke_site.py` is optional and needs Playwright plus Edge;
+CDN or a remote URL. `scripts/dev/smoke_site.py` is optional and needs Playwright plus Edge;
 it writes screenshots and a zero-error report under `docs/evidence/phase-3/`.
 
 ## Known limitations
@@ -740,7 +689,7 @@ it writes screenshots and a zero-error report under `docs/evidence/phase-3/`.
    freshness report, a 189-field dictionary, Data view v2, filtered downloads,
    local CI, a browser smoke test and hand-off. **No GitHub push, remote, Pages
    deployment or public release.**
-6. **Monthly refresh.** Follow [`docs/refresh-runbook.md`](docs/refresh-runbook.md):
+6. **Monthly refresh.** Follow [`docs/operations/refresh-runbook.md`](docs/operations/refresh-runbook.md):
    re-fetch sources, review status changes, update `last_verified`, rebuild and
    verify locally.
 7. **Publishing (deferred).** Only if the repository owner explicitly asks. Until
@@ -748,44 +697,45 @@ it writes screenshots and a zero-error report under `docs/evidence/phase-3/`.
 
 ## Where to pick up
 
-- **Current plan:** [`plan-v3.md`](plan-v3.md). Phase 1, Phase 2 and Phase 3 are
+- **Current plan:** [`docs/plan/plan-v3.md`](docs/plan/plan-v3.md). Phase 1, Phase 2 and Phase 3 are
   complete as of 8 November 2026. Track 2B (estates) is partial and R6 geometry is
   deferred; both are documented. Publishing is explicitly deferred.
 - **Next action:** run `python scripts/build_all.py --check`, read
-  [`docs/refresh-runbook.md`](docs/refresh-runbook.md), then work the open gaps
+  [`docs/operations/refresh-runbook.md`](docs/operations/refresh-runbook.md), then work the open gaps
   below. Do not push, add a remote or deploy.
-- **Trust layer:** [`docs/phase-3-trust.md`](docs/phase-3-trust.md) records the
+- **Trust layer:** [`docs/phases/phase-3-trust.md`](docs/phases/phase-3-trust.md) records the
   claims audit, freshness report, conflict register, Data view v2, downloads,
   build CI and smoke-test evidence. The generated files are
   `data/derived/claims_audit.csv`, `data/derived/freshness_report.csv` and
   `data/derived/data_dictionary.csv`.
-- **Phase 1 decisions:** [`docs/phase-1-decisions.md`](docs/phase-1-decisions.md).
+- **Phase 1 decisions:** [`docs/phases/phase-1-decisions.md`](docs/phases/phase-1-decisions.md).
 - **Transport PSN batch:** complete. The checked 35-row extraction is
   `data/derived/transport_psn.csv`; the importer is
-  `scripts/build_transport.py`; the mapping and conflicts are in
-  [`docs/phase-2-transport.md`](docs/phase-2-transport.md).
+  `scripts/imports/build_transport.py`; the mapping and conflicts are in
+  [`docs/phases/phase-2-transport.md`](docs/phases/phase-2-transport.md).
 - **Factories:** Track 2C complete for the frozen 27-plant universe. The ledger
   is `data/derived/factories_2026.csv`, the importer is
-  `scripts/add_factories.py`, and the inclusion log and conflicts are in
-  [`docs/phase-2-factories.md`](docs/phase-2-factories.md). Next: plant geometry,
+  `scripts/imports/add_factories.py`, and the inclusion log and conflicts are in
+  [`docs/phases/phase-2-factories.md`](docs/phases/phase-2-factories.md). Next: plant geometry,
   milestone events and a dated status check for GEM steel, Hailiang and other
   announced plants.
 - **Roads and corridors:** 45 of 45 target corridors. Track 2D added 15 PSN
   corridors and three planned Trans Sumatra concessions, defined five corridors,
   built 44 segments and recorded six events. The mapping, series definitions and
-  conflicts are in [`docs/phase-2-roads.md`](docs/phase-2-roads.md). Next: R6
+  conflicts are in [`docs/phases/phase-2-roads.md`](docs/phases/phase-2-roads.md). Next: R6
   simplified geometry, more exact-dated openings, and a refresh of the Trans
   Sulawesi and Trans Kalimantan series.
 - **Estates:** 178 rows in `data/curated/estates.csv`; the 19-name gap ledger is
   `data/derived/estate_gap_2026.csv` and the coordinate work is documented in
-  [`docs/phase-2-estates.md`](docs/phase-2-estates.md). Next: resolve the
+  [`docs/phases/phase-2-estates.md`](docs/phases/phase-2-estates.md). Next: resolve the
   Kemenperin list or a dated 2025 provincial announcement, add the nine named
   estates, geocode the remaining 20 large estates, and verify status and
   attributes. Keep the map layer off until then.
-- **Before changing schema:** read the Data architecture section in `plan.md`,
-  `docs/phase-1-decisions.md` and the schema section in `plan-v3.md`.
+- **Before changing schema:** read the Data architecture section in
+  `docs/plan/plan.md`, `docs/phases/phase-1-decisions.md` and the schema section
+  in `docs/plan/plan-v3.md`.
 - **Before adding a status:** the allowed set is in `scripts/data_model.py` and
-  enforced by `validate.py`.
+  enforced by `scripts/pipeline/validate.py`.
 - **When in doubt:** record the conflict in `notes` and in
   `data/curated/conflicts.csv`, and cite both sources. Do not pick a winner
   silently.
@@ -805,7 +755,7 @@ asks for it explicitly. Phase 3 ends with a local release that works from
   (BeautifulSoup, lxml, Shapely).
 - No Node.js or build tooling is required to view the site.
 - Optional: `pip install playwright` and an installed Microsoft Edge for
-  `scripts/smoke_site.py`. Playwright is not in `requirements.txt` and is not
+  `scripts/dev/smoke_site.py`. Playwright is not in `requirements.txt` and is not
   needed by the build or the released site.
 
 ## Licensing and credits
@@ -828,5 +778,5 @@ asks for it explicitly. Phase 3 ends with a local release that works from
   `site/assets/fonts/OFL-Source-Serif.txt`.
 - **Government data:** check each portal's terms before redistribution.
 
-`plan.md` is the working document for scope, decisions, architecture and source
+`docs/plan/plan.md` is the working document for scope, decisions, architecture and source
 evaluation. Read it before changing what counts as in-scope.

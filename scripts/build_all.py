@@ -18,21 +18,21 @@ import subprocess
 import sys
 from pathlib import Path
 
-from data_model import DERIVED, ROOT, SITE_DATA
+from data_model import DERIVED, EXPORTS, ROOT, SITE_DATA, SITE_DOWNLOADS
 
 STEPS = [
-    ("validate curated tables", "validate.py"),
-    ("build flat project export", "build_projects.py"),
-    ("build data dictionary", "build_dictionary.py"),
-    ("build freshness report", "freshness.py"),
-    ("audit per-fact claims", "audit_claims.py"),
-    ("build site payload", "build_site_data.py"),
-    ("build factory ledger", "build_factories_ledger.py"),
-    ("check site payload", "check_site.py"),
+    ("validate curated tables", "pipeline/validate.py"),
+    ("build flat project export", "pipeline/build_projects.py"),
+    ("build data dictionary", "pipeline/build_dictionary.py"),
+    ("build freshness report", "pipeline/freshness.py"),
+    ("audit per-fact claims", "pipeline/audit_claims.py"),
+    ("build site payload", "pipeline/build_site_data.py"),
+    ("build factory ledger", "pipeline/build_factories_ledger.py"),
+    ("check site payload", "pipeline/check_site.py"),
 ]
 
 GENERATED = [
-    ROOT / "data" / "projects.csv",
+    EXPORTS / "projects.csv",
     DERIVED / "factories_2026.csv",
     DERIVED / "freshness_report.csv",
     DERIVED / "claims_audit.csv",
@@ -42,8 +42,9 @@ GENERATED = [
 
 def generated_files() -> list[Path]:
     files = list(GENERATED)
-    if SITE_DATA.exists():
-        files.extend(sorted(SITE_DATA.glob("*")))
+    for directory in (SITE_DATA, SITE_DOWNLOADS):
+        if directory.exists():
+            files.extend(sorted(directory.glob("*")))
     return [path for path in files if path.is_file()]
 
 

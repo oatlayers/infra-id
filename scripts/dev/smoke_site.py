@@ -1,0 +1,341 @@
+"""Browser smoke test for the local release. Development-only.
+
+Requires Playwright and an installed Microsoft Edge (``channel="msedge"``).
+Playwright is deliberately not in ``requirements.txt``: the build pipeline never
+needs a browser, and the release is usable without one.
+
+Checks the four views, a project drawer, keyboard basics, filtered CSV/GeoJSON
+downloads, a static CSV download, ``file://`` and a local HTTP server, and
+asserts that the page makes no external request and logs no console error.
+
+Writes screenshots and a JSON report to ``docs/evidence/phase-3/``.
+
+Run: python scripts/dev/smoke_site.py
+"""
+
+from __future__ import annotations
+
+import csv
+import io
+import json
+import threading
+from datetime import date
+from functools import partial
+from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
+from pathlib import Path
+
+from playwright.sync_api import Page, sync_playwright
+
+ROOT = Path(__file__).resolve().parents[2]
+SITE = ROOT / "site"
+EVIDENCE = ROOT / "docs" / "evidence" / "phase-3"
+FILE_URL = (SITE / "index.html").as_uri()
+
+failures: list[str] = []
+report: dict[str, object] = {
+    "checked_at": date.today().isoformat(),
+    "views": {},
+    "downloads": {},
+    "keyboard": {},
+    "protocols": {},
+    "screenshots": [],
+}
+
+
+def check(condition: bool, label: str) -> None:
+    print(("PASS " if condition else "FAIL ") + label)
+    if not condition:
+        failures.append(label)
+
+
+def watch(page: Page, external: list[str], console: list[str], page_errors: list[str]) -> None:
+    def on_request(request):
+        url = request.url
+        if url.startswith(("file:", "data:", "blob:")):
+            return
+        if url.startswith("http://127.0.0.1:"):
+            return
+        external.append(url)
+
+    page.on("request", on_request)
+    page.on(
+        "console",
+        lambda message: console.append(message.text) if message.type == "error" else None,
+    )
+    page.on("pageerror", lambda error: page_errors.append(str(error)))
+
+
+def read_csv_download(download) -> list[dict[str, str]]:
+    path = download.path()
+    if path is None:
+        raise AssertionError("download has no local path")
+    text = Path(path).read_text(encoding="utf-8-sig")
+    return list(csv.DictReader(io.StringIO(text)))
+
+
+def screenshot(page: Page, name: str) -> None:
+    target = EVIDENCE / name
+    page.screenshot(path=str(target), animations="disabled")
+    report["screenshots"].append(name)  # type: ignore[union-attr]
+    print(f"SHOT docs/evidence/phase-3/{name}")
+
+
+def tab(page: Page, view: str) -> None:
+    page.click(f'[data-view="{view}"]')
+    page.wait_for_timeout(250)
+
+
+def desktop_views(page: Page) -> None:
+    page.goto(FILE_URL + "#/explore")
+    page.wait_for_selector(".project-row")
+    page.wait_for_timeout(900)
+
+    check(page.locator(".project-row").count() == 107, "Explore lists 107 projects")
+    check(page.locator("#foot-total").inner_text() == "107", "Explore total is 107")
+    check(page.locator("#stat-projects").inner_text() == "107", "Header project count is 107")
+    check(page.locator("#stat-corridors").inner_text() == "5", "Header corridor count is 5")
+    check(page.locator("#stat-estates").inner_text() == "178", "Header estate count is 178")
+    report["views"]["explore"] = {"rows": 107}  # type: ignore[index]
+    screenshot(page, "01-explore-desktop.png")
+
+    page.click('[data-sector="railway"]')
+    page.wait_for_timeout(200)
+    check(page.locator("#foot-count").inner_text() == "13", "Railway filter narrows to 13")
+    check(page.locator(".project-row").count() == 13, "Railway rows are 13")
+    page.click("#clear-filters")
+    page.wait_for_timeout(200)
+    check(page.locator("#foot-count").inner_text() == "107", "Clearing filters restores 107")
+
+    tab(page, "corridors")
+    check(page.locator(".corridor-card").count() == 5, "Corridors view has five corridors")
+    report["views"]["corridors"] = {"cards": 5}  # type: ignore[index]
+    screenshot(page, "02-corridors-desktop.png")
+    page.click('[data-corridor="trans-sumatera"]')
+    page.wait_for_selector("#drawer:not([hidden]) .segment-table")
+    page.wait_for_timeout(300)
+    check(page.locator("#drawer .segment-table tbody tr").count() == 13,
+          "Trans Sumatra drawer lists 13 segments")
+    screenshot(page, "02b-corridor-segments-desktop.png")
+    page.keyboard.press("Escape")
+    page.wait_for_timeout(400)
+
+    tab(page, "estates")
+    page.wait_for_selector(".estate-row")
+    page.wait_for_timeout(400)
+    check(page.locator(".estate-row").count() == 178, "Estates view lists 178 zones")
+    check("178" in page.locator(".corridor-meta").first.inner_text(), "Estate count text is 178")
+    report["views"]["estates"] = {"rows": 178}  # type: ignore[index]
+    screenshot(page, "03-estates-desktop.png")
+
+    tab(page, "data")
+    check(page.locator(".conflict-table tbody tr").count() == 19, "Conflict register has 19 rows")
+    check(page.locator(".dictionary details").count() == 18, "Data dictionary has 18 tables")
+    check(page.locator('a.download[href]').count() == 13, "Data view has 13 static downloads")
+    check(page.locator('.download[data-export="projects-csv"]').count() == 1,
+          "Data view offers the filtered project CSV")
+    check(page.locator('.download[data-export="projects-geojson"]').count() == 1,
+          "Data view offers the filtered GeoJSON")
+    check(page.locator('.download[data-export="estates-csv"]').count() == 1,
+          "Loaded estates add the filtered estate CSV")
+    check("107 / 107" in page.locator(".data-view").inner_text(), "Claims coverage is 107 / 107")
+    report["views"]["data"] = {  # type: ignore[index]
+        "conflicts": 19,
+        "dictionary_tables": 18,
+        "download_controls": 16,
+    }
+    screenshot(page, "04-data-desktop.png")
+
+
+def desktop_drawer(page: Page) -> None:
+    page.goto(FILE_URL + "#/explore")
+    page.wait_for_selector(".project-row")
+    page.click(".project-row")
+    page.wait_for_selector("#drawer:not([hidden])")
+    page.wait_for_timeout(400)
+    title = page.locator("#drawer-title").inner_text()
+    check(bool(title), "Project drawer opens with a title")
+    check(page.locator(".freshness-line").count() == 1, "Drawer shows the freshness line")
+    check(page.locator("#drawer-body a[href]").count() >= 1, "Drawer lists at least one source link")
+    report["views"]["drawer"] = {"title": title}  # type: ignore[index]
+    screenshot(page, "05-project-drawer.png")
+    page.keyboard.press("Escape")
+    page.wait_for_timeout(400)
+    check(page.locator("#drawer").is_hidden(), "Escape closes the project drawer")
+
+
+def desktop_keyboard(page: Page) -> None:
+    page.goto(FILE_URL + "#/explore")
+    page.reload()
+    page.wait_for_selector(".project-row")
+    page.keyboard.press("Tab")
+    focused = page.evaluate("document.activeElement && document.activeElement.className")
+    check("skip-link" in (focused or ""), "First Tab reaches the skip link")
+
+    page.keyboard.press("Control+k")
+    check(page.evaluate("document.activeElement && document.activeElement.id") == "search",
+          "Ctrl+K focuses search")
+    page.fill("#search", "Papua")
+    page.wait_for_timeout(300)
+    narrowed = page.locator(".project-row").count()
+    check(0 < narrowed < 107, "Search narrows the project list")
+    page.keyboard.press("Escape")
+    page.wait_for_timeout(300)
+    check(page.input_value("#search") == "", "Escape clears search")
+    check(page.locator(".project-row").count() == 107, "Clearing search restores the list")
+
+    page.locator(".project-row").first.focus()
+    page.keyboard.press("ArrowDown")
+    focused_row = page.evaluate("document.activeElement && document.activeElement.getAttribute('data-project')")
+    check(bool(focused_row), "ArrowDown moves focus to the next project row")
+    report["keyboard"] = {"skip_link": True, "ctrl_k": True, "arrow_nav": True}  # type: ignore[index]
+
+
+def desktop_downloads(page: Page) -> None:
+    page.goto(FILE_URL + "#/data")
+    page.wait_for_selector('.download[data-export="projects-csv"]')
+
+    with page.expect_download() as csv_info:
+        page.click('[data-export="projects-csv"]')
+    csv_download = csv_info.value
+    csv_rows = read_csv_download(csv_download)
+    check(len(csv_rows) == 107, "Filtered project CSV has 107 rows")
+    check(csv_download.suggested_filename.endswith(".csv"), "Filtered project CSV has a .csv name")
+    check(csv_rows[0].get("id") is not None and "freshness_state" in csv_rows[0],
+          "Filtered project CSV includes the freshness field")
+    report["downloads"]["projects_csv"] = {  # type: ignore[index]
+        "file": csv_download.suggested_filename,
+        "rows": len(csv_rows),
+    }
+
+    with page.expect_download() as geojson_info:
+        page.click('[data-export="projects-geojson"]')
+    geojson_download = geojson_info.value
+    geojson_path = geojson_download.path()
+    payload = json.loads(Path(geojson_path).read_text(encoding="utf-8"))
+    features = payload.get("features", [])
+    check(len(features) == 107, "Filtered GeoJSON has 107 features")
+    check(all(len(feature.get("geometry", {}).get("coordinates", [])) == 2 for feature in features),
+          "Filtered GeoJSON features are points")
+    report["downloads"]["projects_geojson"] = {  # type: ignore[index]
+        "file": geojson_download.suggested_filename,
+        "features": len(features),
+    }
+
+    page.click('[data-view="estates"]')
+    page.wait_for_selector('.estate-row')
+    with page.expect_download() as estate_info:
+        page.click('[data-export="estates-csv"]')
+    estate_download = estate_info.value
+    estate_rows = read_csv_download(estate_download)
+    check(len(estate_rows) == 178, "Filtered estate CSV has 178 rows")
+    report["downloads"]["estates_csv"] = {  # type: ignore[index]
+        "file": estate_download.suggested_filename,
+        "rows": len(estate_rows),
+    }
+
+    page.goto(FILE_URL + "#/data")
+    page.wait_for_selector('a[download][href="downloads/claims.csv"]')
+    with page.expect_download() as claims_info:
+        page.click('a[download][href="downloads/claims.csv"]')
+    claims_download = claims_info.value
+    claims_rows = read_csv_download(claims_download)
+    check(len(claims_rows) == 479, "Static claims CSV has 479 rows")
+    report["downloads"]["claims_csv"] = {  # type: ignore[index]
+        "file": claims_download.suggested_filename,
+        "rows": len(claims_rows),
+    }
+
+
+def mobile(page: Page) -> None:
+    page.goto(FILE_URL + "#/explore")
+    page.wait_for_selector(".project-row")
+    page.wait_for_timeout(900)
+    check(page.locator(".project-row").count() > 0, "Mobile Explore renders project rows")
+    width = page.evaluate("document.documentElement.scrollWidth")
+    check(width <= 391, f"Mobile layout has no horizontal overflow (width {width})")
+    screenshot(page, "06-explore-mobile.png")
+
+    page.goto(FILE_URL + "#/data")
+    page.wait_for_selector(".data-view")
+    page.wait_for_timeout(400)
+    check(page.locator(".conflict-table tbody tr").count() == 19, "Mobile Data view renders conflicts")
+    screenshot(page, "07-data-mobile.png")
+
+
+class QuietHandler(SimpleHTTPRequestHandler):
+    def log_message(self, *args):  # noqa: D401 - silence the test server
+        return
+
+
+def http_check(page: Page) -> None:
+    handler = partial(QuietHandler, directory=str(SITE))
+    server = ThreadingHTTPServer(("127.0.0.1", 0), handler)
+    thread = threading.Thread(target=server.serve_forever, daemon=True)
+    thread.start()
+    try:
+        port = server.server_address[1]
+        page.goto(f"http://127.0.0.1:{port}/index.html#/data")
+        page.wait_for_selector(".data-view")
+        page.wait_for_timeout(500)
+        check(page.locator("#stat-projects").inner_text() == "107",
+              "Local HTTP server serves the 107-project build")
+        check(page.locator(".conflict-table tbody tr").count() == 19,
+              "Local HTTP build renders 19 conflicts")
+        report["protocols"]["http"] = {"port": port, "ok": True}  # type: ignore[index]
+    finally:
+        server.shutdown()
+        server.server_close()
+
+
+def main() -> None:
+    EVIDENCE.mkdir(parents=True, exist_ok=True)
+    with sync_playwright() as playwright:
+        browser = playwright.chromium.launch(channel="msedge", headless=True)
+
+        external: list[str] = []
+        console: list[str] = []
+        page_errors: list[str] = []
+        page = browser.new_page(viewport={"width": 1440, "height": 900})
+        watch(page, external, console, page_errors)
+
+        desktop_views(page)
+        desktop_drawer(page)
+        desktop_keyboard(page)
+        desktop_downloads(page)
+        http_check(page)
+
+        mobile_external: list[str] = []
+        mobile_console: list[str] = []
+        mobile_errors: list[str] = []
+        mobile_page = browser.new_page(viewport={"width": 390, "height": 844},
+                                       is_mobile=True, has_touch=True)
+        watch(mobile_page, mobile_external, mobile_console, mobile_errors)
+        mobile(mobile_page)
+
+        browser.close()
+
+    all_external = external + mobile_external
+    all_console = console + mobile_console
+    all_page_errors = page_errors + mobile_errors
+    check(not all_external, "No external page request")
+    check(not all_console, "No console error")
+    check(not all_page_errors, "No page error")
+    report["protocols"]["file"] = {"ok": True}  # type: ignore[index]
+    report["external_requests"] = all_external
+    report["console_errors"] = all_console
+    report["page_errors"] = all_page_errors
+    report["failures"] = failures
+    report["ok"] = not failures
+
+    (EVIDENCE / "smoke-report.json").write_text(
+        json.dumps(report, indent=2, ensure_ascii=False) + "\n", encoding="utf-8"
+    )
+
+    if failures:
+        print(f"\n{len(failures)} smoke check(s) failed")
+        raise SystemExit(1)
+    print("\nOK: local release smoke test passed")
+
+
+if __name__ == "__main__":
+    main()

@@ -13,8 +13,10 @@ ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data"
 CURATED = DATA / "curated"
 DERIVED = DATA / "derived"
+EXPORTS = DATA / "exports"
 RAW = DATA / "raw"
 SITE_DATA = ROOT / "site" / "data"
+SITE_DOWNLOADS = ROOT / "site" / "downloads"
 
 # Schema v3 (7 November 2026). New project fields: island, opened_date,
 # expected_open_year, status_as_of, verification. New estate fields: island,

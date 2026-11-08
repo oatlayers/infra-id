@@ -3,6 +3,14 @@
 Public-facing changes to the atlas. Dates are the day the change landed in this
 repository. The Data view renders these entries from this file at build time.
 
+## 2026-11-08 — Repository cleanup and layout
+
+- Grouped scripts into `pipeline/`, `imports/`, `tools/` and `dev/`, keeping `build_all.py` as the stable entry point.
+- Grouped documentation into `plan/`, `phases/` and `operations/`, with indexes in `docs/README.md` and `scripts/README.md`.
+- Moved the flat export to `data/exports/projects.csv` and split the site payload into runtime JS in `site/data/` and downloads in `site/downloads/`.
+- Exposed `basemap.geojson` as the 13th static download; the built site still works from `file://`.
+- Removed the superseded `kek_details.json`, the duplicate Wikipedia HTML snapshot and two uncited BPJT snapshots. No atlas rows or cited evidence changed.
+
 ## 2026-11-08 — Phase 3: trust layer and local release
 
 - Split 283 combined claim rows into 479 atomic project claims, one fact per row, and backfilled investment, operational, opening and location claims that were only on the project row.
