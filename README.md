@@ -9,6 +9,13 @@ curated, not exhaustive**.
   corridor segments and 6 project events.
 - **Transport PSN:** 35 of 35 represented. Status is as of 19 February 2026, the
   date of the Kemenhub review.
+- **PSN reconciliation:** the official Permenko 16/2025 list has 226 active
+  projects and 24 active programmes. The atlas matches 89 of the 226 active
+  records: 73 PSN records map to 68 unique project rows and 16 map to estates.
+  Airports (7/7), ports (15/15) and railways (13/13) are complete; roads are
+  38/50, industrial areas 16/44 and dams 0/57. The register and ledger are
+  [`data/curated/psn_register.csv`](data/curated/psn_register.csv) and
+  [`data/derived/psn_reconciliation.csv`](data/derived/psn_reconciliation.csv).
 - **Factories:** 27 plants and smelters: 19 operating, 3 recently completed,
   4 under construction and 1 stalled. All have capacity, 18 have investment.
 - **Estate dataset:** 178 industrial estates and SEZs, shown as a table; the map
@@ -17,7 +24,7 @@ curated, not exhaustive**.
   projects have a claim for the status and every populated numeric fact. 19
   conflicts are recorded with both values and both sources (11 resolved, 8 open).
   A 285-row freshness report marks each project and estate fresh, due soon or
-  stale. A 189-field data dictionary covers all 18 curated tables.
+  stale. A 200-field data dictionary covers all 19 curated tables.
 - **Last verification:** 8 November 2026 (road, estate and factory batches); the
   transport batch was verified on 7 November 2026; earlier rows on 6 November.
   The 285-row freshness report is fresh as of 8 November 2026; the first record
@@ -27,11 +34,12 @@ curated, not exhaustive**.
   deferred, but both are documented gaps. The 45-corridor road target is met.
   Phase 3 ends with a **local release only**: the site is verified from `file://`
   and a local HTTP server. There is **no GitHub remote, push, Pages deployment or
-  published URL**.
+  published URL**. V4 foundation work started on 9 November 2026 with the PSN
+  register and reconciliation ledger; the released site is still the v3 build.
 - **V4 plan:** [`docs/plan/plan.md`](docs/plan/plan.md) is the current plan: a
-  bilingual national delivery atlas with 400+ projects, 8 PKPN programmes,
-  300 companies, 200 estates and a rebuilt map and Data view. It is a plan, not
-  a released build. The completed v3 backlog stays in
+  bilingual national delivery atlas with 400+ projects, 226 PSN projects, 24 PSN
+  programmes, 8 PKPN programmes, 300 companies, 200 estates and a rebuilt map
+  and Data view. It is a plan, not a released build. The completed v3 backlog stays in
   [`docs/plan/plan-v3.md`](docs/plan/plan-v3.md); phase records are in
   [`docs/phases/`](docs/phases/), and the monthly procedure is
   [`docs/operations/refresh-runbook.md`](docs/operations/refresh-runbook.md).
@@ -60,17 +68,19 @@ when a source supports that status.
 | Airports | 7 | 7 operating | 7/7 PSN airports; inaugurated 2020–2023 |
 | Seaports | 15 | 11 operating, 1 under construction, 1 recently completed, 2 planned | 15/15 PSN seaports; Patimban Phase I-2 still building, Benoa expansion completed 2025 |
 | Transport PSN total | 35 | 24 operating, 1 recently completed, 6 under construction, 4 planned | 35/35; status as of 19 February 2026 |
+| PSN projects (active) | 226 | 89 matched (73 PSN records to 68 project rows + 16 estates) | Permenko 16/2025; 137 project/estate records and 24 programmes outstanding |
+| PSN programmes (active) | 24 | 0 represented | no programme layer yet |
 | All projects | 107 | 53 operating, 4 recently completed, 35 under construction, 14 planned, 1 stalled | 45 roads, 13 railways, 7 airports, 15 seaports and 27 factories |
 | Trans corridor summaries | 5 | 5 with km totals; 3 with progress series | Sumatra, Java and Papua have a series; Sulawesi and Kalimantan publish route totals only |
 | Corridor segments | 44 | 13 Sumatra, 23 Java, 8 Papua | Section tables only where a published list exists; Sulawesi and Kalimantan are route-total-only |
 | Dated events | 6 | 2018–2026 | Exact dates only; month-end approximations are not used |
 | Factories | 27 | 19 operating, 3 recently completed, 4 under construction, 1 stalled | 27 capacity figures, 18 investment figures; 17 official, 8 dual, 2 single-source |
 | Industrial estates / SEZs | 178 | 160 industrial-estate designations (153 industrial-only + 7 shared), 25 SEZs | table view only; 25 official SEZ points, 20 OSM points, 133 regency centroids; 19-name gap ledger |
-| Sources | 89 | 35 official, 31 secondary, 23 company | 43 factory-batch sources, 25 individual SEZ profiles, the national register, OSM/Nominatim and the corridor series; target range 80–100, lower bound met |
+| Sources | 91 | 37 official, 31 secondary, 23 company | 43 factory-batch sources, 25 individual SEZ profiles, Permenko 16/2025 and 4/2026, the national register, OSM/Nominatim and the corridor series; V4 target 250 |
 | Project claims | 479 | 107/107 projects fully claimed | one atomic fact per row; 20 separate estate claims; 264 carry a transcribed value and 199 a source-stated fact date |
 | Conflicts | 19 | 11 resolved, 8 open | both values and both sources, with a recorded resolution; downloadable register |
 | Freshness | 285 | 285 fresh as of 2026-11-08 | 107 projects + 178 estates; 183-day threshold; next due 2027-05-08 |
-| Data dictionary | 189 | 18 tables | generated from the schema; field type, required flag, description, allowed values and example |
+| Data dictionary | 200 | 19 tables | generated from the schema; field type, required flag, description, allowed values and example |
 
 **Why the transport status counts differ from Kemenhub's summary.** The deck's
 headline says 29 complete and 6 under construction. The atlas uses its own
@@ -81,7 +91,7 @@ physical construction. The result is 24 operating, 1 recently completed, 6 under
 construction and 4 planned. The full mapping and conflicts are in
 [`docs/phases/phase-2-transport.md`](docs/phases/phase-2-transport.md).
 
-**Factory universe.** The 27 plants are PSN manufacturing projects plus private
+**Factory reference set.** The 27 plants are PSN manufacturing projects plus private
 plants with investment of at least Rp 1 trillion. The list covers copper, nickel,
 steel, alumina, aluminium, battery, petrochemical, pulp and fertiliser plants.
 Industrial estates and pure mining pits are excluded; KIPI Bulungan remains an
@@ -177,7 +187,7 @@ infra-id/
 │  ├─ operations/refresh-runbook.md
 │  └─ evidence/phase-3/      desktop/mobile screenshots and smoke report
 ├─ data/
-│  ├─ curated/               editable source of truth (18 tables)
+│  ├─ curated/               editable source of truth (19 tables)
 │  ├─ derived/               generated reports, caches and extracted text
 │  ├─ exports/projects.csv   generated flat export
 │  └─ raw/2026-11-06/        sources as fetched, never edited
@@ -263,13 +273,14 @@ What each script does:
 | `imports/add_factories.py` | Factory research + curated tables | 27 plant rows, 43 sources, 26 organisations and 18 investment rows | Idempotent; replaces each factory’s claims on rerun |
 | `tools/geocode_factories.py` | Nominatim + factory queries | `data/derived/nominatim_factories.json` | Provenance cache only; does not change curated coordinates |
 | `pipeline/build_factories_ledger.py` | Curated project, organisation, link and claim tables | `data/derived/factories_2026.csv` | Frozen review ledger for the 27 plants |
+| `pipeline/build_psn_ledger.py` | `psn_register.csv` + curated projects and estates | `data/derived/psn_reconciliation.csv` | Explicit PSN-to-atlas match ledger; fails if the official counts change |
 | `pipeline/validate.py` | `data/curated/*.csv` | exit code | Schema, enums, dates, coordinates, foreign keys, events, geometry, atomic claims, conflicts and coverage checks |
 | `tools/normalize_claims.py` | Project and estate claim tables | Split claim rows | One atomic fact per row; backfills missing investment, operational, opening and location claims |
 | `pipeline/build_projects.py` | Curated tables + BPJT JSON | `data/exports/projects.csv` | Joins operator and source, fills gaps from BPJT, writes the flat export |
 | `imports/build_estates.py` | KEK HTML + BAJRA table + regency cache | `data/curated/estates.csv` + source rows | Merges the 25 SEZs and 153 industrial estates, handles overlaps |
 | `pipeline/freshness.py` | Curated projects and estates | `data/derived/freshness_report.csv` | Fresh / due soon / stale by `last_verified`; deterministic as-of date |
 | `pipeline/audit_claims.py` | Curated projects and claims | `data/derived/claims_audit.csv` | Checks that status and every populated numeric fact has an atomic claim |
-| `pipeline/build_dictionary.py` | Schema field lists | `data/derived/data_dictionary.csv`, `site/downloads/dictionary.csv` | 189 field definitions across 18 tables |
+| `pipeline/build_dictionary.py` | Schema field lists | `data/derived/data_dictionary.csv`, `site/downloads/dictionary.csv` | 200 field definitions across 19 tables |
 | `pipeline/build_site_data.py` | Flat projects + curated corridors, estates, sources, conflicts and derived reports | `site/data/*.js` and `site/downloads/*` | Site-ready runtime payload and downloads |
 | `pipeline/check_site.py` | Generated payload | exit code | Payload counts, IDs, search coverage, downloads and local-only assets |
 | `build_all.py` | The build scripts above | exit code | Local CI order plus deterministic `--check` hashing |
@@ -303,8 +314,9 @@ rationale and target schema are in `docs/plan/plan.md`.
 | `corridor_segments.csv` | corridor segment | `segment_type`, section-level km, progress, status, opening year, geometry |
 | `estates.csv` | industrial estate or SEZ | `id`, `name`, `type`, `province`, `regency`, `island`, `area_ha`, `developer`, `status`, `coordinate_source`, `source_id` |
 | `estate_sources.csv` | estate–source claim | `estate_id`, `source_id`, one atomic `claim`, `claim_value`, `claim_date` |
-| `coverage_targets.csv` | coverage layer | `layer`, `label`, `unit`, `target_count`, `universe`, `source_id` |
+| `coverage_targets.csv` | coverage layer | `layer`, `label`, `unit`, `target_count`, `reference_set`, `source_id` |
 | `conflicts.csv` | source disagreement | `id`, `scope`, `subject`, `field`, `value_a`, `source_a`, `value_b`, `source_b`, `status`, `resolution` |
+| `psn_register.csv` | official PSN project or programme | `id`, `kind`, `psn_no`, `sector`, official `name_id`, `location`, `status`, `source_id` |
 
 Project columns (`data/curated/projects.csv`):
 
@@ -505,7 +517,7 @@ Features:
 - **Data:** generated coverage matrix; claims coverage; freshness; status
   definitions; inclusion rules; conflict register with both values and sources;
   source register; 13 static downloads plus filtered project CSV/GeoJSON and
-  estate CSV; the 189-field data dictionary; known gaps; and the changelog parsed
+  estate CSV; the 200-field data dictionary; known gaps; and the changelog parsed
   from `CHANGELOG.md`.
 - **Mobile:** full-viewport map and a draggable bottom sheet with peek, half and
   full snap points; filters stay in the sheet.
@@ -567,7 +579,7 @@ project trustworthy.
 The local CI gate adds three checks on top of validation:
 
 ```bash
-python scripts/build_all.py --check       # 25 generated files must be byte-identical
+python scripts/build_all.py --check       # 26 generated files must be byte-identical
 python scripts/pipeline/check_site.py     # payload counts, IDs, search, downloads, offline assets
 python scripts/dev/smoke_site.py          # optional browser, keyboard and download smoke test
 ```
@@ -646,9 +658,9 @@ it writes screenshots and a zero-error report under `docs/evidence/phase-3/`.
   travel route, a 1,920 km border-parallel road and a 2,100.8 km WPS figure for
   Kalimantan, and the 3,900 km figure for Sulawesi refers to the wider road
   network.
-- **Incomplete universe.** Construction-only and pre-construction BPJT rows are
+- **Incomplete reference set.** Construction-only and pre-construction BPJT rows are
   not returned by the API. The 45-corridor target now includes three planned
-  0-km Trans Sumatra concessions, but the wider 0-km universe is not enumerated.
+  0-km Trans Sumatra concessions, but the wider 0-km reference set is not enumerated.
 - **Excluded for now:** the three planned strait bridges (Bali, Malacca, Sunda),
   non-toll PSN roads and bridges, and announced factories that lack a dated
   status-and-capacity source (for example GEM steel and Hailiang).
@@ -678,14 +690,14 @@ it writes screenshots and a zero-error report under `docs/evidence/phase-3/`.
 3. ~~Phase 1: design foundation, four-view shell, search, filters, drawer, map v2,
    mobile sheet, data page, schema v3.~~ Done 7 November 2026.
 4. ~~Phase 2: data completion.~~ Done 8 November 2026. Transport PSN (13 rail,
-   7 airports, 15 seaports), the 27-plant factory universe and the road/corridor
+   7 airports, 15 seaports), the 27-plant factory reference set and the road/corridor
    batch are complete. Roads meet the 45-corridor target; five corridors carry 44
    segments and six exact-dated events. Estates: the 19-name gap ledger is done
    and 20 of the 40 largest are geocoded; the nine 2025 additions remain blocked
    by the unavailable Kemenperin list. Corridor geometry (R6) is deferred.
 5. ~~Phase 3: trust and local release.~~ Done 8 November 2026. 479 atomic
    claims, 107/107 projects fully claimed, a 19-row conflict register, a 285-row
-   freshness report, a 189-field dictionary, Data view v2, filtered downloads,
+   freshness report, a 200-field dictionary, Data view v2, filtered downloads,
    local CI, a browser smoke test and hand-off. **No GitHub push, remote, Pages
    deployment or public release.**
 6. **Monthly refresh.** Follow [`docs/operations/refresh-runbook.md`](docs/operations/refresh-runbook.md):
@@ -714,7 +726,7 @@ it writes screenshots and a zero-error report under `docs/evidence/phase-3/`.
   `data/derived/transport_psn.csv`; the importer is
   `scripts/imports/build_transport.py`; the mapping and conflicts are in
   [`docs/phases/phase-2-transport.md`](docs/phases/phase-2-transport.md).
-- **Factories:** Track 2C complete for the frozen 27-plant universe. The ledger
+- **Factories:** Track 2C complete for the frozen 27-plant reference set. The ledger
   is `data/derived/factories_2026.csv`, the importer is
   `scripts/imports/add_factories.py`, and the inclusion log and conflicts are in
   [`docs/phases/phase-2-factories.md`](docs/phases/phase-2-factories.md). Next: plant geometry,

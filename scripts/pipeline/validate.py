@@ -580,7 +580,7 @@ def main() -> None:
         if row["layer"] in seen:
             err(f"{where}: duplicate layer")
         seen.add(row["layer"])
-        for field in ("label", "unit", "universe"):
+        for field in ("label", "unit", "reference_set"):
             if is_blank(row[field]):
                 err(f"{where}: missing {field}")
         target = as_int(row["target_count"])

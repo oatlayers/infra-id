@@ -3,6 +3,20 @@
 Public-facing changes to the atlas. Dates are the day the change landed in this
 repository. The Data view renders these entries from this file at build time.
 
+## 2026-11-09 — PSN register and reconciliation
+
+- Added the official Permenko 16/2025 register: 226 active projects, 24 active
+  programmes and 3 deleted slots, with the PDF snapshots and SHA-256 hashes in
+  `data/raw/2026-11-09/`.
+- Added `data/derived/psn_reconciliation.csv`: 64 direct project matches, 6
+  aggregate matches, 3 partial matches, 16 estate matches and 161 open records.
+- Added `scripts/pipeline/build_psn_ledger.py` to the deterministic build; it
+  fails if the register loses its official counts.
+- Renamed the coverage-target `universe` field to `reference_set` so the Data
+  view uses plain language. The new PSN rows show 89/226 projects, 0/24
+  programmes and 16/44 industrial areas.
+- Nothing was pushed, deployed or published.
+
 ## 2026-11-08 — Repository cleanup and layout
 
 - Grouped scripts into `pipeline/`, `imports/`, `tools/` and `dev/`, keeping `build_all.py` as the stable entry point.

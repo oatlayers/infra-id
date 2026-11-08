@@ -118,6 +118,7 @@ def main() -> None:
     segments = read_csv(CURATED / "corridor_segments.csv")
     events = read_csv(CURATED / "project_events.csv")
     targets = read_csv(CURATED / "coverage_targets.csv")
+    psn_ledger = read_csv(DERIVED / "psn_reconciliation.csv")
     conflicts = read_csv(CURATED / "conflicts.csv")
     freshness = read_csv(DERIVED / "freshness_report.csv")
     dictionary = read_csv(DERIVED / "data_dictionary.csv")
@@ -349,6 +350,21 @@ def main() -> None:
             1 for row in rows
             if row["sector"] in {"railway", "airport", "seaport"} and row["psn"] == "yes"
         ),
+        "psn_projects": sum(
+            1 for row in psn_ledger
+            if row["status"] == "active" and row["kind"] == "project"
+            and row["match_status"].startswith("matched")
+        ),
+        "psn_programmes": sum(
+            1 for row in psn_ledger
+            if row["status"] == "active" and row["kind"] == "programme"
+            and row["match_status"].startswith("matched")
+        ),
+        "psn_industrial_areas": sum(
+            1 for row in psn_ledger
+            if row["status"] == "active" and row["sector"] == "industrial_areas"
+            and row["match_status"].startswith("matched")
+        ),
         "industrial_estates": estate_types.get("industrial_estate", 0)
         + estate_types.get("both", 0),
         "sezs": estate_types.get("sez", 0) + estate_types.get("both", 0),
@@ -375,7 +391,7 @@ def main() -> None:
                 "gap": gap,
                 "share": round(share * 100, 1),
                 "status": status,
-                "universe": target["universe"],
+                "reference_set": target["reference_set"],
                 "notes": target["notes"],
             }
         )

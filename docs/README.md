@@ -8,7 +8,7 @@ atlas itself; this page is the map for the working documents.
 
 | File | Contents |
 |---|---|
-| [`plan/plan.md`](plan/plan.md) | Current V4 plan: national delivery atlas, 400+ projects, bilingual UI, map and Data-view rebuild. |
+| [`plan/plan.md`](plan/plan.md) | Current V4 plan: national delivery atlas, 226 PSN projects + 24 programmes, bilingual UI, map and Data-view rebuild. |
 | [`plan/plan-v3.md`](plan/plan-v3.md) | Completed three-phase overhaul backlog: site experience, data completeness and trust. |
 
 ## Phase records
@@ -18,9 +18,16 @@ atlas itself; this page is the map for the working documents.
 | [`phases/phase-1-decisions.md`](phases/phase-1-decisions.md) | Confirmed design, scope, schema and payload budgets. |
 | [`phases/phase-2-transport.md`](phases/phase-2-transport.md) | Transport PSN extraction, status mapping and conflicts. |
 | [`phases/phase-2-estates.md`](phases/phase-2-estates.md) | Estate gap ledger and coordinate work. |
-| [`phases/phase-2-factories.md`](phases/phase-2-factories.md) | Factory universe, inclusion rules and conflicts. |
+| [`phases/phase-2-factories.md`](phases/phase-2-factories.md) | Factory reference set, inclusion rules and conflicts. |
 | [`phases/phase-2-roads.md`](phases/phase-2-roads.md) | BPJT PSN road additions and status mapping. |
 | [`phases/phase-3-trust.md`](phases/phase-3-trust.md) | Claims, freshness, conflicts and local release evidence. |
+
+## Data registers
+
+| File | Contents |
+|---|---|
+| [`../data/curated/psn_register.csv`](../data/curated/psn_register.csv) | Official Permenko 16/2025 annex: 226 active projects, 24 active programmes and 3 deleted slots. |
+| [`../data/derived/psn_reconciliation.csv`](../data/derived/psn_reconciliation.csv) | Match ledger: 89 active PSN records matched, 161 outstanding, with owner, next action and release. |
 
 ## Operations
 

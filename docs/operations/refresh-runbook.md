@@ -147,6 +147,23 @@ value_a,source_a,value_b,source_b,status,resolution,notes
 `open` or `resolved`. Both source ids must exist. Do not delete a conflict just
 because the atlas has chosen a value.
 
+### 4.6 PSN register and reconciliation
+
+When a new Permenko changes the PSN list, snapshot the PDF under
+`data/raw/YYYY-MM-DD/`, add the source row with its SHA-256 hash, and update
+`data/curated/psn_register.csv`. Keep deleted slots in the register with
+`status=deleted` so the official numbering stays auditable. Then run:
+
+```bash
+python scripts/pipeline/build_psn_ledger.py
+```
+
+The script refuses to run unless the register has exactly 226 active projects,
+24 active programmes and 3 deleted slots. Update the explicit match maps in
+`scripts/pipeline/build_psn_ledger.py` when a new atlas row resolves a gap; do
+not replace them with fuzzy matching. The generated ledger is
+`data/derived/psn_reconciliation.csv`.
+
 ## 5. Rebuild
 
 Run the whole pipeline, not a subset:
@@ -199,7 +216,7 @@ refresh the underlying rows.
 python scripts/build_all.py --check
 ```
 
-The run must end with `deterministic rebuild, 25 generated files unchanged`.
+The run must end with `deterministic rebuild, 26 generated files unchanged`.
 This is the local CI gate. It does not touch git or the network.
 
 ### 6.2 Browser smoke test
@@ -268,6 +285,8 @@ the site. The repository owner has deferred publishing explicitly.
 - [ ] BPJT status and km diffed.
 - [ ] Kemenhub transport deck checked for a newer version.
 - [ ] KPPIP, KEK and Kemenperin/BAJRA estate sources retried.
+- [ ] PSN regulation and `psn_register.csv` checked for a newer Permenko;
+      reconciliation ledger regenerated.
 - [ ] Trans corridor totals and sections checked.
 - [ ] Factory statuses, capacity and investment checked.
 - [ ] Changed rows updated with atomic claims and `last_verified`.

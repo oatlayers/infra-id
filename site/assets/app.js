@@ -1396,7 +1396,7 @@
   function coverageRows() {
     const rows = (stats.coverage || []).map(function (row) {
       return '<tr><td class="layer">' + esc(row.label) + '<br><span style="color:var(--muted);font-size:9px">' +
-        esc(row.universe) + '</span></td>' +
+        esc(row.reference_set) + '</span></td>' +
         '<td class="num">' + fmtNum(row.current) + '</td>' +
         '<td class="num">' + fmtNum(row.target) + '</td>' +
         '<td class="num ' + (row.status === 'met' ? 'ok' : 'gap') + '">' +

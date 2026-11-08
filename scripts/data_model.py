@@ -104,12 +104,17 @@ ESTATE_SOURCE_FIELDS = [
 ]
 
 COVERAGE_FIELDS = [
-    "layer", "label", "unit", "target_count", "universe", "source_id", "notes",
+    "layer", "label", "unit", "target_count", "reference_set", "source_id", "notes",
 ]
 
 CONFLICT_FIELDS = [
     "id", "scope", "subject", "project_id", "estate_id", "corridor_id", "field",
     "value_a", "source_a", "value_b", "source_b", "status", "resolution", "notes",
+]
+
+PSN_REGISTER_FIELDS = [
+    "id", "kind", "psn_no", "sector_code", "sector", "name_id", "location",
+    "status", "description", "source_id", "notes",
 ]
 
 SECTORS = {"road", "railway", "airport", "seaport", "factory"}
@@ -208,6 +213,7 @@ TABLES = {
     "estate_sources.csv": ESTATE_SOURCE_FIELDS,
     "coverage_targets.csv": COVERAGE_FIELDS,
     "conflicts.csv": CONFLICT_FIELDS,
+    "psn_register.csv": PSN_REGISTER_FIELDS,
 }
 
 

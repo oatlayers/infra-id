@@ -129,7 +129,7 @@ def desktop_views(page: Page) -> None:
 
     tab(page, "data")
     check(page.locator(".conflict-table tbody tr").count() == 19, "Conflict register has 19 rows")
-    check(page.locator(".dictionary details").count() == 18, "Data dictionary has 18 tables")
+    check(page.locator(".dictionary details").count() == 19, "Data dictionary has 19 tables")
     check(page.locator('a.download[href]').count() == 13, "Data view has 13 static downloads")
     check(page.locator('.download[data-export="projects-csv"]').count() == 1,
           "Data view offers the filtered project CSV")

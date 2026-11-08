@@ -1,0 +1,1598 @@
+[
+  {
+    "no": 1,
+    "section": "A. Sektor Jalan dan Jembatan",
+    "name_id": "Jalan Tol Serang - Panimbang",
+    "location": "Provinsi Banten",
+    "active": true
+  },
+  {
+    "no": 2,
+    "section": "A. Sektor Jalan dan Jembatan",
+    "name_id": "Jalan Tol Pandaan - Malang",
+    "location": "Provinsi Jawa Timur",
+    "active": true
+  },
+  {
+    "no": 3,
+    "section": "A. Sektor Jalan dan Jembatan",
+    "name_id": "Jalan Tol Manado - Bitung",
+    "location": "Provinsi Sulawesi Utara",
+    "active": true
+  },
+  {
+    "no": 4,
+    "section": "A. Sektor Jalan dan Jembatan",
+    "name_id": "Jalan Tol Balikpapan - Samarinda",
+    "location": "Provinsi Kalimantan Timur",
+    "active": true
+  },
+  {
+    "no": 5,
+    "section": "A. Sektor Jalan dan Jembatan",
+    "name_id": "Jalan Tol Medan - Binjai - bagian dari Trans Sumatera",
+    "location": "Provinsi Sumatera Utara",
+    "active": true
+  },
+  {
+    "no": 6,
+    "section": "A. Sektor Jalan dan Jembatan",
+    "name_id": "Jalan Tol Pekanbaru - Kandis - Dumai - bagian dari Trans Sumatera",
+    "location": "Provinsi Riau",
+    "active": true
+  },
+  {
+    "no": 7,
+    "section": "A. Sektor Jalan dan Jembatan",
+    "name_id": "Jalan Tol Kisaran - Tebing Tinggi - bagian dari Trans Sumatera",
+    "location": "Provinsi Sumatera Utara",
+    "active": true
+  },
+  {
+    "no": 8,
+    "section": "A. Sektor Jalan dan Jembatan",
+    "name_id": "Jalan Tol Sigli - Banda Aceh - bagian dari Trans Sumatera",
+    "location": "Provinsi Aceh",
+    "active": true
+  },
+  {
+    "no": 9,
+    "section": "A. Sektor Jalan dan Jembatan",
+    "name_id": "Jalan Tol Binjai - Langsa - bagian dari Trans Sumatera",
+    "location": "Provinsi Aceh dan Sumatera Utara",
+    "active": true
+  },
+  {
+    "no": 10,
+    "section": "A. Sektor Jalan dan Jembatan",
+    "name_id": "Jalan Tol Bukittinggi - Padang Panjang - Lubuk Alung - Padang - bagian dari Trans Sumatera",
+    "location": "Provinsi Sumatera Barat",
+    "active": true
+  },
+  {
+    "no": 11,
+    "section": "A. Sektor Jalan dan Jembatan",
+    "name_id": "Jalan Tol Pekanbaru - Bangkinang - Payakumbuh - Bukittinggi - bagian dari Trans Sumatera",
+    "location": "Provinsi Sumatera Barat dan Provinsi Riau",
+    "active": true
+  },
+  {
+    "no": 12,
+    "section": "A. Sektor Jalan dan Jembatan",
+    "name_id": "Jalan Tol Tebing Tinggi - Pematang Siantar - Prapat - Tarutung - Sibolga - bagian dari Trans Sumatera",
+    "location": "Provinsi Sumatera Utara",
+    "active": true
+  },
+  {
+    "no": 13,
+    "section": "A. Sektor Jalan dan Jembatan",
+    "name_id": "Jalan Tol Betung (Sp. Sekayu) - Tempino - Jambi - bagian dari Trans Sumatera",
+    "location": "Provinsi Jambi dan Provinsi Sumatera Selatan",
+    "active": true
+  },
+  {
+    "no": 14,
+    "section": "A. Sektor Jalan dan Jembatan",
+    "name_id": "Jalan Tol Jambi - Rengat - bagian dari Trans Sumatera",
+    "location": "Provinsi Jambi dan Riau",
+    "active": true
+  },
+  {
+    "no": 15,
+    "section": "A. Sektor Jalan dan Jembatan",
+    "name_id": "Jalan Tol Rengat - Pekanbaru - bagian dari Trans Sumatera",
+    "location": "Provinsi Riau",
+    "active": true
+  },
+  {
+    "no": 16,
+    "section": "A. Sektor Jalan dan Jembatan",
+    "name_id": "Jalan Tol Simpang Indralaya - Muara Enim - bagian dari Trans Sumatera",
+    "location": "Provinsi Sumatera Selatan",
+    "active": true
+  },
+  {
+    "no": 17,
+    "section": "A. Sektor Jalan dan Jembatan",
+    "name_id": "Jalan Tol Lubuk Linggau - Curup - Bengkulu - bagian dari Trans Sumatera",
+    "location": "Provinsi Sumatera Selatan dan Bengkulu",
+    "active": true
+  },
+  {
+    "no": 18,
+    "section": "A. Sektor Jalan dan Jembatan",
+    "name_id": "Jalan Tol Kayu Agung - Palembang - Betung",
+    "location": "Provinsi Sumatera Selatan",
+    "active": true
+  },
+  {
+    "no": 19,
+    "section": "A. Sektor Jalan dan Jembatan",
+    "name_id": "Jalan Tol Cileunyi - Sumedang - Dawuan",
+    "location": "Provinsi Jawa Barat",
+    "active": true
+  },
+  {
+    "no": 20,
+    "section": "A. Sektor Jalan dan Jembatan",
+    "name_id": "Jalan Tol Ciawi - Sukabumi - Ciranjang - Padalarang",
+    "location": "Provinsi Jawa Barat",
+    "active": true
+  },
+  {
+    "no": 21,
+    "section": "A. Sektor Jalan dan Jembatan",
+    "name_id": "Jalan Tol Cengkareng - Batu Ceper - Kunciran",
+    "location": "Provinsi Daerah Khusus Ibukota Jakarta dan Provinsi Banten",
+    "active": true
+  },
+  {
+    "no": 22,
+    "section": "A. Sektor Jalan dan Jembatan",
+    "name_id": "Jalan Tol Serpong - Cinere",
+    "location": "Provinsi Banten dan Provinsi Jawa Barat",
+    "active": true
+  },
+  {
+    "no": 23,
+    "section": "A. Sektor Jalan dan Jembatan",
+    "name_id": "Jalan Tol Cinere - Jagorawi",
+    "location": "Provinsi Daerah Khusus Ibukota Jakarta dan Provinsi Jawa Barat",
+    "active": true
+  },
+  {
+    "no": 24,
+    "section": "A. Sektor Jalan dan Jembatan",
+    "name_id": "Jalan Tol Cimanggis - Cibitung",
+    "location": "Provinsi Jawa Barat",
+    "active": true
+  },
+  {
+    "no": 25,
+    "section": "A. Sektor Jalan dan Jembatan",
+    "name_id": "Jalan Tol Cibitung - Cilincing",
+    "location": "Provinsi Daerah Khusus Ibukota Jakarta dan Provinsi Jawa Barat",
+    "active": true
+  },
+  {
+    "no": 26,
+    "section": "A. Sektor Jalan dan Jembatan",
+    "name_id": "Jalan Tol Bekasi - Cawang - Kampung Melayu",
+    "location": "Provinsi Daerah Khusus Ibukota Jakarta dan Provinsi Jawa Barat",
+    "active": true
+  },
+  {
+    "no": 27,
+    "section": "A. Sektor Jalan dan Jembatan",
+    "name_id": "Jalan Tol Serpong - Balaraja",
+    "location": "Provinsi Banten",
+    "active": true
+  },
+  {
+    "no": 28,
+    "section": "A. Sektor Jalan dan Jembatan",
+    "name_id": "Jalan Tol Semanan - Sunter - bagian dari 6 ruas tol Daerah Khusus Ibukota Jakarta",
+    "location": "Provinsi Daerah Khusus Ibukota Jakarta",
+    "active": true
+  },
+  {
+    "no": 29,
+    "section": "A. Sektor Jalan dan Jembatan",
+    "name_id": "Jalan Tol Sunter - Pulo Gebang - bagian dari 6 ruas tol Daerah Khusus Ibukota Jakarta",
+    "location": "Provinsi Daerah Khusus Ibukota Jakarta",
+    "active": true
+  },
+  {
+    "no": 30,
+    "section": "A. Sektor Jalan dan Jembatan",
+    "name_id": "Jalan Tol Duri Pulo - Kampung Melayu - bagian dari 6 ruas tol Daerah Khusus Ibukota Jakarta",
+    "location": "Provinsi Daerah Khusus Ibukota Jakarta",
+    "active": true
+  },
+  {
+    "no": 31,
+    "section": "A. Sektor Jalan dan Jembatan",
+    "name_id": "Jalan Tol Kemayoran - Kampung Melayu - bagian dari 6 ruas tol Daerah Khusus Ibukota Jakarta",
+    "location": "Provinsi Daerah Khusus Ibukota Jakarta",
+    "active": true
+  },
+  {
+    "no": 32,
+    "section": "A. Sektor Jalan dan Jembatan",
+    "name_id": "Jalan Tol Ulujami - Tanah Abang - bagian dari 6 ruas tol Daerah Khusus Ibukota Jakarta",
+    "location": "Provinsi Daerah Khusus Ibukota Jakarta",
+    "active": true
+  },
+  {
+    "no": 33,
+    "section": "A. Sektor Jalan dan Jembatan",
+    "name_id": "Jalan Tol Pasar Minggu - Casablanca - bagian dari 6 ruas tol Daerah Khusus Ibukota Jakarta",
+    "location": "Provinsi Daerah Khusus Ibukota Jakarta",
+    "active": true
+  },
+  {
+    "no": 34,
+    "section": "A. Sektor Jalan dan Jembatan",
+    "name_id": "Jalan Tol Pasuruan - Probolinggo",
+    "location": "Provinsi Jawa Timur",
+    "active": true
+  },
+  {
+    "no": 35,
+    "section": "A. Sektor Jalan dan Jembatan",
+    "name_id": "Jalan Tol Probolinggo - Banyuwangi",
+    "location": "Provinsi Jawa Timur",
+    "active": true
+  },
+  {
+    "no": 36,
+    "section": "A. Sektor Jalan dan Jembatan",
+    "name_id": "Jalan Tol Krian - Legundi - Bunder - Manyar",
+    "location": "Provinsi Jawa Timur",
+    "active": true
+  },
+  {
+    "no": 37,
+    "section": "A. Sektor Jalan dan Jembatan",
+    "name_id": "Jalan Tol Jakarta - Cikampek II Sisi Selatan",
+    "location": "Provinsi Daerah Khusus Ibukota Jakarta dan Provinsi Jawa Barat",
+    "active": true
+  },
+  {
+    "no": 38,
+    "section": "A. Sektor Jalan dan Jembatan",
+    "name_id": "Jalan Tol Semarang - Demak",
+    "location": "Provinsi Jawa Tengah",
+    "active": true
+  },
+  {
+    "no": 39,
+    "section": "A. Sektor Jalan dan Jembatan",
+    "name_id": "Jalan Tol Yogyakarta - Bawen",
+    "location": "Provinsi Daerah Istimewa Yogyakarta dan Provinsi Jawa Tengah",
+    "active": true
+  },
+  {
+    "no": 40,
+    "section": "A. Sektor Jalan dan Jembatan",
+    "name_id": "Pembangunan Fly Over dari dan Menuju Terminal Teluk Lamong",
+    "location": "Provinsi Jawa Timur",
+    "active": true
+  },
+  {
+    "no": 41,
+    "section": "A. Sektor Jalan dan Jembatan",
+    "name_id": "Jalan Tol Ngawi - Kertosono - Kediri",
+    "location": "Provinsi Jawa Timur",
+    "active": true
+  },
+  {
+    "no": 42,
+    "section": "A. Sektor Jalan dan Jembatan",
+    "name_id": "Jalan Tol Depok - Antasari (termasuk Bojonggede - Salabenda)",
+    "location": "Provinsi Jawa Barat",
+    "active": true
+  },
+  {
+    "no": 43,
+    "section": "A. Sektor Jalan dan Jembatan",
+    "name_id": "Jalan Tol Solo - Yogyakarta - Kulon Progo",
+    "location": "Provinsi Jawa Tengah dan Provinsi Daerah Istimewa Yogyakarta",
+    "active": true
+  },
+  {
+    "no": 44,
+    "section": "A. Sektor Jalan dan Jembatan",
+    "name_id": "Jalan Tol Bogor Ring Road (termasuk Caringin - Salabenda)",
+    "location": "Provinsi Jawa Barat",
+    "active": true
+  },
+  {
+    "no": 45,
+    "section": "A. Sektor Jalan dan Jembatan",
+    "name_id": "Jalan Tol Gedebage - Tasikmalaya - Cilacap",
+    "location": "Provinsi Jawa Barat dan Provinsi Jawa Tengah",
+    "active": true
+  },
+  {
+    "no": 46,
+    "section": "A. Sektor Jalan dan Jembatan",
+    "name_id": "Jalan Tol Akses Pelabuhan Patimban",
+    "location": "Provinsi Jawa Barat",
+    "active": true
+  },
+  {
+    "no": 47,
+    "section": "A. Sektor Jalan dan Jembatan",
+    "name_id": "Pembangunan Jalan Tol Gilimanuk - Negara - Pekutatan - Soka – Mengwi",
+    "location": "Provinsi Bali",
+    "active": true
+  },
+  {
+    "no": 48,
+    "section": "A. Sektor Jalan dan Jembatan",
+    "name_id": "Pembangunan Akses Pelabuhan Tanjung Priok Timur Baru/New Priok Eastern Access (NPEA)",
+    "location": "Provinsi Daerah Khusus Ibukota Jakarta",
+    "active": true
+  },
+  {
+    "no": 49,
+    "section": "A. Sektor Jalan dan Jembatan",
+    "name_id": "Pengembangan Jalan Tol Ir. Wiyoto Wiyono, M.Sc. Section Harbour Road II (Pembangunan Jalan Tol Ancol Timur - Pluit (Elevated))",
+    "location": "Provinsi Daerah Khusus Ibukota Jakarta",
+    "active": true
+  },
+  {
+    "no": 50,
+    "section": "A. Sektor Jalan dan Jembatan",
+    "name_id": "Pengembangan Jalan Tol Dalam Kota Bandung: a. North - South Link Bandung; dan b. Bandung Inter Urban Toll Road",
+    "location": "Provinsi Jawa Barat",
+    "active": true
+  },
+  {
+    "no": 51,
+    "section": "B. Sektor Pelabuhan",
+    "name_id": "Pelabuhan KEK Maloy",
+    "location": "Provinsi Kalimantan Timur",
+    "active": true
+  },
+  {
+    "no": 52,
+    "section": "B. Sektor Pelabuhan",
+    "name_id": "Pelabuhan Sanur - Nusa Ceningan/Lembongan",
+    "location": "Provinsi Bali",
+    "active": true
+  },
+  {
+    "no": 53,
+    "section": "B. Sektor Pelabuhan",
+    "name_id": "Pelabuhan Likupang",
+    "location": "Provinsi Sulawesi Utara",
+    "active": true
+  },
+  {
+    "no": 54,
+    "section": "B. Sektor Pelabuhan",
+    "name_id": "Makassar New Port",
+    "location": "Provinsi Sulawesi Selatan",
+    "active": true
+  },
+  {
+    "no": 55,
+    "section": "B. Sektor Pelabuhan",
+    "name_id": "Terminal Multipurpose Labuan Bajo",
+    "location": "Provinsi Nusa Tenggara Timur",
+    "active": true
+  },
+  {
+    "no": 56,
+    "section": "B. Sektor Pelabuhan",
+    "name_id": "Pembangunan Pelabuhan Patimban",
+    "location": "Provinsi Jawa Barat",
+    "active": true
+  },
+  {
+    "no": 57,
+    "section": "B. Sektor Pelabuhan",
+    "name_id": "Pengembangan Pelabuhan Terminal Kijing",
+    "location": "Provinsi Kalimantan Barat",
+    "active": true
+  },
+  {
+    "no": 58,
+    "section": "B. Sektor Pelabuhan",
+    "name_id": "Pengembangan Pelabuhan Kupang",
+    "location": "Provinsi Nusa Tenggara Timur",
+    "active": true
+  },
+  {
+    "no": 59,
+    "section": "B. Sektor Pelabuhan",
+    "name_id": "Pengembangan Pelabuhan Sorong",
+    "location": "Provinsi Papua Barat Daya",
+    "active": true
+  },
+  {
+    "no": 60,
+    "section": "B. Sektor Pelabuhan",
+    "name_id": "Pengembangan Pelabuhan Teluk Palu",
+    "location": "Provinsi Sulawesi Tengah",
+    "active": true
+  },
+  {
+    "no": 61,
+    "section": "B. Sektor Pelabuhan",
+    "name_id": "Pengembangan Pelabuhan Hub Internasional Kuala Tanjung",
+    "location": "Provinsi Sumatera Utara",
+    "active": true
+  },
+  {
+    "no": 62,
+    "section": "B. Sektor Pelabuhan",
+    "name_id": "Pengembangan Pelabuhan Hub Internasional Bitung",
+    "location": "Provinsi Sulawesi Utara",
+    "active": true
+  },
+  {
+    "no": 63,
+    "section": "B. Sektor Pelabuhan",
+    "name_id": "Pengembangan Pelabuhan Benoa (Bali Maritime Tourism Hub)",
+    "location": "Provinsi Bali",
+    "active": true
+  },
+  {
+    "no": 64,
+    "section": "B. Sektor Pelabuhan",
+    "name_id": "Pembangunan Pelabuhan Palembang Baru/New Palembang",
+    "location": "Provinsi Sumatera Selatan",
+    "active": true
+  },
+  {
+    "no": 65,
+    "section": "B. Sektor Pelabuhan",
+    "name_id": "Pembangunan Pelabuhan Terminal Peti Kemas Muaro Jambi",
+    "location": "Provinsi Jambi",
+    "active": true
+  },
+  {
+    "no": 66,
+    "section": "C. Sektor Bandar Udara",
+    "name_id": "Bandar Udara Baru Yogyakarta - Kulon Progo",
+    "location": "Provinsi Daerah Istimewa Yogyakarta",
+    "active": true
+  },
+  {
+    "no": 67,
+    "section": "C. Sektor Bandar Udara",
+    "name_id": "Bandar Udara Kediri",
+    "location": "Provinsi Jawa Timur",
+    "active": true
+  },
+  {
+    "no": 68,
+    "section": "C. Sektor Bandar Udara",
+    "name_id": "Bandar Udara Komodo - Labuan Bajo",
+    "location": "Provinsi Nusa Tenggara Timur",
+    "active": true
+  },
+  {
+    "no": 69,
+    "section": "C. Sektor Bandar Udara",
+    "name_id": "Pengembangan Bandar Udara Internasional Lombok Praya",
+    "location": "Provinsi Nusa Tenggara Barat",
+    "active": true
+  },
+  {
+    "no": 70,
+    "section": "C. Sektor Bandar Udara",
+    "name_id": "Pembangunan Bandar Udara Nabire Baru",
+    "location": "Provinsi Papua Tengah",
+    "active": true
+  },
+  {
+    "no": 71,
+    "section": "C. Sektor Bandar Udara",
+    "name_id": "Pembangunan Bandar Udara Siboru Fak Fak",
+    "location": "Provinsi Papua Barat",
+    "active": true
+  },
+  {
+    "no": 72,
+    "section": "C. Sektor Bandar Udara",
+    "name_id": "Pengembangan Bandar Udara Raja Haji Abdullah Tanjung Balai Karimun",
+    "location": "Provinsi Kepulauan Riau",
+    "active": true
+  },
+  {
+    "no": 73,
+    "section": "D. Sektor Kereta",
+    "name_id": "Kereta Api Makassar - Parepare (Tahap I dari Pengembangan Jalur Lintas Barat Sulawesi Bagian Selatan)",
+    "location": "Provinsi Sulawesi Selatan",
+    "active": true
+  },
+  {
+    "no": 74,
+    "section": "D. Sektor Kereta",
+    "name_id": "Kereta Api Tebing Tinggi - Kuala Tanjung (mendukung KEK Sei Mangkei, bagian dari Jaringan Kereta Api Trans Sumatera)",
+    "location": "Provinsi Sumatera Utara",
+    "active": true
+  },
+  {
+    "no": 75,
+    "section": "D. Sektor Kereta",
+    "name_id": "Kereta Api Rantau Prapat - Kota Pinang",
+    "location": "Provinsi Sumatera Utara",
+    "active": true
+  },
+  {
+    "no": 76,
+    "section": "D. Sektor Kereta",
+    "name_id": "Kereta Api Akses Bandar Udara Baru Yogyakarta - Kulon Progo",
+    "location": "Provinsi Daerah Istimewa Yogyakarta",
+    "active": true
+  },
+  {
+    "no": 77,
+    "section": "D. Sektor Kereta",
+    "name_id": "Double Track Jawa Selatan",
+    "location": "Provinsi Jawa Barat, Provinsi Jawa Tengah, Provinsi Daerah Istimewa Yogyakarta, dan Provinsi Jawa Timur",
+    "active": true
+  },
+  {
+    "no": 78,
+    "section": "D. Sektor Kereta",
+    "name_id": "High Speed Railway Jakarta - Bandung",
+    "location": "Provinsi Daerah Khusus Ibukota Jakarta dan Provinsi Jawa Barat",
+    "active": true
+  },
+  {
+    "no": 79,
+    "section": "D. Sektor Kereta",
+    "name_id": "Penyelenggaraan Kereta Api Ringan/Light Rail Transit (LRT) Terintegrasi di Wilayah Jakarta, Bogor, Depok, dan Bekasi",
+    "location": "Provinsi Daerah Khusus Ibukota Jakarta dan Provinsi Jawa Barat",
+    "active": true
+  },
+  {
+    "no": 80,
+    "section": "D. Sektor Kereta",
+    "name_id": "Kereta Api Logistik Lahat – Kertapati",
+    "location": "Provinsi Sumatera Selatan",
+    "active": true
+  },
+  {
+    "no": 81,
+    "section": "D. Sektor Kereta",
+    "name_id": "Infrastruktur Kereta Api Logistik di Kalimantan Timur",
+    "location": "Provinsi Kalimantan Timur",
+    "active": true
+  },
+  {
+    "no": 82,
+    "section": "D. Sektor Kereta",
+    "name_id": "Light Rail Transit (LRT) Provinsi Sumatera Selatan (Metro Palembang)",
+    "location": "Provinsi Sumatera Selatan",
+    "active": true
+  },
+  {
+    "no": 83,
+    "section": "D. Sektor Kereta",
+    "name_id": "Light Rail Transit (LRT) Jakarta Segmen Velodrome – Manggarai",
+    "location": "Provinsi Daerah Khusus Ibukota Jakarta",
+    "active": true
+  },
+  {
+    "no": 84,
+    "section": "D. Sektor Kereta",
+    "name_id": "Jakarta Mass Rapid Transit (MRT) North - South (Bundaran HI - Kota - Ancol Barat)",
+    "location": "Provinsi Daerah Khusus Ibukota Jakarta",
+    "active": true
+  },
+  {
+    "no": 85,
+    "section": "D. Sektor Kereta",
+    "name_id": "Mass Rapid Transit (MRT) Jakarta East - West Phase I",
+    "location": "Provinsi Daerah Khusus Ibukota Jakarta, Provinsi Banten, dan Provinsi Jawa Barat",
+    "active": true
+  },
+  {
+    "no": 86,
+    "section": "E. Sektor Kawasan",
+    "name_id": "Kawasan Industri Kuala Tanjung",
+    "location": "Provinsi Sumatera Utara",
+    "active": true
+  },
+  {
+    "no": 87,
+    "section": "E. Sektor Kawasan",
+    "name_id": "Kawasan Industri Landak",
+    "location": "Provinsi Kalimantan Barat",
+    "active": true
+  },
+  {
+    "no": 88,
+    "section": "E. Sektor Kawasan",
+    "name_id": "Kawasan Industri Ketapang",
+    "location": "Provinsi Kalimantan Barat",
+    "active": true
+  },
+  {
+    "no": 89,
+    "section": "E. Sektor Kawasan",
+    "name_id": "Kawasan Industri Jorong",
+    "location": "Provinsi Kalimantan Selatan",
+    "active": true
+  },
+  {
+    "no": 90,
+    "section": "E. Sektor Kawasan",
+    "name_id": "Kawasan Industri Bantaeng",
+    "location": "Provinsi Sulawesi Selatan",
+    "active": true
+  },
+  {
+    "no": 91,
+    "section": "E. Sektor Kawasan",
+    "name_id": "Kawasan Industri Morowali",
+    "location": "Provinsi Sulawesi Tengah",
+    "active": true
+  },
+  {
+    "no": 92,
+    "section": "E. Sektor Kawasan",
+    "name_id": "Kawasan Industri Konawe",
+    "location": "Provinsi Sulawesi Tenggara",
+    "active": true
+  },
+  {
+    "no": 93,
+    "section": "E. Sektor Kawasan",
+    "name_id": "Kawasan Industri Teluk Bintuni dan Pengembangan Industri Metanol, Amonia, dan Pemanfaatan Karbon dari hasil CCUS/CCS di Teluk Bintuni",
+    "location": "Provinsi Papua Barat",
+    "active": true
+  },
+  {
+    "no": 94,
+    "section": "E. Sektor Kawasan",
+    "name_id": "Kawasan Industri Tanah Kuning",
+    "location": "Provinsi Kalimantan Utara",
+    "active": true
+  },
+  {
+    "no": 95,
+    "section": "E. Sektor Kawasan",
+    "name_id": "Kawasan Industri Wilmar Serang",
+    "location": "Provinsi Banten",
+    "active": true
+  },
+  {
+    "no": 96,
+    "section": "E. Sektor Kawasan",
+    "name_id": "Kawasan Industri Pulau Obi",
+    "location": "Provinsi Maluku Utara",
+    "active": true
+  },
+  {
+    "no": 97,
+    "section": "E. Sektor Kawasan",
+    "name_id": "Kawasan Industri Weda Bay",
+    "location": "Provinsi Maluku Utara",
+    "active": true
+  },
+  {
+    "no": 98,
+    "section": "E. Sektor Kawasan",
+    "name_id": "Kawasan Industri Takalar",
+    "location": "Provinsi Sulawesi Selatan",
+    "active": true
+  },
+  {
+    "no": 99,
+    "section": "E. Sektor Kawasan",
+    "name_id": "Kawasan Industri Tanjung Enim",
+    "location": "Provinsi Sumatera Selatan",
+    "active": true
+  },
+  {
+    "no": 100,
+    "section": "E. Sektor Kawasan",
+    "name_id": "Kawasan Terintegrasi Merak - Bakauheni",
+    "location": "Provinsi Banten dan Provinsi Lampung",
+    "active": true
+  },
+  {
+    "no": 101,
+    "section": "E. Sektor Kawasan",
+    "name_id": "Kawasan Industri Terpadu Batang",
+    "location": "Provinsi Jawa Tengah",
+    "active": true
+  },
+  {
+    "no": 102,
+    "section": "E. Sektor Kawasan",
+    "name_id": "Kawasan Industri Indonesia Konawe Industrial Park (IKIP)",
+    "location": "Provinsi Sulawesi Tenggara",
+    "active": true
+  },
+  {
+    "no": 103,
+    "section": "E. Sektor Kawasan",
+    "name_id": "Kawasan Industri Tanjung Sauh",
+    "location": "Provinsi Kepulauan Riau",
+    "active": true
+  },
+  {
+    "no": 104,
+    "section": "E. Sektor Kawasan",
+    "name_id": "Kawasan Industri Indonesia Pomalaa Industry Park",
+    "location": "Provinsi Sulawesi Tenggara",
+    "active": true
+  },
+  {
+    "no": 105,
+    "section": "E. Sektor Kawasan",
+    "name_id": "Kawasan Industri Motui",
+    "location": "Provinsi Sulawesi Tenggara",
+    "active": true
+  },
+  {
+    "no": 106,
+    "section": "E. Sektor Kawasan",
+    "name_id": "Kawasan Industri Kendari",
+    "location": "Provinsi Sulawesi Tenggara",
+    "active": true
+  },
+  {
+    "no": 107,
+    "section": "E. Sektor Kawasan",
+    "name_id": "Kawasan Industri Pulau Ladi",
+    "location": "Provinsi Kepulauan Riau",
+    "active": true
+  },
+  {
+    "no": 108,
+    "section": "E. Sektor Kawasan",
+    "name_id": "Kawasan Industri Pupuk Fakfak",
+    "location": "Provinsi Papua Barat",
+    "active": true
+  },
+  {
+    "no": 109,
+    "section": "E. Sektor Kawasan",
+    "name_id": "Kawasan Industri Indonesia Huabao Industrial Park",
+    "location": "Provinsi Sulawesi Tengah",
+    "active": true
+  },
+  {
+    "no": 110,
+    "section": "E. Sektor Kawasan",
+    "name_id": "Kawasan Industri Indonesia Dahuaxing Industry Park (IDIP)",
+    "location": "Provinsi Sulawesi Tengah",
+    "active": true
+  },
+  {
+    "no": 111,
+    "section": "E. Sektor Kawasan",
+    "name_id": "Kawasan Industri Indonesia Huali Industry Park (IHIP)",
+    "location": "Provinsi Sulawesi Selatan",
+    "active": true
+  },
+  {
+    "no": 112,
+    "section": "E. Sektor Kawasan",
+    "name_id": "Dihapus",
+    "location": "Dihapus",
+    "active": false
+  },
+  {
+    "no": 113,
+    "section": "E. Sektor Kawasan",
+    "name_id": "Kawasan Industri Wiraraja Green Renewable Energy & Smart-Eco Industrial Park (GESEIP)",
+    "location": "Provinsi Kepulauan Riau",
+    "active": true
+  },
+  {
+    "no": 114,
+    "section": "E. Sektor Kawasan",
+    "name_id": "Kawasan Industri Neo Energy Parimo Industrial Estate (NEPIE)",
+    "location": "Provinsi Sulawesi Tengah",
+    "active": true
+  },
+  {
+    "no": 115,
+    "section": "E. Sektor Kawasan",
+    "name_id": "Kawasan Industri Patimban Industrial Estate",
+    "location": "Provinsi Jawa Barat",
+    "active": true
+  },
+  {
+    "no": 116,
+    "section": "E. Sektor Kawasan",
+    "name_id": "Kawasan Industri Indonesia Giga Industry Park (IGIP)",
+    "location": "Provinsi Sulawesi Tenggara",
+    "active": true
+  },
+  {
+    "no": 117,
+    "section": "E. Sektor Kawasan",
+    "name_id": "Kawasan Industri Kolaka Resources Industrial Park (KRIP)",
+    "location": "Provinsi Sulawesi Tenggara",
+    "active": true
+  },
+  {
+    "no": 118,
+    "section": "E. Sektor Kawasan",
+    "name_id": "Kawasan Industri ASPIRE Stargate (ASPR)",
+    "location": "Provinsi Sulawesi Tenggara",
+    "active": true
+  },
+  {
+    "no": 119,
+    "section": "E. Sektor Kawasan",
+    "name_id": "Kawasan Industri Neo Energy Morowali Industrial Estate (NEMIE)",
+    "location": "Provinsi Sulawesi Tengah",
+    "active": true
+  },
+  {
+    "no": 120,
+    "section": "E. Sektor Kawasan",
+    "name_id": "Pengembangan Kawasan Industri Toapaya, Pulau Poto, dan Kampung Masiran",
+    "location": "Provinsi Kepulauan Riau",
+    "active": true
+  },
+  {
+    "no": 121,
+    "section": "E. Sektor Kawasan",
+    "name_id": "Kawasan Pesisir Terpadu Surabaya Waterfront Land (SWL)",
+    "location": "Provinsi Jawa Timur",
+    "active": true
+  },
+  {
+    "no": 122,
+    "section": "E. Sektor Kawasan",
+    "name_id": "Kawasan Pengembangan Terpadu Bumi Serpong Damai (Kawasan Khusus Pendidikan, Riset, Ekonomi Digital, dan Pengembangan Teknologi, Industri Kreatif, Kesehatan dan Biomedical Terpadu)",
+    "location": "Provinsi Banten",
+    "active": true
+  },
+  {
+    "no": 123,
+    "section": "E. Sektor Kawasan",
+    "name_id": "Kawasan Industri Tekno Hijau Konasara (KITHK)",
+    "location": "Provinsi Sulawesi Tenggara",
+    "active": true
+  },
+  {
+    "no": 124,
+    "section": "E. Sektor Kawasan",
+    "name_id": "Kawasan Industri Hijau Futong",
+    "location": "Provinsi Riau",
+    "active": true
+  },
+  {
+    "no": 125,
+    "section": "E. Sektor Kawasan",
+    "name_id": "Kawasan Industri Pulau Penebang",
+    "location": "Provinsi Kalimantan Barat",
+    "active": true
+  },
+  {
+    "no": 126,
+    "section": "E. Sektor Kawasan",
+    "name_id": "Kawasan Industri Kumai Multi Energi",
+    "location": "Provinsi Kalimantan Tengah",
+    "active": true
+  },
+  {
+    "no": 127,
+    "section": "E. Sektor Kawasan",
+    "name_id": "Kawasan Industri Alumina Toba",
+    "location": "Provinsi Kalimantan Barat",
+    "active": true
+  },
+  {
+    "no": 128,
+    "section": "E. Sektor Kawasan",
+    "name_id": "Kawasan Industri Indo Mineral Mining",
+    "location": "Provinsi Sulawesi Tengah",
+    "active": true
+  },
+  {
+    "no": 129,
+    "section": "E. Sektor Kawasan",
+    "name_id": "Kawasan Industri Sungai Tabuk",
+    "location": "Provinsi Kalimantan Tengah",
+    "active": true
+  },
+  {
+    "no": 130,
+    "section": "E. Sektor Kawasan",
+    "name_id": "Kawasan Industri Rimau",
+    "location": "Provinsi Kalimantan Tengah",
+    "active": true
+  },
+  {
+    "no": 131,
+    "section": "F. Sektor Perumahan",
+    "name_id": "Pembangunan Rumah Susun",
+    "location": "Provinsi Daerah Khusus Ibukota Jakarta",
+    "active": true
+  },
+  {
+    "no": 132,
+    "section": "F. Sektor Perumahan",
+    "name_id": "Pembangunan Bantuan Rumah Swadaya",
+    "location": "Nasional",
+    "active": true
+  },
+  {
+    "no": 133,
+    "section": "G. Sektor Bendungan dan Irigasi",
+    "name_id": "Bendungan Marangkayu",
+    "location": "Provinsi Kalimantan Timur",
+    "active": true
+  },
+  {
+    "no": 134,
+    "section": "G. Sektor Bendungan dan Irigasi",
+    "name_id": "Bendungan Kuningan",
+    "location": "Provinsi Jawa Barat",
+    "active": true
+  },
+  {
+    "no": 135,
+    "section": "G. Sektor Bendungan dan Irigasi",
+    "name_id": "Bendungan Bendo",
+    "location": "Provinsi Jawa Timur",
+    "active": true
+  },
+  {
+    "no": 136,
+    "section": "G. Sektor Bendungan dan Irigasi",
+    "name_id": "Bendungan Gongseng",
+    "location": "Provinsi Jawa Timur",
+    "active": true
+  },
+  {
+    "no": 137,
+    "section": "G. Sektor Bendungan dan Irigasi",
+    "name_id": "Bendungan Tukul",
+    "location": "Provinsi Jawa Timur",
+    "active": true
+  },
+  {
+    "no": 138,
+    "section": "G. Sektor Bendungan dan Irigasi",
+    "name_id": "Bendungan Pidekso",
+    "location": "Provinsi Jawa Tengah",
+    "active": true
+  },
+  {
+    "no": 139,
+    "section": "G. Sektor Bendungan dan Irigasi",
+    "name_id": "Bendungan Tugu",
+    "location": "Provinsi Jawa Timur",
+    "active": true
+  },
+  {
+    "no": 140,
+    "section": "G. Sektor Bendungan dan Irigasi",
+    "name_id": "Bendungan Karalloe",
+    "location": "Provinsi Sulawesi Selatan",
+    "active": true
+  },
+  {
+    "no": 141,
+    "section": "G. Sektor Bendungan dan Irigasi",
+    "name_id": "Bendungan Keureuto",
+    "location": "Provinsi Aceh",
+    "active": true
+  },
+  {
+    "no": 142,
+    "section": "G. Sektor Bendungan dan Irigasi",
+    "name_id": "Bendungan Tapin",
+    "location": "Provinsi Kalimantan Selatan",
+    "active": true
+  },
+  {
+    "no": 143,
+    "section": "G. Sektor Bendungan dan Irigasi",
+    "name_id": "Bendungan Passeloreng",
+    "location": "Provinsi Sulawesi Selatan",
+    "active": true
+  },
+  {
+    "no": 144,
+    "section": "G. Sektor Bendungan dan Irigasi",
+    "name_id": "Bendungan Lolak",
+    "location": "Provinsi Sulawesi Utara",
+    "active": true
+  },
+  {
+    "no": 145,
+    "section": "G. Sektor Bendungan dan Irigasi",
+    "name_id": "Bendungan Bintang Bano",
+    "location": "Provinsi Nusa Tenggara Barat",
+    "active": true
+  },
+  {
+    "no": 146,
+    "section": "G. Sektor Bendungan dan Irigasi",
+    "name_id": "Bendungan Karian",
+    "location": "Provinsi Banten",
+    "active": true
+  },
+  {
+    "no": 147,
+    "section": "G. Sektor Bendungan dan Irigasi",
+    "name_id": "Bendungan Rukoh dan Bangunan Pengarah Bendungan Rukoh",
+    "location": "Provinsi Aceh",
+    "active": true
+  },
+  {
+    "no": 148,
+    "section": "G. Sektor Bendungan dan Irigasi",
+    "name_id": "Bendungan Way Sekampung",
+    "location": "Provinsi Lampung",
+    "active": true
+  },
+  {
+    "no": 149,
+    "section": "G. Sektor Bendungan dan Irigasi",
+    "name_id": "Bendungan Kuwil Kawangkoan",
+    "location": "Provinsi Sulawesi Utara",
+    "active": true
+  },
+  {
+    "no": 150,
+    "section": "G. Sektor Bendungan dan Irigasi",
+    "name_id": "Bendungan Ladongi",
+    "location": "Provinsi Sulawesi Tenggara",
+    "active": true
+  },
+  {
+    "no": 151,
+    "section": "G. Sektor Bendungan dan Irigasi",
+    "name_id": "Bendungan Ciawi",
+    "location": "Provinsi Jawa Barat",
+    "active": true
+  },
+  {
+    "no": 152,
+    "section": "G. Sektor Bendungan dan Irigasi",
+    "name_id": "Bendungan Sukamahi",
+    "location": "Provinsi Jawa Barat",
+    "active": true
+  },
+  {
+    "no": 153,
+    "section": "G. Sektor Bendungan dan Irigasi",
+    "name_id": "Bendungan Leuwikeris",
+    "location": "Provinsi Jawa Barat",
+    "active": true
+  },
+  {
+    "no": 154,
+    "section": "G. Sektor Bendungan dan Irigasi",
+    "name_id": "Bendungan Cipanas",
+    "location": "Provinsi Jawa Barat",
+    "active": true
+  },
+  {
+    "no": 155,
+    "section": "G. Sektor Bendungan dan Irigasi",
+    "name_id": "Bendungan Tiga Dihaji",
+    "location": "Provinsi Sumatera Selatan",
+    "active": true
+  },
+  {
+    "no": 156,
+    "section": "G. Sektor Bendungan dan Irigasi",
+    "name_id": "Bendungan Semantok",
+    "location": "Provinsi Jawa Timur",
+    "active": true
+  },
+  {
+    "no": 157,
+    "section": "G. Sektor Bendungan dan Irigasi",
+    "name_id": "Bendungan Pamukkulu",
+    "location": "Provinsi Sulawesi Selatan",
+    "active": true
+  },
+  {
+    "no": 158,
+    "section": "G. Sektor Bendungan dan Irigasi",
+    "name_id": "Bendungan Bener",
+    "location": "Provinsi Jawa Tengah",
+    "active": true
+  },
+  {
+    "no": 159,
+    "section": "G. Sektor Bendungan dan Irigasi",
+    "name_id": "Bendungan Sadawarna",
+    "location": "Provinsi Jawa Barat",
+    "active": true
+  },
+  {
+    "no": 160,
+    "section": "G. Sektor Bendungan dan Irigasi",
+    "name_id": "Bendungan Lausimeme",
+    "location": "Provinsi Sumatera Utara",
+    "active": true
+  },
+  {
+    "no": 161,
+    "section": "G. Sektor Bendungan dan Irigasi",
+    "name_id": "Bendungan Sidan",
+    "location": "Provinsi Bali",
+    "active": true
+  },
+  {
+    "no": 162,
+    "section": "G. Sektor Bendungan dan Irigasi",
+    "name_id": "Bendungan Marga Tiga",
+    "location": "Provinsi Lampung",
+    "active": true
+  },
+  {
+    "no": 163,
+    "section": "G. Sektor Bendungan dan Irigasi",
+    "name_id": "Bendungan Bagong",
+    "location": "Provinsi Jawa Timur",
+    "active": true
+  },
+  {
+    "no": 164,
+    "section": "G. Sektor Bendungan dan Irigasi",
+    "name_id": "Bendungan Randugunting",
+    "location": "Provinsi Jawa Tengah",
+    "active": true
+  },
+  {
+    "no": 165,
+    "section": "G. Sektor Bendungan dan Irigasi",
+    "name_id": "Bendungan Mbay",
+    "location": "Provinsi Nusa Tenggara Timur",
+    "active": true
+  },
+  {
+    "no": 166,
+    "section": "G. Sektor Bendungan dan Irigasi",
+    "name_id": "Bendungan Bulango Ulu",
+    "location": "Provinsi Gorontalo",
+    "active": true
+  },
+  {
+    "no": 167,
+    "section": "G. Sektor Bendungan dan Irigasi",
+    "name_id": "Bendungan Napun Gete",
+    "location": "Provinsi Nusa Tenggara Timur",
+    "active": true
+  },
+  {
+    "no": 168,
+    "section": "G. Sektor Bendungan dan Irigasi",
+    "name_id": "Bendungan Temef",
+    "location": "Provinsi Nusa Tenggara Timur",
+    "active": true
+  },
+  {
+    "no": 169,
+    "section": "G. Sektor Bendungan dan Irigasi",
+    "name_id": "Bendungan Way Apu",
+    "location": "Provinsi Maluku",
+    "active": true
+  },
+  {
+    "no": 170,
+    "section": "G. Sektor Bendungan dan Irigasi",
+    "name_id": "Bendungan Meninting",
+    "location": "Provinsi Nusa Tenggara Barat",
+    "active": true
+  },
+  {
+    "no": 171,
+    "section": "G. Sektor Bendungan dan Irigasi",
+    "name_id": "Bendungan Tamblang",
+    "location": "Provinsi Bali",
+    "active": true
+  },
+  {
+    "no": 172,
+    "section": "G. Sektor Bendungan dan Irigasi",
+    "name_id": "Bendungan Beringin Sila",
+    "location": "Provinsi Nusa Tenggara Barat",
+    "active": true
+  },
+  {
+    "no": 173,
+    "section": "G. Sektor Bendungan dan Irigasi",
+    "name_id": "Bendungan Tiu Suntuk",
+    "location": "Provinsi Nusa Tenggara Barat",
+    "active": true
+  },
+  {
+    "no": 174,
+    "section": "G. Sektor Bendungan dan Irigasi",
+    "name_id": "Bendungan Manikin",
+    "location": "Provinsi Nusa Tenggara Timur",
+    "active": true
+  },
+  {
+    "no": 175,
+    "section": "G. Sektor Bendungan dan Irigasi",
+    "name_id": "Bendungan Jlantah",
+    "location": "Provinsi Jawa Tengah",
+    "active": true
+  },
+  {
+    "no": 176,
+    "section": "G. Sektor Bendungan dan Irigasi",
+    "name_id": "Bendungan Jragung",
+    "location": "Provinsi Jawa Tengah",
+    "active": true
+  },
+  {
+    "no": 177,
+    "section": "G. Sektor Bendungan dan Irigasi",
+    "name_id": "Bendungan Sepaku Semoi",
+    "location": "Provinsi Kalimantan Timur",
+    "active": true
+  },
+  {
+    "no": 178,
+    "section": "G. Sektor Bendungan dan Irigasi",
+    "name_id": "Bendungan Budong-Budong",
+    "location": "Provinsi Sulawesi Barat",
+    "active": true
+  },
+  {
+    "no": 179,
+    "section": "G. Sektor Bendungan dan Irigasi",
+    "name_id": "Bendungan Ameroro",
+    "location": "Provinsi Sulawesi Tenggara",
+    "active": true
+  },
+  {
+    "no": 180,
+    "section": "G. Sektor Bendungan dan Irigasi",
+    "name_id": "Bendungan Karangnongko",
+    "location": "Provinsi Jawa Tengah dan Provinsi Jawa Timur",
+    "active": true
+  },
+  {
+    "no": 181,
+    "section": "G. Sektor Bendungan dan Irigasi",
+    "name_id": "Pembangunan Jaringan Irigasi Daerah Irigasi Lhok Guci",
+    "location": "Provinsi Aceh",
+    "active": true
+  },
+  {
+    "no": 182,
+    "section": "G. Sektor Bendungan dan Irigasi",
+    "name_id": "Pembangunan Jaringan Irigasi Daerah Irigasi Jambo Aye Kanan",
+    "location": "Provinsi Aceh",
+    "active": true
+  },
+  {
+    "no": 183,
+    "section": "G. Sektor Bendungan dan Irigasi",
+    "name_id": "Pembangunan Jaringan Irigasi Daerah Irigasi Lematang",
+    "location": "Provinsi Sumatera Selatan",
+    "active": true
+  },
+  {
+    "no": 184,
+    "section": "G. Sektor Bendungan dan Irigasi",
+    "name_id": "Pembangunan Bendung dan Jaringan Irigasi Daerah Irigasi Baliase",
+    "location": "Provinsi Sulawesi Selatan",
+    "active": true
+  },
+  {
+    "no": 185,
+    "section": "G. Sektor Bendungan dan Irigasi",
+    "name_id": "Rehabilitasi Jaringan Irigasi Daerah Irigasi Gumbasa",
+    "location": "Provinsi Sulawesi Tengah",
+    "active": true
+  },
+  {
+    "no": 186,
+    "section": "G. Sektor Bendungan dan Irigasi",
+    "name_id": "Rehabilitasi Jaringan Irigasi Daerah Irigasi Rentang",
+    "location": "Provinsi Jawa Barat",
+    "active": true
+  },
+  {
+    "no": 187,
+    "section": "G. Sektor Bendungan dan Irigasi",
+    "name_id": "Rehabilitasi Jaringan Irigasi Daerah Irigasi Glapan",
+    "location": "Provinsi Jawa Tengah",
+    "active": true
+  },
+  {
+    "no": 188,
+    "section": "G. Sektor Bendungan dan Irigasi",
+    "name_id": "Pengembangan dan Pengelolaan Jaringan Irigasi Komering",
+    "location": "Provinsi Sumatera Selatan",
+    "active": true
+  },
+  {
+    "no": 189,
+    "section": "G. Sektor Bendungan dan Irigasi",
+    "name_id": "Pembangunan dan Pengelolaan Estuary Dam di Teluk Bintan dan Pengembangan Sistem Penyediaan Air Minum (SPAM)",
+    "location": "Provinsi Kepulauan Riau",
+    "active": true
+  },
+  {
+    "no": 190,
+    "section": "H. Sektor Air Bersih dan Sanitasi",
+    "name_id": "Sistem Penyediaan Air Minum (SPAM) Semarang Barat",
+    "location": "Provinsi Jawa Tengah",
+    "active": true
+  },
+  {
+    "no": 191,
+    "section": "H. Sektor Air Bersih dan Sanitasi",
+    "name_id": "Sistem Penyediaan Air Minum (SPAM) Umbulan",
+    "location": "Provinsi Jawa Timur",
+    "active": true
+  },
+  {
+    "no": 192,
+    "section": "H. Sektor Air Bersih dan Sanitasi",
+    "name_id": "Sistem Penyediaan Air Minum (SPAM) Kota Bandar Lampung",
+    "location": "Provinsi Lampung",
+    "active": true
+  },
+  {
+    "no": 193,
+    "section": "H. Sektor Air Bersih dan Sanitasi",
+    "name_id": "Sistem Penyediaan Air Minum (SPAM) Regional Jatiluhur",
+    "location": "Provinsi Jawa Barat dan Provinsi Daerah Khusus Ibukota Jakarta",
+    "active": true
+  },
+  {
+    "no": 194,
+    "section": "H. Sektor Air Bersih dan Sanitasi",
+    "name_id": "Sistem Penyediaan Air Minum (SPAM) Regional Wosusokas",
+    "location": "Provinsi Jawa Tengah",
+    "active": true
+  },
+  {
+    "no": 195,
+    "section": "H. Sektor Air Bersih dan Sanitasi",
+    "name_id": "Sistem Penyediaan Air Minum (SPAM) Regional Karian - Serpong",
+    "location": "Provinsi Banten dan Provinsi Daerah Khusus Ibukota Jakarta",
+    "active": true
+  },
+  {
+    "no": 196,
+    "section": "H. Sektor Air Bersih dan Sanitasi",
+    "name_id": "Sistem Penyediaan Air Minum (SPAM) Regional Benteng - Kobema (Bengkulu Tengah, Kota Bengkulu, dan Seluma)",
+    "location": "Provinsi Bengkulu",
+    "active": true
+  },
+  {
+    "no": 197,
+    "section": "H. Sektor Air Bersih dan Sanitasi",
+    "name_id": "Sarana dan Prasarana Air Baku Karian",
+    "location": "Provinsi Banten",
+    "active": true
+  },
+  {
+    "no": 198,
+    "section": "H. Sektor Air Bersih dan Sanitasi",
+    "name_id": "Jakarta Sewerage System (JSS)",
+    "location": "Provinsi Daerah Khusus Ibukota Jakarta",
+    "active": true
+  },
+  {
+    "no": 199,
+    "section": "I. Sektor Tanggul Pantai",
+    "name_id": "Tanggul Pantai",
+    "location": "Provinsi Daerah Khusus Ibukota Jakarta, Provinsi Jawa Barat, dan Provinsi Banten",
+    "active": true
+  },
+  {
+    "no": 200,
+    "section": "J. Sektor Energi",
+    "name_id": "Pengembangan Lapangan Abadi Wilayah Kerja Masela",
+    "location": "Provinsi Maluku",
+    "active": true
+  },
+  {
+    "no": 201,
+    "section": "J. Sektor Energi",
+    "name_id": "Pengembangan Lapangan Gendalo, Gandang, Gehem, dan Bangka (Indonesia Deepwater Development Project/IDD)",
+    "location": "Provinsi Kalimantan Timur",
+    "active": true
+  },
+  {
+    "no": 202,
+    "section": "J. Sektor Energi",
+    "name_id": "Proyek Tangguh LNG Train 3",
+    "location": "Provinsi Papua Barat",
+    "active": true
+  },
+  {
+    "no": 203,
+    "section": "J. Sektor Energi",
+    "name_id": "Pengembangan Lapangan Unitisasi Gas Jambaran - Tiung Biru",
+    "location": "Provinsi Jawa Timur",
+    "active": true
+  },
+  {
+    "no": 204,
+    "section": "J. Sektor Energi",
+    "name_id": "Pengembangan Lapangan Ubadari, CCUS, dan Compresion (UCC Project) di Teluk Bintuni",
+    "location": "Provinsi Papua Barat",
+    "active": true
+  },
+  {
+    "no": 205,
+    "section": "J. Sektor Energi",
+    "name_id": "Pengembangan Lapangan Gas Asap, Kido, dan Merah (AKM)",
+    "location": "Provinsi Papua Barat",
+    "active": true
+  },
+  {
+    "no": 206,
+    "section": "J. Sektor Energi",
+    "name_id": "Kilang Minyak Tuban (Ekspansi)",
+    "location": "Provinsi Jawa Timur",
+    "active": true
+  },
+  {
+    "no": 207,
+    "section": "J. Sektor Energi",
+    "name_id": "Upgrading Kilang-Kilang Eksisting/Refinery Development Master Plan (RDMP)",
+    "location": "Provinsi Jawa Tengah, Provinsi Kalimantan Timur, Provinsi Riau, dan Provinsi Sumatera Selatan",
+    "active": true
+  },
+  {
+    "no": 208,
+    "section": "J. Sektor Energi",
+    "name_id": "Upgrading Kilang Eksisting (RDMP) dan Industri Petrokimia Balongan",
+    "location": "Provinsi Jawa Barat",
+    "active": true
+  },
+  {
+    "no": 209,
+    "section": "J. Sektor Energi",
+    "name_id": "Konstruksi Tangki Penyimpanan BBM",
+    "location": "Indonesia Bagian Timur",
+    "active": true
+  },
+  {
+    "no": 210,
+    "section": "J. Sektor Energi",
+    "name_id": "Konstruksi Tangki Penyimpanan LPG",
+    "location": "Indonesia Bagian Timur",
+    "active": true
+  },
+  {
+    "no": 211,
+    "section": "J. Sektor Energi",
+    "name_id": "Pembangunan Jaringan Gas Kota",
+    "location": "Nasional",
+    "active": true
+  },
+  {
+    "no": 212,
+    "section": "J. Sektor Energi",
+    "name_id": "Pembangunan Pipa Transmisi Gas Bumi Ruas Cirebon - Semarang (Tahap I Ruas Semarang - Batang dan Tahap II Ruas Batang - Indramayu) serta Ruas Kawasan Ekonomi Khusus Sei Mangkei - Dumai",
+    "location": "Provinsi Jawa Barat - Provinsi Jawa Tengah dan Provinsi Sumatera Utara - Provinsi Riau",
+    "active": true
+  },
+  {
+    "no": 213,
+    "section": "J. Sektor Energi",
+    "name_id": "Pembangunan Bahan Bakar Hijau (Green Refinery RU IV Cilacap, Hidrogenasi CPO RU IV Cilacap, Green Refinery RU III Plaju, Katalis Merah Putih Pupuk Kujang Cikampek)",
+    "location": "Provinsi Jawa Tengah, Provinsi Sumatera Selatan, dan Provinsi Jawa Barat",
+    "active": true
+  },
+  {
+    "no": 214,
+    "section": "J. Sektor Energi",
+    "name_id": "Pengembangan Biofuel dari Metanol dan Etanol di Kabupaten Bojonegoro",
+    "location": "Provinsi Jawa Timur",
+    "active": true
+  },
+  {
+    "no": 215,
+    "section": "J. Sektor Energi",
+    "name_id": "Gasifikasi Batubara di Tanjung Enim",
+    "location": "Provinsi Sumatera Selatan",
+    "active": true
+  },
+  {
+    "no": 216,
+    "section": "J. Sektor Energi",
+    "name_id": "Gasifikasi Batubara di Kutai Timur",
+    "location": "Provinsi Kalimantan Timur",
+    "active": true
+  },
+  {
+    "no": 217,
+    "section": "J. Sektor Energi",
+    "name_id": "North Hub Development Project Selat Makassar",
+    "location": "Provinsi Kalimantan Timur",
+    "active": true
+  },
+  {
+    "no": 218,
+    "section": "K. Sektor Teknologi",
+    "name_id": "Percepatan Pembangunan Technopark",
+    "location": "Nasional",
+    "active": true
+  },
+  {
+    "no": 219,
+    "section": "K. Sektor Teknologi",
+    "name_id": "Proyek Satelit Multifungsi",
+    "location": "Nasional",
+    "active": true
+  },
+  {
+    "no": 220,
+    "section": "K. Sektor Teknologi",
+    "name_id": "Pengembangan Drone Male Kombatan (Male Unmaned Combat Aerial Vehicle)",
+    "location": "Nasional",
+    "active": true
+  },
+  {
+    "no": 221,
+    "section": "K. Sektor Teknologi",
+    "name_id": "Pengembangan Teknologi Produksi IVO dan Bensin Sawit dengan Katalis Merah Putih yang Terintegrasi dengan Kebun Rakyat",
+    "location": "Nasional",
+    "active": true
+  },
+  {
+    "no": 222,
+    "section": "K. Sektor Teknologi",
+    "name_id": "Pengembangan Industri Garam",
+    "location": "Nasional",
+    "active": true
+  },
+  {
+    "no": 223,
+    "section": "K. Sektor Teknologi",
+    "name_id": "Palapa Ring Integrasi",
+    "location": "Nasional",
+    "active": true
+  },
+  {
+    "no": 224,
+    "section": "L. Sektor Pendidikan",
+    "name_id": "Pembangunan Kampus Universitas Islam Internasional Indonesia",
+    "location": "Provinsi Jawa Barat",
+    "active": true
+  },
+  {
+    "no": 225,
+    "section": "M. Sektor Pariwisata",
+    "name_id": "Proyek Pariwisata Seribu Pulau di Kepulauan Seribu",
+    "location": "Provinsi Daerah Khusus Ibukota Jakarta",
+    "active": true
+  },
+  {
+    "no": 226,
+    "section": "M. Sektor Pariwisata",
+    "name_id": "Dihapus",
+    "location": "Dihapus",
+    "active": false
+  },
+  {
+    "no": 227,
+    "section": "N. Sektor Pertanian dan Perkebunan",
+    "name_id": "Pembangunan Kelapa Dalam dan Industri Turunannya",
+    "location": "Provinsi Papua Barat Daya",
+    "active": true
+  },
+  {
+    "no": 228,
+    "section": "N. Sektor Pertanian dan Perkebunan",
+    "name_id": "Pengembangan Lahan Sawah Rawa Pasang Surut Tanah Mineral dan Rawa Lebak Tanah Mineral",
+    "location": "Provinsi Sumatera Selatan",
+    "active": true
+  }
+]

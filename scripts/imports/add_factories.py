@@ -1,6 +1,6 @@
-"""Add the Track 2C factory universe to the curated tables.
+"""Add the Track 2C factory reference set to the curated tables.
 
-The universe is PSN manufacturing plants plus private plants with investment
+The reference set is PSN manufacturing plants plus private plants with investment
 of at least Rp 1 trillion, operating, under construction or stalled. Estates
 and pure mining pits are excluded. Each row carries capacity or investment, a
 status source, a verification date and a plant-level location.

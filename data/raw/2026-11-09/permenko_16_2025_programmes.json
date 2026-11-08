@@ -1,0 +1,152 @@
+[
+  {
+    "no": 1,
+    "name_id": "Program Ketenagalistrikan",
+    "description": "Program Ketenagalistrikan terdiri dari: a. Pembangunan Infrastruktur Ketenagalistrikan (PIK) (daftar proyek diatur dalam Peraturan Presiden tentang Percepatan Pembangunan Infrastruktur Ketenagalistrikan); b. Pengembangan Pembangkit Listrik Tenaga Surya (PLTS) Atap Nasional; c. Pembangunan Pembangkit Listrik Tenaga Surya (PLTS) Skala Besar di Kepulauan Riau; dan d. Pengembangan Pembangkit Listrik Tenaga Air Sungai Mentarang di Kalimantan Utara.",
+    "active": true
+  },
+  {
+    "no": 2,
+    "name_id": "Program Pemerataan Ekonomi",
+    "description": "Percepatan Penyelesaian Pengukuhan Kawasan Hutan, Perhutanan Sosial, Reforma Agraria, Pendidikan dan Pelatihan Vokasi, Peremajaan Kebun Rakyat, dan Lahan Pertanian bagi Masyarakat Korban Konflik di Provinsi Aceh.",
+    "active": true
+  },
+  {
+    "no": 3,
+    "name_id": "Program Pengembangan Kawasan Perbatasan",
+    "description": "10 Pos Lintas Batas Negara (PLBN), Jalan Perbatasan Provinsi Kalimantan Timur, Jalan Paralel Perbatasan Provinsi Kalimantan Utara dan Jalan Akses Perbatasan Kalimantan Utara.",
+    "active": true
+  },
+  {
+    "no": 4,
+    "name_id": "Program Pengembangan Jalan Akses Exit Toll",
+    "description": "58 lokasi Exit Toll pada 10 Provinsi.",
+    "active": true
+  },
+  {
+    "no": 5,
+    "name_id": "Program Pengembangan Kawasan Strategis Pariwisata Nasional",
+    "description": "Fokus lokasi di DPSP Danau Toba, DPSP Borobudur, DPSP Mandalika, DPSP Labuan Bajo, dan DPSP Likupang.",
+    "active": true
+  },
+  {
+    "no": 6,
+    "name_id": "Dihapus",
+    "description": "Dihapus",
+    "active": false
+  },
+  {
+    "no": 7,
+    "name_id": "Program Pembangunan Smelter",
+    "description": "Program Pembangunan Smelter terdiri dari: a. Pembangunan 8 (delapan) Fasilitas Pengolahan dan Pemurnian Komoditas Nikel oleh: 1) PT Artabumi Sentra Industri di Morowali, Sulawesi Tengah; 2) PT Wanxiang Nickel Indonesia di Morowali, Sulawesi Tengah; 3) PT Artha Mining Industry di Bombana, Sulawesi Tenggara; 4) PT Ceria Nugraha Indotama di Kolaka, Sulawesi Tenggara; 5) PT Macika Mineral Industri di Konawe Selatan, Sulawesi Tenggara; 6) PT Virtue Dragon Nickel Industry di Konawe, Sulawesi Tenggara; 7) PT Aneka Tambang P3FH di Halmahera Timur, Maluku Utara; dan 8) PT Aneka Tambang Niterra Haltim di Halmahera Timur, Maluku Utara. b. Pembangunan 3 (tiga) Fasilitas Pengolahan dan Pemurnian Komoditas Bauksit oleh: 1) PT Dinamika Sejahtera Mandiri di Sanggau, Kalimantan Barat; 2) PT Well Harvest Winning Alumina Refinery (ekspansi) di Ketapang, Kalimantan Barat; dan 3) PT Tianshan Alumina Indonesia di Lingga, Kepulauan Riau. c. Pembangunan 2 (dua) Fasilitas Pengolahan dan Pemurnian Komoditas Tembaga oleh: 1) PT Freeport Indonesia di Gresik, Jawa Timur; dan 2) PT Amman Mineral Industri di Sumbawa Barat, Nusa Tenggara Barat. d. Pembangunan 1 (satu) Fasilitas Pengolahan dan Pemurnian Komoditas Pasir Besi dan Vanadium oleh PT Alchemist Metal Industry di Halmahera Utara, Maluku Utara. e. Pembangunan Fasilitas Pengolahan dan Pemurnian Komoditas Nikel Terintegrasi dengan Penambangan: 1) Smelter PT Bahodopi Nickel Smelting Indonesia dan Tambang PT Vale Indonesia Blok Bahodopi di Morowali, Provinsi Sulawesi Tengah; dan 2) Smelter PT Kolaka Nikel Indonesia dan Tambang PT Vale Indonesia Blok Pomala di Kolaka, Provinsi Sulawesi Tenggara. f. Pembangunan Fasilitas Pengolahan dan Pemurnian Komoditas Nikel Terintegrasi dengan Penambangan serta Kawasan Industri dalam rangka Pengembangan EV Battery Nasional PT Aneka Tambang Group, PT Industri Baterai Indonesia, serta mitranya di Halmahera Timur, Provinsi Maluku Utara. g. Pembangunan Fasilitas Pengolahan dan Pemurnian Alumina Terpadu: 1) Pembangunan Fasilitas Pengolahan dan Pemurnian Bauksit oleh PT Borneo Alumina Indonesia di Mempawah, Provinsi Kalimantan Barat Fase I; dan 2) Pembangunan Fasilitas Pengolahan dan Pemurnian Bauksit oleh PT Indonesia Asahan Aluminium/Induk PT Borneo Alumina Indonesia serta mitranya di Mempawah, Provinsi Kalimantan Barat Fase II yang terintegrasi dengan pembangunan smelter kedua oleh PT Indonesia Asahan Aluminium serta mitranya di Kuala Tanjung, Provinsi Sumatera Utara.",
+    "active": true
+  },
+  {
+    "no": 8,
+    "name_id": "Program Peningkatan Penyediaan Pangan Nasional",
+    "description": "Program Peningkatan Penyediaan Pangan Nasional dalam rangka Mendukung Ketahanan Pangan.",
+    "active": true
+  },
+  {
+    "no": 9,
+    "name_id": "Program Pengembangan Superhub",
+    "description": "Bali - Nusa Tenggara, Kalimantan Timur, Sulawesi Utara dan Integrasi PT Pelindo I, PT Pelindo II, PT Pelindo III, dan PT Pelindo IV ke dalam PT Pelindo II.",
+    "active": true
+  },
+  {
+    "no": 10,
+    "name_id": "Program Percepatan Pengembangan Wilayah yang ditetapkan dalam Peraturan Presiden mengenai Percepatan Pembangunan Ekonomi Kawasan dan Peraturan mengenai Ibu Kota Negara",
+    "description": "Program terdiri dari: a. Percepatan Pembangunan Kawasan Strategis Nasional Ibu Kota Negara dan Infrastruktur Pendukung Ibu Kota Negara yang berpedoman pada Undang-Undang Nomor 3 Tahun 2022 tentang Ibu Kota Negara dan Peraturan Presiden Nomor 63 Tahun 2022 tentang Perincian Rencana Induk Ibu Kota Nusantara beserta perubahannya; b. Percepatan Pengembangan Wilayah yang ditetapkan dalam Peraturan Presiden tentang Percepatan Pembangunan Ekonomi Kawasan Kendal - Semarang - Salatiga - Demak - Grobogan, Kawasan Purworejo - Wonosobo - Magelang - Temanggung, dan Kawasan Brebes - Tegal - Pemalang; c. Percepatan Pengembangan Wilayah yang ditetapkan dalam Peraturan Presiden tentang Percepatan Pembangunan Ekonomi di Kawasan Gresik - Bangkalan - Mojokerto - Surabaya - Sidoarjo - Lamongan, Kawasan Bromo - Tengger - Semeru, serta Kawasan Selingkar Wilis dan Lintas Selatan; d. Percepatan Pengembangan Wilayah yang ditetapkan dalam Peraturan Presiden tentang Rencana Induk Pengembangan Kawasan Perdagangan Bebas dan Pelabuhan Bebas Batam, Bintan, dan Karimun; e. Percepatan Pembangunan Kawasan Rebana dan Kawasan Jawa Barat Bagian Selatan; dan f. Percepatan Pengembangan Wilayah Lainnya yang ditetapkan dalam ketentuan peraturan perundang- undangan.",
+    "active": true
+  },
+  {
+    "no": 11,
+    "name_id": "Program Pengembangan Kawasan Ekonomi Khusus",
+    "description": "Kawasan Ekonomi Khusus yang ditetapkan oleh Presiden.",
+    "active": true
+  },
+  {
+    "no": 12,
+    "name_id": "Program Revitalisasi Industri Gula Nasional dan Hilirisasi Industri Kelapa Sawit",
+    "description": "Integrasi Grup PT Perkebunan Nusantara melalui pembentukan SugarCo, PalmCo, dan SupportingCo.",
+    "active": true
+  },
+  {
+    "no": 13,
+    "name_id": "Program Pengembangan Kawasan Eco-City",
+    "description": "Pengembangan Kawasan Rempang Eco- City di Provinsi Kepulauan Riau sesuai dengan masterplan.",
+    "active": true
+  },
+  {
+    "no": 14,
+    "name_id": "Program Pertumbuhan Industri Pariwisata dan Penerbangan",
+    "description": "Peningkatan Konektivitas Udara dalam rangka Pertumbuhan Industri Pariwisata dan Penerbangan.",
+    "active": true
+  },
+  {
+    "no": 15,
+    "name_id": "Program Pengoperasian dan Modernisasi Jalan Tol",
+    "description": "Penerapan Multi-Lane Free Flow (MLFF) untuk Pengoperasian dan Modernisasi Jalan Tol.",
+    "active": true
+  },
+  {
+    "no": 16,
+    "name_id": "Program Pengendalian Banjir, Penanganan Kemacetan, dan Peningkatan Kelayakhunian di Provinsi Daerah Khusus Ibukota Jakarta",
+    "description": "Program Pengendalian Banjir, Penanganan Kemacetan, dan Peningkatan Kelayakhunian di Provinsi Daerah Khusus Ibukota Jakarta terdiri dari: a. Pembangunan Simpang Tidak Sebidang; b. Pembangunan Infrastruktur Pengendalian Banjir; c. Pengembangan Infrastruktur Transportasi; dan d. Pengembangan Fasilitas Pengolahan Sampah Terpadu.",
+    "active": true
+  },
+  {
+    "no": 17,
+    "name_id": "Program Makan Bergizi Gratis",
+    "description": "Nasional.",
+    "active": true
+  },
+  {
+    "no": 18,
+    "name_id": "Program Sekolah Rakyat",
+    "description": "Nasional.",
+    "active": true
+  },
+  {
+    "no": 19,
+    "name_id": "Program Koperasi Desa/Kelurahan Merah Putih",
+    "description": "Nasional.",
+    "active": true
+  },
+  {
+    "no": 20,
+    "name_id": "Program Digitalisasi Pendidikan",
+    "description": "Nasional.",
+    "active": true
+  },
+  {
+    "no": 21,
+    "name_id": "Program Pengentasan Kemiskinan",
+    "description": "Nasional.",
+    "active": true
+  },
+  {
+    "no": 22,
+    "name_id": "Program Pengelolaan Sampah Terpadu",
+    "description": "Daftar proyek berpedoman pada Peraturan Presiden.",
+    "active": true
+  },
+  {
+    "no": 23,
+    "name_id": "Program Swasembada Pangan, Energi, dan Air Nasional Merauke, Mappi, Asmat, dan Boven Digoel (termasuk antara lain pengembangan Kawasan Sentra Produksi Pangan (KSPP) berupa Cetak Sawah, Pengembangan Sawit, dan Pengembangan Peternakan, serta sarana pendukung lainnya)",
+    "description": "Provinsi Papua Selatan.",
+    "active": true
+  },
+  {
+    "no": 24,
+    "name_id": "Program Revitalisasi Tambak Pantura di Kabupaten Bekasi, Kabupaten Karawang, Kabupaten Subang, dan Kabupaten Indramayu",
+    "description": "Provinsi Jawa Barat.",
+    "active": true
+  },
+  {
+    "no": 25,
+    "name_id": "Program Pengembangan Budi Daya Udang Terintegrasi (Integrated Shrimp Farming) di Kabupaten Sumba Timur",
+    "description": "Provinsi Nusa Tenggara Timur.",
+    "active": true
+  }
+]

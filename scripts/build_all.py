@@ -22,6 +22,7 @@ from data_model import DERIVED, EXPORTS, ROOT, SITE_DATA, SITE_DOWNLOADS
 
 STEPS = [
     ("validate curated tables", "pipeline/validate.py"),
+    ("build PSN reconciliation", "pipeline/build_psn_ledger.py"),
     ("build flat project export", "pipeline/build_projects.py"),
     ("build data dictionary", "pipeline/build_dictionary.py"),
     ("build freshness report", "pipeline/freshness.py"),
@@ -33,6 +34,7 @@ STEPS = [
 
 GENERATED = [
     EXPORTS / "projects.csv",
+    DERIVED / "psn_reconciliation.csv",
     DERIVED / "factories_2026.csv",
     DERIVED / "freshness_report.csv",
     DERIVED / "claims_audit.csv",

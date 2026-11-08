@@ -9,6 +9,10 @@ or public release was made.
 deliverables; the evidence is in this document, `CHANGELOG.md` and
 `docs/evidence/phase-3/`.
 
+> **Historical snapshot.** The counts below describe the v3 release on
+> 8 November 2026. V4 added the PSN register and reconciliation ledger; the
+> current build has 19 curated tables and 26 generated files.
+
 **Current build:** 107 projects, 178 estates and SEZs, 70 organisations, 89
 sources, 5 corridors, 44 segments, 6 events, 18 investments, 479 project
 claims, 20 estate claims and 19 conflicts. Validation passes, the site check

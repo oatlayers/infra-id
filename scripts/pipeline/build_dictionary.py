@@ -34,8 +34,9 @@ TABLE_META = {
     "corridor_segments.csv": ("Corridor segments", "Section, phase or package rows behind a corridor table."),
     "estates.csv": ("Estates and SEZs", "Industrial estates and special economic zones."),
     "estate_sources.csv": ("Estate claims", "One atomic fact per estate-source link."),
-    "coverage_targets.csv": ("Coverage targets", "The universe and target count for every data layer."),
+    "coverage_targets.csv": ("Coverage targets", "The reference set and target count for every data layer."),
     "conflicts.csv": ("Conflict register", "Known disagreements between sources, with both values and resolutions."),
+    "psn_register.csv": ("PSN register", "The 226 active projects and 24 active programmes in Permenko 16/2025, with deleted slots retained for audit."),
 }
 
 FIELD = {
@@ -135,7 +136,7 @@ FIELD = {
     "label": ("text", "yes", "Human-readable layer label."),
     "unit": ("text", "yes", "Unit counted by the coverage target."),
     "target_count": ("integer", "yes", "Target number of rows for the layer."),
-    "universe": ("text", "yes", "Definition of the target universe."),
+    "reference_set": ("text", "yes", "Definition of the target reference set."),
     "definition": ("text", "yes", "What the corridor includes and excludes."),
     "metric": ("text", "yes", "Metric used for the corridor figure."),
     "total_km": ("decimal", "yes", "Published corridor total in kilometres."),
@@ -145,6 +146,10 @@ FIELD = {
     "value_a": ("text", "yes", "First value, with its date or scope when needed."),
     "value_b": ("text", "yes", "Second value, with its date or scope when needed."),
     "resolution": ("text", "yes", "What the atlas does with the conflict."),
+    "psn_no": ("integer", "yes", "Official number in the Permenko 16/2025 annex; project and programme numbers are separate sequences."),
+    "sector_code": ("text", "yes", "Official annex letter A-N for projects, or programme for the programme section."),
+    "name_id": ("text", "yes", "Official Indonesian name as printed in the regulation."),
+    "location": ("text", "no", "Official location text as printed in the regulation."),
 }
 
 # Context-specific overrides: status and type mean different things by table.
@@ -171,6 +176,10 @@ OVERRIDES = {
     ("project_sources.csv", "claim"): ("enum", "yes", "One atomic fact type; commas are not allowed.", ""),
     ("estate_sources.csv", "claim"): ("enum", "yes", "One atomic fact type; commas are not allowed.", ""),
     ("project_organizations.csv", "role"): ("enum", "yes", "sponsor, operator, contractor, lender, off_taker, developer or owner.", "sponsor; operator; contractor; lender; off_taker; developer; owner"),
+    ("psn_register.csv", "kind"): ("enum", "yes", "project or programme.", "project; programme"),
+    ("psn_register.csv", "status"): ("enum", "yes", "active or deleted in the current annex.", "active; deleted"),
+    ("psn_register.csv", "sector"): ("enum", "yes", "Normalised sector key used by the reconciliation ledger.", "roads_and_bridges; ports; airports; railways; industrial_areas; housing; dams_and_irrigation; water_and_sanitation; coastal_defence; energy; technology; education; tourism; agriculture; programme"),
+    ("psn_register.csv", "description"): ("text", "no", "Programme description from the annex; blank for projects.", ""),
 }
 
 CONDITIONAL = {

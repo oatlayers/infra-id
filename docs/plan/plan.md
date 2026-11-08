@@ -1,9 +1,12 @@
 # Indonesia Infrastructure Atlas — V4 Plan
 
-**Status:** V4 planning, 8 November 2026. The released site is still the v3
-build: 107 projects, 178 estates and SEZs, 5 corridors, 44 segments, 479 atomic
-claims and 89 sources, with a deterministic local build and a browser smoke
-test. **Nothing in this V4 plan has been implemented yet.**
+**Status:** V4 foundation started, 9 November 2026. The released site is still
+the v3 build: 107 projects, 178 estates and SEZs, 5 corridors, 44 segments, 479
+atomic claims and 91 sources, with a deterministic local build and a browser
+smoke test. The first V4 increment is now in the repository: the official
+Permenko 16/2025 register (226 active projects and 24 active programmes) and a
+reconciliation ledger showing 89 matched project or estate records and 161 open
+records. The new map, navigation and bilingual layers are still unimplemented.
 
 **Supersedes:** the roadmap, scope and "where to pick up" sections of
 [`plan-v3.md`](plan-v3.md). The v1–v3 history, phase records and decisions stay
@@ -41,7 +44,8 @@ Appendices: [A](#appendix-a--current-data-model-v3) ·
 [C](#appendix-c--research-notes) ·
 [D](#appendix-d--named-backlog-starter) ·
 [E](#appendix-e--v1v3-history) ·
-[F](#appendix-f--open-decisions)
+[F](#appendix-f--open-decisions) ·
+[G](#appendix-g--execution-log)
 
 ---
 
@@ -50,7 +54,7 @@ Appendices: [A](#appendix-a--current-data-model-v3) ·
 V4 turns the atlas from a **PSN project map** into a **bilingual national
 delivery atlas**. It does five things:
 
-1. **Completes the project universe.** Reconcile the full PSN list, the eight
+1. **Completes the project reference set.** Reconcile the full PSN list, the eight
    national priority programmes (PKPN), IKN, the 2024–2029 flagship portfolio
    and the largest private projects, then add the missing sectors: dams and
    irrigation, water and sanitation, power generation and transmission, housing,
@@ -73,14 +77,14 @@ delivery atlas**. It does five things:
 
 | Dimension | Today | V4 target |
 |---|---:|---:|
-| Project records | 107 | **400+** (228 PSN + 172 strategic/private records) |
-| Programmes | 0 | **8 PKPN** plus 40–60 sub-programmes |
+| Project records | 107 | **400+** (226 PSN + 174 strategic/private records) |
+| Programmes | 0 | **8 PKPN + 24 PSN programmes** plus 40–60 sub-programmes |
 | Companies / organisations | 70 | **300** (top 100 complete) |
 | Estates and SEZs | 178 | **200+** unique records (25 KEK + 179 industrial estates + 2026 additions) |
 | Corridors / segments | 5 / 44 | 5 / **100+** |
 | Atomic claims | 479 | **1,500+** |
 | Indicators | 0 | **300+** |
-| Sources | 89 | **250+** |
+| Sources | 91 | **250+** |
 | UI languages | 1 (English) | **2** (English + Indonesian) |
 | Data translation coverage | 0% | **100%** of names, summaries and programmes |
 | Initial site payload | ~1.9 MB total | **< 1.5 MB initial**, < 5 MB total |
@@ -90,7 +94,7 @@ delivery atlas**. It does five things:
 | Release | Theme | Main outcome |
 |---|---|---|
 | **4.0** | Foundation | IA, tokens, bilingual shell, schema v4, audit |
-| **4.1** | PSN complete | 228 PSN records reconciled; missing roads, dams, energy, IKN |
+| **4.1** | PSN complete | 226 projects and 24 programmes reconciled; missing roads, dams, energy, IKN |
 | **4.2** | Industry and companies | 300 organisations, 200 estates, hilirisasi, social infrastructure |
 | **4.3** | Experience rebuild | New navigation, map v3, Programme/Company/Timeline views |
 | **4.4** | Bilingual complete | Full Indonesian UI and data, formatting, QA |
@@ -130,9 +134,12 @@ But the distribution is skewed to projects that were already visible by 2024:
 
 The government's own reporting gives the scale V4 has to cover:
 
-- **228 PSN and 24 KEKs** were reported at the November 2024 cabinet meeting;
-  the KEK Secretariat now lists **25 SEZ detail pages**. The current atlas has
-  107 project records, so it is far from the full PSN universe.
+- **Permenko 16/2025** sets **226 active PSN projects and 24 active PSN
+  programmes** (228 project slots with 2 deleted, 25 programme slots with 1
+  deleted). The KEK Secretariat lists **25 SEZ detail pages**. The current
+  atlas has 107 project records and matches **89 of the 226 active PSN
+  project or estate records**; 137 project or estate records and all 24
+  programmes are still missing.
 - The **2027 budget speech (14 August 2026)** frames eight **PKPN**: food
   sovereignty; energy and water independence; education; health; downstreaming
   and industrialisation; infrastructure; housing; and disaster resilience,
@@ -397,19 +404,20 @@ route.
 | `estates` | KEK or industrial estate | Industrial geography |
 | `geometry` | point, line or polygon | Map layer with precision and source |
 | `translations` | translated field | Locale, text, status, reviewer |
-| `coverage_targets` | expected universe | Coverage dashboard |
+| `coverage_targets` | expected reference set | Coverage dashboard |
 | `laws` | regulation | Legal basis |
 | `project_laws` | project–law relation | Designation and incentives |
 
-### 5.2 Target universe
+### 5.2 Target reference set
 
 The counts are coverage targets, not a promise that every row is complete on
 day one. A record can enter at Tier C and be upgraded.
 
-| Layer | Today | V4 target | Source of the universe |
+| Layer | Today | V4 target | Source of the reference set |
 |---|---:|---:|---|
-| PSN projects and programmes | 107 total; PSN subset unquantified | **228** | Permenko 4/2026; KPPIP |
-| Strategic non-PSN projects | 0 | **172+** | Ministries, Danantara, private announcements |
+| PSN projects | 68 project rows linked; 89 records represented | **226 active** (228 slots, 2 deleted) | Permenko 16/2025; Permenko 4/2026 |
+| PSN programmes | 0 | **24 active** (25 slots, 1 deleted) | Permenko 16/2025 |
+| Strategic non-PSN projects | 0 | **174+** | Ministries, Danantara, private announcements |
 | National programmes (PKPN) | 0 | **8** | 2027 budget speech; RPJMN 2025–2029 |
 | Sub-programmes | 0 | **40–60** | Ministry work plans |
 | IKN packages | 0 | **25** | IKN Authority; Setkab releases |
@@ -423,7 +431,7 @@ day one. A record can enter at Tier C and be upgraded.
 | Corridor segments | 44 | **100+** | KPPIP, PU, BPJT |
 | Claims | 479 | **1,500+** | Every project, company and indicator |
 | Indicators | 0 | **300+** | PKPN targets and ministry reporting |
-| Sources | 89 | **250+** | Official, company, multilateral, news |
+| Sources | 91 | **250+** | Official, company, multilateral, news |
 
 ### 5.3 Inclusion rules
 
@@ -464,14 +472,17 @@ A project is excluded if it is:
 
 #### Roads and bridges
 
-- **Universe:** 54 KPPIP road entries plus the national road programme,
+- **Reference set:** 54 KPPIP road entries plus the national road programme,
   1,151 km of regional roads, strategic bridges and flyovers.
-- **Gap:** the current 45 roads miss at least nine PSN entries:
-  Bukittinggi–Padang, Rantau Prapat–Kisaran, Pekanbaru–Bangkinang–
-  Payakumbuh–Bukittinggi, Tebing Tinggi–Pematang Siantar–Parapat–Tarutung–
-  Sibolga, Jambi–Rengat, Rengat–Pekanbaru, Dumai–Rantau Prapat,
-  Serpong–Cinere, Cimanggis–Cibitung, the Teluk Lamong flyover,
-  Mamminasata, the Patimban access road and Samarinda–Bontang.
+- **Gap:** the ledger matches 38 of 50 PSN road entries to 33 unique atlas
+  road rows. Twelve PSN roads are missing: Kisaran–Tebing Tinggi;
+  Bukittinggi–Padang Panjang–Lubuk Alung–Padang; Pekanbaru–Bangkinang–
+  Payakumbuh–Bukittinggi; Tebing Tinggi–Pematang Siantar–Parapat–Tarutung–
+  Sibolga; Jambi–Rengat; Rengat–Pekanbaru; Serpong–Cinere;
+  Cimanggis–Cibitung; the Teluk Lamong flyover; the Patimban access road;
+  the New Priok Eastern Access; and the Bandung inner-city toll roads. Six
+  Jakarta inner-city entries map to one aggregate atlas row, and two
+  corridors (Ciawi–Sukabumi and Gilimanuk–Mengwi) are partial matches.
 - **Fields:** length, operational/construction km, progress, concession,
   operator, status, opening date, geometry.
 - **Sources:** BPJT API, KPPIP, PU, Hutama Karya, Jasa Marga, concession
@@ -479,7 +490,7 @@ A project is excluded if it is:
 
 #### Railways
 
-- **Universe:** MRT Jakarta N–S and E–W, LRT Jakarta/Jabodebek/Palembang,
+- **Reference set:** MRT Jakarta N–S and E–W, LRT Jakarta/Jabodebek/Palembang,
   Whoosh and the Surabaya extension, Trans Sulawesi, Kalimantan logistics
   rail, station revitalisation, airport rail links, freight.
 - **Gap:** no station-level assets, no phase-level progress, no Jakarta
@@ -490,7 +501,7 @@ A project is excluded if it is:
 
 #### Airports
 
-- **Universe:** 7 PSN airports plus IKN, North Bali, Kertajati, Soekarno–Hatta
+- **Reference set:** 7 PSN airports plus IKN, North Bali, Kertajati, Soekarno–Hatta
   expansion, major regional upgrades.
 - **Gap:** IKN and North Bali are missing; airport capacity and terminal
   expansion are not modelled.
@@ -500,7 +511,7 @@ A project is excluded if it is:
 
 #### Seaports and ferries
 
-- **Universe:** 15 PSN ports plus Patimban phases, Kuala Tanjung, Bitung,
+- **Reference set:** 15 PSN ports plus Patimban phases, Kuala Tanjung, Bitung,
   Makassar, Benoa, Kijing, fishing ports, RoRo and sea toll.
 - **Gap:** terminals and phases are collapsed into one row; fishing ports are
   missing.
@@ -510,7 +521,7 @@ A project is excluded if it is:
 
 #### Energy
 
-- **Universe:** 100 GW solar programme, 37 electricity projects (3.2 GW +
+- **Reference set:** 100 GW solar programme, 37 electricity projects (3.2 GW +
   11 transmission packages), geothermal, hydro, gas, LNG (Masela, Tangguh),
   RDMP/GRR, waste-to-energy, storage, transmission, rural electrification.
 - **Gap:** zero energy generation or transmission records today.
@@ -520,7 +531,7 @@ A project is excluded if it is:
 
 #### Water, sanitation and flood control
 
-- **Universe:** PSN dams, irrigation schemes, SPAM, Jakarta sewerage, flood
+- **Reference set:** PSN dams, irrigation schemes, SPAM, Jakarta sewerage, flood
   control, the 15-segment Java sea wall, 9,000 km of irrigation, 3,000
   boreholes.
 - **Gap:** zero water records today; the current atlas has no dams despite
@@ -531,7 +542,7 @@ A project is excluded if it is:
 
 #### Industry and downstreaming
 
-- **Universe:** 13 downstreaming stage II projects, 11 IWIP projects, existing
+- **Reference set:** 13 downstreaming stage II projects, 11 IWIP projects, existing
   smelters, petrochemicals, steel, aluminium, battery/EV, pulp/paper,
   fertiliser, food processing, data centres.
 - **Gap:** 27 factories today, but no project-level stage II or IWIP package
@@ -542,7 +553,7 @@ A project is excluded if it is:
 
 #### Estates and SEZs
 
-- **Universe:** 25 KEKs plus 179 industrial estates; 2025 additions and exact
+- **Reference set:** 25 KEKs plus 179 industrial estates; 2025 additions and exact
   boundaries.
 - **Gap:** 178 rows, only 20/40 large estates geocoded, map layer off.
 - **Fields:** type, area, occupancy, developer, legal basis, incentives,
@@ -551,7 +562,7 @@ A project is excluded if it is:
 
 #### Housing, health, education and social infrastructure
 
-- **Universe:** three million houses, 441 RSUD, 10,000 puskesmas, 514 labs,
+- **Reference set:** three million houses, 441 RSUD, 10,000 puskesmas, 514 labs,
   265 Sekolah Rakyat, school renovation, 288,180 IFPs, universities, sports.
 - **Gap:** zero records; these are national programmes with site-level
   examples, not individual procurements.
@@ -952,8 +963,8 @@ Specific moves:
 - **One accent, one alert.** Keep burnt orange for action and under
   construction; reserve red for stalled/cancelled. Do not use accent colour
   for decoration.
-- **Editorial numbers.** Large serif numerals for headline stats (228 PSN,
-  100 GW, 441 RSUD), with a small unit label and a source line.
+- **Editorial numbers.** Large serif numerals for headline stats (226 PSN,
+  24 programmes, 100 GW, 441 RSUD), with a small unit label and a source line.
 - **Status as a system.** Colour + icon + text label, never colour alone.
 
 **What changes, screen by screen**
@@ -1200,7 +1211,8 @@ Target **WCAG 2.2 AA**. Priority checks:
 
 **Scope**
 
-- Reconcile the 228 PSN records against the current 107.
+- Reconcile the 226 active PSN projects and 24 programmes against the current
+  107 project records.
 - Add the missing road entries and all PSN dams, irrigation, water and
   sanitation, energy and housing records.
 - Add IKN Phase 2 and the Nusantara airport.
@@ -1321,7 +1333,8 @@ A record is done when:
 
 ### Data
 
-- PSN coverage: 228/228 records or documented exclusions.
+- PSN coverage: 226/226 active projects and 24/24 programmes, or documented
+  exclusions.
 - Project count: 400+.
 - Claims: 1,500+, with 90% of projects at 2+ claims.
 - Sources: 250+; 80% Tier A/B.
@@ -1372,7 +1385,7 @@ A record is done when:
 
 | Risk | Likelihood | Impact | Mitigation |
 |---|---|---|---|
-| Data collection is larger than expected | High | High | Tiered records; PSN first; 228 target, not 1,000 |
+| Data collection is larger than expected | High | High | Tiered records; PSN first; 226 target, not 1,000 |
 | Official sources are blocked or change | Medium | High | Snapshot to `data/raw/`; use archives; multiple sources |
 | Translation drift and poor quality | High | Medium | Glossary, build checks, native review, status field |
 | Payload growth breaks `file://` | High | High | Per-view bundles, compact arrays, payload budget |
@@ -1387,13 +1400,19 @@ A record is done when:
 
 ## 11. Immediate next actions
 
-1. **Freeze scope.** Add the 228 PSN target and the 400-record cap to this plan
-   and to the coverage targets.
-2. **Snapshot the sources.** Fetch Permenko 4/2026, RPJMN 2025–2029, the KPPIP
-   sector pages, the 2026 and 2027 budget speeches and the KEK list into
-   `data/raw/2026-11-08/`.
-3. **Build the PSN reconciliation ledger.** One row per PSN project: current
-   atlas id, match status, missing fields, owner, next action.
+1. **Freeze scope.** **Done (9 Nov 2026).** The target is 226 active PSN
+   projects plus 24 active programmes, inside the 400-record cap. The counts
+   are in `coverage_targets.csv` and this plan.
+2. **Snapshot the sources.** **Partly done (9 Nov 2026).** Permenko 16/2025 and
+   Permenko 4/2026 are in `data/raw/2026-11-09/` with SHA-256 hashes in
+   `sources.csv`. The RPJMN, KPPIP sector pages, budget speeches and KEK list
+   still need filing.
+3. **Build the PSN reconciliation ledger.** **Done (9 Nov 2026).**
+   `data/curated/psn_register.csv` holds 253 rows (226 active projects, 24
+   active programmes, 3 deleted slots). `data/derived/psn_reconciliation.csv`
+   records 64 direct project matches, 6 aggregate matches, 3 partial matches,
+   16 estate matches, 109 missing projects, 28 missing estates and 24 missing
+   programmes. The build fails if the register loses its official count.
 4. **Pilot IKN and the 2026 flagships.** Add 20 records: IKN Phase 2, Nusantara
    airport, Masela, RDMP Balikpapan, 100 GW phase 1, 13 stage II projects,
    five dams, giant sea wall.
@@ -1452,7 +1471,8 @@ sources, 5 corridors, 44 segments, 6 events, 18 investments and 19 conflicts.
 | Source | URL / access | Use | Caveat |
 |---|---|---|---|
 | KPPIP PSN pages | `kppip.go.id/proyek-strategis-nasional/` | PSN project lists by sector | Site intermittently unreachable; use archive |
-| Permenko 4/2026 | Regulation PDF | Current PSN list | Verify the exact list and dates |
+| Permenko 16/2025 | `peraturan.go.id/files/permenko-perekonomian-no-16-tahun-2025.pdf` | 226 active projects and 24 active programmes; full annex | Snapshot in `data/raw/2026-11-09/`; 2 project slots and 1 programme slot are deleted |
+| Permenko 4/2026 | `peraturan.bpk.go.id/Download/418980/2026PermenkoEkon004.pdf` | Ninth amendment to the PSN list | Amends the smelter programme only; it does not change the 226-project list |
 | RPJMN 2025–2029 | Bappenas | National targets and PKPN | Bappenas blocks some requests; use archive |
 | Setkab releases | `setkab.go.id` | Groundbreakings, inaugurations, delivery stats | Official but political framing |
 | PU | `pu.go.id` | Roads, dams, irrigation, water | Project pages vary |
@@ -1472,12 +1492,22 @@ sources, 5 corridors, 44 segments, 6 events, 18 investments and 19 conflicts.
 
 ## Appendix C — Research notes
 
-- The November 2024 cabinet meeting reported **228 PSN and 24 KEKs**. The
-  current atlas has 107 project records, so the PSN reconciliation is the
-  single largest data task.
-- KPPIP's road page lists **54 entries**; the atlas has **45 roads**. At least
-  nine PSN road entries are missing, plus the Patimban access road and the
-  Samarinda–Bontang toll road.
+- Permenko 16/2025 sets **226 active projects and 24 active programmes**. The
+  annex keeps 228 project numbers and 25 programme numbers; project 112
+  (Kawasan Industri), project 226 (Sektor Pariwisata) and programme 6 are
+  marked deleted. Total investment is reported at Rp 6,491 trillion.
+- The reconciliation ledger matches **89 of 226 active PSN records**: 73
+  project rows and 16 estate rows. **137 project or estate records and all 24
+  programmes are missing.** Airports (7/7), ports (15/15) and railways (13/13)
+  are complete; roads are 38/50; industrial areas 16/44; dams and irrigation
+  0/57; water and sanitation 0/9; energy 0/18.
+- KPPIP's road page lists **54 entries**; the atlas has **45 roads**. The
+  ledger matches 38 PSN road entries to 33 unique atlas rows and finds 12
+  missing PSN roads, including Kisaran–Tebing Tinggi, Bukittinggi–Padang,
+  Pekanbaru–Bangkinang–Payakumbuh–Bukittinggi, Jambi–Rengat,
+  Rengat–Pekanbaru, Serpong–Cinere, Cimanggis–Cibitung, the Teluk Lamong
+  flyover, the Patimban access road, the New Priok Eastern Access and the
+  Bandung inner-city toll roads.
 - The 2027 budget speech lists eight PKPN: food sovereignty; energy and water
   independence; education; health; downstreaming and industrialisation;
   infrastructure; housing; disaster resilience, people's economy and village
@@ -1510,12 +1540,12 @@ type.
 
 **Roads and bridges**
 
-- Missing PSN roads: Bukittinggi–Padang Panjang–Lubuk Alung–Padang;
-  Rantau Prapat–Kisaran; Pekanbaru–Bangkinang–Payakumbuh–Bukittinggi;
-  Tebing Tinggi–Pematang Siantar–Parapat–Tarutung–Sibolga; Jambi–Rengat;
-  Rengat–Pekanbaru; Dumai–Rantau Prapat; Serpong–Cinere;
-  Cimanggis–Cibitung; Teluk Lamong flyover; Mamminasata; Patimban access;
-  Samarinda–Bontang.
+- Missing PSN roads: Kisaran-Tebing Tinggi; Bukittinggi-Padang Panjang-
+  Lubuk Alung-Padang; Pekanbaru-Bangkinang-Payakumbuh-Bukittinggi;
+  Tebing Tinggi-Pematang Siantar-Parapat-Tarutung-Sibolga; Jambi-Rengat;
+  Rengat-Pekanbaru; Serpong-Cinere; Cimanggis-Cibitung; Teluk Lamong
+  flyover; Patimban access; New Priok Eastern Access; Bandung inner-city
+  toll roads.
 - Strategic pipeline: JORR 3, Demak–Tuban, Pejagan/Tegal–Cilacap,
   Cilacap–Yogyakarta, Gilimanuk–Mengwi, Semarang Harbour.
 - National road programme: 1,151 km of regional roads, 2,228 km of Inpres
@@ -1622,8 +1652,9 @@ programme, company, estate and bilingual layers on top.
 
 1. **English or Indonesian default at the root?** Recommendation: a chooser
    with browser-language detection, English fallback.
-2. **228 PSN records or 400 total?** Recommendation: both, in separate
-   coverage targets; 228 is the PSN universe, 400 is the atlas cap.
+2. **226 PSN projects or 400 total?** Recommendation: both, in separate
+   coverage targets; 226 active projects plus 24 programmes is the PSN
+   reference set, 400 is the atlas cap.
 3. **How much company financial data?** Recommendation: profile-level only in
    V4; no full financial statements.
 4. **How many social infrastructure sites?** Recommendation: programme-level
@@ -1631,3 +1662,17 @@ programme, company, estate and bilingual layers on top.
 5. **When to enable the estate map layer?** Recommendation: when 80% of rows
    have better than regency-centroid precision.
 6. **When to publish?** Only when the repository owner asks. V4 remains local.
+
+## Appendix G — Execution log
+
+| Date | Increment | Evidence |
+|---|---|---|
+| 2026-11-09 | Official PSN register and reconciliation | `data/raw/2026-11-09/permenko_16_2025.pdf`, `permenko_4_2026.pdf` and the parsed text; `data/curated/psn_register.csv` (253 rows); `data/derived/psn_reconciliation.csv` (253 rows); new `scripts/pipeline/build_psn_ledger.py` step in `build_all.py`; 200-field dictionary across 19 tables. |
+
+**Reconciliation result at 9 November 2026:** 89 of 226 active PSN records
+matched: 73 PSN records map to 68 unique project rows and 16 map to estates;
+137 project or estate records and 24 programmes are missing. Airports, ports
+and railways are complete; roads 38/50; industrial areas 16/44; dams and
+irrigation 0/57; water and sanitation 0/9;
+energy 0/18. The build now fails if the register does not contain exactly 226
+active projects, 24 active programmes and 3 deleted slots.
