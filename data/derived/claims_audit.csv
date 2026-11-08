@@ -4,7 +4,7 @@ tol-binjai-langsa,Binjai–Langsa Toll Road,road,official,5,1,yes,yes,yes,yes,ye
 tol-padang-pekanbaru,Padang–Pekanbaru Toll Road,road,official,5,1,yes,yes,yes,yes,yes,yes,yes,yes,none,"BPJT: Operasi Sebagian, 91.04 of 254.8 km operational, 9.11 km under construction. Padang–Sicincin (36 km) opened 28 May 2025."
 tol-bengkulu-lubuk-linggau,Bengkulu–Lubuk Linggau Toll Road,road,official,5,1,yes,yes,yes,yes,yes,yes,yes,yes,none,"BPJT: Operasi Sebagian, 16.73 of 95.8 km operational; no active construction km recorded."
 tol-kayu-agung-palembang-betung,Kayu Agung–Palembang–Betung Toll Road,road,official,5,1,yes,yes,yes,yes,yes,yes,yes,yes,none,English Wikipedia: 42.5 of 111.7 km operational. BPJT lists only Kayuagung–Palembang (37.62 of 42.5 km operational); the Palembang–Betung link is covered by the Betung–Tempino–Jambi row.
-tol-kuala-tanjung-tebing-tinggi-parapat,Kuala Tanjung–Tebing Tinggi–Parapat Toll Road,road,single,4,1,yes,yes,yes,yes,yes,yes,yes,yes,none,idwiki: 125.45 of 143.25 km operational; remaining sections under construction. Kuala Tanjung–Indrapura (10.15 km) opened in 2025.
+tol-kuala-tanjung-tebing-tinggi-parapat,Kuala Tanjung–Tebing Tinggi–Parapat Toll Road,road,single,5,2,yes,yes,yes,yes,yes,yes,yes,yes,none,idwiki: 125.45 of 143.25 km operational; remaining sections under construction. Kuala Tanjung–Indrapura (10.15 km) opened in 2025.
 tol-betung-tempino-jambi,Betung–Tempino–Jambi Toll Road,road,official,5,1,yes,yes,yes,yes,yes,yes,yes,yes,none,"BPJT: Operasi Sebagian, 52.59 of 170.73 km operational, 118.14 km under construction."
 tol-depok-antasari,Depok–Antasari Toll Road,road,official,5,1,yes,yes,yes,yes,yes,yes,yes,yes,none,"BPJT: Operasi Sebagian, 12.1 of 27.94 km operational; no active construction km recorded."
 tol-jakarta-inner-ring-road-2,Jakarta Inner Ring Road 2 (6 Inner City Toll Roads),road,official,5,1,yes,yes,yes,yes,yes,yes,yes,yes,none,"BPJT: 6 Ruas Tol DKI, Operasi Sebagian, 9.287 of 29.67 km operational; no active construction km recorded."
@@ -130,3 +130,12 @@ dam-rukoh,Rukoh Dam,water,dual,4,2,yes,yes,yes,yes,yes,yes,yes,yes,none,Inaugura
 dam-jlantah,Jlantah Dam,water,dual,4,2,yes,yes,yes,yes,yes,yes,yes,yes,none,Inaugurated 10 July 2026.
 dam-sidan,Sidan Dam,water,dual,4,2,yes,yes,yes,yes,yes,yes,yes,yes,none,Inaugurated 10 July 2026.
 coastal-java-sea-wall,Giant Java Sea Wall (Pantura),coastal,dual,5,2,yes,yes,yes,yes,yes,yes,yes,yes,none,Master plan being refined; construction targeted for early 2027 across 15 segments from Banten to Gresik.
+tol-kisaran-tebing-tinggi,Kisaran–Tebing Tinggi Toll Road,road,dual,4,2,yes,yes,yes,yes,yes,yes,yes,yes,none,Listed among the Trans Sumatra routes still to be built in June 2026; Phase I is 39.68 km and land acquisition is still being prepared.
+tol-jambi-rengat,Jambi–Rengat Toll Road,road,dual,5,2,yes,yes,yes,yes,yes,yes,yes,yes,none,Location determination completed in 2026; land acquisition targeted for December 2026 and physical construction from 2027.
+tol-rengat-pekanbaru,Rengat–Pekanbaru Toll Road,road,dual,5,2,yes,yes,yes,yes,yes,yes,yes,yes,none,Pekanbaru ring-road section 77% complete in June 2026 and targeted for February 2027; the Rengat–Kampar and Kampar–Pekanbaru sections remain in planning and land acquisition.
+tol-serpong-cinere,Serpong–Cinere Toll Road,road,dual,6,2,yes,yes,yes,yes,yes,yes,yes,yes,none,Fully open since 8 January 2024; 10.14 km across two sections.
+tol-cimanggis-cibitung,Cimanggis–Cibitung Toll Road,road,official,6,1,yes,yes,yes,yes,yes,yes,yes,yes,none,Fully open since July 2024; 26.18 km.
+flyover-teluk-lamong,Teluk Lamong Flyover,road,dual,4,2,yes,yes,yes,yes,yes,yes,yes,yes,none,Physical works 100% complete by June 2026; operational handover still in preparation.
+tol-akses-patimban,Patimban Port Access Toll Road,road,dual,4,2,yes,yes,yes,yes,yes,yes,yes,yes,none,68% physical progress in June 2026; government packages 58–74% and the 14.11 km BUJT section 14%.
+tol-new-priok-eastern-access,New Priok Eastern Access (NPEA),road,dual,4,2,yes,yes,yes,yes,yes,yes,yes,yes,none,"Construction started in 2025; Section I 2.78 km and Section II 3.4 km under way, with operation targeted for 2027."
+tol-bandung-inner-city,Bandung Inner City Toll Road,road,dual,4,2,yes,yes,yes,yes,yes,yes,yes,yes,none,No physical construction as of June 2026; route and financing are still under review.

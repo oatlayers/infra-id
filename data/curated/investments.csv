@@ -21,3 +21,7 @@ inv-masela-abadi,energy-masela-abadi-lng,org-inpex-masela,20.9,USD,390,2026-11-0
 inv-rdmp-balikpapan,energy-rdmp-balikpapan,org-pertamina,7.4,USD,123,2026-11-09,2026,disbursed,mixed,,src-esdm-rdmp-balikpapan-2026-01-12,"US$7.4B, equivalent to Rp123T."
 inv-plts-100gw,energy-plts-100gw-phase-1,org-pln,1140,IDR,1140,2026-11-09,2026,committed,mixed,,src-setneg-plts-100gw-2026-08-25,"Programme-level investment, not phase 1 only."
 inv-java-sea-wall,coastal-java-sea-wall,org-kementerian-pu,80,USD,1320,2026-11-09,2026,announced,mixed,,src-antara-sea-wall-2026-08-16,"US$80B total estimate; Jakarta Bay first phase is US$8-10B. Converted at Rp16,500/USD for ranking only."
+inv-jambi-rengat,tol-jambi-rengat,org-hutama-karya,49.6,IDR,49.6,2026-11-09,2026,announced,mixed,,src-simpul-kpbu-jambi-rengat,Project cost on the PU KPBU page; construction targeted from 2027.
+inv-rengat-pekanbaru,tol-rengat-pekanbaru,org-hutama-karya,41.36,IDR,41.36,2026-11-09,2026,announced,mixed,,src-simpul-kpbu-rengat-pekanbaru,Project cost on the PU KPBU page.
+inv-patimban-access,tol-akses-patimban,org-kementerian-pu,5.02,IDR,5.02,2026-11-09,2026,committed,mixed,,src-binamarga-patimban-2026-06-09,Government package cost; the 14.11 km BUJT section is financed separately.
+inv-bandung-inner-toll,tol-bandung-inner-city,org-kementerian-pu,7.83,IDR,7.83,2026-11-09,2026,announced,mixed,,src-cnbc-bandung-toll-2025-08-10,Indicative project cost.

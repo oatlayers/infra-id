@@ -3,6 +3,20 @@
 Public-facing changes to the atlas. Dates are the day the change landed in this
 repository. The Data view renders these entries from this file at build time.
 
+## 2026-11-09 — PSN road completion
+
+- Added nine road rows for the remaining PSN road entries: Kisaran–Tebing
+  Tinggi, Jambi–Rengat, Rengat–Pekanbaru, Serpong–Cinere, Cimanggis–Cibitung,
+  Teluk Lamong, Patimban access, NPEA and the Bandung inner-city toll.
+- Matched PSN 10 and 11 to the existing Padang–Pekanbaru corridor as aggregate
+  components, and PSN 12 to the existing Kuala Tanjung–Tebing Tinggi–Parapat row
+  as partial coverage. The ledger records both choices.
+- Added 17 sources, 2 organisations, 43 claims, 4 investments and 2 events.
+  Roads are now 50/50; PSN coverage is 110/226 records (94 to 88 project rows and
+  16 to estates); 116 project or estate records and 24 programmes remain.
+- The build now reports 140 projects, 122 sources, 599 claims and 30 events.
+- Nothing was pushed, deployed or published.
+
 ## 2026-11-09 — 2026 flagship batch
 
 - Added 24 flagship records: IKN Phase 2, Nusantara International Airport, Abadi

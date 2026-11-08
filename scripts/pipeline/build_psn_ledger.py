@@ -152,6 +152,33 @@ TRANSPORT_MATCH = {
 # Explicit matches for non-transport projects added in the V4 flagship
 # increment. Values are (atlas project id, match status, confidence, note).
 PROJECT_MATCH = {
+    7: ("tol-kisaran-tebing-tinggi", "matched_project", "high", ""),
+    10: (
+        "tol-padang-pekanbaru",
+        "matched_aggregate",
+        "high",
+        "The Padang-Pekanbaru row covers the Bukittinggi-Padang Panjang-Lubuk Alung-Padang component.",
+    ),
+    11: (
+        "tol-padang-pekanbaru",
+        "matched_aggregate",
+        "high",
+        "The Padang-Pekanbaru row covers the Pekanbaru-Bangkinang-Payakumbuh-Bukittinggi component.",
+    ),
+    12: (
+        "tol-kuala-tanjung-tebing-tinggi-parapat",
+        "matched_partial",
+        "medium",
+        "The atlas row covers Kuala Tanjung-Tebing Tinggi-Parapat; PSN 12 continues to Tarutung and Sibolga.",
+    ),
+    14: ("tol-jambi-rengat", "matched_project", "high", ""),
+    15: ("tol-rengat-pekanbaru", "matched_project", "high", ""),
+    22: ("tol-serpong-cinere", "matched_project", "high", ""),
+    24: ("tol-cimanggis-cibitung", "matched_project", "high", ""),
+    40: ("flyover-teluk-lamong", "matched_project", "high", ""),
+    46: ("tol-akses-patimban", "matched_project", "high", ""),
+    48: ("tol-new-priok-eastern-access", "matched_project", "high", ""),
+    50: ("tol-bandung-inner-city", "matched_project", "high", ""),
     141: ("dam-keureuto", "matched_project", "high", ""),
     147: ("dam-rukoh", "matched_project", "high", ""),
     161: ("dam-sidan", "matched_project", "high", ""),

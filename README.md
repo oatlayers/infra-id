@@ -4,18 +4,18 @@ A curated, source-linked map of major Indonesian infrastructure. Every project
 carries a source and a verification date. The map is deliberately **major and
 curated, not exhaustive**.
 
-- **Live data:** 131 projects — 45 toll-road corridors, 13 railways, 8 airports,
+- **Live data:** 140 projects — 54 toll and PSN roads, 13 railways, 8 airports,
   15 seaports, 34 factories, 9 energy projects, 5 dams and one urban and one
   coastal project — plus 5 Trans corridor summaries, 44 dated corridor segments
-  and 28 project events.
+  and 30 project events.
 - **Transport PSN:** 35 of 35 represented. Status is as of 19 February 2026, the
   date of the Kemenhub review. The Nusantara airport is an additional national
   gateway, not a PSN row.
 - **PSN reconciliation:** the official Permenko 16/2025 list has 226 active
-  projects and 24 active programmes. The atlas matches 98 of the 226 active
-  records: 82 PSN records map to 77 unique project rows and 16 map to estates.
-  Airports (7/7), ports (15/15) and railways (13/13) are complete; coastal
-  defence is 1/1; roads are 38/50, industrial areas 16/44, dams 5/57 and energy
+  projects and 24 active programmes. The atlas matches 110 of the 226 active
+  records: 94 PSN records map to 88 unique project rows and 16 map to estates.
+  Roads (50/50), airports (7/7), ports (15/15), railways (13/13) and coastal
+  defence (1/1) are complete; industrial areas are 16/44, dams 5/57 and energy
   3/18. The register and ledger are
   [`data/curated/psn_register.csv`](data/curated/psn_register.csv) and
   [`data/derived/psn_reconciliation.csv`](data/derived/psn_reconciliation.csv).
@@ -25,20 +25,25 @@ curated, not exhaustive**.
   Balikpapan, the 100 GWp solar programme, the 13 Hilirisasi Stage II projects,
   five dams and the Giant Java Sea Wall. Each has a dated source, a claim and a
   project-level note where only a package total was published.
+- **PSN road completion:** the 12 remaining PSN road entries are resolved. Nine
+  new rows cover the Kisaran–Tebing Tinggi, Jambi–Rengat, Rengat–Pekanbaru,
+  Serpong–Cinere, Cimanggis–Cibitung, Teluk Lamong, Patimban access, NPEA and
+  Bandung inner-city projects; three are matched to existing rows as aggregates
+  or partial coverage.
 - **Estate dataset:** 178 industrial estates and SEZs, shown as a table; the map
   layer is deliberately off until coordinates are verified.
-- **Trust layer:** 556 atomic project claims and 20 estate claims; 131 of 131
+- **Trust layer:** 599 atomic project claims and 20 estate claims; 140 of 140
   projects have a claim for the status and every populated numeric fact. 19
   conflicts are recorded with both values and both sources (11 resolved, 8 open).
-  A 309-row freshness report marks each project and estate fresh, due soon or
+  A 318-row freshness report marks each project and estate fresh, due soon or
   stale. A 200-field data dictionary covers all 19 curated tables.
-- **Last verification:** 9 November 2026 for the 24 flagship rows; 8 November
-  2026 for the road, estate and factory batches; 7 November for transport; and
-  6 November for earlier rows. The 309-row freshness report is fresh as of
-  9 November 2026; the first record falls due on 11 May 2027.
+- **Last verification:** 9 November 2026 for the flagship and PSN-road rows;
+  8 November 2026 for the road, estate and factory batches; 7 November for
+  transport; and 6 November for earlier rows. The 318-row freshness report is
+  fresh as of 9 November 2026; the first record falls due on 11 May 2027.
 - **Status:** Phase 1, Phase 2 and Phase 3 of the v3 overhaul are complete as of
   8 November 2026. Track 2B (estates) is partial and corridor geometry (R6) is
-  deferred, but both are documented gaps. The 45-corridor road target is met.
+  deferred, but both are documented gaps. The 50-entry PSN road reference set is complete.
   Phase 3 ends with a **local release only**: the site is verified from `file://`
   and a local HTTP server. There is **no GitHub remote, push, Pages deployment or
   published URL**. V4 foundation work started on 9 November 2026 with the PSN
@@ -71,26 +76,26 @@ when a source supports that status.
 
 | Layer | Rows | Status | Notes |
 |---|---:|---|---|
-| Toll roads | 45 | 10 operating, 25 under construction, 10 planned | 42 toll-road corridors plus 3 planned Trans Sumatra 0-km concessions |
+| Toll roads | 54 | 12 operating, 29 under construction, 13 planned | 50 PSN road entries plus four additional toll-road rows |
 | Railways | 13 | 6 operating, 5 under construction, 2 planned | 13/13 PSN railways; no rail length or capacity in the source deck |
 | Airports | 8 | 8 operating | 7/7 PSN airports plus Nusantara International (IVD), operating as a special airport |
 | Seaports | 15 | 11 operating, 1 under construction, 1 recently completed, 2 planned | 15/15 PSN seaports; Patimban Phase I-2 still building, Benoa expansion completed 2025 |
 | Transport PSN total | 35 | 24 operating, 1 recently completed, 6 under construction, 4 planned | 35/35; status as of 19 February 2026 |
-| PSN projects (active) | 226 | 98 matched (82 PSN records to 77 project rows + 16 estates) | Permenko 16/2025; 128 project/estate records and 24 programmes outstanding |
+| PSN projects (active) | 226 | 110 matched (94 PSN records to 88 project rows + 16 estates) | Permenko 16/2025; 116 project/estate records and 24 programmes outstanding |
 | PSN programmes (active) | 24 | 0 represented | no programme layer yet |
-| All projects | 131 | 60 operating, 4 recently completed, 51 under construction, 15 planned, 1 stalled | 45 roads, 13 railways, 8 airports, 15 seaports, 34 factories, 9 energy, 5 dams, 1 urban and 1 coastal |
+| All projects | 140 | 62 operating, 4 recently completed, 55 under construction, 18 planned, 1 stalled | 54 roads, 13 railways, 8 airports, 15 seaports, 34 factories, 9 energy, 5 dams, 1 urban and 1 coastal |
 | Energy projects | 9 | 1 operating, 8 under construction | Masela, RDMP Balikpapan, 100 GWp solar and six Hilirisasi Stage II energy projects |
 | Dams | 5 | 5 operating | Meninting, Keureuto, Rukoh, Jlantah and Sidan; inaugurated 10 July 2026 |
 | Urban and coastal | 2 | 1 under construction, 1 planned | IKN Phase 2 and the Giant Java Sea Wall |
 | Trans corridor summaries | 5 | 5 with km totals; 3 with progress series | Sumatra, Java and Papua have a series; Sulawesi and Kalimantan publish route totals only |
 | Corridor segments | 44 | 13 Sumatra, 23 Java, 8 Papua | Section tables only where a published list exists; Sulawesi and Kalimantan are route-total-only |
-| Dated events | 28 | 2018–2026 | Exact dates only; month-end approximations are not used |
+| Dated events | 30 | 2018–2026 | Exact dates only; month-end approximations are not used |
 | Factories | 34 | 19 operating, 3 recently completed, 11 under construction, 1 stalled | 27 capacity figures, 18 investment figures; 17 official, 8 dual, 9 single-source |
 | Industrial estates / SEZs | 178 | 160 industrial-estate designations (153 industrial-only + 7 shared), 25 SEZs | table view only; 25 official SEZ points, 20 OSM points, 133 regency centroids; 19-name gap ledger |
-| Sources | 105 | 43 official, 39 secondary, 23 company | 43 factory-batch sources, 25 individual SEZ profiles, Permenko 16/2025 and 4/2026, the national register, OSM/Nominatim, the corridor series and the 2026 flagship releases; V4 target 250 |
-| Project claims | 556 | 131/131 projects fully claimed | one atomic fact per row; 20 separate estate claims; 264 carry a transcribed value and 199 a source-stated fact date |
+| Sources | 122 | 49 official, 48 secondary, 25 company | 43 factory-batch sources, 25 individual SEZ profiles, Permenko 16/2025 and 4/2026, the national register, OSM/Nominatim, the corridor series, the 2026 flagship releases and the PSN-road batch; V4 target 250 |
+| Project claims | 599 | 140/140 projects fully claimed | one atomic fact per row; 20 separate estate claims; 264 carry a transcribed value and 199 a source-stated fact date |
 | Conflicts | 19 | 11 resolved, 8 open | both values and both sources, with a recorded resolution; downloadable register |
-| Freshness | 309 | 309 fresh as of 2026-11-09 | 131 projects + 178 estates; 183-day threshold; next due 2027-05-11 |
+| Freshness | 318 | 318 fresh as of 2026-11-09 | 140 projects + 178 estates; 183-day threshold; next due 2027-05-11 |
 | Data dictionary | 200 | 19 tables | generated from the schema; field type, required flag, description, allowed values and example |
 
 **Why the transport status counts differ from Kemenhub's summary.** The deck's
@@ -268,6 +273,7 @@ python scripts/imports/build_transport.py         # import the 35 transport rows
 python scripts/imports/add_bpjt_psn_roads.py      # 15 missing PSN toll corridors
 python scripts/imports/add_factories.py           # import the 27 factory rows
 python scripts/imports/add_flagships.py           # import the 24 flagship rows
+python scripts/imports/add_psn_backlog_roads.py   # import the nine remaining PSN roads
 python scripts/tools/geocode_factories.py         # optional; coordinate cache
 python scripts/imports/build_basemap.py           # only when Natural Earth changes
 ```
@@ -285,6 +291,7 @@ What each script does:
 | `imports/add_bpjt_psn_roads.py` | BPJT snapshot + curated tables | 15 new PSN road rows, operators, claims and external IDs | Idempotent; leaves the 27 batch-1 roads in place |
 | `imports/add_factories.py` | Factory research + curated tables | 27 plant rows, 43 sources, 26 organisations and 18 investment rows | Idempotent; replaces each factory’s claims on rerun |
 | `imports/add_flagships.py` | 2026 flagship research + curated tables | 24 project rows, 14 sources, 11 organisations, 77 claims, 4 investments and 22 events | Idempotent; replaces the flagship rows on rerun |
+| `imports/add_psn_backlog_roads.py` | PSN road research + curated tables | 9 project rows, 17 sources, 2 organisations, 43 claims, 4 investments and 2 events | Idempotent; completes the 50-entry PSN road set |
 | `tools/geocode_factories.py` | Nominatim + factory queries | `data/derived/nominatim_factories.json` | Provenance cache only; does not change curated coordinates |
 | `pipeline/build_factories_ledger.py` | Curated project, organisation, link and claim tables | `data/derived/factories_2026.csv` | Frozen review ledger for the 34 factory rows |
 | `pipeline/build_psn_ledger.py` | `psn_register.csv` + curated projects and estates | `data/derived/psn_reconciliation.csv` | Explicit PSN-to-atlas match ledger; fails if the official counts change |
@@ -613,21 +620,21 @@ it writes screenshots and a zero-error report under `docs/evidence/phase-3/`.
   `notes`.
 - **Approximate coordinates.** Batch 1 uses the midpoint of each BPJT endpoint
   pair, so every road row is `precision=approximate`. Bogor Ring Road uses Bogor
-  city centre because the BPJT endpoints are misplaced. Most of the 36 transport
-  points are airport, port or city reference points (Nusantara airport is an
-  exact aerodrome point), and the 34 factory points are plant or industrial-park
-  locators, not surveyed boundaries.
+  city centre because the BPJT endpoints are misplaced. Most transport points
+  are airport, port, road-midpoint or city reference points (Nusantara airport
+  and the Teluk Lamong flyover are exact), and the 34 factory points are plant
+  or industrial-park locators, not surveyed boundaries.
 - **Mixed source quality.** 32 road rows are BPJT-backed (`official`); 13 rely on
   Wikipedia or a single secondary source. All 35 transport rows are backed by the
   Kemenhub deck, but that deck does not give rail lengths or asset capacity. The
   factory batch draws on 43 source rows: 23 company, 18 secondary and 2 official;
   Dexin and Huadi are single-source.
-- **Claim coverage is not claim correctness.** 131/131 projects have the required
-  atomic claims, but 292 of 556 claims do not repeat the value and 357 do not
+- **Claim coverage is not claim correctness.** 140/140 projects have the required
+  atomic claims, but 335 of 599 claims do not repeat the value and 400 do not
   state a fact date; they link to the source without duplicating the project row.
   Twenty-eight projects are single-source. The audit proves coverage, not that
   every source agrees.
-- **Freshness is a date check, not a live re-verification.** All 309 rows are
+- **Freshness is a date check, not a live re-verification.** All 318 rows are
   fresh as of 9 November 2026 because they were curated in the 6–9 November
   batches. The first record falls due on 11 May 2027; the monthly runbook is the
   real test.
@@ -652,13 +659,13 @@ it writes screenshots and a zero-error report under `docs/evidence/phase-3/`.
   by January 2025 plus 23.515 km Gending–Paiton opened on 7 September 2026.
   Paiton–Besuki is derived as 26.185 km (49.70 − 23.515), while the section list
   prints 25.60 km, a 0.585 km discrepancy recorded in the notes.
-- **Event coverage is still thin.** Twenty-eight exact-dated events are recorded,
+- **Event coverage is still thin.** Thirty exact-dated events are recorded,
   including the 2026 flagship groundbreakings and openings. Month-end
   approximations were rejected, so most section openings remain in project notes
   rather than on a timeline.
 - **Transport status is dated.** It reflects the Kemenhub review of 19 February
   2026, not a live check. `last_verified` is the curation date.
-- **PSN status is incomplete for roads.** 13 of 45 road rows have `psn=unknown`.
+- **PSN status is incomplete for roads.** 12 of 54 road rows have `psn=unknown`; the 50-entry PSN road set is separately matched in the ledger.
 - **Estate coordinates are mixed.** 25 SEZ/shared zones use official KEK points,
   20 large industrial estates use OSM/Nominatim industrial points, and 133 still
   use regency centroids, not estate boundaries. 20 of the 40 largest were
@@ -690,7 +697,7 @@ it writes screenshots and a zero-error report under `docs/evidence/phase-3/`.
   conflicts. Two estate *location* conflicts (IPIP and Tembesi) stay in the gap
   ledger because the second side has no citable source row. Free-text `notes`
   still carries context that is not in a structured field.
-- **Performance at 300 markers is untested.** The 131-project dataset is clustered
+- **Performance at 300 markers is untested.** The 140-project dataset is clustered
   and loads quickly, but the 300-marker 60 fps target still needs a dedicated
   measurement run and a larger test set.
 - **Lighthouse is not run.** axe-core 4.10.3 with WCAG A/AA tags reports zero
@@ -720,11 +727,12 @@ it writes screenshots and a zero-error report under `docs/evidence/phase-3/`.
    freshness report, a 200-field dictionary, Data view v2, filtered downloads,
    local CI, a browser smoke test and hand-off. **No GitHub push, remote, Pages
    deployment or public release.**
-6. **V4 foundation and 2026 flagships.** In progress, started 9 November 2026.
-   The Permenko 16/2025 register and reconciliation ledger are in place, and the
-   first flagship batch adds IKN Phase 2, Nusantara airport, Masela, RDMP
+6. **V4 foundation, flagships and PSN roads.** In progress, started 9 November
+   2026. The Permenko 16/2025 register and reconciliation ledger are in place.
+   The flagship batch adds IKN Phase 2, Nusantara airport, Masela, RDMP
    Balikpapan, 100 GWp solar, 13 Hilirisasi Stage II projects, five dams and the
-   Java sea wall. The target remains 400+ projects, 24 PSN programmes, 300
+   Java sea wall. The PSN-road batch closes the last 12 road entries, taking
+   roads to 50/50. The target remains 400+ projects, 24 PSN programmes, 300
    companies, 200+ estates and a bilingual shell.
 7. **Monthly refresh.** Follow [`docs/operations/refresh-runbook.md`](docs/operations/refresh-runbook.md):
    re-fetch sources, review status changes, update `last_verified`, rebuild and
@@ -742,7 +750,7 @@ it writes screenshots and a zero-error report under `docs/evidence/phase-3/`.
 - **Next action:** run `python scripts/build_all.py --check`, read
   [`docs/operations/refresh-runbook.md`](docs/operations/refresh-runbook.md),
   then continue the V4 immediate actions in `docs/plan/plan.md` (file the
-  remaining official sources, work the 128-record PSN backlog, prototype the
+  remaining official sources, work the 116-record PSN backlog, prototype the
   bilingual shell). Do not push, add a remote or deploy.
 - **Trust layer:** [`docs/phases/phase-3-trust.md`](docs/phases/phase-3-trust.md) records the
   claims audit, freshness report, conflict register, Data view v2, downloads,
