@@ -28,14 +28,13 @@ curated, not exhaustive**.
   Phase 3 ends with a **local release only**: the site is verified from `file://`
   and a local HTTP server. There is **no GitHub remote, push, Pages deployment or
   published URL**.
-- **Overhaul plan:** [`docs/plan/plan-v3.md`](docs/plan/plan-v3.md) is the execution backlog. Phase 1
-  decisions are in [`docs/phases/phase-1-decisions.md`](docs/phases/phase-1-decisions.md); the
-  transport batch is in [`docs/phases/phase-2-transport.md`](docs/phases/phase-2-transport.md),
-  factories in [`docs/phases/phase-2-factories.md`](docs/phases/phase-2-factories.md), estates
-  in [`docs/phases/phase-2-estates.md`](docs/phases/phase-2-estates.md) and roads in
-  [`docs/phases/phase-2-roads.md`](docs/phases/phase-2-roads.md). The Phase 3 trust evidence is
-  in [`docs/phases/phase-3-trust.md`](docs/phases/phase-3-trust.md), and the monthly procedure
-  is [`docs/operations/refresh-runbook.md`](docs/operations/refresh-runbook.md).
+- **V4 plan:** [`docs/plan/plan.md`](docs/plan/plan.md) is the current plan: a
+  bilingual national delivery atlas with 400+ projects, 8 PKPN programmes,
+  300 companies, 200 estates and a rebuilt map and Data view. It is a plan, not
+  a released build. The completed v3 backlog stays in
+  [`docs/plan/plan-v3.md`](docs/plan/plan-v3.md); phase records are in
+  [`docs/phases/`](docs/phases/), and the monthly procedure is
+  [`docs/operations/refresh-runbook.md`](docs/operations/refresh-runbook.md).
 
 ## What it is, and what it is not
 
@@ -166,8 +165,8 @@ infra-id/
 ├─ docs/
 │  ├─ README.md              index of plans, phase records, operations and evidence
 │  ├─ plan/
-│  │  ├─ plan.md             scope, decisions, architecture, history
-│  │  └─ plan-v3.md          three-phase execution backlog and status
+│  │  ├─ plan.md             V4 plan: delivery atlas, bilingual UI, data expansion
+│  │  └─ plan-v3.md          completed v1-v3 backlog and status
 │  ├─ phases/
 │  │  ├─ phase-1-decisions.md
 │  │  ├─ phase-2-transport.md
@@ -697,12 +696,14 @@ it writes screenshots and a zero-error report under `docs/evidence/phase-3/`.
 
 ## Where to pick up
 
-- **Current plan:** [`docs/plan/plan-v3.md`](docs/plan/plan-v3.md). Phase 1, Phase 2 and Phase 3 are
-  complete as of 8 November 2026. Track 2B (estates) is partial and R6 geometry is
-  deferred; both are documented. Publishing is explicitly deferred.
+- **Current plan:** [`docs/plan/plan.md`](docs/plan/plan.md). V3 is complete as
+  of 8 November 2026; V4 is planned but **not implemented**. Track 2B (estates)
+  is partial and R6 geometry is deferred; both are documented. Publishing is
+  explicitly deferred.
 - **Next action:** run `python scripts/build_all.py --check`, read
-  [`docs/operations/refresh-runbook.md`](docs/operations/refresh-runbook.md), then work the open gaps
-  below. Do not push, add a remote or deploy.
+  [`docs/operations/refresh-runbook.md`](docs/operations/refresh-runbook.md),
+  then start the V4 immediate actions in `docs/plan/plan.md` (source snapshots,
+  PSN reconciliation, bilingual shell). Do not push, add a remote or deploy.
 - **Trust layer:** [`docs/phases/phase-3-trust.md`](docs/phases/phase-3-trust.md) records the
   claims audit, freshness report, conflict register, Data view v2, downloads,
   build CI and smoke-test evidence. The generated files are
@@ -778,5 +779,6 @@ asks for it explicitly. Phase 3 ends with a local release that works from
   `site/assets/fonts/OFL-Source-Serif.txt`.
 - **Government data:** check each portal's terms before redistribution.
 
-`docs/plan/plan.md` is the working document for scope, decisions, architecture and source
-evaluation. Read it before changing what counts as in-scope.
+`docs/plan/plan.md` is the working document for the V4 scope, data model,
+bilingual architecture and source evaluation. Read it before changing what
+counts as in-scope.

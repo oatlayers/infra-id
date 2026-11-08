@@ -8,8 +8,8 @@ atlas itself; this page is the map for the working documents.
 
 | File | Contents |
 |---|---|
-| [`plan/plan.md`](plan/plan.md) | Scope, decisions, data architecture, history and the current status. |
-| [`plan/plan-v3.md`](plan/plan-v3.md) | The three-phase overhaul backlog: site experience, data completeness and trust. |
+| [`plan/plan.md`](plan/plan.md) | Current V4 plan: national delivery atlas, 400+ projects, bilingual UI, map and Data-view rebuild. |
+| [`plan/plan-v3.md`](plan/plan-v3.md) | Completed three-phase overhaul backlog: site experience, data completeness and trust. |
 
 ## Phase records
 
@@ -37,10 +37,13 @@ external requests and zero console errors.
 ## Reading order
 
 1. [README](../README.md) for what the atlas contains and how to open it.
-2. [`plan/plan-v3.md`](plan/plan-v3.md) for the work status and remaining gaps.
-3. [`phases/phase-3-trust.md`](phases/phase-3-trust.md) for how facts are sourced
+2. [`plan/plan.md`](plan/plan.md) for the V4 scope, data expansion, bilingual
+   architecture and delivery plan.
+3. [`plan/plan-v3.md`](plan/plan-v3.md) for the completed v3 backlog and the
+   history behind the current build.
+4. [`phases/phase-3-trust.md`](phases/phase-3-trust.md) for how facts are sourced
    and verified.
-4. [`operations/refresh-runbook.md`](operations/refresh-runbook.md) before
+5. [`operations/refresh-runbook.md`](operations/refresh-runbook.md) before
    refreshing any source.
 
 The release is local only: there is no remote, push or Pages deployment.
