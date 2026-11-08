@@ -149,6 +149,35 @@ TRANSPORT_MATCH = {
     85: ("rail-mrt-jakarta-east-west", "matched_project", "high", ""),
 }
 
+# Explicit matches for non-transport projects added in the V4 flagship
+# increment. Values are (atlas project id, match status, confidence, note).
+PROJECT_MATCH = {
+    141: ("dam-keureuto", "matched_project", "high", ""),
+    147: ("dam-rukoh", "matched_project", "high", ""),
+    161: ("dam-sidan", "matched_project", "high", ""),
+    170: ("dam-meninting", "matched_project", "high", ""),
+    175: ("dam-jlantah", "matched_project", "high", ""),
+    199: (
+        "coastal-java-sea-wall",
+        "matched_partial",
+        "medium",
+        "Register No. 199 covers the Jakarta/West Java coastal dyke; the atlas row covers the 15-segment national programme.",
+    ),
+    200: ("energy-masela-abadi-lng", "matched_project", "high", ""),
+    207: (
+        "energy-rdmp-balikpapan",
+        "matched_partial",
+        "medium",
+        "Register No. 207 aggregates the RDMP programme; this atlas row is the Balikpapan component.",
+    ),
+    215: (
+        "energy-hilirisasi-2-06-tanjung-enim-dme",
+        "matched_partial",
+        "medium",
+        "Register No. 215 lists coal gasification at Tanjung Enim; the atlas row is the 1.4 Mtpa DME project announced in stage II.",
+    ),
+}
+
 # Explicit matches for the 44 industrial-area entries.
 ESTATE_MATCH = {
     87: ("ki-kawasan-industri-landak", "high", ""),
@@ -237,6 +266,9 @@ def main() -> None:
     for number, (project_id, _, _, _) in TRANSPORT_MATCH.items():
         if project_id not in projects:
             raise SystemExit(f"PSN {number} maps to unknown project {project_id}")
+    for number, (project_id, _, _, _) in PROJECT_MATCH.items():
+        if project_id not in projects:
+            raise SystemExit(f"PSN {number} maps to unknown project {project_id}")
     for number, (estate_id, _, _) in ESTATE_MATCH.items():
         if estate_id not in estates:
             raise SystemExit(f"PSN {number} maps to unknown estate {estate_id}")
@@ -287,7 +319,21 @@ def main() -> None:
             continue
 
         number = int(row["psn_no"])
-        if number in TRANSPORT_MATCH:
+        if number in PROJECT_MATCH:
+            atlas_id, status, confidence, note = PROJECT_MATCH[number]
+            item.update(
+                atlas_layer="project",
+                atlas_id=atlas_id,
+                atlas_status=projects[atlas_id]["status"],
+                match_status=status,
+                match_confidence=confidence,
+                missing_fields=MISSING_FIELDS.get(status, MISSING_FIELDS["matched_project"]),
+                owner="translation" if status == "matched_project" else "data",
+                next_action="add_translation" if status == "matched_project" else "review_match",
+                release=release_for(row),
+                notes=note,
+            )
+        elif number in TRANSPORT_MATCH:
             atlas_id, status, confidence, note = TRANSPORT_MATCH[number]
             item.update(
                 atlas_layer="project",

@@ -87,7 +87,7 @@ def main() -> None:
                         if verified
                         else ""
                     ),
-                    "notes": record["notes"][:160],
+                    "notes": record["notes"][:160].strip(),
                 }
             )
 

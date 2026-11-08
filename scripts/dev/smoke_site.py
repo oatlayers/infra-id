@@ -18,6 +18,7 @@ from __future__ import annotations
 import csv
 import io
 import json
+import re
 import threading
 from datetime import date
 from functools import partial
@@ -30,6 +31,12 @@ ROOT = Path(__file__).resolve().parents[2]
 SITE = ROOT / "site"
 EVIDENCE = ROOT / "docs" / "evidence" / "phase-3"
 FILE_URL = (SITE / "index.html").as_uri()
+
+STATS_TEXT = (SITE / "data" / "stats.js").read_text(encoding="utf-8")
+STATS = json.loads(re.search(r"window\.INFRA_STATS\s*=\s*(\{.*\});?", STATS_TEXT, re.S).group(1))
+TOTAL = str(STATS["projects"]["total"])
+RAIL = str(STATS["projects"]["by_sector"].get("railway", 0))
+ESTATES = str(STATS["estates"]["total"])
 
 failures: list[str] = []
 report: dict[str, object] = {
@@ -90,21 +97,21 @@ def desktop_views(page: Page) -> None:
     page.wait_for_selector(".project-row")
     page.wait_for_timeout(900)
 
-    check(page.locator(".project-row").count() == 107, "Explore lists 107 projects")
-    check(page.locator("#foot-total").inner_text() == "107", "Explore total is 107")
-    check(page.locator("#stat-projects").inner_text() == "107", "Header project count is 107")
+    check(page.locator(".project-row").count() == int(TOTAL), f"Explore lists {TOTAL} projects")
+    check(page.locator("#foot-total").inner_text() == TOTAL, f"Explore total is {TOTAL}")
+    check(page.locator("#stat-projects").inner_text() == TOTAL, f"Header project count is {TOTAL}")
     check(page.locator("#stat-corridors").inner_text() == "5", "Header corridor count is 5")
-    check(page.locator("#stat-estates").inner_text() == "178", "Header estate count is 178")
-    report["views"]["explore"] = {"rows": 107}  # type: ignore[index]
+    check(page.locator("#stat-estates").inner_text() == ESTATES, f"Header estate count is {ESTATES}")
+    report["views"]["explore"] = {"rows": int(TOTAL)}  # type: ignore[index]
     screenshot(page, "01-explore-desktop.png")
 
     page.click('[data-sector="railway"]')
     page.wait_for_timeout(200)
-    check(page.locator("#foot-count").inner_text() == "13", "Railway filter narrows to 13")
-    check(page.locator(".project-row").count() == 13, "Railway rows are 13")
+    check(page.locator("#foot-count").inner_text() == RAIL, f"Railway filter narrows to {RAIL}")
+    check(page.locator(".project-row").count() == int(RAIL), f"Railway rows are {RAIL}")
     page.click("#clear-filters")
     page.wait_for_timeout(200)
-    check(page.locator("#foot-count").inner_text() == "107", "Clearing filters restores 107")
+    check(page.locator("#foot-count").inner_text() == TOTAL, f"Clearing filters restores {TOTAL}")
 
     tab(page, "corridors")
     check(page.locator(".corridor-card").count() == 5, "Corridors view has five corridors")
@@ -122,9 +129,9 @@ def desktop_views(page: Page) -> None:
     tab(page, "estates")
     page.wait_for_selector(".estate-row")
     page.wait_for_timeout(400)
-    check(page.locator(".estate-row").count() == 178, "Estates view lists 178 zones")
-    check("178" in page.locator(".corridor-meta").first.inner_text(), "Estate count text is 178")
-    report["views"]["estates"] = {"rows": 178}  # type: ignore[index]
+    check(page.locator(".estate-row").count() == int(ESTATES), f"Estates view lists {ESTATES} zones")
+    check(ESTATES in page.locator(".corridor-meta").first.inner_text(), f"Estate count text is {ESTATES}")
+    report["views"]["estates"] = {"rows": int(ESTATES)}  # type: ignore[index]
     screenshot(page, "03-estates-desktop.png")
 
     tab(page, "data")
@@ -137,7 +144,7 @@ def desktop_views(page: Page) -> None:
           "Data view offers the filtered GeoJSON")
     check(page.locator('.download[data-export="estates-csv"]').count() == 1,
           "Loaded estates add the filtered estate CSV")
-    check("107 / 107" in page.locator(".data-view").inner_text(), "Claims coverage is 107 / 107")
+    check(f"{TOTAL} / {TOTAL}" in page.locator(".data-view").inner_text(), f"Claims coverage is {TOTAL} / {TOTAL}")
     report["views"]["data"] = {  # type: ignore[index]
         "conflicts": 19,
         "dictionary_tables": 18,
@@ -177,11 +184,11 @@ def desktop_keyboard(page: Page) -> None:
     page.fill("#search", "Papua")
     page.wait_for_timeout(300)
     narrowed = page.locator(".project-row").count()
-    check(0 < narrowed < 107, "Search narrows the project list")
+    check(0 < narrowed < int(TOTAL), "Search narrows the project list")
     page.keyboard.press("Escape")
     page.wait_for_timeout(300)
     check(page.input_value("#search") == "", "Escape clears search")
-    check(page.locator(".project-row").count() == 107, "Clearing search restores the list")
+    check(page.locator(".project-row").count() == int(TOTAL), "Clearing search restores the list")
 
     page.locator(".project-row").first.focus()
     page.keyboard.press("ArrowDown")
@@ -198,7 +205,7 @@ def desktop_downloads(page: Page) -> None:
         page.click('[data-export="projects-csv"]')
     csv_download = csv_info.value
     csv_rows = read_csv_download(csv_download)
-    check(len(csv_rows) == 107, "Filtered project CSV has 107 rows")
+    check(len(csv_rows) == int(TOTAL), f"Filtered project CSV has {TOTAL} rows")
     check(csv_download.suggested_filename.endswith(".csv"), "Filtered project CSV has a .csv name")
     check(csv_rows[0].get("id") is not None and "freshness_state" in csv_rows[0],
           "Filtered project CSV includes the freshness field")
@@ -213,7 +220,7 @@ def desktop_downloads(page: Page) -> None:
     geojson_path = geojson_download.path()
     payload = json.loads(Path(geojson_path).read_text(encoding="utf-8"))
     features = payload.get("features", [])
-    check(len(features) == 107, "Filtered GeoJSON has 107 features")
+    check(len(features) == int(TOTAL), f"Filtered GeoJSON has {TOTAL} features")
     check(all(len(feature.get("geometry", {}).get("coordinates", [])) == 2 for feature in features),
           "Filtered GeoJSON features are points")
     report["downloads"]["projects_geojson"] = {  # type: ignore[index]
@@ -227,7 +234,7 @@ def desktop_downloads(page: Page) -> None:
         page.click('[data-export="estates-csv"]')
     estate_download = estate_info.value
     estate_rows = read_csv_download(estate_download)
-    check(len(estate_rows) == 178, "Filtered estate CSV has 178 rows")
+    check(len(estate_rows) == int(ESTATES), f"Filtered estate CSV has {ESTATES} rows")
     report["downloads"]["estates_csv"] = {  # type: ignore[index]
         "file": estate_download.suggested_filename,
         "rows": len(estate_rows),
@@ -239,7 +246,7 @@ def desktop_downloads(page: Page) -> None:
         page.click('a[download][href="downloads/claims.csv"]')
     claims_download = claims_info.value
     claims_rows = read_csv_download(claims_download)
-    check(len(claims_rows) == 479, "Static claims CSV has 479 rows")
+    check(len(claims_rows) == STATS["claims"]["total"], f"Static claims CSV has {STATS['claims']['total']} rows")
     report["downloads"]["claims_csv"] = {  # type: ignore[index]
         "file": claims_download.suggested_filename,
         "rows": len(claims_rows),
@@ -277,8 +284,8 @@ def http_check(page: Page) -> None:
         page.goto(f"http://127.0.0.1:{port}/index.html#/data")
         page.wait_for_selector(".data-view")
         page.wait_for_timeout(500)
-        check(page.locator("#stat-projects").inner_text() == "107",
-              "Local HTTP server serves the 107-project build")
+        check(page.locator("#stat-projects").inner_text() == TOTAL,
+              f"Local HTTP server serves the {TOTAL}-project build")
         check(page.locator(".conflict-table tbody tr").count() == 19,
               "Local HTTP build renders 19 conflicts")
         report["protocols"]["http"] = {"port": port, "ok": True}  # type: ignore[index]

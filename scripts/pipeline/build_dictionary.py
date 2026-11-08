@@ -159,7 +159,7 @@ OVERRIDES = {
     ("corridor_segments.csv", "status"): ("enum", "yes", "Segment status using the project status vocabulary.", "planned; under_construction; operating; recently_completed; stalled"),
     ("conflicts.csv", "status"): ("enum", "yes", "Whether the conflict remains open or has a recorded resolution.", "open; resolved"),
     ("estates.csv", "type"): ("enum", "yes", "industrial_estate, sez or both.", "industrial_estate; sez; both"),
-    ("projects.csv", "sector"): ("enum", "yes", "road, railway, airport, seaport or factory.", "road; railway; airport; seaport; factory"),
+    ("projects.csv", "sector"): ("enum", "yes", "road, railway, airport, seaport, factory, energy, water, urban or coastal.", "road; railway; airport; seaport; factory; energy; water; urban; coastal"),
     ("projects.csv", "island"): ("enum", "yes", "Sumatra, Java, Kalimantan, Sulawesi, Papua, Bali-Nusa Tenggara or Maluku.", "Sumatra; Java; Kalimantan; Sulawesi; Papua; Bali-Nusa Tenggara; Maluku"),
     ("projects.csv", "psn"): ("enum", "yes", "yes, no or unknown.", "yes; no; unknown"),
     ("projects.csv", "precision"): ("enum", "yes", "exact, approximate, regency or province.", "exact; approximate; regency; province"),

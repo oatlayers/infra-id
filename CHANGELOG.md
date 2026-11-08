@@ -3,6 +3,22 @@
 Public-facing changes to the atlas. Dates are the day the change landed in this
 repository. The Data view renders these entries from this file at build time.
 
+## 2026-11-09 — 2026 flagship batch
+
+- Added 24 flagship records: IKN Phase 2, Nusantara International Airport, Abadi
+  Masela LNG, RDMP Balikpapan, the 100 GWp solar programme, the 13 Hilirisasi
+  Stage II projects, five dams and the Giant Java Sea Wall.
+- Added four sector classes: energy, water, urban and coastal. The map, filters
+  and Data view use them automatically.
+- Added 14 sources, 11 organisations, 77 atomic claims, 4 investments and 22
+  dated events. The build now reports 131 projects, 105 sources and 556 claims.
+- Linked nine PSN register records to the new rows: five dams, Masela, the RDMP
+  aggregate, the Tanjung Enim DME component and the Jakarta/West Java coastal
+  dyke. PSN coverage is now 98/226 records (82 to 77 project rows and 16 to
+  estates); 128 project or estate records and 24 programmes remain.
+- Extended the factory reference set from 27 to 34 and refreshed the coverage notes.
+- Nothing was pushed, deployed or published.
+
 ## 2026-11-09 — PSN register and reconciliation
 
 - Added the official Permenko 16/2025 register: 226 active projects, 24 active

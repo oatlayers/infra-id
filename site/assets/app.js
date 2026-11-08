@@ -1573,8 +1573,9 @@
     const projectStats = stats.projects || {};
     const estateStats = stats.estates || {};
     const sectorCounts = projectStats.by_sector || {};
-    const transportCount = (sectorCounts.railway || 0) + (sectorCounts.airport || 0) +
-      (sectorCounts.seaport || 0);
+    const coverageByLayer = {};
+    (stats.coverage || []).forEach(function (row) { coverageByLayer[row.layer] = row; });
+    const transportCoverage = coverageByLayer.transport_psn || { current: 0, target: 35 };
     const roadCount = sectorCounts.road || 0;
     const generated = stats.generated_on ? fmtDate(stats.generated_on) : fmtDate(new Date().toISOString().slice(0, 10));
 
@@ -1606,19 +1607,22 @@
       }).join('') + '</ul></section>' +
 
       '<section class="data-section"><h3>Inclusion rules</h3>' +
-      '<p><b>Roads:</b> major toll corridors and PSN national roads. <b>Airports and seaports:</b> PSN or KPBU designated. <b>Factories:</b> PSN manufacturing plants or private plants with investment of at least Rp 1 trillion; estates and pure mining pits are excluded. <b>Estates:</b> the Kemenperin industrial-estate list and official SEZ profiles, one row per zone.</p>' +
+      '<p><b>Roads:</b> major toll corridors and PSN national roads. <b>Airports and seaports:</b> PSN or KPBU designated. <b>Factories:</b> PSN manufacturing plants, Hilirisasi Stage II plants and private plants with investment of at least Rp 1 trillion; estates and pure mining pits are excluded. <b>Energy:</b> PSN refineries and LNG, plus the 100 GWp solar programme. <b>Water:</b> PSN dams. <b>Urban and coastal:</b> IKN Phase 2 and the Giant Java Sea Wall. <b>Estates:</b> the Kemenperin industrial-estate list and official SEZ profiles, one row per zone.</p>' +
       '<p>The Bali, Malacca and Sunda strait bridges are excluded by scope. Estates remain table-only until their coordinates are verified.</p></section>' +
 
       '<section class="data-section"><h3>Known gaps</h3><ul class="gap-list">' +
       '<li>' + fmtNum(projectStats.total || 0) + ' projects: ' + fmtNum(projectStats.with_investment || 0) +
       ' with an investment figure, ' + fmtNum(projectStats.with_progress || 0) +
       ' with reported progress and ' + fmtNum(projectStats.with_length || 0) + ' with a route length.</li>' +
-      '<li>Transport PSN: ' + fmtNum(transportCount) + ' of 35 represented (' +
-      fmtNum(sectorCounts.railway || 0) + ' rail, ' + fmtNum(sectorCounts.airport || 0) +
-      ' airports, ' + fmtNum(sectorCounts.seaport || 0) +
-      ' seaports). Status is as of 19 February 2026, the date of the Kemenhub review.</li>' +
-      '<li>Factories and smelters: ' + fmtNum(sectorCounts.factory || 0) +
-      ' plants mapped. Plant points are approximate; capacity and investment are only as good as the cited company or press source. Transport points are also approximate, and the PSN review gives no rail length or asset capacity.</li>' +
+      '<li>Transport PSN: ' + fmtNum(transportCoverage.current) + ' of ' +
+      fmtNum(transportCoverage.target) + ' represented (13 rail, 7 airports, 15 seaports). ' +
+      'The Nusantara airport is an additional national gateway, not a PSN row. ' +
+      'Status is as of 19 February 2026, the date of the Kemenhub review.</li>' +
+      '<li>Industry, energy and water: ' + fmtNum(sectorCounts.factory || 0) +
+      ' factory rows, ' + fmtNum(sectorCounts.energy || 0) + ' energy projects and ' +
+      fmtNum(sectorCounts.water || 0) + ' dams mapped. Plant and project points are approximate; ' +
+      'capacity and investment are only as good as the cited company or press source. ' +
+      'Transport points are also approximate, and the PSN review gives no rail length or asset capacity.</li>' +
       '<li>Estate coverage: ' + fmtNum(estateStats.industrial || 0) +
       ' industrial-estate designations and ' + fmtNum(estateStats.sez || 0) +
       ' SEZs (' + fmtNum(estateStats.total || 0) + ' rows, ' + fmtNum(estateStats.both || 0) +
@@ -2076,7 +2080,7 @@
         esc((STATUS[status] && STATUS[status].color) || '#667085') + '"></span>' +
         esc(statusLabel(status)) + '</div>';
     }).join('') +
-      '<div class="legend-sector">Marker glyph shows the sector: road, railway, airport, seaport or factory. Clusters show a status ring.</div>';
+      '<div class="legend-sector">Marker glyph shows the sector: road, rail, air, sea, factory, energy, water, urban or coastal. Clusters show a status ring.</div>';
   }
 
   /* ---------- boot ---------- */

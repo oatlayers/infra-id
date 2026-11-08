@@ -13,9 +13,13 @@ window.ATLAS = {
     railway: { label: 'Railway', plural: 'Railways', short: 'Rail', icon: '#i-railway' },
     airport: { label: 'Airport', plural: 'Airports', short: 'Air', icon: '#i-airport' },
     seaport: { label: 'Seaport', plural: 'Seaports', short: 'Sea', icon: '#i-seaport' },
-    factory: { label: 'Factory', plural: 'Factories', short: 'Factory', icon: '#i-factory' }
+    factory: { label: 'Factory', plural: 'Factories', short: 'Factory', icon: '#i-factory' },
+    energy: { label: 'Energy', plural: 'Energy', short: 'Energy', icon: '#i-energy' },
+    water: { label: 'Water', plural: 'Water', short: 'Water', icon: '#i-water' },
+    urban: { label: 'Urban', plural: 'Urban', short: 'Urban', icon: '#i-urban' },
+    coastal: { label: 'Coastal', plural: 'Coastal', short: 'Coast', icon: '#i-coastal' }
   },
-  SECTOR_ORDER: ['road', 'railway', 'airport', 'seaport', 'factory'],
+  SECTOR_ORDER: ['road', 'railway', 'airport', 'seaport', 'factory', 'energy', 'water', 'urban', 'coastal'],
   STALE_DAYS: 183,
   VERIFY_MONTHS: 6
 };

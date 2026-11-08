@@ -5,8 +5,8 @@ repository; no remote or deployment is involved. The atlas is a local, curated
 release, not a live tracker.
 
 **Why monthly:** a row is treated as fresh for 183 days after `last_verified`
-and due soon in the final 30 days. The 8 November 2026 build has 285 fresh rows;
-the first record falls due on **8 May 2027**. A monthly pass keeps the whole
+and due soon in the final 30 days. The 9 November 2026 build has 309 fresh rows;
+the first record falls due on **11 May 2027**. A monthly pass keeps the whole
 dataset ahead of that cliff instead of refreshing everything at once.
 
 **Never do in this runbook:** push to GitHub, add a remote, deploy GitHub Pages,

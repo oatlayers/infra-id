@@ -59,7 +59,7 @@
         ],
         "events": [],
         "freshness_state": "fresh",
-        "freshness_age_days": "2",
+        "freshness_age_days": "3",
         "freshness_due": "2027-05-08"
       }
     },
@@ -121,7 +121,7 @@
         ],
         "events": [],
         "freshness_state": "fresh",
-        "freshness_age_days": "2",
+        "freshness_age_days": "3",
         "freshness_due": "2027-05-08"
       }
     },
@@ -183,7 +183,7 @@
         ],
         "events": [],
         "freshness_state": "fresh",
-        "freshness_age_days": "2",
+        "freshness_age_days": "3",
         "freshness_due": "2027-05-08"
       }
     },
@@ -245,7 +245,7 @@
         ],
         "events": [],
         "freshness_state": "fresh",
-        "freshness_age_days": "2",
+        "freshness_age_days": "3",
         "freshness_due": "2027-05-08"
       }
     },
@@ -307,7 +307,7 @@
         ],
         "events": [],
         "freshness_state": "fresh",
-        "freshness_age_days": "2",
+        "freshness_age_days": "3",
         "freshness_due": "2027-05-08"
       }
     },
@@ -369,7 +369,7 @@
         ],
         "events": [],
         "freshness_state": "fresh",
-        "freshness_age_days": "2",
+        "freshness_age_days": "3",
         "freshness_due": "2027-05-08"
       }
     },
@@ -442,7 +442,7 @@
           }
         ],
         "freshness_state": "fresh",
-        "freshness_age_days": "2",
+        "freshness_age_days": "3",
         "freshness_due": "2027-05-08"
       }
     },
@@ -504,7 +504,7 @@
         ],
         "events": [],
         "freshness_state": "fresh",
-        "freshness_age_days": "2",
+        "freshness_age_days": "3",
         "freshness_due": "2027-05-08"
       }
     },
@@ -566,7 +566,7 @@
         ],
         "events": [],
         "freshness_state": "fresh",
-        "freshness_age_days": "2",
+        "freshness_age_days": "3",
         "freshness_due": "2027-05-08"
       }
     },
@@ -628,7 +628,7 @@
         ],
         "events": [],
         "freshness_state": "fresh",
-        "freshness_age_days": "2",
+        "freshness_age_days": "3",
         "freshness_due": "2027-05-08"
       }
     },
@@ -690,7 +690,7 @@
         ],
         "events": [],
         "freshness_state": "fresh",
-        "freshness_age_days": "2",
+        "freshness_age_days": "3",
         "freshness_due": "2027-05-08"
       }
     },
@@ -752,7 +752,7 @@
         ],
         "events": [],
         "freshness_state": "fresh",
-        "freshness_age_days": "2",
+        "freshness_age_days": "3",
         "freshness_due": "2027-05-08"
       }
     },
@@ -814,7 +814,7 @@
         ],
         "events": [],
         "freshness_state": "fresh",
-        "freshness_age_days": "2",
+        "freshness_age_days": "3",
         "freshness_due": "2027-05-08"
       }
     },
@@ -876,7 +876,7 @@
         ],
         "events": [],
         "freshness_state": "fresh",
-        "freshness_age_days": "2",
+        "freshness_age_days": "3",
         "freshness_due": "2027-05-08"
       }
     },
@@ -938,7 +938,7 @@
         ],
         "events": [],
         "freshness_state": "fresh",
-        "freshness_age_days": "2",
+        "freshness_age_days": "3",
         "freshness_due": "2027-05-08"
       }
     },
@@ -1000,7 +1000,7 @@
         ],
         "events": [],
         "freshness_state": "fresh",
-        "freshness_age_days": "2",
+        "freshness_age_days": "3",
         "freshness_due": "2027-05-08"
       }
     },
@@ -1062,7 +1062,7 @@
         ],
         "events": [],
         "freshness_state": "fresh",
-        "freshness_age_days": "2",
+        "freshness_age_days": "3",
         "freshness_due": "2027-05-08"
       }
     },
@@ -1124,7 +1124,7 @@
         ],
         "events": [],
         "freshness_state": "fresh",
-        "freshness_age_days": "2",
+        "freshness_age_days": "3",
         "freshness_due": "2027-05-08"
       }
     },
@@ -1186,7 +1186,7 @@
         ],
         "events": [],
         "freshness_state": "fresh",
-        "freshness_age_days": "2",
+        "freshness_age_days": "3",
         "freshness_due": "2027-05-08"
       }
     },
@@ -1259,7 +1259,7 @@
           }
         ],
         "freshness_state": "fresh",
-        "freshness_age_days": "2",
+        "freshness_age_days": "3",
         "freshness_due": "2027-05-08"
       }
     },
@@ -1321,7 +1321,7 @@
         ],
         "events": [],
         "freshness_state": "fresh",
-        "freshness_age_days": "2",
+        "freshness_age_days": "3",
         "freshness_due": "2027-05-08"
       }
     },
@@ -1383,7 +1383,7 @@
         ],
         "events": [],
         "freshness_state": "fresh",
-        "freshness_age_days": "2",
+        "freshness_age_days": "3",
         "freshness_due": "2027-05-08"
       }
     },
@@ -1445,7 +1445,7 @@
         ],
         "events": [],
         "freshness_state": "fresh",
-        "freshness_age_days": "2",
+        "freshness_age_days": "3",
         "freshness_due": "2027-05-08"
       }
     },
@@ -1507,7 +1507,7 @@
         ],
         "events": [],
         "freshness_state": "fresh",
-        "freshness_age_days": "2",
+        "freshness_age_days": "3",
         "freshness_due": "2027-05-08"
       }
     },
@@ -1569,7 +1569,7 @@
         ],
         "events": [],
         "freshness_state": "fresh",
-        "freshness_age_days": "2",
+        "freshness_age_days": "3",
         "freshness_due": "2027-05-08"
       }
     },
@@ -1631,7 +1631,7 @@
         ],
         "events": [],
         "freshness_state": "fresh",
-        "freshness_age_days": "2",
+        "freshness_age_days": "3",
         "freshness_due": "2027-05-08"
       }
     },
@@ -1693,7 +1693,7 @@
         ],
         "events": [],
         "freshness_state": "fresh",
-        "freshness_age_days": "2",
+        "freshness_age_days": "3",
         "freshness_due": "2027-05-08"
       }
     },
@@ -1755,7 +1755,7 @@
         ],
         "events": [],
         "freshness_state": "fresh",
-        "freshness_age_days": "1",
+        "freshness_age_days": "2",
         "freshness_due": "2027-05-09"
       }
     },
@@ -1817,7 +1817,7 @@
         ],
         "events": [],
         "freshness_state": "fresh",
-        "freshness_age_days": "1",
+        "freshness_age_days": "2",
         "freshness_due": "2027-05-09"
       }
     },
@@ -1879,7 +1879,7 @@
         ],
         "events": [],
         "freshness_state": "fresh",
-        "freshness_age_days": "1",
+        "freshness_age_days": "2",
         "freshness_due": "2027-05-09"
       }
     },
@@ -1941,7 +1941,7 @@
         ],
         "events": [],
         "freshness_state": "fresh",
-        "freshness_age_days": "1",
+        "freshness_age_days": "2",
         "freshness_due": "2027-05-09"
       }
     },
@@ -2003,7 +2003,7 @@
         ],
         "events": [],
         "freshness_state": "fresh",
-        "freshness_age_days": "1",
+        "freshness_age_days": "2",
         "freshness_due": "2027-05-09"
       }
     },
@@ -2065,7 +2065,7 @@
         ],
         "events": [],
         "freshness_state": "fresh",
-        "freshness_age_days": "1",
+        "freshness_age_days": "2",
         "freshness_due": "2027-05-09"
       }
     },
@@ -2127,7 +2127,7 @@
         ],
         "events": [],
         "freshness_state": "fresh",
-        "freshness_age_days": "1",
+        "freshness_age_days": "2",
         "freshness_due": "2027-05-09"
       }
     },
@@ -2189,7 +2189,7 @@
         ],
         "events": [],
         "freshness_state": "fresh",
-        "freshness_age_days": "1",
+        "freshness_age_days": "2",
         "freshness_due": "2027-05-09"
       }
     },
@@ -2251,7 +2251,7 @@
         ],
         "events": [],
         "freshness_state": "fresh",
-        "freshness_age_days": "1",
+        "freshness_age_days": "2",
         "freshness_due": "2027-05-09"
       }
     },
@@ -2313,7 +2313,7 @@
         ],
         "events": [],
         "freshness_state": "fresh",
-        "freshness_age_days": "1",
+        "freshness_age_days": "2",
         "freshness_due": "2027-05-09"
       }
     },
@@ -2375,7 +2375,7 @@
         ],
         "events": [],
         "freshness_state": "fresh",
-        "freshness_age_days": "1",
+        "freshness_age_days": "2",
         "freshness_due": "2027-05-09"
       }
     },
@@ -2437,7 +2437,7 @@
         ],
         "events": [],
         "freshness_state": "fresh",
-        "freshness_age_days": "1",
+        "freshness_age_days": "2",
         "freshness_due": "2027-05-09"
       }
     },
@@ -2499,7 +2499,7 @@
         ],
         "events": [],
         "freshness_state": "fresh",
-        "freshness_age_days": "1",
+        "freshness_age_days": "2",
         "freshness_due": "2027-05-09"
       }
     },
@@ -2561,7 +2561,7 @@
         ],
         "events": [],
         "freshness_state": "fresh",
-        "freshness_age_days": "1",
+        "freshness_age_days": "2",
         "freshness_due": "2027-05-09"
       }
     },
@@ -2623,7 +2623,7 @@
         ],
         "events": [],
         "freshness_state": "fresh",
-        "freshness_age_days": "1",
+        "freshness_age_days": "2",
         "freshness_due": "2027-05-09"
       }
     },
@@ -2685,7 +2685,7 @@
         ],
         "events": [],
         "freshness_state": "fresh",
-        "freshness_age_days": "1",
+        "freshness_age_days": "2",
         "freshness_due": "2027-05-09"
       }
     },
@@ -2747,7 +2747,7 @@
         ],
         "events": [],
         "freshness_state": "fresh",
-        "freshness_age_days": "1",
+        "freshness_age_days": "2",
         "freshness_due": "2027-05-09"
       }
     },
@@ -2809,7 +2809,7 @@
         ],
         "events": [],
         "freshness_state": "fresh",
-        "freshness_age_days": "1",
+        "freshness_age_days": "2",
         "freshness_due": "2027-05-09"
       }
     },
@@ -2871,7 +2871,7 @@
         ],
         "events": [],
         "freshness_state": "fresh",
-        "freshness_age_days": "1",
+        "freshness_age_days": "2",
         "freshness_due": "2027-05-09"
       }
     },
@@ -2933,7 +2933,7 @@
         ],
         "events": [],
         "freshness_state": "fresh",
-        "freshness_age_days": "1",
+        "freshness_age_days": "2",
         "freshness_due": "2027-05-09"
       }
     },
@@ -2995,7 +2995,7 @@
         ],
         "events": [],
         "freshness_state": "fresh",
-        "freshness_age_days": "1",
+        "freshness_age_days": "2",
         "freshness_due": "2027-05-09"
       }
     },
@@ -3057,7 +3057,7 @@
         ],
         "events": [],
         "freshness_state": "fresh",
-        "freshness_age_days": "1",
+        "freshness_age_days": "2",
         "freshness_due": "2027-05-09"
       }
     },
@@ -3119,7 +3119,7 @@
         ],
         "events": [],
         "freshness_state": "fresh",
-        "freshness_age_days": "1",
+        "freshness_age_days": "2",
         "freshness_due": "2027-05-09"
       }
     },
@@ -3181,7 +3181,7 @@
         ],
         "events": [],
         "freshness_state": "fresh",
-        "freshness_age_days": "1",
+        "freshness_age_days": "2",
         "freshness_due": "2027-05-09"
       }
     },
@@ -3243,7 +3243,7 @@
         ],
         "events": [],
         "freshness_state": "fresh",
-        "freshness_age_days": "1",
+        "freshness_age_days": "2",
         "freshness_due": "2027-05-09"
       }
     },
@@ -3305,7 +3305,7 @@
         ],
         "events": [],
         "freshness_state": "fresh",
-        "freshness_age_days": "1",
+        "freshness_age_days": "2",
         "freshness_due": "2027-05-09"
       }
     },
@@ -3367,7 +3367,7 @@
         ],
         "events": [],
         "freshness_state": "fresh",
-        "freshness_age_days": "1",
+        "freshness_age_days": "2",
         "freshness_due": "2027-05-09"
       }
     },
@@ -3429,7 +3429,7 @@
         ],
         "events": [],
         "freshness_state": "fresh",
-        "freshness_age_days": "1",
+        "freshness_age_days": "2",
         "freshness_due": "2027-05-09"
       }
     },
@@ -3491,7 +3491,7 @@
         ],
         "events": [],
         "freshness_state": "fresh",
-        "freshness_age_days": "1",
+        "freshness_age_days": "2",
         "freshness_due": "2027-05-09"
       }
     },
@@ -3553,7 +3553,7 @@
         ],
         "events": [],
         "freshness_state": "fresh",
-        "freshness_age_days": "1",
+        "freshness_age_days": "2",
         "freshness_due": "2027-05-09"
       }
     },
@@ -3615,7 +3615,7 @@
         ],
         "events": [],
         "freshness_state": "fresh",
-        "freshness_age_days": "1",
+        "freshness_age_days": "2",
         "freshness_due": "2027-05-09"
       }
     },
@@ -3677,7 +3677,7 @@
         ],
         "events": [],
         "freshness_state": "fresh",
-        "freshness_age_days": "1",
+        "freshness_age_days": "2",
         "freshness_due": "2027-05-09"
       }
     },
@@ -3739,7 +3739,7 @@
         ],
         "events": [],
         "freshness_state": "fresh",
-        "freshness_age_days": "1",
+        "freshness_age_days": "2",
         "freshness_due": "2027-05-09"
       }
     },
@@ -3801,7 +3801,7 @@
         ],
         "events": [],
         "freshness_state": "fresh",
-        "freshness_age_days": "1",
+        "freshness_age_days": "2",
         "freshness_due": "2027-05-09"
       }
     },
@@ -3874,7 +3874,7 @@
           }
         ],
         "freshness_state": "fresh",
-        "freshness_age_days": "1",
+        "freshness_age_days": "2",
         "freshness_due": "2027-05-09"
       }
     },
@@ -3936,7 +3936,7 @@
         ],
         "events": [],
         "freshness_state": "fresh",
-        "freshness_age_days": "0",
+        "freshness_age_days": "1",
         "freshness_due": "2027-05-10"
       }
     },
@@ -3998,7 +3998,7 @@
         ],
         "events": [],
         "freshness_state": "fresh",
-        "freshness_age_days": "0",
+        "freshness_age_days": "1",
         "freshness_due": "2027-05-10"
       }
     },
@@ -4060,7 +4060,7 @@
         ],
         "events": [],
         "freshness_state": "fresh",
-        "freshness_age_days": "0",
+        "freshness_age_days": "1",
         "freshness_due": "2027-05-10"
       }
     },
@@ -4122,7 +4122,7 @@
         ],
         "events": [],
         "freshness_state": "fresh",
-        "freshness_age_days": "0",
+        "freshness_age_days": "1",
         "freshness_due": "2027-05-10"
       }
     },
@@ -4184,7 +4184,7 @@
         ],
         "events": [],
         "freshness_state": "fresh",
-        "freshness_age_days": "0",
+        "freshness_age_days": "1",
         "freshness_due": "2027-05-10"
       }
     },
@@ -4246,7 +4246,7 @@
         ],
         "events": [],
         "freshness_state": "fresh",
-        "freshness_age_days": "0",
+        "freshness_age_days": "1",
         "freshness_due": "2027-05-10"
       }
     },
@@ -4308,7 +4308,7 @@
         ],
         "events": [],
         "freshness_state": "fresh",
-        "freshness_age_days": "0",
+        "freshness_age_days": "1",
         "freshness_due": "2027-05-10"
       }
     },
@@ -4370,7 +4370,7 @@
         ],
         "events": [],
         "freshness_state": "fresh",
-        "freshness_age_days": "0",
+        "freshness_age_days": "1",
         "freshness_due": "2027-05-10"
       }
     },
@@ -4432,7 +4432,7 @@
         ],
         "events": [],
         "freshness_state": "fresh",
-        "freshness_age_days": "0",
+        "freshness_age_days": "1",
         "freshness_due": "2027-05-10"
       }
     },
@@ -4494,7 +4494,7 @@
         ],
         "events": [],
         "freshness_state": "fresh",
-        "freshness_age_days": "0",
+        "freshness_age_days": "1",
         "freshness_due": "2027-05-10"
       }
     },
@@ -4556,7 +4556,7 @@
         ],
         "events": [],
         "freshness_state": "fresh",
-        "freshness_age_days": "0",
+        "freshness_age_days": "1",
         "freshness_due": "2027-05-10"
       }
     },
@@ -4629,7 +4629,7 @@
           }
         ],
         "freshness_state": "fresh",
-        "freshness_age_days": "0",
+        "freshness_age_days": "1",
         "freshness_due": "2027-05-10"
       }
     },
@@ -4691,7 +4691,7 @@
         ],
         "events": [],
         "freshness_state": "fresh",
-        "freshness_age_days": "0",
+        "freshness_age_days": "1",
         "freshness_due": "2027-05-10"
       }
     },
@@ -4753,7 +4753,7 @@
         ],
         "events": [],
         "freshness_state": "fresh",
-        "freshness_age_days": "0",
+        "freshness_age_days": "1",
         "freshness_due": "2027-05-10"
       }
     },
@@ -4815,7 +4815,7 @@
         ],
         "events": [],
         "freshness_state": "fresh",
-        "freshness_age_days": "0",
+        "freshness_age_days": "1",
         "freshness_due": "2027-05-10"
       }
     },
@@ -4903,7 +4903,7 @@
         ],
         "events": [],
         "freshness_state": "fresh",
-        "freshness_age_days": "0",
+        "freshness_age_days": "1",
         "freshness_due": "2027-05-10"
       }
     },
@@ -4978,7 +4978,7 @@
         ],
         "events": [],
         "freshness_state": "fresh",
-        "freshness_age_days": "0",
+        "freshness_age_days": "1",
         "freshness_due": "2027-05-10"
       }
     },
@@ -5066,7 +5066,7 @@
         ],
         "events": [],
         "freshness_state": "fresh",
-        "freshness_age_days": "0",
+        "freshness_age_days": "1",
         "freshness_due": "2027-05-10"
       }
     },
@@ -5141,7 +5141,7 @@
         ],
         "events": [],
         "freshness_state": "fresh",
-        "freshness_age_days": "0",
+        "freshness_age_days": "1",
         "freshness_due": "2027-05-10"
       }
     },
@@ -5203,7 +5203,7 @@
         ],
         "events": [],
         "freshness_state": "fresh",
-        "freshness_age_days": "0",
+        "freshness_age_days": "1",
         "freshness_due": "2027-05-10"
       }
     },
@@ -5278,7 +5278,7 @@
         ],
         "events": [],
         "freshness_state": "fresh",
-        "freshness_age_days": "0",
+        "freshness_age_days": "1",
         "freshness_due": "2027-05-10"
       }
     },
@@ -5340,7 +5340,7 @@
         ],
         "events": [],
         "freshness_state": "fresh",
-        "freshness_age_days": "0",
+        "freshness_age_days": "1",
         "freshness_due": "2027-05-10"
       }
     },
@@ -5428,7 +5428,7 @@
         ],
         "events": [],
         "freshness_state": "fresh",
-        "freshness_age_days": "0",
+        "freshness_age_days": "1",
         "freshness_due": "2027-05-10"
       }
     },
@@ -5490,7 +5490,7 @@
         ],
         "events": [],
         "freshness_state": "fresh",
-        "freshness_age_days": "0",
+        "freshness_age_days": "1",
         "freshness_due": "2027-05-10"
       }
     },
@@ -5578,7 +5578,7 @@
         ],
         "events": [],
         "freshness_state": "fresh",
-        "freshness_age_days": "0",
+        "freshness_age_days": "1",
         "freshness_due": "2027-05-10"
       }
     },
@@ -5640,7 +5640,7 @@
         ],
         "events": [],
         "freshness_state": "fresh",
-        "freshness_age_days": "0",
+        "freshness_age_days": "1",
         "freshness_due": "2027-05-10"
       }
     },
@@ -5739,7 +5739,7 @@
           }
         ],
         "freshness_state": "fresh",
-        "freshness_age_days": "0",
+        "freshness_age_days": "1",
         "freshness_due": "2027-05-10"
       }
     },
@@ -5814,7 +5814,7 @@
         ],
         "events": [],
         "freshness_state": "fresh",
-        "freshness_age_days": "0",
+        "freshness_age_days": "1",
         "freshness_due": "2027-05-10"
       }
     },
@@ -5902,7 +5902,7 @@
         ],
         "events": [],
         "freshness_state": "fresh",
-        "freshness_age_days": "0",
+        "freshness_age_days": "1",
         "freshness_due": "2027-05-10"
       }
     },
@@ -5977,7 +5977,7 @@
         ],
         "events": [],
         "freshness_state": "fresh",
-        "freshness_age_days": "0",
+        "freshness_age_days": "1",
         "freshness_due": "2027-05-10"
       }
     },
@@ -6052,7 +6052,7 @@
         ],
         "events": [],
         "freshness_state": "fresh",
-        "freshness_age_days": "0",
+        "freshness_age_days": "1",
         "freshness_due": "2027-05-10"
       }
     },
@@ -6140,7 +6140,7 @@
         ],
         "events": [],
         "freshness_state": "fresh",
-        "freshness_age_days": "0",
+        "freshness_age_days": "1",
         "freshness_due": "2027-05-10"
       }
     },
@@ -6215,7 +6215,7 @@
         ],
         "events": [],
         "freshness_state": "fresh",
-        "freshness_age_days": "0",
+        "freshness_age_days": "1",
         "freshness_due": "2027-05-10"
       }
     },
@@ -6290,7 +6290,7 @@
         ],
         "events": [],
         "freshness_state": "fresh",
-        "freshness_age_days": "0",
+        "freshness_age_days": "1",
         "freshness_due": "2027-05-10"
       }
     },
@@ -6365,7 +6365,7 @@
         ],
         "events": [],
         "freshness_state": "fresh",
-        "freshness_age_days": "0",
+        "freshness_age_days": "1",
         "freshness_due": "2027-05-10"
       }
     },
@@ -6440,7 +6440,7 @@
         ],
         "events": [],
         "freshness_state": "fresh",
-        "freshness_age_days": "0",
+        "freshness_age_days": "1",
         "freshness_due": "2027-05-10"
       }
     },
@@ -6515,7 +6515,7 @@
         ],
         "events": [],
         "freshness_state": "fresh",
-        "freshness_age_days": "0",
+        "freshness_age_days": "1",
         "freshness_due": "2027-05-10"
       }
     },
@@ -6603,7 +6603,7 @@
         ],
         "events": [],
         "freshness_state": "fresh",
-        "freshness_age_days": "0",
+        "freshness_age_days": "1",
         "freshness_due": "2027-05-10"
       }
     },
@@ -6702,7 +6702,7 @@
           }
         ],
         "freshness_state": "fresh",
-        "freshness_age_days": "0",
+        "freshness_age_days": "1",
         "freshness_due": "2027-05-10"
       }
     },
@@ -6777,7 +6777,7 @@
         ],
         "events": [],
         "freshness_state": "fresh",
-        "freshness_age_days": "0",
+        "freshness_age_days": "1",
         "freshness_due": "2027-05-10"
       }
     },
@@ -6852,7 +6852,7 @@
         ],
         "events": [],
         "freshness_state": "fresh",
-        "freshness_age_days": "0",
+        "freshness_age_days": "1",
         "freshness_due": "2027-05-10"
       }
     },
@@ -6940,7 +6940,7 @@
         ],
         "events": [],
         "freshness_state": "fresh",
-        "freshness_age_days": "0",
+        "freshness_age_days": "1",
         "freshness_due": "2027-05-10"
       }
     },
@@ -7002,7 +7002,7 @@
         ],
         "events": [],
         "freshness_state": "fresh",
-        "freshness_age_days": "2",
+        "freshness_age_days": "3",
         "freshness_due": "2027-05-08"
       }
     },
@@ -7064,7 +7064,7 @@
         ],
         "events": [],
         "freshness_state": "fresh",
-        "freshness_age_days": "2",
+        "freshness_age_days": "3",
         "freshness_due": "2027-05-08"
       }
     },
@@ -7126,8 +7126,1868 @@
         ],
         "events": [],
         "freshness_state": "fresh",
-        "freshness_age_days": "2",
+        "freshness_age_days": "3",
         "freshness_due": "2027-05-08"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          116.708,
+          -0.974
+        ]
+      },
+      "properties": {
+        "id": "urban-ikn-phase-2",
+        "name": "IKN Phase 2",
+        "sector": "urban",
+        "subsector": "government district",
+        "status": "under_construction",
+        "status_basis": "Legislative and judicial complexes under construction; Rp48.8T of APBN allocated for 2025-2029; political-capital target 2028.",
+        "corridor_id": "",
+        "island": "Kalimantan",
+        "province": "East Kalimantan",
+        "route": "KIPP Nusantara, Penajam Paser Utara",
+        "length_km": "",
+        "operational_km": "",
+        "construction_km": "",
+        "progress_pct": "",
+        "investment_idr_t": "48.8",
+        "capacity": "",
+        "capacity_unit": "",
+        "psn": "no",
+        "opened_year": "",
+        "opened_date": "",
+        "expected_open_year": "2028",
+        "status_as_of": "2026-09-28",
+        "verification": "dual",
+        "precision": "approximate",
+        "operator": "tba",
+        "source_url": "https://ekonomi.bisnis.com/read/20260928/45/2007905/konstruksi-ikn-tahap-2-serap-hingga-8200-tenaga-kerja",
+        "source_type": "secondary",
+        "retrieved_on": "2026-11-09",
+        "last_verified": "2026-11-09",
+        "notes": "Phase 2 covers the legislative and judicial buildings, supporting offices, embankments, retention ponds and water piping; phase 3 covers ASN and state-institution housing. Rp48.8T is the APBN allocation, not total project cost; KPBU adds Rp134.22T and private investment Rp74.54T. IKN is a national priority programme outside the PSN annex.",
+        "corridor_name": "",
+        "sources": [
+          {
+            "id": "src-bisnis-ikn-phase-2-2026-09-28",
+            "publisher": "Bisnis Indonesia",
+            "title": "Konstruksi IKN Tahap 2 Serap hingga 8.200 Tenaga Kerja",
+            "url": "https://ekonomi.bisnis.com/read/20260928/45/2007905/konstruksi-ikn-tahap-2-serap-hingga-8200-tenaga-kerja",
+            "published_on": "2026-09-28",
+            "retrieved_on": "2026-11-09",
+            "source_type": "secondary",
+            "language": "id",
+            "archive_path": "",
+            "notes": "Rp48.8T APBN for 2025-2029, three construction stages and the 2028 political-capital target.",
+            "claim": "investment; status; timeline"
+          },
+          {
+            "id": "src-antara-ikn-judicial-2026-08-02",
+            "publisher": "ANTARA News",
+            "title": "Nusantara judicial buildings 12.41 percent complete: IKN Authority",
+            "url": "https://en.antaranews.com/amp/news/425108/nusantara-judicial-buildings-1241-percent-complete-ikn-authority",
+            "published_on": "2026-08-02",
+            "retrieved_on": "2026-11-09",
+            "source_type": "secondary",
+            "language": "en",
+            "archive_path": "",
+            "notes": "Judicial zone started December 2025; Rp3.1T for the legislative and judicial zones; completion targeted December 2027.",
+            "claim": "progress; location"
+          }
+        ],
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "0",
+        "freshness_due": "2027-05-11"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          116.705158,
+          -1.159879
+        ]
+      },
+      "properties": {
+        "id": "air-nusantara-ikn",
+        "name": "Nusantara International Airport (IVD)",
+        "sector": "airport",
+        "subsector": "international gateway",
+        "status": "operating",
+        "status_basis": "Operating as a special (VVIP) airport; aerodrome certificate issued 12 June 2025; conversion to a public airport is in process.",
+        "corridor_id": "",
+        "island": "Kalimantan",
+        "province": "East Kalimantan",
+        "route": "Sepaku, Penajam Paser Utara",
+        "length_km": "",
+        "operational_km": "",
+        "construction_km": "",
+        "progress_pct": "",
+        "investment_idr_t": "",
+        "capacity": "3000",
+        "capacity_unit": "m runway",
+        "psn": "no",
+        "opened_year": "2025",
+        "opened_date": "2025-06-12",
+        "expected_open_year": "",
+        "status_as_of": "2026-08-24",
+        "verification": "dual",
+        "precision": "exact",
+        "operator": "Directorate General of Civil Aviation",
+        "source_url": "https://hubud.kemenhub.go.id/bandara/499",
+        "source_type": "official",
+        "retrieved_on": "2026-11-09",
+        "last_verified": "2026-11-09",
+        "notes": "ICAO WALK, IATA IVD. 3,000 x 45 m runway, 7,350 m2 terminal and 621 ha airport area. Public-airport conversion and hajj embarkation status are pending; the runway can take a Boeing 777-300.",
+        "corridor_name": "",
+        "sources": [
+          {
+            "id": "src-hubud-nusantara-airport",
+            "publisher": "Direktorat Jenderal Perhubungan Udara",
+            "title": "Bandar Udara Internasional Nusantara",
+            "url": "https://hubud.kemenhub.go.id/bandara/499",
+            "published_on": "",
+            "retrieved_on": "2026-11-09",
+            "source_type": "official",
+            "language": "id",
+            "archive_path": "",
+            "notes": "ICAO WALK, 3,000 x 45 m runway, 7,350 m2 terminal, 621 ha airport area and special-operation status.",
+            "claim": "location; capacity; status"
+          },
+          {
+            "id": "src-bisnis-ikn-airport-2026-07-16",
+            "publisher": "Bisnis Indonesia",
+            "title": "Kapan Bandara IKN Dibuka untuk Umum? Ini Jawaban Kemenhub",
+            "url": "https://ekonomi.bisnis.com/read/20260716/98/1988635/kapan-bandara-ikn-dibuka-untuk-umum-ini-jawaban-kemehub",
+            "published_on": "2026-07-16",
+            "retrieved_on": "2026-11-09",
+            "source_type": "secondary",
+            "language": "id",
+            "archive_path": "",
+            "notes": "The airport operates as a special airport while the public-airport conversion is processed.",
+            "claim": "status; opening"
+          }
+        ],
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "0",
+        "freshness_due": "2027-05-11"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.3,
+          -7.98
+        ]
+      },
+      "properties": {
+        "id": "energy-masela-abadi-lng",
+        "name": "Abadi Masela LNG",
+        "sector": "energy",
+        "subsector": "LNG",
+        "status": "under_construction",
+        "status_basis": "Groundbreaking 16 July 2026; FEED 79.56% in early July 2026; final investment decision targeted by end-2026.",
+        "corridor_id": "",
+        "island": "Maluku",
+        "province": "Maluku",
+        "route": "Tanimbar Islands, Arafura Sea",
+        "length_km": "",
+        "operational_km": "",
+        "construction_km": "",
+        "progress_pct": "",
+        "investment_idr_t": "390",
+        "capacity": "9.5",
+        "capacity_unit": "Mtpa LNG",
+        "psn": "yes",
+        "opened_year": "",
+        "opened_date": "",
+        "expected_open_year": "",
+        "status_as_of": "2026-07-16",
+        "verification": "dual",
+        "precision": "regency",
+        "operator": "INPEX Masela, Ltd.",
+        "source_url": "https://en.antaranews.com/amp/news/422900/masela-lng-project-valued-at-us21-billion-investment-esdm-minister",
+        "source_type": "secondary",
+        "retrieved_on": "2026-11-09",
+        "last_verified": "2026-11-09",
+        "notes": "US$20.9B including US$1B for CCS; 9.5 Mtpa LNG, 150 MMSCFD domestic gas and 35,000 bpd condensate. Developed by INPEX Masela with Pertamina and Petronas. The map point is the Tanimbar onshore site/regency centre, not the offshore Abadi field.",
+        "corridor_name": "",
+        "sources": [
+          {
+            "id": "src-antara-masela-2026-07-16",
+            "publisher": "ANTARA News",
+            "title": "Masela LNG project valued at US$21 billion investment: ESDM Minister",
+            "url": "https://en.antaranews.com/amp/news/422900/masela-lng-project-valued-at-us21-billion-investment-esdm-minister",
+            "published_on": "2026-07-16",
+            "retrieved_on": "2026-11-09",
+            "source_type": "secondary",
+            "language": "en",
+            "archive_path": "",
+            "notes": "US$20.9B including US$1B CCS; 9.5 Mtpa LNG, 35,000 bpd condensate and 150 MMSCFD domestic gas.",
+            "claim": "status; investment; capacity"
+          },
+          {
+            "id": "src-cnbc-masela-2026-07-16",
+            "publisher": "CNBC Indonesia",
+            "title": "Resmi Dibangun! Blok Masela Bisa Hasilkan 9,5 Juta Ton LNG per Tahun",
+            "url": "https://www.cnbcindonesia.com/news/20260716144633-4-751349/resmi-dibangun-blok-masela-bisa-hasilkan-95-juta-ton-lng-per-tahun",
+            "published_on": "2026-07-16",
+            "retrieved_on": "2026-11-09",
+            "source_type": "secondary",
+            "language": "id",
+            "archive_path": "",
+            "notes": "Rp390T investment, 60% domestic allocation, and the onshore LNG site in Tanimbar.",
+            "claim": "location; operator"
+          }
+        ],
+        "events": [
+          {
+            "id": "evt-masela-groundbreaking",
+            "event_date": "2026-07-16",
+            "event_type": "groundbreaking",
+            "description": "Groundbreaking at the Tanimbar onshore LNG site.",
+            "source_id": "src-antara-masela-2026-07-16",
+            "source_title": "Masela LNG project valued at US$21 billion investment: ESDM Minister",
+            "source_url": "https://en.antaranews.com/amp/news/422900/masela-lng-project-valued-at-us21-billion-investment-esdm-minister",
+            "notes": ""
+          }
+        ],
+        "freshness_state": "fresh",
+        "freshness_age_days": "0",
+        "freshness_due": "2027-05-11"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          116.85,
+          -1.237
+        ]
+      },
+      "properties": {
+        "id": "energy-rdmp-balikpapan",
+        "name": "RDMP Balikpapan",
+        "sector": "energy",
+        "subsector": "refinery",
+        "status": "operating",
+        "status_basis": "Inaugurated 12 January 2026; crude capacity raised from 260,000 to 360,000 barrels per day.",
+        "corridor_id": "",
+        "island": "Kalimantan",
+        "province": "East Kalimantan",
+        "route": "Refinery Unit V, Balikpapan",
+        "length_km": "",
+        "operational_km": "",
+        "construction_km": "",
+        "progress_pct": "",
+        "investment_idr_t": "123",
+        "capacity": "360",
+        "capacity_unit": "kbd crude",
+        "psn": "yes",
+        "opened_year": "2026",
+        "opened_date": "2026-01-12",
+        "expected_open_year": "",
+        "status_as_of": "2026-01-12",
+        "verification": "dual",
+        "precision": "approximate",
+        "operator": "PT Pertamina (Persero)",
+        "source_url": "https://www.esdm.go.id/en/media-center/news-archives/resmikan-pengembangan-kilang-balikpapan-presiden-prabowo-kita-mampu-mandiri-energi",
+        "source_type": "official",
+        "retrieved_on": "2026-11-09",
+        "last_verified": "2026-11-09",
+        "notes": "US$7.4B; Euro V fuel; LPG output 48 to 384 ktpa; petrochemical output 283 ktpa. The PSN register lists RDMP as an aggregate (No. 207); this row is the Balikpapan component.",
+        "corridor_name": "",
+        "sources": [
+          {
+            "id": "src-esdm-rdmp-balikpapan-2026-01-12",
+            "publisher": "Kementerian Energi dan Sumber Daya Mineral",
+            "title": "Resmikan Pengembangan Kilang Balikpapan, Presiden Prabowo: Kita Mampu Mandiri Energi",
+            "url": "https://www.esdm.go.id/en/media-center/news-archives/resmikan-pengembangan-kilang-balikpapan-presiden-prabowo-kita-mampu-mandiri-energi",
+            "published_on": "2026-01-12",
+            "retrieved_on": "2026-11-09",
+            "source_type": "official",
+            "language": "id",
+            "archive_path": "",
+            "notes": "US$7.4B / Rp123T; 260 to 360 kbd; Euro V; LPG 48 to 384 ktpa; petrochemical 283 ktpa.",
+            "claim": "status; investment; capacity; opening; location"
+          }
+        ],
+        "events": [
+          {
+            "id": "evt-rdmp-balikpapan-opened",
+            "event_date": "2026-01-12",
+            "event_type": "opened",
+            "description": "Inaugurated after capacity rose from 260,000 to 360,000 barrels per day.",
+            "source_id": "src-esdm-rdmp-balikpapan-2026-01-12",
+            "source_title": "Resmikan Pengembangan Kilang Balikpapan, Presiden Prabowo: Kita Mampu Mandiri Energi",
+            "source_url": "https://www.esdm.go.id/en/media-center/news-archives/resmikan-pengembangan-kilang-balikpapan-presiden-prabowo-kita-mampu-mandiri-energi",
+            "notes": ""
+          }
+        ],
+        "freshness_state": "fresh",
+        "freshness_age_days": "0",
+        "freshness_due": "2027-05-11"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.44,
+          -8.17
+        ]
+      },
+      "properties": {
+        "id": "energy-plts-100gw-phase-1",
+        "name": "100 GWp Solar Programme - Phase 1",
+        "sector": "energy",
+        "subsector": "solar",
+        "status": "under_construction",
+        "status_basis": "Launched 25 August 2026 with 14 projects totalling 5.3 GWp; phase 1 target is 17 GWp.",
+        "corridor_id": "",
+        "island": "Bali-Nusa Tenggara",
+        "province": "Bali",
+        "route": "Gilimanuk, Jembrana (launch site)",
+        "length_km": "",
+        "operational_km": "",
+        "construction_km": "",
+        "progress_pct": "",
+        "investment_idr_t": "1140",
+        "capacity": "5300",
+        "capacity_unit": "MWp launched",
+        "psn": "no",
+        "opened_year": "",
+        "opened_date": "",
+        "expected_open_year": "2029",
+        "status_as_of": "2026-08-25",
+        "verification": "dual",
+        "precision": "approximate",
+        "operator": "PT Perusahaan Listrik Negara (Persero)",
+        "source_url": "https://setneg.go.id/baca/index/presiden_prabowo_luncurkan_plts_100_gwp_diawali_14_plts_berkapasitas_53_gwp",
+        "source_type": "official",
+        "retrieved_on": "2026-11-09",
+        "last_verified": "2026-11-09",
+        "notes": "Programme total 100 GWp; phases of 17, 18 and 30 GWp are named before the remainder. Rp1,140T investment, Rp73.9T annual subsidy saving and 5.52 million jobs. The map point is the Gilimanuk launch site, not a national footprint.",
+        "corridor_name": "",
+        "sources": [
+          {
+            "id": "src-setneg-plts-100gw-2026-08-25",
+            "publisher": "Kementerian Sekretariat Negara",
+            "title": "Presiden Prabowo Luncurkan PLTS 100 GWp, Diawali 14 PLTS Berkapasitas 5,3 GWp",
+            "url": "https://setneg.go.id/baca/index/presiden_prabowo_luncurkan_plts_100_gwp_diawali_14_plts_berkapasitas_53_gwp",
+            "published_on": "2026-08-25",
+            "retrieved_on": "2026-11-09",
+            "source_type": "official",
+            "language": "id",
+            "archive_path": "",
+            "notes": "Launch at Gilimanuk; 14 projects in six provinces totalling 5.3 GWp; Rp1,140T programme investment.",
+            "claim": "status; investment; capacity; location"
+          },
+          {
+            "id": "src-setkab-plts-100gw-2026-08-25",
+            "publisher": "Sekretariat Kabinet Republik Indonesia",
+            "title": "Presiden Prabowo Luncurkan Program PLTS 100 GWp, Targetkan Pembangunan dalam Tiga Tahun",
+            "url": "https://setkab.go.id/presiden-prabowo-luncurkan-program-plts-100-gwp-targetkan-pembangunan-dalam-tiga-tahun",
+            "published_on": "2026-08-25",
+            "retrieved_on": "2026-11-09",
+            "source_type": "official",
+            "language": "id",
+            "archive_path": "",
+            "notes": "Phase 1 target 17 GWp; 14 early projects total 5,216 MWp across construction, groundbreaking and tender stages.",
+            "claim": "target"
+          }
+        ],
+        "events": [
+          {
+            "id": "evt-plts-100gw-groundbreaking",
+            "event_date": "2026-08-25",
+            "event_type": "groundbreaking",
+            "description": "Programme launched at Gilimanuk with 14 projects totalling 5.3 GWp.",
+            "source_id": "src-setneg-plts-100gw-2026-08-25",
+            "source_title": "Presiden Prabowo Luncurkan PLTS 100 GWp, Diawali 14 PLTS Berkapasitas 5,3 GWp",
+            "source_url": "https://setneg.go.id/baca/index/presiden_prabowo_luncurkan_plts_100_gwp_diawali_14_plts_berkapasitas_53_gwp",
+            "notes": ""
+          }
+        ],
+        "freshness_state": "fresh",
+        "freshness_age_days": "0",
+        "freshness_due": "2027-05-11"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.45,
+          1.68
+        ]
+      },
+      "properties": {
+        "id": "energy-hilirisasi-2-01-dumai-gasoline",
+        "name": "Hilirisasi Stage II - Dumai Gasoline Refinery",
+        "sector": "energy",
+        "subsector": "refinery",
+        "status": "under_construction",
+        "status_basis": "Groundbreaking 29 April 2026 as part of the 13-project Hilirisasi Stage II package.",
+        "corridor_id": "",
+        "island": "Sumatra",
+        "province": "Riau",
+        "route": "Dumai, Riau",
+        "length_km": "",
+        "operational_km": "",
+        "construction_km": "",
+        "progress_pct": "",
+        "investment_idr_t": "",
+        "capacity": "",
+        "capacity_unit": "",
+        "psn": "unknown",
+        "opened_year": "",
+        "opened_date": "",
+        "expected_open_year": "",
+        "status_as_of": "2026-04-29",
+        "verification": "single",
+        "precision": "regency",
+        "operator": "PT Pertamina (Persero)",
+        "source_url": "https://setkab.go.id/presiden-prabowo-lakukan-groundbreaking-13-proyek-hilirisasi-nasional-tahap-ii-senilai-rp116-triliun",
+        "source_type": "official",
+        "retrieved_on": "2026-11-09",
+        "last_verified": "2026-11-09",
+        "notes": "Part of the Rp116T Hilirisasi Stage II package (5 energy, 5 mineral, 3 agriculture). Project-level investment and completion date were not published.",
+        "corridor_name": "",
+        "sources": [
+          {
+            "id": "src-setkab-hilirisasi-stage-ii-2026-04-29",
+            "publisher": "Sekretariat Kabinet Republik Indonesia",
+            "title": "Presiden Prabowo Lakukan Groundbreaking 13 Proyek Hilirisasi Nasional Tahap II Senilai Rp116 Triliun",
+            "url": "https://setkab.go.id/presiden-prabowo-lakukan-groundbreaking-13-proyek-hilirisasi-nasional-tahap-ii-senilai-rp116-triliun",
+            "published_on": "2026-04-29",
+            "retrieved_on": "2026-11-09",
+            "source_type": "official",
+            "language": "id",
+            "archive_path": "",
+            "notes": "Official list of the 13 stage II projects, locations and the Rp116T package value.",
+            "claim": "status; location"
+          }
+        ],
+        "events": [
+          {
+            "id": "evt-hilirisasi-2-01-groundbreaking",
+            "event_date": "2026-04-29",
+            "event_type": "groundbreaking",
+            "description": "Groundbreaking for the Dumai gasoline refinery as part of Hilirisasi Stage II.",
+            "source_id": "src-setkab-hilirisasi-stage-ii-2026-04-29",
+            "source_title": "Presiden Prabowo Lakukan Groundbreaking 13 Proyek Hilirisasi Nasional Tahap II Senilai Rp116 Triliun",
+            "source_url": "https://setkab.go.id/presiden-prabowo-lakukan-groundbreaking-13-proyek-hilirisasi-nasional-tahap-ii-senilai-rp116-triliun",
+            "notes": ""
+          }
+        ],
+        "freshness_state": "fresh",
+        "freshness_age_days": "0",
+        "freshness_due": "2027-05-11"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.02,
+          -7.7
+        ]
+      },
+      "properties": {
+        "id": "energy-hilirisasi-2-02-cilacap-gasoline",
+        "name": "Hilirisasi Stage II - Cilacap Gasoline Refinery",
+        "sector": "energy",
+        "subsector": "refinery",
+        "status": "under_construction",
+        "status_basis": "Groundbreaking 29 April 2026 at Refinery Unit IV Cilacap.",
+        "corridor_id": "",
+        "island": "Java",
+        "province": "Central Java",
+        "route": "Cilacap, Central Java",
+        "length_km": "",
+        "operational_km": "",
+        "construction_km": "",
+        "progress_pct": "",
+        "investment_idr_t": "",
+        "capacity": "",
+        "capacity_unit": "",
+        "psn": "unknown",
+        "opened_year": "",
+        "opened_date": "",
+        "expected_open_year": "",
+        "status_as_of": "2026-04-29",
+        "verification": "single",
+        "precision": "regency",
+        "operator": "PT Pertamina (Persero)",
+        "source_url": "https://setkab.go.id/presiden-prabowo-lakukan-groundbreaking-13-proyek-hilirisasi-nasional-tahap-ii-senilai-rp116-triliun",
+        "source_type": "official",
+        "retrieved_on": "2026-11-09",
+        "last_verified": "2026-11-09",
+        "notes": "Part of the Rp116T Hilirisasi Stage II package. This is the gasoline refinery project, not the Cilacap green refinery listed separately in PSN register No. 213.",
+        "corridor_name": "",
+        "sources": [
+          {
+            "id": "src-setkab-hilirisasi-stage-ii-2026-04-29",
+            "publisher": "Sekretariat Kabinet Republik Indonesia",
+            "title": "Presiden Prabowo Lakukan Groundbreaking 13 Proyek Hilirisasi Nasional Tahap II Senilai Rp116 Triliun",
+            "url": "https://setkab.go.id/presiden-prabowo-lakukan-groundbreaking-13-proyek-hilirisasi-nasional-tahap-ii-senilai-rp116-triliun",
+            "published_on": "2026-04-29",
+            "retrieved_on": "2026-11-09",
+            "source_type": "official",
+            "language": "id",
+            "archive_path": "",
+            "notes": "Official list of the 13 stage II projects, locations and the Rp116T package value.",
+            "claim": "status; location"
+          }
+        ],
+        "events": [
+          {
+            "id": "evt-hilirisasi-2-02-groundbreaking",
+            "event_date": "2026-04-29",
+            "event_type": "groundbreaking",
+            "description": "Groundbreaking for the Cilacap gasoline refinery as part of Hilirisasi Stage II.",
+            "source_id": "src-setkab-hilirisasi-stage-ii-2026-04-29",
+            "source_title": "Presiden Prabowo Lakukan Groundbreaking 13 Proyek Hilirisasi Nasional Tahap II Senilai Rp116 Triliun",
+            "source_url": "https://setkab.go.id/presiden-prabowo-lakukan-groundbreaking-13-proyek-hilirisasi-nasional-tahap-ii-senilai-rp116-triliun",
+            "notes": ""
+          }
+        ],
+        "freshness_state": "fresh",
+        "freshness_age_days": "0",
+        "freshness_due": "2027-05-11"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          117.2,
+          -0.58
+        ]
+      },
+      "properties": {
+        "id": "energy-hilirisasi-2-03-palaran-fuel-terminal",
+        "name": "Hilirisasi Stage II - Palaran Fuel Terminal",
+        "sector": "energy",
+        "subsector": "fuel terminal",
+        "status": "under_construction",
+        "status_basis": "Groundbreaking 29 April 2026 as part of the 13-project Hilirisasi Stage II package.",
+        "corridor_id": "",
+        "island": "Kalimantan",
+        "province": "East Kalimantan",
+        "route": "Palaran, Samarinda",
+        "length_km": "",
+        "operational_km": "",
+        "construction_km": "",
+        "progress_pct": "",
+        "investment_idr_t": "",
+        "capacity": "",
+        "capacity_unit": "",
+        "psn": "unknown",
+        "opened_year": "",
+        "opened_date": "",
+        "expected_open_year": "",
+        "status_as_of": "2026-04-29",
+        "verification": "single",
+        "precision": "regency",
+        "operator": "PT Pertamina (Persero)",
+        "source_url": "https://setkab.go.id/presiden-prabowo-lakukan-groundbreaking-13-proyek-hilirisasi-nasional-tahap-ii-senilai-rp116-triliun",
+        "source_type": "official",
+        "retrieved_on": "2026-11-09",
+        "last_verified": "2026-11-09",
+        "notes": "Operational fuel tank package in the Rp116T Hilirisasi Stage II programme. Project-level investment and completion date were not published.",
+        "corridor_name": "",
+        "sources": [
+          {
+            "id": "src-setkab-hilirisasi-stage-ii-2026-04-29",
+            "publisher": "Sekretariat Kabinet Republik Indonesia",
+            "title": "Presiden Prabowo Lakukan Groundbreaking 13 Proyek Hilirisasi Nasional Tahap II Senilai Rp116 Triliun",
+            "url": "https://setkab.go.id/presiden-prabowo-lakukan-groundbreaking-13-proyek-hilirisasi-nasional-tahap-ii-senilai-rp116-triliun",
+            "published_on": "2026-04-29",
+            "retrieved_on": "2026-11-09",
+            "source_type": "official",
+            "language": "id",
+            "archive_path": "",
+            "notes": "Official list of the 13 stage II projects, locations and the Rp116T package value.",
+            "claim": "status; location"
+          }
+        ],
+        "events": [
+          {
+            "id": "evt-hilirisasi-2-03-groundbreaking",
+            "event_date": "2026-04-29",
+            "event_type": "groundbreaking",
+            "description": "Groundbreaking for the Palaran fuel terminal as part of Hilirisasi Stage II.",
+            "source_id": "src-setkab-hilirisasi-stage-ii-2026-04-29",
+            "source_title": "Presiden Prabowo Lakukan Groundbreaking 13 Proyek Hilirisasi Nasional Tahap II Senilai Rp116 Triliun",
+            "source_url": "https://setkab.go.id/presiden-prabowo-lakukan-groundbreaking-13-proyek-hilirisasi-nasional-tahap-ii-senilai-rp116-triliun",
+            "notes": ""
+          }
+        ],
+        "freshness_state": "fresh",
+        "freshness_age_days": "0",
+        "freshness_due": "2027-05-11"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.08,
+          -1.18
+        ]
+      },
+      "properties": {
+        "id": "energy-hilirisasi-2-04-biak-fuel-terminal",
+        "name": "Hilirisasi Stage II - Biak Fuel Terminal",
+        "sector": "energy",
+        "subsector": "fuel terminal",
+        "status": "under_construction",
+        "status_basis": "Groundbreaking 29 April 2026 as part of the 13-project Hilirisasi Stage II package.",
+        "corridor_id": "",
+        "island": "Papua",
+        "province": "Papua",
+        "route": "Biak, Papua",
+        "length_km": "",
+        "operational_km": "",
+        "construction_km": "",
+        "progress_pct": "",
+        "investment_idr_t": "",
+        "capacity": "",
+        "capacity_unit": "",
+        "psn": "unknown",
+        "opened_year": "",
+        "opened_date": "",
+        "expected_open_year": "",
+        "status_as_of": "2026-04-29",
+        "verification": "single",
+        "precision": "regency",
+        "operator": "PT Pertamina (Persero)",
+        "source_url": "https://setkab.go.id/presiden-prabowo-lakukan-groundbreaking-13-proyek-hilirisasi-nasional-tahap-ii-senilai-rp116-triliun",
+        "source_type": "official",
+        "retrieved_on": "2026-11-09",
+        "last_verified": "2026-11-09",
+        "notes": "Operational fuel tank package in the Rp116T Hilirisasi Stage II programme. Project-level investment and completion date were not published.",
+        "corridor_name": "",
+        "sources": [
+          {
+            "id": "src-setkab-hilirisasi-stage-ii-2026-04-29",
+            "publisher": "Sekretariat Kabinet Republik Indonesia",
+            "title": "Presiden Prabowo Lakukan Groundbreaking 13 Proyek Hilirisasi Nasional Tahap II Senilai Rp116 Triliun",
+            "url": "https://setkab.go.id/presiden-prabowo-lakukan-groundbreaking-13-proyek-hilirisasi-nasional-tahap-ii-senilai-rp116-triliun",
+            "published_on": "2026-04-29",
+            "retrieved_on": "2026-11-09",
+            "source_type": "official",
+            "language": "id",
+            "archive_path": "",
+            "notes": "Official list of the 13 stage II projects, locations and the Rp116T package value.",
+            "claim": "status; location"
+          }
+        ],
+        "events": [
+          {
+            "id": "evt-hilirisasi-2-04-groundbreaking",
+            "event_date": "2026-04-29",
+            "event_type": "groundbreaking",
+            "description": "Groundbreaking for the Biak fuel terminal as part of Hilirisasi Stage II.",
+            "source_id": "src-setkab-hilirisasi-stage-ii-2026-04-29",
+            "source_title": "Presiden Prabowo Lakukan Groundbreaking 13 Proyek Hilirisasi Nasional Tahap II Senilai Rp116 Triliun",
+            "source_url": "https://setkab.go.id/presiden-prabowo-lakukan-groundbreaking-13-proyek-hilirisasi-nasional-tahap-ii-senilai-rp116-triliun",
+            "notes": ""
+          }
+        ],
+        "freshness_state": "fresh",
+        "freshness_age_days": "0",
+        "freshness_due": "2027-05-11"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          122.21,
+          -8.62
+        ]
+      },
+      "properties": {
+        "id": "energy-hilirisasi-2-05-maumere-fuel-terminal",
+        "name": "Hilirisasi Stage II - Maumere Fuel Terminal",
+        "sector": "energy",
+        "subsector": "fuel terminal",
+        "status": "under_construction",
+        "status_basis": "Groundbreaking 29 April 2026 as part of the 13-project Hilirisasi Stage II package.",
+        "corridor_id": "",
+        "island": "Bali-Nusa Tenggara",
+        "province": "East Nusa Tenggara",
+        "route": "Maumere, Sikka",
+        "length_km": "",
+        "operational_km": "",
+        "construction_km": "",
+        "progress_pct": "",
+        "investment_idr_t": "",
+        "capacity": "",
+        "capacity_unit": "",
+        "psn": "unknown",
+        "opened_year": "",
+        "opened_date": "",
+        "expected_open_year": "",
+        "status_as_of": "2026-04-29",
+        "verification": "single",
+        "precision": "regency",
+        "operator": "PT Pertamina (Persero)",
+        "source_url": "https://setkab.go.id/presiden-prabowo-lakukan-groundbreaking-13-proyek-hilirisasi-nasional-tahap-ii-senilai-rp116-triliun",
+        "source_type": "official",
+        "retrieved_on": "2026-11-09",
+        "last_verified": "2026-11-09",
+        "notes": "Operational fuel tank package in the Rp116T Hilirisasi Stage II programme. Project-level investment and completion date were not published.",
+        "corridor_name": "",
+        "sources": [
+          {
+            "id": "src-setkab-hilirisasi-stage-ii-2026-04-29",
+            "publisher": "Sekretariat Kabinet Republik Indonesia",
+            "title": "Presiden Prabowo Lakukan Groundbreaking 13 Proyek Hilirisasi Nasional Tahap II Senilai Rp116 Triliun",
+            "url": "https://setkab.go.id/presiden-prabowo-lakukan-groundbreaking-13-proyek-hilirisasi-nasional-tahap-ii-senilai-rp116-triliun",
+            "published_on": "2026-04-29",
+            "retrieved_on": "2026-11-09",
+            "source_type": "official",
+            "language": "id",
+            "archive_path": "",
+            "notes": "Official list of the 13 stage II projects, locations and the Rp116T package value.",
+            "claim": "status; location"
+          }
+        ],
+        "events": [
+          {
+            "id": "evt-hilirisasi-2-05-groundbreaking",
+            "event_date": "2026-04-29",
+            "event_type": "groundbreaking",
+            "description": "Groundbreaking for the Maumere fuel terminal as part of Hilirisasi Stage II.",
+            "source_id": "src-setkab-hilirisasi-stage-ii-2026-04-29",
+            "source_title": "Presiden Prabowo Lakukan Groundbreaking 13 Proyek Hilirisasi Nasional Tahap II Senilai Rp116 Triliun",
+            "source_url": "https://setkab.go.id/presiden-prabowo-lakukan-groundbreaking-13-proyek-hilirisasi-nasional-tahap-ii-senilai-rp116-triliun",
+            "notes": ""
+          }
+        ],
+        "freshness_state": "fresh",
+        "freshness_age_days": "0",
+        "freshness_due": "2027-05-11"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.79,
+          -3.75
+        ]
+      },
+      "properties": {
+        "id": "energy-hilirisasi-2-06-tanjung-enim-dme",
+        "name": "Hilirisasi Stage II - Tanjung Enim DME",
+        "sector": "energy",
+        "subsector": "coal gasification",
+        "status": "under_construction",
+        "status_basis": "Groundbreaking 29 April 2026 as part of the 13-project Hilirisasi Stage II package.",
+        "corridor_id": "",
+        "island": "Sumatra",
+        "province": "South Sumatra",
+        "route": "Tanjung Enim, Muara Enim",
+        "length_km": "",
+        "operational_km": "",
+        "construction_km": "",
+        "progress_pct": "",
+        "investment_idr_t": "",
+        "capacity": "1.4",
+        "capacity_unit": "Mtpa DME",
+        "psn": "yes",
+        "opened_year": "",
+        "opened_date": "",
+        "expected_open_year": "",
+        "status_as_of": "2026-04-29",
+        "verification": "single",
+        "precision": "regency",
+        "operator": "PT Pertamina (Persero)",
+        "source_url": "https://setkab.go.id/presiden-prabowo-lakukan-groundbreaking-13-proyek-hilirisasi-nasional-tahap-ii-senilai-rp116-triliun",
+        "source_type": "official",
+        "retrieved_on": "2026-11-09",
+        "last_verified": "2026-11-09",
+        "notes": "1.4 Mtpa dimethyl ether plant. The PSN register lists coal gasification at Tanjung Enim as No. 215; this row is the stage II DME component. Package investment was not split by project.",
+        "corridor_name": "",
+        "sources": [
+          {
+            "id": "src-setkab-hilirisasi-stage-ii-2026-04-29",
+            "publisher": "Sekretariat Kabinet Republik Indonesia",
+            "title": "Presiden Prabowo Lakukan Groundbreaking 13 Proyek Hilirisasi Nasional Tahap II Senilai Rp116 Triliun",
+            "url": "https://setkab.go.id/presiden-prabowo-lakukan-groundbreaking-13-proyek-hilirisasi-nasional-tahap-ii-senilai-rp116-triliun",
+            "published_on": "2026-04-29",
+            "retrieved_on": "2026-11-09",
+            "source_type": "official",
+            "language": "id",
+            "archive_path": "",
+            "notes": "Official list of the 13 stage II projects, locations and the Rp116T package value.",
+            "claim": "status; capacity; location"
+          }
+        ],
+        "events": [
+          {
+            "id": "evt-hilirisasi-2-06-groundbreaking",
+            "event_date": "2026-04-29",
+            "event_type": "groundbreaking",
+            "description": "Groundbreaking for the Tanjung Enim DME plant as part of Hilirisasi Stage II.",
+            "source_id": "src-setkab-hilirisasi-stage-ii-2026-04-29",
+            "source_title": "Presiden Prabowo Lakukan Groundbreaking 13 Proyek Hilirisasi Nasional Tahap II Senilai Rp116 Triliun",
+            "source_url": "https://setkab.go.id/presiden-prabowo-lakukan-groundbreaking-13-proyek-hilirisasi-nasional-tahap-ii-senilai-rp116-triliun",
+            "notes": ""
+          }
+        ],
+        "freshness_state": "fresh",
+        "freshness_age_days": "0",
+        "freshness_due": "2027-05-11"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          122.0,
+          -2.55
+        ]
+      },
+      "properties": {
+        "id": "factory-hilirisasi-2-07-imip-stainless-steel",
+        "name": "Hilirisasi Stage II - IMIP Stainless Steel",
+        "sector": "factory",
+        "subsector": "stainless steel",
+        "status": "under_construction",
+        "status_basis": "Groundbreaking 29 April 2026 as part of the 13-project Hilirisasi Stage II package.",
+        "corridor_id": "",
+        "island": "Sulawesi",
+        "province": "Central Sulawesi",
+        "route": "Indonesia Morowali Industrial Park, Morowali",
+        "length_km": "",
+        "operational_km": "",
+        "construction_km": "",
+        "progress_pct": "",
+        "investment_idr_t": "",
+        "capacity": "",
+        "capacity_unit": "",
+        "psn": "unknown",
+        "opened_year": "",
+        "opened_date": "",
+        "expected_open_year": "",
+        "status_as_of": "2026-04-29",
+        "verification": "single",
+        "precision": "approximate",
+        "operator": "PT Indonesia Tsingshan Stainless Steel",
+        "source_url": "https://setkab.go.id/presiden-prabowo-lakukan-groundbreaking-13-proyek-hilirisasi-nasional-tahap-ii-senilai-rp116-triliun",
+        "source_type": "official",
+        "retrieved_on": "2026-11-09",
+        "last_verified": "2026-11-09",
+        "notes": "Stainless-steel manufacturing from nickel, inside IMIP. Part of the Rp116T Hilirisasi Stage II package; project-level investment and completion date were not published.",
+        "corridor_name": "",
+        "sources": [
+          {
+            "id": "src-setkab-hilirisasi-stage-ii-2026-04-29",
+            "publisher": "Sekretariat Kabinet Republik Indonesia",
+            "title": "Presiden Prabowo Lakukan Groundbreaking 13 Proyek Hilirisasi Nasional Tahap II Senilai Rp116 Triliun",
+            "url": "https://setkab.go.id/presiden-prabowo-lakukan-groundbreaking-13-proyek-hilirisasi-nasional-tahap-ii-senilai-rp116-triliun",
+            "published_on": "2026-04-29",
+            "retrieved_on": "2026-11-09",
+            "source_type": "official",
+            "language": "id",
+            "archive_path": "",
+            "notes": "Official list of the 13 stage II projects, locations and the Rp116T package value.",
+            "claim": "status; location"
+          }
+        ],
+        "events": [
+          {
+            "id": "evt-hilirisasi-2-07-groundbreaking",
+            "event_date": "2026-04-29",
+            "event_type": "groundbreaking",
+            "description": "Groundbreaking for the IMIP stainless-steel plant as part of Hilirisasi Stage II.",
+            "source_id": "src-setkab-hilirisasi-stage-ii-2026-04-29",
+            "source_title": "Presiden Prabowo Lakukan Groundbreaking 13 Proyek Hilirisasi Nasional Tahap II Senilai Rp116 Triliun",
+            "source_url": "https://setkab.go.id/presiden-prabowo-lakukan-groundbreaking-13-proyek-hilirisasi-nasional-tahap-ii-senilai-rp116-triliun",
+            "notes": ""
+          }
+        ],
+        "freshness_state": "fresh",
+        "freshness_age_days": "0",
+        "freshness_due": "2027-05-11"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.0,
+          -6.0
+        ]
+      },
+      "properties": {
+        "id": "factory-hilirisasi-2-08-cilegon-carbon-steel",
+        "name": "Hilirisasi Stage II - Cilegon Carbon Steel Slab",
+        "sector": "factory",
+        "subsector": "carbon steel",
+        "status": "under_construction",
+        "status_basis": "Groundbreaking 29 April 2026 as part of the 13-project Hilirisasi Stage II package.",
+        "corridor_id": "",
+        "island": "Java",
+        "province": "Banten",
+        "route": "Cilegon, Banten",
+        "length_km": "",
+        "operational_km": "",
+        "construction_km": "",
+        "progress_pct": "",
+        "investment_idr_t": "",
+        "capacity": "",
+        "capacity_unit": "",
+        "psn": "unknown",
+        "opened_year": "",
+        "opened_date": "",
+        "expected_open_year": "",
+        "status_as_of": "2026-04-29",
+        "verification": "single",
+        "precision": "regency",
+        "operator": "PT Krakatau Steel (Persero) Tbk",
+        "source_url": "https://setkab.go.id/presiden-prabowo-lakukan-groundbreaking-13-proyek-hilirisasi-nasional-tahap-ii-senilai-rp116-triliun",
+        "source_type": "official",
+        "retrieved_on": "2026-11-09",
+        "last_verified": "2026-11-09",
+        "notes": "Carbon steel slab from local iron ore. Part of the Rp116T Hilirisasi Stage II package; project-level investment and completion date were not published.",
+        "corridor_name": "",
+        "sources": [
+          {
+            "id": "src-setkab-hilirisasi-stage-ii-2026-04-29",
+            "publisher": "Sekretariat Kabinet Republik Indonesia",
+            "title": "Presiden Prabowo Lakukan Groundbreaking 13 Proyek Hilirisasi Nasional Tahap II Senilai Rp116 Triliun",
+            "url": "https://setkab.go.id/presiden-prabowo-lakukan-groundbreaking-13-proyek-hilirisasi-nasional-tahap-ii-senilai-rp116-triliun",
+            "published_on": "2026-04-29",
+            "retrieved_on": "2026-11-09",
+            "source_type": "official",
+            "language": "id",
+            "archive_path": "",
+            "notes": "Official list of the 13 stage II projects, locations and the Rp116T package value.",
+            "claim": "status; location"
+          }
+        ],
+        "events": [
+          {
+            "id": "evt-hilirisasi-2-08-groundbreaking",
+            "event_date": "2026-04-29",
+            "event_type": "groundbreaking",
+            "description": "Groundbreaking for the Cilegon carbon-steel plant as part of Hilirisasi Stage II.",
+            "source_id": "src-setkab-hilirisasi-stage-ii-2026-04-29",
+            "source_title": "Presiden Prabowo Lakukan Groundbreaking 13 Proyek Hilirisasi Nasional Tahap II Senilai Rp116 Triliun",
+            "source_url": "https://setkab.go.id/presiden-prabowo-lakukan-groundbreaking-13-proyek-hilirisasi-nasional-tahap-ii-senilai-rp116-triliun",
+            "notes": ""
+          }
+        ],
+        "freshness_state": "fresh",
+        "freshness_age_days": "0",
+        "freshness_due": "2027-05-11"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.3,
+          -6.3
+        ]
+      },
+      "properties": {
+        "id": "factory-hilirisasi-2-09-karawang-buton-asphalt",
+        "name": "Hilirisasi Stage II - Karawang Buton Asphalt",
+        "sector": "factory",
+        "subsector": "asphalt",
+        "status": "under_construction",
+        "status_basis": "Groundbreaking 29 April 2026 as part of the 13-project Hilirisasi Stage II package.",
+        "corridor_id": "",
+        "island": "Java",
+        "province": "West Java",
+        "route": "Karawang, West Java",
+        "length_km": "",
+        "operational_km": "",
+        "construction_km": "",
+        "progress_pct": "",
+        "investment_idr_t": "",
+        "capacity": "",
+        "capacity_unit": "",
+        "psn": "unknown",
+        "opened_year": "",
+        "opened_date": "",
+        "expected_open_year": "",
+        "status_as_of": "2026-04-29",
+        "verification": "single",
+        "precision": "regency",
+        "operator": "PT Buton Asphalt Indonesia",
+        "source_url": "https://setkab.go.id/presiden-prabowo-lakukan-groundbreaking-13-proyek-hilirisasi-nasional-tahap-ii-senilai-rp116-triliun",
+        "source_type": "official",
+        "retrieved_on": "2026-11-09",
+        "last_verified": "2026-11-09",
+        "notes": "Buton asphalt ecosystem and production facility. Part of the Rp116T Hilirisasi Stage II package; project-level investment and completion date were not published.",
+        "corridor_name": "",
+        "sources": [
+          {
+            "id": "src-setkab-hilirisasi-stage-ii-2026-04-29",
+            "publisher": "Sekretariat Kabinet Republik Indonesia",
+            "title": "Presiden Prabowo Lakukan Groundbreaking 13 Proyek Hilirisasi Nasional Tahap II Senilai Rp116 Triliun",
+            "url": "https://setkab.go.id/presiden-prabowo-lakukan-groundbreaking-13-proyek-hilirisasi-nasional-tahap-ii-senilai-rp116-triliun",
+            "published_on": "2026-04-29",
+            "retrieved_on": "2026-11-09",
+            "source_type": "official",
+            "language": "id",
+            "archive_path": "",
+            "notes": "Official list of the 13 stage II projects, locations and the Rp116T package value.",
+            "claim": "status; location"
+          }
+        ],
+        "events": [
+          {
+            "id": "evt-hilirisasi-2-09-groundbreaking",
+            "event_date": "2026-04-29",
+            "event_type": "groundbreaking",
+            "description": "Groundbreaking for the Karawang Buton asphalt plant as part of Hilirisasi Stage II.",
+            "source_id": "src-setkab-hilirisasi-stage-ii-2026-04-29",
+            "source_title": "Presiden Prabowo Lakukan Groundbreaking 13 Proyek Hilirisasi Nasional Tahap II Senilai Rp116 Triliun",
+            "source_url": "https://setkab.go.id/presiden-prabowo-lakukan-groundbreaking-13-proyek-hilirisasi-nasional-tahap-ii-senilai-rp116-triliun",
+            "notes": ""
+          }
+        ],
+        "freshness_state": "fresh",
+        "freshness_age_days": "0",
+        "freshness_due": "2027-05-11"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          112.65,
+          -7.16
+        ]
+      },
+      "properties": {
+        "id": "factory-hilirisasi-2-10-gresik-copper-gold",
+        "name": "Hilirisasi Stage II - Gresik Copper and Gold",
+        "sector": "factory",
+        "subsector": "copper smelting",
+        "status": "under_construction",
+        "status_basis": "Groundbreaking 29 April 2026 as part of the 13-project Hilirisasi Stage II package.",
+        "corridor_id": "",
+        "island": "Java",
+        "province": "East Java",
+        "route": "Gresik, East Java",
+        "length_km": "",
+        "operational_km": "",
+        "construction_km": "",
+        "progress_pct": "",
+        "investment_idr_t": "",
+        "capacity": "",
+        "capacity_unit": "",
+        "psn": "unknown",
+        "opened_year": "",
+        "opened_date": "",
+        "expected_open_year": "",
+        "status_as_of": "2026-04-29",
+        "verification": "single",
+        "precision": "regency",
+        "operator": "PT Smelting",
+        "source_url": "https://setkab.go.id/presiden-prabowo-lakukan-groundbreaking-13-proyek-hilirisasi-nasional-tahap-ii-senilai-rp116-triliun",
+        "source_type": "official",
+        "retrieved_on": "2026-11-09",
+        "last_verified": "2026-11-09",
+        "notes": "Copper and gold downstreaming in Gresik. Part of the Rp116T Hilirisasi Stage II package; project-level investment and completion date were not published.",
+        "corridor_name": "",
+        "sources": [
+          {
+            "id": "src-setkab-hilirisasi-stage-ii-2026-04-29",
+            "publisher": "Sekretariat Kabinet Republik Indonesia",
+            "title": "Presiden Prabowo Lakukan Groundbreaking 13 Proyek Hilirisasi Nasional Tahap II Senilai Rp116 Triliun",
+            "url": "https://setkab.go.id/presiden-prabowo-lakukan-groundbreaking-13-proyek-hilirisasi-nasional-tahap-ii-senilai-rp116-triliun",
+            "published_on": "2026-04-29",
+            "retrieved_on": "2026-11-09",
+            "source_type": "official",
+            "language": "id",
+            "archive_path": "",
+            "notes": "Official list of the 13 stage II projects, locations and the Rp116T package value.",
+            "claim": "status; location"
+          }
+        ],
+        "events": [
+          {
+            "id": "evt-hilirisasi-2-10-groundbreaking",
+            "event_date": "2026-04-29",
+            "event_type": "groundbreaking",
+            "description": "Groundbreaking for the Gresik copper and gold plant as part of Hilirisasi Stage II.",
+            "source_id": "src-setkab-hilirisasi-stage-ii-2026-04-29",
+            "source_title": "Presiden Prabowo Lakukan Groundbreaking 13 Proyek Hilirisasi Nasional Tahap II Senilai Rp116 Triliun",
+            "source_url": "https://setkab.go.id/presiden-prabowo-lakukan-groundbreaking-13-proyek-hilirisasi-nasional-tahap-ii-senilai-rp116-triliun",
+            "notes": ""
+          }
+        ],
+        "freshness_state": "fresh",
+        "freshness_age_days": "0",
+        "freshness_due": "2027-05-11"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          99.35,
+          3.18
+        ]
+      },
+      "properties": {
+        "id": "factory-hilirisasi-2-11-sei-mangkei-oleofood",
+        "name": "Hilirisasi Stage II - Sei Mangkei Oleofood and Biodiesel",
+        "sector": "factory",
+        "subsector": "oleochemicals",
+        "status": "under_construction",
+        "status_basis": "Groundbreaking 29 April 2026 as part of the 13-project Hilirisasi Stage II package.",
+        "corridor_id": "",
+        "island": "Sumatra",
+        "province": "North Sumatra",
+        "route": "Sei Mangkei, Simalungun",
+        "length_km": "",
+        "operational_km": "",
+        "construction_km": "",
+        "progress_pct": "",
+        "investment_idr_t": "",
+        "capacity": "",
+        "capacity_unit": "",
+        "psn": "unknown",
+        "opened_year": "",
+        "opened_date": "",
+        "expected_open_year": "",
+        "status_as_of": "2026-04-29",
+        "verification": "single",
+        "precision": "approximate",
+        "operator": "PT Perkebunan Nusantara III (Persero)",
+        "source_url": "https://setkab.go.id/presiden-prabowo-lakukan-groundbreaking-13-proyek-hilirisasi-nasional-tahap-ii-senilai-rp116-triliun",
+        "source_type": "official",
+        "retrieved_on": "2026-11-09",
+        "last_verified": "2026-11-09",
+        "notes": "Palm oil to oleofood and biodiesel at the Sei Mangkei estate. Part of the Rp116T Hilirisasi Stage II package; project-level investment and completion date were not published.",
+        "corridor_name": "",
+        "sources": [
+          {
+            "id": "src-setkab-hilirisasi-stage-ii-2026-04-29",
+            "publisher": "Sekretariat Kabinet Republik Indonesia",
+            "title": "Presiden Prabowo Lakukan Groundbreaking 13 Proyek Hilirisasi Nasional Tahap II Senilai Rp116 Triliun",
+            "url": "https://setkab.go.id/presiden-prabowo-lakukan-groundbreaking-13-proyek-hilirisasi-nasional-tahap-ii-senilai-rp116-triliun",
+            "published_on": "2026-04-29",
+            "retrieved_on": "2026-11-09",
+            "source_type": "official",
+            "language": "id",
+            "archive_path": "",
+            "notes": "Official list of the 13 stage II projects, locations and the Rp116T package value.",
+            "claim": "status; location"
+          }
+        ],
+        "events": [
+          {
+            "id": "evt-hilirisasi-2-11-groundbreaking",
+            "event_date": "2026-04-29",
+            "event_type": "groundbreaking",
+            "description": "Groundbreaking for the Sei Mangkei oleofood plant as part of Hilirisasi Stage II.",
+            "source_id": "src-setkab-hilirisasi-stage-ii-2026-04-29",
+            "source_title": "Presiden Prabowo Lakukan Groundbreaking 13 Proyek Hilirisasi Nasional Tahap II Senilai Rp116 Triliun",
+            "source_url": "https://setkab.go.id/presiden-prabowo-lakukan-groundbreaking-13-proyek-hilirisasi-nasional-tahap-ii-senilai-rp116-triliun",
+            "notes": ""
+          }
+        ],
+        "freshness_state": "fresh",
+        "freshness_age_days": "0",
+        "freshness_due": "2027-05-11"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.97,
+          -3.3
+        ]
+      },
+      "properties": {
+        "id": "factory-hilirisasi-2-12-central-maluku-nutmeg",
+        "name": "Hilirisasi Stage II - Central Maluku Nutmeg Oleoresin",
+        "sector": "factory",
+        "subsector": "oleoresin",
+        "status": "under_construction",
+        "status_basis": "Groundbreaking 29 April 2026 as part of the 13-project Hilirisasi Stage II package.",
+        "corridor_id": "",
+        "island": "Maluku",
+        "province": "Maluku",
+        "route": "Central Maluku",
+        "length_km": "",
+        "operational_km": "",
+        "construction_km": "",
+        "progress_pct": "",
+        "investment_idr_t": "",
+        "capacity": "",
+        "capacity_unit": "",
+        "psn": "unknown",
+        "opened_year": "",
+        "opened_date": "",
+        "expected_open_year": "",
+        "status_as_of": "2026-04-29",
+        "verification": "single",
+        "precision": "regency",
+        "operator": "tba",
+        "source_url": "https://setkab.go.id/presiden-prabowo-lakukan-groundbreaking-13-proyek-hilirisasi-nasional-tahap-ii-senilai-rp116-triliun",
+        "source_type": "official",
+        "retrieved_on": "2026-11-09",
+        "last_verified": "2026-11-09",
+        "notes": "Nutmeg to oleoresin. Part of the Rp116T Hilirisasi Stage II package; project-level investment and completion date were not published.",
+        "corridor_name": "",
+        "sources": [
+          {
+            "id": "src-setkab-hilirisasi-stage-ii-2026-04-29",
+            "publisher": "Sekretariat Kabinet Republik Indonesia",
+            "title": "Presiden Prabowo Lakukan Groundbreaking 13 Proyek Hilirisasi Nasional Tahap II Senilai Rp116 Triliun",
+            "url": "https://setkab.go.id/presiden-prabowo-lakukan-groundbreaking-13-proyek-hilirisasi-nasional-tahap-ii-senilai-rp116-triliun",
+            "published_on": "2026-04-29",
+            "retrieved_on": "2026-11-09",
+            "source_type": "official",
+            "language": "id",
+            "archive_path": "",
+            "notes": "Official list of the 13 stage II projects, locations and the Rp116T package value.",
+            "claim": "status; location"
+          }
+        ],
+        "events": [
+          {
+            "id": "evt-hilirisasi-2-12-groundbreaking",
+            "event_date": "2026-04-29",
+            "event_type": "groundbreaking",
+            "description": "Groundbreaking for the Central Maluku nutmeg plant as part of Hilirisasi Stage II.",
+            "source_id": "src-setkab-hilirisasi-stage-ii-2026-04-29",
+            "source_title": "Presiden Prabowo Lakukan Groundbreaking 13 Proyek Hilirisasi Nasional Tahap II Senilai Rp116 Triliun",
+            "source_url": "https://setkab.go.id/presiden-prabowo-lakukan-groundbreaking-13-proyek-hilirisasi-nasional-tahap-ii-senilai-rp116-triliun",
+            "notes": ""
+          }
+        ],
+        "freshness_state": "fresh",
+        "freshness_age_days": "0",
+        "freshness_due": "2027-05-11"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.97,
+          -3.3
+        ]
+      },
+      "properties": {
+        "id": "factory-hilirisasi-2-13-central-maluku-coconut",
+        "name": "Hilirisasi Stage II - Central Maluku Integrated Coconut",
+        "sector": "factory",
+        "subsector": "coconut processing",
+        "status": "under_construction",
+        "status_basis": "Groundbreaking 29 April 2026 as part of the 13-project Hilirisasi Stage II package.",
+        "corridor_id": "",
+        "island": "Maluku",
+        "province": "Maluku",
+        "route": "Central Maluku",
+        "length_km": "",
+        "operational_km": "",
+        "construction_km": "",
+        "progress_pct": "",
+        "investment_idr_t": "",
+        "capacity": "",
+        "capacity_unit": "",
+        "psn": "unknown",
+        "opened_year": "",
+        "opened_date": "",
+        "expected_open_year": "",
+        "status_as_of": "2026-04-29",
+        "verification": "single",
+        "precision": "regency",
+        "operator": "tba",
+        "source_url": "https://setkab.go.id/presiden-prabowo-lakukan-groundbreaking-13-proyek-hilirisasi-nasional-tahap-ii-senilai-rp116-triliun",
+        "source_type": "official",
+        "retrieved_on": "2026-11-09",
+        "last_verified": "2026-11-09",
+        "notes": "Integrated coconut facility producing MCT, coconut flour and activated carbon. Part of the Rp116T Hilirisasi Stage II package; project-level investment and completion date were not published.",
+        "corridor_name": "",
+        "sources": [
+          {
+            "id": "src-setkab-hilirisasi-stage-ii-2026-04-29",
+            "publisher": "Sekretariat Kabinet Republik Indonesia",
+            "title": "Presiden Prabowo Lakukan Groundbreaking 13 Proyek Hilirisasi Nasional Tahap II Senilai Rp116 Triliun",
+            "url": "https://setkab.go.id/presiden-prabowo-lakukan-groundbreaking-13-proyek-hilirisasi-nasional-tahap-ii-senilai-rp116-triliun",
+            "published_on": "2026-04-29",
+            "retrieved_on": "2026-11-09",
+            "source_type": "official",
+            "language": "id",
+            "archive_path": "",
+            "notes": "Official list of the 13 stage II projects, locations and the Rp116T package value.",
+            "claim": "status; location"
+          }
+        ],
+        "events": [
+          {
+            "id": "evt-hilirisasi-2-13-groundbreaking",
+            "event_date": "2026-04-29",
+            "event_type": "groundbreaking",
+            "description": "Groundbreaking for the Central Maluku coconut plant as part of Hilirisasi Stage II.",
+            "source_id": "src-setkab-hilirisasi-stage-ii-2026-04-29",
+            "source_title": "Presiden Prabowo Lakukan Groundbreaking 13 Proyek Hilirisasi Nasional Tahap II Senilai Rp116 Triliun",
+            "source_url": "https://setkab.go.id/presiden-prabowo-lakukan-groundbreaking-13-proyek-hilirisasi-nasional-tahap-ii-senilai-rp116-triliun",
+            "notes": ""
+          }
+        ],
+        "freshness_state": "fresh",
+        "freshness_age_days": "0",
+        "freshness_due": "2027-05-11"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          116.13,
+          -8.55
+        ]
+      },
+      "properties": {
+        "id": "dam-meninting",
+        "name": "Meninting Dam",
+        "sector": "water",
+        "subsector": "dam",
+        "status": "operating",
+        "status_basis": "Inaugurated 10 July 2026 after construction started in 2019.",
+        "corridor_id": "",
+        "island": "Bali-Nusa Tenggara",
+        "province": "West Nusa Tenggara",
+        "route": "Gunung Sari and Lingsar, West Lombok",
+        "length_km": "",
+        "operational_km": "",
+        "construction_km": "",
+        "progress_pct": "",
+        "investment_idr_t": "",
+        "capacity": "9.91",
+        "capacity_unit": "million m3",
+        "psn": "yes",
+        "opened_year": "2026",
+        "opened_date": "2026-07-10",
+        "expected_open_year": "",
+        "status_as_of": "2026-07-10",
+        "verification": "dual",
+        "precision": "regency",
+        "operator": "tba",
+        "source_url": "https://setkab.go.id/en/govt-inaugurates-five-newly-completed-dams-across-indonesia",
+        "source_type": "official",
+        "retrieved_on": "2026-11-09",
+        "last_verified": "2026-11-09",
+        "notes": "Storage 9.91 million m3 (other reports 13.14 million m3); 46.16 ha inundation; 1,500 ha irrigation and 0.15 m3/s raw water. Part of the Rp9.79T five-dam package; project-level cost was not split.",
+        "corridor_name": "",
+        "sources": [
+          {
+            "id": "src-setkab-five-dams-2026-07-10",
+            "publisher": "Sekretariat Kabinet Republik Indonesia",
+            "title": "Gov't Inaugurates Five Newly Completed Dams Across Indonesia",
+            "url": "https://setkab.go.id/en/govt-inaugurates-five-newly-completed-dams-across-indonesia",
+            "published_on": "2026-07-10",
+            "retrieved_on": "2026-11-09",
+            "source_type": "official",
+            "language": "en",
+            "archive_path": "",
+            "notes": "Names, regencies, storage capacities and the Rp9.79T package value for the five dams.",
+            "claim": "status; capacity; opening"
+          },
+          {
+            "id": "src-antara-five-dams-2026-07-10",
+            "publisher": "ANTARA News",
+            "title": "Five new dams strengthen food, energy self-sufficiency: AHY",
+            "url": "https://en.antaranews.com/amp/news/422161/five-new-dams-strengthen-food-energy-self-sufficiency-ahy",
+            "published_on": "2026-07-10",
+            "retrieved_on": "2026-11-09",
+            "source_type": "secondary",
+            "language": "en",
+            "archive_path": "",
+            "notes": "Simultaneous inauguration and the Rp9.7T collective investment figure.",
+            "claim": "location"
+          }
+        ],
+        "events": [
+          {
+            "id": "evt-dam-meninting-opened",
+            "event_date": "2026-07-10",
+            "event_type": "opened",
+            "description": "Meninting Dam inaugurated in the five-dam package.",
+            "source_id": "src-setkab-five-dams-2026-07-10",
+            "source_title": "Gov't Inaugurates Five Newly Completed Dams Across Indonesia",
+            "source_url": "https://setkab.go.id/en/govt-inaugurates-five-newly-completed-dams-across-indonesia",
+            "notes": ""
+          }
+        ],
+        "freshness_state": "fresh",
+        "freshness_age_days": "0",
+        "freshness_due": "2027-05-11"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          97.25,
+          5.05
+        ]
+      },
+      "properties": {
+        "id": "dam-keureuto",
+        "name": "Keureuto Dam",
+        "sector": "water",
+        "subsector": "dam",
+        "status": "operating",
+        "status_basis": "Inaugurated 10 July 2026.",
+        "corridor_id": "",
+        "island": "Sumatra",
+        "province": "Aceh",
+        "route": "North Aceh, Aceh",
+        "length_km": "",
+        "operational_km": "",
+        "construction_km": "",
+        "progress_pct": "",
+        "investment_idr_t": "",
+        "capacity": "215.94",
+        "capacity_unit": "million m3",
+        "psn": "yes",
+        "opened_year": "2026",
+        "opened_date": "2026-07-10",
+        "expected_open_year": "",
+        "status_as_of": "2026-07-10",
+        "verification": "dual",
+        "precision": "regency",
+        "operator": "tba",
+        "source_url": "https://setkab.go.id/en/govt-inaugurates-five-newly-completed-dams-across-indonesia",
+        "source_type": "official",
+        "retrieved_on": "2026-11-09",
+        "last_verified": "2026-11-09",
+        "notes": "Storage 215.94 million m3 and 896.39 ha inundation. Part of the Rp9.79T five-dam package; project-level cost was not split.",
+        "corridor_name": "",
+        "sources": [
+          {
+            "id": "src-setkab-five-dams-2026-07-10",
+            "publisher": "Sekretariat Kabinet Republik Indonesia",
+            "title": "Gov't Inaugurates Five Newly Completed Dams Across Indonesia",
+            "url": "https://setkab.go.id/en/govt-inaugurates-five-newly-completed-dams-across-indonesia",
+            "published_on": "2026-07-10",
+            "retrieved_on": "2026-11-09",
+            "source_type": "official",
+            "language": "en",
+            "archive_path": "",
+            "notes": "Names, regencies, storage capacities and the Rp9.79T package value for the five dams.",
+            "claim": "status; capacity; opening"
+          },
+          {
+            "id": "src-antara-five-dams-2026-07-10",
+            "publisher": "ANTARA News",
+            "title": "Five new dams strengthen food, energy self-sufficiency: AHY",
+            "url": "https://en.antaranews.com/amp/news/422161/five-new-dams-strengthen-food-energy-self-sufficiency-ahy",
+            "published_on": "2026-07-10",
+            "retrieved_on": "2026-11-09",
+            "source_type": "secondary",
+            "language": "en",
+            "archive_path": "",
+            "notes": "Simultaneous inauguration and the Rp9.7T collective investment figure.",
+            "claim": "location"
+          }
+        ],
+        "events": [
+          {
+            "id": "evt-dam-keureuto-opened",
+            "event_date": "2026-07-10",
+            "event_type": "opened",
+            "description": "Keureuto Dam inaugurated in the five-dam package.",
+            "source_id": "src-setkab-five-dams-2026-07-10",
+            "source_title": "Gov't Inaugurates Five Newly Completed Dams Across Indonesia",
+            "source_url": "https://setkab.go.id/en/govt-inaugurates-five-newly-completed-dams-across-indonesia",
+            "notes": ""
+          }
+        ],
+        "freshness_state": "fresh",
+        "freshness_age_days": "0",
+        "freshness_due": "2027-05-11"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          95.95,
+          5.35
+        ]
+      },
+      "properties": {
+        "id": "dam-rukoh",
+        "name": "Rukoh Dam",
+        "sector": "water",
+        "subsector": "dam",
+        "status": "operating",
+        "status_basis": "Inaugurated 10 July 2026.",
+        "corridor_id": "",
+        "island": "Sumatra",
+        "province": "Aceh",
+        "route": "Pidie, Aceh",
+        "length_km": "",
+        "operational_km": "",
+        "construction_km": "",
+        "progress_pct": "",
+        "investment_idr_t": "",
+        "capacity": "128.65",
+        "capacity_unit": "million m3",
+        "psn": "yes",
+        "opened_year": "2026",
+        "opened_date": "2026-07-10",
+        "expected_open_year": "",
+        "status_as_of": "2026-07-10",
+        "verification": "dual",
+        "precision": "regency",
+        "operator": "tba",
+        "source_url": "https://setkab.go.id/en/govt-inaugurates-five-newly-completed-dams-across-indonesia",
+        "source_type": "official",
+        "retrieved_on": "2026-11-09",
+        "last_verified": "2026-11-09",
+        "notes": "Storage 128.65 million m3 and 700 ha inundation; includes the Rukoh diversion structure. Part of the Rp9.79T five-dam package; project-level cost was not split.",
+        "corridor_name": "",
+        "sources": [
+          {
+            "id": "src-setkab-five-dams-2026-07-10",
+            "publisher": "Sekretariat Kabinet Republik Indonesia",
+            "title": "Gov't Inaugurates Five Newly Completed Dams Across Indonesia",
+            "url": "https://setkab.go.id/en/govt-inaugurates-five-newly-completed-dams-across-indonesia",
+            "published_on": "2026-07-10",
+            "retrieved_on": "2026-11-09",
+            "source_type": "official",
+            "language": "en",
+            "archive_path": "",
+            "notes": "Names, regencies, storage capacities and the Rp9.79T package value for the five dams.",
+            "claim": "status; capacity; opening"
+          },
+          {
+            "id": "src-antara-five-dams-2026-07-10",
+            "publisher": "ANTARA News",
+            "title": "Five new dams strengthen food, energy self-sufficiency: AHY",
+            "url": "https://en.antaranews.com/amp/news/422161/five-new-dams-strengthen-food-energy-self-sufficiency-ahy",
+            "published_on": "2026-07-10",
+            "retrieved_on": "2026-11-09",
+            "source_type": "secondary",
+            "language": "en",
+            "archive_path": "",
+            "notes": "Simultaneous inauguration and the Rp9.7T collective investment figure.",
+            "claim": "location"
+          }
+        ],
+        "events": [
+          {
+            "id": "evt-dam-rukoh-opened",
+            "event_date": "2026-07-10",
+            "event_type": "opened",
+            "description": "Rukoh Dam inaugurated in the five-dam package.",
+            "source_id": "src-setkab-five-dams-2026-07-10",
+            "source_title": "Gov't Inaugurates Five Newly Completed Dams Across Indonesia",
+            "source_url": "https://setkab.go.id/en/govt-inaugurates-five-newly-completed-dams-across-indonesia",
+            "notes": ""
+          }
+        ],
+        "freshness_state": "fresh",
+        "freshness_age_days": "0",
+        "freshness_due": "2027-05-11"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          111.1,
+          -7.65
+        ]
+      },
+      "properties": {
+        "id": "dam-jlantah",
+        "name": "Jlantah Dam",
+        "sector": "water",
+        "subsector": "dam",
+        "status": "operating",
+        "status_basis": "Inaugurated 10 July 2026.",
+        "corridor_id": "",
+        "island": "Java",
+        "province": "Central Java",
+        "route": "Karanganyar, Central Java",
+        "length_km": "",
+        "operational_km": "",
+        "construction_km": "",
+        "progress_pct": "",
+        "investment_idr_t": "",
+        "capacity": "10.97",
+        "capacity_unit": "million m3",
+        "psn": "yes",
+        "opened_year": "2026",
+        "opened_date": "2026-07-10",
+        "expected_open_year": "",
+        "status_as_of": "2026-07-10",
+        "verification": "dual",
+        "precision": "regency",
+        "operator": "tba",
+        "source_url": "https://setkab.go.id/en/govt-inaugurates-five-newly-completed-dams-across-indonesia",
+        "source_type": "official",
+        "retrieved_on": "2026-11-09",
+        "last_verified": "2026-11-09",
+        "notes": "Storage 10.97 million m3 and 50 ha inundation; 1,494 ha irrigation and 47.74 km of irrigation network. Part of the Rp9.79T five-dam package; project-level cost was not split.",
+        "corridor_name": "",
+        "sources": [
+          {
+            "id": "src-setkab-five-dams-2026-07-10",
+            "publisher": "Sekretariat Kabinet Republik Indonesia",
+            "title": "Gov't Inaugurates Five Newly Completed Dams Across Indonesia",
+            "url": "https://setkab.go.id/en/govt-inaugurates-five-newly-completed-dams-across-indonesia",
+            "published_on": "2026-07-10",
+            "retrieved_on": "2026-11-09",
+            "source_type": "official",
+            "language": "en",
+            "archive_path": "",
+            "notes": "Names, regencies, storage capacities and the Rp9.79T package value for the five dams.",
+            "claim": "status; capacity; opening"
+          },
+          {
+            "id": "src-antara-five-dams-2026-07-10",
+            "publisher": "ANTARA News",
+            "title": "Five new dams strengthen food, energy self-sufficiency: AHY",
+            "url": "https://en.antaranews.com/amp/news/422161/five-new-dams-strengthen-food-energy-self-sufficiency-ahy",
+            "published_on": "2026-07-10",
+            "retrieved_on": "2026-11-09",
+            "source_type": "secondary",
+            "language": "en",
+            "archive_path": "",
+            "notes": "Simultaneous inauguration and the Rp9.7T collective investment figure.",
+            "claim": "location"
+          }
+        ],
+        "events": [
+          {
+            "id": "evt-dam-jlantah-opened",
+            "event_date": "2026-07-10",
+            "event_type": "opened",
+            "description": "Jlantah Dam inaugurated in the five-dam package.",
+            "source_id": "src-setkab-five-dams-2026-07-10",
+            "source_title": "Gov't Inaugurates Five Newly Completed Dams Across Indonesia",
+            "source_url": "https://setkab.go.id/en/govt-inaugurates-five-newly-completed-dams-across-indonesia",
+            "notes": ""
+          }
+        ],
+        "freshness_state": "fresh",
+        "freshness_age_days": "0",
+        "freshness_due": "2027-05-11"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.3,
+          -8.45
+        ]
+      },
+      "properties": {
+        "id": "dam-sidan",
+        "name": "Sidan Dam",
+        "sector": "water",
+        "subsector": "dam",
+        "status": "operating",
+        "status_basis": "Inaugurated 10 July 2026.",
+        "corridor_id": "",
+        "island": "Bali-Nusa Tenggara",
+        "province": "Bali",
+        "route": "Gianyar, Bali",
+        "length_km": "",
+        "operational_km": "",
+        "construction_km": "",
+        "progress_pct": "",
+        "investment_idr_t": "",
+        "capacity": "5.76",
+        "capacity_unit": "million m3",
+        "psn": "yes",
+        "opened_year": "2026",
+        "opened_date": "2026-07-10",
+        "expected_open_year": "",
+        "status_as_of": "2026-07-10",
+        "verification": "dual",
+        "precision": "regency",
+        "operator": "tba",
+        "source_url": "https://setkab.go.id/en/govt-inaugurates-five-newly-completed-dams-across-indonesia",
+        "source_type": "official",
+        "retrieved_on": "2026-11-09",
+        "last_verified": "2026-11-09",
+        "notes": "Storage 5.76 million m3 and 37.15 ha inundation. Part of the Rp9.79T five-dam package; project-level cost was not split.",
+        "corridor_name": "",
+        "sources": [
+          {
+            "id": "src-setkab-five-dams-2026-07-10",
+            "publisher": "Sekretariat Kabinet Republik Indonesia",
+            "title": "Gov't Inaugurates Five Newly Completed Dams Across Indonesia",
+            "url": "https://setkab.go.id/en/govt-inaugurates-five-newly-completed-dams-across-indonesia",
+            "published_on": "2026-07-10",
+            "retrieved_on": "2026-11-09",
+            "source_type": "official",
+            "language": "en",
+            "archive_path": "",
+            "notes": "Names, regencies, storage capacities and the Rp9.79T package value for the five dams.",
+            "claim": "status; capacity; opening"
+          },
+          {
+            "id": "src-antara-five-dams-2026-07-10",
+            "publisher": "ANTARA News",
+            "title": "Five new dams strengthen food, energy self-sufficiency: AHY",
+            "url": "https://en.antaranews.com/amp/news/422161/five-new-dams-strengthen-food-energy-self-sufficiency-ahy",
+            "published_on": "2026-07-10",
+            "retrieved_on": "2026-11-09",
+            "source_type": "secondary",
+            "language": "en",
+            "archive_path": "",
+            "notes": "Simultaneous inauguration and the Rp9.7T collective investment figure.",
+            "claim": "location"
+          }
+        ],
+        "events": [
+          {
+            "id": "evt-dam-sidan-opened",
+            "event_date": "2026-07-10",
+            "event_type": "opened",
+            "description": "Sidan Dam inaugurated in the five-dam package.",
+            "source_id": "src-setkab-five-dams-2026-07-10",
+            "source_title": "Gov't Inaugurates Five Newly Completed Dams Across Indonesia",
+            "source_url": "https://setkab.go.id/en/govt-inaugurates-five-newly-completed-dams-across-indonesia",
+            "notes": ""
+          }
+        ],
+        "freshness_state": "fresh",
+        "freshness_age_days": "0",
+        "freshness_due": "2027-05-11"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.85,
+          -6.1
+        ]
+      },
+      "properties": {
+        "id": "coastal-java-sea-wall",
+        "name": "Giant Java Sea Wall (Pantura)",
+        "sector": "coastal",
+        "subsector": "sea wall",
+        "status": "planned",
+        "status_basis": "Master plan being refined; construction targeted for early 2027 across 15 segments from Banten to Gresik.",
+        "corridor_id": "",
+        "island": "Java",
+        "province": "DKI Jakarta",
+        "route": "Pantura, Banten to Gresik",
+        "length_km": "575",
+        "operational_km": "",
+        "construction_km": "",
+        "progress_pct": "",
+        "investment_idr_t": "1320",
+        "capacity": "",
+        "capacity_unit": "",
+        "psn": "yes",
+        "opened_year": "",
+        "opened_date": "",
+        "expected_open_year": "",
+        "status_as_of": "2026-09-16",
+        "verification": "dual",
+        "precision": "province",
+        "operator": "Badan Otorita Pengelola Pantai Utara Jawa",
+        "source_url": "https://en.antaranews.com/news/431637/prabowo-emphasizes-giant-sea-wall-project-to-safeguard-javas-coast",
+        "source_type": "secondary",
+        "retrieved_on": "2026-11-09",
+        "last_verified": "2026-11-09",
+        "notes": "575 km and 15 segments; other official statements give about 500 km. US$80B total estimate, with US$8-10B for the Jakarta Bay first phase; 15-20 years, or about 8 years if segments run in parallel. The PSN register lists the Jakarta/West Java coastal dyke as No. 199; this row covers the national programme. The map point is Jakarta Bay, not the full alignment.",
+        "corridor_name": "",
+        "sources": [
+          {
+            "id": "src-antara-sea-wall-2026-09-16",
+            "publisher": "ANTARA News",
+            "title": "Prabowo emphasizes Giant Sea Wall project to safeguard Java's coast",
+            "url": "https://en.antaranews.com/news/431637/prabowo-emphasizes-giant-sea-wall-project-to-safeguard-javas-coast",
+            "published_on": "2026-09-16",
+            "retrieved_on": "2026-11-09",
+            "source_type": "secondary",
+            "language": "en",
+            "archive_path": "",
+            "notes": "575 km, 15 segments, 50 million people protected, construction targeted for early 2027 and 8-20 years.",
+            "claim": "status; length; location; target"
+          },
+          {
+            "id": "src-antara-sea-wall-2026-08-16",
+            "publisher": "ANTARA News",
+            "title": "Prabowo urges universities to join Giant Sea Wall construction",
+            "url": "https://en.antaranews.com/news/427323/prabowo-urges-universities-to-join-giant-sea-wall-construction",
+            "published_on": "2026-08-16",
+            "retrieved_on": "2026-11-09",
+            "source_type": "secondary",
+            "language": "en",
+            "archive_path": "",
+            "notes": "15 segments from Banten to Gresik, about 500 km, US$80B total and US$8-10B for the Jakarta Bay first phase.",
+            "claim": "investment"
+          }
+        ],
+        "events": [
+          {
+            "id": "evt-java-sea-wall-announced",
+            "event_date": "2026-08-14",
+            "event_type": "announced",
+            "description": "President announced the 15-segment Pantura sea wall in the 2027 budget speech.",
+            "source_id": "src-antara-sea-wall-2026-09-16",
+            "source_title": "Prabowo emphasizes Giant Sea Wall project to safeguard Java's coast",
+            "source_url": "https://en.antaranews.com/news/431637/prabowo-emphasizes-giant-sea-wall-project-to-safeguard-javas-coast",
+            "notes": ""
+          }
+        ],
+        "freshness_state": "fresh",
+        "freshness_age_days": "0",
+        "freshness_due": "2027-05-11"
       }
     }
   ]

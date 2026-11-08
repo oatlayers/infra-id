@@ -117,7 +117,7 @@ PSN_REGISTER_FIELDS = [
     "status", "description", "source_id", "notes",
 ]
 
-SECTORS = {"road", "railway", "airport", "seaport", "factory"}
+SECTORS = {"road", "railway", "airport", "seaport", "factory", "energy", "water", "urban", "coastal"}
 STATUSES = {"planned", "under_construction", "recently_completed", "operating", "stalled"}
 PSN_VALUES = {"yes", "no", "unknown"}
 PRECISIONS = {"exact", "approximate", "regency", "province"}

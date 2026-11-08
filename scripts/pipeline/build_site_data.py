@@ -342,9 +342,15 @@ def main() -> None:
 
     current_counts = {
         "roads": by_sector.get("road", 0),
-        "railways": by_sector.get("railway", 0),
-        "airports": by_sector.get("airport", 0),
-        "seaports": by_sector.get("seaport", 0),
+        "railways": sum(
+            1 for row in rows if row["sector"] == "railway" and row["psn"] == "yes"
+        ),
+        "airports": sum(
+            1 for row in rows if row["sector"] == "airport" and row["psn"] == "yes"
+        ),
+        "seaports": sum(
+            1 for row in rows if row["sector"] == "seaport" and row["psn"] == "yes"
+        ),
         "factories": by_sector.get("factory", 0),
         "transport_psn": sum(
             1 for row in rows
