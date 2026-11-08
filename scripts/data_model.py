@@ -105,6 +105,11 @@ COVERAGE_FIELDS = [
     "layer", "label", "unit", "target_count", "universe", "source_id", "notes",
 ]
 
+CONFLICT_FIELDS = [
+    "id", "scope", "subject", "project_id", "estate_id", "corridor_id", "field",
+    "value_a", "source_a", "value_b", "source_b", "status", "resolution", "notes",
+]
+
 SECTORS = {"road", "railway", "airport", "seaport", "factory"}
 STATUSES = {"planned", "under_construction", "recently_completed", "operating", "stalled"}
 PSN_VALUES = {"yes", "no", "unknown"}
@@ -127,6 +132,14 @@ SEGMENT_TYPES = {"section", "phase", "package", "other"}
 ESTATE_TYPES = {"industrial_estate", "sez", "both"}
 ESTATE_STATUSES = {"operating", "under_construction", "planned"}
 COORDINATE_SOURCES = {"official", "osm", "regency", "manual", "unknown"}
+CLAIM_TYPES = {
+    "status", "length", "operational", "progress", "opening", "investment",
+    "capacity", "design capacity", "current capacity", "output", "location",
+    "coordinates", "operator", "psn", "target", "restart", "ramp-up", "layoffs",
+    "production halt", "startup schedule", "history", "timeline",
+}
+CONFLICT_SCOPES = {"project", "corridor", "estate", "dataset", "method"}
+CONFLICT_STATUSES = {"open", "resolved"}
 
 PROVINCE_ISLAND = {
     # Sumatra
@@ -192,6 +205,7 @@ TABLES = {
     "estates.csv": ESTATE_FIELDS,
     "estate_sources.csv": ESTATE_SOURCE_FIELDS,
     "coverage_targets.csv": COVERAGE_FIELDS,
+    "conflicts.csv": CONFLICT_FIELDS,
 }
 
 

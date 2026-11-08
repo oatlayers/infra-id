@@ -106,11 +106,21 @@
     if (!value) return Infinity;
     const parsed = new Date(value + 'T00:00:00');
     if (isNaN(parsed.getTime())) return Infinity;
-    return Math.floor((Date.now() - parsed.getTime()) / 86400000);
+    const base = stats.data_as_of ? new Date(stats.data_as_of + 'T00:00:00') : new Date();
+    return Math.floor((base.getTime() - parsed.getTime()) / 86400000);
   }
 
   function isStale(value) {
     return daysSince(value) > STALE_DAYS;
+  }
+
+  function freshnessLabel(state) {
+    return {
+      fresh: 'Verified within six months',
+      due_soon: 'Refresh due soon',
+      stale: 'Stale: re-check required',
+      unknown: 'Verification date unknown'
+    }[state] || 'Verification date unknown';
   }
 
   function statusLabel(status) {
@@ -807,6 +817,10 @@
         project.psn === 'no' ? 'Not a PSN' : 'PSN status unknown') + '</span></li>' +
       '<li><time>Verification</time><span>' + esc(project.verification) +
       ' · status as of ' + esc(fmtDate(project.status_as_of)) + '</span></li>' +
+      '<li><time>Freshness</time><span class="freshness-line"><span class="freshness-dot ' +
+      esc(project.freshness_state || 'unknown') + '"></span>' +
+      esc(freshnessLabel(project.freshness_state)) + ' · due ' +
+      esc(fmtDate(project.freshness_due)) + '</span></li>' +
       '<li><time>Record</time><span>' + esc(project.id) + '</span></li>' +
       '</ul></section>';
 
@@ -1258,8 +1272,10 @@
       '<option value="area"' + (state.estateSort === 'area' ? ' selected' : '') + '>Largest area</option>' +
       '<option value="province"' + (state.estateSort === 'province' ? ' selected' : '') + '>Province</option>' +
       '</select></label></div>' +
-      '<div class="corridor-meta" style="margin-top:9px">' + fmtNum(list.length) + ' of ' +
-      fmtNum(estates.length) + ' zones shown</div></div>' +
+      '<div class="filter-actions" style="margin-top:9px"><span class="corridor-meta">' +
+      fmtNum(list.length) + ' of ' + fmtNum(estates.length) +
+      ' zones shown</span><button class="filter-clear" type="button" data-export="estates-csv">' +
+      'Download filtered CSV</button></div></div>' +
       '<div class="estate-list">' + (list.length ? list.map(estateRow).join('') :
         '<div class="list-empty"><h3>No estates match</h3><p>Try another province or type.</p></div>') + '</div>' +
       '<p class="estate-note">Coordinates: 25 SEZs use official KEK points, 20 large industrial estates use OSM/Nominatim points, and the rest are regency centroids. The 19-name 2025 gap is documented in the Data view rather than guessed. Sources: Kemenperin-derived estate list, KEK profiles and <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap (ODbL)</a>.</p>';
@@ -1283,6 +1299,98 @@
     });
   }
 
+  /* ---------- filtered exports ---------- */
+
+  function csvCell(value) {
+    if (value == null) return '';
+    const text = Array.isArray(value) ? JSON.stringify(value) : String(value);
+    return /[",\n\r]/.test(text) ? '"' + text.replace(/"/g, '""') + '"' : text;
+  }
+
+  function toCsv(rows, fields) {
+    return [fields.join(',')].concat(rows.map(function (row) {
+      return fields.map(function (field) { return csvCell(row[field]); }).join(',');
+    })).join('\r\n') + '\r\n';
+  }
+
+  function downloadBlob(filename, content, type) {
+    const blob = new Blob([content], { type: type || 'text/plain;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = filename;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    setTimeout(function () { URL.revokeObjectURL(url); }, 1000);
+    toast('Download started: ' + filename);
+  }
+
+  const PROJECT_EXPORT_FIELDS = [
+    'id', 'name', 'sector', 'subsector', 'status', 'province', 'island', 'route',
+    'length_km', 'operational_km', 'construction_km', 'progress_pct',
+    'investment_idr_t', 'capacity', 'capacity_unit', 'psn', 'opened_year',
+    'opened_date', 'expected_open_year', 'status_as_of', 'verification', 'lat',
+    'lon', 'precision', 'operator', 'source_url', 'source_type', 'retrieved_on',
+    'last_verified', 'freshness_state', 'notes'
+  ];
+
+  function exportFilteredProjects(format) {
+    const list = sortProjects(filteredProjects());
+    if (!list.length) {
+      toast('No projects match the current filters');
+      return;
+    }
+    if (format === 'geojson') {
+      const features = list.map(function (project) {
+        const properties = Object.assign({}, project);
+        delete properties.lat;
+        delete properties.lon;
+        return {
+          type: 'Feature',
+          geometry: { type: 'Point', coordinates: [Number(project.lon), Number(project.lat)] },
+          properties: properties
+        };
+      });
+      downloadBlob(
+        'infra-id-projects-filtered.geojson',
+        JSON.stringify({ type: 'FeatureCollection', features: features }, null, 2) + '\n',
+        'application/geo+json'
+      );
+      return;
+    }
+    downloadBlob(
+      'infra-id-projects-filtered.csv',
+      toCsv(list, PROJECT_EXPORT_FIELDS),
+      'text/csv;charset=utf-8'
+    );
+  }
+
+  function exportFilteredEstates() {
+    if (!estates) {
+      ensureEstates();
+      toast('Loading the estate table; try the download again in a moment');
+      return;
+    }
+    const list = filteredEstates();
+    if (!list.length) {
+      toast('No estates match the current filters');
+      return;
+    }
+    const fields = Object.keys(list[0]);
+    downloadBlob(
+      'infra-id-estates-filtered.csv',
+      toCsv(list, fields),
+      'text/csv;charset=utf-8'
+    );
+  }
+
+  function handleExport(kind) {
+    if (kind === 'projects-csv') exportFilteredProjects('csv');
+    else if (kind === 'projects-geojson') exportFilteredProjects('geojson');
+    else if (kind === 'estates-csv') exportFilteredEstates();
+  }
+
   /* ---------- data view ---------- */
 
   function coverageRows() {
@@ -1301,20 +1409,160 @@
   function sourceRegister() {
     const sources = stats.sources || [];
     if (!sources.length) return '<p>Source register is not available in this build.</p>';
-    return '<ul class="source-register">' + sources.map(function (source) {
+    const counts = {};
+    sources.forEach(function (source) {
+      counts[source.source_type] = (counts[source.source_type] || 0) + 1;
+    });
+    return '<p class="src-meta">' + fmtNum(sources.length) + ' documents: ' +
+      Object.keys(counts).sort().map(function (type) {
+        return fmtNum(counts[type]) + ' ' + esc(type);
+      }).join(' · ') + '. Each row carries its retrieval date and archive path where a snapshot exists.</p>' +
+      '<ul class="source-register">' + sources.map(function (source) {
       return '<li><div class="src-title">' + esc(source.title) + '</div>' +
         '<div class="src-meta">' + esc(source.publisher) + ' · ' + esc(source.source_type) +
-        ' · retrieved ' + esc(fmtDate(source.retrieved_on)) + '</div></li>';
+        ' · retrieved ' + esc(fmtDate(source.retrieved_on)) +
+        (source.archive_path ? ' · snapshot' : '') + '</div>' +
+        (source.url ? '<a href="' + esc(source.url) + '" target="_blank" rel="noopener">Open source ↗</a>' : '') +
+        '</li>';
     }).join('') + '</ul>';
   }
 
   function downloadList() {
     const downloads = stats.downloads || [];
-    return '<div class="download-list">' + downloads.map(function (item) {
+    const projectCount = filteredProjects().length;
+    const estateCount = estates ? filteredEstates().length : null;
+    const icon = '<svg width="13" height="13" aria-hidden="true"><use href="#i-download"></use></svg>';
+    let html = '<div class="download-list">' +
+      '<button class="download download-primary" type="button" data-export="projects-csv">' +
+      '<span>Current filtered view <small>' + fmtNum(projectCount) + ' of ' +
+      fmtNum(projects.length) + ' projects · CSV</small></span>' + icon + '</button>' +
+      '<button class="download" type="button" data-export="projects-geojson">' +
+      '<span>Current filtered view <small>' + fmtNum(projectCount) +
+      ' point features · GeoJSON</small></span>' + icon + '</button>';
+    if (estateCount !== null) {
+      html += '<button class="download" type="button" data-export="estates-csv">' +
+        '<span>Current estate filter <small>' + fmtNum(estateCount) +
+        ' of ' + fmtNum(estates.length) + ' zones · CSV</small></span>' + icon + '</button>';
+    }
+    html += downloads.map(function (item) {
       return '<a class="download" href="' + esc(item.file) + '" download>' +
         '<span>' + esc(item.label) + ' <small>' + esc(item.meta) + '</small></span>' +
-        '<svg width="13" height="13" aria-hidden="true"><use href="#i-download"></use></svg></a>';
+        icon + '</a>';
     }).join('') + '</div>';
+    return html;
+  }
+
+  function claimsSection() {
+    const claims = stats.claims || {};
+    const missing = claims.missing || {};
+    const missingKeys = Object.keys(missing);
+    return '<section class="data-section"><h3>Claims coverage</h3>' +
+      '<div class="data-stats">' +
+      '<div class="data-stat"><div class="k">Fully claimed</div><div class="v">' +
+      fmtNum(claims.projects_fully_claimed || 0) + ' / ' + fmtNum(claims.projects_total || 0) +
+      ' <small>projects</small></div></div>' +
+      '<div class="data-stat"><div class="k">Atomic claims</div><div class="v">' +
+      fmtNum(claims.total || 0) + ' <small>rows</small></div></div></div>' +
+      '<p>Every project has a status claim and a claim for each populated numeric fact. ' +
+      (missingKeys.length
+        ? 'Open gaps: ' + missingKeys.map(function (key) {
+          return esc(key.replace(/_/g, ' ')) + ' (' + fmtNum(missing[key]) + ')';
+        }).join(', ') + '.'
+        : 'No claim gaps were found in this build.') +
+      ' Investment figures also carry their own source in <code>investments.csv</code>.</p>' +
+      '</section>';
+  }
+
+  function freshnessSection() {
+    const freshness = stats.freshness || {};
+    const counts = freshness.counts || {};
+    const projects = counts.project || {};
+    const estates = counts.estate || {};
+    const attention = freshness.attention || [];
+    let html = '<section class="data-section"><h3>Freshness</h3>' +
+      '<div class="data-stats">' +
+      '<div class="data-stat"><div class="k">Projects fresh</div><div class="v">' +
+      fmtNum(projects.fresh || 0) + ' / ' + fmtNum((projects.fresh || 0) + (projects.due_soon || 0) + (projects.stale || 0) + (projects.unknown || 0)) +
+      ' <small>rows</small></div></div>' +
+      '<div class="data-stat"><div class="k">Estates fresh</div><div class="v">' +
+      fmtNum(estates.fresh || 0) + ' / ' + fmtNum((estates.fresh || 0) + (estates.due_soon || 0) + (estates.stale || 0) + (estates.unknown || 0)) +
+      ' <small>rows</small></div></div></div>' +
+      '<p>Rows are reported fresh for 183 days after <code>last_verified</code>, due soon in the final 30 days, and stale after six months. ' +
+      'As of ' + esc(fmtDate(freshness.as_of)) + ', the next record falls due on ' +
+      esc(fmtDate(freshness.next_due)) + '.</p>';
+    if (attention.length) {
+      html += '<ul class="gap-list">' + attention.slice(0, 12).map(function (row) {
+        return '<li><b>' + esc(row.state.replace('_', ' ')) + '</b> · ' + esc(row.name) +
+          ' (' + esc(row.entity_type) + ', verified ' + esc(fmtDate(row.last_verified)) + ')</li>';
+      }).join('') + '</ul>';
+    } else {
+      html += '<p class="src-meta">No row is stale or due soon in this build. The monthly runbook in the repository lists the refresh order.</p>';
+    }
+    html += '</section>';
+    return html;
+  }
+
+  function conflictsSection() {
+    const conflicts = stats.conflicts || {};
+    const rows = conflicts.rows || [];
+    if (!rows.length) return '<section class="data-section"><h3>Conflict register</h3><p>No conflicts are recorded.</p></section>';
+    return '<section class="data-section"><h3>Conflict register</h3>' +
+      '<div class="data-stats">' +
+      '<div class="data-stat"><div class="k">Open</div><div class="v">' + fmtNum(conflicts.open || 0) + '</div></div>' +
+      '<div class="data-stat"><div class="k">Resolved</div><div class="v">' + fmtNum(conflicts.resolved || 0) + '</div></div></div>' +
+      '<p>Both values and both sources stay visible. A resolution says what the atlas publishes; it does not erase the disagreement.</p>' +
+      '<table class="conflict-table"><thead><tr><th>Subject</th><th>Values and resolution</th><th>State</th></tr></thead><tbody>' +
+      rows.map(function (row) {
+        return '<tr><td><span class="conflict-subject">' + esc(row.subject) + '</span>' +
+          '<span class="conflict-scope">' + esc(row.scope) + (row.field ? ' · ' + esc(row.field) : '') + '</span></td>' +
+          '<td><span class="conflict-value"><b>A</b> ' + esc(row.value_a) +
+          '<span class="conflict-source"> · ' + esc(row.source_a_publisher) + '</span></span>' +
+          '<span class="conflict-value"><b>B</b> ' + esc(row.value_b) +
+          '<span class="conflict-source"> · ' + esc(row.source_b_publisher) + '</span></span>' +
+          '<span class="conflict-resolution">' + esc(row.resolution) + '</span></td>' +
+          '<td><span class="conflict-status ' + esc(row.status) + '">' + esc(row.status) + '</span></td></tr>';
+      }).join('') + '</tbody></table></section>';
+  }
+
+  function dictionarySection() {
+    const rows = stats.dictionary || [];
+    if (!rows.length) return '<section class="data-section"><h3>Data dictionary</h3><p>No dictionary in this build.</p></section>';
+    const tables = [];
+    const byTable = {};
+    rows.forEach(function (row) {
+      if (!byTable[row.table]) {
+        byTable[row.table] = { label: row.table_label, rows: [] };
+        tables.push(row.table);
+      }
+      byTable[row.table].rows.push(row);
+    });
+    return '<section class="data-section"><h3>Data dictionary</h3>' +
+      '<p>' + fmtNum(rows.length) + ' fields across ' + fmtNum(tables.length) +
+      ' tables. The same table is downloadable as CSV.</p>' +
+      '<div class="dictionary">' + tables.map(function (table) {
+        const entry = byTable[table];
+        return '<details><summary>' + esc(entry.label) + ' <span>' + esc(table) + ' · ' +
+          fmtNum(entry.rows.length) + ' fields</span></summary>' +
+          '<table><thead><tr><th>Field</th><th>Type</th><th>Description</th></tr></thead><tbody>' +
+          entry.rows.map(function (row) {
+            return '<tr><td class="field">' + esc(row.field) + '</td><td class="type">' +
+              esc(row.type) + (row.required === 'yes' ? ' · req' : '') + '</td><td>' +
+              esc(row.description) + (row.allowed_values ? ' <small>Allowed: ' + esc(row.allowed_values) + '</small>' : '') +
+              '</td></tr>';
+          }).join('') + '</tbody></table></details>';
+      }).join('') + '</div></section>';
+  }
+
+  function changelogSection() {
+    const entries = stats.changelog || [];
+    if (!entries.length) return '<section class="data-section"><h3>Changelog</h3><p>No changelog entries.</p></section>';
+    return '<section class="data-section"><h3>Changelog</h3><ul class="changelog">' +
+      entries.map(function (entry) {
+        return '<li><time>' + esc(fmtDate(entry.date)) + '</time><span><b>' +
+          esc(entry.title) + '</b><br>' + entry.items.map(function (item) {
+            return esc(item);
+          }).join('<br>') + '</span></li>';
+      }).join('') + '</ul></section>';
   }
 
   function renderData() {
@@ -1339,9 +1587,11 @@
       '<p style="margin-top:7px;color:var(--muted);font-size:9px">Generated ' + esc(generated) +
       ' · data as of ' + esc(fmtDate(stats.data_as_of)) + '</p></section>' +
 
+      claimsSection() + freshnessSection() +
+
       '<section class="data-section"><h3>What this is</h3>' +
       '<p>A curated, source-linked map of major Indonesian infrastructure. It is not a live tracker, an official government dataset, or a complete list.</p>' +
-      '<p>Every row needs a source and a verification date. A status change needs an official source or two independent sources. Conflicts stay visible in the notes.</p></section>' +
+      '<p><b>Verification rule.</b> Every row needs a source and a verification date. A status change needs an official source or two independent sources. Each populated numeric fact has an atomic claim, and disagreements stay visible in the notes and the conflict register.</p></section>' +
 
       '<section class="data-section"><h3>Status definitions</h3><ul class="def-list">' +
       STATUS_ORDER.map(function (status) {
@@ -1389,22 +1639,24 @@
       ' official, ' + fmtNum((projectStats.verification && projectStats.verification.single) || 0) +
       ' single-source, ' + fmtNum((projectStats.verification && projectStats.verification.dual) || 0) +
       ' dual-source.</li>' +
+      '<li>Claims: ' + fmtNum((stats.claims && stats.claims.projects_fully_claimed) || 0) + ' of ' +
+      fmtNum((stats.claims && stats.claims.projects_total) || 0) + ' projects have a claim for the status and every populated numeric fact (' +
+      fmtNum((stats.claims && stats.claims.total) || 0) + ' atomic claims).</li>' +
+      '<li>Conflicts: ' + fmtNum((stats.conflicts && stats.conflicts.total) || 0) + ' recorded, ' +
+      fmtNum((stats.conflicts && stats.conflicts.open) || 0) + ' still open. Both values and sources stay in the register rather than only in a free-text note.</li>' +
+      '<li>Freshness: ' + fmtNum((stats.freshness && stats.freshness.records) || 0) +
+      ' project and estate rows are checked; the next record falls due on ' +
+      esc(fmtDate(stats.freshness && stats.freshness.next_due)) + '. No stale rows in this build.</li>' +
       '</ul></section>' +
+
+      conflictsSection() +
 
       '<section class="data-section"><h3>Source register</h3>' + sourceRegister() + '</section>' +
 
       '<section class="data-section"><h3>Downloads</h3>' + downloadList() + '</section>' +
 
-      '<section class="data-section"><h3>Changelog</h3><ul class="changelog">' +
-      '<li><time>8 Nov 2026</time><span>Five Trans corridors, 44 dated segments and six project events. Trans Java joins as the fifth corridor; roads reach the 45-corridor target with three planned Trans Sumatra concessions.</span></li>' +
-      '<li><time>8 Nov 2026</time><span>Added 27 factories and smelters: 19 operating, 3 recently completed, 4 under construction and 1 stalled, with operators, capacity, investment and source claims.</span></li>' +
-      '<li><time>8 Nov 2026</time><span>Added 15 PSN toll corridors from BPJT; roads now 42 of the 45 target corridors.</span></li>' +
-      '<li><time>8 Nov 2026</time><span>Estate reconciliation: a 19-name gap ledger and OSM/Nominatim coordinates for 20 of the 40 largest industrial estates.</span></li>' +
-      '<li><time>7 Nov 2026</time><span>Added the 35 transport PSN projects: 13 railways, 7 airports and 15 seaports, with status and investment claims from the Kemenhub review.</span></li>' +
-      '<li><time>7 Nov 2026</time><span>New shell: four views, search, filters, map v2 and this data page.</span></li>' +
-      '<li><time>6 Nov 2026</time><span>178 estates and SEZs gathered; 25 official SEZ profiles and the Kemenperin-derived list.</span></li>' +
-      '<li><time>6 Nov 2026</time><span>27 toll-road corridors, four Trans corridor summaries and the v2 data foundation.</span></li>' +
-      '</ul></section>' +
+      dictionarySection() +
+      changelogSection() +
       '</div>';
   }
 
@@ -1754,6 +2006,11 @@
     });
 
     dom.viewPanel.addEventListener('click', function (event) {
+      const exporter = event.target.closest('[data-export]');
+      if (exporter) {
+        handleExport(exporter.getAttribute('data-export'));
+        return;
+      }
       const corridor = event.target.closest('[data-corridor]');
       if (corridor) {
         selectCorridor(corridor.getAttribute('data-corridor'), true);

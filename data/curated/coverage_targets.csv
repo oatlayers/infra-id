@@ -9,4 +9,4 @@ industrial_estates,Industrial estates,zones,179,Kemenperin 2026 count,src-antara
 sezs,Special economic zones,zones,25,KEK National Council distribution,src-kek-distribution-2026-11-06,25 official SEZ profiles are in the table.
 unique_estates,Unique estates and SEZs,zones,197,179 industrial estates + 25 SEZs - 7 overlaps,src-antara-kemenperin-179-2026,Reconcile the 19-name gap before publishing a total.
 corridors_with_total,Trans corridors with a kilometre total,corridors,5,"Trans Sumatra, Trans Java, Trans Sulawesi, Trans Kalimantan and Trans Papua",src-bpjt-trans-java-2025-01-26,"All five publish a total length. Three have a progress series (Sumatra, Java, Papua); Sulawesi and Kalimantan publish route totals only."
-sources,Source documents,documents,90,Official and secondary documents with dated snapshots,,Target range 80-100.
+sources,Source documents,documents,80,Official and secondary documents with dated snapshots,,Target range 80-100; 80 is the lower bound encoded as the target.

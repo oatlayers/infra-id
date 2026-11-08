@@ -2,13 +2,14 @@
 
 A curated static atlas of major infrastructure in Indonesia: roads, airports, seaports, railways and factories that are operating, under construction, planned or stalled.
 
-**Current execution plan:** [`plan-v3.md`](plan-v3.md) (7 November 2026). This
-file records scope, decisions, architecture and history; `plan-v3.md` is the
+**Current execution plan:** [`plan-v3.md`](plan-v3.md) (updated 8 November 2026).
+This file records scope, decisions, architecture and history; `plan-v3.md` is the
 phase-by-phase backlog for the site overhaul and the data-completeness work.
 Phase 1 decisions and budgets are recorded in
-[`docs/phase-1-decisions.md`](docs/phase-1-decisions.md).
+[`docs/phase-1-decisions.md`](docs/phase-1-decisions.md); Phase 3 evidence is in
+[`docs/phase-3-trust.md`](docs/phase-3-trust.md).
 
-**Status:** Phase 1 of the v3 overhaul is complete (2026-11-07). Phase 2 Track 2A (transport PSN) is complete: 35 projects — 13 railways, 7 airports and 15 seaports — are in the curated tables. Phase 2 Track 2B is partial: the 19-name estate gap ledger is done and 20 of the 40 largest industrial estates are geocoded; the nine 2025 additions remain blocked by the unavailable Kemenperin list. Phase 2 Track 2D has 42 of the 45 target road corridors after adding 15 PSN toll roads from BPJT. The atlas now has 77 projects and 178 estates/SEZs. The site has four views, search, filters, a detail drawer, a new basemap, a mobile bottom sheet and a generated Data page. Schema v3 is frozen. **Not published:** there is no GitHub remote or Pages deployment, and publishing is explicitly deferred.
+**Status:** Phase 1 (2026-11-07), Phase 2 and Phase 3 (2026-11-08) of the v3 overhaul are complete. The atlas has 107 projects (45 roads, 13 railways, 7 airports, 15 seaports and 27 factories), 178 estates and SEZs, 5 corridor summaries, 44 segments and 6 exact-dated events. The trust layer adds 479 atomic project claims (107/107 fully claimed), a 19-row conflict register (11 resolved, 8 open), a 285-row freshness report and a 189-field data dictionary. Phase 2 Track 2B (estates) is partial and R6 corridor geometry is deferred; both are documented gaps. The site has four views, search, filters, a detail drawer, a new basemap, a mobile bottom sheet, a generated Data view and filtered downloads. Schema v3 is frozen. **Local release only:** there is no GitHub remote, push or Pages deployment, and publishing is explicitly deferred.
 
 **Publishing constraint:** do not create a GitHub remote, push the repository, deploy GitHub Pages or publish the site until the repository owner asks for it explicitly. The release target is a local build that works from `file://` and a local HTTP server.
 
@@ -299,9 +300,10 @@ data/UI~~ → ~~industrial estates and SEZs (data only)~~ → Kemenhub transport
 2. **Official pipeline.** Kemenhub transport PSN deck and KPPIP pages snapshotted; the full PSN/KPBU/INAPROC pass is still open.
 3. **Industrial estates and SEZs.** First pass done: 178 records in `data/curated/estates.csv`, validated and shown as a table. Remaining: 2025 additions, exact boundaries and better coordinates. Map layer still off.
 4. **v3 Phase 1 — foundation and experience.** Done 2026-11-07: design tokens, bundled fonts, four-view shell, search, filters, detail drawer, map v2, mobile sheet, Data view and schema v3. See `docs/phase-1-decisions.md`.
-5. **v3 Phase 2 - data completion.** Done 2026-11-08 except Track 2B (estates) and R6 geometry. Transport PSN 35/35; factories 27/27; roads 45/45; five corridors with 44 segments and six exact-dated events. Estates: 19-name gap ledger done; 20/40 large estates geocoded; nine 2025 additions blocked by the unavailable Kemenperin list. Next: Phase 3 trust layer and local release.
-6. **v3 Phase 3 — trust and local release.** Claims, freshness, Data view v2, downloads, conflicts, local CI and hand-off. **Do not push to GitHub or publish.**
-7. **Monthly refresh.** Re-fetch sources, review status changes, update `last_verified`, rebuild and verify locally.
+5. **v3 Phase 2 — data completion.** Done 2026-11-08 except Track 2B (estates) and R6 geometry. Transport PSN 35/35; factories 27/27; roads 45/45; five corridors with 44 segments and six exact-dated events. Estates: 19-name gap ledger done; 20/40 large estates geocoded; nine 2025 additions blocked by the unavailable Kemenperin list.
+6. **v3 Phase 3 — trust and local release.** Done 2026-11-08: atomic claims, freshness, Data view v2, filtered downloads, conflict register, local CI, browser smoke test, runbook and hand-off. **No GitHub push, remote or Pages deployment.**
+7. **Monthly refresh.** Follow [`docs/refresh-runbook.md`](docs/refresh-runbook.md): re-fetch sources, review status changes, update `last_verified`, rebuild and verify locally.
+8. **Publishing (deferred).** Only if the repository owner explicitly asks. Until then, the local `site/` build is the release.
 
 **Done for v1:** toll roads on the map, each with a source and dates. Validation passes. The page states its coverage.
 
@@ -338,6 +340,9 @@ data/UI~~ → ~~industrial estates and SEZs (data only)~~ → Kemenhub transport
 5. ~~Normalise the data model and add km/corridor support.~~ Done.
 6. ~~Gather the industrial estate and SEZ first pass.~~ Done: 178 rows, validated.
 7. ~~v3 Phase 1: shell, experience, map v2, schema v3.~~ Done 2026-11-07.
-8. Add the Kemenhub transport batch (rail, ports, airports). ← next
-9. Add the factories batch.
-10. Complete Phase 2, then Phase 3. Do **not** publish or push to GitHub.
+8. ~~Add the Kemenhub transport batch (rail, ports, airports).~~ Done 2026-11-07.
+9. ~~Add the factories batch.~~ Done 2026-11-08.
+10. ~~Complete Phase 2, then Phase 3.~~ Done 2026-11-08. Phase 3 ends with a local release; do **not** publish or push to GitHub.
+11. Run the monthly refresh in [`docs/refresh-runbook.md`](docs/refresh-runbook.md), starting with the due date on 2027-05-08.
+12. Work the documented data gaps — estate additions and status, corridor geometry, Trans Sulawesi/Kalimantan series — before considering any new scope.
+13. Publishing remains deferred until the repository owner asks for it explicitly.

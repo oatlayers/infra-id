@@ -19,8 +19,9 @@ Run: python scripts/build_site_data.py
 from __future__ import annotations
 
 import json
+import os
+import re
 from collections import Counter
-from datetime import date
 from pathlib import Path
 
 from data_model import (
@@ -38,6 +39,13 @@ from data_model import (
 )
 
 PROJECTS_CSV = ROOT / "data" / "projects.csv"
+CHANGELOG = ROOT / "CHANGELOG.md"
+
+CLAIM_DOWNLOAD_FIELDS = [
+    "project_id", "project_name", "sector", "claim", "claim_value", "claim_date",
+    "source_id", "publisher", "source_title", "source_type", "source_url",
+    "retrieved_on", "notes",
+]
 
 
 def source_record(source: dict[str, str], claim: str = "") -> dict[str, str]:
@@ -75,6 +83,27 @@ def write_global(name: str, global_name: str, value: object) -> None:
     )
 
 
+def read_changelog() -> list[dict[str, object]]:
+    """Parse ``## YYYY-MM-DD`` sections and their bullet lists."""
+    if not CHANGELOG.exists():
+        return []
+    entries: list[dict[str, object]] = []
+    current: dict[str, object] | None = None
+    for line in CHANGELOG.read_text(encoding="utf-8").splitlines():
+        heading = re.match(r"^##\s+(\d{4}-\d{2}-\d{2})\s*[-—:]?\s*(.*)$", line)
+        if heading:
+            current = {
+                "date": heading.group(1),
+                "title": heading.group(2).strip(),
+                "items": [],
+            }
+            entries.append(current)
+            continue
+        if current is not None and line.startswith(("- ", "* ")):
+            current["items"].append(line[2:].strip())
+    return entries
+
+
 def main() -> None:
     rows = read_csv(PROJECTS_CSV)
     sources = {row["id"]: row for row in read_csv(CURATED / "sources.csv")}
@@ -85,6 +114,15 @@ def main() -> None:
     segments = read_csv(CURATED / "corridor_segments.csv")
     events = read_csv(CURATED / "project_events.csv")
     targets = read_csv(CURATED / "coverage_targets.csv")
+    conflicts = read_csv(CURATED / "conflicts.csv")
+    freshness = read_csv(DERIVED / "freshness_report.csv")
+    dictionary = read_csv(DERIVED / "data_dictionary.csv")
+    claims_audit = read_csv(DERIVED / "claims_audit.csv")
+    changelog = read_changelog()
+
+    freshness_by_entity = {
+        (row["entity_type"], row["entity_id"]): row for row in freshness
+    }
 
     # One source entry per project, with all of its claims joined. A row may
     # have several claims against the same document (status, location, opening,
@@ -95,6 +133,29 @@ def main() -> None:
             claims_by_project.setdefault(claim["project_id"], {}).setdefault(
                 claim["source_id"], []
             ).append(claim["claim"])
+
+    projects_by_id = {row["id"]: row for row in rows}
+    claim_payload = []
+    for claim in claims:
+        source = sources.get(claim["source_id"], {})
+        project = projects_by_id.get(claim["project_id"], {})
+        claim_payload.append(
+            {
+                "project_id": claim["project_id"],
+                "project_name": project.get("name", ""),
+                "sector": project.get("sector", ""),
+                "claim": claim["claim"],
+                "claim_value": claim["claim_value"],
+                "claim_date": claim["claim_date"],
+                "source_id": claim["source_id"],
+                "publisher": source.get("publisher", ""),
+                "source_title": source.get("title", ""),
+                "source_type": source.get("source_type", ""),
+                "source_url": source.get("url", ""),
+                "retrieved_on": source.get("retrieved_on", ""),
+                "notes": claim["notes"],
+            }
+        )
 
     corridor_names = {row["id"]: row["name"] for row in corridors}
 
@@ -127,6 +188,10 @@ def main() -> None:
             for source_id, kinds in claims_by_project.get(row["id"], {}).items()
         ]
         properties["events"] = events_by_project.get(row["id"], [])
+        freshness_row = freshness_by_entity.get(("project", row["id"]), {})
+        properties["freshness_state"] = freshness_row.get("state", "unknown")
+        properties["freshness_age_days"] = freshness_row.get("age_days", "")
+        properties["freshness_due"] = freshness_row.get("refresh_due", "")
         features.append(
             {
                 "type": "Feature",
@@ -203,6 +268,7 @@ def main() -> None:
     estate_payload = []
     for row in estates:
         source = sources.get(row["source_id"])
+        freshness_row = freshness_by_entity.get(("estate", row["id"]), {})
         estate_payload.append(
             {
                 **row,
@@ -211,6 +277,9 @@ def main() -> None:
                 "source_url": source["url"] if source else "",
                 "source_type": source["source_type"] if source else "",
                 "retrieved_on": source["retrieved_on"] if source else "",
+                "freshness_state": freshness_row.get("state", "unknown"),
+                "freshness_age_days": freshness_row.get("age_days", ""),
+                "freshness_due": freshness_row.get("refresh_due", ""),
             }
         )
     estate_payload.sort(key=lambda row: row["name"].casefold())
@@ -233,6 +302,38 @@ def main() -> None:
     last_verified_projects = max((row["last_verified"] for row in rows), default="")
     last_verified_estates = max((row["last_verified"] for row in estates), default="")
     last_verified = max(last_verified_projects, last_verified_estates)
+
+    freshness_counts = Counter(
+        (row["entity_type"], row["state"]) for row in freshness
+    )
+    next_due = min((row["refresh_due"] for row in freshness if row["refresh_due"]), default="")
+    attention = [
+        row for row in freshness if row["state"] in {"due_soon", "stale", "unknown"}
+    ]
+
+    claims_missing = Counter()
+    for row in claims_audit:
+        if row["missing"] and row["missing"] != "none":
+            for item in row["missing"].split(";"):
+                claims_missing[item] += 1
+    fully_claimed = sum(1 for row in claims_audit if row["missing"] == "none")
+
+    conflict_payload = []
+    for row in conflicts:
+        source_a = sources.get(row["source_a"])
+        source_b = sources.get(row["source_b"])
+        conflict_payload.append(
+            {
+                **row,
+                "source_a_publisher": source_a["publisher"] if source_a else "",
+                "source_a_title": source_a["title"] if source_a else "",
+                "source_a_url": source_a["url"] if source_a else "",
+                "source_b_publisher": source_b["publisher"] if source_b else "",
+                "source_b_title": source_b["title"] if source_b else "",
+                "source_b_url": source_b["url"] if source_b else "",
+            }
+        )
+    conflict_payload.sort(key=lambda row: (row["status"] != "open", row["subject"].casefold()))
 
     current_counts = {
         "roads": by_sector.get("road", 0),
@@ -276,7 +377,9 @@ def main() -> None:
         )
 
     stats = {
-        "generated_on": date.today().isoformat(),
+        # Deterministic by default: the build date is the newest verification
+        # date unless the refresh run sets INFRAA_BUILD_DATE.
+        "generated_on": os.environ.get("INFRAA_BUILD_DATE", "") or last_verified,
         "data_as_of": last_verified,
         "projects": {
             "total": len(rows),
@@ -312,6 +415,48 @@ def main() -> None:
             "gap_rows": len(estate_gap),
             "last_verified": last_verified_estates,
         },
+        "freshness": {
+            "as_of": os.environ.get("INFRAA_AS_OF", "") or last_verified,
+            "stale_after_days": 183,
+            "records": len(freshness),
+            "counts": {
+                "project": {
+                    state: freshness_counts.get(("project", state), 0)
+                    for state in ("fresh", "due_soon", "stale", "unknown")
+                },
+                "estate": {
+                    state: freshness_counts.get(("estate", state), 0)
+                    for state in ("fresh", "due_soon", "stale", "unknown")
+                },
+            },
+            "next_due": next_due,
+            "attention": attention,
+        },
+        "claims": {
+            "total": len(claims),
+            "projects_fully_claimed": fully_claimed,
+            "projects_total": len(rows),
+            "missing": dict(sorted(claims_missing.items())),
+        },
+        "conflicts": {
+            "total": len(conflict_payload),
+            "open": sum(1 for row in conflict_payload if row["status"] == "open"),
+            "resolved": sum(1 for row in conflict_payload if row["status"] == "resolved"),
+            "rows": conflict_payload,
+        },
+        "dictionary": [
+            {
+                "table": row["table"],
+                "table_label": row["table_label"],
+                "field": row["field"],
+                "type": row["type"],
+                "required": row["required"],
+                "description": row["description"],
+                "allowed_values": row["allowed_values"],
+            }
+            for row in dictionary
+        ],
+        "changelog": changelog,
         "coverage": coverage,
         "sources": [
             source_record(source)
@@ -357,6 +502,26 @@ def main() -> None:
                 "label": "Sources",
                 "file": "data/sources.csv",
                 "meta": f"{len(sources)} documents",
+            },
+            {
+                "label": "Project claims",
+                "file": "data/claims.csv",
+                "meta": f"{len(claims)} atomic claims",
+            },
+            {
+                "label": "Conflict register",
+                "file": "data/conflicts.csv",
+                "meta": f"{len(conflicts)} conflicts · {sum(1 for row in conflicts if row['status'] == 'open')} open",
+            },
+            {
+                "label": "Freshness report",
+                "file": "data/freshness.csv",
+                "meta": f"{len(freshness)} rows · as of {os.environ.get('INFRAA_AS_OF', '') or last_verified}",
+            },
+            {
+                "label": "Data dictionary",
+                "file": "data/dictionary.csv",
+                "meta": f"{len(dictionary)} field definitions",
             },
         ],
     }
@@ -438,6 +603,22 @@ def main() -> None:
     write_csv(SITE_DATA / "sources.csv", SOURCE_FIELDS, list(sources.values()))
     write_csv(SITE_DATA / "corridors-segments.csv", SEGMENT_FIELDS, segments)
     write_csv(SITE_DATA / "events.csv", EVENT_FIELDS, events)
+    write_csv(SITE_DATA / "claims.csv", CLAIM_DOWNLOAD_FIELDS, claim_payload)
+    write_csv(
+        SITE_DATA / "conflicts.csv",
+        list(conflicts[0].keys()) if conflicts else [],
+        conflicts,
+    )
+    write_csv(
+        SITE_DATA / "freshness.csv",
+        list(freshness[0].keys()) if freshness else [],
+        freshness,
+    )
+    write_csv(
+        SITE_DATA / "dictionary.csv",
+        list(dictionary[0].keys()) if dictionary else [],
+        dictionary,
+    )
 
     write_global("stats.js", "INFRA_STATS", stats)
     write_global("search.js", "INFRA_SEARCH", search)

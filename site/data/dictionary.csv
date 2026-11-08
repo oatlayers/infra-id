@@ -1,0 +1,190 @@
+table,table_label,table_description,field,type,required,description,allowed_values,example
+projects.csv,Projects,"One row per curated infrastructure project, with status, location and key figures.",id,id,yes,Stable lowercase-hyphenated identifier used in deep links and joins.,,tol-sigli-banda-aceh
+projects.csv,Projects,"One row per curated infrastructure project, with status, location and key figures.",name,text,yes,Display name in English with Indonesian proper names.,,Sigli–Banda Aceh Toll Road
+projects.csv,Projects,"One row per curated infrastructure project, with status, location and key figures.",sector,enum,yes,"road, railway, airport, seaport or factory.",road; railway; airport; seaport; factory,road
+projects.csv,Projects,"One row per curated infrastructure project, with status, location and key figures.",subsector,text,no,"Sector-specific type, such as toll, urban_rail, smelter or alumina.",,toll
+projects.csv,Projects,"One row per curated infrastructure project, with status, location and key figures.",status,enum,yes,"planned, under_construction, operating, recently_completed or stalled.",planned; under_construction; operating; recently_completed; stalled,under_construction
+projects.csv,Projects,"One row per curated infrastructure project, with status, location and key figures.",status_basis,text,yes,"The evidence behind the status, with figures and dates where possible.",,"BPJT: Operasi Sebagian, 48.58 of 74.21 km operational, 24.67 km under construction; Section 6 Kuto Baro–Baitussalam (5 k"
+projects.csv,Projects,"One row per curated infrastructure project, with status, location and key figures.",corridor_id,id,conditional,Foreign key to corridors.csv.,,trans-sumatera
+projects.csv,Projects,"One row per curated infrastructure project, with status, location and key figures.",island,enum,yes,"Sumatra, Java, Kalimantan, Sulawesi, Papua, Bali-Nusa Tenggara or Maluku.",Sumatra; Java; Kalimantan; Sulawesi; Papua; Bali-Nusa Tenggara; Maluku,Sumatra
+projects.csv,Projects,"One row per curated infrastructure project, with status, location and key figures.",province,text,yes,"Province or provinces, semicolon-separated.",,Aceh
+projects.csv,Projects,"One row per curated infrastructure project, with status, location and key figures.",route,text,yes,"Route, corridor or location description.",,Banda Aceh–Sigli
+projects.csv,Projects,"One row per curated infrastructure project, with status, location and key figures.",length_km,decimal,conditional,Total route or corridor length in kilometres.,,74.214
+projects.csv,Projects,"One row per curated infrastructure project, with status, location and key figures.",operational_km,decimal,no,Length in service in kilometres.,,48.584
+projects.csv,Projects,"One row per curated infrastructure project, with status, location and key figures.",construction_km,decimal,no,Length under construction in kilometres.,,24.67
+projects.csv,Projects,"One row per curated infrastructure project, with status, location and key figures.",progress_pct,decimal,no,"Reported construction or completion progress, 0-100.",,100
+projects.csv,Projects,"One row per curated infrastructure project, with status, location and key figures.",investment_idr_t,decimal,no,Investment in trillion rupiah.,,18.189
+projects.csv,Projects,"One row per curated infrastructure project, with status, location and key figures.",capacity,decimal,conditional,Nameplate capacity or design output.,,1700
+projects.csv,Projects,"One row per curated infrastructure project, with status, location and key figures.",capacity_unit,text,conditional,"Unit for capacity, such as ktpa, Mtpa or mppa.",,ktpa concentrate
+projects.csv,Projects,"One row per curated infrastructure project, with status, location and key figures.",psn,enum,yes,"yes, no or unknown.",yes; no; unknown,yes
+projects.csv,Projects,"One row per curated infrastructure project, with status, location and key figures.",opened_year,year,conditional,Year the asset opened to service.,,2020
+projects.csv,Projects,"One row per curated infrastructure project, with status, location and key figures.",opened_date,date,no,Exact opening date when the source states one.,,2024-08-07
+projects.csv,Projects,"One row per curated infrastructure project, with status, location and key figures.",expected_open_year,year,no,Target opening year for planned or under-construction rows.,,2025
+projects.csv,Projects,"One row per curated infrastructure project, with status, location and key figures.",status_as_of,date,yes,Date of the evidence behind the current status.,,2026-11-06
+projects.csv,Projects,"One row per curated infrastructure project, with status, location and key figures.",verification,enum,yes,"official, dual, single or unverified.",official; dual; single; unverified,official
+projects.csv,Projects,"One row per curated infrastructure project, with status, location and key figures.",lat,decimal,yes,Latitude in decimal degrees.,,5.47624
+projects.csv,Projects,"One row per curated infrastructure project, with status, location and key figures.",lon,decimal,yes,Longitude in decimal degrees.,,95.61866
+projects.csv,Projects,"One row per curated infrastructure project, with status, location and key figures.",precision,enum,yes,"exact, approximate, regency or province.",exact; approximate; regency; province,approximate
+projects.csv,Projects,"One row per curated infrastructure project, with status, location and key figures.",last_verified,date,yes,Date the row was last checked against a source.,,2026-11-06
+projects.csv,Projects,"One row per curated infrastructure project, with status, location and key figures.",notes,text,yes,"Conflicts, caveats, section openings and coordinate overrides.",,English Wikipedia says 49.8 km operational of 74 km. BPJT gives no full-corridor opening date. Section 1 Padang Tiji–Seu
+organizations.csv,Organisations,"Companies and agencies that sponsor, own or operate projects.",id,id,yes,Stable lowercase-hyphenated identifier used in deep links and joins.,,org-jasa-marga
+organizations.csv,Organisations,"Companies and agencies that sponsor, own or operate projects.",name,text,yes,Display name in English with Indonesian proper names.,,PT Jasa Marga (Persero) Tbk
+organizations.csv,Organisations,"Companies and agencies that sponsor, own or operate projects.",short_name,text,no,Short display name or acronym.,,Jasa Marga
+organizations.csv,Organisations,"Companies and agencies that sponsor, own or operate projects.",org_type,enum,yes,"Government, state-owned, private, consortium, multilateral or other.",,soe
+organizations.csv,Organisations,"Companies and agencies that sponsor, own or operate projects.",country_code,text,yes,ISO alpha-2 country code.,,ID
+organizations.csv,Organisations,"Companies and agencies that sponsor, own or operate projects.",parent_id,id,no,Foreign key to a parent organisation.,,org-waskita-karya
+organizations.csv,Organisations,"Companies and agencies that sponsor, own or operate projects.",website,url,no,Official website.,,https://www.jasamarga.com
+organizations.csv,Organisations,"Companies and agencies that sponsor, own or operate projects.",notes,text,yes,"Conflicts, caveats, section openings and coordinate overrides.",,v1 operator string: PT Hutama Karya (Persero)
+project_organizations.csv,Project organisations,Role links between projects and organisations.,project_id,id,yes,Foreign key to projects.csv.,,tol-sigli-banda-aceh
+project_organizations.csv,Project organisations,Role links between projects and organisations.,org_id,id,yes,Foreign key to organizations.csv.,,org-hutama-karya
+project_organizations.csv,Project organisations,Role links between projects and organisations.,role,enum,yes,"sponsor, operator, contractor, lender, off_taker, developer or owner.",sponsor; operator; contractor; lender; off_taker; developer; owner,operator
+project_organizations.csv,Project organisations,Role links between projects and organisations.,share_pct,decimal,no,"Ownership or participation share, 0-100.",,
+project_organizations.csv,Project organisations,Role links between projects and organisations.,start_year,year,no,First year of the role or investment.,,
+project_organizations.csv,Project organisations,Role links between projects and organisations.,end_year,year,no,Last year of the role or investment.,,
+project_organizations.csv,Project organisations,Role links between projects and organisations.,source_id,id,yes,Foreign key to sources.csv.,,src-bpjt-toll-road-list-2026-11-06
+project_organizations.csv,Project organisations,Role links between projects and organisations.,notes,text,yes,"Conflicts, caveats, section openings and coordinate overrides.",,
+sources.csv,Sources,"Documents used as evidence, with retrieval dates and local snapshots.",id,id,yes,Stable lowercase-hyphenated identifier used in deep links and joins.,,src-bpjt-toll-road-list-2026-11-06
+sources.csv,Sources,"Documents used as evidence, with retrieval dates and local snapshots.",publisher,text,yes,Publisher or institution.,,Badan Pengatur Jalan Tol (BPJT)
+sources.csv,Sources,"Documents used as evidence, with retrieval dates and local snapshots.",title,text,yes,Document title.,,Toll road list API
+sources.csv,Sources,"Documents used as evidence, with retrieval dates and local snapshots.",url,url,yes,Public URL for the document.,,https://itrams-api.bpjt.pu.go.id/v1/reference/api/toll-road-list
+sources.csv,Sources,"Documents used as evidence, with retrieval dates and local snapshots.",published_on,date,no,Publication date when known.,,2025-12-25
+sources.csv,Sources,"Documents used as evidence, with retrieval dates and local snapshots.",retrieved_on,date,yes,Date the snapshot was retrieved.,,2026-11-06
+sources.csv,Sources,"Documents used as evidence, with retrieval dates and local snapshots.",source_type,enum,yes,"official, secondary, company or multilateral.",official; secondary; company; multilateral,official
+sources.csv,Sources,"Documents used as evidence, with retrieval dates and local snapshots.",language,enum,yes,"en, id or other.",en; id; other,id
+sources.csv,Sources,"Documents used as evidence, with retrieval dates and local snapshots.",snapshot_hash,text,no,Hash of the saved snapshot when available.,,
+sources.csv,Sources,"Documents used as evidence, with retrieval dates and local snapshots.",accessed_via,text,no,"API, page fetch, PDF download or manual transcription.",,"Nominatim API, one request per second"
+sources.csv,Sources,"Documents used as evidence, with retrieval dates and local snapshots.",archive_path,text,no,Repository-relative path to the raw snapshot.,,data/raw/2026-11-06/bpjt_toll_road_list.json
+sources.csv,Sources,"Documents used as evidence, with retrieval dates and local snapshots.",licence,text,no,Licence or reuse terms stated by the source.,,Government public data; check portal terms
+sources.csv,Sources,"Documents used as evidence, with retrieval dates and local snapshots.",notes,text,yes,"Conflicts, caveats, section openings and coordinate overrides.",,77 operating or partly operating rows.
+project_sources.csv,Project claims,One atomic fact per project-source link.,project_id,id,yes,Foreign key to projects.csv.,,tol-sigli-banda-aceh
+project_sources.csv,Project claims,One atomic fact per project-source link.,source_id,id,yes,Foreign key to sources.csv.,,src-bpjt-toll-road-list-2026-11-06
+project_sources.csv,Project claims,One atomic fact per project-source link.,claim,enum,yes,One atomic fact type; commas are not allowed.,,status
+project_sources.csv,Project claims,One atomic fact per project-source link.,claim_value,text,no,"The value stated by the source, when transcribed.",,operating
+project_sources.csv,Project claims,One atomic fact per project-source link.,claim_date,date,no,Date the source states the fact.,,2026-02-19
+project_sources.csv,Project claims,One atomic fact per project-source link.,notes,text,yes,"Conflicts, caveats, section openings and coordinate overrides.",,Kemenhub deck p.7.
+project_external_ids.csv,External IDs,Project keys in BPJT and other external systems.,project_id,id,yes,Foreign key to projects.csv.,,tol-sigli-banda-aceh
+project_external_ids.csv,External IDs,Project keys in BPJT and other external systems.,system,text,yes,"External system name, such as bpjt-ruas.",,bpjt-ruas
+project_external_ids.csv,External IDs,Project keys in BPJT and other external systems.,external_id,text,yes,Identifier in the external system.,,Sigli - Banda Aceh
+project_external_ids.csv,External IDs,Project keys in BPJT and other external systems.,url,url,yes,Public URL for the document.,,https://itrams-api.bpjt.pu.go.id/v1/reference/api/toll-road-list
+project_external_ids.csv,External IDs,Project keys in BPJT and other external systems.,notes,text,yes,"Conflicts, caveats, section openings and coordinate overrides.",,BPJT toll-road list key.
+project_aliases.csv,Project aliases,Alternative names used by search.,project_id,id,yes,Foreign key to projects.csv.,,air-yogyakarta-international
+project_aliases.csv,Project aliases,Alternative names used by search.,alias,text,yes,Alternative project name.,,YIA
+project_aliases.csv,Project aliases,Alternative names used by search.,source_id,id,yes,Foreign key to sources.csv.,,
+project_aliases.csv,Project aliases,Alternative names used by search.,notes,text,yes,"Conflicts, caveats, section openings and coordinate overrides.",,Common alternate name.
+investments.csv,Investments,Commitment or tranche figures with their own source.,id,id,yes,Stable lowercase-hyphenated identifier used in deep links and joins.,,inv-freeport-manyar
+investments.csv,Investments,Commitment or tranche figures with their own source.,project_id,id,yes,Foreign key to projects.csv.,,factory-freeport-manyar-smelter
+investments.csv,Investments,Commitment or tranche figures with their own source.,investor_org_id,id,yes,Foreign key to the investing organisation.,,org-freeport-indonesia
+investments.csv,Investments,Commitment or tranche figures with their own source.,amount,decimal,yes,Amount in the stated currency.,,3.7
+investments.csv,Investments,Commitment or tranche figures with their own source.,currency,text,yes,ISO alpha-3 currency code.,,USD
+investments.csv,Investments,Commitment or tranche figures with their own source.,amount_idr_t,decimal,no,Rupiah trillion equivalent used for ranking.,,61.05
+investments.csv,Investments,Commitment or tranche figures with their own source.,fx_date,date,no,Date of the exchange rate used for conversion.,,2026-11-08
+investments.csv,Investments,Commitment or tranche figures with their own source.,year,year,no,Year of the commitment or law.,,2024
+investments.csv,Investments,Commitment or tranche figures with their own source.,stage,enum,yes,"announced, committed, financial_close or disbursed.",announced; committed; financial_close; disbursed,disbursed
+investments.csv,Investments,Commitment or tranche figures with their own source.,instrument,enum,yes,"equity, debt, grant, guarantee, mixed or other.",equity; debt; grant; guarantee; mixed; other,mixed
+investments.csv,Investments,Commitment or tranche figures with their own source.,share_pct,decimal,no,"Ownership or participation share, 0-100.",,
+investments.csv,Investments,Commitment or tranche figures with their own source.,source_id,id,yes,Foreign key to sources.csv.,,src-freeport-manyar-restart-2026-08-07
+investments.csv,Investments,Commitment or tranche figures with their own source.,notes,text,yes,"Conflicts, caveats, section openings and coordinate overrides.",,"Converted at Rp16,500/USD."
+laws.csv,Laws,Legal instruments used as a basis for a project or zone.,id,id,yes,Stable lowercase-hyphenated identifier used in deep links and joins.,,
+laws.csv,Laws,Legal instruments used as a basis for a project or zone.,title,text,yes,Document title.,,
+laws.csv,Laws,Legal instruments used as a basis for a project or zone.,number,text,yes,Law or regulation number.,,
+laws.csv,Laws,Legal instruments used as a basis for a project or zone.,year,year,no,Year of the commitment or law.,,
+laws.csv,Laws,Legal instruments used as a basis for a project or zone.,level,enum,yes,"Law, presidential regulation, ministerial regulation or other.",,
+laws.csv,Laws,Legal instruments used as a basis for a project or zone.,url,url,yes,Public URL for the document.,,
+laws.csv,Laws,Legal instruments used as a basis for a project or zone.,status,enum,yes,Current atlas status.,,
+laws.csv,Laws,Legal instruments used as a basis for a project or zone.,notes,text,yes,"Conflicts, caveats, section openings and coordinate overrides.",,
+project_laws.csv,Project laws,Links between projects and legal instruments.,project_id,id,yes,Foreign key to projects.csv.,,
+project_laws.csv,Project laws,Links between projects and legal instruments.,law_id,id,yes,Foreign key to laws.csv.,,
+project_laws.csv,Project laws,Links between projects and legal instruments.,relation,text,yes,How the law relates to the project.,,
+project_laws.csv,Project laws,Links between projects and legal instruments.,notes,text,yes,"Conflicts, caveats, section openings and coordinate overrides.",,
+project_events.csv,Project events,Exact-dated events used by timelines.,id,id,yes,Stable lowercase-hyphenated identifier used in deep links and joins.,,evt-trans-java-east-java-2018-12-20
+project_events.csv,Project events,Exact-dated events used by timelines.,project_id,id,yes,Foreign key to projects.csv.,,tol-ngawi-kertosono-kediri
+project_events.csv,Project events,Exact-dated events used by timelines.,event_date,date,yes,Exact date of the event.,,2018-12-20
+project_events.csv,Project events,Exact-dated events used by timelines.,event_type,enum,yes,Dated event type.,announced; groundbreaking; contract; financial_close; section_opened; opened; stalled; resumed; target_changed; other,section_opened
+project_events.csv,Project events,Exact-dated events used by timelines.,description,text,yes,What happened.,,"Four East Java sections were inaugurated: Ngawi–Kertosono (Wilangan–Kertosono, 37.9 km), Jombang–Mojokerto (Bandar–Kerto"
+project_events.csv,Project events,Exact-dated events used by timelines.,source_id,id,yes,Foreign key to sources.csv.,,src-setneg-trans-java-2018-12-20
+project_events.csv,Project events,Exact-dated events used by timelines.,notes,text,yes,"Conflicts, caveats, section openings and coordinate overrides.",,Attached to the Ngawi–Kertosono–Kediri row; the other three openings belong to other segments.
+project_geometry.csv,Project geometry,"Line, point or polygon geometry; currently empty.",id,id,yes,Stable lowercase-hyphenated identifier used in deep links and joins.,,
+project_geometry.csv,Project geometry,"Line, point or polygon geometry; currently empty.",project_id,id,yes,Foreign key to projects.csv.,,
+project_geometry.csv,Project geometry,"Line, point or polygon geometry; currently empty.",kind,enum,yes,"line, point or polygon.",line; point; polygon,
+project_geometry.csv,Project geometry,"Line, point or polygon geometry; currently empty.",geometry,json,yes,GeoJSON geometry object.,,
+project_geometry.csv,Project geometry,"Line, point or polygon geometry; currently empty.",precision,enum,yes,"Coordinate precision: exact, approximate, regency or province.",,
+project_geometry.csv,Project geometry,"Line, point or polygon geometry; currently empty.",source_id,id,yes,Foreign key to sources.csv.,,
+project_geometry.csv,Project geometry,"Line, point or polygon geometry; currently empty.",notes,text,yes,"Conflicts, caveats, section openings and coordinate overrides.",,
+corridors.csv,Corridors,Trans corridor definitions and published kilometre totals.,id,id,yes,Stable lowercase-hyphenated identifier used in deep links and joins.,,trans-sumatera
+corridors.csv,Corridors,Trans corridor definitions and published kilometre totals.,name,text,yes,Display name in English with Indonesian proper names.,,Trans Sumatra
+corridors.csv,Corridors,Trans corridor definitions and published kilometre totals.,island,enum,yes,Island group.,,Sumatra
+corridors.csv,Corridors,Trans corridor definitions and published kilometre totals.,definition,text,yes,What the corridor includes and excludes.,,"Toll backbone built by Hutama Karya (JTTS), Lampung to Aceh"
+corridors.csv,Corridors,Trans corridor definitions and published kilometre totals.,metric,text,yes,Metric used for the corridor figure.,,toll operational km
+corridors.csv,Corridors,Trans corridor definitions and published kilometre totals.,total_km,decimal,yes,Published corridor total in kilometres.,,2854
+corridors.csv,Corridors,Trans corridor definitions and published kilometre totals.,operational_km,decimal,no,Length in service in kilometres.,,982
+corridors.csv,Corridors,Trans corridor definitions and published kilometre totals.,construction_km,decimal,no,Length under construction in kilometres.,,152.905
+corridors.csv,Corridors,Trans corridor definitions and published kilometre totals.,planned_km,decimal,no,Length planned but not started in kilometres.,,1618
+corridors.csv,Corridors,Trans corridor definitions and published kilometre totals.,progress_pct,decimal,no,"Reported construction or completion progress, 0-100.",,
+corridors.csv,Corridors,Trans corridor definitions and published kilometre totals.,as_of,date,yes,Date of the corridor figures.,,2026-08-31
+corridors.csv,Corridors,Trans corridor definitions and published kilometre totals.,source_id,id,conditional,Foreign key to sources.csv.,,src-hutama-karya-jtts-2026-10-04
+corridors.csv,Corridors,Trans corridor definitions and published kilometre totals.,notes,text,yes,"Conflicts, caveats, section openings and coordinate overrides.",,"The 13 curated sections total 1,667.31 km, or 58% of the 2,854 km plan; the segment table is partial. About 1,161 km bui"
+corridor_segments.csv,Corridor segments,"Section, phase or package rows behind a corridor table.",id,id,yes,Stable lowercase-hyphenated identifier used in deep links and joins.,,seg-trans-sumatera-sigli-banda-aceh
+corridor_segments.csv,Corridor segments,"Section, phase or package rows behind a corridor table.",corridor_id,id,conditional,Foreign key to corridors.csv.,,trans-sumatera
+corridor_segments.csv,Corridor segments,"Section, phase or package rows behind a corridor table.",name,text,yes,Display name in English with Indonesian proper names.,,Sigli–Banda Aceh
+corridor_segments.csv,Corridor segments,"Section, phase or package rows behind a corridor table.",segment_type,enum,yes,"section, phase, package or other.",section; phase; package; other,section
+corridor_segments.csv,Corridor segments,"Section, phase or package rows behind a corridor table.",length_km,decimal,conditional,Total route or corridor length in kilometres.,,74.214
+corridor_segments.csv,Corridor segments,"Section, phase or package rows behind a corridor table.",operational_km,decimal,no,Length in service in kilometres.,,48.584
+corridor_segments.csv,Corridor segments,"Section, phase or package rows behind a corridor table.",construction_km,decimal,no,Length under construction in kilometres.,,26.185
+corridor_segments.csv,Corridor segments,"Section, phase or package rows behind a corridor table.",progress_pct,decimal,no,"Reported construction or completion progress, 0-100.",,
+corridor_segments.csv,Corridor segments,"Section, phase or package rows behind a corridor table.",status,enum,yes,Segment status using the project status vocabulary.,planned; under_construction; operating; recently_completed; stalled,under_construction
+corridor_segments.csv,Corridor segments,"Section, phase or package rows behind a corridor table.",opened_year,year,conditional,Year the asset opened to service.,,2017
+corridor_segments.csv,Corridor segments,"Section, phase or package rows behind a corridor table.",expected_open_year,year,no,Target opening year for planned or under-construction rows.,,
+corridor_segments.csv,Corridor segments,"Section, phase or package rows behind a corridor table.",geometry_id,id,no,Foreign key to project_geometry.csv.,,
+corridor_segments.csv,Corridor segments,"Section, phase or package rows behind a corridor table.",source_id,id,conditional,Foreign key to sources.csv.,,src-bpjt-toll-road-list-2026-11-06
+corridor_segments.csv,Corridor segments,"Section, phase or package rows behind a corridor table.",notes,text,yes,"Conflicts, caveats, section openings and coordinate overrides.",,Segment mirrors the curated corridor row; the 13-section table is partial.
+estates.csv,Estates and SEZs,Industrial estates and special economic zones.,id,id,yes,Stable lowercase-hyphenated identifier used in deep links and joins.,,sez-arun-lhokseumawe
+estates.csv,Estates and SEZs,Industrial estates and special economic zones.,name,text,yes,Display name in English with Indonesian proper names.,,KEK Arun Lhokseumawe
+estates.csv,Estates and SEZs,Industrial estates and special economic zones.,type,enum,yes,"industrial_estate, sez or both.",industrial_estate; sez; both,sez
+estates.csv,Estates and SEZs,Industrial estates and special economic zones.,province,text,yes,"Province or provinces, semicolon-separated.",,Aceh
+estates.csv,Estates and SEZs,Industrial estates and special economic zones.,regency,text,conditional,Regency or city for an estate.,,Kota Lhokseumawe
+estates.csv,Estates and SEZs,Industrial estates and special economic zones.,island,enum,yes,Island group.,,Sumatra
+estates.csv,Estates and SEZs,Industrial estates and special economic zones.,lat,decimal,yes,Latitude in decimal degrees.,,5.21992
+estates.csv,Estates and SEZs,Industrial estates and special economic zones.,lon,decimal,yes,Longitude in decimal degrees.,,97.08026
+estates.csv,Estates and SEZs,Industrial estates and special economic zones.,precision,enum,yes,"Coordinate precision: exact, approximate, regency or province.",,approximate
+estates.csv,Estates and SEZs,Industrial estates and special economic zones.,coordinate_source,enum,yes,"official, osm, regency, manual or unknown.",official; osm; regency; manual; unknown,official
+estates.csv,Estates and SEZs,Industrial estates and special economic zones.,area_ha,decimal,yes,Zone area in hectares.,,6.64
+estates.csv,Estates and SEZs,Industrial estates and special economic zones.,developer,text,yes,Developer display name from the source.,,PT Patriot Nusantara Aceh
+estates.csv,Estates and SEZs,Industrial estates and special economic zones.,developer_org_id,id,no,Foreign key to organizations.csv.,,
+estates.csv,Estates and SEZs,Industrial estates and special economic zones.,status,enum,yes,"Designation-level operating, under_construction or planned; not independently verified for most estates.",operating; under_construction; planned,operating
+estates.csv,Estates and SEZs,Industrial estates and special economic zones.,sector_focus,text,no,Estate or SEZ sector focus.,,Manufacturing
+estates.csv,Estates and SEZs,Industrial estates and special economic zones.,legal_basis,text,no,Legal instrument establishing the zone.,,Peraturan Pemerintah Nomor 5 Tahun 2017
+estates.csv,Estates and SEZs,Industrial estates and special economic zones.,established_year,year,no,Year the zone was established.,,2017
+estates.csv,Estates and SEZs,Industrial estates and special economic zones.,website,url,no,Official website.,,
+estates.csv,Estates and SEZs,Industrial estates and special economic zones.,occupancy_pct,decimal,no,"Reported occupancy, 0-100.",,
+estates.csv,Estates and SEZs,Industrial estates and special economic zones.,kemenperin_id,text,no,Kemenperin estate identifier when known.,,
+estates.csv,Estates and SEZs,Industrial estates and special economic zones.,sez_id,text,no,KEK National Council identifier when known.,,kek-arun-lhokseumawe
+estates.csv,Estates and SEZs,Industrial estates and special economic zones.,source_id,id,yes,Foreign key to sources.csv.,,src-kek-arun-lhokseumawe-2026-11-06
+estates.csv,Estates and SEZs,Industrial estates and special economic zones.,last_verified,date,yes,Date the row was last checked against a source.,,2026-11-06
+estates.csv,Estates and SEZs,Industrial estates and special economic zones.,notes,text,yes,"Conflicts, caveats, section openings and coordinate overrides.",,Designated SEZ. Operational maturity varies and is not independently verified.
+estate_sources.csv,Estate claims,One atomic fact per estate-source link.,estate_id,id,yes,Foreign key to estates.csv.,,ki-java-integrated-industrial-and-port-estate
+estate_sources.csv,Estate claims,One atomic fact per estate-source link.,source_id,id,yes,Foreign key to sources.csv.,,src-osm-nominatim-2026-11-08
+estate_sources.csv,Estate claims,One atomic fact per estate-source link.,claim,enum,yes,One atomic fact type; commas are not allowed.,,coordinates
+estate_sources.csv,Estate claims,One atomic fact per estate-source link.,claim_value,text,no,"The value stated by the source, when transcribed.",,"-7.07187, 112.61846"
+estate_sources.csv,Estate claims,One atomic fact per estate-source link.,claim_date,date,no,Date the source states the fact.,,2026-11-08
+estate_sources.csv,Estate claims,One atomic fact per estate-source link.,notes,text,yes,"Conflicts, caveats, section openings and coordinate overrides.",,Industrial landuse point from OpenStreetMap/Nominatim; approximate.
+coverage_targets.csv,Coverage targets,The universe and target count for every data layer.,layer,text,yes,Coverage layer key used by the build.,,roads
+coverage_targets.csv,Coverage targets,The universe and target count for every data layer.,label,text,yes,Human-readable layer label.,,Toll and major PSN roads
+coverage_targets.csv,Coverage targets,The universe and target count for every data layer.,unit,text,yes,Unit counted by the coverage target.,,corridors
+coverage_targets.csv,Coverage targets,The universe and target count for every data layer.,target_count,integer,yes,Target number of rows for the layer.,,45
+coverage_targets.csv,Coverage targets,The universe and target count for every data layer.,universe,text,yes,Definition of the target universe.,,"Major toll-road corridors plus PSN national roads; excludes the Bali, Malacca and Sunda strait bridges"
+coverage_targets.csv,Coverage targets,The universe and target count for every data layer.,source_id,id,yes,Foreign key to sources.csv.,,src-bpjt-toll-road-list-2026-11-06
+coverage_targets.csv,Coverage targets,The universe and target count for every data layer.,notes,text,yes,"Conflicts, caveats, section openings and coordinate overrides.",,Target range 40-50. 45 corridors: 42 toll-road corridors plus 3 planned Trans Sumatra 0-km concessions.
+conflicts.csv,Conflict register,"Known disagreements between sources, with both values and resolutions.",id,id,yes,Stable lowercase-hyphenated identifier used in deep links and joins.,,conflict-trans-sumatra-operational-km
+conflicts.csv,Conflict register,"Known disagreements between sources, with both values and resolutions.",scope,enum,yes,"project, corridor, estate, dataset or method.",project; corridor; estate; dataset; method,corridor
+conflicts.csv,Conflict register,"Known disagreements between sources, with both values and resolutions.",subject,text,yes,Short human-readable label for the conflicted subject.,,Trans Sumatra operational km
+conflicts.csv,Conflict register,"Known disagreements between sources, with both values and resolutions.",project_id,id,yes,Foreign key to projects.csv.,,tol-binjai-langsa
+conflicts.csv,Conflict register,"Known disagreements between sources, with both values and resolutions.",estate_id,id,yes,Foreign key to estates.csv.,,
+conflicts.csv,Conflict register,"Known disagreements between sources, with both values and resolutions.",corridor_id,id,conditional,Foreign key to corridors.csv.,,trans-sumatera
+conflicts.csv,Conflict register,"Known disagreements between sources, with both values and resolutions.",field,text,yes,Field or fact in dispute.,,operational_km
+conflicts.csv,Conflict register,"Known disagreements between sources, with both values and resolutions.",value_a,text,yes,"First value, with its date or scope when needed.",,"982 km built and operational (Hutama Karya, 4 Oct 2026)"
+conflicts.csv,Conflict register,"Known disagreements between sources, with both values and resolutions.",source_a,id,yes,Foreign key to the first source in a conflict.,,src-hutama-karya-jtts-2026-10-04
+conflicts.csv,Conflict register,"Known disagreements between sources, with both values and resolutions.",value_b,text,yes,"Second value, with its date or scope when needed.",,"1,051.84 km Phase I operational (Bina Marga, 3 Aug 2026)"
+conflicts.csv,Conflict register,"Known disagreements between sources, with both values and resolutions.",source_b,id,yes,Foreign key to the second source in a conflict.,,src-binamarga-jtts-2026-08-03
+conflicts.csv,Conflict register,"Known disagreements between sources, with both values and resolutions.",status,enum,yes,Whether the conflict remains open or has a recorded resolution.,open; resolved,resolved
+conflicts.csv,Conflict register,"Known disagreements between sources, with both values and resolutions.",resolution,text,yes,What the atlas does with the conflict.,,"Atlas publishes 982 km as the current operational figure. The 1,051.84 km Phase I figure is a different scope and date a"
+conflicts.csv,Conflict register,"Known disagreements between sources, with both values and resolutions.",notes,text,yes,"Conflicts, caveats, section openings and coordinate overrides.",,The two figures describe different reporting windows and Phase I boundaries.

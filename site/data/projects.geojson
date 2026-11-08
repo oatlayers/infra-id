@@ -54,10 +54,13 @@
             "language": "id",
             "archive_path": "data/raw/2026-11-06/bpjt_toll_road_list.json",
             "notes": "77 operating or partly operating rows.",
-            "claim": "status,length,operator,location"
+            "claim": "status; length; operator; location; operational"
           }
         ],
-        "events": []
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "2",
+        "freshness_due": "2027-05-08"
       }
     },
     {
@@ -113,10 +116,13 @@
             "language": "id",
             "archive_path": "data/raw/2026-11-06/bpjt_toll_road_list.json",
             "notes": "77 operating or partly operating rows.",
-            "claim": "status,length,operator,location"
+            "claim": "status; length; operator; location; operational"
           }
         ],
-        "events": []
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "2",
+        "freshness_due": "2027-05-08"
       }
     },
     {
@@ -172,10 +178,13 @@
             "language": "id",
             "archive_path": "data/raw/2026-11-06/bpjt_toll_road_list.json",
             "notes": "77 operating or partly operating rows.",
-            "claim": "status,length,operator,location"
+            "claim": "status; length; operator; location; operational"
           }
         ],
-        "events": []
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "2",
+        "freshness_due": "2027-05-08"
       }
     },
     {
@@ -231,10 +240,13 @@
             "language": "id",
             "archive_path": "data/raw/2026-11-06/bpjt_toll_road_list.json",
             "notes": "77 operating or partly operating rows.",
-            "claim": "status,length,operator,location"
+            "claim": "status; length; operator; location; operational"
           }
         ],
-        "events": []
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "2",
+        "freshness_due": "2027-05-08"
       }
     },
     {
@@ -290,10 +302,13 @@
             "language": "id",
             "archive_path": "data/raw/2026-11-06/bpjt_toll_road_list.json",
             "notes": "77 operating or partly operating rows.",
-            "claim": "status,length,operator,location"
+            "claim": "status; length; operator; location; operational"
           }
         ],
-        "events": []
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "2",
+        "freshness_due": "2027-05-08"
       }
     },
     {
@@ -349,10 +364,13 @@
             "language": "id",
             "archive_path": "data/raw/2026-11-06/idwiki_daftar_jalan_tol_di_indonesia.wikitext",
             "notes": "",
-            "claim": "status,length,operator"
+            "claim": "status; length; operator; location"
           }
         ],
-        "events": []
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "2",
+        "freshness_due": "2027-05-08"
       }
     },
     {
@@ -408,7 +426,7 @@
             "language": "id",
             "archive_path": "data/raw/2026-11-06/bpjt_toll_road_list.json",
             "notes": "77 operating or partly operating rows.",
-            "claim": "status,length,operator,location"
+            "claim": "status; length; operator; location; operational"
           }
         ],
         "events": [
@@ -422,7 +440,10 @@
             "source_url": "https://itrams-api.bpjt.pu.go.id/v1/reference/api/toll-road-list",
             "notes": "Operation decree date in the BPJT toll-road list."
           }
-        ]
+        ],
+        "freshness_state": "fresh",
+        "freshness_age_days": "2",
+        "freshness_due": "2027-05-08"
       }
     },
     {
@@ -478,10 +499,13 @@
             "language": "id",
             "archive_path": "data/raw/2026-11-06/bpjt_toll_road_list.json",
             "notes": "77 operating or partly operating rows.",
-            "claim": "status,length,operator,location"
+            "claim": "status; length; operator; location; operational"
           }
         ],
-        "events": []
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "2",
+        "freshness_due": "2027-05-08"
       }
     },
     {
@@ -537,10 +561,13 @@
             "language": "id",
             "archive_path": "data/raw/2026-11-06/bpjt_toll_road_list.json",
             "notes": "77 operating or partly operating rows.",
-            "claim": "status,length,operator,location"
+            "claim": "status; length; operator; location; operational"
           }
         ],
-        "events": []
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "2",
+        "freshness_due": "2027-05-08"
       }
     },
     {
@@ -596,10 +623,13 @@
             "language": "id",
             "archive_path": "data/raw/2026-11-06/bpjt_toll_road_list.json",
             "notes": "77 operating or partly operating rows.",
-            "claim": "status,length,operator,location"
+            "claim": "status; length; operator; location; operational"
           }
         ],
-        "events": []
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "2",
+        "freshness_due": "2027-05-08"
       }
     },
     {
@@ -655,10 +685,13 @@
             "language": "id",
             "archive_path": "data/raw/2026-11-06/bpjt_toll_road_list.json",
             "notes": "77 operating or partly operating rows.",
-            "claim": "status,length,operator,location"
+            "claim": "status; length; operator; location"
           }
         ],
-        "events": []
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "2",
+        "freshness_due": "2027-05-08"
       }
     },
     {
@@ -714,10 +747,13 @@
             "language": "en",
             "archive_path": "data/raw/2026-11-06/wikipedia_indonesian_toll_road_system.wikitext",
             "notes": "",
-            "claim": "status,length,operator"
+            "claim": "status; length; operator; location"
           }
         ],
-        "events": []
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "2",
+        "freshness_due": "2027-05-08"
       }
     },
     {
@@ -773,10 +809,13 @@
             "language": "id",
             "archive_path": "data/raw/2026-11-06/bpjt_toll_road_list.json",
             "notes": "77 operating or partly operating rows.",
-            "claim": "status,length,operator,location"
+            "claim": "status; length; operator; location; operational"
           }
         ],
-        "events": []
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "2",
+        "freshness_due": "2027-05-08"
       }
     },
     {
@@ -832,10 +871,13 @@
             "language": "id",
             "archive_path": "data/raw/2026-11-06/bpjt_toll_road_list.json",
             "notes": "77 operating or partly operating rows.",
-            "claim": "status,length,operator,location"
+            "claim": "status; length; operator; location; operational"
           }
         ],
-        "events": []
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "2",
+        "freshness_due": "2027-05-08"
       }
     },
     {
@@ -891,10 +933,13 @@
             "language": "id",
             "archive_path": "data/raw/2026-11-06/bpjt_toll_road_list.json",
             "notes": "77 operating or partly operating rows.",
-            "claim": "status,length,operator,location"
+            "claim": "status; length; operator; location; operational"
           }
         ],
-        "events": []
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "2",
+        "freshness_due": "2027-05-08"
       }
     },
     {
@@ -950,10 +995,13 @@
             "language": "id",
             "archive_path": "data/raw/2026-11-06/bpjt_toll_road_list.json",
             "notes": "77 operating or partly operating rows.",
-            "claim": "status,length,operator,location"
+            "claim": "status; length; operator; location; operational"
           }
         ],
-        "events": []
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "2",
+        "freshness_due": "2027-05-08"
       }
     },
     {
@@ -1009,10 +1057,13 @@
             "language": "id",
             "archive_path": "data/raw/2026-11-06/bpjt_toll_road_list.json",
             "notes": "77 operating or partly operating rows.",
-            "claim": "status,length,operator,location"
+            "claim": "status; length; operator; location; operational"
           }
         ],
-        "events": []
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "2",
+        "freshness_due": "2027-05-08"
       }
     },
     {
@@ -1068,10 +1119,13 @@
             "language": "en",
             "archive_path": "data/raw/2026-11-06/wikipedia_indonesian_toll_road_system.wikitext",
             "notes": "",
-            "claim": "status,length,operator"
+            "claim": "status; length; operator; location"
           }
         ],
-        "events": []
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "2",
+        "freshness_due": "2027-05-08"
       }
     },
     {
@@ -1127,10 +1181,13 @@
             "language": "id",
             "archive_path": "data/raw/2026-11-06/bpjt_toll_road_list.json",
             "notes": "77 operating or partly operating rows.",
-            "claim": "status,length,operator,location"
+            "claim": "status; length; operator; location; operational"
           }
         ],
-        "events": []
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "2",
+        "freshness_due": "2027-05-08"
       }
     },
     {
@@ -1186,7 +1243,7 @@
             "language": "id",
             "archive_path": "data/raw/2026-11-06/bpjt_toll_road_list.json",
             "notes": "77 operating or partly operating rows.",
-            "claim": "status,length,operator,location"
+            "claim": "status; length; operator; location; operational"
           }
         ],
         "events": [
@@ -1200,7 +1257,10 @@
             "source_url": "https://itrams-api.bpjt.pu.go.id/v1/reference/api/toll-road-list",
             "notes": "BPJT operation decree date. The section is part of the 49.7 km Gending–Besuki package."
           }
-        ]
+        ],
+        "freshness_state": "fresh",
+        "freshness_age_days": "2",
+        "freshness_due": "2027-05-08"
       }
     },
     {
@@ -1256,10 +1316,13 @@
             "language": "en",
             "archive_path": "data/raw/2026-11-06/wikipedia_indonesian_toll_road_system.wikitext",
             "notes": "",
-            "claim": "status,length,operator"
+            "claim": "status; length; operator; location"
           }
         ],
-        "events": []
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "2",
+        "freshness_due": "2027-05-08"
       }
     },
     {
@@ -1315,10 +1378,13 @@
             "language": "en",
             "archive_path": "data/raw/2026-11-06/wikipedia_indonesian_toll_road_system.wikitext",
             "notes": "",
-            "claim": "status,length,operator"
+            "claim": "status; length; operator; location"
           }
         ],
-        "events": []
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "2",
+        "freshness_due": "2027-05-08"
       }
     },
     {
@@ -1374,10 +1440,13 @@
             "language": "en",
             "archive_path": "data/raw/2026-11-06/wikipedia_indonesian_toll_road_system.wikitext",
             "notes": "",
-            "claim": "status,length,operator"
+            "claim": "status; length; operator; location"
           }
         ],
-        "events": []
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "2",
+        "freshness_due": "2027-05-08"
       }
     },
     {
@@ -1433,10 +1502,13 @@
             "language": "en",
             "archive_path": "data/raw/2026-11-06/wikipedia_indonesian_toll_road_system.wikitext",
             "notes": "",
-            "claim": "status,length,operator"
+            "claim": "status; length; operator; location"
           }
         ],
-        "events": []
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "2",
+        "freshness_due": "2027-05-08"
       }
     },
     {
@@ -1492,10 +1564,13 @@
             "language": "en",
             "archive_path": "data/raw/2026-11-06/wikipedia_indonesian_toll_road_system.wikitext",
             "notes": "",
-            "claim": "status,length,operator"
+            "claim": "status; length; operator; location"
           }
         ],
-        "events": []
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "2",
+        "freshness_due": "2027-05-08"
       }
     },
     {
@@ -1551,10 +1626,13 @@
             "language": "en",
             "archive_path": "data/raw/2026-11-06/wikipedia_indonesian_toll_road_system.wikitext",
             "notes": "",
-            "claim": "status,length,operator"
+            "claim": "status; length; operator; location"
           }
         ],
-        "events": []
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "2",
+        "freshness_due": "2027-05-08"
       }
     },
     {
@@ -1610,10 +1688,13 @@
             "language": "en",
             "archive_path": "data/raw/2026-11-06/wikipedia_indonesian_toll_road_system.wikitext",
             "notes": "",
-            "claim": "status,length,operator"
+            "claim": "status; length; operator; location"
           }
         ],
-        "events": []
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "2",
+        "freshness_due": "2027-05-08"
       }
     },
     {
@@ -1672,7 +1753,10 @@
             "claim": "status; location; opening"
           }
         ],
-        "events": []
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "1",
+        "freshness_due": "2027-05-09"
       }
     },
     {
@@ -1731,7 +1815,10 @@
             "claim": "status; location; opening"
           }
         ],
-        "events": []
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "1",
+        "freshness_due": "2027-05-09"
       }
     },
     {
@@ -1790,7 +1877,10 @@
             "claim": "status; location; opening"
           }
         ],
-        "events": []
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "1",
+        "freshness_due": "2027-05-09"
       }
     },
     {
@@ -1849,7 +1939,10 @@
             "claim": "status; location; opening"
           }
         ],
-        "events": []
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "1",
+        "freshness_due": "2027-05-09"
       }
     },
     {
@@ -1908,7 +2001,10 @@
             "claim": "status; location; opening"
           }
         ],
-        "events": []
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "1",
+        "freshness_due": "2027-05-09"
       }
     },
     {
@@ -1967,7 +2063,10 @@
             "claim": "status; location; opening"
           }
         ],
-        "events": []
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "1",
+        "freshness_due": "2027-05-09"
       }
     },
     {
@@ -2026,7 +2125,10 @@
             "claim": "status; location; opening"
           }
         ],
-        "events": []
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "1",
+        "freshness_due": "2027-05-09"
       }
     },
     {
@@ -2085,7 +2187,10 @@
             "claim": "status; location; opening"
           }
         ],
-        "events": []
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "1",
+        "freshness_due": "2027-05-09"
       }
     },
     {
@@ -2144,7 +2249,10 @@
             "claim": "status; location; opening"
           }
         ],
-        "events": []
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "1",
+        "freshness_due": "2027-05-09"
       }
     },
     {
@@ -2203,7 +2311,10 @@
             "claim": "status; location; opening"
           }
         ],
-        "events": []
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "1",
+        "freshness_due": "2027-05-09"
       }
     },
     {
@@ -2262,7 +2373,10 @@
             "claim": "status; location; opening"
           }
         ],
-        "events": []
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "1",
+        "freshness_due": "2027-05-09"
       }
     },
     {
@@ -2321,7 +2435,10 @@
             "claim": "status; location; opening"
           }
         ],
-        "events": []
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "1",
+        "freshness_due": "2027-05-09"
       }
     },
     {
@@ -2380,7 +2497,10 @@
             "claim": "status; location; opening"
           }
         ],
-        "events": []
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "1",
+        "freshness_due": "2027-05-09"
       }
     },
     {
@@ -2439,7 +2559,10 @@
             "claim": "status; location; opening"
           }
         ],
-        "events": []
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "1",
+        "freshness_due": "2027-05-09"
       }
     },
     {
@@ -2498,7 +2621,10 @@
             "claim": "status; location; opening"
           }
         ],
-        "events": []
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "1",
+        "freshness_due": "2027-05-09"
       }
     },
     {
@@ -2557,7 +2683,10 @@
             "claim": "status; location; opening"
           }
         ],
-        "events": []
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "1",
+        "freshness_due": "2027-05-09"
       }
     },
     {
@@ -2616,7 +2745,10 @@
             "claim": "status; location; opening"
           }
         ],
-        "events": []
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "1",
+        "freshness_due": "2027-05-09"
       }
     },
     {
@@ -2675,7 +2807,10 @@
             "claim": "status; location; opening"
           }
         ],
-        "events": []
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "1",
+        "freshness_due": "2027-05-09"
       }
     },
     {
@@ -2734,7 +2869,10 @@
             "claim": "status; location; investment"
           }
         ],
-        "events": []
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "1",
+        "freshness_due": "2027-05-09"
       }
     },
     {
@@ -2793,7 +2931,10 @@
             "claim": "status; location; opening; investment; progress"
           }
         ],
-        "events": []
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "1",
+        "freshness_due": "2027-05-09"
       }
     },
     {
@@ -2852,7 +2993,10 @@
             "claim": "status; location; target; investment"
           }
         ],
-        "events": []
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "1",
+        "freshness_due": "2027-05-09"
       }
     },
     {
@@ -2911,7 +3055,10 @@
             "claim": "status; location; target; investment"
           }
         ],
-        "events": []
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "1",
+        "freshness_due": "2027-05-09"
       }
     },
     {
@@ -2970,7 +3117,10 @@
             "claim": "status; location; opening; investment"
           }
         ],
-        "events": []
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "1",
+        "freshness_due": "2027-05-09"
       }
     },
     {
@@ -3029,7 +3179,10 @@
             "claim": "status; location"
           }
         ],
-        "events": []
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "1",
+        "freshness_due": "2027-05-09"
       }
     },
     {
@@ -3088,7 +3241,10 @@
             "claim": "status; location; opening; investment"
           }
         ],
-        "events": []
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "1",
+        "freshness_due": "2027-05-09"
       }
     },
     {
@@ -3147,7 +3303,10 @@
             "claim": "status; location; opening; investment"
           }
         ],
-        "events": []
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "1",
+        "freshness_due": "2027-05-09"
       }
     },
     {
@@ -3206,7 +3365,10 @@
             "claim": "status; location; opening; investment"
           }
         ],
-        "events": []
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "1",
+        "freshness_due": "2027-05-09"
       }
     },
     {
@@ -3265,7 +3427,10 @@
             "claim": "status; location; opening; investment"
           }
         ],
-        "events": []
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "1",
+        "freshness_due": "2027-05-09"
       }
     },
     {
@@ -3324,7 +3489,10 @@
             "claim": "status; location; opening; investment"
           }
         ],
-        "events": []
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "1",
+        "freshness_due": "2027-05-09"
       }
     },
     {
@@ -3383,7 +3551,10 @@
             "claim": "status; location"
           }
         ],
-        "events": []
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "1",
+        "freshness_due": "2027-05-09"
       }
     },
     {
@@ -3442,7 +3613,10 @@
             "claim": "status; location; investment"
           }
         ],
-        "events": []
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "1",
+        "freshness_due": "2027-05-09"
       }
     },
     {
@@ -3501,7 +3675,10 @@
             "claim": "status; location; target"
           }
         ],
-        "events": []
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "1",
+        "freshness_due": "2027-05-09"
       }
     },
     {
@@ -3560,7 +3737,10 @@
             "claim": "status; location; target; investment; progress"
           }
         ],
-        "events": []
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "1",
+        "freshness_due": "2027-05-09"
       }
     },
     {
@@ -3619,7 +3799,10 @@
             "claim": "status; location; target; investment"
           }
         ],
-        "events": []
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "1",
+        "freshness_due": "2027-05-09"
       }
     },
     {
@@ -3689,7 +3872,10 @@
             "source_url": "https://ppid.kemenhub.go.id/fileupload/informasi-berkala/20260406102830.R1_19022026_Update_PSN_Kemenhub_compressed.pdf",
             "notes": "Date recorded in the project notes; the PSN review gives 89.22% progress as of 19 February 2026."
           }
-        ]
+        ],
+        "freshness_state": "fresh",
+        "freshness_age_days": "1",
+        "freshness_due": "2027-05-09"
       }
     },
     {
@@ -3748,7 +3934,10 @@
             "claim": "status; length; operational; operator; location"
           }
         ],
-        "events": []
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "0",
+        "freshness_due": "2027-05-10"
       }
     },
     {
@@ -3807,7 +3996,10 @@
             "claim": "status; length; operational; operator; location"
           }
         ],
-        "events": []
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "0",
+        "freshness_due": "2027-05-10"
       }
     },
     {
@@ -3863,10 +4055,13 @@
             "language": "id",
             "archive_path": "data/raw/2026-11-06/bpjt_toll_road_list.json",
             "notes": "77 operating or partly operating rows.",
-            "claim": "status; length; operational; operator; location"
+            "claim": "status; length; operational; operator; location; opening"
           }
         ],
-        "events": []
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "0",
+        "freshness_due": "2027-05-10"
       }
     },
     {
@@ -3922,10 +4117,13 @@
             "language": "id",
             "archive_path": "data/raw/2026-11-06/bpjt_toll_road_list.json",
             "notes": "77 operating or partly operating rows.",
-            "claim": "status; length; operational; operator; location"
+            "claim": "status; length; operational; operator; location; opening"
           }
         ],
-        "events": []
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "0",
+        "freshness_due": "2027-05-10"
       }
     },
     {
@@ -3981,10 +4179,13 @@
             "language": "id",
             "archive_path": "data/raw/2026-11-06/bpjt_toll_road_list.json",
             "notes": "77 operating or partly operating rows.",
-            "claim": "status; length; operational; operator; location"
+            "claim": "status; length; operational; operator; location; opening"
           }
         ],
-        "events": []
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "0",
+        "freshness_due": "2027-05-10"
       }
     },
     {
@@ -4043,7 +4244,10 @@
             "claim": "status; length; operational; operator; location"
           }
         ],
-        "events": []
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "0",
+        "freshness_due": "2027-05-10"
       }
     },
     {
@@ -4099,10 +4303,13 @@
             "language": "id",
             "archive_path": "data/raw/2026-11-06/bpjt_toll_road_list.json",
             "notes": "77 operating or partly operating rows.",
-            "claim": "status; length; operational; operator; location"
+            "claim": "status; length; operational; operator; location; opening"
           }
         ],
-        "events": []
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "0",
+        "freshness_due": "2027-05-10"
       }
     },
     {
@@ -4161,7 +4368,10 @@
             "claim": "status; length; operational; operator; location"
           }
         ],
-        "events": []
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "0",
+        "freshness_due": "2027-05-10"
       }
     },
     {
@@ -4217,10 +4427,13 @@
             "language": "id",
             "archive_path": "data/raw/2026-11-06/bpjt_toll_road_list.json",
             "notes": "77 operating or partly operating rows.",
-            "claim": "status; length; operational; operator; location"
+            "claim": "status; length; operational; operator; location; opening"
           }
         ],
-        "events": []
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "0",
+        "freshness_due": "2027-05-10"
       }
     },
     {
@@ -4276,10 +4489,13 @@
             "language": "id",
             "archive_path": "data/raw/2026-11-06/bpjt_toll_road_list.json",
             "notes": "77 operating or partly operating rows.",
-            "claim": "status; length; operational; operator; location"
+            "claim": "status; length; operational; operator; location; opening"
           }
         ],
-        "events": []
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "0",
+        "freshness_due": "2027-05-10"
       }
     },
     {
@@ -4335,10 +4551,13 @@
             "language": "id",
             "archive_path": "data/raw/2026-11-06/bpjt_toll_road_list.json",
             "notes": "77 operating or partly operating rows.",
-            "claim": "status; length; operational; operator; location"
+            "claim": "status; length; operational; operator; location; opening"
           }
         ],
-        "events": []
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "0",
+        "freshness_due": "2027-05-10"
       }
     },
     {
@@ -4408,7 +4627,10 @@
             "source_url": "https://setneg.go.id/baca/index/presiden_resmikan_4_ruas_jalan_tol_trans_jawa_di_jawa_timur",
             "notes": "Attached to the Ngawi–Kertosono–Kediri row; the other three openings belong to other segments."
           }
-        ]
+        ],
+        "freshness_state": "fresh",
+        "freshness_age_days": "0",
+        "freshness_due": "2027-05-10"
       }
     },
     {
@@ -4464,10 +4686,13 @@
             "language": "id",
             "archive_path": "data/raw/2026-11-06/bpjt_toll_road_list.json",
             "notes": "77 operating or partly operating rows.",
-            "claim": "status; length; operational; operator; location"
+            "claim": "status; length; operational; operator; location; opening"
           }
         ],
-        "events": []
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "0",
+        "freshness_due": "2027-05-10"
       }
     },
     {
@@ -4523,10 +4748,13 @@
             "language": "id",
             "archive_path": "data/raw/2026-11-06/bpjt_toll_road_list.json",
             "notes": "77 operating or partly operating rows.",
-            "claim": "status; length; operational; operator; location"
+            "claim": "status; length; operational; operator; location; opening"
           }
         ],
-        "events": []
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "0",
+        "freshness_due": "2027-05-10"
       }
     },
     {
@@ -4582,10 +4810,13 @@
             "language": "id",
             "archive_path": "data/raw/2026-11-06/bpjt_toll_road_list.json",
             "notes": "77 operating or partly operating rows.",
-            "claim": "status; length; operational; operator; location"
+            "claim": "status; length; operational; operator; location; opening"
           }
         ],
-        "events": []
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "0",
+        "freshness_due": "2027-05-10"
       }
     },
     {
@@ -4641,7 +4872,7 @@
             "language": "id",
             "archive_path": "",
             "notes": "Restart schedule after the December 2025 outage.",
-            "claim": "status, restart, investment"
+            "claim": "status; restart; investment; opening"
           },
           {
             "id": "src-ptfi-manyar-smelter",
@@ -4654,7 +4885,7 @@
             "language": "en",
             "archive_path": "",
             "notes": "Design figures and JIIPE location. Describes a 2 Mtpa concentrate design; the EPC scope and later reporting use 1.7 Mtpa.",
-            "claim": "capacity, location"
+            "claim": "capacity; location"
           },
           {
             "id": "src-osm-nominatim-factories-2026-11-08",
@@ -4670,7 +4901,10 @@
             "claim": "coordinates"
           }
         ],
-        "events": []
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "0",
+        "freshness_due": "2027-05-10"
       }
     },
     {
@@ -4726,7 +4960,7 @@
             "language": "en",
             "archive_path": "",
             "notes": "Capacity history and 342,000 t/y copper cathode figure.",
-            "claim": "status, capacity"
+            "claim": "status; capacity; opening"
           },
           {
             "id": "src-osm-nominatim-factories-2026-11-08",
@@ -4742,7 +4976,10 @@
             "claim": "coordinates"
           }
         ],
-        "events": []
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "0",
+        "freshness_due": "2027-05-10"
       }
     },
     {
@@ -4798,7 +5035,7 @@
             "language": "en",
             "archive_path": "",
             "notes": "900,000 t/y concentrate feed, 220,000 t/y cathode, 830,000 t/y sulfuric acid, PSN status.",
-            "claim": "capacity, PSN, location"
+            "claim": "capacity; psn; location; investment"
           },
           {
             "id": "src-mining-amman-2026",
@@ -4811,7 +5048,7 @@
             "language": "en",
             "archive_path": "",
             "notes": "Ramp-up completed in April 2026; 2025 cathode output 79,848 t.",
-            "claim": "status, ramp-up"
+            "claim": "status; ramp-up; opening"
           },
           {
             "id": "src-osm-nominatim-factories-2026-11-08",
@@ -4827,7 +5064,10 @@
             "claim": "coordinates"
           }
         ],
-        "events": []
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "0",
+        "freshness_due": "2027-05-10"
       }
     },
     {
@@ -4896,10 +5136,13 @@
             "language": "en",
             "archive_path": "",
             "notes": "Morowali stainless complex entered production in mid-2017.",
-            "claim": "status, opening, location"
+            "claim": "status; opening; location"
           }
         ],
-        "events": []
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "0",
+        "freshness_due": "2027-05-10"
       }
     },
     {
@@ -4955,10 +5198,13 @@
             "language": "en",
             "archive_path": "",
             "notes": "US$2.2B investment; capacity raised from 4 to 7 Mtpa.",
-            "claim": "status, capacity, investment, location"
+            "claim": "status; capacity; investment; location; opening"
           }
         ],
-        "events": []
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "0",
+        "freshness_due": "2027-05-10"
       }
     },
     {
@@ -5014,7 +5260,7 @@
             "language": "en",
             "archive_path": "",
             "notes": "Huafei HPAL started in June 2023 and reached target output by Q1 2024.",
-            "claim": "status, capacity, location"
+            "claim": "status; capacity; location; opening"
           },
           {
             "id": "src-huafei-cnbc-2021-05-25",
@@ -5027,10 +5273,13 @@
             "language": "en",
             "archive_path": "",
             "notes": "US$2.08B; 120,000 t nickel and 15,000 t cobalt a year.",
-            "claim": "investment, capacity"
+            "claim": "investment; capacity"
           }
         ],
-        "events": []
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "0",
+        "freshness_due": "2027-05-10"
       }
     },
     {
@@ -5086,10 +5335,13 @@
             "language": "en",
             "archive_path": "",
             "notes": "2025 production 46,429 t Ni; four RKEF lines in IWIP.",
-            "claim": "status, capacity, output, location"
+            "claim": "status; capacity; output; location; opening"
           }
         ],
-        "events": []
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "0",
+        "freshness_due": "2027-05-10"
       }
     },
     {
@@ -5158,7 +5410,7 @@
             "language": "en",
             "archive_path": "",
             "notes": "About US$1B; production from May 2021.",
-            "claim": "investment, capacity, opening"
+            "claim": "investment; capacity; opening"
           },
           {
             "id": "src-osm-nominatim-factories-2026-11-08",
@@ -5174,7 +5426,10 @@
             "claim": "coordinates"
           }
         ],
-        "events": []
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "0",
+        "freshness_due": "2027-05-10"
       }
     },
     {
@@ -5230,10 +5485,13 @@
             "language": "en",
             "archive_path": "",
             "notes": "ONC fully operational from August 2024; combined MHP capacity 120,000 t/y.",
-            "claim": "status, capacity, investment, location"
+            "claim": "status; capacity; investment; location; opening"
           }
         ],
-        "events": []
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "0",
+        "freshness_due": "2027-05-10"
       }
     },
     {
@@ -5289,7 +5547,7 @@
             "language": "id",
             "archive_path": "",
             "notes": "VDNI smelter completed in December 2019; PSN smelter programme.",
-            "claim": "status, PSN"
+            "claim": "status; psn; opening"
           },
           {
             "id": "src-aeer-vdni-2023",
@@ -5302,7 +5560,7 @@
             "language": "en",
             "archive_path": "",
             "notes": "VDNI: 15 RKEF lines, 120 kt/y nickel in NPI.",
-            "claim": "capacity"
+            "claim": "capacity; investment"
           },
           {
             "id": "src-osm-nominatim-factories-2026-11-08",
@@ -5318,7 +5576,10 @@
             "claim": "coordinates"
           }
         ],
-        "events": []
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "0",
+        "freshness_due": "2027-05-10"
       }
     },
     {
@@ -5374,10 +5635,13 @@
             "language": "en",
             "archive_path": "",
             "notes": "2.5 Mtpa stainless steel; integrated RKEF-to-stainless complex.",
-            "claim": "status, capacity, PSN, location"
+            "claim": "status; capacity; psn; location; opening"
           }
         ],
-        "events": []
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "0",
+        "freshness_due": "2027-05-10"
       }
     },
     {
@@ -5433,7 +5697,7 @@
             "language": "en",
             "archive_path": "",
             "notes": "Temporary PKPU granted 19 June 2026; restructuring, not liquidation.",
-            "claim": "status"
+            "claim": "status; opening"
           },
           {
             "id": "src-gni-jakartaglobe-2026",
@@ -5446,7 +5710,7 @@
             "language": "en",
             "archive_path": "",
             "notes": "1,800 layoffs; production disruption at GNI.",
-            "claim": "status, layoffs"
+            "claim": "status; layoffs"
           },
           {
             "id": "src-oregon-gni-2026",
@@ -5459,7 +5723,7 @@
             "language": "en",
             "archive_path": "",
             "notes": "1.8 Mtpa NPI capacity; most of 20 lines shut by 2026.",
-            "claim": "capacity, production halt, location"
+            "claim": "capacity; production halt; location; investment"
           }
         ],
         "events": [
@@ -5473,7 +5737,10 @@
             "source_url": "https://news.metal.com/newscontent/103969940-smm-npi-market-flash-indonesia-gni-enters-court-supervised-debt-suspension-pkpu-not-liquidation",
             "notes": "1,800 layoffs followed in July 2026."
           }
-        ]
+        ],
+        "freshness_state": "fresh",
+        "freshness_age_days": "0",
+        "freshness_due": "2027-05-10"
       }
     },
     {
@@ -5529,7 +5796,7 @@
             "language": "id",
             "archive_path": "",
             "notes": "Rp6.5T expansion; eight furnaces and 200,000 t/y NPI.",
-            "claim": "status, capacity, investment"
+            "claim": "status; capacity; investment; opening"
           },
           {
             "id": "src-osm-nominatim-factories-2026-11-08",
@@ -5545,7 +5812,10 @@
             "claim": "coordinates"
           }
         ],
-        "events": []
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "0",
+        "freshness_due": "2027-05-10"
       }
     },
     {
@@ -5601,7 +5871,7 @@
             "language": "en",
             "archive_path": "",
             "notes": "120 ktpa MHP; first autoclaves received December 2025.",
-            "claim": "status, capacity"
+            "claim": "status; capacity; investment"
           },
           {
             "id": "src-cnfe-2026",
@@ -5630,7 +5900,10 @@
             "claim": "coordinates"
           }
         ],
-        "events": []
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "0",
+        "freshness_due": "2027-05-10"
       }
     },
     {
@@ -5686,7 +5959,7 @@
             "language": "en",
             "archive_path": "",
             "notes": "Bahodopi HPAL up to 60 ktpa MHP; Pomalaa about 120 ktpa MHP.",
-            "claim": "status, capacity"
+            "claim": "status; capacity; investment"
           },
           {
             "id": "src-osm-nominatim-factories-2026-11-08",
@@ -5702,7 +5975,10 @@
             "claim": "coordinates"
           }
         ],
-        "events": []
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "0",
+        "freshness_due": "2027-05-10"
       }
     },
     {
@@ -5758,7 +6034,7 @@
             "language": "en",
             "archive_path": "",
             "notes": "Sorowako HPAL 60 ktpa MHP; Pomalaa 120 ktpa; Bahodopi ferronickel.",
-            "claim": "status, capacity, investment"
+            "claim": "status; capacity; investment"
           },
           {
             "id": "src-osm-nominatim-factories-2026-11-08",
@@ -5774,7 +6050,10 @@
             "claim": "coordinates"
           }
         ],
-        "events": []
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "0",
+        "freshness_due": "2027-05-10"
       }
     },
     {
@@ -5830,7 +6109,7 @@
             "language": "id",
             "archive_path": "",
             "notes": "Capacity doubled from 1 to 2 Mtpa and operating in 2022.",
-            "claim": "status, capacity"
+            "claim": "status; capacity; opening"
           },
           {
             "id": "src-whw-smm-2025",
@@ -5843,7 +6122,7 @@
             "language": "en",
             "archive_path": "",
             "notes": "Phase I from June 2016; expanded to 2 Mtpa in 2022; total investment about US$1.3B.",
-            "claim": "investment, history"
+            "claim": "investment; history"
           },
           {
             "id": "src-osm-nominatim-factories-2026-11-08",
@@ -5859,7 +6138,10 @@
             "claim": "coordinates"
           }
         ],
-        "events": []
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "0",
+        "freshness_due": "2027-05-10"
       }
     },
     {
@@ -5915,7 +6197,7 @@
             "language": "en",
             "archive_path": "",
             "notes": "SGAR Phase 1: 1 Mtpa alumina in Mempawah.",
-            "claim": "capacity, location"
+            "claim": "capacity; location; investment"
           },
           {
             "id": "src-mind-id-sgar-2025",
@@ -5928,10 +6210,13 @@
             "language": "en",
             "archive_path": "",
             "notes": "Phase 1 full operation in 2025; Phase 2 potential 2 Mtpa.",
-            "claim": "status, PSN"
+            "claim": "status; psn; opening"
           }
         ],
-        "events": []
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "0",
+        "freshness_due": "2027-05-10"
       }
     },
     {
@@ -5987,7 +6272,7 @@
             "language": "en",
             "archive_path": "",
             "notes": "Reduction plant maximum capacity 250,000 t/y aluminium.",
-            "claim": "status, capacity"
+            "claim": "status; capacity; opening"
           },
           {
             "id": "src-osm-nominatim-factories-2026-11-08",
@@ -6003,7 +6288,10 @@
             "claim": "coordinates"
           }
         ],
-        "events": []
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "0",
+        "freshness_due": "2027-05-10"
       }
     },
     {
@@ -6059,7 +6347,7 @@
             "language": "en",
             "archive_path": "",
             "notes": "3.0 Mtpa steel slab capacity at Cilegon.",
-            "claim": "status, capacity"
+            "claim": "status; capacity; opening"
           },
           {
             "id": "src-osm-nominatim-factories-2026-11-08",
@@ -6075,7 +6363,10 @@
             "claim": "coordinates"
           }
         ],
-        "events": []
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "0",
+        "freshness_due": "2027-05-10"
       }
     },
     {
@@ -6131,7 +6422,7 @@
             "language": "en",
             "archive_path": "",
             "notes": "2.2 Mtpa steel capacity at Cikarang Barat.",
-            "claim": "status, capacity"
+            "claim": "status; capacity; opening"
           },
           {
             "id": "src-osm-nominatim-factories-2026-11-08",
@@ -6147,7 +6438,10 @@
             "claim": "coordinates"
           }
         ],
-        "events": []
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "0",
+        "freshness_due": "2027-05-10"
       }
     },
     {
@@ -6203,7 +6497,7 @@
             "language": "en",
             "archive_path": "",
             "notes": "Phase 1 US$478M and 80,000 t/y anode material; production launched 7 August 2024.",
-            "claim": "status, capacity, investment"
+            "claim": "status; capacity; investment; opening"
           },
           {
             "id": "src-osm-nominatim-factories-2026-11-08",
@@ -6219,7 +6513,10 @@
             "claim": "coordinates"
           }
         ],
-        "events": []
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "0",
+        "freshness_due": "2027-05-10"
       }
     },
     {
@@ -6275,7 +6572,7 @@
             "language": "en",
             "archive_path": "",
             "notes": "Karawang phase 1 6.9 GWh; total project nearly US$6B.",
-            "claim": "status, capacity, investment"
+            "claim": "status; capacity; investment"
           },
           {
             "id": "src-cnevpost-catl-2025-05-06",
@@ -6288,7 +6585,7 @@
             "language": "en",
             "archive_path": "",
             "notes": "15 GWh planned capacity; commercial operation targeted for 2027.",
-            "claim": "timeline, capacity"
+            "claim": "timeline; capacity"
           },
           {
             "id": "src-osm-nominatim-factories-2026-11-08",
@@ -6304,7 +6601,10 @@
             "claim": "coordinates"
           }
         ],
-        "events": []
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "0",
+        "freshness_due": "2027-05-10"
       }
     },
     {
@@ -6360,7 +6660,7 @@
             "language": "en",
             "archive_path": "",
             "notes": "US$3.95B LINE complex; completion ceremony 6 November 2025.",
-            "claim": "status, capacity, investment"
+            "claim": "status; capacity; investment"
           },
           {
             "id": "src-reuters-lotte-2025-11-06",
@@ -6373,7 +6673,7 @@
             "language": "en",
             "archive_path": "",
             "notes": "Inauguration and commercial operation in October 2025.",
-            "claim": "status, opening"
+            "claim": "status; opening"
           },
           {
             "id": "src-osm-nominatim-factories-2026-11-08",
@@ -6400,7 +6700,10 @@
             "source_url": "https://www.reuters.com/business/energy/indonesia-president-inaugurates-4-billion-petrochemical-plant-by-lotte-chemical-2025-11-06",
             "notes": "Ceremony date; the company dates commercial operations to October 2025."
           }
-        ]
+        ],
+        "freshness_state": "fresh",
+        "freshness_age_days": "0",
+        "freshness_due": "2027-05-10"
       }
     },
     {
@@ -6456,7 +6759,7 @@
             "language": "en",
             "archive_path": "",
             "notes": "Ethylene capacity expanded from 520 ktpa in 1995 to 860 ktpa.",
-            "claim": "status, capacity"
+            "claim": "status; capacity; opening"
           },
           {
             "id": "src-osm-nominatim-factories-2026-11-08",
@@ -6472,7 +6775,10 @@
             "claim": "coordinates"
           }
         ],
-        "events": []
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "0",
+        "freshness_due": "2027-05-10"
       }
     },
     {
@@ -6528,7 +6834,7 @@
             "language": "en",
             "archive_path": "",
             "notes": "US$2.6B; 2 Mtpa pulp and 0.5 Mtpa tissue design.",
-            "claim": "investment, design capacity, location"
+            "claim": "investment; design capacity; location"
           },
           {
             "id": "src-eco-business-oki-2021",
@@ -6541,10 +6847,13 @@
             "language": "en",
             "archive_path": "",
             "notes": "Current capacity 2.8 Mtpa; expansion proposal to 7 Mtpa.",
-            "claim": "status, current capacity"
+            "claim": "status; current capacity; opening"
           }
         ],
-        "events": []
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "0",
+        "freshness_due": "2027-05-10"
       }
     },
     {
@@ -6600,7 +6909,7 @@
             "language": "en",
             "archive_path": "",
             "notes": "Five urea plants, 2.98 Mtpa urea; four ammonia plants, 1.85 Mtpa ammonia.",
-            "claim": "status, capacity"
+            "claim": "status; capacity; opening"
           },
           {
             "id": "src-pupuk-kaltim-official",
@@ -6613,7 +6922,7 @@
             "language": "id",
             "archive_path": "",
             "notes": "Operator and Bontang site.",
-            "claim": "operator, location"
+            "claim": "operator; location"
           },
           {
             "id": "src-osm-nominatim-factories-2026-11-08",
@@ -6629,7 +6938,10 @@
             "claim": "coordinates"
           }
         ],
-        "events": []
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "0",
+        "freshness_due": "2027-05-10"
       }
     },
     {
@@ -6685,10 +6997,13 @@
             "language": "id",
             "archive_path": "data/raw/2026-11-06/idwiki_daftar_jalan_tol_di_indonesia.wikitext",
             "notes": "",
-            "claim": "status, length"
+            "claim": "status; length; location"
           }
         ],
-        "events": []
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "2",
+        "freshness_due": "2027-05-08"
       }
     },
     {
@@ -6744,10 +7059,13 @@
             "language": "id",
             "archive_path": "data/raw/2026-11-06/idwiki_daftar_jalan_tol_di_indonesia.wikitext",
             "notes": "",
-            "claim": "status, length"
+            "claim": "status; length; location"
           }
         ],
-        "events": []
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "2",
+        "freshness_due": "2027-05-08"
       }
     },
     {
@@ -6803,10 +7121,13 @@
             "language": "id",
             "archive_path": "data/raw/2026-11-06/idwiki_daftar_jalan_tol_di_indonesia.wikitext",
             "notes": "",
-            "claim": "status, length"
+            "claim": "status; length; location"
           }
         ],
-        "events": []
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "2",
+        "freshness_due": "2027-05-08"
       }
     }
   ]

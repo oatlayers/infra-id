@@ -1,8 +1,13 @@
 # V3 Overhaul Plan — Site Experience and Data Completeness
 
 **Status:** Phase 1 complete, 7 November 2026. Phase 2 complete except the
-partial estate layer and deferred corridor geometry, 8 November 2026. Phase 3 is
-next.
+partial estate layer and deferred corridor geometry, 8 November 2026. Phase 3
+complete, 8 November 2026: 107 projects, 479 atomic project claims, 19 conflicts,
+285 freshness rows and 189 dictionary fields, with a deterministic local build
+and a browser smoke test. The release is **local only**.
+**Evidence:** [`docs/phase-3-trust.md`](docs/phase-3-trust.md),
+[`docs/refresh-runbook.md`](docs/refresh-runbook.md) and
+[`docs/evidence/phase-3/`](docs/evidence/phase-3/).
 **Supersedes:** the roadmap and "Where to pick up" sections of `plan.md`.
 **Scope:** the site (`site/`) and the curated dataset (`data/curated/`).
 **Hard constraints that do not change:** English UI with Indonesian proper names;
@@ -1157,6 +1162,13 @@ See `docs/phase-2-roads.md`.
 **Goal:** the site is verifiable, maintainable and locally releasable by another
 agent. It is **not** pushed to GitHub or published in this phase.
 
+**Status: complete, 8 November 2026.** The build has 107 projects, 178 estates,
+479 atomic project claims (107/107 fully claimed), 19 conflicts (11 resolved, 8
+open), 285 freshness rows and 189 dictionary fields. `build_all.py --check`
+leaves 25 generated files unchanged; `smoke_site.py` passes on `file://` and a
+local HTTP server with no external request and no console error. Evidence:
+[`docs/phase-3-trust.md`](docs/phase-3-trust.md).
+
 **Track 3A — Trust layer**
 
 | ID | Item | Outcome / acceptance | Size | Depends |
@@ -1186,6 +1198,14 @@ agent. It is **not** pushed to GitHub or published in this phase.
 - Desktop, mobile, keyboard and offline smoke tests pass.
 - **No GitHub remote, push, Pages deployment or public release is performed.**
 - README, changelog and this plan agree with the data.
+
+**Completion evidence:** Q1 `data/derived/claims_audit.csv` (107/107);
+Q2 `data/derived/freshness_report.csv` (285 fresh, next due 2027-05-08); Q3 Data
+view v2 and `docs/evidence/phase-3/04-data-desktop.png`; Q4 browser-tested
+filtered CSV/GeoJSON and dictionary; Q5 `data/curated/conflicts.csv` (19 rows);
+S1 `build_all.py --check` (25 files unchanged); S2 `file://` and local HTTP;
+S3 `docs/evidence/phase-3/smoke-report.json` (0 external requests, 0 errors);
+S4 `docs/refresh-runbook.md`; S5 README, `CHANGELOG.md`, `plan.md` and this plan.
 
 ---
 
@@ -1219,7 +1239,7 @@ Order:
 5. E6 and R6 — optional map layers and geometry. Both are deferred and recorded
    as gaps.
 
-**Milestone C — end of Phase 3: local release**
+**Milestone C — end of Phase 3: local release (complete 8 Nov 2026)**
 
 Order:
 

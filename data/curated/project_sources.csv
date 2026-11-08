@@ -1,31 +1,102 @@
 project_id,source_id,claim,claim_value,claim_date,notes
-tol-sigli-banda-aceh,src-bpjt-toll-road-list-2026-11-06,"status,length,operator,location",,,
-tol-binjai-langsa,src-bpjt-toll-road-list-2026-11-06,"status,length,operator,location",,,
-tol-padang-pekanbaru,src-bpjt-toll-road-list-2026-11-06,"status,length,operator,location",,,
-tol-bengkulu-lubuk-linggau,src-bpjt-toll-road-list-2026-11-06,"status,length,operator,location",,,
-tol-kayu-agung-palembang-betung,src-bpjt-toll-road-list-2026-11-06,"status,length,operator,location",,,
-tol-kuala-tanjung-tebing-tinggi-parapat,src-idwiki-daftar-jalan-tol-30025554,"status,length,operator",,,
-tol-betung-tempino-jambi,src-bpjt-toll-road-list-2026-11-06,"status,length,operator,location",,,
-tol-depok-antasari,src-bpjt-toll-road-list-2026-11-06,"status,length,operator,location",,,
-tol-jakarta-inner-ring-road-2,src-bpjt-toll-road-list-2026-11-06,"status,length,operator,location",,,
-tol-bekasi-cawang-kampung-melayu,src-bpjt-toll-road-list-2026-11-06,"status,length,operator,location",,,
-tol-jakarta-harbour-road-2,src-bpjt-toll-road-list-2026-11-06,"status,length,operator,location",,,
-tol-jakarta-cikampek-2-south,src-enwiki-toll-road-system-1329385293,"status,length,operator",,,
-tol-bogor-ring-road,src-bpjt-toll-road-list-2026-11-06,"status,length,operator,location",,,
-tol-serang-panimbang,src-bpjt-toll-road-list-2026-11-06,"status,length,operator,location",,,
-tol-ciawi-sukabumi,src-bpjt-toll-road-list-2026-11-06,"status,length,operator,location",,,
-tol-semarang-demak,src-bpjt-toll-road-list-2026-11-06,"status,length,operator,location",,,
-tol-solo-yogyakarta-nyia,src-bpjt-toll-road-list-2026-11-06,"status,length,operator,location",,,
-tol-yogyakarta-bawen,src-enwiki-toll-road-system-1329385293,"status,length,operator",,,
-tol-krian-legundi-bunder-manyar,src-bpjt-toll-road-list-2026-11-06,"status,length,operator,location",,,
-tol-probolinggo-banyuwangi,src-bpjt-toll-road-list-2026-11-06,"status,length,operator,location",,,
-tol-jorr-3,src-enwiki-toll-road-system-1329385293,"status,length,operator",,,
-tol-gedebage-tasikmalaya-cilacap,src-enwiki-toll-road-system-1329385293,"status,length,operator",,,
-tol-demak-tuban,src-enwiki-toll-road-system-1329385293,"status,length,operator",,,
-tol-semarang-kendal,src-enwiki-toll-road-system-1329385293,"status,length,operator",,,
-tol-pejagan-tegal-cilacap,src-enwiki-toll-road-system-1329385293,"status,length,operator",,,
-tol-cilacap-yogyakarta,src-enwiki-toll-road-system-1329385293,"status,length,operator",,,
-tol-gilimanuk-mengwi,src-enwiki-toll-road-system-1329385293,"status,length,operator",,,
+tol-sigli-banda-aceh,src-bpjt-toll-road-list-2026-11-06,status,,,
+tol-sigli-banda-aceh,src-bpjt-toll-road-list-2026-11-06,length,,,
+tol-sigli-banda-aceh,src-bpjt-toll-road-list-2026-11-06,operator,,,
+tol-sigli-banda-aceh,src-bpjt-toll-road-list-2026-11-06,location,,,
+tol-binjai-langsa,src-bpjt-toll-road-list-2026-11-06,status,,,
+tol-binjai-langsa,src-bpjt-toll-road-list-2026-11-06,length,,,
+tol-binjai-langsa,src-bpjt-toll-road-list-2026-11-06,operator,,,
+tol-binjai-langsa,src-bpjt-toll-road-list-2026-11-06,location,,,
+tol-padang-pekanbaru,src-bpjt-toll-road-list-2026-11-06,status,,,
+tol-padang-pekanbaru,src-bpjt-toll-road-list-2026-11-06,length,,,
+tol-padang-pekanbaru,src-bpjt-toll-road-list-2026-11-06,operator,,,
+tol-padang-pekanbaru,src-bpjt-toll-road-list-2026-11-06,location,,,
+tol-bengkulu-lubuk-linggau,src-bpjt-toll-road-list-2026-11-06,status,,,
+tol-bengkulu-lubuk-linggau,src-bpjt-toll-road-list-2026-11-06,length,,,
+tol-bengkulu-lubuk-linggau,src-bpjt-toll-road-list-2026-11-06,operator,,,
+tol-bengkulu-lubuk-linggau,src-bpjt-toll-road-list-2026-11-06,location,,,
+tol-kayu-agung-palembang-betung,src-bpjt-toll-road-list-2026-11-06,status,,,
+tol-kayu-agung-palembang-betung,src-bpjt-toll-road-list-2026-11-06,length,,,
+tol-kayu-agung-palembang-betung,src-bpjt-toll-road-list-2026-11-06,operator,,,
+tol-kayu-agung-palembang-betung,src-bpjt-toll-road-list-2026-11-06,location,,,
+tol-kuala-tanjung-tebing-tinggi-parapat,src-idwiki-daftar-jalan-tol-30025554,status,,,
+tol-kuala-tanjung-tebing-tinggi-parapat,src-idwiki-daftar-jalan-tol-30025554,length,,,
+tol-kuala-tanjung-tebing-tinggi-parapat,src-idwiki-daftar-jalan-tol-30025554,operator,,,
+tol-betung-tempino-jambi,src-bpjt-toll-road-list-2026-11-06,status,,,
+tol-betung-tempino-jambi,src-bpjt-toll-road-list-2026-11-06,length,,,
+tol-betung-tempino-jambi,src-bpjt-toll-road-list-2026-11-06,operator,,,
+tol-betung-tempino-jambi,src-bpjt-toll-road-list-2026-11-06,location,,,
+tol-depok-antasari,src-bpjt-toll-road-list-2026-11-06,status,,,
+tol-depok-antasari,src-bpjt-toll-road-list-2026-11-06,length,,,
+tol-depok-antasari,src-bpjt-toll-road-list-2026-11-06,operator,,,
+tol-depok-antasari,src-bpjt-toll-road-list-2026-11-06,location,,,
+tol-jakarta-inner-ring-road-2,src-bpjt-toll-road-list-2026-11-06,status,,,
+tol-jakarta-inner-ring-road-2,src-bpjt-toll-road-list-2026-11-06,length,,,
+tol-jakarta-inner-ring-road-2,src-bpjt-toll-road-list-2026-11-06,operator,,,
+tol-jakarta-inner-ring-road-2,src-bpjt-toll-road-list-2026-11-06,location,,,
+tol-bekasi-cawang-kampung-melayu,src-bpjt-toll-road-list-2026-11-06,status,,,
+tol-bekasi-cawang-kampung-melayu,src-bpjt-toll-road-list-2026-11-06,length,,,
+tol-bekasi-cawang-kampung-melayu,src-bpjt-toll-road-list-2026-11-06,operator,,,
+tol-bekasi-cawang-kampung-melayu,src-bpjt-toll-road-list-2026-11-06,location,,,
+tol-jakarta-harbour-road-2,src-bpjt-toll-road-list-2026-11-06,status,,,
+tol-jakarta-harbour-road-2,src-bpjt-toll-road-list-2026-11-06,length,,,
+tol-jakarta-harbour-road-2,src-bpjt-toll-road-list-2026-11-06,operator,,,
+tol-jakarta-harbour-road-2,src-bpjt-toll-road-list-2026-11-06,location,,,
+tol-jakarta-cikampek-2-south,src-enwiki-toll-road-system-1329385293,status,,,
+tol-jakarta-cikampek-2-south,src-enwiki-toll-road-system-1329385293,length,,,
+tol-jakarta-cikampek-2-south,src-enwiki-toll-road-system-1329385293,operator,,,
+tol-bogor-ring-road,src-bpjt-toll-road-list-2026-11-06,status,,,
+tol-bogor-ring-road,src-bpjt-toll-road-list-2026-11-06,length,,,
+tol-bogor-ring-road,src-bpjt-toll-road-list-2026-11-06,operator,,,
+tol-bogor-ring-road,src-bpjt-toll-road-list-2026-11-06,location,,,
+tol-serang-panimbang,src-bpjt-toll-road-list-2026-11-06,status,,,
+tol-serang-panimbang,src-bpjt-toll-road-list-2026-11-06,length,,,
+tol-serang-panimbang,src-bpjt-toll-road-list-2026-11-06,operator,,,
+tol-serang-panimbang,src-bpjt-toll-road-list-2026-11-06,location,,,
+tol-ciawi-sukabumi,src-bpjt-toll-road-list-2026-11-06,status,,,
+tol-ciawi-sukabumi,src-bpjt-toll-road-list-2026-11-06,length,,,
+tol-ciawi-sukabumi,src-bpjt-toll-road-list-2026-11-06,operator,,,
+tol-ciawi-sukabumi,src-bpjt-toll-road-list-2026-11-06,location,,,
+tol-semarang-demak,src-bpjt-toll-road-list-2026-11-06,status,,,
+tol-semarang-demak,src-bpjt-toll-road-list-2026-11-06,length,,,
+tol-semarang-demak,src-bpjt-toll-road-list-2026-11-06,operator,,,
+tol-semarang-demak,src-bpjt-toll-road-list-2026-11-06,location,,,
+tol-solo-yogyakarta-nyia,src-bpjt-toll-road-list-2026-11-06,status,,,
+tol-solo-yogyakarta-nyia,src-bpjt-toll-road-list-2026-11-06,length,,,
+tol-solo-yogyakarta-nyia,src-bpjt-toll-road-list-2026-11-06,operator,,,
+tol-solo-yogyakarta-nyia,src-bpjt-toll-road-list-2026-11-06,location,,,
+tol-yogyakarta-bawen,src-enwiki-toll-road-system-1329385293,status,,,
+tol-yogyakarta-bawen,src-enwiki-toll-road-system-1329385293,length,,,
+tol-yogyakarta-bawen,src-enwiki-toll-road-system-1329385293,operator,,,
+tol-krian-legundi-bunder-manyar,src-bpjt-toll-road-list-2026-11-06,status,,,
+tol-krian-legundi-bunder-manyar,src-bpjt-toll-road-list-2026-11-06,length,,,
+tol-krian-legundi-bunder-manyar,src-bpjt-toll-road-list-2026-11-06,operator,,,
+tol-krian-legundi-bunder-manyar,src-bpjt-toll-road-list-2026-11-06,location,,,
+tol-probolinggo-banyuwangi,src-bpjt-toll-road-list-2026-11-06,status,,,
+tol-probolinggo-banyuwangi,src-bpjt-toll-road-list-2026-11-06,length,,,
+tol-probolinggo-banyuwangi,src-bpjt-toll-road-list-2026-11-06,operator,,,
+tol-probolinggo-banyuwangi,src-bpjt-toll-road-list-2026-11-06,location,,,
+tol-jorr-3,src-enwiki-toll-road-system-1329385293,status,,,
+tol-jorr-3,src-enwiki-toll-road-system-1329385293,length,,,
+tol-jorr-3,src-enwiki-toll-road-system-1329385293,operator,,,
+tol-gedebage-tasikmalaya-cilacap,src-enwiki-toll-road-system-1329385293,status,,,
+tol-gedebage-tasikmalaya-cilacap,src-enwiki-toll-road-system-1329385293,length,,,
+tol-gedebage-tasikmalaya-cilacap,src-enwiki-toll-road-system-1329385293,operator,,,
+tol-demak-tuban,src-enwiki-toll-road-system-1329385293,status,,,
+tol-demak-tuban,src-enwiki-toll-road-system-1329385293,length,,,
+tol-demak-tuban,src-enwiki-toll-road-system-1329385293,operator,,,
+tol-semarang-kendal,src-enwiki-toll-road-system-1329385293,status,,,
+tol-semarang-kendal,src-enwiki-toll-road-system-1329385293,length,,,
+tol-semarang-kendal,src-enwiki-toll-road-system-1329385293,operator,,,
+tol-pejagan-tegal-cilacap,src-enwiki-toll-road-system-1329385293,status,,,
+tol-pejagan-tegal-cilacap,src-enwiki-toll-road-system-1329385293,length,,,
+tol-pejagan-tegal-cilacap,src-enwiki-toll-road-system-1329385293,operator,,,
+tol-cilacap-yogyakarta,src-enwiki-toll-road-system-1329385293,status,,,
+tol-cilacap-yogyakarta,src-enwiki-toll-road-system-1329385293,length,,,
+tol-cilacap-yogyakarta,src-enwiki-toll-road-system-1329385293,operator,,,
+tol-gilimanuk-mengwi,src-enwiki-toll-road-system-1329385293,status,,,
+tol-gilimanuk-mengwi,src-enwiki-toll-road-system-1329385293,length,,,
+tol-gilimanuk-mengwi,src-enwiki-toll-road-system-1329385293,operator,,,
 air-yogyakarta-international,src-kemenhub-psn-progress-2026-02-19,status,operating,2026-02-19,Kemenhub deck p.7.
 air-yogyakarta-international,src-kemenhub-psn-progress-2026-02-19,location,"DI Yogyakarta — Kulon Progo, DI Yogyakarta",2026-02-19,Kemenhub deck p.7.
 air-yogyakarta-international,src-kemenhub-psn-progress-2026-02-19,opening,2020,2026-02-19,Kemenhub deck p.7.
@@ -219,66 +290,191 @@ tol-cinere-jagorawi,src-bpjt-toll-road-list-2026-11-06,length,14.64 km,2026-11-0
 tol-cinere-jagorawi,src-bpjt-toll-road-list-2026-11-06,operational,14.886 km,2026-11-06,BPJT toll-road list.
 tol-cinere-jagorawi,src-bpjt-toll-road-list-2026-11-06,operator,PT Translingkar Kita Jaya,2026-11-06,BPJT toll-road list.
 tol-cinere-jagorawi,src-bpjt-toll-road-list-2026-11-06,location,"West Java; DKI Jakarta — Cinere–Jagorawi, Depok–Jakarta",2026-11-06,BPJT toll-road list.
-factory-freeport-manyar-smelter,src-freeport-manyar-restart-2026-08-07,"status, restart, investment",,,
-factory-freeport-manyar-smelter,src-ptfi-manyar-smelter,"capacity, location",,,
+factory-freeport-manyar-smelter,src-freeport-manyar-restart-2026-08-07,status,,,
+factory-freeport-manyar-smelter,src-freeport-manyar-restart-2026-08-07,restart,,,
+factory-freeport-manyar-smelter,src-freeport-manyar-restart-2026-08-07,investment,,,
+factory-freeport-manyar-smelter,src-ptfi-manyar-smelter,capacity,,,
+factory-freeport-manyar-smelter,src-ptfi-manyar-smelter,location,,,
 factory-freeport-manyar-smelter,src-osm-nominatim-factories-2026-11-08,coordinates,,,
-factory-pt-smelting-gresik,src-ptsmelting-overview,"status, capacity",,,
+factory-pt-smelting-gresik,src-ptsmelting-overview,status,,,
+factory-pt-smelting-gresik,src-ptsmelting-overview,capacity,,,
 factory-pt-smelting-gresik,src-osm-nominatim-factories-2026-11-08,coordinates,,,
-factory-amman-copper-smelter,src-amman-smelter,"capacity, PSN, location",,,
-factory-amman-copper-smelter,src-mining-amman-2026,"status, ramp-up",,,
+factory-amman-copper-smelter,src-amman-smelter,capacity,,,
+factory-amman-copper-smelter,src-amman-smelter,psn,,,
+factory-amman-copper-smelter,src-amman-smelter,location,,,
+factory-amman-copper-smelter,src-mining-amman-2026,status,,,
+factory-amman-copper-smelter,src-mining-amman-2026,ramp-up,,,
 factory-amman-copper-smelter,src-osm-nominatim-factories-2026-11-08,coordinates,,,
 factory-itss-morowali,src-tsingshan-footprint,capacity,,,
-factory-itss-morowali,src-woodmac-tsingshan-2019,"status, opening, location",,,
-factory-dexin-steel-morowali,src-dexin-bigmint,"status, capacity, investment, location",,,
-factory-huafei-hpal-iwip,src-huafei-huayou-ar2023,"status, capacity, location",,,
-factory-huafei-hpal-iwip,src-huafei-cnbc-2021-05-25,"investment, capacity",,,
-factory-angel-nickel-iwip,src-angel-nickel-nic,"status, capacity, output, location",,,
+factory-itss-morowali,src-woodmac-tsingshan-2019,status,,,
+factory-itss-morowali,src-woodmac-tsingshan-2019,opening,,,
+factory-itss-morowali,src-woodmac-tsingshan-2019,location,,,
+factory-dexin-steel-morowali,src-dexin-bigmint,status,,,
+factory-dexin-steel-morowali,src-dexin-bigmint,capacity,,,
+factory-dexin-steel-morowali,src-dexin-bigmint,investment,,,
+factory-dexin-steel-morowali,src-dexin-bigmint,location,,,
+factory-huafei-hpal-iwip,src-huafei-huayou-ar2023,status,,,
+factory-huafei-hpal-iwip,src-huafei-huayou-ar2023,capacity,,,
+factory-huafei-hpal-iwip,src-huafei-huayou-ar2023,location,,,
+factory-huafei-hpal-iwip,src-huafei-cnbc-2021-05-25,investment,,,
+factory-huafei-hpal-iwip,src-huafei-cnbc-2021-05-25,capacity,,,
+factory-angel-nickel-iwip,src-angel-nickel-nic,status,,,
+factory-angel-nickel-iwip,src-angel-nickel-nic,capacity,,,
+factory-angel-nickel-iwip,src-angel-nickel-nic,output,,,
+factory-angel-nickel-iwip,src-angel-nickel-nic,location,,,
 factory-hpl-obi,src-hpl-sustainability-2024,status,,,
-factory-hpl-obi,src-nsenergy-obi-hpal,"investment, capacity, opening",,,
+factory-hpl-obi,src-nsenergy-obi-hpal,investment,,,
+factory-hpl-obi,src-nsenergy-obi-hpal,capacity,,,
+factory-hpl-obi,src-nsenergy-obi-hpal,opening,,,
 factory-hpl-obi,src-osm-nominatim-factories-2026-11-08,coordinates,,,
-factory-onc-obi,src-onc-2025-03-25,"status, capacity, investment, location",,,
-factory-vdni-konawe,src-kppip-vdni,"status, PSN",,,
+factory-onc-obi,src-onc-2025-03-25,status,,,
+factory-onc-obi,src-onc-2025-03-25,capacity,,,
+factory-onc-obi,src-onc-2025-03-25,investment,,,
+factory-onc-obi,src-onc-2025-03-25,location,,,
+factory-vdni-konawe,src-kppip-vdni,status,,,
+factory-vdni-konawe,src-kppip-vdni,psn,,,
 factory-vdni-konawe,src-aeer-vdni-2023,capacity,,,
 factory-vdni-konawe,src-osm-nominatim-factories-2026-11-08,coordinates,,,
-factory-oss-konawe,src-oss-official,"status, capacity, PSN, location",,,
+factory-oss-konawe,src-oss-official,status,,,
+factory-oss-konawe,src-oss-official,capacity,,,
+factory-oss-konawe,src-oss-official,psn,,,
+factory-oss-konawe,src-oss-official,location,,,
 factory-gni-morowali,src-gni-pkpu-2026,status,,,
-factory-gni-morowali,src-gni-jakartaglobe-2026,"status, layoffs",,,
-factory-gni-morowali,src-oregon-gni-2026,"capacity, production halt, location",,,
-factory-huadi-bantaeng,src-huadi-sonora-2020,"status, capacity, investment",,,
+factory-gni-morowali,src-gni-jakartaglobe-2026,status,,,
+factory-gni-morowali,src-gni-jakartaglobe-2026,layoffs,,,
+factory-gni-morowali,src-oregon-gni-2026,capacity,,,
+factory-gni-morowali,src-oregon-gni-2026,production halt,,,
+factory-gni-morowali,src-oregon-gni-2026,location,,,
+factory-huadi-bantaeng,src-huadi-sonora-2020,status,,,
+factory-huadi-bantaeng,src-huadi-sonora-2020,capacity,,,
+factory-huadi-bantaeng,src-huadi-sonora-2020,investment,,,
 factory-huadi-bantaeng,src-osm-nominatim-factories-2026-11-08,coordinates,,,
-factory-vale-pomalaa-hpal,src-vale-pomalaa-2025-12-13,"status, capacity",,,
+factory-vale-pomalaa-hpal,src-vale-pomalaa-2025-12-13,status,,,
+factory-vale-pomalaa-hpal,src-vale-pomalaa-2025-12-13,capacity,,,
 factory-vale-pomalaa-hpal,src-cnfe-2026,startup schedule,,,
 factory-vale-pomalaa-hpal,src-osm-nominatim-factories-2026-11-08,coordinates,,,
-factory-vale-bahodopi-hpal,src-vale-base-metals,"status, capacity",,,
+factory-vale-bahodopi-hpal,src-vale-base-metals,status,,,
+factory-vale-bahodopi-hpal,src-vale-base-metals,capacity,,,
 factory-vale-bahodopi-hpal,src-osm-nominatim-factories-2026-11-08,coordinates,,,
-factory-vale-sorowako-hpal,src-vale-sr-2022,"status, capacity, investment",,,
+factory-vale-sorowako-hpal,src-vale-sr-2022,status,,,
+factory-vale-sorowako-hpal,src-vale-sr-2022,capacity,,,
+factory-vale-sorowako-hpal,src-vale-sr-2022,investment,,,
 factory-vale-sorowako-hpal,src-osm-nominatim-factories-2026-11-08,coordinates,,,
-factory-whw-ketapang,src-whw-official,"status, capacity",,,
-factory-whw-ketapang,src-whw-smm-2025,"investment, history",,,
+factory-whw-ketapang,src-whw-official,status,,,
+factory-whw-ketapang,src-whw-official,capacity,,,
+factory-whw-ketapang,src-whw-smm-2025,investment,,,
+factory-whw-ketapang,src-whw-smm-2025,history,,,
 factory-whw-ketapang,src-osm-nominatim-factories-2026-11-08,coordinates,,,
-factory-sgar-mempawah,src-bai-official,"capacity, location",,,
-factory-sgar-mempawah,src-mind-id-sgar-2025,"status, PSN",,,
-factory-inalum-kuala-tanjung,src-inalum-isp,"status, capacity",,,
+factory-sgar-mempawah,src-bai-official,capacity,,,
+factory-sgar-mempawah,src-bai-official,location,,,
+factory-sgar-mempawah,src-mind-id-sgar-2025,status,,,
+factory-sgar-mempawah,src-mind-id-sgar-2025,psn,,,
+factory-inalum-kuala-tanjung,src-inalum-isp,status,,,
+factory-inalum-kuala-tanjung,src-inalum-isp,capacity,,,
 factory-inalum-kuala-tanjung,src-osm-nominatim-factories-2026-11-08,coordinates,,,
-factory-krakatau-steel-cilegon,src-krakatau-profile-2026,"status, capacity",,,
+factory-krakatau-steel-cilegon,src-krakatau-profile-2026,status,,,
+factory-krakatau-steel-cilegon,src-krakatau-profile-2026,capacity,,,
 factory-krakatau-steel-cilegon,src-osm-nominatim-factories-2026-11-08,coordinates,,,
-factory-gunung-raja-paksi,src-grp-profile-2021,"status, capacity",,,
+factory-gunung-raja-paksi,src-grp-profile-2021,status,,,
+factory-gunung-raja-paksi,src-grp-profile-2021,capacity,,,
 factory-gunung-raja-paksi,src-osm-nominatim-factories-2026-11-08,coordinates,,,
-factory-btr-kendal,src-btr-prn-2024-08-07,"status, capacity, investment",,,
+factory-btr-kendal,src-btr-prn-2024-08-07,status,,,
+factory-btr-kendal,src-btr-prn-2024-08-07,capacity,,,
+factory-btr-kendal,src-btr-prn-2024-08-07,investment,,,
 factory-btr-kendal,src-osm-nominatim-factories-2026-11-08,coordinates,,,
-factory-catl-cbl-karawang,src-catl-2025-06-30,"status, capacity, investment",,,
-factory-catl-cbl-karawang,src-cnevpost-catl-2025-05-06,"timeline, capacity",,,
+factory-catl-cbl-karawang,src-catl-2025-06-30,status,,,
+factory-catl-cbl-karawang,src-catl-2025-06-30,capacity,,,
+factory-catl-cbl-karawang,src-catl-2025-06-30,investment,,,
+factory-catl-cbl-karawang,src-cnevpost-catl-2025-05-06,timeline,,,
+factory-catl-cbl-karawang,src-cnevpost-catl-2025-05-06,capacity,,,
 factory-catl-cbl-karawang,src-osm-nominatim-factories-2026-11-08,coordinates,,,
-factory-lotte-line-cilegon,src-lotte-2025-11-07,"status, capacity, investment",,,
-factory-lotte-line-cilegon,src-reuters-lotte-2025-11-06,"status, opening",,,
+factory-lotte-line-cilegon,src-lotte-2025-11-07,status,,,
+factory-lotte-line-cilegon,src-lotte-2025-11-07,capacity,,,
+factory-lotte-line-cilegon,src-lotte-2025-11-07,investment,,,
+factory-lotte-line-cilegon,src-reuters-lotte-2025-11-06,status,,,
+factory-lotte-line-cilegon,src-reuters-lotte-2025-11-06,opening,,,
 factory-lotte-line-cilegon,src-osm-nominatim-factories-2026-11-08,coordinates,,,
-factory-chandra-asri-cilegon,src-chandra-asri-profile,"status, capacity",,,
+factory-chandra-asri-cilegon,src-chandra-asri-profile,status,,,
+factory-chandra-asri-cilegon,src-chandra-asri-profile,capacity,,,
 factory-chandra-asri-cilegon,src-osm-nominatim-factories-2026-11-08,coordinates,,,
-factory-oki-pulp,src-oki-app-2013,"investment, design capacity, location",,,
-factory-oki-pulp,src-eco-business-oki-2021,"status, current capacity",,,
-factory-pupuk-kaltim-bontang,src-wikipedia-pupuk-kaltim,"status, capacity",,,
-factory-pupuk-kaltim-bontang,src-pupuk-kaltim-official,"operator, location",,,
+factory-oki-pulp,src-oki-app-2013,investment,,,
+factory-oki-pulp,src-oki-app-2013,design capacity,,,
+factory-oki-pulp,src-oki-app-2013,location,,,
+factory-oki-pulp,src-eco-business-oki-2021,status,,,
+factory-oki-pulp,src-eco-business-oki-2021,current capacity,,,
+factory-pupuk-kaltim-bontang,src-wikipedia-pupuk-kaltim,status,,,
+factory-pupuk-kaltim-bontang,src-wikipedia-pupuk-kaltim,capacity,,,
+factory-pupuk-kaltim-bontang,src-pupuk-kaltim-official,operator,,,
+factory-pupuk-kaltim-bontang,src-pupuk-kaltim-official,location,,,
 factory-pupuk-kaltim-bontang,src-osm-nominatim-factories-2026-11-08,coordinates,,,
-tol-lhokseumawe-sigli,src-idwiki-daftar-jalan-tol-30025554,"status, length",planned; 157 km,2026-10-03,Not in the BPJT toll-road-list API.
-tol-langsa-lhokseumawe,src-idwiki-daftar-jalan-tol-30025554,"status, length",planned; 135 km,2026-10-03,Not in the BPJT toll-road-list API.
-tol-muara-enim-lubuk-linggau,src-idwiki-daftar-jalan-tol-30025554,"status, length",planned; 114.5 km,2026-10-03,Not in the BPJT toll-road-list API.
+tol-lhokseumawe-sigli,src-idwiki-daftar-jalan-tol-30025554,status,planned; 157 km,2026-10-03,Not in the BPJT toll-road-list API.
+tol-lhokseumawe-sigli,src-idwiki-daftar-jalan-tol-30025554,length,planned; 157 km,2026-10-03,Not in the BPJT toll-road-list API.
+tol-langsa-lhokseumawe,src-idwiki-daftar-jalan-tol-30025554,status,planned; 135 km,2026-10-03,Not in the BPJT toll-road-list API.
+tol-langsa-lhokseumawe,src-idwiki-daftar-jalan-tol-30025554,length,planned; 135 km,2026-10-03,Not in the BPJT toll-road-list API.
+tol-muara-enim-lubuk-linggau,src-idwiki-daftar-jalan-tol-30025554,status,planned; 114.5 km,2026-10-03,Not in the BPJT toll-road-list API.
+tol-muara-enim-lubuk-linggau,src-idwiki-daftar-jalan-tol-30025554,length,planned; 114.5 km,2026-10-03,Not in the BPJT toll-road-list API.
+factory-amman-copper-smelter,src-amman-smelter,investment,1.4 USD,,Backfilled from investments.csv; amount_idr_t is a ranking conversion.
+factory-vdni-konawe,src-aeer-vdni-2023,investment,1.4 USD,,Backfilled from investments.csv; amount_idr_t is a ranking conversion.
+factory-gni-morowali,src-oregon-gni-2026,investment,3.0 USD,,Backfilled from investments.csv; amount_idr_t is a ranking conversion.
+factory-vale-pomalaa-hpal,src-vale-pomalaa-2025-12-13,investment,2.7 USD,,Backfilled from investments.csv; amount_idr_t is a ranking conversion.
+factory-vale-bahodopi-hpal,src-vale-base-metals,investment,1.4 USD,,Backfilled from investments.csv; amount_idr_t is a ranking conversion.
+factory-sgar-mempawah,src-bai-official,investment,0.9 USD,,Backfilled from investments.csv; amount_idr_t is a ranking conversion.
+tol-sigli-banda-aceh,src-bpjt-toll-road-list-2026-11-06,operational,48.584,,Backfilled from the curated operational_km figure.
+tol-binjai-langsa,src-bpjt-toll-road-list-2026-11-06,operational,57.225,,Backfilled from the curated operational_km figure.
+tol-padang-pekanbaru,src-bpjt-toll-road-list-2026-11-06,operational,91.041,,Backfilled from the curated operational_km figure.
+tol-bengkulu-lubuk-linggau,src-bpjt-toll-road-list-2026-11-06,operational,16.725,,Backfilled from the curated operational_km figure.
+tol-kayu-agung-palembang-betung,src-bpjt-toll-road-list-2026-11-06,operational,37.615,,Backfilled from the curated operational_km figure.
+tol-betung-tempino-jambi,src-bpjt-toll-road-list-2026-11-06,operational,52.59,,Backfilled from the curated operational_km figure.
+tol-depok-antasari,src-bpjt-toll-road-list-2026-11-06,operational,12.1,,Backfilled from the curated operational_km figure.
+tol-jakarta-inner-ring-road-2,src-bpjt-toll-road-list-2026-11-06,operational,9.287,,Backfilled from the curated operational_km figure.
+tol-bekasi-cawang-kampung-melayu,src-bpjt-toll-road-list-2026-11-06,operational,15.28,,Backfilled from the curated operational_km figure.
+tol-bogor-ring-road,src-bpjt-toll-road-list-2026-11-06,operational,11.3,,Backfilled from the curated operational_km figure.
+tol-serang-panimbang,src-bpjt-toll-road-list-2026-11-06,operational,26.495,,Backfilled from the curated operational_km figure.
+tol-ciawi-sukabumi,src-bpjt-toll-road-list-2026-11-06,operational,26.4,,Backfilled from the curated operational_km figure.
+tol-semarang-demak,src-bpjt-toll-road-list-2026-11-06,operational,16.01,,Backfilled from the curated operational_km figure.
+tol-solo-yogyakarta-nyia,src-bpjt-toll-road-list-2026-11-06,operational,30.15,,Backfilled from the curated operational_km figure.
+tol-krian-legundi-bunder-manyar,src-bpjt-toll-road-list-2026-11-06,operational,29,,Backfilled from the curated operational_km figure.
+tol-probolinggo-banyuwangi,src-bpjt-toll-road-list-2026-11-06,operational,23.515,,Backfilled from the curated operational_km figure.
+tol-cileunyi-sumedang-dawuan,src-bpjt-toll-road-list-2026-11-06,opening,2022,,Backfilled from the curated opened_year figure.
+tol-cibitung-cilincing,src-bpjt-toll-road-list-2026-11-06,opening,2021,,Backfilled from the curated opened_year figure.
+tol-cengkareng-batu-ceper-kunciran,src-bpjt-toll-road-list-2026-11-06,opening,2021,,Backfilled from the curated opened_year figure.
+tol-manado-bitung,src-bpjt-toll-road-list-2026-11-06,opening,2020,,Backfilled from the curated opened_year figure.
+tol-kunciran-serpong,src-bpjt-toll-road-list-2026-11-06,opening,2019,,Backfilled from the curated opened_year figure.
+tol-pasuruan-probolinggo,src-bpjt-toll-road-list-2026-11-06,opening,2019,,Backfilled from the curated opened_year figure.
+tol-pandaan-malang,src-bpjt-toll-road-list-2026-11-06,opening,2019,,Backfilled from the curated opened_year figure.
+tol-medan-binjai,src-bpjt-toll-road-list-2026-11-06,opening,2017,,Backfilled from the curated opened_year figure.
+tol-akses-tanjung-priok,src-bpjt-toll-road-list-2026-11-06,opening,2017,,Backfilled from the curated opened_year figure.
+tol-cinere-jagorawi,src-bpjt-toll-road-list-2026-11-06,opening,2014,,Backfilled from the curated opened_year figure.
+factory-freeport-manyar-smelter,src-freeport-manyar-restart-2026-08-07,opening,2024,,Backfilled from the curated opened_year figure.
+factory-pt-smelting-gresik,src-ptsmelting-overview,opening,1998,,Backfilled from the curated opened_year figure.
+factory-amman-copper-smelter,src-mining-amman-2026,opening,2025,,Backfilled from the curated opened_year figure.
+factory-dexin-steel-morowali,src-dexin-bigmint,opening,2020,,Backfilled from the curated opened_year figure.
+factory-huafei-hpal-iwip,src-huafei-huayou-ar2023,opening,2023,,Backfilled from the curated opened_year figure.
+factory-angel-nickel-iwip,src-angel-nickel-nic,opening,2022,,Backfilled from the curated opened_year figure.
+factory-onc-obi,src-onc-2025-03-25,opening,2024,,Backfilled from the curated opened_year figure.
+factory-vdni-konawe,src-kppip-vdni,opening,2019,,Backfilled from the curated opened_year figure.
+factory-oss-konawe,src-oss-official,opening,2021,,Backfilled from the curated opened_year figure.
+factory-gni-morowali,src-gni-pkpu-2026,opening,2021,,Backfilled from the curated opened_year figure.
+factory-huadi-bantaeng,src-huadi-sonora-2020,opening,2020,,Backfilled from the curated opened_year figure.
+factory-whw-ketapang,src-whw-official,opening,2016,,Backfilled from the curated opened_year figure.
+factory-sgar-mempawah,src-mind-id-sgar-2025,opening,2025,,Backfilled from the curated opened_year figure.
+factory-inalum-kuala-tanjung,src-inalum-isp,opening,1982,,Backfilled from the curated opened_year figure.
+factory-krakatau-steel-cilegon,src-krakatau-profile-2026,opening,1970,,Backfilled from the curated opened_year figure.
+factory-gunung-raja-paksi,src-grp-profile-2021,opening,1991,,Backfilled from the curated opened_year figure.
+factory-btr-kendal,src-btr-prn-2024-08-07,opening,2024,,Backfilled from the curated opened_year figure.
+factory-chandra-asri-cilegon,src-chandra-asri-profile,opening,1995,,Backfilled from the curated opened_year figure.
+factory-oki-pulp,src-eco-business-oki-2021,opening,2016,,Backfilled from the curated opened_year figure.
+factory-pupuk-kaltim-bontang,src-wikipedia-pupuk-kaltim,opening,1977,,Backfilled from the curated opened_year figure.
+tol-kuala-tanjung-tebing-tinggi-parapat,src-idwiki-daftar-jalan-tol-30025554,location,"3.01, 99.2",,Backfilled from the curated point; precision is recorded on the project row.
+tol-jakarta-cikampek-2-south,src-enwiki-toll-road-system-1329385293,location,"-6.4, 107.21",,Backfilled from the curated point; precision is recorded on the project row.
+tol-yogyakarta-bawen,src-enwiki-toll-road-system-1329385293,location,"-7.52, 110.39",,Backfilled from the curated point; precision is recorded on the project row.
+tol-jorr-3,src-enwiki-toll-road-system-1329385293,location,"-6.25, 106.65",,Backfilled from the curated point; precision is recorded on the project row.
+tol-gedebage-tasikmalaya-cilacap,src-enwiki-toll-road-system-1329385293,location,"-7.34, 108.35",,Backfilled from the curated point; precision is recorded on the project row.
+tol-demak-tuban,src-enwiki-toll-road-system-1329385293,location,"-6.9, 111.35",,Backfilled from the curated point; precision is recorded on the project row.
+tol-semarang-kendal,src-enwiki-toll-road-system-1329385293,location,"-6.95, 110.31",,Backfilled from the curated point; precision is recorded on the project row.
+tol-pejagan-tegal-cilacap,src-enwiki-toll-road-system-1329385293,location,"-7.3, 109.08",,Backfilled from the curated point; precision is recorded on the project row.
+tol-cilacap-yogyakarta,src-enwiki-toll-road-system-1329385293,location,"-7.77, 109.69",,Backfilled from the curated point; precision is recorded on the project row.
+tol-gilimanuk-mengwi,src-enwiki-toll-road-system-1329385293,location,"-8.3, 114.81",,Backfilled from the curated point; precision is recorded on the project row.
+tol-lhokseumawe-sigli,src-idwiki-daftar-jalan-tol-30025554,location,"5.28, 96.55",,Backfilled from the curated point; precision is recorded on the project row.
+tol-langsa-lhokseumawe,src-idwiki-daftar-jalan-tol-30025554,location,"4.83, 97.56",,Backfilled from the curated point; precision is recorded on the project row.
+tol-muara-enim-lubuk-linggau,src-idwiki-daftar-jalan-tol-30025554,location,"-3.47, 103.32",,Backfilled from the curated point; precision is recorded on the project row.

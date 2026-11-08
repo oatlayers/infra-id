@@ -14,6 +14,9 @@ from datetime import date
 from pathlib import Path
 
 from data_model import (
+    CLAIM_TYPES,
+    CONFLICT_SCOPES,
+    CONFLICT_STATUSES,
     COORDINATE_SOURCES,
     CURATED,
     ESTATE_STATUSES,
@@ -137,6 +140,7 @@ def main() -> None:
     estates = read_csv(CURATED / "estates.csv")
     estate_sources = read_csv(CURATED / "estate_sources.csv")
     coverage = read_csv(CURATED / "coverage_targets.csv")
+    conflicts = read_csv(CURATED / "conflicts.csv")
 
     project_ids = {row["id"] for row in projects}
     org_ids = {row["id"] for row in organizations}
@@ -288,6 +292,10 @@ def main() -> None:
             err(f"{where}: unknown source")
         if not row["claim"]:
             err(f"{where}: missing claim")
+        elif "," in row["claim"]:
+            err(f"{where}: claim must be one atomic type, got {row['claim']!r}")
+        elif row["claim"] not in CLAIM_TYPES:
+            err(f"{where}: unknown claim type {row['claim']!r}")
         if row["claim_date"]:
             check_date(row["claim_date"], f"{where} claim_date")
         projects_with_source.add(row["project_id"])
@@ -520,12 +528,44 @@ def main() -> None:
             err(f"{where}: unknown source")
         if not row["claim"]:
             err(f"{where}: missing claim")
+        elif "," in row["claim"]:
+            err(f"{where}: claim must be one atomic type, got {row['claim']!r}")
+        elif row["claim"] not in CLAIM_TYPES:
+            err(f"{where}: unknown claim type {row['claim']!r}")
         if row["claim_date"]:
             check_date(row["claim_date"], f"{where} claim_date")
         key = (row["estate_id"], row["source_id"], row["claim"])
         if key in seen:
             err(f"{where}: duplicate claim")
         seen.add(key)
+
+    seen = set()
+    for row in conflicts:
+        where = f"conflicts {row['id'] or '?'}"
+        if row["id"] in seen:
+            err(f"{where}: duplicate id")
+        seen.add(row["id"])
+        check_id(row["id"], where)
+        check_enum(row["scope"], CONFLICT_SCOPES, "scope", where)
+        check_enum(row["status"], CONFLICT_STATUSES, "status", where)
+        for field in ("subject", "field", "value_a", "value_b", "resolution"):
+            if is_blank(row[field]):
+                err(f"{where}: missing {field}")
+        for field in ("source_a", "source_b"):
+            if row[field] not in source_ids:
+                err(f"{where}: unknown {field} {row[field]!r}")
+        if row["project_id"] and row["project_id"] not in project_ids:
+            err(f"{where}: unknown project")
+        if row["estate_id"] and row["estate_id"] not in estate_ids:
+            err(f"{where}: unknown estate")
+        if row["corridor_id"] and row["corridor_id"] not in corridor_ids:
+            err(f"{where}: unknown corridor")
+        if row["scope"] == "project" and not row["project_id"]:
+            err(f"{where}: project scope needs project_id")
+        if row["scope"] == "corridor" and not row["corridor_id"]:
+            err(f"{where}: corridor scope needs corridor_id")
+        if row["scope"] == "estate" and not row["estate_id"]:
+            err(f"{where}: estate scope needs estate_id")
 
     seen = set()
     for row in coverage:
@@ -554,7 +594,8 @@ def main() -> None:
         f"OK: {len(projects)} projects, {len(estates)} estates, "
         f"{len(organizations)} organisations, {len(sources)} sources, "
         f"{len(corridors)} corridors, {len(segments)} segments, "
-        f"{len(events)} events, {len(geometry)} geometry, {len(investments)} investments"
+        f"{len(events)} events, {len(geometry)} geometry, {len(investments)} investments, "
+        f"{len(conflicts)} conflicts"
     )
 
 
