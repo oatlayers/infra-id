@@ -15,11 +15,11 @@ reviewed project rows, 26 to reviewed estates, 88 new register-only project rows
 and 18 new register-only industrial areas, with all 24 programmes matched, 24
 flagship records and all 50 PSN road entries. Every PSN sector is complete.
 Eighty-eight projects and 18 estates are Tier C register-only records. The
-bilingual shell is implemented: `site/en/`, `site/id/`, a chooser, 559 UI keys
+bilingual shell is implemented: `site/en/`, `site/id/`, a chooser, 604 UI keys
 per locale, a language switch that preserves the current view, and full-width
 register pages. The schema v4 translation, indicator and phase layers are in.
-Map v3, project pages, company profiles and editorial review of the generated
-summaries are still open.
+Map v3, project pages, company-profile expansion to 300 and editorial review of
+the generated summaries are still open.
 
 **Supersedes:** the roadmap, scope and "where to pick up" sections of
 [`plan-v3.md`](plan-v3.md). The v1–v3 history, phase records and decisions stay
@@ -1005,7 +1005,7 @@ Specific moves:
 | Data | Cramped rail beside an unrelated map | Full-width dashboard with coverage, freshness, claims, conflicts, downloads, methods |
 | Project | Drawer only | Drawer plus a shareable project page with timeline and companies |
 | Programmes | None | Eight PKPN cards, target vs current, project lists, indicators |
-| Companies | None | 300 profiles, roles, portfolio, project map |
+| Companies | 101 profiles, 203 roles | 300 profiles, roles, portfolio, project map |
 | Mobile | Map + sheet | Map + three-snap sheet + bottom navigation + full-screen detail |
 | Type | 8.5–12 px in many places | 13–16 px body/caption scale, 1.5 line height |
 
@@ -1272,22 +1272,30 @@ Target **WCAG 2.2 AA**. Priority checks:
 
 **Scope**
 
-- Expand to 300 organisations and 200 estates.
+- Expand to 300 organisations and 200 estates. **Partial:** 101 organisations
+  and 204 estates; the Companies view is in.
 - Add hilirisasi, petrochemical, steel, battery, EV, data centre and food
-  processing projects.
+  processing projects. **Partial:** 34 factories and the 13 Hilirisasi Stage II
+  rows are in; data centre, EV and food processing remain.
 - Add social infrastructure programmes: 441 RSUD, 10,000 puskesmas, 265
-  Sekolah Rakyat, school renovation, housing.
-- Add fisheries, tourism and digital projects.
-- Add company profiles and roles for the top 100.
+  Sekolah Rakyat, school renovation, housing. **Open.**
+- Add fisheries, tourism and digital projects. **Partial:** tourism and
+  technology PSN rows are in; fisheries remain.
+- Add company profiles and roles for the top 100. **Partial:** 101 profiles,
+  203 roles, 79 with links; 22 are reference-only.
 - Geocode the remaining large estates; enable the estate map layer for rows
-  with better than regency precision.
+  with better than regency precision. **Open.**
 
 **Acceptance**
 
-- Every project has at least one organisation role.
-- Top 100 companies have a profile, a source and a project list.
+- Every project has at least one organisation role. **Open:** 128 of 228.
+- Top 100 companies have a profile, a source and a project list. **Partial:**
+  101 profiles exist; 79 have at least one sourced role and 22 do not.
 - Estate map layer is on for at least 80% of rows with point/polygon geometry.
-- The Company and Estate views pass the smoke test on both locales.
+  **Open.**
+- The Company and Estate views pass the smoke test on both locales. **Partial:**
+  the Companies view passes in English; the Indonesian smoke check covers the
+  tab label, not the full view.
 
 ### Release 4.3 — Experience rebuild (4 weeks)
 
@@ -1474,7 +1482,7 @@ A record is done when:
    location and active-designation claims. PSN coverage is 226/226 and 44/44;
    no PSN record remains. See Appendix G.
 9. **Prototype the bilingual shell.** **Done (9 Nov 2026).** `site/index.html`
-   chooser, `site/en/`, `site/id/`, 559 UI keys per locale, `translations.csv`,
+   chooser, `site/en/`, `site/id/`, 604 UI keys per locale, `translations.csv`,
    `build_i18n.py`, `build_locales.py`, `Intl` formatting, language switch and
    `hreflang`. The smoke test covers EN and ID on `file://` and HTTP.
 10. **Run the UX audit.** **Partial (9 Nov 2026).** Expert heuristic walkthrough
@@ -1764,8 +1772,9 @@ programme, company, estate and bilingual layers on top.
 | 2026-11-09 | PSN programme layer | `programmes.csv` (24 rows), `programme_projects.csv` (7 links) and `programme_sources.csv` (48 claims); 10 lead organisations. Bilingual names and summaries; programme view, Data section and three downloads. Dictionary grows to 229 fields across 22 tables. `scripts/imports/add_psn_programmes.py` is idempotent. |
 | 2026-11-09 | PSN industrial-area batch | 8 estate rows (Kuala Tanjung, Bantaeng, Pomalaa, Huali, Patimban, NEMIE, Pulau Penebang, Alumina Toba), 11 sources, 8 organisations and 41 claims. `estates.csv` grows to 186 rows; `sources.csv` to 133. PSN industrial coverage rises from 18/44 to 26/44. `scripts/imports/add_psn_industrial_estates.py` is idempotent. |
 | 2026-11-09 | PSN register-only closure | 88 project rows and 18 industrial-area rows, 264 project claims and 54 estate claims, 88 official-name aliases, 5 new sectors and an `unknown` status. `projects.csv` grows to 228 rows, `estates.csv` to 204, project claims to 863 and estate claims to 115. PSN coverage is 226/226 and 44/44. `scripts/imports/add_psn_register_records.py` is idempotent; `scripts/tools/build_province_centroids.py` supplies province centroids. |
-| 2026-11-09 | Bilingual shell | `site/en/index.html`, `site/id/index.html` and `site/index.html`; 559 UI keys per locale; `data/curated/translations.csv`; `build_i18n.py`, `build_locales.py`, `assets/i18n.js`; 24 programme and 5 corridor translations; 228 project names (140 reviewed + 88 official); 228 generated summaries; both locales smoke-tested on `file://` and HTTP. |
+| 2026-11-09 | Bilingual shell | `site/en/index.html`, `site/id/index.html` and `site/index.html`; 604 UI keys per locale; `data/curated/translations.csv`; `build_i18n.py`, `build_locales.py`, `assets/i18n.js`; 24 programme and 5 corridor translations; 228 project names (140 reviewed + 88 official); 228 generated summaries; both locales smoke-tested on `file://` and HTTP. |
 | 2026-11-09 | Full-width registers and UX baseline | Data, Programmes, Corridors and Estates use the full content width; tap-to-expand mobile sheet; `docs/design/tokens-v4.md`, `style-tile.html`, `ux-audit-v4.md`; 19 contrast pairs pass; 20/20 automated task steps across five profiles; 238-field dictionary across 23 tables. |
+| 2026-11-09 | Companies view | `companies.js` from 101 organisations and 203 project-role links; full-width Companies view with type filter, role search, expandable role list, filtered CSV, two downloads and a coverage row (101/300). 79 organisations have a link; 22 are reference-only. Initial payload 1,126 KB, data 1,612 KB, total 3,604 KB. |
 | 2026-11-09 | Indicators, values and phases | `indicators.csv` (3), `indicator_values.csv` (3) and `project_phases.csv` (9), with validation, dictionary entries, project/programme payloads, three downloads and a Programme target-vs-current view. The 100 GWp programme target is 100 GWp against 5.3 GWp current; Phase 1 targets 17 GWp; Nusantara's runway is 3,000 m. Dictionary 268 fields across 26 tables; initial payload 1,099 KB, total 3,428 KB. |
 
 **Reconciliation result at 9 November 2026:** 226 of 226 active PSN project or

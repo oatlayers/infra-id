@@ -110,6 +110,8 @@ def locale_shell(page: Page) -> None:
           "Indonesian edition sets html lang=id")
     check("Jelajahi" in page.locator(".tabs").inner_text(),
           "Indonesian edition translates the navigation")
+    check("Perusahaan" in page.locator(".tabs").inner_text(),
+          "Indonesian edition translates the Companies tab")
     check(page.locator("#stat-projects").inner_text() == TOTAL,
           f"Indonesian edition loads {TOTAL} projects")
     check(page.locator(".project-row").count() == int(TOTAL),
@@ -193,6 +195,25 @@ def desktop_views(page: Page) -> None:
     report["views"]["estates"] = {"rows": int(ESTATES)}  # type: ignore[index]
     screenshot(page, "03-estates-desktop.png")
 
+    tab(page, "companies")
+    page.wait_for_selector(".company-row")
+    page.wait_for_timeout(400)
+    check(page.locator(".company-row").count() == 101, "Companies view lists 101 organisations")
+    check("PT Jasa Marga" in page.locator(".estate-list").inner_text(),
+          "Companies view shows a named organisation")
+    page.click('[data-company="org-hutama-karya"]')
+    page.wait_for_timeout(250)
+    check(page.locator(".company-role-list li").count() >= 1,
+          "Company detail lists at least one project role")
+    page.click('[data-company-type="government"]')
+    page.wait_for_timeout(250)
+    check(page.locator(".company-row").count() < 101,
+          "Company type filter narrows the organisation list")
+    page.click('[data-company-type="all"]')
+    page.wait_for_timeout(250)
+    report["views"]["companies"] = {"rows": 101}  # type: ignore[index]
+    screenshot(page, "03d-companies-desktop.png")
+
     tab(page, "programmes")
     page.wait_for_selector(".programme-card")
     page.wait_for_timeout(400)
@@ -220,7 +241,7 @@ def desktop_views(page: Page) -> None:
     tab(page, "data")
     check(page.locator(".conflict-table tbody tr").count() == 19, "Conflict register has 19 rows")
     check(page.locator(".dictionary details").count() == 26, "Data dictionary has 26 tables")
-    check(page.locator('a.download[href]').count() == 19, "Data view has 19 static downloads")
+    check(page.locator('a.download[href]').count() == 21, "Data view has 21 static downloads")
     check("programme register" in page.locator(".data-view").inner_text().lower(),
           "Data view has a programme register section")
     check(page.locator('.download[data-export="projects-csv"]').count() == 1,
@@ -229,11 +250,13 @@ def desktop_views(page: Page) -> None:
           "Data view offers the filtered GeoJSON")
     check(page.locator('.download[data-export="estates-csv"]').count() == 1,
           "Loaded estates add the filtered estate CSV")
+    check(page.locator('.download[data-export="companies-csv"]').count() == 1,
+          "Loaded companies add the filtered company CSV")
     check(f"{TOTAL} / {TOTAL}" in page.locator(".data-view").inner_text(), f"Claims coverage is {TOTAL} / {TOTAL}")
     report["views"]["data"] = {  # type: ignore[index]
         "conflicts": 19,
         "dictionary_tables": 26,
-        "download_controls": 22,
+        "download_controls": 24,
     }
     screenshot(page, "04-data-desktop.png")
 

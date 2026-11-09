@@ -142,6 +142,8 @@ def main() -> None:
     events = read_csv(CURATED / "project_events.csv")
     conflicts = read_csv(CURATED / "conflicts.csv")
     claims = read_csv(CURATED / "project_sources.csv")
+    organizations = read_csv(CURATED / "organizations.csv")
+    project_orgs = read_csv(CURATED / "project_organizations.csv")
     programmes = read_csv(CURATED / "programmes.csv")
     programme_projects = read_csv(CURATED / "programme_projects.csv")
     programme_claims = read_csv(CURATED / "programme_sources.csv")
@@ -152,6 +154,7 @@ def main() -> None:
     payload = load_global(SITE_DATA / "projects.js", "PROJECTS")
     features = payload.get("features", [])
     estate_payload = load_global(SITE_DATA / "estates.js", "INFRA_ESTATES")
+    company_payload = load_global(SITE_DATA / "companies.js", "INFRA_COMPANIES")
     programme_payload = load_global(SITE_DATA / "programmes.js", "INFRA_PROGRAMMES")
     corridor_payload = load_global(SITE_DATA / "corridors.js", "CORRIDORS")
     stats = load_global(SITE_DATA / "stats.js", "INFRA_STATS")
@@ -161,6 +164,8 @@ def main() -> None:
         err(f"projects.js: {len(features)} features, expected {len(projects)}")
     if len(estate_payload) != len(estates):
         err(f"estates.js: {len(estate_payload)} rows, expected {len(estates)}")
+    if len(company_payload) != len(organizations):
+        err(f"companies.js: {len(company_payload)} rows, expected {len(organizations)}")
     if len(programme_payload) != len(programmes):
         err(f"programmes.js: {len(programme_payload)} rows, expected {len(programmes)}")
     if len(corridor_payload) != len(corridors):
@@ -211,10 +216,18 @@ def main() -> None:
 
     search_projects = {row["id"] for row in search if row.get("type") == "project"}
     search_estates = {row["id"] for row in search if row.get("type") == "estate"}
+    search_companies = {row["id"] for row in search if row.get("type") == "company"}
     if search_projects != project_ids:
         err("search.js: project coverage does not match projects.js")
     if search_estates != estate_ids:
         err("search.js: estate coverage does not match estates.js")
+    company_ids = {row["id"] for row in organizations}
+    if search_companies != company_ids:
+        err("search.js: company coverage does not match organizations.csv")
+    for company in company_payload:
+        for role in company.get("roles", []):
+            if role.get("project_id") not in project_ids:
+                err(f"companies.js {company.get('id')}: unknown project role {role.get('project_id')}")
 
     programme_ids = set()
     programme_numbers = set()
@@ -263,6 +276,10 @@ def main() -> None:
         err("stats.js: claim count does not match the curated table")
     if stats.get("claims", {}).get("projects_fully_claimed") != len(projects):
         err("stats.js: not every project is fully claimed")
+    if stats.get("organizations", {}).get("total") != len(organizations):
+        err("stats.js: organisation total does not match the curated table")
+    if stats.get("organizations", {}).get("links") != len(project_orgs):
+        err("stats.js: organisation link count does not match the curated table")
     if stats.get("programmes", {}).get("total") != len(programmes):
         err("stats.js: programme total does not match the curated table")
     if stats.get("programmes", {}).get("claims") != len(programme_claims):
@@ -344,7 +361,7 @@ def main() -> None:
     )
     print(
         f"OK: {len(features)} projects, {len(estate_payload)} estates, "
-        f"{len(corridor_payload)} corridors, {len(claim_rows)} claims, "
+        f"{len(company_payload)} companies, {len(corridor_payload)} corridors, {len(claim_rows)} claims, "
         f"{len(conflicts)} conflicts, {len(indicators)} indicators, "
         f"{len(phases)} phases; initial {initial_bytes / 1024:.0f} KB, "
         f"data {data_bytes / 1024:.0f} KB, total {(data_bytes + download_bytes) / 1024:.0f} KB"

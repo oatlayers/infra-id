@@ -37,9 +37,11 @@ atlas itself; this page is the map for the working documents.
 | [`../data/curated/psn_register.csv`](../data/curated/psn_register.csv) | Official Permenko 16/2025 annex: 226 active projects, 24 active programmes and 3 deleted slots. |
 | [`../data/curated/programmes.csv`](../data/curated/programmes.csv) | The 24 active PSN programmes with bilingual names, summaries, theme, lead agency and source. |
 | [`../data/curated/programme_projects.csv`](../data/curated/programme_projects.csv) | Seven structural links between programmes and atlas projects. |
+| [`../data/curated/organizations.csv`](../data/curated/organizations.csv) | 101 companies, agencies and consortia, with type, country and website. |
+| [`../data/curated/project_organizations.csv`](../data/curated/project_organizations.csv) | 203 sourced project-role links (sponsor, operator, owner, contractor). |
 | [`../data/curated/translations.csv`](../data/curated/translations.csv) | Reviewed entity text and official Indonesian names used by the bilingual build. |
-| [`../data/i18n/ui.en.json`](../data/i18n/ui.en.json) | English UI catalogue: 559 semantic keys. |
-| [`../data/i18n/ui.id.json`](../data/i18n/ui.id.json) | Indonesian UI catalogue: the same 559 keys. |
+| [`../data/i18n/ui.en.json`](../data/i18n/ui.en.json) | English UI catalogue: 604 semantic keys. |
+| [`../data/i18n/ui.id.json`](../data/i18n/ui.id.json) | Indonesian UI catalogue: the same 604 keys. |
 | [`../data/curated/indicators.csv`](../data/curated/indicators.csv) | Programme and project targets, baselines and units. |
 | [`../data/curated/indicator_values.csv`](../data/curated/indicator_values.csv) | Dated indicator observations. |
 | [`../data/curated/project_phases.csv`](../data/curated/project_phases.csv) | Sourced project phases with dates, cost and progress where stated. |

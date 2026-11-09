@@ -42,11 +42,17 @@
     searchIndex.filter(function (entry) { return entry.type === 'estate'; })
       .map(function (entry) { return [entry.id, entry]; })
   );
+  const searchCompanies = new Map(
+    searchIndex.filter(function (entry) { return entry.type === 'company'; })
+      .map(function (entry) { return [entry.id, entry]; })
+  );
 
   let estates = window.INFRA_ESTATES || null;
   let estatesState = estates ? 'ready' : 'idle';
   let programmes = window.INFRA_PROGRAMMES || null;
   let programmesState = programmes ? 'ready' : 'idle';
+  let companies = window.INFRA_COMPANIES || null;
+  let companiesState = companies ? 'ready' : 'idle';
 
   const state = {
     view: 'explore',
@@ -68,7 +74,10 @@
     estateProvince: '',
     estateSort: 'name',
     expandedEstate: null,
-    programmeTheme: 'all'
+    programmeTheme: 'all',
+    companyType: 'all',
+    companySort: 'name',
+    expandedCompany: null
   };
 
   let mapSelectedId = null;
@@ -475,6 +484,9 @@
     state.estateType = params.get('type') || 'all';
     state.estateProvince = params.get('eprovince') || '';
     state.estateSort = params.get('esort') || 'name';
+    state.companyType = params.get('ctype') || 'all';
+    state.companySort = params.get('csort') || 'name';
+    state.expandedCompany = null;
 
     const sector = params.get('sector');
     if (sector !== null) {
@@ -510,6 +522,8 @@
       state.view = 'estates';
     } else if (view === 'programmes') {
       state.view = 'programmes';
+    } else if (view === 'companies') {
+      state.view = 'companies';
     } else if (view === 'data') {
       state.view = 'data';
     } else {
@@ -544,6 +558,10 @@
       if (state.estateProvince) params.set('eprovince', state.estateProvince);
       if (state.estateSort !== 'name') params.set('esort', state.estateSort);
     }
+    if (state.view === 'companies') {
+      if (state.companyType !== 'all') params.set('ctype', state.companyType);
+      if (state.companySort !== 'name') params.set('csort', state.companySort);
+    }
     const query = params.toString();
     return base + (query ? '?' + query : '');
   }
@@ -564,6 +582,7 @@
     setHash(buildHash(), !!push);
     if (state.view === 'estates') ensureEstates();
     if (state.view === 'programmes') ensureProgrammes();
+    if (state.view === 'companies') ensureCompanies();
   }
 
   function applyRoute() {
@@ -571,6 +590,7 @@
     renderAll();
     if (state.view === 'estates') ensureEstates();
     if (state.view === 'programmes') ensureProgrammes();
+    if (state.view === 'companies') ensureCompanies();
     if (mobileQuery.matches) setSheetHeight(sheetSnapForView());
     requestAnimationFrame(function () { window.AtlasMap && window.AtlasMap.resize(); });
     if (!initialFitDone && !state.projectId) {
@@ -596,6 +616,9 @@
     dom.tabCountExplore.textContent = fmtNum(totalProjects);
     if (dom.tabCountProgrammes) {
       dom.tabCountProgrammes.textContent = fmtNum((stats.programmes && stats.programmes.total) || 24);
+    }
+    if (dom.tabCountCompanies) {
+      dom.tabCountCompanies.textContent = fmtNum((stats.organizations && stats.organizations.total) || 101);
     }
   }
 
@@ -1379,6 +1402,23 @@
     document.body.appendChild(script);
   }
 
+  function ensureCompanies() {
+    if (companiesState === 'ready' || companiesState === 'loading') return;
+    companiesState = 'loading';
+    const script = document.createElement('script');
+    script.src = (window.ATLAS_BASE || '') + 'data/companies.js';
+    script.onload = function () {
+      companies = window.INFRA_COMPANIES || [];
+      companiesState = 'ready';
+      if (state.view === 'companies') renderAll();
+    };
+    script.onerror = function () {
+      companiesState = 'error';
+      if (state.view === 'companies') renderAll();
+    };
+    document.body.appendChild(script);
+  }
+
   function ensureProgrammes() {
     if (programmesState === 'ready' || programmesState === 'loading') return;
     programmesState = 'loading';
@@ -1640,10 +1680,33 @@
     );
   }
 
+  function exportFilteredCompanies() {
+    if (!companies) {
+      ensureCompanies();
+      toast(t('toast.companies_loading'));
+      return;
+    }
+    const list = filteredCompanies();
+    if (!list.length) {
+      toast(t('toast.no_companies'));
+      return;
+    }
+    const fields = [
+      'id', 'name', 'short_name', 'org_type', 'country_code', 'parent_id',
+      'website', 'project_count', 'role_count', 'notes',
+    ];
+    downloadBlob(
+      'infra-id-companies-filtered.csv',
+      toCsv(list, fields),
+      'text/csv;charset=utf-8'
+    );
+  }
+
   function handleExport(kind) {
     if (kind === 'projects-csv') exportFilteredProjects('csv');
     else if (kind === 'projects-geojson') exportFilteredProjects('geojson');
     else if (kind === 'estates-csv') exportFilteredEstates();
+    else if (kind === 'companies-csv') exportFilteredCompanies();
   }
 
   /* ---------- programme view ---------- */
@@ -1808,6 +1871,173 @@
     });
   }
 
+  /* ---------- companies view ---------- */
+
+  function orgTypeLabel(type) {
+    return tOr('org_type.' + type, type);
+  }
+
+  function roleLabel(role) {
+    return tOr('role.' + role, role);
+  }
+
+  function filteredCompanies() {
+    if (!companies) return [];
+    const query = state.q.toLowerCase().trim();
+    return companies.filter(function (company) {
+      if (state.companyType !== 'all' && company.org_type !== state.companyType) return false;
+      if (!query) return true;
+      const entry = searchCompanies.get(company.id);
+      const haystack = (entry ? entry.text :
+        [company.name, company.short_name, company.org_type, company.country_code]
+          .join(' ')).toLowerCase();
+      return query.split(/\s+/).every(function (token) { return haystack.indexOf(token) !== -1; });
+    }).sort(function (a, b) {
+      if (state.companySort === 'projects') {
+        return (b.project_count || 0) - (a.project_count || 0) || a.name.localeCompare(b.name);
+      }
+      return a.name.localeCompare(b.name);
+    });
+  }
+
+  function companyRoles(company) {
+    const roles = company.roles || [];
+    if (!roles.length) {
+      return '<p class="programme-empty">' + esc(t('companies.no_roles')) + '</p>';
+    }
+    return '<ul class="company-role-list">' + roles.map(function (role) {
+      const years = role.start_year || role.end_year
+        ? t('companies.years', {
+          start: role.start_year || '—', end: role.end_year || '—'
+        })
+        : '';
+      const meta = [statusLabel(role.status), sectorLabel(role.sector), roleLabel(role.role)]
+        .filter(Boolean).join(' · ');
+      return '<li><a href="#/project/' + esc(role.project_id) + '">' +
+        esc(projectName({ id: role.project_id, name: role.project_name })) + '</a>' +
+        '<span>' + esc(meta) +
+        (role.share_pct ? ' · ' + esc(t('companies.share')) + ' ' + fmtNum(role.share_pct) + '%' : '') +
+        (years ? ' · ' + esc(years) : '') + '</span>' +
+        (role.source_url ? '<a class="company-source" href="' + esc(role.source_url) +
+          '" target="_blank" rel="noopener">' + esc(t('companies.source')) + ' ↗</a>' : '') +
+        '</li>';
+    }).join('') + '</ul>';
+  }
+
+  function companyRow(company) {
+    const expanded = state.expandedCompany === company.id;
+    const roles = company.roles || [];
+    const projectCount = company.project_count || 0;
+    const location = [company.country_code,
+      projectCount === 1 ? t('companies.project_count_one') :
+        t('companies.project_count', { count: fmtNum(projectCount) })
+    ].filter(Boolean).join(' · ');
+    return '<div class="company-row"><button type="button" data-company="' + esc(company.id) +
+      '" aria-expanded="' + expanded + '"><span><span class="company-name">' + esc(company.name) +
+      (company.short_name ? ' <span class="company-short">' + esc(company.short_name) + '</span>' : '') +
+      '<span class="type-tag">' + esc(orgTypeLabel(company.org_type)) + '</span></span>' +
+      '<span class="estate-sub">' + esc(location) + '</span></span>' +
+      '<span class="company-count">' +
+      esc(roles.length === 1 ? t('companies.role_count_one') :
+        t('companies.role_count', { count: fmtNum(roles.length) })) +
+      '</span></button>' +
+      (expanded ? '<div class="company-detail">' +
+        '<dl><dt>' + esc(t('companies.website')) + '</dt><dd>' +
+        (company.website ? '<a href="' + esc(company.website) + '" target="_blank" rel="noopener">' +
+          esc(company.website) + '</a>' : esc(t('estates.not_recorded'))) + '</dd>' +
+        (company.notes ? '<dt>' + esc(t('companies.notes')) + '</dt><dd>' + untranslated(company.notes) + '</dd>' : '') +
+        '</dl>' +
+        '<div class="company-roles-title">' + esc(t('companies.roles_title')) + '</div>' +
+        companyRoles(company) + '</div>' : '') + '</div>';
+  }
+
+  function renderCompanies() {
+    dom.exploreContent.hidden = true;
+    dom.exploreContent.style.display = 'none';
+    dom.viewPanel.hidden = false;
+
+    if (companiesState === 'loading') {
+      dom.viewPanel.innerHTML = '<div class="data-view"><h2>' + esc(t('companies.title')) + '</h2>' +
+        '<p class="lede">' + esc(t('result.loading')) + '</p></div>';
+      return;
+    }
+    if (companiesState === 'error') {
+      dom.viewPanel.innerHTML = '<div class="data-view"><h2>' + esc(t('companies.title')) + '</h2>' +
+        '<p class="notes-callout">' + esc(t('result.programmes_error')) + '</p></div>';
+      return;
+    }
+    if (!companies) {
+      dom.viewPanel.innerHTML = '<div class="data-view"><h2>' + esc(t('companies.title')) + '</h2>' +
+        '<p class="lede">' + esc(t('result.loading')) + '</p></div>';
+      ensureCompanies();
+      return;
+    }
+
+    const list = filteredCompanies();
+    const orgStats = stats.organizations || {};
+    const typeCounts = { all: companies.length };
+    companies.forEach(function (company) {
+      typeCounts[company.org_type] = (typeCounts[company.org_type] || 0) + 1;
+    });
+    const types = ['all', 'government', 'soe', 'private', 'consortium'].filter(function (type) {
+      return type === 'all' || typeCounts[type];
+    });
+    const countries = Object.keys(orgStats.countries || {}).length;
+
+    dom.viewPanel.innerHTML = '<div class="estate-tools"><h2>' + esc(t('companies.title')) + '</h2>' +
+      '<p>' + esc(t('companies.lede')) + '</p>' +
+      '<div class="estate-summary">' +
+      '<div><div class="k">' + esc(t('companies.organisations')) + '</div><div class="v">' +
+      fmtNum(orgStats.total || companies.length) + '</div></div>' +
+      '<div><div class="k">' + esc(t('companies.with_links')) + '</div><div class="v">' +
+      fmtNum(orgStats.with_links || 0) + '</div></div>' +
+      '<div><div class="k">' + esc(t('companies.roles')) + '</div><div class="v">' +
+      fmtNum(orgStats.links || 0) + '</div></div>' +
+      '<div><div class="k">' + esc(t('companies.countries')) + '</div><div class="v">' +
+      fmtNum(countries) + '</div></div>' +
+      '</div>' +
+      '<div class="chip-row" style="margin-bottom:9px">' + types.map(function (type) {
+        return '<button class="chip" data-company-type="' + esc(type) + '" aria-pressed="' +
+          (state.companyType === type) + '">' +
+          esc(type === 'all' ? t('companies.all') : orgTypeLabel(type)) +
+          '<span class="chip-count">' + fmtNum(typeCounts[type] || 0) + '</span></button>';
+      }).join('') + '</div>' +
+      '<div class="filter-actions" style="margin-top:0">' +
+      '<label class="field" style="flex:1"><span class="sr-only">' + esc(t('companies.sort')) +
+      '</span><select id="company-sort">' +
+      '<option value="name"' + (state.companySort === 'name' ? ' selected' : '') + '>' +
+      esc(t('companies.sort_name')) + '</option>' +
+      '<option value="projects"' + (state.companySort === 'projects' ? ' selected' : '') + '>' +
+      esc(t('companies.sort_projects')) + '</option>' +
+      '</select></label></div>' +
+      '<div class="filter-actions" style="margin-top:9px"><span class="corridor-meta">' +
+      esc(t('companies.shown', { shown: fmtNum(list.length), total: fmtNum(companies.length) })) +
+      '</span><button class="filter-clear" type="button" data-export="companies-csv">' +
+      esc(t('companies.download')) + '</button></div></div>' +
+      '<div class="estate-list">' + (list.length ? list.map(companyRow).join('') :
+        '<div class="list-empty"><h3>' + esc(t('companies.no_match')) + '</h3><p>' +
+        esc(t('companies.no_match_body')) + '</p></div>') + '</div>';
+
+    dom.viewPanel.querySelectorAll('[data-company-type]').forEach(function (chip) {
+      chip.addEventListener('click', function () {
+        state.companyType = chip.getAttribute('data-company-type');
+        commit(false);
+      });
+    });
+    dom.viewPanel.querySelectorAll('[data-company]').forEach(function (row) {
+      row.addEventListener('click', function () {
+        const id = row.getAttribute('data-company');
+        state.expandedCompany = state.expandedCompany === id ? null : id;
+        renderCompanies();
+      });
+    });
+    const sortSelect = $('company-sort');
+    if (sortSelect) sortSelect.addEventListener('change', function () {
+      state.companySort = sortSelect.value;
+      commit(false);
+    });
+  }
+
   /* ---------- data view ---------- */
 
   function downloadUrl(file) {
@@ -1869,6 +2099,13 @@
       html += '<button class="download" type="button" data-export="estates-csv">' +
         '<span>' + esc(t('data.filtered_view')) + ' <small>' +
         esc(t('data.filtered_estates', { count: fmtNum(estateCount), total: fmtNum(estates.length) })) +
+        '</small></span>' + icon + '</button>';
+    }
+    if (companies) {
+      const companyCount = filteredCompanies().length;
+      html += '<button class="download" type="button" data-export="companies-csv">' +
+        '<span>' + esc(t('data.filtered_view')) + ' <small>' +
+        esc(t('data.filtered_companies', { count: fmtNum(companyCount), total: fmtNum(companies.length) })) +
         '</small></span>' + icon + '</button>';
     }
     html += downloads.map(function (item) {
@@ -2058,7 +2295,11 @@
       indicators: fmtNum((stats.indicators && stats.indicators.total) || 0),
       indicatorValues: fmtNum((stats.indicators && stats.indicators.values) || 0),
       phases: fmtNum((stats.phases && stats.phases.total) || 0),
-      indicatorProjects: fmtNum((stats.indicators && stats.indicators.projects_with_indicators) || 0)
+      indicatorProjects: fmtNum((stats.indicators && stats.indicators.projects_with_indicators) || 0),
+      companiesTotal: fmtNum((stats.organizations && stats.organizations.total) || 0),
+      companiesLinked: fmtNum((stats.organizations && stats.organizations.with_links) || 0),
+      companyLinks: fmtNum((stats.organizations && stats.organizations.links) || 0),
+      companyGap: fmtNum(Math.max(300 - ((stats.organizations && stats.organizations.total) || 0), 0))
     };
 
     dom.viewPanel.innerHTML =
@@ -2104,6 +2345,7 @@
       '<li>' + esc(t('data.gap_transport', v)) + '</li>' +
       '<li>' + esc(t('data.gap_industry', v)) + '</li>' +
       '<li>' + esc(t('data.gap_programmes', v)) + '</li>' +
+      '<li>' + esc(t('data.gap_companies', v)) + '</li>' +
       '<li>' + esc(t('data.gap_estates', v)) + '</li>' +
       '<li>' + esc(t('data.gap_estate_coords', v)) + '</li>' +
       '<li>' + esc(t('data.gap_corridors')) + '</li>' +
@@ -2132,7 +2374,7 @@
     const appMain = document.querySelector('.app-main');
     if (appMain) {
       const wide = active === 'data' || active === 'programmes' ||
-        active === 'estates' || active === 'corridors';
+        active === 'estates' || active === 'companies' || active === 'corridors';
       appMain.classList.toggle('is-wide', wide);
     }
     renderHeader();
@@ -2146,6 +2388,8 @@
       renderEstates();
     } else if (state.view === 'programmes') {
       renderProgrammes();
+    } else if (state.view === 'companies') {
+      renderCompanies();
     } else if (state.view === 'data') {
       renderData();
     }
@@ -2609,6 +2853,7 @@
     dom.statEstates = $('stat-estates');
     dom.tabCountExplore = $('tab-count-explore');
     dom.tabCountProgrammes = $('tab-count-programmes');
+    dom.tabCountCompanies = $('tab-count-companies');
     dom.layerProjects = $('layer-projects');
     dom.layerLabels = $('layer-labels');
     dom.legendBody = $('legend-body');
@@ -2646,6 +2891,7 @@
     }
     if (state.view === 'estates') ensureEstates();
     if (state.view === 'programmes') ensureProgrammes();
+    if (state.view === 'companies') ensureCompanies();
 
     requestAnimationFrame(function () {
       if (window.AtlasMap) window.AtlasMap.resize();

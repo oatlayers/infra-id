@@ -46,6 +46,11 @@ curated, not exhaustive**.
   industrial-estate benchmark is met: 179 pure industrial rows plus 7 shared
   SEZ/estate rows. Eight reviewed PSN industrial areas carry dated area, manager
   and status sources; 18 more are register-only with no invented area or boundary.
+- **Companies and agencies:** 101 organisation profiles and 203 sourced project
+  roles. 79 organisations have at least one project link; 22 are reference-only.
+  The Companies view filters by type, searches the role text, expands each
+  profile into its project roles and exports the filtered CSV. The V4 target is
+  300 profiles; 199 remain.
 - **Trust layer:** 863 atomic project claims, 115 estate claims and 48 programme
   claims; 228 of 228 projects have a claim for the status and every populated
   numeric fact. 19 conflicts are recorded with both values and both sources
@@ -53,14 +58,14 @@ curated, not exhaustive**.
   estate fresh, due soon or stale. A 268-field data dictionary covers all 26
   curated tables, including translations, indicators and project phases.
 - **Bilingual shell:** `site/index.html` is a language chooser; `site/en/` and
-  `site/id/` share one application and one data bundle. Both locales carry 559
+  `site/id/` share one application and one data bundle. Both locales carry 604
   UI keys, all 24 programme names and summaries, all five corridor definitions,
   and an Indonesian display name for all 228 projects (140 reviewed, 88 official
   PSN aliases). Every project also has a factual one-sentence summary generated
   from its sourced fields in both locales and labelled auto-generated. The
   switch preserves the current hash, filters and selected record. Data,
-  Programmes, Corridors and Estates are full-width register pages; Explore keeps
-  the map.
+  Programmes, Corridors, Estates and Companies are full-width register pages;
+  Explore keeps the map.
 - **Last verification:** 9 November 2026 for the flagship, PSN-road, PSN
   industrial-area and register-only rows; 8 November 2026 for the road, estate
   and factory batches; 7 November for transport; and 6 November for earlier
@@ -493,7 +498,7 @@ the 88 official Indonesian PSN names; corridor definitions are translated in
 
 `scripts/pipeline/build_i18n.py` fails if the two catalogues drift or if a
 programme or corridor loses a required translation. It writes a coverage report
-to `data/derived/i18n_report.csv`. The current build has 559 UI keys per locale,
+to `data/derived/i18n_report.csv`. The current build has 604 UI keys per locale,
 an Indonesian display name for all 228 projects and a generated summary for all
 228. Project summaries are generated from the curated fields, not editorial
 copy; the drawer labels them `AUTO` / `OTOMATIS`. Sourced English notes keep an
@@ -630,7 +635,7 @@ Features:
   (including the 19-row 2024 audit ledger). No map layer yet.
 - **Data:** generated coverage matrix; programme register; claims coverage;
   freshness; status definitions; inclusion rules; conflict register with both
-  values and sources; source register; 16 static downloads plus filtered project
+  values and sources; source register; 21 static downloads plus filtered project
   CSV/GeoJSON and estate CSV; the 268-field data dictionary; known gaps; and the
   changelog parsed from `CHANGELOG.md`.
 - **Mobile:** full-viewport map and a draggable bottom sheet with peek, half and
@@ -855,8 +860,8 @@ it writes screenshots and a zero-error report under `docs/evidence/phase-3/`.
   of 8 November 2026; V4 has its foundation, PSN ledger, 2026 flagship batch,
   50-entry PSN road set, 24-programme layer, first PSN industrial-area batch and
   the register-only closure of PSN coverage and the bilingual shell. Project
-  summaries, full name translation, the companies view and strategic non-PSN
-  expansion are still open. Track 2B (estates) is complete by count and R6
+  summaries, company-profile expansion and strategic non-PSN expansion are
+  still open. Track 2B (estates) is complete by count and R6
   geometry is deferred; both are documented. Publishing is explicitly deferred.
 - **Next action:** run `python scripts/build_all.py --check`, read
   [`docs/operations/refresh-runbook.md`](docs/operations/refresh-runbook.md),

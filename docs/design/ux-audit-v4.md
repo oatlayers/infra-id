@@ -56,13 +56,14 @@ search results are not implemented.
 | Finding | Fix | Evidence |
 |---|---|---|
 | Data, Programmes, Corridors and Estates were squeezed into the 400 px rail beside an unrelated map | Full-width register pages, max 1180 px; map hidden on those views; two-column programme and corridor grids | `04-data-desktop.png`, `03b-programmes-desktop.png`, `02-corridors-desktop.png` |
-| No Indonesian edition, no language switch, English-only chrome | `site/en/`, `site/id/`, chooser, 559-key catalogues, `translations.csv`, language switch preserving the hash | `00-language-chooser.png`, `08-explore-id-desktop.png`, `08d-data-id-desktop.png` |
+| No Indonesian edition, no language switch, English-only chrome | `site/en/`, `site/id/`, chooser, 604-key catalogues, `translations.csv`, language switch preserving the hash | `00-language-chooser.png`, `08-explore-id-desktop.png`, `08d-data-id-desktop.png` |
 | 140 project names fell back to the source name; no project summaries | 140 reviewed Indonesian names plus 88 official PSN aliases; a factual one-sentence summary in both locales, labelled generated | `08-explore-id-desktop.png`, `08f-project-drawer-id.png` |
 | English-only status, sector, filter, sort and Data prose | All chrome and the Data methods are translated; `Intl` number/date/coordinate formatting | `08d-data-id-desktop.png` |
 | English prose in the Indonesian edition could look like a translation failure | `lang="en"` on sourced text and a visible `EN` tag; a quiet note at the top of the project drawer | `05-project-drawer.png` |
 | Mobile filters were unreachable at peek height | Tapping the sheet handle cycles to half and full; filters are then reachable | `ux-rehearsal.json`, field-id profile |
 | Small `EN`/`ID` programme badge used muted-2 at 2.91:1 | Badge now uses muted at 4.73:1 | `check_contrast.py` |
 | Unknown status had no pill treatment | Added `.status-pill.s-unknown` with a grey border, soft fill and text label | style tile |
+| No companies or agencies view despite 101 organisation profiles | Full-width Companies view with type filter, role search, expandable project roles, filtered CSV and two downloads | `03d-companies-desktop.png` |
 
 ### Open
 
@@ -74,6 +75,7 @@ search results are not implemented.
 | Medium | Data coverage `reference_set`, download labels/meta and dictionary descriptions remain English in the ID edition | These are methodological strings, not proper names | Move coverage labels and download labels into the catalogue; translate dictionary descriptions in Release 4.4 |
 | Medium | No charts and no sortable table component in Data | The dashboard is readable but not yet analytical | Add SVG bar/stacked/donut charts and sortable headers |
 | Only three indicators and nine phases are sourced | The layer is structurally complete but thin | Extend the indicator layer with the 8 PKPN targets and programme-level baselines as official sources are filed |
+| Only 101 of the 300 company profiles exist; 22 profiles have no project role and 100 projects have no organisation role | The Companies view is useful but the network is incomplete | Add profiles and role links from existing project sources before adding new projects |
 | Medium | No map-only mode or rail collapse | Explore still fixes 400 px for the rail | Add a collapse control and a map-only state |
 | Medium | Mobile navigation is still a tab row inside the sheet | The plan calls for a five-item bottom bar with “More” | Add the bottom bar and a full-screen filter sheet |
 | Medium | Drawer only; no shareable project, programme or company page | Deep links are hash-based and the drawer is not a page | Add detail routes and static printable pages |
@@ -89,10 +91,11 @@ search results are not implemented.
 |---|---|
 | Projects / programmes / estates | 228 / 24 / 204 |
 | Mapped project markers | 139 |
-| Locales | 2, 559 UI keys each |
+| Locales | 2, 604 UI keys each |
 | Project names | 228 Indonesian display names (140 reviewed + 88 official) |
 | Project summaries | 228 generated in both locales; 0 editorial |
 | Indicators / values / phases | 3 / 3 / 9 |
+| Companies / role links | 101 / 203 |
 | Initial payload (one locale + core Explore) | 1,099 KB |
 | Runtime data payload | 1,467 KB |
 | Total payload including downloads | 3,428 KB |

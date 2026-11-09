@@ -10,13 +10,16 @@
     "estates": {
       "rows": 204
     },
+    "companies": {
+      "rows": 101
+    },
     "programmes": {
       "cards": 24
     },
     "data": {
       "conflicts": 19,
       "dictionary_tables": 26,
-      "download_controls": 22
+      "download_controls": 24
     },
     "drawer": {
       "title": "100 GWp Solar Programme - Phase 1"
@@ -47,7 +50,7 @@
   },
   "protocols": {
     "http": {
-      "port": 49513,
+      "port": 59366,
       "ok": true
     },
     "file": {
@@ -64,6 +67,7 @@
     "02-corridors-desktop.png",
     "02b-corridor-segments-desktop.png",
     "03-estates-desktop.png",
+    "03d-companies-desktop.png",
     "03b-programmes-desktop.png",
     "04-data-desktop.png",
     "05-project-drawer.png",

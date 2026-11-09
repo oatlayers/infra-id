@@ -3,6 +3,21 @@
 Public-facing changes to the atlas. Dates are the day the change landed in this
 repository. The Data view renders these entries from this file at build time.
 
+## 2026-11-09 — Companies and agencies view
+
+- Added a full-width Companies view built from `organizations.csv` and
+  `project_organizations.csv`: 101 profiles, 203 sourced role links, 79
+  organisations with at least one link and 22 reference-only profiles.
+- The view filters by type, searches the role text, expands each profile into
+  its project roles with status, sector, share, years and source, and exports
+  the filtered CSV. Data adds `companies.csv`, `company-projects.csv` and a
+  101/300 coverage row.
+- The UI catalogue grows to 604 keys per locale. The smoke test covers the
+  English Companies view, the Indonesian tab label and the filtered CSV.
+- Initial payload is 1,126 KB, data 1,612 KB and total 3,604 KB. Build,
+  `--check`, smoke test, five-profile rehearsal, contrast check and link check
+  pass. Nothing was pushed, deployed or published.
+
 ## 2026-11-09 — Indicators, values and project phases
 
 - Added `indicators.csv`, `indicator_values.csv` and `project_phases.csv` with

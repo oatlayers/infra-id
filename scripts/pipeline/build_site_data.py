@@ -35,10 +35,12 @@ from data_model import (
     EXPORTS,
     INDICATOR_FIELDS,
     INDICATOR_VALUE_FIELDS,
+    ORG_FIELDS,
     PHASE_FIELDS,
     PROGRAMME_FIELDS,
     PROGRAMME_PROJECT_FIELDS,
     PROGRAMME_SOURCE_FIELDS,
+    PROJECT_ORG_FIELDS,
     ROOT,
     SEGMENT_FIELDS,
     SITE_DATA,
@@ -122,6 +124,7 @@ def main() -> None:
     estates = read_csv(CURATED / "estates.csv")
     estate_gap = read_csv(DERIVED / "estate_gap_2026.csv")
     organizations = read_csv(CURATED / "organizations.csv")
+    project_orgs = read_csv(CURATED / "project_organizations.csv")
     programmes = read_csv(CURATED / "programmes.csv")
     programme_projects = read_csv(CURATED / "programme_projects.csv")
     programme_claims = read_csv(CURATED / "programme_sources.csv")
@@ -228,6 +231,45 @@ def main() -> None:
     aliases_by_project: dict[str, list[str]] = {}
     for alias in aliases:
         aliases_by_project.setdefault(alias["project_id"], []).append(alias["alias"])
+
+    roles_by_org: dict[str, list[dict[str, object]]] = {}
+    for link in project_orgs:
+        project = projects_by_id.get(link["project_id"])
+        if not project:
+            continue
+        source = sources.get(link["source_id"])
+        roles_by_org.setdefault(link["org_id"], []).append(
+            {
+                "project_id": project["id"],
+                "project_name": project["name"],
+                "sector": project["sector"],
+                "status": project["status"],
+                "role": link["role"],
+                "share_pct": link["share_pct"],
+                "start_year": link["start_year"],
+                "end_year": link["end_year"],
+                "source_id": link["source_id"],
+                "source_title": source["title"] if source else "",
+                "source_url": source["url"] if source else "",
+                "notes": link["notes"],
+            }
+        )
+    for roles in roles_by_org.values():
+        roles.sort(key=lambda record: record["project_name"])
+
+    company_payload = []
+    for org in organizations:
+        roles = roles_by_org.get(org["id"], [])
+        company_payload.append(
+            {
+                **org,
+                "project_count": len({role["project_id"] for role in roles}),
+                "role_count": len(roles),
+                "source_count": len({role["source_id"] for role in roles if role["source_id"]}),
+                "roles": roles,
+            }
+        )
+    company_payload.sort(key=lambda row: row["name"].casefold())
 
     values_by_indicator: dict[str, list[dict[str, str]]] = {}
     for value in indicator_values:
@@ -474,6 +516,7 @@ def main() -> None:
             1 for row in rows if row["sector"] == "seaport" and row["psn"] == "yes"
         ),
         "factories": by_sector.get("factory", 0),
+        "companies": len(organizations),
         "transport_psn": sum(
             1 for row in rows
             if row["sector"] in {"railway", "airport", "seaport"} and row["psn"] == "yes"
@@ -563,6 +606,13 @@ def main() -> None:
             "gap_rows": len(estate_gap),
             "gap_dispositions": dict(sorted(estate_gap_dispositions.items())),
             "last_verified": last_verified_estates,
+        },
+        "organizations": {
+            "total": len(organizations),
+            "by_type": dict(sorted(Counter(row["org_type"] for row in organizations).items())),
+            "with_links": len(roles_by_org),
+            "links": len(project_orgs),
+            "countries": dict(sorted(Counter(row["country_code"] for row in organizations).items())),
         },
         "programmes": {
             "total": len(programmes),
@@ -697,6 +747,18 @@ def main() -> None:
                 "meta": f"{len(claims)} atomic claims",
             },
             {
+                "key": "companies",
+                "label": "Companies and agencies",
+                "file": "downloads/companies.csv",
+                "meta": f"{len(organizations)} organisations",
+            },
+            {
+                "key": "company_projects",
+                "label": "Company project roles",
+                "file": "downloads/company-projects.csv",
+                "meta": f"{len(project_orgs)} role links",
+            },
+            {
                 "key": "programmes",
                 "label": "PSN programmes",
                 "file": "downloads/programmes.csv",
@@ -811,6 +873,28 @@ def main() -> None:
                 ),
             }
         )
+    for row in company_payload:
+        search.append(
+            {
+                "type": "company",
+                "id": row["id"],
+                "name": row["name"],
+                "org_type": row["org_type"],
+                "country_code": row["country_code"],
+                "text": " ".join(
+                    filter(
+                        None,
+                        [
+                            row["name"],
+                            row["short_name"],
+                            row["org_type"].replace("_", " "),
+                            row["country_code"],
+                            " ".join(role["project_name"] for role in row["roles"]),
+                        ],
+                    )
+                ),
+            }
+        )
 
     SITE_DATA.mkdir(parents=True, exist_ok=True)
     SITE_DOWNLOADS.mkdir(parents=True, exist_ok=True)
@@ -824,7 +908,14 @@ def main() -> None:
 
     write_download_json("estates.json", estate_payload, indent=2)
     write_global("estates.js", "INFRA_ESTATES", estate_payload)
+    write_global("companies.js", "INFRA_COMPANIES", company_payload)
     write_global("programmes.js", "INFRA_PROGRAMMES", programme_payload)
+    write_csv(SITE_DOWNLOADS / "companies.csv", ORG_FIELDS, organizations)
+    write_csv(
+        SITE_DOWNLOADS / "company-projects.csv",
+        PROJECT_ORG_FIELDS,
+        project_orgs,
+    )
     write_csv(
         SITE_DOWNLOADS / "programmes.csv",
         PROGRAMME_FIELDS,
@@ -883,7 +974,8 @@ def main() -> None:
 
     print(
         f"wrote {len(features)} projects, {len(corridor_payload)} corridors, "
-        f"{len(estate_payload)} estates, {len(programme_payload)} programmes, "
+        f"{len(estate_payload)} estates, {len(company_payload)} companies, "
+        f"{len(programme_payload)} programmes, "
         f"{len(indicators)} indicators, {len(phases)} phases, {len(sources)} sources"
     )
     print(

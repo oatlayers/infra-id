@@ -1,0 +1,102 @@
+id,name,short_name,org_type,country_code,parent_id,website,notes
+org-jasa-marga,PT Jasa Marga (Persero) Tbk,Jasa Marga,soe,ID,,https://www.jasamarga.com,
+org-waskita-karya,PT Waskita Karya (Persero) Tbk,Waskita Karya,soe,ID,,https://www.waskita.co.id,
+org-wijaya-karya,PT Wijaya Karya (Persero) Tbk,Wijaya Karya,soe,ID,,https://www.wika.co.id,
+org-pp,PT Pembangunan Perumahan (Persero) Tbk,PP,soe,ID,,https://www.ptpp.co.id,
+org-hutama-karya,PT Hutama Karya (Persero),Hutama Karya,soe,ID,,https://www.hutamakarya.com,v1 operator string: PT Hutama Karya (Persero)
+org-waskita-sriwijaya-tol,PT Waskita Sriwijaya Tol,Waskita Sriwijaya Tol,private,ID,org-waskita-karya,,v1 operator string: PT. Waskita Sriwijaya Tol
+org-citra-waspphutowa,PT Citra Waspphutowa,Citra Waspphutowa,private,ID,,,v1 operator string: PT Citra Waspphutowa
+org-jakarta-tollroad-development,PT Jakarta Tollroad Development,Jakarta Tollroad Development,consortium,ID,,,v1 operator string: PT Jakarta Tollroad Development
+org-kresna-kusuma-dyandra-marga,PT Kresna Kusuma Dyandra Marga,Kresna Kusuma Dyandra Marga,private,ID,,,v1 operator string: PT Kresna Kusuma Dyandra Marga
+org-citra-marga-nusaphala-persada,PT Citra Marga Nusaphala Persada Tbk,Citra Marga,private,ID,,,v1 operator string: PT. Citra Marga Nusaphala Persada Tbk.
+org-jasamarga-japek-selatan,PT Jasamarga Japek Selatan,Jasamarga Japek Selatan,private,ID,org-jasa-marga,,v1 operator string: PT Jasamarga Japek Selatan
+org-marga-sarana-jabar,PT Marga Sarana Jabar,Marga Sarana Jabar,private,ID,,,v1 operator string: PT. Marga Sarana Jabar
+org-wijaya-karya-serang-panimbang,PT Wijaya Karya Serang Panimbang,Wijaya Karya Serang Panimbang,private,ID,org-wijaya-karya,,v1 operator string: PT Wijaya Karya Serang Panimbang
+org-trans-jabar-tol,PT Trans Jabar Tol,Trans Jabar Tol,private,ID,,,v1 operator string: PT Trans Jabar Tol
+org-pp-semarang-demak,PT PP Semarang Demak,PP Semarang Demak,private,ID,org-pp,,v1 operator string: PT Pembangunan Perumahan Semarang Demak
+org-jasamarga-jogja-solo,PT Jasamarga Jogja Solo,Jasamarga Jogja Solo,private,ID,org-jasa-marga,,v1 operator string: PT Jasamarga Jogja Solo
+org-jasa-marga-jogja-bawen,PT Jasa Marga Jogja Bawen,Jasa Marga Jogja Bawen,private,ID,org-jasa-marga,,v1 operator string: PT Jasa Marga Jogja Bawen
+org-waskita-bumi-wira,PT Waskita Bumi Wira,Waskita Bumi Wira,private,ID,org-waskita-karya,,v1 operator string: PT Waskita Bumi Wira
+org-jasamarga-probolinggo-banyuwangi,PT Jasamarga Probolinggo Banyuwangi,Jasamarga Probolinggo Banyuwangi,private,ID,org-jasa-marga,,v1 operator string: PT Jasamarga Probolinggo Banyuwangi
+org-kemenhub,Ministry of Transportation,Kemenhub,government,ID,,https://www.kemenhub.go.id,National transport ministry; sponsor of the 35 transport PSNs.
+org-ditjen-perkeretaapian,Directorate General of Railways,DJKA,government,ID,org-kemenhub,,Owner of the railway PSNs.
+org-ditjen-perhubungan-laut,Directorate General of Sea Transportation,Hubla,government,ID,org-kemenhub,,Owner of the seaport PSNs.
+org-ditjen-perhubungan-udara,Directorate General of Civil Aviation,Hubud,government,ID,org-kemenhub,,Owner of the airport PSNs.
+org-kai,PT Kereta Api Indonesia (Persero),KAI,soe,ID,,https://www.kai.id,State railway operator.
+org-kcic,PT Kereta Cepat Indonesia China,KCIC,consortium,ID,,https://whoosh.co.id,Jakarta–Bandung high-speed rail consortium.
+org-mrt-jakarta,PT MRT Jakarta (Persero),MRT Jakarta,soe,ID,,https://www.mrtjakarta.co.id,Jakarta metro operator and developer.
+org-lrt-jakarta,PT LRT Jakarta,LRT Jakarta,soe,ID,,https://www.lrtjakarta.co.id,Jakarta LRT operator.
+org-lrt-sumsel,PT LRT Sumatera Selatan,LRT Sumsel,soe,ID,,,South Sumatra LRT operator.
+org-bayan-laju-trans-kalimantan,PT Bayan Laju Trans Kalimantan,BLTK,private,ID,,,Developer of the East Kalimantan logistics railway.
+org-angakasa-pura-i,PT Angkasa Pura I (Persero),AP I,soe,ID,,https://www.angkasapura1.co.id,Airport operator for central and eastern Indonesia.
+org-angakasa-pura-ii,PT Angkasa Pura II (Persero),AP II,soe,ID,,https://www.angkasapura2.co.id,Airport operator for western Indonesia.
+org-pelindo,PT Pelabuhan Indonesia (Persero),Pelindo,soe,ID,,https://www.pelindo.co.id,State port operator formed by the 2021 merger of Pelindo I–IV.
+org-trans-bumi-serbaraja,PT Trans Bumi Serbaraja,,private,ID,,,Toll-road concession operator from the BPJT list.
+org-citra-karya-jabar-tol,PT Citra Karya Jabar Tol,,private,ID,,,Toll-road concession operator from the BPJT list.
+org-cibitung-tanjung-priok-port-tollways,PT Cibitung Tanjung Priok Port Tollways,,private,ID,,,Toll-road concession operator from the BPJT list.
+org-jasamarga-kunciran-cengkareng,PT Jasamarga Kunciran Cengkareng,,private,ID,,,Toll-road concession operator from the BPJT list.
+org-jasamarga-manado-bitung,PT Jasamarga Manado Bitung,,private,ID,,,Toll-road concession operator from the BPJT list.
+org-jasamarga-balikpapan-samarinda,PT Jasamarga Balikpapan Samarinda,,private,ID,,,Toll-road concession operator from the BPJT list.
+org-marga-trans-nusantara,PT Marga Trans Nusantara,,private,ID,,,Toll-road concession operator from the BPJT list.
+org-trans-jawa-paspro-jalan-tol,PT Trans Jawa Paspro Jalan Tol,,private,ID,,,Toll-road concession operator from the BPJT list.
+org-jasamarga-pandaan-malang,PT Jasamarga Pandaan Malang,,private,ID,,,Toll-road concession operator from the BPJT list.
+org-jasamarga-ngawi-kertosono-kediri,PT Jasamarga Ngawi Kertosono Kediri,,private,ID,,,Toll-road concession operator from the BPJT list.
+org-medan-binjai-tol,PT Medan Binjai Tol,,private,ID,,,Toll-road concession operator from the BPJT list.
+org-translingkar-kita-jaya,PT Translingkar Kita Jaya,,private,ID,,,Toll-road concession operator from the BPJT list.
+org-freeport-indonesia,PT Freeport Indonesia,Freeport Indonesia,private,ID,,https://ptfi.co.id,Operator of the Manyar smelter; subsidiary of Freeport-McMoRan and MIND ID.
+org-pt-smelting,PT Smelting,PT Smelting,private,ID,org-freeport-indonesia,https://www.ptsmelting.com,Gresik copper smelter and refinery; Freeport Indonesia is the majority shareholder.
+org-amman-mineral-international,PT Amman Mineral Internasional Tbk,Amman,private,ID,,https://www.amman.co.id,Parent of PT Amman Mineral Industri.
+org-amman-mineral-industri,PT Amman Mineral Industri,AMIN,private,ID,org-amman-mineral-international,https://www.amman.co.id/amman-mineral-industri,Owner and operator of the Benete copper smelter and precious metal refinery.
+org-itss,PT Indonesia Tsingshan Stainless Steel,ITSS,private,ID,,,Tsingshan stainless steel unit in IMIP.
+org-dexin-steel,PT Dexin Steel Indonesia,Dexin Steel,private,ID,,https://www.dexin-steel.com,Delong and Tsingshan carbon steel joint venture in IMIP.
+org-huafei,PT Huafei Nickel Cobalt,Huafei,private,ID,,,"Huayou, Tsingshan and EVE HPAL joint venture in IWIP."
+org-angel-nickel,PT Angel Nickel Industry,Angel Nickel,private,ID,,https://nickelindustries.com,Nickel Industries 80% owned RKEF project in IWIP.
+org-hpl,PT Halmahera Persada Lygend,HPL,private,ID,,https://hpalnickel.com,Harita Nickel and Lygend HPAL joint venture on Obi Island.
+org-onc,PT Obi Nickel Cobalt,ONC,private,ID,,https://tbpnickel.com,Harita Nickel and Lygend second Obi refinery.
+org-vdni,PT Virtue Dragon Nickel Industry,VDNI,private,ID,,https://vdni.co.id,Operator of the Morosi nickel smelter and industrial park.
+org-oss,PT Obsidian Stainless Steel,OSS,private,ID,,https://oss.co.id,Xiangyu and Delong stainless steel joint venture in Morosi.
+org-gni,PT Gunbuster Nickel Industry,GNI,private,ID,,https://gunbusternickelindustry.com,Delong-backed NPI smelter in North Morowali; under PKPU in 2026.
+org-huadi,PT Huadi Nickel-Alloy Indonesia,Huadi,private,ID,,,"Nickel-alloy smelter at Pajukukang, Bantaeng."
+org-vale,PT Vale Indonesia Tbk,Vale Indonesia,private,ID,,https://www.valeindonesia.com,"MIND ID-controlled nickel miner and processor; operator of the Pomalaa, Bahodopi and Sorowako projects."
+org-whw,PT Well Harvest Winning Alumina Refinery,WHW,private,ID,,https://whwalumina.com,"Harita, China Hongqiao and Winning alumina joint venture in Ketapang."
+org-borneo-alumina,PT Borneo Alumina Indonesia,BAI,private,ID,org-inalum,https://www.bai.officespace.co.id,INALUM 60% and ANTAM 40% SGAR joint venture.
+org-inalum,PT Indonesia Asahan Aluminium (Persero),INALUM,soe,ID,,https://www.inalum.id,State aluminium smelter at Kuala Tanjung; MIND ID subsidiary.
+org-krakatau-steel,PT Krakatau Steel (Persero) Tbk,Krakatau Steel,soe,ID,,https://krakatausteel.com,Integrated steel producer in Cilegon.
+org-gunung-raja-paksi,PT Gunung Raja Paksi Tbk,GRP,private,ID,,https://gunungrajapaksi.com,Private steel producer at Cikarang Barat.
+org-btr,PT Indonesia BTR New Energy Material,BTR Indonesia,private,ID,,https://www.btrchina.com,BTR New Material Group anode plant in Kendal Industrial Park.
+org-cbl,"Ningbo Contemporary Brunp Lygend Co., Ltd.",CBL,private,CN,,https://www.catl.com,CATL subsidiary and joint-venture partner with ANTAM and IBC.
+org-lotte-chemical-indonesia,PT Lotte Chemical Indonesia,LCI,private,ID,,https://www.lottechem.com,"Operator of the LINE naphtha cracker at Merak, Cilegon."
+org-chandra-asri,PT Chandra Asri Pacific Tbk,Chandra Asri,private,ID,,https://chandra-asri.com,Operator of the Cilegon naphtha cracker and petrochemical complex.
+org-oki-pulp,PT OKI Pulp & Paper Mills,OKI Pulp,private,ID,,https://okipulppaper.co.id,APP/Sinar Mas pulp and tissue mill in Ogan Komering Ilir.
+org-pupuk-kaltim,PT Pupuk Kalimantan Timur,Pupuk Kaltim,soe,ID,,https://pupukkaltim.com,State fertiliser producer at Bontang.
+org-otorita-ikn,Otorita Ibu Kota Nusantara,OIKN,government,ID,,https://ikn.go.id,Nusantara capital authority.
+org-inpex-masela,"INPEX Masela, Ltd.",INPEX Masela,private,ID,,https://www.inpex.co.jp/english/,Operator of the Abadi Masela LNG project.
+org-pertamina,PT Pertamina (Persero),Pertamina,soe,ID,,https://www.pertamina.com,State oil and gas company; refiner and fuel distributor.
+org-petronas,Petroliam Nasional Berhad,Petronas,soe,MY,,https://www.petronas.com,Malaysian state energy company; Masela partner.
+org-pln,PT Perusahaan Listrik Negara (Persero),PLN,soe,ID,,https://www.pln.co.id,State electricity company; solar programme implementer.
+org-kementerian-esdm,Kementerian Energi dan Sumber Daya Mineral,ESDM,government,ID,,https://www.esdm.go.id,Ministry of Energy and Mineral Resources.
+org-danantara,Badan Pengelola Investasi Daya Anagata Nusantara,Danantara,government,ID,,https://danantara.id,Sovereign investment authority; Hilirisasi Stage II sponsor.
+org-ptpn-iii,PT Perkebunan Nusantara III (Persero),PTPN III,soe,ID,,https://www.ptpn3.co.id,State plantation company; Sei Mangkei oleofood project.
+org-buton-asphalt-indonesia,PT Buton Asphalt Indonesia,Buton Asphalt,private,ID,,https://www.butonasphalt.co.id,Buton natural asphalt processor.
+org-kementerian-pu,Kementerian Pekerjaan Umum,Kementerian PU,government,ID,,https://www.pu.go.id,Ministry of Public Works; dams and coastal defence.
+org-boppj,Badan Otorita Pengelola Pantai Utara Jawa,BOPPJ,government,ID,,https://www.pu.go.id,North Java coast management authority.
+org-cinere-serpong-jaya,PT Cinere Serpong Jaya,CSJ,private,ID,,https://www.jasamarga.com,Operator of the Serpong–Cinere toll road.
+org-cimanggis-cibitung-tollways,PT Cimanggis Cibitung Tollways,CCT,private,ID,,,Operator of the Cimanggis–Cibitung toll road.
+org-bnpp,Badan Nasional Pengelola Perbatasan,BNPP,government,ID,,https://bnpp.go.id,National border management agency.
+org-kementerian-pariwisata,Kementerian Pariwisata,Kemenpar,government,ID,,https://kemenpar.go.id,Ministry of Tourism.
+org-kementerian-pertanian,Kementerian Pertanian,Kementan,government,ID,,https://pertanian.go.id,Ministry of Agriculture.
+org-kemenko-perekonomian,Kementerian Koordinator Bidang Perekonomian,Kemenko Perekonomian,government,ID,,https://ekon.go.id,Coordinating Ministry for Economic Affairs; publishes the PSN register.
+org-badan-gizi-nasional,Badan Gizi Nasional,BGN,government,ID,,,National Nutrition Agency.
+org-kementerian-sosial,Kementerian Sosial,Kemensos,government,ID,,https://kemensos.go.id,Ministry of Social Affairs.
+org-kementerian-koperasi,Kementerian Koperasi,Kemenkop,government,ID,,,Ministry of Cooperatives.
+org-kemendikdasmen,Kementerian Pendidikan Dasar dan Menengah,Kemendikdasmen,government,ID,,,Ministry of Primary and Secondary Education.
+org-kementerian-lingkungan-hidup,Kementerian Lingkungan Hidup,KLH,government,ID,,https://menlhk.go.id,Ministry of Environment.
+org-kementerian-kkp,Kementerian Kelautan dan Perikanan,KKP,government,ID,,https://kkp.go.id,Ministry of Marine Affairs and Fisheries.
+org-prima-pengembangan-kawasan,PT Prima Pengembangan Kawasan,PPK,soe,ID,,https://pelindo.co.id,Pelindo subsidiary managing Kawasan Industri Kuala Tanjung.
+org-bantaeng-sinergi-cemerlang,PT Bantaeng Sinergi Cemerlang (Perseroda),BSC,soe,ID,,,Regional enterprise managing Kawasan Industri Bantaeng.
+org-indonesia-pomalaa-industry-park,PT Indonesia Pomalaa Industry Park,IPIP,consortium,ID,,,"Joint-venture estate company at Pomalaa, Kolaka."
+org-indonesia-huali-industry-park,PT Indonesia Huali Industry Park,IHIP,private,ID,,,Developer of the Huali nickel industrial park in Luwu Timur.
+org-wahana-mitra-semesta,PT Wahana Mitra Semesta,WMS,private,ID,,,Manager of Patimban Industrial Estate.
+org-morowali-industri-sejahtera,PT Morowali Industri Sejahtera,MIS,private,ID,,https://neoenergy.co.id,Neo Energy subsidiary managing NEMIE.
+org-dharma-inti-bersama,PT Dharma Inti Bersama,DIB,private,ID,,,Harita Group company developing Pulau Penebang.
+org-westerfield-alumina-indonesia,PT Westerfield Alumina Indonesia,WAI,private,ID,,,Developer of the Alumina Toba industrial area.
