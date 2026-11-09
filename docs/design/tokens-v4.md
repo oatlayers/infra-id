@@ -47,10 +47,10 @@ alone is never the message.
 | Interface | Inter | 14 / 1.5 |
 | Caption | Inter | 12 / 1.4 |
 
-The target body scale is 14–16 px with 12–13 px captions. The current Explore
-rail still uses 9.5–12.5 px for density; this is the main open typography item
-in Release 4.3. Full-width Data, Programmes and Corridors already use the
-larger scale.
+The target body scale is 14–16 px with 12–13 px captions. The Explore rail now
+uses 13 px row titles and 10.5–12.5 px captions; the remaining step is the full
+14–16 px body scale in Release 4.3. Full-width Data, Programmes, Corridors,
+Estates and Companies already use the larger scale.
 
 Maximum line length is 70 characters. Numbers in tables use tabular figures.
 

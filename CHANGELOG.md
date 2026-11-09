@@ -3,6 +3,15 @@
 Public-facing changes to the atlas. Dates are the day the change landed in this
 repository. The Data view renders these entries from this file at build time.
 
+## 2026-11-09 — Type scale uplift
+
+- Raised the Explore rail to 13 px row titles and 10.5–12.5 px captions, and
+  lifted the register prose, tables, cards and drawer text toward the plan's
+  12–13 px caption / 14–16 px body scale. The full 14–16 px body remains a
+  Release 4.3 item.
+- Desktop and mobile smoke tests pass with no horizontal overflow at 390 px in
+  either locale. No data or payload change.
+
 ## 2026-11-09 — Eight PKPN priorities
 
 - Added `pkpn_programmes.csv` (eight 2027 Program Kerja Prioritas Nasional with

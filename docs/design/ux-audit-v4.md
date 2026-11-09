@@ -73,7 +73,7 @@ corridor group opens the matching corridor. Fuzzy ranking is still open.
 | Pri | Finding | Why it matters | Next action |
 |---|---|---|---|
 | Medium | 228 project summaries are generated from fields, not written by an editor | The text is factual but telegraphic and does not explain why a project matters | Review the flagship and high-traffic summaries; keep the generated text for the long tail |
-| High | Explore still uses 9.5–12.5 px for dense rail rows | The plan targets a 14–16 px body and 12–13 px captions | Raise the rail type scale and re-test 320/390 px overflow |
+| Medium | Explore now uses 13 px row titles and 10.5–12.5 px captions; the 14–16 px body scale is not complete | The plan targets a 14–16 px body and 12–13 px captions | Finish the body scale in Release 4.3 and re-test 320/390 px overflow |
 | Medium | Search ranking is still token containment, with no edit distance or arrow-key result navigation | Grouped counts and synonyms fix discovery, but typo tolerance and keyboard result movement remain | Add fuzzy ranking and result-list arrow navigation |
 | Medium | Data coverage `reference_set`, download labels/meta and dictionary descriptions remain English in the ID edition | These are methodological strings, not proper names | Move coverage labels and download labels into the catalogue; translate dictionary descriptions in Release 4.4 |
 | Medium | No sortable table component in Data | The charts and tables are readable, but headers do not sort | Add sortable headers and a column chooser |

@@ -2034,6 +2034,42 @@ svg { display: block; }
 
 /* ---------- Responsive: narrow desktop ---------- */
 
+/* ---------- V4 type scale ---------- */
+/* Raise the dense rail and register text toward the plan's 12-13 px caption
+   and 14-16 px body scale without changing layout structure. */
+.row-title { font-size: 13px; }
+.row-sub,
+.row-figure { font-size: 10.5px; }
+.chip { font-size: 10.5px; }
+.filter-label { font-size: 10.5px; }
+.search-group { font-size: 11px; }
+.header-stat { font-size: 12px; }
+.tab { font-size: 12px; }
+.data-view .lede,
+.data-section p,
+.estate-tools p,
+.programme-hero .lede { font-size: 12.5px; }
+.coverage-table { font-size: 11.5px; }
+.conflict-table { font-size: 11px; }
+.dictionary table { font-size: 10.5px; }
+.dictionary summary span { font-size: 9.5px; }
+.programme-summary { font-size: 12px; }
+.estate-name,
+.company-name { font-size: 13px; }
+.estate-sub { font-size: 11px; }
+.company-role-list li { font-size: 11px; }
+.company-role-list span,
+.company-count { font-size: 10.5px; }
+.corridor-def,
+.corridor-meta { font-size: 11.5px; }
+.source-list,
+.notes-callout,
+.basis { font-size: 11.5px; }
+.detail-section p { font-size: 12px; }
+.evidence-list li { font-size: 11.5px; }
+.timeline-body { font-size: 11px; }
+.data-stat .k { font-size: 10px; }
+
 @media (max-width: 1180px) {
   .header-stat:nth-child(2) { display: none; }
 }
