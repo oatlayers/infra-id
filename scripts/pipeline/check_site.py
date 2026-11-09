@@ -21,7 +21,9 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from data_model import CURATED, ROOT, SITE_DATA, SITE_DOWNLOADS, read_csv
 
 SITE = ROOT / "site"
-INDEX = SITE / "index.html"
+INDEX = SITE / "app.html"
+CHOOSER = SITE / "index.html"
+LOCALES = ("en", "id")
 errors: list[str] = []
 
 
@@ -39,16 +41,21 @@ def load_global(path: Path, name: str):
 
 
 def check_local_assets() -> None:
-    html = INDEX.read_text(encoding="utf-8")
-    for match in re.finditer(r'(?:src|href)="([^"]+)"', html):
-        target = match.group(1)
-        if target.startswith(("#", "data:", "http://", "https://", "//", "mailto:")):
+    pages = [SITE / locale / "index.html" for locale in LOCALES] + [CHOOSER]
+    for page in pages:
+        if not page.exists():
+            err(f"{page.relative_to(SITE)}: page is missing")
             continue
-        path = (SITE / target.split("?")[0]).resolve()
-        if not path.exists():
-            err(f"index.html: missing local asset {target}")
+        html = page.read_text(encoding="utf-8")
+        for match in re.finditer(r'(?:src|href)="([^"]+)"', html):
+            target = match.group(1)
+            if target.startswith(("#", "data:", "http://", "https://", "//", "mailto:")):
+                continue
+            path = (page.parent / target.split("?")[0]).resolve()
+            if not path.exists():
+                err(f"{page.relative_to(SITE)}: missing local asset {target}")
 
-    for name in ("app.js", "map.js", "constants.js"):
+    for name in ("app.js", "map.js", "constants.js", "i18n.js"):
         text = (SITE / "assets" / name).read_text(encoding="utf-8")
         if re.search(r"\bfetch\s*\(", text):
             err(f"assets/{name}: uses fetch(), which file:// blocks")
@@ -60,6 +67,71 @@ def check_local_assets() -> None:
     css = (SITE / "assets" / "app.css").read_text(encoding="utf-8")
     if re.search(r"url\(\s*['\"]?https?://", css):
         err("assets/app.css: loads a remote URL")
+
+
+def check_i18n() -> None:
+    payloads = {}
+    for locale in LOCALES:
+        path = SITE_DATA / f"i18n.{locale}.js"
+        if not path.exists():
+            err(f"i18n.{locale}.js: missing")
+            continue
+        payload = load_global(path, "INFRA_I18N")
+        payloads[locale] = payload
+        if payload.get("locale") != locale:
+            err(f"i18n.{locale}.js: locale is {payload.get('locale')!r}")
+        messages = payload.get("messages") or {}
+        if not messages:
+            err(f"i18n.{locale}.js: empty message catalogue")
+        blank = [key for key, value in messages.items() if not str(value).strip()]
+        if blank:
+            err(f"i18n.{locale}.js: blank messages {blank[:5]}")
+        entities = payload.get("entities") or {}
+        if not entities:
+            err(f"i18n.{locale}.js: empty entity map")
+
+    if len(payloads) == len(LOCALES):
+        en_keys = set(payloads["en"].get("messages", {}))
+        id_keys = set(payloads["id"].get("messages", {}))
+        if en_keys != id_keys:
+            err(
+                "i18n: catalogue key mismatch; "
+                f"missing id {sorted(en_keys - id_keys)[:5]}, missing en {sorted(id_keys - en_keys)[:5]}"
+            )
+        for locale in LOCALES:
+            project_entities = [
+                key for key in payloads[locale].get("entities", {}) if key.startswith("project:")
+            ]
+            if len(project_entities) != 228:
+                err(f"i18n.{locale}.js: {len(project_entities)} project entities, expected 228")
+            programme_entities = [
+                key for key in payloads[locale].get("entities", {}) if key.startswith("programme:")
+            ]
+            if len(programme_entities) != 24:
+                err(f"i18n.{locale}.js: {len(programme_entities)} programme entities, expected 24")
+
+    for locale in LOCALES:
+        page = (SITE / locale / "index.html").read_text(encoding="utf-8")
+        for needle in (
+            f'<html lang="{locale}"',
+            f'data/i18n.{locale}.js',
+            'window.ATLAS_BASE = "../"',
+            'data-lang-target="en"',
+            'data-lang-target="id"',
+            'hreflang="en"',
+            'hreflang="id"',
+        ):
+            if needle not in page:
+                err(f"site/{locale}/index.html: missing {needle!r}")
+        if re.search(r'(?:src|href)="(?:assets|vendor|data)/', page):
+            err(f"site/{locale}/index.html: a root-relative asset path is still present")
+
+    chooser = CHOOSER.read_text(encoding="utf-8")
+    for needle in ('href="en/index.html"', 'href="id/index.html"', 'hreflang="en"', 'hreflang="id"'):
+        if needle not in chooser:
+            err(f"site/index.html: missing {needle!r}")
+    if re.search(r'(?:src|href)="(?:https?:)?//', chooser):
+        err("site/index.html: chooser references a remote host")
 
 
 def main() -> None:
@@ -210,6 +282,23 @@ def main() -> None:
         err("programme-claims.csv: unknown programme id")
 
     check_local_assets()
+    check_i18n()
+
+    # The payload budget tracks the browser data payload, matching the plan's
+    # earlier 1,224 KB runtime / 3,152 KB total figures. Fonts, the app shell
+    # and the bundled Leaflet runtime are cached assets, not data.
+    initial_files = [path for path in SITE_DATA.glob("*") if path.is_file()]
+    initial_bytes = sum(path.stat().st_size for path in initial_files)
+    download_bytes = sum(
+        path.stat().st_size for path in SITE_DOWNLOADS.glob("*") if path.is_file()
+    )
+    if initial_bytes > 1_500_000:
+        err(f"payload: initial {initial_bytes / 1024:.0f} KB exceeds the 1.5 MB budget")
+    if initial_bytes + download_bytes > 5_000_000:
+        err(
+            f"payload: total {(initial_bytes + download_bytes) / 1024:.0f} KB "
+            "exceeds the 5 MB budget"
+        )
 
     if errors:
         print(f"{len(errors)} site error(s):")
@@ -226,7 +315,8 @@ def main() -> None:
     print(
         f"OK: {len(features)} projects, {len(estate_payload)} estates, "
         f"{len(corridor_payload)} corridors, {len(claim_rows)} claims, "
-        f"{len(conflicts)} conflicts; site payload {size / 1024:.0f} KB"
+        f"{len(conflicts)} conflicts; runtime {initial_bytes / 1024:.0f} KB, "
+        f"total {(initial_bytes + download_bytes) / 1024:.0f} KB"
     )
 
 

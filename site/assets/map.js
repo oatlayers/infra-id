@@ -5,6 +5,19 @@
   const A = window.ATLAS || {};
   const STATUS = A.STATUS || {};
   const STATUS_ORDER = A.STATUS_ORDER || [];
+  const I18N = window.AtlasI18n || {};
+
+  function tt(key, vars) {
+    return I18N.t ? I18N.t(key, vars) : key;
+  }
+
+  function projectName(project) {
+    return I18N.entityName ? I18N.entityName('project', project) : project.name;
+  }
+
+  function statusLabel(status) {
+    return I18N.t ? I18N.t('status.' + status + '.label') : status;
+  }
   const SECTOR_ICON = {};
   Object.keys(A.SECTORS || {}).forEach(function (key) {
     SECTOR_ICON[key] = A.SECTORS[key].icon;
@@ -70,8 +83,8 @@
     return L.divIcon({
       className: 'cluster-icon',
       html:
-        '<div class="cluster" role="img" aria-label="Cluster of ' + children.length +
-        ' projects" style="--ring:' + ring + '"><span>' +
+        '<div class="cluster" role="img" aria-label="' + escapeHtml(tt('map.cluster', { count: children.length })) +
+        '" style="--ring:' + ring + '"><span>' +
         children.length + '</span></div>',
       iconSize: [42, 42],
       iconAnchor: [21, 21]
@@ -174,7 +187,8 @@
     }).addTo(map);
 
     map.attributionControl.addAttribution(
-      'Basemap: <a href="https://www.naturalearthdata.com/">Natural Earth</a> (public domain)'
+      escapeHtml(tt('map.basemap')) +
+      ' <a href="https://www.naturalearthdata.com/">Natural Earth</a>'
     );
 
     addCityLabels(basemap);
@@ -202,8 +216,8 @@
   function markerFor(project) {
     const marker = L.marker([project.lat, project.lon], {
       icon: pinIcon(project, project.id === selectedId),
-      title: project.name + ' — ' + ((STATUS[project.status] && STATUS[project.status].label) || project.status),
-      alt: project.name + ' — ' + ((STATUS[project.status] && STATUS[project.status].label) || project.status),
+      title: projectName(project) + ' — ' + statusLabel(project.status),
+      alt: projectName(project) + ' — ' + statusLabel(project.status),
       riseOnHover: true,
       keyboard: true,
       projectStatus: project.status
@@ -292,7 +306,7 @@
       opacity: 1
     })
       .setLatLng(latlng)
-      .setContent(escapeHtml(project.name))
+      .setContent(escapeHtml(projectName(project)))
       .addTo(map);
   }
 

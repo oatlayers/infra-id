@@ -11,6 +11,14 @@ atlas itself; this page is the map for the working documents.
 | [`plan/plan.md`](plan/plan.md) | Current V4 plan: national delivery atlas, 226 PSN projects + 24 programmes, bilingual UI, map and Data-view rebuild. |
 | [`plan/plan-v3.md`](plan/plan-v3.md) | Completed three-phase overhaul backlog: site experience, data completeness and trust. |
 
+## Design
+
+| File | Contents |
+|---|---|
+| [`design/tokens-v4.md`](design/tokens-v4.md) | Token values, type scale, layout, bilingual surface and contrast baseline. |
+| [`design/style-tile.html`](design/style-tile.html) | Live specimen that imports `site/assets/tokens.css` and `app.css`. |
+| [`design/ux-audit-v4.md`](design/ux-audit-v4.md) | Expert audit, five-profile rehearsal, open findings and the five-user protocol. |
+
 ## Phase records
 
 | File | Contents |
@@ -29,6 +37,9 @@ atlas itself; this page is the map for the working documents.
 | [`../data/curated/psn_register.csv`](../data/curated/psn_register.csv) | Official Permenko 16/2025 annex: 226 active projects, 24 active programmes and 3 deleted slots. |
 | [`../data/curated/programmes.csv`](../data/curated/programmes.csv) | The 24 active PSN programmes with bilingual names, summaries, theme, lead agency and source. |
 | [`../data/curated/programme_projects.csv`](../data/curated/programme_projects.csv) | Seven structural links between programmes and atlas projects. |
+| [`../data/curated/translations.csv`](../data/curated/translations.csv) | Reviewed entity text and official Indonesian names used by the bilingual build. |
+| [`../data/i18n/ui.en.json`](../data/i18n/ui.en.json) | English UI catalogue: 541 semantic keys. |
+| [`../data/i18n/ui.id.json`](../data/i18n/ui.id.json) | Indonesian UI catalogue: the same 541 keys. |
 | [`../data/curated/estates.csv`](../data/curated/estates.csv) | 204 industrial estates and SEZs, including eight reviewed and 18 register-only PSN industrial areas. |
 | [`../data/derived/psn_reconciliation.csv`](../data/derived/psn_reconciliation.csv) | Match ledger: 226 of 226 active PSN project or estate records represented and all 24 programmes matched; 88 projects and 18 estates are register-only. |
 
@@ -40,9 +51,11 @@ atlas itself; this page is the map for the working documents.
 
 ## Evidence
 
-`evidence/phase-3/` contains the desktop and mobile screenshots and the browser
-smoke report produced for the Phase 3 local release. The report records zero
-external requests and zero console errors.
+`evidence/phase-3/` contains the desktop and mobile screenshots, the English and
+Indonesian views, the language chooser, the browser smoke report and the
+five-profile UX rehearsal. The report records zero external requests and zero
+console errors. The screenshots are evidence for the 9 November 2026 V4
+bilingual shell.
 
 ## Reading order
 
@@ -53,7 +66,9 @@ external requests and zero console errors.
    history behind the current build.
 4. [`phases/phase-3-trust.md`](phases/phase-3-trust.md) for how facts are sourced
    and verified.
-5. [`operations/refresh-runbook.md`](operations/refresh-runbook.md) before
+5. [`design/ux-audit-v4.md`](design/ux-audit-v4.md) for the current usability
+   findings and the open five-user study.
+6. [`operations/refresh-runbook.md`](operations/refresh-runbook.md) before
    refreshing any source.
 
 The release is local only: there is no remote, push or Pages deployment.

@@ -134,6 +134,23 @@ PROGRAMME_SOURCE_FIELDS = [
     "programme_id", "source_id", "claim", "claim_value", "claim_date", "notes",
 ]
 
+# Schema v4 translation layer. Entity text that is not already carried in a
+# bilingual curated field lives here. ``text`` is the display value; proper
+# names may be identical in both locales and still need a row so the build can
+# prove the field was considered.
+TRANSLATION_FIELDS = [
+    "entity_type", "entity_id", "field", "locale", "text", "status",
+    "translator", "reviewed_on", "source_id",
+]
+TRANSLATION_ENTITY_TYPES = {"project", "programme", "corridor", "estate"}
+TRANSLATION_FIELDS_BY_ENTITY = {
+    "project": {"name", "summary"},
+    "programme": {"name", "summary", "target_summary"},
+    "corridor": {"name", "definition"},
+    "estate": {"name", "summary"},
+}
+TRANSLATION_STATUSES = {"official", "reviewed", "draft", "machine", "missing"}
+
 SECTORS = {
     "road", "railway", "airport", "seaport", "factory", "energy", "water",
     "urban", "coastal", "housing", "technology", "education", "tourism",
@@ -255,6 +272,7 @@ TABLES = {
     "programmes.csv": PROGRAMME_FIELDS,
     "programme_projects.csv": PROGRAMME_PROJECT_FIELDS,
     "programme_sources.csv": PROGRAMME_SOURCE_FIELDS,
+    "translations.csv": TRANSLATION_FIELDS,
 }
 
 

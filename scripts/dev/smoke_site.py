@@ -30,7 +30,9 @@ from playwright.sync_api import Page, sync_playwright
 ROOT = Path(__file__).resolve().parents[2]
 SITE = ROOT / "site"
 EVIDENCE = ROOT / "docs" / "evidence" / "phase-3"
-FILE_URL = (SITE / "index.html").as_uri()
+FILE_URL = (SITE / "en" / "index.html").as_uri()
+ID_FILE_URL = (SITE / "id" / "index.html").as_uri()
+CHOOSER_URL = (SITE / "index.html").as_uri()
 
 STATS_TEXT = (SITE / "data" / "stats.js").read_text(encoding="utf-8")
 STATS = json.loads(re.search(r"window\.INFRA_STATS\s*=\s*(\{.*\});?", STATS_TEXT, re.S).group(1))
@@ -91,6 +93,62 @@ def screenshot(page: Page, name: str) -> None:
 def tab(page: Page, view: str) -> None:
     page.click(f'[data-view="{view}"]')
     page.wait_for_timeout(250)
+
+
+def locale_shell(page: Page) -> None:
+    page.goto(CHOOSER_URL)
+    page.wait_for_selector(".choice")
+    check(page.locator(".choice").count() == 2, "Language chooser offers two editions")
+    check(page.locator('a[href="en/index.html"]').count() == 1, "Chooser links to English")
+    check(page.locator('a[href="id/index.html"]').count() == 1, "Chooser links to Indonesian")
+    screenshot(page, "00-language-chooser.png")
+
+    page.click('a[href="id/index.html"]')
+    page.wait_for_selector(".project-row")
+    page.wait_for_timeout(900)
+    check(page.evaluate("document.documentElement.lang") == "id",
+          "Indonesian edition sets html lang=id")
+    check("Jelajahi" in page.locator(".tabs").inner_text(),
+          "Indonesian edition translates the navigation")
+    check(page.locator("#stat-projects").inner_text() == TOTAL,
+          f"Indonesian edition loads {TOTAL} projects")
+    check(page.locator(".project-row").count() == int(TOTAL),
+          f"Indonesian edition lists {TOTAL} project rows")
+    check("proyek" in page.locator("#result-count").inner_text().lower(),
+          "Indonesian edition translates the result count")
+    check(page.locator("#search").get_attribute("placeholder").startswith("Cari"),
+          "Indonesian edition translates the search placeholder")
+    screenshot(page, "08-explore-id-desktop.png")
+
+    page.goto(ID_FILE_URL + "#/programmes")
+    page.wait_for_selector(".programme-card")
+    page.wait_for_timeout(400)
+    check(page.locator(".programme-card").count() == int(PROGRAMMES),
+          f"Indonesian edition renders {PROGRAMMES} programme cards")
+    screenshot(page, "08b-programmes-id-desktop.png")
+
+    page.goto(ID_FILE_URL + "#/estates")
+    page.wait_for_selector(".estate-row")
+    page.wait_for_timeout(400)
+    check(page.locator(".estate-row").count() == int(ESTATES),
+          f"Indonesian edition renders {ESTATES} estate rows")
+    screenshot(page, "08c-estates-id-desktop.png")
+
+    page.goto(ID_FILE_URL + "#/data")
+    page.wait_for_selector(".data-view")
+    page.wait_for_timeout(400)
+    check("Data dan metode" in page.locator(".data-view").inner_text(),
+          "Indonesian edition translates the Data view")
+    check(page.locator(".dictionary details").count() == 23,
+          "Indonesian edition renders 23 dictionary tables")
+    screenshot(page, "08d-data-id-desktop.png")
+    page.click('[data-lang-target="en"]')
+    page.wait_for_selector(".data-view")
+    page.wait_for_timeout(500)
+    check(page.evaluate("document.documentElement.lang") == "en",
+          "Language switch returns to English")
+    check("#/data" in page.url, "Language switch preserves the current view")
+    report["locales"] = {"chooser": True, "en": True, "id": True}  # type: ignore[index]
 
 
 def desktop_views(page: Page) -> None:
@@ -156,7 +214,7 @@ def desktop_views(page: Page) -> None:
 
     tab(page, "data")
     check(page.locator(".conflict-table tbody tr").count() == 19, "Conflict register has 19 rows")
-    check(page.locator(".dictionary details").count() == 22, "Data dictionary has 22 tables")
+    check(page.locator(".dictionary details").count() == 23, "Data dictionary has 23 tables")
     check(page.locator('a.download[href]').count() == 16, "Data view has 16 static downloads")
     check("programme register" in page.locator(".data-view").inner_text().lower(),
           "Data view has a programme register section")
@@ -169,7 +227,7 @@ def desktop_views(page: Page) -> None:
     check(f"{TOTAL} / {TOTAL}" in page.locator(".data-view").inner_text(), f"Claims coverage is {TOTAL} / {TOTAL}")
     report["views"]["data"] = {  # type: ignore[index]
         "conflicts": 19,
-        "dictionary_tables": 22,
+        "dictionary_tables": 23,
         "download_controls": 19,
     }
     screenshot(page, "04-data-desktop.png")
@@ -263,9 +321,9 @@ def desktop_downloads(page: Page) -> None:
     }
 
     page.goto(FILE_URL + "#/data")
-    page.wait_for_selector('a[download][href="downloads/claims.csv"]')
+    page.wait_for_selector('a[download][href="../downloads/claims.csv"]')
     with page.expect_download() as claims_info:
-        page.click('a[download][href="downloads/claims.csv"]')
+        page.click('a[download][href="../downloads/claims.csv"]')
     claims_download = claims_info.value
     claims_rows = read_csv_download(claims_download)
     check(len(claims_rows) == STATS["claims"]["total"], f"Static claims CSV has {STATS['claims']['total']} rows")
@@ -299,6 +357,15 @@ def mobile(page: Page) -> None:
     check(page.locator(".conflict-table tbody tr").count() == 19, "Mobile Data view renders conflicts")
     screenshot(page, "07-data-mobile.png")
 
+    page.goto(ID_FILE_URL + "#/explore")
+    page.wait_for_selector(".project-row")
+    page.wait_for_timeout(700)
+    check("Jelajahi" in page.locator(".tabs").inner_text(),
+          "Mobile Indonesian edition translates the navigation")
+    width = page.evaluate("document.documentElement.scrollWidth")
+    check(width <= 391, f"Mobile Indonesian layout has no horizontal overflow (width {width})")
+    screenshot(page, "08e-explore-id-mobile.png")
+
 
 class QuietHandler(SimpleHTTPRequestHandler):
     def log_message(self, *args):  # noqa: D401 - silence the test server
@@ -312,13 +379,20 @@ def http_check(page: Page) -> None:
     thread.start()
     try:
         port = server.server_address[1]
-        page.goto(f"http://127.0.0.1:{port}/index.html#/data")
+        page.goto(f"http://127.0.0.1:{port}/en/index.html#/data")
         page.wait_for_selector(".data-view")
         page.wait_for_timeout(500)
         check(page.locator("#stat-projects").inner_text() == TOTAL,
               f"Local HTTP server serves the {TOTAL}-project build")
         check(page.locator(".conflict-table tbody tr").count() == 19,
               "Local HTTP build renders 19 conflicts")
+        page.goto(f"http://127.0.0.1:{port}/id/index.html#/explore")
+        page.wait_for_selector(".project-row")
+        page.wait_for_timeout(500)
+        check("Jelajahi" in page.locator(".tabs").inner_text(),
+              "Local HTTP server serves the Indonesian edition")
+        check(page.locator("#stat-projects").inner_text() == TOTAL,
+              f"Indonesian HTTP build loads {TOTAL} projects")
         report["protocols"]["http"] = {"port": port, "ok": True}  # type: ignore[index]
     finally:
         server.shutdown()
@@ -336,6 +410,7 @@ def main() -> None:
         page = browser.new_page(viewport={"width": 1440, "height": 900})
         watch(page, external, console, page_errors)
 
+        locale_shell(page)
         desktop_views(page)
         desktop_drawer(page)
         desktop_keyboard(page)

@@ -1,0 +1,1485 @@
+entity_type,entity_id,field,locale,state,note
+programme,prog-electricity,name,en,source,src-permenko-16-2025
+programme,prog-electricity,summary,en,source,src-permenko-16-2025
+programme,prog-electricity,target_summary,en,not_published,No target in the annex.
+programme,prog-economic-equity,name,en,source,src-permenko-16-2025
+programme,prog-economic-equity,summary,en,source,src-permenko-16-2025
+programme,prog-economic-equity,target_summary,en,not_published,No target in the annex.
+programme,prog-border-areas,name,en,source,src-permenko-16-2025
+programme,prog-border-areas,summary,en,source,src-permenko-16-2025
+programme,prog-border-areas,target_summary,en,not_published,No target in the annex.
+programme,prog-toll-exit-access,name,en,source,src-permenko-16-2025
+programme,prog-toll-exit-access,summary,en,source,src-permenko-16-2025
+programme,prog-toll-exit-access,target_summary,en,not_published,No target in the annex.
+programme,prog-national-tourism-areas,name,en,source,src-permenko-16-2025
+programme,prog-national-tourism-areas,summary,en,source,src-permenko-16-2025
+programme,prog-national-tourism-areas,target_summary,en,not_published,No target in the annex.
+programme,prog-smelters,name,en,source,src-permenko-16-2025
+programme,prog-smelters,summary,en,source,src-permenko-16-2025
+programme,prog-smelters,target_summary,en,not_published,No target in the annex.
+programme,prog-food-supply,name,en,source,src-permenko-16-2025
+programme,prog-food-supply,summary,en,source,src-permenko-16-2025
+programme,prog-food-supply,target_summary,en,not_published,No target in the annex.
+programme,prog-superhub,name,en,source,src-permenko-16-2025
+programme,prog-superhub,summary,en,source,src-permenko-16-2025
+programme,prog-superhub,target_summary,en,not_published,No target in the annex.
+programme,prog-accelerated-regions,name,en,source,src-permenko-16-2025
+programme,prog-accelerated-regions,summary,en,source,src-permenko-16-2025
+programme,prog-accelerated-regions,target_summary,en,not_published,No target in the annex.
+programme,prog-special-economic-zones,name,en,source,src-permenko-16-2025
+programme,prog-special-economic-zones,summary,en,source,src-permenko-16-2025
+programme,prog-special-economic-zones,target_summary,en,not_published,No target in the annex.
+programme,prog-sugar-palm-downstreaming,name,en,source,src-permenko-16-2025
+programme,prog-sugar-palm-downstreaming,summary,en,source,src-permenko-16-2025
+programme,prog-sugar-palm-downstreaming,target_summary,en,not_published,No target in the annex.
+programme,prog-eco-city,name,en,source,src-permenko-16-2025
+programme,prog-eco-city,summary,en,source,src-permenko-16-2025
+programme,prog-eco-city,target_summary,en,not_published,No target in the annex.
+programme,prog-tourism-aviation,name,en,source,src-permenko-16-2025
+programme,prog-tourism-aviation,summary,en,source,src-permenko-16-2025
+programme,prog-tourism-aviation,target_summary,en,not_published,No target in the annex.
+programme,prog-toll-operation,name,en,source,src-permenko-16-2025
+programme,prog-toll-operation,summary,en,source,src-permenko-16-2025
+programme,prog-toll-operation,target_summary,en,not_published,No target in the annex.
+programme,prog-jakarta-flood-control,name,en,source,src-permenko-16-2025
+programme,prog-jakarta-flood-control,summary,en,source,src-permenko-16-2025
+programme,prog-jakarta-flood-control,target_summary,en,not_published,No target in the annex.
+programme,prog-free-nutritious-meals,name,en,source,src-permenko-16-2025
+programme,prog-free-nutritious-meals,summary,en,source,src-permenko-16-2025
+programme,prog-free-nutritious-meals,target_summary,en,not_published,No target in the annex.
+programme,prog-peoples-schools,name,en,source,src-permenko-16-2025
+programme,prog-peoples-schools,summary,en,source,src-permenko-16-2025
+programme,prog-peoples-schools,target_summary,en,not_published,No target in the annex.
+programme,prog-village-cooperatives,name,en,source,src-permenko-16-2025
+programme,prog-village-cooperatives,summary,en,source,src-permenko-16-2025
+programme,prog-village-cooperatives,target_summary,en,not_published,No target in the annex.
+programme,prog-education-digitalisation,name,en,source,src-permenko-16-2025
+programme,prog-education-digitalisation,summary,en,source,src-permenko-16-2025
+programme,prog-education-digitalisation,target_summary,en,not_published,No target in the annex.
+programme,prog-poverty-reduction,name,en,source,src-permenko-16-2025
+programme,prog-poverty-reduction,summary,en,source,src-permenko-16-2025
+programme,prog-poverty-reduction,target_summary,en,not_published,No target in the annex.
+programme,prog-integrated-waste,name,en,source,src-permenko-16-2025
+programme,prog-integrated-waste,summary,en,source,src-permenko-16-2025
+programme,prog-integrated-waste,target_summary,en,not_published,No target in the annex.
+programme,prog-merauke-food-energy-water,name,en,source,src-permenko-16-2025
+programme,prog-merauke-food-energy-water,summary,en,source,src-permenko-16-2025
+programme,prog-merauke-food-energy-water,target_summary,en,not_published,No target in the annex.
+programme,prog-pantura-ponds,name,en,source,src-permenko-16-2025
+programme,prog-pantura-ponds,summary,en,source,src-permenko-16-2025
+programme,prog-pantura-ponds,target_summary,en,not_published,No target in the annex.
+programme,prog-east-sumba-shrimp,name,en,source,src-permenko-16-2025
+programme,prog-east-sumba-shrimp,summary,en,source,src-permenko-16-2025
+programme,prog-east-sumba-shrimp,target_summary,en,not_published,No target in the annex.
+corridor,trans-sumatera,name,en,source,
+corridor,trans-sumatera,definition,en,source,
+corridor,trans-java,name,en,source,
+corridor,trans-java,definition,en,source,
+corridor,trans-sulawesi,name,en,source,
+corridor,trans-sulawesi,definition,en,source,
+corridor,trans-kalimantan,name,en,source,
+corridor,trans-kalimantan,definition,en,source,
+corridor,trans-papua,name,en,source,
+corridor,trans-papua,definition,en,source,
+project,tol-sigli-banda-aceh,name,en,source,
+project,tol-sigli-banda-aceh,summary,en,generated,Generated from curated fields; not editorial.
+project,tol-binjai-langsa,name,en,source,
+project,tol-binjai-langsa,summary,en,generated,Generated from curated fields; not editorial.
+project,tol-padang-pekanbaru,name,en,source,
+project,tol-padang-pekanbaru,summary,en,generated,Generated from curated fields; not editorial.
+project,tol-bengkulu-lubuk-linggau,name,en,source,
+project,tol-bengkulu-lubuk-linggau,summary,en,generated,Generated from curated fields; not editorial.
+project,tol-kayu-agung-palembang-betung,name,en,source,
+project,tol-kayu-agung-palembang-betung,summary,en,generated,Generated from curated fields; not editorial.
+project,tol-kuala-tanjung-tebing-tinggi-parapat,name,en,source,
+project,tol-kuala-tanjung-tebing-tinggi-parapat,summary,en,generated,Generated from curated fields; not editorial.
+project,tol-betung-tempino-jambi,name,en,source,
+project,tol-betung-tempino-jambi,summary,en,generated,Generated from curated fields; not editorial.
+project,tol-depok-antasari,name,en,source,
+project,tol-depok-antasari,summary,en,generated,Generated from curated fields; not editorial.
+project,tol-jakarta-inner-ring-road-2,name,en,source,
+project,tol-jakarta-inner-ring-road-2,summary,en,generated,Generated from curated fields; not editorial.
+project,tol-bekasi-cawang-kampung-melayu,name,en,source,
+project,tol-bekasi-cawang-kampung-melayu,summary,en,generated,Generated from curated fields; not editorial.
+project,tol-jakarta-harbour-road-2,name,en,source,
+project,tol-jakarta-harbour-road-2,summary,en,generated,Generated from curated fields; not editorial.
+project,tol-jakarta-cikampek-2-south,name,en,source,
+project,tol-jakarta-cikampek-2-south,summary,en,generated,Generated from curated fields; not editorial.
+project,tol-bogor-ring-road,name,en,source,
+project,tol-bogor-ring-road,summary,en,generated,Generated from curated fields; not editorial.
+project,tol-serang-panimbang,name,en,source,
+project,tol-serang-panimbang,summary,en,generated,Generated from curated fields; not editorial.
+project,tol-ciawi-sukabumi,name,en,source,
+project,tol-ciawi-sukabumi,summary,en,generated,Generated from curated fields; not editorial.
+project,tol-semarang-demak,name,en,source,
+project,tol-semarang-demak,summary,en,generated,Generated from curated fields; not editorial.
+project,tol-solo-yogyakarta-nyia,name,en,source,
+project,tol-solo-yogyakarta-nyia,summary,en,generated,Generated from curated fields; not editorial.
+project,tol-yogyakarta-bawen,name,en,source,
+project,tol-yogyakarta-bawen,summary,en,generated,Generated from curated fields; not editorial.
+project,tol-krian-legundi-bunder-manyar,name,en,source,
+project,tol-krian-legundi-bunder-manyar,summary,en,generated,Generated from curated fields; not editorial.
+project,tol-probolinggo-banyuwangi,name,en,source,
+project,tol-probolinggo-banyuwangi,summary,en,generated,Generated from curated fields; not editorial.
+project,tol-jorr-3,name,en,source,
+project,tol-jorr-3,summary,en,generated,Generated from curated fields; not editorial.
+project,tol-gedebage-tasikmalaya-cilacap,name,en,source,
+project,tol-gedebage-tasikmalaya-cilacap,summary,en,generated,Generated from curated fields; not editorial.
+project,tol-demak-tuban,name,en,source,
+project,tol-demak-tuban,summary,en,generated,Generated from curated fields; not editorial.
+project,tol-semarang-kendal,name,en,source,
+project,tol-semarang-kendal,summary,en,generated,Generated from curated fields; not editorial.
+project,tol-pejagan-tegal-cilacap,name,en,source,
+project,tol-pejagan-tegal-cilacap,summary,en,generated,Generated from curated fields; not editorial.
+project,tol-cilacap-yogyakarta,name,en,source,
+project,tol-cilacap-yogyakarta,summary,en,generated,Generated from curated fields; not editorial.
+project,tol-gilimanuk-mengwi,name,en,source,
+project,tol-gilimanuk-mengwi,summary,en,generated,Generated from curated fields; not editorial.
+project,air-yogyakarta-international,name,en,source,
+project,air-yogyakarta-international,summary,en,generated,Generated from curated fields; not editorial.
+project,air-komodo-labuan-bajo,name,en,source,
+project,air-komodo-labuan-bajo,summary,en,generated,Generated from curated fields; not editorial.
+project,air-lombok-praya,name,en,source,
+project,air-lombok-praya,summary,en,generated,Generated from curated fields; not editorial.
+project,air-nabire,name,en,source,
+project,air-nabire,summary,en,generated,Generated from curated fields; not editorial.
+project,air-siboru-fakfak,name,en,source,
+project,air-siboru-fakfak,summary,en,generated,Generated from curated fields; not editorial.
+project,air-kediri,name,en,source,
+project,air-kediri,summary,en,generated,Generated from curated fields; not editorial.
+project,air-raja-haji-abdullah-karimun,name,en,source,
+project,air-raja-haji-abdullah-karimun,summary,en,generated,Generated from curated fields; not editorial.
+project,port-kek-maloy,name,en,source,
+project,port-kek-maloy,summary,en,generated,Generated from curated fields; not editorial.
+project,port-labuan-bajo-multipurpose,name,en,source,
+project,port-labuan-bajo-multipurpose,summary,en,generated,Generated from curated fields; not editorial.
+project,port-bitung,name,en,source,
+project,port-bitung,summary,en,generated,Generated from curated fields; not editorial.
+project,port-kupang,name,en,source,
+project,port-kupang,summary,en,generated,Generated from curated fields; not editorial.
+project,port-kuala-tanjung,name,en,source,
+project,port-kuala-tanjung,summary,en,generated,Generated from curated fields; not editorial.
+project,port-kijing,name,en,source,
+project,port-kijing,summary,en,generated,Generated from curated fields; not editorial.
+project,port-sanur,name,en,source,
+project,port-sanur,summary,en,generated,Generated from curated fields; not editorial.
+project,port-likupang,name,en,source,
+project,port-likupang,summary,en,generated,Generated from curated fields; not editorial.
+project,port-makassar-new-port,name,en,source,
+project,port-makassar-new-port,summary,en,generated,Generated from curated fields; not editorial.
+project,port-teluk-palu,name,en,source,
+project,port-teluk-palu,summary,en,generated,Generated from curated fields; not editorial.
+project,port-sorong,name,en,source,
+project,port-sorong,summary,en,generated,Generated from curated fields; not editorial.
+project,port-patimban,name,en,source,
+project,port-patimban,summary,en,generated,Generated from curated fields; not editorial.
+project,port-benoa,name,en,source,
+project,port-benoa,summary,en,generated,Generated from curated fields; not editorial.
+project,port-palembang-baru,name,en,source,
+project,port-palembang-baru,summary,en,generated,Generated from curated fields; not editorial.
+project,port-muaro-jambi,name,en,source,
+project,port-muaro-jambi,summary,en,generated,Generated from curated fields; not editorial.
+project,rail-lrt-sumsel,name,en,source,
+project,rail-lrt-sumsel,summary,en,generated,Generated from curated fields; not editorial.
+project,rail-double-track-java-south,name,en,source,
+project,rail-double-track-java-south,summary,en,generated,Generated from curated fields; not editorial.
+project,rail-tebing-tinggi-kuala-tanjung,name,en,source,
+project,rail-tebing-tinggi-kuala-tanjung,summary,en,generated,Generated from curated fields; not editorial.
+project,rail-yogyakarta-airport,name,en,source,
+project,rail-yogyakarta-airport,summary,en,generated,Generated from curated fields; not editorial.
+project,rail-makassar-parepare,name,en,source,
+project,rail-makassar-parepare,summary,en,generated,Generated from curated fields; not editorial.
+project,rail-lrt-jabodebek,name,en,source,
+project,rail-lrt-jabodebek,summary,en,generated,Generated from curated fields; not editorial.
+project,rail-kcj-jakarta-bandung,name,en,source,
+project,rail-kcj-jakarta-bandung,summary,en,generated,Generated from curated fields; not editorial.
+project,rail-rantau-prapat-kota-pinang,name,en,source,
+project,rail-rantau-prapat-kota-pinang,summary,en,generated,Generated from curated fields; not editorial.
+project,rail-lahat-kertapati,name,en,source,
+project,rail-lahat-kertapati,summary,en,generated,Generated from curated fields; not editorial.
+project,rail-kaltim-logistics,name,en,source,
+project,rail-kaltim-logistics,summary,en,generated,Generated from curated fields; not editorial.
+project,rail-mrt-jakarta-north-south,name,en,source,
+project,rail-mrt-jakarta-north-south,summary,en,generated,Generated from curated fields; not editorial.
+project,rail-mrt-jakarta-east-west,name,en,source,
+project,rail-mrt-jakarta-east-west,summary,en,generated,Generated from curated fields; not editorial.
+project,rail-lrt-jakarta-velodrome-manggarai,name,en,source,
+project,rail-lrt-jakarta-velodrome-manggarai,summary,en,generated,Generated from curated fields; not editorial.
+project,tol-simpang-indralaya-muara-enim,name,en,source,
+project,tol-simpang-indralaya-muara-enim,summary,en,generated,Generated from curated fields; not editorial.
+project,tol-serpong-balaraja,name,en,source,
+project,tol-serpong-balaraja,summary,en,generated,Generated from curated fields; not editorial.
+project,tol-cileunyi-sumedang-dawuan,name,en,source,
+project,tol-cileunyi-sumedang-dawuan,summary,en,generated,Generated from curated fields; not editorial.
+project,tol-cibitung-cilincing,name,en,source,
+project,tol-cibitung-cilincing,summary,en,generated,Generated from curated fields; not editorial.
+project,tol-cengkareng-batu-ceper-kunciran,name,en,source,
+project,tol-cengkareng-batu-ceper-kunciran,summary,en,generated,Generated from curated fields; not editorial.
+project,tol-pekanbaru-kandis-dumai,name,en,source,
+project,tol-pekanbaru-kandis-dumai,summary,en,generated,Generated from curated fields; not editorial.
+project,tol-manado-bitung,name,en,source,
+project,tol-manado-bitung,summary,en,generated,Generated from curated fields; not editorial.
+project,tol-balikpapan-samarinda,name,en,source,
+project,tol-balikpapan-samarinda,summary,en,generated,Generated from curated fields; not editorial.
+project,tol-kunciran-serpong,name,en,source,
+project,tol-kunciran-serpong,summary,en,generated,Generated from curated fields; not editorial.
+project,tol-pasuruan-probolinggo,name,en,source,
+project,tol-pasuruan-probolinggo,summary,en,generated,Generated from curated fields; not editorial.
+project,tol-pandaan-malang,name,en,source,
+project,tol-pandaan-malang,summary,en,generated,Generated from curated fields; not editorial.
+project,tol-ngawi-kertosono-kediri,name,en,source,
+project,tol-ngawi-kertosono-kediri,summary,en,generated,Generated from curated fields; not editorial.
+project,tol-medan-binjai,name,en,source,
+project,tol-medan-binjai,summary,en,generated,Generated from curated fields; not editorial.
+project,tol-akses-tanjung-priok,name,en,source,
+project,tol-akses-tanjung-priok,summary,en,generated,Generated from curated fields; not editorial.
+project,tol-cinere-jagorawi,name,en,source,
+project,tol-cinere-jagorawi,summary,en,generated,Generated from curated fields; not editorial.
+project,factory-freeport-manyar-smelter,name,en,source,
+project,factory-freeport-manyar-smelter,summary,en,generated,Generated from curated fields; not editorial.
+project,factory-pt-smelting-gresik,name,en,source,
+project,factory-pt-smelting-gresik,summary,en,generated,Generated from curated fields; not editorial.
+project,factory-amman-copper-smelter,name,en,source,
+project,factory-amman-copper-smelter,summary,en,generated,Generated from curated fields; not editorial.
+project,factory-itss-morowali,name,en,source,
+project,factory-itss-morowali,summary,en,generated,Generated from curated fields; not editorial.
+project,factory-dexin-steel-morowali,name,en,source,
+project,factory-dexin-steel-morowali,summary,en,generated,Generated from curated fields; not editorial.
+project,factory-huafei-hpal-iwip,name,en,source,
+project,factory-huafei-hpal-iwip,summary,en,generated,Generated from curated fields; not editorial.
+project,factory-angel-nickel-iwip,name,en,source,
+project,factory-angel-nickel-iwip,summary,en,generated,Generated from curated fields; not editorial.
+project,factory-hpl-obi,name,en,source,
+project,factory-hpl-obi,summary,en,generated,Generated from curated fields; not editorial.
+project,factory-onc-obi,name,en,source,
+project,factory-onc-obi,summary,en,generated,Generated from curated fields; not editorial.
+project,factory-vdni-konawe,name,en,source,
+project,factory-vdni-konawe,summary,en,generated,Generated from curated fields; not editorial.
+project,factory-oss-konawe,name,en,source,
+project,factory-oss-konawe,summary,en,generated,Generated from curated fields; not editorial.
+project,factory-gni-morowali,name,en,source,
+project,factory-gni-morowali,summary,en,generated,Generated from curated fields; not editorial.
+project,factory-huadi-bantaeng,name,en,source,
+project,factory-huadi-bantaeng,summary,en,generated,Generated from curated fields; not editorial.
+project,factory-vale-pomalaa-hpal,name,en,source,
+project,factory-vale-pomalaa-hpal,summary,en,generated,Generated from curated fields; not editorial.
+project,factory-vale-bahodopi-hpal,name,en,source,
+project,factory-vale-bahodopi-hpal,summary,en,generated,Generated from curated fields; not editorial.
+project,factory-vale-sorowako-hpal,name,en,source,
+project,factory-vale-sorowako-hpal,summary,en,generated,Generated from curated fields; not editorial.
+project,factory-whw-ketapang,name,en,source,
+project,factory-whw-ketapang,summary,en,generated,Generated from curated fields; not editorial.
+project,factory-sgar-mempawah,name,en,source,
+project,factory-sgar-mempawah,summary,en,generated,Generated from curated fields; not editorial.
+project,factory-inalum-kuala-tanjung,name,en,source,
+project,factory-inalum-kuala-tanjung,summary,en,generated,Generated from curated fields; not editorial.
+project,factory-krakatau-steel-cilegon,name,en,source,
+project,factory-krakatau-steel-cilegon,summary,en,generated,Generated from curated fields; not editorial.
+project,factory-gunung-raja-paksi,name,en,source,
+project,factory-gunung-raja-paksi,summary,en,generated,Generated from curated fields; not editorial.
+project,factory-btr-kendal,name,en,source,
+project,factory-btr-kendal,summary,en,generated,Generated from curated fields; not editorial.
+project,factory-catl-cbl-karawang,name,en,source,
+project,factory-catl-cbl-karawang,summary,en,generated,Generated from curated fields; not editorial.
+project,factory-lotte-line-cilegon,name,en,source,
+project,factory-lotte-line-cilegon,summary,en,generated,Generated from curated fields; not editorial.
+project,factory-chandra-asri-cilegon,name,en,source,
+project,factory-chandra-asri-cilegon,summary,en,generated,Generated from curated fields; not editorial.
+project,factory-oki-pulp,name,en,source,
+project,factory-oki-pulp,summary,en,generated,Generated from curated fields; not editorial.
+project,factory-pupuk-kaltim-bontang,name,en,source,
+project,factory-pupuk-kaltim-bontang,summary,en,generated,Generated from curated fields; not editorial.
+project,tol-lhokseumawe-sigli,name,en,source,
+project,tol-lhokseumawe-sigli,summary,en,generated,Generated from curated fields; not editorial.
+project,tol-langsa-lhokseumawe,name,en,source,
+project,tol-langsa-lhokseumawe,summary,en,generated,Generated from curated fields; not editorial.
+project,tol-muara-enim-lubuk-linggau,name,en,source,
+project,tol-muara-enim-lubuk-linggau,summary,en,generated,Generated from curated fields; not editorial.
+project,urban-ikn-phase-2,name,en,source,
+project,urban-ikn-phase-2,summary,en,generated,Generated from curated fields; not editorial.
+project,air-nusantara-ikn,name,en,source,
+project,air-nusantara-ikn,summary,en,generated,Generated from curated fields; not editorial.
+project,energy-masela-abadi-lng,name,en,source,
+project,energy-masela-abadi-lng,summary,en,generated,Generated from curated fields; not editorial.
+project,energy-rdmp-balikpapan,name,en,source,
+project,energy-rdmp-balikpapan,summary,en,generated,Generated from curated fields; not editorial.
+project,energy-plts-100gw-phase-1,name,en,source,
+project,energy-plts-100gw-phase-1,summary,en,generated,Generated from curated fields; not editorial.
+project,energy-hilirisasi-2-01-dumai-gasoline,name,en,source,
+project,energy-hilirisasi-2-01-dumai-gasoline,summary,en,generated,Generated from curated fields; not editorial.
+project,energy-hilirisasi-2-02-cilacap-gasoline,name,en,source,
+project,energy-hilirisasi-2-02-cilacap-gasoline,summary,en,generated,Generated from curated fields; not editorial.
+project,energy-hilirisasi-2-03-palaran-fuel-terminal,name,en,source,
+project,energy-hilirisasi-2-03-palaran-fuel-terminal,summary,en,generated,Generated from curated fields; not editorial.
+project,energy-hilirisasi-2-04-biak-fuel-terminal,name,en,source,
+project,energy-hilirisasi-2-04-biak-fuel-terminal,summary,en,generated,Generated from curated fields; not editorial.
+project,energy-hilirisasi-2-05-maumere-fuel-terminal,name,en,source,
+project,energy-hilirisasi-2-05-maumere-fuel-terminal,summary,en,generated,Generated from curated fields; not editorial.
+project,energy-hilirisasi-2-06-tanjung-enim-dme,name,en,source,
+project,energy-hilirisasi-2-06-tanjung-enim-dme,summary,en,generated,Generated from curated fields; not editorial.
+project,factory-hilirisasi-2-07-imip-stainless-steel,name,en,source,
+project,factory-hilirisasi-2-07-imip-stainless-steel,summary,en,generated,Generated from curated fields; not editorial.
+project,factory-hilirisasi-2-08-cilegon-carbon-steel,name,en,source,
+project,factory-hilirisasi-2-08-cilegon-carbon-steel,summary,en,generated,Generated from curated fields; not editorial.
+project,factory-hilirisasi-2-09-karawang-buton-asphalt,name,en,source,
+project,factory-hilirisasi-2-09-karawang-buton-asphalt,summary,en,generated,Generated from curated fields; not editorial.
+project,factory-hilirisasi-2-10-gresik-copper-gold,name,en,source,
+project,factory-hilirisasi-2-10-gresik-copper-gold,summary,en,generated,Generated from curated fields; not editorial.
+project,factory-hilirisasi-2-11-sei-mangkei-oleofood,name,en,source,
+project,factory-hilirisasi-2-11-sei-mangkei-oleofood,summary,en,generated,Generated from curated fields; not editorial.
+project,factory-hilirisasi-2-12-central-maluku-nutmeg,name,en,source,
+project,factory-hilirisasi-2-12-central-maluku-nutmeg,summary,en,generated,Generated from curated fields; not editorial.
+project,factory-hilirisasi-2-13-central-maluku-coconut,name,en,source,
+project,factory-hilirisasi-2-13-central-maluku-coconut,summary,en,generated,Generated from curated fields; not editorial.
+project,dam-meninting,name,en,source,
+project,dam-meninting,summary,en,generated,Generated from curated fields; not editorial.
+project,dam-keureuto,name,en,source,
+project,dam-keureuto,summary,en,generated,Generated from curated fields; not editorial.
+project,dam-rukoh,name,en,source,
+project,dam-rukoh,summary,en,generated,Generated from curated fields; not editorial.
+project,dam-jlantah,name,en,source,
+project,dam-jlantah,summary,en,generated,Generated from curated fields; not editorial.
+project,dam-sidan,name,en,source,
+project,dam-sidan,summary,en,generated,Generated from curated fields; not editorial.
+project,coastal-java-sea-wall,name,en,source,
+project,coastal-java-sea-wall,summary,en,generated,Generated from curated fields; not editorial.
+project,tol-kisaran-tebing-tinggi,name,en,source,
+project,tol-kisaran-tebing-tinggi,summary,en,generated,Generated from curated fields; not editorial.
+project,tol-jambi-rengat,name,en,source,
+project,tol-jambi-rengat,summary,en,generated,Generated from curated fields; not editorial.
+project,tol-rengat-pekanbaru,name,en,source,
+project,tol-rengat-pekanbaru,summary,en,generated,Generated from curated fields; not editorial.
+project,tol-serpong-cinere,name,en,source,
+project,tol-serpong-cinere,summary,en,generated,Generated from curated fields; not editorial.
+project,tol-cimanggis-cibitung,name,en,source,
+project,tol-cimanggis-cibitung,summary,en,generated,Generated from curated fields; not editorial.
+project,flyover-teluk-lamong,name,en,source,
+project,flyover-teluk-lamong,summary,en,generated,Generated from curated fields; not editorial.
+project,tol-akses-patimban,name,en,source,
+project,tol-akses-patimban,summary,en,generated,Generated from curated fields; not editorial.
+project,tol-new-priok-eastern-access,name,en,source,
+project,tol-new-priok-eastern-access,summary,en,generated,Generated from curated fields; not editorial.
+project,tol-bandung-inner-city,name,en,source,
+project,tol-bandung-inner-city,summary,en,generated,Generated from curated fields; not editorial.
+project,psn-131-rumah-susun-public-housing-construction,name,en,source,
+project,psn-131-rumah-susun-public-housing-construction,summary,en,generated,Generated from curated fields; not editorial.
+project,psn-132-self-help-housing-assistance-programme,name,en,source,
+project,psn-132-self-help-housing-assistance-programme,summary,en,generated,Generated from curated fields; not editorial.
+project,psn-133-marangkayu-dam,name,en,source,
+project,psn-133-marangkayu-dam,summary,en,generated,Generated from curated fields; not editorial.
+project,psn-134-kuningan-dam,name,en,source,
+project,psn-134-kuningan-dam,summary,en,generated,Generated from curated fields; not editorial.
+project,psn-135-bendo-dam,name,en,source,
+project,psn-135-bendo-dam,summary,en,generated,Generated from curated fields; not editorial.
+project,psn-136-gongseng-dam,name,en,source,
+project,psn-136-gongseng-dam,summary,en,generated,Generated from curated fields; not editorial.
+project,psn-137-tukul-dam,name,en,source,
+project,psn-137-tukul-dam,summary,en,generated,Generated from curated fields; not editorial.
+project,psn-138-pidekso-dam,name,en,source,
+project,psn-138-pidekso-dam,summary,en,generated,Generated from curated fields; not editorial.
+project,psn-139-tugu-dam,name,en,source,
+project,psn-139-tugu-dam,summary,en,generated,Generated from curated fields; not editorial.
+project,psn-140-karalloe-dam,name,en,source,
+project,psn-140-karalloe-dam,summary,en,generated,Generated from curated fields; not editorial.
+project,psn-142-tapin-dam,name,en,source,
+project,psn-142-tapin-dam,summary,en,generated,Generated from curated fields; not editorial.
+project,psn-143-passeloreng-dam,name,en,source,
+project,psn-143-passeloreng-dam,summary,en,generated,Generated from curated fields; not editorial.
+project,psn-144-lolak-dam,name,en,source,
+project,psn-144-lolak-dam,summary,en,generated,Generated from curated fields; not editorial.
+project,psn-145-bintang-bano-dam,name,en,source,
+project,psn-145-bintang-bano-dam,summary,en,generated,Generated from curated fields; not editorial.
+project,psn-146-karian-dam,name,en,source,
+project,psn-146-karian-dam,summary,en,generated,Generated from curated fields; not editorial.
+project,psn-148-way-sekampung-dam,name,en,source,
+project,psn-148-way-sekampung-dam,summary,en,generated,Generated from curated fields; not editorial.
+project,psn-149-kuwil-kawangkoan-dam,name,en,source,
+project,psn-149-kuwil-kawangkoan-dam,summary,en,generated,Generated from curated fields; not editorial.
+project,psn-150-ladongi-dam,name,en,source,
+project,psn-150-ladongi-dam,summary,en,generated,Generated from curated fields; not editorial.
+project,psn-151-ciawi-dam,name,en,source,
+project,psn-151-ciawi-dam,summary,en,generated,Generated from curated fields; not editorial.
+project,psn-152-sukamahi-dam,name,en,source,
+project,psn-152-sukamahi-dam,summary,en,generated,Generated from curated fields; not editorial.
+project,psn-153-leuwikeris-dam,name,en,source,
+project,psn-153-leuwikeris-dam,summary,en,generated,Generated from curated fields; not editorial.
+project,psn-154-cipanas-dam,name,en,source,
+project,psn-154-cipanas-dam,summary,en,generated,Generated from curated fields; not editorial.
+project,psn-155-tiga-dihaji-dam,name,en,source,
+project,psn-155-tiga-dihaji-dam,summary,en,generated,Generated from curated fields; not editorial.
+project,psn-156-semantok-dam,name,en,source,
+project,psn-156-semantok-dam,summary,en,generated,Generated from curated fields; not editorial.
+project,psn-157-pamukkulu-dam,name,en,source,
+project,psn-157-pamukkulu-dam,summary,en,generated,Generated from curated fields; not editorial.
+project,psn-158-bener-dam,name,en,source,
+project,psn-158-bener-dam,summary,en,generated,Generated from curated fields; not editorial.
+project,psn-159-sadawarna-dam,name,en,source,
+project,psn-159-sadawarna-dam,summary,en,generated,Generated from curated fields; not editorial.
+project,psn-160-lausimeme-dam,name,en,source,
+project,psn-160-lausimeme-dam,summary,en,generated,Generated from curated fields; not editorial.
+project,psn-162-marga-tiga-dam,name,en,source,
+project,psn-162-marga-tiga-dam,summary,en,generated,Generated from curated fields; not editorial.
+project,psn-163-bagong-dam,name,en,source,
+project,psn-163-bagong-dam,summary,en,generated,Generated from curated fields; not editorial.
+project,psn-164-randugunting-dam,name,en,source,
+project,psn-164-randugunting-dam,summary,en,generated,Generated from curated fields; not editorial.
+project,psn-165-mbay-dam,name,en,source,
+project,psn-165-mbay-dam,summary,en,generated,Generated from curated fields; not editorial.
+project,psn-166-bulango-ulu-dam,name,en,source,
+project,psn-166-bulango-ulu-dam,summary,en,generated,Generated from curated fields; not editorial.
+project,psn-167-napun-gete-dam,name,en,source,
+project,psn-167-napun-gete-dam,summary,en,generated,Generated from curated fields; not editorial.
+project,psn-168-temef-dam,name,en,source,
+project,psn-168-temef-dam,summary,en,generated,Generated from curated fields; not editorial.
+project,psn-169-way-apu-dam,name,en,source,
+project,psn-169-way-apu-dam,summary,en,generated,Generated from curated fields; not editorial.
+project,psn-171-tamblang-dam,name,en,source,
+project,psn-171-tamblang-dam,summary,en,generated,Generated from curated fields; not editorial.
+project,psn-172-beringin-sila-dam,name,en,source,
+project,psn-172-beringin-sila-dam,summary,en,generated,Generated from curated fields; not editorial.
+project,psn-173-tiu-suntuk-dam,name,en,source,
+project,psn-173-tiu-suntuk-dam,summary,en,generated,Generated from curated fields; not editorial.
+project,psn-174-manikin-dam,name,en,source,
+project,psn-174-manikin-dam,summary,en,generated,Generated from curated fields; not editorial.
+project,psn-176-jragung-dam,name,en,source,
+project,psn-176-jragung-dam,summary,en,generated,Generated from curated fields; not editorial.
+project,psn-177-sepaku-semoi-dam,name,en,source,
+project,psn-177-sepaku-semoi-dam,summary,en,generated,Generated from curated fields; not editorial.
+project,psn-178-budong-budong-dam,name,en,source,
+project,psn-178-budong-budong-dam,summary,en,generated,Generated from curated fields; not editorial.
+project,psn-179-ameroro-dam,name,en,source,
+project,psn-179-ameroro-dam,summary,en,generated,Generated from curated fields; not editorial.
+project,psn-180-karangnongko-dam,name,en,source,
+project,psn-180-karangnongko-dam,summary,en,generated,Generated from curated fields; not editorial.
+project,psn-181-lhok-guci-irrigation-network,name,en,source,
+project,psn-181-lhok-guci-irrigation-network,summary,en,generated,Generated from curated fields; not editorial.
+project,psn-182-jambo-aye-kanan-irrigation-network,name,en,source,
+project,psn-182-jambo-aye-kanan-irrigation-network,summary,en,generated,Generated from curated fields; not editorial.
+project,psn-183-lematang-irrigation-network,name,en,source,
+project,psn-183-lematang-irrigation-network,summary,en,generated,Generated from curated fields; not editorial.
+project,psn-184-baliase-irrigation-dam-and-network,name,en,source,
+project,psn-184-baliase-irrigation-dam-and-network,summary,en,generated,Generated from curated fields; not editorial.
+project,psn-185-gumbasa-irrigation-network-rehabilitation,name,en,source,
+project,psn-185-gumbasa-irrigation-network-rehabilitation,summary,en,generated,Generated from curated fields; not editorial.
+project,psn-186-rentang-irrigation-network-rehabilitation,name,en,source,
+project,psn-186-rentang-irrigation-network-rehabilitation,summary,en,generated,Generated from curated fields; not editorial.
+project,psn-187-glapan-irrigation-network-rehabilitation,name,en,source,
+project,psn-187-glapan-irrigation-network-rehabilitation,summary,en,generated,Generated from curated fields; not editorial.
+project,psn-188-komering-irrigation-network-development-and-management,name,en,source,
+project,psn-188-komering-irrigation-network-development-and-management,summary,en,generated,Generated from curated fields; not editorial.
+project,psn-189-bintan-bay-estuary-dam-and-drinking-water-supply-system,name,en,source,
+project,psn-189-bintan-bay-estuary-dam-and-drinking-water-supply-system,summary,en,generated,Generated from curated fields; not editorial.
+project,psn-190-semarang-west-drinking-water-supply-system-spam,name,en,source,
+project,psn-190-semarang-west-drinking-water-supply-system-spam,summary,en,generated,Generated from curated fields; not editorial.
+project,psn-191-umbulan-drinking-water-supply-system-spam,name,en,source,
+project,psn-191-umbulan-drinking-water-supply-system-spam,summary,en,generated,Generated from curated fields; not editorial.
+project,psn-192-bandar-lampung-drinking-water-supply-system-spam,name,en,source,
+project,psn-192-bandar-lampung-drinking-water-supply-system-spam,summary,en,generated,Generated from curated fields; not editorial.
+project,psn-193-jatiluhur-regional-drinking-water-supply-system-spam,name,en,source,
+project,psn-193-jatiluhur-regional-drinking-water-supply-system-spam,summary,en,generated,Generated from curated fields; not editorial.
+project,psn-194-wosusokas-regional-drinking-water-supply-system-spam,name,en,source,
+project,psn-194-wosusokas-regional-drinking-water-supply-system-spam,summary,en,generated,Generated from curated fields; not editorial.
+project,psn-195-karian-serpong-regional-drinking-water-supply-system-sp,name,en,source,
+project,psn-195-karian-serpong-regional-drinking-water-supply-system-sp,summary,en,generated,Generated from curated fields; not editorial.
+project,psn-196-benteng-kobema-regional-drinking-water-supply-system-sp,name,en,source,
+project,psn-196-benteng-kobema-regional-drinking-water-supply-system-sp,summary,en,generated,Generated from curated fields; not editorial.
+project,psn-197-karian-raw-water-infrastructure,name,en,source,
+project,psn-197-karian-raw-water-infrastructure,summary,en,generated,Generated from curated fields; not editorial.
+project,psn-198-jakarta-sewerage-system-jss,name,en,source,
+project,psn-198-jakarta-sewerage-system-jss,summary,en,generated,Generated from curated fields; not editorial.
+project,psn-201-gendalo-gandang-gehem-and-bangka-field-development-idd,name,en,source,
+project,psn-201-gendalo-gandang-gehem-and-bangka-field-development-idd,summary,en,generated,Generated from curated fields; not editorial.
+project,psn-202-tangguh-lng-train-3,name,en,source,
+project,psn-202-tangguh-lng-train-3,summary,en,generated,Generated from curated fields; not editorial.
+project,psn-203-jambaran-tiung-biru-gas-field-unitisation,name,en,source,
+project,psn-203-jambaran-tiung-biru-gas-field-unitisation,summary,en,generated,Generated from curated fields; not editorial.
+project,psn-204-ubadari-field-development-ccus-and-compression-ucc-telu,name,en,source,
+project,psn-204-ubadari-field-development-ccus-and-compression-ucc-telu,summary,en,generated,Generated from curated fields; not editorial.
+project,psn-205-asap-kido-and-merah-gas-field-development-akm,name,en,source,
+project,psn-205-asap-kido-and-merah-gas-field-development-akm,summary,en,generated,Generated from curated fields; not editorial.
+project,psn-206-tuban-oil-refinery-expansion,name,en,source,
+project,psn-206-tuban-oil-refinery-expansion,summary,en,generated,Generated from curated fields; not editorial.
+project,psn-208-balongan-refinery-upgrade-rdmp-and-petrochemical-indust,name,en,source,
+project,psn-208-balongan-refinery-upgrade-rdmp-and-petrochemical-indust,summary,en,generated,Generated from curated fields; not editorial.
+project,psn-209-fuel-storage-tank-construction,name,en,source,
+project,psn-209-fuel-storage-tank-construction,summary,en,generated,Generated from curated fields; not editorial.
+project,psn-210-lpg-storage-tank-construction,name,en,source,
+project,psn-210-lpg-storage-tank-construction,summary,en,generated,Generated from curated fields; not editorial.
+project,psn-211-city-gas-network-construction,name,en,source,
+project,psn-211-city-gas-network-construction,summary,en,generated,Generated from curated fields; not editorial.
+project,psn-212-cirebon-semarang-and-sei-mangkei-dumai-gas-transmission,name,en,source,
+project,psn-212-cirebon-semarang-and-sei-mangkei-dumai-gas-transmission,summary,en,generated,Generated from curated fields; not editorial.
+project,psn-213-green-fuel-development-cilacap-plaju-and-pupuk-kujang,name,en,source,
+project,psn-213-green-fuel-development-cilacap-plaju-and-pupuk-kujang,summary,en,generated,Generated from curated fields; not editorial.
+project,psn-214-methanol-and-ethanol-based-biofuel-development-bojonego,name,en,source,
+project,psn-214-methanol-and-ethanol-based-biofuel-development-bojonego,summary,en,generated,Generated from curated fields; not editorial.
+project,psn-216-coal-gasification-kutai-timur,name,en,source,
+project,psn-216-coal-gasification-kutai-timur,summary,en,generated,Generated from curated fields; not editorial.
+project,psn-217-north-hub-development-project-makassar-strait,name,en,source,
+project,psn-217-north-hub-development-project-makassar-strait,summary,en,generated,Generated from curated fields; not editorial.
+project,psn-218-accelerated-technopark-development,name,en,source,
+project,psn-218-accelerated-technopark-development,summary,en,generated,Generated from curated fields; not editorial.
+project,psn-219-multifunction-satellite-project,name,en,source,
+project,psn-219-multifunction-satellite-project,summary,en,generated,Generated from curated fields; not editorial.
+project,psn-220-male-combat-drone-development,name,en,source,
+project,psn-220-male-combat-drone-development,summary,en,generated,Generated from curated fields; not editorial.
+project,psn-221-ivo-and-palm-petrol-production-technology-with-merah-pu,name,en,source,
+project,psn-221-ivo-and-palm-petrol-production-technology-with-merah-pu,summary,en,generated,Generated from curated fields; not editorial.
+project,psn-222-salt-industry-development,name,en,source,
+project,psn-222-salt-industry-development,summary,en,generated,Generated from curated fields; not editorial.
+project,psn-223-palapa-ring-integration,name,en,source,
+project,psn-223-palapa-ring-integration,summary,en,generated,Generated from curated fields; not editorial.
+project,psn-224-indonesia-international-islamic-university-campus,name,en,source,
+project,psn-224-indonesia-international-islamic-university-campus,summary,en,generated,Generated from curated fields; not editorial.
+project,psn-225-thousand-islands-tourism-project-kepulauan-seribu,name,en,source,
+project,psn-225-thousand-islands-tourism-project-kepulauan-seribu,summary,en,generated,Generated from curated fields; not editorial.
+project,psn-227-coconut-development-and-downstream-industry,name,en,source,
+project,psn-227-coconut-development-and-downstream-industry,summary,en,generated,Generated from curated fields; not editorial.
+project,psn-228-tidal-and-lebak-swamp-mineral-soil-rice-field-developme,name,en,source,
+project,psn-228-tidal-and-lebak-swamp-mineral-soil-rice-field-developme,summary,en,generated,Generated from curated fields; not editorial.
+estate,sez-arun-lhokseumawe,name,en,source,
+estate,sez-batam-aero-technic,name,en,source,
+estate,sez-bitung,name,en,source,
+estate,sez-bumi-serpong-damai,name,en,source,
+estate,sez-kura-kura,name,en,source,
+estate,sez-lido,name,en,source,
+estate,sez-likupang,name,en,source,
+estate,sez-maloy-batuta,name,en,source,
+estate,sez-mandalika,name,en,source,
+estate,sez-morotai,name,en,source,
+estate,sez-nongsa,name,en,source,
+estate,sez-batam-tourism-and-international-healthcare,name,en,source,
+estate,sez-sanur,name,en,source,
+estate,sez-setangga,name,en,source,
+estate,sez-singhasari,name,en,source,
+estate,sez-sorong,name,en,source,
+estate,sez-tanjung-kelayang,name,en,source,
+estate,sez-tanjung-lesung,name,en,source,
+estate,ki-anugrah-sambalagi-industrial-park-asip,name,en,source,
+estate,ki-batamindo-industrial-park,name,en,source,
+estate,ki-batang-industrial-park,name,en,source,
+estate,ki-bekasi-international-industrial-estate,name,en,source,
+estate,ki-bintan-inti-industrial-estate,name,en,source,
+estate,ki-bintang-industrial-park,name,en,source,
+estate,ki-bsb-industrial-park,name,en,source,
+estate,ki-cammo-industrial-park,name,en,source,
+estate,ki-central-industrial-park,name,en,source,
+estate,ki-cibinong-center-industrial-estate,name,en,source,
+estate,ki-cp-industrial-estate,name,en,source,
+estate,ki-east-jakarta-industrial-park,name,en,source,
+estate,ki-eski-enam-sembilan-kawasan-industri,name,en,source,
+estate,ki-executive-industrial-park,name,en,source,
+estate,ki-greenland-international-industrial-center-giic,name,en,source,
+estate,ki-greenland-international-industrial-center-2-giic-2,name,en,source,
+estate,ki-griya-idola-industrial-park,name,en,source,
+estate,ki-hacaca-business-park,name,en,source,
+estate,ki-hijrah-industrial-park,name,en,source,
+estate,ki-indah-industrial-park,name,en,source,
+estate,ki-indonesia-huabao-industrial-park-ihip,name,en,source,
+estate,ki-indonesia-konawe-industrial-park,name,en,source,
+estate,ki-jakarta-industrial-estate-pulogadung,name,en,source,
+estate,ki-jatiluhur-industrial-smart-city,name,en,source,
+estate,ki-java-integrated-industrial-and-port-estate,name,en,source,
+estate,ki-jawa-tengah-land-industrial-park-sayung,name,en,source,
+estate,ki-kaltim-industrial-estate,name,en,source,
+estate,ki-karawang-international-industrial-city,name,en,source,
+estate,ki-karawang-international-industrial-city-2,name,en,source,
+estate,ki-karawang-international-industrial-city-3,name,en,source,
+estate,ki-karawang-jabar-industrial-estate,name,en,source,
+estate,ki-karawang-new-industrial-city,name,en,source,
+estate,ki-karimun-maritime-industrial-complex,name,en,source,
+estate,ki-kawasan-berikat-nusantara,name,en,source,
+estate,ki-kawasan-industri-and-pergudangan-cikupamas,name,en,source,
+estate,ki-kawasan-industri-aceh-ladong,name,en,source,
+estate,ki-kawasan-industri-artha-industrial-hill,name,en,source,
+estate,ki-kawasan-industri-artha-industrial-hill-2,name,en,source,
+estate,ki-kawasan-industri-aviarna,name,en,source,
+estate,ki-kawasan-industri-batulicin,name,en,source,
+estate,ki-kawasan-industri-batulicin-2,name,en,source,
+estate,ki-kawasan-industri-batulicin-3,name,en,source,
+estate,ki-kawasan-industri-batulicin-4,name,en,source,
+estate,ki-kawasan-industri-batulicin-5,name,en,source,
+estate,ki-kawasan-industri-batuta-bcip,name,en,source,
+estate,ki-kawasan-industri-blessindo,name,en,source,
+estate,ki-kawasan-industri-bolaang-mongondow-kimong,name,en,source,
+estate,ki-kawasan-industri-buli,name,en,source,
+estate,ki-kawasan-industri-cikembar,name,en,source,
+estate,ki-kawasan-industri-dan-pergudangan-taman-tekno-bsd,name,en,source,
+estate,ki-kawasan-industri-dumai,name,en,source,
+estate,ki-kawasan-industri-efi,name,en,source,
+estate,ki-kawasan-industri-gobel,name,en,source,
+estate,ki-kawasan-industri-indotaisei-kota-bukit-indah,name,en,source,
+estate,ki-kawasan-industri-intijaya-subang-industri,name,en,source,
+estate,ki-kawasan-industri-jababeka,name,en,source,
+estate,ki-kawasan-industri-jababeka-2,name,en,source,
+estate,ki-kawasan-industri-jababeka-3,name,en,source,
+estate,ki-kawasan-industri-jababeka-4,name,en,source,
+estate,ki-kawasan-industri-jorong,name,en,source,
+estate,ki-kawasan-industri-kariangau,name,en,source,
+estate,ki-kawasan-industri-kbs,name,en,source,
+estate,ki-kawasan-industri-konawe,name,en,source,
+estate,ki-kawasan-industri-kujang-cikampek,name,en,source,
+estate,ki-kawasan-industri-landak,name,en,source,
+estate,ki-kawasan-industri-lion,name,en,source,
+estate,ki-kawasan-industri-lippo-cikarang,name,en,source,
+estate,ki-kawasan-industri-makasar,name,en,source,
+estate,ki-kawasan-industri-marunda-center,name,en,source,
+estate,ki-kawasan-industri-marunda-center-2,name,en,source,
+estate,ki-kawasan-industri-medan,name,en,source,
+estate,ki-kawasan-industri-mitra-propindo-lestari,name,en,source,
+estate,ki-kawasan-industri-mitrakarawang,name,en,source,
+estate,ki-kawasan-industri-morowali,name,en,source,
+estate,ki-kawasan-industri-motui,name,en,source,
+estate,ki-kawasan-industri-nikomas-gemilang,name,en,source,
+estate,ki-kawasan-industri-pancapuri,name,en,source,
+estate,ki-kawasan-industri-pasar-kemis,name,en,source,
+estate,ki-kawasan-industri-piyungan-creative-economy-park,name,en,source,
+estate,ki-kawasan-industri-pulau-obi,name,en,source,
+estate,ki-kawasan-industri-rancaekek,name,en,source,
+estate,ki-kawasan-industri-royal-kosambi,name,en,source,
+estate,ki-kawasan-industri-sadai,name,en,source,
+estate,ki-kawasan-industri-safe-n-lock,name,en,source,
+estate,ki-kawasan-industri-sbs,name,en,source,
+estate,ki-kawasan-industri-sekupang-makmur-abadi,name,en,source,
+estate,ki-kawasan-industri-sentul,name,en,source,
+estate,ki-kawasan-industri-sidoarjo,name,en,source,
+estate,ki-kawasan-industri-sirie,name,en,source,
+estate,ki-kawasan-industri-ski,name,en,source,
+estate,ki-kawasan-industri-stardust,name,en,source,
+estate,ki-kawasan-industri-sumber-rezeki,name,en,source,
+estate,ki-kawasan-industri-surya-borneo,name,en,source,
+estate,ki-kawasan-industri-taifa,name,en,source,
+estate,ki-kawasan-industri-tanjung-buton,name,en,source,
+estate,ki-kawasan-industri-tanjung-enim,name,en,source,
+estate,ki-kawasan-industri-teluk-weda,name,en,source,
+estate,ki-kawasan-industri-tenayan,name,en,source,
+estate,ki-kawasan-industri-terboyo-semarang,name,en,source,
+estate,ki-kawasan-industri-terpadu-indonesia-china,name,en,source,
+estate,ki-kawasan-industri-terpadu-kabil-kitk,name,en,source,
+estate,ki-kawasan-industri-terpadu-kabil-kitk-2,name,en,source,
+estate,ki-kawasan-industri-terpadu-wilmar,name,en,source,
+estate,ki-kawasan-industri-tuban,name,en,source,
+estate,ki-kawasan-industri-tunas-prima,name,en,source,
+estate,ki-kawasan-industri-wijayakusuma,name,en,source,
+estate,ki-kawasan-pergudangan-dan-industri-kosambi-permai,name,en,source,
+estate,ki-kawasan-taman-industri-busan-kikm,name,en,source,
+estate,sez-galang-batang,name,en,source,
+estate,sez-gresik,name,en,source,
+estate,sez-industropolis-batang,name,en,source,
+estate,sez-kendal,name,en,source,
+estate,sez-palu,name,en,source,
+estate,sez-sei-mangkei,name,en,source,
+estate,sez-tanjung-sauh,name,en,source,
+estate,ki-kertajati-industrial-estate-majalengka,name,en,source,
+estate,ki-ketapang-ecology-and-agriculture-forestery-industrial-park,name,en,source,
+estate,ki-ki-candi-1,name,en,source,
+estate,ki-ki-candi-2,name,en,source,
+estate,ki-ki-takalar,name,en,source,
+estate,ki-ki-terpadu-cikaopark,name,en,source,
+estate,ki-kipi,name,en,source,
+estate,ki-kota-bukit-indah-industrial-city,name,en,source,
+estate,ki-krakatau-industrial-estate-cilegon,name,en,source,
+estate,ki-laksana-business-park,name,en,source,
+estate,ki-mandalapratama-permai-industrial-estate,name,en,source,
+estate,ki-maspion-industrial-estate,name,en,source,
+estate,ki-medanstar-industrial-estate,name,en,source,
+estate,ki-millenium-industrial-estate,name,en,source,
+estate,ki-mm2100-industrial-town-bfie,name,en,source,
+estate,ki-mm2100-industrial-town-bfie-2,name,en,source,
+estate,ki-mm2100-industrial-town-bfie-3,name,en,source,
+estate,ki-mm2100-industrial-town-mmid,name,en,source,
+estate,ki-modern-cikande-industrial-estate,name,en,source,
+estate,ki-modern-cikande-industrial-estate-2,name,en,source,
+estate,ki-modern-cikande-industrial-estate-3,name,en,source,
+estate,ki-neo-energy-parimo-industrial-estate,name,en,source,
+estate,ki-ngoro-industrial-park,name,en,source,
+estate,ki-ngoro-industrial-park-2,name,en,source,
+estate,ki-padang-industrial-park,name,en,source,
+estate,ki-panbil-industrial-estate,name,en,source,
+estate,ki-pasuruan-industrial-estate-rembang,name,en,source,
+estate,ki-pertiwi-lestari-industrial-estate,name,en,source,
+estate,ki-puri-industrial-park-2000,name,en,source,
+estate,ki-qingdao-indonesia-industrial-park,name,en,source,
+estate,ki-sarana-industrial-point,name,en,source,
+estate,ki-sebuku-indonesia-industrial-park,name,en,source,
+estate,ki-sidoarjo-industrial-estate-berbek,name,en,source,
+estate,ki-sinar-primera-industrial-karawang-eco-city-spike,name,en,source,
+estate,ki-surabaya-industrial-estate-rungkut,name,en,source,
+estate,ki-suryacipta-ie,name,en,source,
+estate,ki-suryacipta-subang-smartpolitan,name,en,source,
+estate,ki-suryacipta-subang-smartpolitan-2,name,en,source,
+estate,ki-suryacipta-subang-smartpolitan-3,name,en,source,
+estate,ki-suryacipta-subang-smartpolitan-4,name,en,source,
+estate,ki-suryacipta-subang-smartpolitan-5,name,en,source,
+estate,ki-taman-niaga-karawang-prima-gt-tech-park,name,en,source,
+estate,ki-tunas-industrial-estate,name,en,source,
+estate,ki-union-industrial-park,name,en,source,
+estate,ki-waylaga-bizpark,name,en,source,
+estate,ki-kawasan-industri-kuala-tanjung,name,en,source,
+estate,ki-kawasan-industri-bantaeng,name,en,source,
+estate,ki-indonesia-pomalaa-industry-park,name,en,source,
+estate,ki-indonesia-huali-industry-park,name,en,source,
+estate,ki-kawasan-industri-patimban-industrial-estate,name,en,source,
+estate,ki-neo-energy-morowali-industrial-estate,name,en,source,
+estate,ki-kawasan-industri-pulau-penebang,name,en,source,
+estate,ki-kawasan-industri-alumina-toba,name,en,source,
+estate,psn-estate-093-kawasan-industri-teluk-bintuni-dan-pengembangan-industr,name,en,source,
+estate,psn-estate-100-kawasan-terintegrasi-merak-bakauheni,name,en,source,
+estate,psn-estate-106-kawasan-industri-kendari,name,en,source,
+estate,psn-estate-107-kawasan-industri-pulau-ladi,name,en,source,
+estate,psn-estate-108-kawasan-industri-pupuk-fakfak,name,en,source,
+estate,psn-estate-110-kawasan-industri-indonesia-dahuaxing-industry-park-idip,name,en,source,
+estate,psn-estate-113-kawasan-industri-wiraraja-green-renewable-energy-smart,name,en,source,
+estate,psn-estate-116-kawasan-industri-indonesia-giga-industry-park-igip,name,en,source,
+estate,psn-estate-117-kawasan-industri-kolaka-resources-industrial-park-krip,name,en,source,
+estate,psn-estate-118-kawasan-industri-aspire-stargate-aspr,name,en,source,
+estate,psn-estate-120-pengembangan-kawasan-industri-toapaya-pulau-poto-dan-ka,name,en,source,
+estate,psn-estate-121-kawasan-pesisir-terpadu-surabaya-waterfront-land-swl,name,en,source,
+estate,psn-estate-123-kawasan-industri-tekno-hijau-konasara-kithk,name,en,source,
+estate,psn-estate-124-kawasan-industri-hijau-futong,name,en,source,
+estate,psn-estate-126-kawasan-industri-kumai-multi-energi,name,en,source,
+estate,psn-estate-128-kawasan-industri-indo-mineral-mining,name,en,source,
+estate,psn-estate-129-kawasan-industri-sungai-tabuk,name,en,source,
+estate,psn-estate-130-kawasan-industri-rimau,name,en,source,
+programme,prog-electricity,name,id,translated,src-permenko-16-2025
+programme,prog-electricity,summary,id,translated,src-permenko-16-2025
+programme,prog-electricity,target_summary,id,not_published,No target in the annex.
+programme,prog-economic-equity,name,id,translated,src-permenko-16-2025
+programme,prog-economic-equity,summary,id,translated,src-permenko-16-2025
+programme,prog-economic-equity,target_summary,id,not_published,No target in the annex.
+programme,prog-border-areas,name,id,translated,src-permenko-16-2025
+programme,prog-border-areas,summary,id,translated,src-permenko-16-2025
+programme,prog-border-areas,target_summary,id,not_published,No target in the annex.
+programme,prog-toll-exit-access,name,id,translated,src-permenko-16-2025
+programme,prog-toll-exit-access,summary,id,translated,src-permenko-16-2025
+programme,prog-toll-exit-access,target_summary,id,not_published,No target in the annex.
+programme,prog-national-tourism-areas,name,id,translated,src-permenko-16-2025
+programme,prog-national-tourism-areas,summary,id,translated,src-permenko-16-2025
+programme,prog-national-tourism-areas,target_summary,id,not_published,No target in the annex.
+programme,prog-smelters,name,id,translated,src-permenko-16-2025
+programme,prog-smelters,summary,id,translated,src-permenko-16-2025
+programme,prog-smelters,target_summary,id,not_published,No target in the annex.
+programme,prog-food-supply,name,id,translated,src-permenko-16-2025
+programme,prog-food-supply,summary,id,translated,src-permenko-16-2025
+programme,prog-food-supply,target_summary,id,not_published,No target in the annex.
+programme,prog-superhub,name,id,translated,src-permenko-16-2025
+programme,prog-superhub,summary,id,translated,src-permenko-16-2025
+programme,prog-superhub,target_summary,id,not_published,No target in the annex.
+programme,prog-accelerated-regions,name,id,translated,src-permenko-16-2025
+programme,prog-accelerated-regions,summary,id,translated,src-permenko-16-2025
+programme,prog-accelerated-regions,target_summary,id,not_published,No target in the annex.
+programme,prog-special-economic-zones,name,id,translated,src-permenko-16-2025
+programme,prog-special-economic-zones,summary,id,translated,src-permenko-16-2025
+programme,prog-special-economic-zones,target_summary,id,not_published,No target in the annex.
+programme,prog-sugar-palm-downstreaming,name,id,translated,src-permenko-16-2025
+programme,prog-sugar-palm-downstreaming,summary,id,translated,src-permenko-16-2025
+programme,prog-sugar-palm-downstreaming,target_summary,id,not_published,No target in the annex.
+programme,prog-eco-city,name,id,translated,src-permenko-16-2025
+programme,prog-eco-city,summary,id,translated,src-permenko-16-2025
+programme,prog-eco-city,target_summary,id,not_published,No target in the annex.
+programme,prog-tourism-aviation,name,id,translated,src-permenko-16-2025
+programme,prog-tourism-aviation,summary,id,translated,src-permenko-16-2025
+programme,prog-tourism-aviation,target_summary,id,not_published,No target in the annex.
+programme,prog-toll-operation,name,id,translated,src-permenko-16-2025
+programme,prog-toll-operation,summary,id,translated,src-permenko-16-2025
+programme,prog-toll-operation,target_summary,id,not_published,No target in the annex.
+programme,prog-jakarta-flood-control,name,id,translated,src-permenko-16-2025
+programme,prog-jakarta-flood-control,summary,id,translated,src-permenko-16-2025
+programme,prog-jakarta-flood-control,target_summary,id,not_published,No target in the annex.
+programme,prog-free-nutritious-meals,name,id,translated,src-permenko-16-2025
+programme,prog-free-nutritious-meals,summary,id,translated,src-permenko-16-2025
+programme,prog-free-nutritious-meals,target_summary,id,not_published,No target in the annex.
+programme,prog-peoples-schools,name,id,translated,src-permenko-16-2025
+programme,prog-peoples-schools,summary,id,translated,src-permenko-16-2025
+programme,prog-peoples-schools,target_summary,id,not_published,No target in the annex.
+programme,prog-village-cooperatives,name,id,translated,src-permenko-16-2025
+programme,prog-village-cooperatives,summary,id,translated,src-permenko-16-2025
+programme,prog-village-cooperatives,target_summary,id,not_published,No target in the annex.
+programme,prog-education-digitalisation,name,id,translated,src-permenko-16-2025
+programme,prog-education-digitalisation,summary,id,translated,src-permenko-16-2025
+programme,prog-education-digitalisation,target_summary,id,not_published,No target in the annex.
+programme,prog-poverty-reduction,name,id,translated,src-permenko-16-2025
+programme,prog-poverty-reduction,summary,id,translated,src-permenko-16-2025
+programme,prog-poverty-reduction,target_summary,id,not_published,No target in the annex.
+programme,prog-integrated-waste,name,id,translated,src-permenko-16-2025
+programme,prog-integrated-waste,summary,id,translated,src-permenko-16-2025
+programme,prog-integrated-waste,target_summary,id,not_published,No target in the annex.
+programme,prog-merauke-food-energy-water,name,id,translated,src-permenko-16-2025
+programme,prog-merauke-food-energy-water,summary,id,translated,src-permenko-16-2025
+programme,prog-merauke-food-energy-water,target_summary,id,not_published,No target in the annex.
+programme,prog-pantura-ponds,name,id,translated,src-permenko-16-2025
+programme,prog-pantura-ponds,summary,id,translated,src-permenko-16-2025
+programme,prog-pantura-ponds,target_summary,id,not_published,No target in the annex.
+programme,prog-east-sumba-shrimp,name,id,translated,src-permenko-16-2025
+programme,prog-east-sumba-shrimp,summary,id,translated,src-permenko-16-2025
+programme,prog-east-sumba-shrimp,target_summary,id,not_published,No target in the annex.
+corridor,trans-sumatera,name,id,source,
+corridor,trans-sumatera,definition,id,translated,
+corridor,trans-java,name,id,source,
+corridor,trans-java,definition,id,translated,
+corridor,trans-sulawesi,name,id,source,
+corridor,trans-sulawesi,definition,id,translated,
+corridor,trans-kalimantan,name,id,source,
+corridor,trans-kalimantan,definition,id,translated,
+corridor,trans-papua,name,id,source,
+corridor,trans-papua,definition,id,translated,
+project,tol-sigli-banda-aceh,name,id,translated,
+project,tol-sigli-banda-aceh,summary,id,generated,Generated from curated fields; not editorial.
+project,tol-binjai-langsa,name,id,translated,
+project,tol-binjai-langsa,summary,id,generated,Generated from curated fields; not editorial.
+project,tol-padang-pekanbaru,name,id,translated,
+project,tol-padang-pekanbaru,summary,id,generated,Generated from curated fields; not editorial.
+project,tol-bengkulu-lubuk-linggau,name,id,translated,
+project,tol-bengkulu-lubuk-linggau,summary,id,generated,Generated from curated fields; not editorial.
+project,tol-kayu-agung-palembang-betung,name,id,translated,
+project,tol-kayu-agung-palembang-betung,summary,id,generated,Generated from curated fields; not editorial.
+project,tol-kuala-tanjung-tebing-tinggi-parapat,name,id,translated,
+project,tol-kuala-tanjung-tebing-tinggi-parapat,summary,id,generated,Generated from curated fields; not editorial.
+project,tol-betung-tempino-jambi,name,id,translated,
+project,tol-betung-tempino-jambi,summary,id,generated,Generated from curated fields; not editorial.
+project,tol-depok-antasari,name,id,translated,
+project,tol-depok-antasari,summary,id,generated,Generated from curated fields; not editorial.
+project,tol-jakarta-inner-ring-road-2,name,id,translated,
+project,tol-jakarta-inner-ring-road-2,summary,id,generated,Generated from curated fields; not editorial.
+project,tol-bekasi-cawang-kampung-melayu,name,id,translated,
+project,tol-bekasi-cawang-kampung-melayu,summary,id,generated,Generated from curated fields; not editorial.
+project,tol-jakarta-harbour-road-2,name,id,translated,
+project,tol-jakarta-harbour-road-2,summary,id,generated,Generated from curated fields; not editorial.
+project,tol-jakarta-cikampek-2-south,name,id,translated,
+project,tol-jakarta-cikampek-2-south,summary,id,generated,Generated from curated fields; not editorial.
+project,tol-bogor-ring-road,name,id,translated,
+project,tol-bogor-ring-road,summary,id,generated,Generated from curated fields; not editorial.
+project,tol-serang-panimbang,name,id,translated,
+project,tol-serang-panimbang,summary,id,generated,Generated from curated fields; not editorial.
+project,tol-ciawi-sukabumi,name,id,translated,
+project,tol-ciawi-sukabumi,summary,id,generated,Generated from curated fields; not editorial.
+project,tol-semarang-demak,name,id,translated,
+project,tol-semarang-demak,summary,id,generated,Generated from curated fields; not editorial.
+project,tol-solo-yogyakarta-nyia,name,id,translated,
+project,tol-solo-yogyakarta-nyia,summary,id,generated,Generated from curated fields; not editorial.
+project,tol-yogyakarta-bawen,name,id,translated,
+project,tol-yogyakarta-bawen,summary,id,generated,Generated from curated fields; not editorial.
+project,tol-krian-legundi-bunder-manyar,name,id,translated,
+project,tol-krian-legundi-bunder-manyar,summary,id,generated,Generated from curated fields; not editorial.
+project,tol-probolinggo-banyuwangi,name,id,translated,
+project,tol-probolinggo-banyuwangi,summary,id,generated,Generated from curated fields; not editorial.
+project,tol-jorr-3,name,id,translated,
+project,tol-jorr-3,summary,id,generated,Generated from curated fields; not editorial.
+project,tol-gedebage-tasikmalaya-cilacap,name,id,translated,
+project,tol-gedebage-tasikmalaya-cilacap,summary,id,generated,Generated from curated fields; not editorial.
+project,tol-demak-tuban,name,id,translated,
+project,tol-demak-tuban,summary,id,generated,Generated from curated fields; not editorial.
+project,tol-semarang-kendal,name,id,translated,
+project,tol-semarang-kendal,summary,id,generated,Generated from curated fields; not editorial.
+project,tol-pejagan-tegal-cilacap,name,id,translated,
+project,tol-pejagan-tegal-cilacap,summary,id,generated,Generated from curated fields; not editorial.
+project,tol-cilacap-yogyakarta,name,id,translated,
+project,tol-cilacap-yogyakarta,summary,id,generated,Generated from curated fields; not editorial.
+project,tol-gilimanuk-mengwi,name,id,translated,
+project,tol-gilimanuk-mengwi,summary,id,generated,Generated from curated fields; not editorial.
+project,air-yogyakarta-international,name,id,translated,
+project,air-yogyakarta-international,summary,id,generated,Generated from curated fields; not editorial.
+project,air-komodo-labuan-bajo,name,id,translated,
+project,air-komodo-labuan-bajo,summary,id,generated,Generated from curated fields; not editorial.
+project,air-lombok-praya,name,id,translated,
+project,air-lombok-praya,summary,id,generated,Generated from curated fields; not editorial.
+project,air-nabire,name,id,translated,
+project,air-nabire,summary,id,generated,Generated from curated fields; not editorial.
+project,air-siboru-fakfak,name,id,translated,
+project,air-siboru-fakfak,summary,id,generated,Generated from curated fields; not editorial.
+project,air-kediri,name,id,translated,
+project,air-kediri,summary,id,generated,Generated from curated fields; not editorial.
+project,air-raja-haji-abdullah-karimun,name,id,translated,
+project,air-raja-haji-abdullah-karimun,summary,id,generated,Generated from curated fields; not editorial.
+project,port-kek-maloy,name,id,translated,
+project,port-kek-maloy,summary,id,generated,Generated from curated fields; not editorial.
+project,port-labuan-bajo-multipurpose,name,id,translated,
+project,port-labuan-bajo-multipurpose,summary,id,generated,Generated from curated fields; not editorial.
+project,port-bitung,name,id,translated,
+project,port-bitung,summary,id,generated,Generated from curated fields; not editorial.
+project,port-kupang,name,id,translated,
+project,port-kupang,summary,id,generated,Generated from curated fields; not editorial.
+project,port-kuala-tanjung,name,id,translated,
+project,port-kuala-tanjung,summary,id,generated,Generated from curated fields; not editorial.
+project,port-kijing,name,id,translated,
+project,port-kijing,summary,id,generated,Generated from curated fields; not editorial.
+project,port-sanur,name,id,translated,
+project,port-sanur,summary,id,generated,Generated from curated fields; not editorial.
+project,port-likupang,name,id,translated,
+project,port-likupang,summary,id,generated,Generated from curated fields; not editorial.
+project,port-makassar-new-port,name,id,translated,
+project,port-makassar-new-port,summary,id,generated,Generated from curated fields; not editorial.
+project,port-teluk-palu,name,id,translated,
+project,port-teluk-palu,summary,id,generated,Generated from curated fields; not editorial.
+project,port-sorong,name,id,translated,
+project,port-sorong,summary,id,generated,Generated from curated fields; not editorial.
+project,port-patimban,name,id,translated,
+project,port-patimban,summary,id,generated,Generated from curated fields; not editorial.
+project,port-benoa,name,id,translated,
+project,port-benoa,summary,id,generated,Generated from curated fields; not editorial.
+project,port-palembang-baru,name,id,translated,
+project,port-palembang-baru,summary,id,generated,Generated from curated fields; not editorial.
+project,port-muaro-jambi,name,id,translated,
+project,port-muaro-jambi,summary,id,generated,Generated from curated fields; not editorial.
+project,rail-lrt-sumsel,name,id,translated,
+project,rail-lrt-sumsel,summary,id,generated,Generated from curated fields; not editorial.
+project,rail-double-track-java-south,name,id,translated,
+project,rail-double-track-java-south,summary,id,generated,Generated from curated fields; not editorial.
+project,rail-tebing-tinggi-kuala-tanjung,name,id,translated,
+project,rail-tebing-tinggi-kuala-tanjung,summary,id,generated,Generated from curated fields; not editorial.
+project,rail-yogyakarta-airport,name,id,translated,
+project,rail-yogyakarta-airport,summary,id,generated,Generated from curated fields; not editorial.
+project,rail-makassar-parepare,name,id,translated,
+project,rail-makassar-parepare,summary,id,generated,Generated from curated fields; not editorial.
+project,rail-lrt-jabodebek,name,id,translated,
+project,rail-lrt-jabodebek,summary,id,generated,Generated from curated fields; not editorial.
+project,rail-kcj-jakarta-bandung,name,id,translated,
+project,rail-kcj-jakarta-bandung,summary,id,generated,Generated from curated fields; not editorial.
+project,rail-rantau-prapat-kota-pinang,name,id,translated,
+project,rail-rantau-prapat-kota-pinang,summary,id,generated,Generated from curated fields; not editorial.
+project,rail-lahat-kertapati,name,id,translated,
+project,rail-lahat-kertapati,summary,id,generated,Generated from curated fields; not editorial.
+project,rail-kaltim-logistics,name,id,translated,
+project,rail-kaltim-logistics,summary,id,generated,Generated from curated fields; not editorial.
+project,rail-mrt-jakarta-north-south,name,id,translated,
+project,rail-mrt-jakarta-north-south,summary,id,generated,Generated from curated fields; not editorial.
+project,rail-mrt-jakarta-east-west,name,id,translated,
+project,rail-mrt-jakarta-east-west,summary,id,generated,Generated from curated fields; not editorial.
+project,rail-lrt-jakarta-velodrome-manggarai,name,id,translated,
+project,rail-lrt-jakarta-velodrome-manggarai,summary,id,generated,Generated from curated fields; not editorial.
+project,tol-simpang-indralaya-muara-enim,name,id,translated,
+project,tol-simpang-indralaya-muara-enim,summary,id,generated,Generated from curated fields; not editorial.
+project,tol-serpong-balaraja,name,id,translated,
+project,tol-serpong-balaraja,summary,id,generated,Generated from curated fields; not editorial.
+project,tol-cileunyi-sumedang-dawuan,name,id,translated,
+project,tol-cileunyi-sumedang-dawuan,summary,id,generated,Generated from curated fields; not editorial.
+project,tol-cibitung-cilincing,name,id,translated,
+project,tol-cibitung-cilincing,summary,id,generated,Generated from curated fields; not editorial.
+project,tol-cengkareng-batu-ceper-kunciran,name,id,translated,
+project,tol-cengkareng-batu-ceper-kunciran,summary,id,generated,Generated from curated fields; not editorial.
+project,tol-pekanbaru-kandis-dumai,name,id,translated,
+project,tol-pekanbaru-kandis-dumai,summary,id,generated,Generated from curated fields; not editorial.
+project,tol-manado-bitung,name,id,translated,
+project,tol-manado-bitung,summary,id,generated,Generated from curated fields; not editorial.
+project,tol-balikpapan-samarinda,name,id,translated,
+project,tol-balikpapan-samarinda,summary,id,generated,Generated from curated fields; not editorial.
+project,tol-kunciran-serpong,name,id,translated,
+project,tol-kunciran-serpong,summary,id,generated,Generated from curated fields; not editorial.
+project,tol-pasuruan-probolinggo,name,id,translated,
+project,tol-pasuruan-probolinggo,summary,id,generated,Generated from curated fields; not editorial.
+project,tol-pandaan-malang,name,id,translated,
+project,tol-pandaan-malang,summary,id,generated,Generated from curated fields; not editorial.
+project,tol-ngawi-kertosono-kediri,name,id,translated,
+project,tol-ngawi-kertosono-kediri,summary,id,generated,Generated from curated fields; not editorial.
+project,tol-medan-binjai,name,id,translated,
+project,tol-medan-binjai,summary,id,generated,Generated from curated fields; not editorial.
+project,tol-akses-tanjung-priok,name,id,translated,
+project,tol-akses-tanjung-priok,summary,id,generated,Generated from curated fields; not editorial.
+project,tol-cinere-jagorawi,name,id,translated,
+project,tol-cinere-jagorawi,summary,id,generated,Generated from curated fields; not editorial.
+project,factory-freeport-manyar-smelter,name,id,translated,
+project,factory-freeport-manyar-smelter,summary,id,generated,Generated from curated fields; not editorial.
+project,factory-pt-smelting-gresik,name,id,translated,
+project,factory-pt-smelting-gresik,summary,id,generated,Generated from curated fields; not editorial.
+project,factory-amman-copper-smelter,name,id,translated,
+project,factory-amman-copper-smelter,summary,id,generated,Generated from curated fields; not editorial.
+project,factory-itss-morowali,name,id,translated,
+project,factory-itss-morowali,summary,id,generated,Generated from curated fields; not editorial.
+project,factory-dexin-steel-morowali,name,id,translated,
+project,factory-dexin-steel-morowali,summary,id,generated,Generated from curated fields; not editorial.
+project,factory-huafei-hpal-iwip,name,id,translated,
+project,factory-huafei-hpal-iwip,summary,id,generated,Generated from curated fields; not editorial.
+project,factory-angel-nickel-iwip,name,id,translated,
+project,factory-angel-nickel-iwip,summary,id,generated,Generated from curated fields; not editorial.
+project,factory-hpl-obi,name,id,translated,
+project,factory-hpl-obi,summary,id,generated,Generated from curated fields; not editorial.
+project,factory-onc-obi,name,id,translated,
+project,factory-onc-obi,summary,id,generated,Generated from curated fields; not editorial.
+project,factory-vdni-konawe,name,id,translated,
+project,factory-vdni-konawe,summary,id,generated,Generated from curated fields; not editorial.
+project,factory-oss-konawe,name,id,translated,
+project,factory-oss-konawe,summary,id,generated,Generated from curated fields; not editorial.
+project,factory-gni-morowali,name,id,translated,
+project,factory-gni-morowali,summary,id,generated,Generated from curated fields; not editorial.
+project,factory-huadi-bantaeng,name,id,translated,
+project,factory-huadi-bantaeng,summary,id,generated,Generated from curated fields; not editorial.
+project,factory-vale-pomalaa-hpal,name,id,translated,
+project,factory-vale-pomalaa-hpal,summary,id,generated,Generated from curated fields; not editorial.
+project,factory-vale-bahodopi-hpal,name,id,translated,
+project,factory-vale-bahodopi-hpal,summary,id,generated,Generated from curated fields; not editorial.
+project,factory-vale-sorowako-hpal,name,id,translated,
+project,factory-vale-sorowako-hpal,summary,id,generated,Generated from curated fields; not editorial.
+project,factory-whw-ketapang,name,id,translated,
+project,factory-whw-ketapang,summary,id,generated,Generated from curated fields; not editorial.
+project,factory-sgar-mempawah,name,id,translated,
+project,factory-sgar-mempawah,summary,id,generated,Generated from curated fields; not editorial.
+project,factory-inalum-kuala-tanjung,name,id,translated,
+project,factory-inalum-kuala-tanjung,summary,id,generated,Generated from curated fields; not editorial.
+project,factory-krakatau-steel-cilegon,name,id,translated,
+project,factory-krakatau-steel-cilegon,summary,id,generated,Generated from curated fields; not editorial.
+project,factory-gunung-raja-paksi,name,id,translated,
+project,factory-gunung-raja-paksi,summary,id,generated,Generated from curated fields; not editorial.
+project,factory-btr-kendal,name,id,translated,
+project,factory-btr-kendal,summary,id,generated,Generated from curated fields; not editorial.
+project,factory-catl-cbl-karawang,name,id,translated,
+project,factory-catl-cbl-karawang,summary,id,generated,Generated from curated fields; not editorial.
+project,factory-lotte-line-cilegon,name,id,translated,
+project,factory-lotte-line-cilegon,summary,id,generated,Generated from curated fields; not editorial.
+project,factory-chandra-asri-cilegon,name,id,translated,
+project,factory-chandra-asri-cilegon,summary,id,generated,Generated from curated fields; not editorial.
+project,factory-oki-pulp,name,id,translated,
+project,factory-oki-pulp,summary,id,generated,Generated from curated fields; not editorial.
+project,factory-pupuk-kaltim-bontang,name,id,translated,
+project,factory-pupuk-kaltim-bontang,summary,id,generated,Generated from curated fields; not editorial.
+project,tol-lhokseumawe-sigli,name,id,translated,
+project,tol-lhokseumawe-sigli,summary,id,generated,Generated from curated fields; not editorial.
+project,tol-langsa-lhokseumawe,name,id,translated,
+project,tol-langsa-lhokseumawe,summary,id,generated,Generated from curated fields; not editorial.
+project,tol-muara-enim-lubuk-linggau,name,id,translated,
+project,tol-muara-enim-lubuk-linggau,summary,id,generated,Generated from curated fields; not editorial.
+project,urban-ikn-phase-2,name,id,translated,
+project,urban-ikn-phase-2,summary,id,generated,Generated from curated fields; not editorial.
+project,air-nusantara-ikn,name,id,translated,
+project,air-nusantara-ikn,summary,id,generated,Generated from curated fields; not editorial.
+project,energy-masela-abadi-lng,name,id,translated,
+project,energy-masela-abadi-lng,summary,id,generated,Generated from curated fields; not editorial.
+project,energy-rdmp-balikpapan,name,id,translated,
+project,energy-rdmp-balikpapan,summary,id,generated,Generated from curated fields; not editorial.
+project,energy-plts-100gw-phase-1,name,id,translated,
+project,energy-plts-100gw-phase-1,summary,id,generated,Generated from curated fields; not editorial.
+project,energy-hilirisasi-2-01-dumai-gasoline,name,id,translated,
+project,energy-hilirisasi-2-01-dumai-gasoline,summary,id,generated,Generated from curated fields; not editorial.
+project,energy-hilirisasi-2-02-cilacap-gasoline,name,id,translated,
+project,energy-hilirisasi-2-02-cilacap-gasoline,summary,id,generated,Generated from curated fields; not editorial.
+project,energy-hilirisasi-2-03-palaran-fuel-terminal,name,id,translated,
+project,energy-hilirisasi-2-03-palaran-fuel-terminal,summary,id,generated,Generated from curated fields; not editorial.
+project,energy-hilirisasi-2-04-biak-fuel-terminal,name,id,translated,
+project,energy-hilirisasi-2-04-biak-fuel-terminal,summary,id,generated,Generated from curated fields; not editorial.
+project,energy-hilirisasi-2-05-maumere-fuel-terminal,name,id,translated,
+project,energy-hilirisasi-2-05-maumere-fuel-terminal,summary,id,generated,Generated from curated fields; not editorial.
+project,energy-hilirisasi-2-06-tanjung-enim-dme,name,id,translated,
+project,energy-hilirisasi-2-06-tanjung-enim-dme,summary,id,generated,Generated from curated fields; not editorial.
+project,factory-hilirisasi-2-07-imip-stainless-steel,name,id,translated,
+project,factory-hilirisasi-2-07-imip-stainless-steel,summary,id,generated,Generated from curated fields; not editorial.
+project,factory-hilirisasi-2-08-cilegon-carbon-steel,name,id,translated,
+project,factory-hilirisasi-2-08-cilegon-carbon-steel,summary,id,generated,Generated from curated fields; not editorial.
+project,factory-hilirisasi-2-09-karawang-buton-asphalt,name,id,translated,
+project,factory-hilirisasi-2-09-karawang-buton-asphalt,summary,id,generated,Generated from curated fields; not editorial.
+project,factory-hilirisasi-2-10-gresik-copper-gold,name,id,translated,
+project,factory-hilirisasi-2-10-gresik-copper-gold,summary,id,generated,Generated from curated fields; not editorial.
+project,factory-hilirisasi-2-11-sei-mangkei-oleofood,name,id,translated,
+project,factory-hilirisasi-2-11-sei-mangkei-oleofood,summary,id,generated,Generated from curated fields; not editorial.
+project,factory-hilirisasi-2-12-central-maluku-nutmeg,name,id,translated,
+project,factory-hilirisasi-2-12-central-maluku-nutmeg,summary,id,generated,Generated from curated fields; not editorial.
+project,factory-hilirisasi-2-13-central-maluku-coconut,name,id,translated,
+project,factory-hilirisasi-2-13-central-maluku-coconut,summary,id,generated,Generated from curated fields; not editorial.
+project,dam-meninting,name,id,translated,
+project,dam-meninting,summary,id,generated,Generated from curated fields; not editorial.
+project,dam-keureuto,name,id,translated,
+project,dam-keureuto,summary,id,generated,Generated from curated fields; not editorial.
+project,dam-rukoh,name,id,translated,
+project,dam-rukoh,summary,id,generated,Generated from curated fields; not editorial.
+project,dam-jlantah,name,id,translated,
+project,dam-jlantah,summary,id,generated,Generated from curated fields; not editorial.
+project,dam-sidan,name,id,translated,
+project,dam-sidan,summary,id,generated,Generated from curated fields; not editorial.
+project,coastal-java-sea-wall,name,id,translated,
+project,coastal-java-sea-wall,summary,id,generated,Generated from curated fields; not editorial.
+project,tol-kisaran-tebing-tinggi,name,id,translated,
+project,tol-kisaran-tebing-tinggi,summary,id,generated,Generated from curated fields; not editorial.
+project,tol-jambi-rengat,name,id,translated,
+project,tol-jambi-rengat,summary,id,generated,Generated from curated fields; not editorial.
+project,tol-rengat-pekanbaru,name,id,translated,
+project,tol-rengat-pekanbaru,summary,id,generated,Generated from curated fields; not editorial.
+project,tol-serpong-cinere,name,id,translated,
+project,tol-serpong-cinere,summary,id,generated,Generated from curated fields; not editorial.
+project,tol-cimanggis-cibitung,name,id,translated,
+project,tol-cimanggis-cibitung,summary,id,generated,Generated from curated fields; not editorial.
+project,flyover-teluk-lamong,name,id,translated,
+project,flyover-teluk-lamong,summary,id,generated,Generated from curated fields; not editorial.
+project,tol-akses-patimban,name,id,translated,
+project,tol-akses-patimban,summary,id,generated,Generated from curated fields; not editorial.
+project,tol-new-priok-eastern-access,name,id,translated,
+project,tol-new-priok-eastern-access,summary,id,generated,Generated from curated fields; not editorial.
+project,tol-bandung-inner-city,name,id,translated,
+project,tol-bandung-inner-city,summary,id,generated,Generated from curated fields; not editorial.
+project,psn-131-rumah-susun-public-housing-construction,name,id,official,src-permenko-16-2025
+project,psn-131-rumah-susun-public-housing-construction,summary,id,generated,Generated from curated fields; not editorial.
+project,psn-132-self-help-housing-assistance-programme,name,id,official,src-permenko-16-2025
+project,psn-132-self-help-housing-assistance-programme,summary,id,generated,Generated from curated fields; not editorial.
+project,psn-133-marangkayu-dam,name,id,official,src-permenko-16-2025
+project,psn-133-marangkayu-dam,summary,id,generated,Generated from curated fields; not editorial.
+project,psn-134-kuningan-dam,name,id,official,src-permenko-16-2025
+project,psn-134-kuningan-dam,summary,id,generated,Generated from curated fields; not editorial.
+project,psn-135-bendo-dam,name,id,official,src-permenko-16-2025
+project,psn-135-bendo-dam,summary,id,generated,Generated from curated fields; not editorial.
+project,psn-136-gongseng-dam,name,id,official,src-permenko-16-2025
+project,psn-136-gongseng-dam,summary,id,generated,Generated from curated fields; not editorial.
+project,psn-137-tukul-dam,name,id,official,src-permenko-16-2025
+project,psn-137-tukul-dam,summary,id,generated,Generated from curated fields; not editorial.
+project,psn-138-pidekso-dam,name,id,official,src-permenko-16-2025
+project,psn-138-pidekso-dam,summary,id,generated,Generated from curated fields; not editorial.
+project,psn-139-tugu-dam,name,id,official,src-permenko-16-2025
+project,psn-139-tugu-dam,summary,id,generated,Generated from curated fields; not editorial.
+project,psn-140-karalloe-dam,name,id,official,src-permenko-16-2025
+project,psn-140-karalloe-dam,summary,id,generated,Generated from curated fields; not editorial.
+project,psn-142-tapin-dam,name,id,official,src-permenko-16-2025
+project,psn-142-tapin-dam,summary,id,generated,Generated from curated fields; not editorial.
+project,psn-143-passeloreng-dam,name,id,official,src-permenko-16-2025
+project,psn-143-passeloreng-dam,summary,id,generated,Generated from curated fields; not editorial.
+project,psn-144-lolak-dam,name,id,official,src-permenko-16-2025
+project,psn-144-lolak-dam,summary,id,generated,Generated from curated fields; not editorial.
+project,psn-145-bintang-bano-dam,name,id,official,src-permenko-16-2025
+project,psn-145-bintang-bano-dam,summary,id,generated,Generated from curated fields; not editorial.
+project,psn-146-karian-dam,name,id,official,src-permenko-16-2025
+project,psn-146-karian-dam,summary,id,generated,Generated from curated fields; not editorial.
+project,psn-148-way-sekampung-dam,name,id,official,src-permenko-16-2025
+project,psn-148-way-sekampung-dam,summary,id,generated,Generated from curated fields; not editorial.
+project,psn-149-kuwil-kawangkoan-dam,name,id,official,src-permenko-16-2025
+project,psn-149-kuwil-kawangkoan-dam,summary,id,generated,Generated from curated fields; not editorial.
+project,psn-150-ladongi-dam,name,id,official,src-permenko-16-2025
+project,psn-150-ladongi-dam,summary,id,generated,Generated from curated fields; not editorial.
+project,psn-151-ciawi-dam,name,id,official,src-permenko-16-2025
+project,psn-151-ciawi-dam,summary,id,generated,Generated from curated fields; not editorial.
+project,psn-152-sukamahi-dam,name,id,official,src-permenko-16-2025
+project,psn-152-sukamahi-dam,summary,id,generated,Generated from curated fields; not editorial.
+project,psn-153-leuwikeris-dam,name,id,official,src-permenko-16-2025
+project,psn-153-leuwikeris-dam,summary,id,generated,Generated from curated fields; not editorial.
+project,psn-154-cipanas-dam,name,id,official,src-permenko-16-2025
+project,psn-154-cipanas-dam,summary,id,generated,Generated from curated fields; not editorial.
+project,psn-155-tiga-dihaji-dam,name,id,official,src-permenko-16-2025
+project,psn-155-tiga-dihaji-dam,summary,id,generated,Generated from curated fields; not editorial.
+project,psn-156-semantok-dam,name,id,official,src-permenko-16-2025
+project,psn-156-semantok-dam,summary,id,generated,Generated from curated fields; not editorial.
+project,psn-157-pamukkulu-dam,name,id,official,src-permenko-16-2025
+project,psn-157-pamukkulu-dam,summary,id,generated,Generated from curated fields; not editorial.
+project,psn-158-bener-dam,name,id,official,src-permenko-16-2025
+project,psn-158-bener-dam,summary,id,generated,Generated from curated fields; not editorial.
+project,psn-159-sadawarna-dam,name,id,official,src-permenko-16-2025
+project,psn-159-sadawarna-dam,summary,id,generated,Generated from curated fields; not editorial.
+project,psn-160-lausimeme-dam,name,id,official,src-permenko-16-2025
+project,psn-160-lausimeme-dam,summary,id,generated,Generated from curated fields; not editorial.
+project,psn-162-marga-tiga-dam,name,id,official,src-permenko-16-2025
+project,psn-162-marga-tiga-dam,summary,id,generated,Generated from curated fields; not editorial.
+project,psn-163-bagong-dam,name,id,official,src-permenko-16-2025
+project,psn-163-bagong-dam,summary,id,generated,Generated from curated fields; not editorial.
+project,psn-164-randugunting-dam,name,id,official,src-permenko-16-2025
+project,psn-164-randugunting-dam,summary,id,generated,Generated from curated fields; not editorial.
+project,psn-165-mbay-dam,name,id,official,src-permenko-16-2025
+project,psn-165-mbay-dam,summary,id,generated,Generated from curated fields; not editorial.
+project,psn-166-bulango-ulu-dam,name,id,official,src-permenko-16-2025
+project,psn-166-bulango-ulu-dam,summary,id,generated,Generated from curated fields; not editorial.
+project,psn-167-napun-gete-dam,name,id,official,src-permenko-16-2025
+project,psn-167-napun-gete-dam,summary,id,generated,Generated from curated fields; not editorial.
+project,psn-168-temef-dam,name,id,official,src-permenko-16-2025
+project,psn-168-temef-dam,summary,id,generated,Generated from curated fields; not editorial.
+project,psn-169-way-apu-dam,name,id,official,src-permenko-16-2025
+project,psn-169-way-apu-dam,summary,id,generated,Generated from curated fields; not editorial.
+project,psn-171-tamblang-dam,name,id,official,src-permenko-16-2025
+project,psn-171-tamblang-dam,summary,id,generated,Generated from curated fields; not editorial.
+project,psn-172-beringin-sila-dam,name,id,official,src-permenko-16-2025
+project,psn-172-beringin-sila-dam,summary,id,generated,Generated from curated fields; not editorial.
+project,psn-173-tiu-suntuk-dam,name,id,official,src-permenko-16-2025
+project,psn-173-tiu-suntuk-dam,summary,id,generated,Generated from curated fields; not editorial.
+project,psn-174-manikin-dam,name,id,official,src-permenko-16-2025
+project,psn-174-manikin-dam,summary,id,generated,Generated from curated fields; not editorial.
+project,psn-176-jragung-dam,name,id,official,src-permenko-16-2025
+project,psn-176-jragung-dam,summary,id,generated,Generated from curated fields; not editorial.
+project,psn-177-sepaku-semoi-dam,name,id,official,src-permenko-16-2025
+project,psn-177-sepaku-semoi-dam,summary,id,generated,Generated from curated fields; not editorial.
+project,psn-178-budong-budong-dam,name,id,official,src-permenko-16-2025
+project,psn-178-budong-budong-dam,summary,id,generated,Generated from curated fields; not editorial.
+project,psn-179-ameroro-dam,name,id,official,src-permenko-16-2025
+project,psn-179-ameroro-dam,summary,id,generated,Generated from curated fields; not editorial.
+project,psn-180-karangnongko-dam,name,id,official,src-permenko-16-2025
+project,psn-180-karangnongko-dam,summary,id,generated,Generated from curated fields; not editorial.
+project,psn-181-lhok-guci-irrigation-network,name,id,official,src-permenko-16-2025
+project,psn-181-lhok-guci-irrigation-network,summary,id,generated,Generated from curated fields; not editorial.
+project,psn-182-jambo-aye-kanan-irrigation-network,name,id,official,src-permenko-16-2025
+project,psn-182-jambo-aye-kanan-irrigation-network,summary,id,generated,Generated from curated fields; not editorial.
+project,psn-183-lematang-irrigation-network,name,id,official,src-permenko-16-2025
+project,psn-183-lematang-irrigation-network,summary,id,generated,Generated from curated fields; not editorial.
+project,psn-184-baliase-irrigation-dam-and-network,name,id,official,src-permenko-16-2025
+project,psn-184-baliase-irrigation-dam-and-network,summary,id,generated,Generated from curated fields; not editorial.
+project,psn-185-gumbasa-irrigation-network-rehabilitation,name,id,official,src-permenko-16-2025
+project,psn-185-gumbasa-irrigation-network-rehabilitation,summary,id,generated,Generated from curated fields; not editorial.
+project,psn-186-rentang-irrigation-network-rehabilitation,name,id,official,src-permenko-16-2025
+project,psn-186-rentang-irrigation-network-rehabilitation,summary,id,generated,Generated from curated fields; not editorial.
+project,psn-187-glapan-irrigation-network-rehabilitation,name,id,official,src-permenko-16-2025
+project,psn-187-glapan-irrigation-network-rehabilitation,summary,id,generated,Generated from curated fields; not editorial.
+project,psn-188-komering-irrigation-network-development-and-management,name,id,official,src-permenko-16-2025
+project,psn-188-komering-irrigation-network-development-and-management,summary,id,generated,Generated from curated fields; not editorial.
+project,psn-189-bintan-bay-estuary-dam-and-drinking-water-supply-system,name,id,official,src-permenko-16-2025
+project,psn-189-bintan-bay-estuary-dam-and-drinking-water-supply-system,summary,id,generated,Generated from curated fields; not editorial.
+project,psn-190-semarang-west-drinking-water-supply-system-spam,name,id,official,src-permenko-16-2025
+project,psn-190-semarang-west-drinking-water-supply-system-spam,summary,id,generated,Generated from curated fields; not editorial.
+project,psn-191-umbulan-drinking-water-supply-system-spam,name,id,official,src-permenko-16-2025
+project,psn-191-umbulan-drinking-water-supply-system-spam,summary,id,generated,Generated from curated fields; not editorial.
+project,psn-192-bandar-lampung-drinking-water-supply-system-spam,name,id,official,src-permenko-16-2025
+project,psn-192-bandar-lampung-drinking-water-supply-system-spam,summary,id,generated,Generated from curated fields; not editorial.
+project,psn-193-jatiluhur-regional-drinking-water-supply-system-spam,name,id,official,src-permenko-16-2025
+project,psn-193-jatiluhur-regional-drinking-water-supply-system-spam,summary,id,generated,Generated from curated fields; not editorial.
+project,psn-194-wosusokas-regional-drinking-water-supply-system-spam,name,id,official,src-permenko-16-2025
+project,psn-194-wosusokas-regional-drinking-water-supply-system-spam,summary,id,generated,Generated from curated fields; not editorial.
+project,psn-195-karian-serpong-regional-drinking-water-supply-system-sp,name,id,official,src-permenko-16-2025
+project,psn-195-karian-serpong-regional-drinking-water-supply-system-sp,summary,id,generated,Generated from curated fields; not editorial.
+project,psn-196-benteng-kobema-regional-drinking-water-supply-system-sp,name,id,official,src-permenko-16-2025
+project,psn-196-benteng-kobema-regional-drinking-water-supply-system-sp,summary,id,generated,Generated from curated fields; not editorial.
+project,psn-197-karian-raw-water-infrastructure,name,id,official,src-permenko-16-2025
+project,psn-197-karian-raw-water-infrastructure,summary,id,generated,Generated from curated fields; not editorial.
+project,psn-198-jakarta-sewerage-system-jss,name,id,official,src-permenko-16-2025
+project,psn-198-jakarta-sewerage-system-jss,summary,id,generated,Generated from curated fields; not editorial.
+project,psn-201-gendalo-gandang-gehem-and-bangka-field-development-idd,name,id,official,src-permenko-16-2025
+project,psn-201-gendalo-gandang-gehem-and-bangka-field-development-idd,summary,id,generated,Generated from curated fields; not editorial.
+project,psn-202-tangguh-lng-train-3,name,id,official,src-permenko-16-2025
+project,psn-202-tangguh-lng-train-3,summary,id,generated,Generated from curated fields; not editorial.
+project,psn-203-jambaran-tiung-biru-gas-field-unitisation,name,id,official,src-permenko-16-2025
+project,psn-203-jambaran-tiung-biru-gas-field-unitisation,summary,id,generated,Generated from curated fields; not editorial.
+project,psn-204-ubadari-field-development-ccus-and-compression-ucc-telu,name,id,official,src-permenko-16-2025
+project,psn-204-ubadari-field-development-ccus-and-compression-ucc-telu,summary,id,generated,Generated from curated fields; not editorial.
+project,psn-205-asap-kido-and-merah-gas-field-development-akm,name,id,official,src-permenko-16-2025
+project,psn-205-asap-kido-and-merah-gas-field-development-akm,summary,id,generated,Generated from curated fields; not editorial.
+project,psn-206-tuban-oil-refinery-expansion,name,id,official,src-permenko-16-2025
+project,psn-206-tuban-oil-refinery-expansion,summary,id,generated,Generated from curated fields; not editorial.
+project,psn-208-balongan-refinery-upgrade-rdmp-and-petrochemical-indust,name,id,official,src-permenko-16-2025
+project,psn-208-balongan-refinery-upgrade-rdmp-and-petrochemical-indust,summary,id,generated,Generated from curated fields; not editorial.
+project,psn-209-fuel-storage-tank-construction,name,id,official,src-permenko-16-2025
+project,psn-209-fuel-storage-tank-construction,summary,id,generated,Generated from curated fields; not editorial.
+project,psn-210-lpg-storage-tank-construction,name,id,official,src-permenko-16-2025
+project,psn-210-lpg-storage-tank-construction,summary,id,generated,Generated from curated fields; not editorial.
+project,psn-211-city-gas-network-construction,name,id,official,src-permenko-16-2025
+project,psn-211-city-gas-network-construction,summary,id,generated,Generated from curated fields; not editorial.
+project,psn-212-cirebon-semarang-and-sei-mangkei-dumai-gas-transmission,name,id,official,src-permenko-16-2025
+project,psn-212-cirebon-semarang-and-sei-mangkei-dumai-gas-transmission,summary,id,generated,Generated from curated fields; not editorial.
+project,psn-213-green-fuel-development-cilacap-plaju-and-pupuk-kujang,name,id,official,src-permenko-16-2025
+project,psn-213-green-fuel-development-cilacap-plaju-and-pupuk-kujang,summary,id,generated,Generated from curated fields; not editorial.
+project,psn-214-methanol-and-ethanol-based-biofuel-development-bojonego,name,id,official,src-permenko-16-2025
+project,psn-214-methanol-and-ethanol-based-biofuel-development-bojonego,summary,id,generated,Generated from curated fields; not editorial.
+project,psn-216-coal-gasification-kutai-timur,name,id,official,src-permenko-16-2025
+project,psn-216-coal-gasification-kutai-timur,summary,id,generated,Generated from curated fields; not editorial.
+project,psn-217-north-hub-development-project-makassar-strait,name,id,official,src-permenko-16-2025
+project,psn-217-north-hub-development-project-makassar-strait,summary,id,generated,Generated from curated fields; not editorial.
+project,psn-218-accelerated-technopark-development,name,id,official,src-permenko-16-2025
+project,psn-218-accelerated-technopark-development,summary,id,generated,Generated from curated fields; not editorial.
+project,psn-219-multifunction-satellite-project,name,id,official,src-permenko-16-2025
+project,psn-219-multifunction-satellite-project,summary,id,generated,Generated from curated fields; not editorial.
+project,psn-220-male-combat-drone-development,name,id,official,src-permenko-16-2025
+project,psn-220-male-combat-drone-development,summary,id,generated,Generated from curated fields; not editorial.
+project,psn-221-ivo-and-palm-petrol-production-technology-with-merah-pu,name,id,official,src-permenko-16-2025
+project,psn-221-ivo-and-palm-petrol-production-technology-with-merah-pu,summary,id,generated,Generated from curated fields; not editorial.
+project,psn-222-salt-industry-development,name,id,official,src-permenko-16-2025
+project,psn-222-salt-industry-development,summary,id,generated,Generated from curated fields; not editorial.
+project,psn-223-palapa-ring-integration,name,id,official,src-permenko-16-2025
+project,psn-223-palapa-ring-integration,summary,id,generated,Generated from curated fields; not editorial.
+project,psn-224-indonesia-international-islamic-university-campus,name,id,official,src-permenko-16-2025
+project,psn-224-indonesia-international-islamic-university-campus,summary,id,generated,Generated from curated fields; not editorial.
+project,psn-225-thousand-islands-tourism-project-kepulauan-seribu,name,id,official,src-permenko-16-2025
+project,psn-225-thousand-islands-tourism-project-kepulauan-seribu,summary,id,generated,Generated from curated fields; not editorial.
+project,psn-227-coconut-development-and-downstream-industry,name,id,official,src-permenko-16-2025
+project,psn-227-coconut-development-and-downstream-industry,summary,id,generated,Generated from curated fields; not editorial.
+project,psn-228-tidal-and-lebak-swamp-mineral-soil-rice-field-developme,name,id,official,src-permenko-16-2025
+project,psn-228-tidal-and-lebak-swamp-mineral-soil-rice-field-developme,summary,id,generated,Generated from curated fields; not editorial.
+estate,sez-arun-lhokseumawe,name,id,source,
+estate,sez-batam-aero-technic,name,id,source,
+estate,sez-bitung,name,id,source,
+estate,sez-bumi-serpong-damai,name,id,source,
+estate,sez-kura-kura,name,id,source,
+estate,sez-lido,name,id,source,
+estate,sez-likupang,name,id,source,
+estate,sez-maloy-batuta,name,id,source,
+estate,sez-mandalika,name,id,source,
+estate,sez-morotai,name,id,source,
+estate,sez-nongsa,name,id,source,
+estate,sez-batam-tourism-and-international-healthcare,name,id,source,
+estate,sez-sanur,name,id,source,
+estate,sez-setangga,name,id,source,
+estate,sez-singhasari,name,id,source,
+estate,sez-sorong,name,id,source,
+estate,sez-tanjung-kelayang,name,id,source,
+estate,sez-tanjung-lesung,name,id,source,
+estate,ki-anugrah-sambalagi-industrial-park-asip,name,id,source,
+estate,ki-batamindo-industrial-park,name,id,source,
+estate,ki-batang-industrial-park,name,id,source,
+estate,ki-bekasi-international-industrial-estate,name,id,source,
+estate,ki-bintan-inti-industrial-estate,name,id,source,
+estate,ki-bintang-industrial-park,name,id,source,
+estate,ki-bsb-industrial-park,name,id,source,
+estate,ki-cammo-industrial-park,name,id,source,
+estate,ki-central-industrial-park,name,id,source,
+estate,ki-cibinong-center-industrial-estate,name,id,source,
+estate,ki-cp-industrial-estate,name,id,source,
+estate,ki-east-jakarta-industrial-park,name,id,source,
+estate,ki-eski-enam-sembilan-kawasan-industri,name,id,source,
+estate,ki-executive-industrial-park,name,id,source,
+estate,ki-greenland-international-industrial-center-giic,name,id,source,
+estate,ki-greenland-international-industrial-center-2-giic-2,name,id,source,
+estate,ki-griya-idola-industrial-park,name,id,source,
+estate,ki-hacaca-business-park,name,id,source,
+estate,ki-hijrah-industrial-park,name,id,source,
+estate,ki-indah-industrial-park,name,id,source,
+estate,ki-indonesia-huabao-industrial-park-ihip,name,id,source,
+estate,ki-indonesia-konawe-industrial-park,name,id,source,
+estate,ki-jakarta-industrial-estate-pulogadung,name,id,source,
+estate,ki-jatiluhur-industrial-smart-city,name,id,source,
+estate,ki-java-integrated-industrial-and-port-estate,name,id,source,
+estate,ki-jawa-tengah-land-industrial-park-sayung,name,id,source,
+estate,ki-kaltim-industrial-estate,name,id,source,
+estate,ki-karawang-international-industrial-city,name,id,source,
+estate,ki-karawang-international-industrial-city-2,name,id,source,
+estate,ki-karawang-international-industrial-city-3,name,id,source,
+estate,ki-karawang-jabar-industrial-estate,name,id,source,
+estate,ki-karawang-new-industrial-city,name,id,source,
+estate,ki-karimun-maritime-industrial-complex,name,id,source,
+estate,ki-kawasan-berikat-nusantara,name,id,source,
+estate,ki-kawasan-industri-and-pergudangan-cikupamas,name,id,source,
+estate,ki-kawasan-industri-aceh-ladong,name,id,source,
+estate,ki-kawasan-industri-artha-industrial-hill,name,id,source,
+estate,ki-kawasan-industri-artha-industrial-hill-2,name,id,source,
+estate,ki-kawasan-industri-aviarna,name,id,source,
+estate,ki-kawasan-industri-batulicin,name,id,source,
+estate,ki-kawasan-industri-batulicin-2,name,id,source,
+estate,ki-kawasan-industri-batulicin-3,name,id,source,
+estate,ki-kawasan-industri-batulicin-4,name,id,source,
+estate,ki-kawasan-industri-batulicin-5,name,id,source,
+estate,ki-kawasan-industri-batuta-bcip,name,id,source,
+estate,ki-kawasan-industri-blessindo,name,id,source,
+estate,ki-kawasan-industri-bolaang-mongondow-kimong,name,id,source,
+estate,ki-kawasan-industri-buli,name,id,source,
+estate,ki-kawasan-industri-cikembar,name,id,source,
+estate,ki-kawasan-industri-dan-pergudangan-taman-tekno-bsd,name,id,source,
+estate,ki-kawasan-industri-dumai,name,id,source,
+estate,ki-kawasan-industri-efi,name,id,source,
+estate,ki-kawasan-industri-gobel,name,id,source,
+estate,ki-kawasan-industri-indotaisei-kota-bukit-indah,name,id,source,
+estate,ki-kawasan-industri-intijaya-subang-industri,name,id,source,
+estate,ki-kawasan-industri-jababeka,name,id,source,
+estate,ki-kawasan-industri-jababeka-2,name,id,source,
+estate,ki-kawasan-industri-jababeka-3,name,id,source,
+estate,ki-kawasan-industri-jababeka-4,name,id,source,
+estate,ki-kawasan-industri-jorong,name,id,source,
+estate,ki-kawasan-industri-kariangau,name,id,source,
+estate,ki-kawasan-industri-kbs,name,id,source,
+estate,ki-kawasan-industri-konawe,name,id,source,
+estate,ki-kawasan-industri-kujang-cikampek,name,id,source,
+estate,ki-kawasan-industri-landak,name,id,source,
+estate,ki-kawasan-industri-lion,name,id,source,
+estate,ki-kawasan-industri-lippo-cikarang,name,id,source,
+estate,ki-kawasan-industri-makasar,name,id,source,
+estate,ki-kawasan-industri-marunda-center,name,id,source,
+estate,ki-kawasan-industri-marunda-center-2,name,id,source,
+estate,ki-kawasan-industri-medan,name,id,source,
+estate,ki-kawasan-industri-mitra-propindo-lestari,name,id,source,
+estate,ki-kawasan-industri-mitrakarawang,name,id,source,
+estate,ki-kawasan-industri-morowali,name,id,source,
+estate,ki-kawasan-industri-motui,name,id,source,
+estate,ki-kawasan-industri-nikomas-gemilang,name,id,source,
+estate,ki-kawasan-industri-pancapuri,name,id,source,
+estate,ki-kawasan-industri-pasar-kemis,name,id,source,
+estate,ki-kawasan-industri-piyungan-creative-economy-park,name,id,source,
+estate,ki-kawasan-industri-pulau-obi,name,id,source,
+estate,ki-kawasan-industri-rancaekek,name,id,source,
+estate,ki-kawasan-industri-royal-kosambi,name,id,source,
+estate,ki-kawasan-industri-sadai,name,id,source,
+estate,ki-kawasan-industri-safe-n-lock,name,id,source,
+estate,ki-kawasan-industri-sbs,name,id,source,
+estate,ki-kawasan-industri-sekupang-makmur-abadi,name,id,source,
+estate,ki-kawasan-industri-sentul,name,id,source,
+estate,ki-kawasan-industri-sidoarjo,name,id,source,
+estate,ki-kawasan-industri-sirie,name,id,source,
+estate,ki-kawasan-industri-ski,name,id,source,
+estate,ki-kawasan-industri-stardust,name,id,source,
+estate,ki-kawasan-industri-sumber-rezeki,name,id,source,
+estate,ki-kawasan-industri-surya-borneo,name,id,source,
+estate,ki-kawasan-industri-taifa,name,id,source,
+estate,ki-kawasan-industri-tanjung-buton,name,id,source,
+estate,ki-kawasan-industri-tanjung-enim,name,id,source,
+estate,ki-kawasan-industri-teluk-weda,name,id,source,
+estate,ki-kawasan-industri-tenayan,name,id,source,
+estate,ki-kawasan-industri-terboyo-semarang,name,id,source,
+estate,ki-kawasan-industri-terpadu-indonesia-china,name,id,source,
+estate,ki-kawasan-industri-terpadu-kabil-kitk,name,id,source,
+estate,ki-kawasan-industri-terpadu-kabil-kitk-2,name,id,source,
+estate,ki-kawasan-industri-terpadu-wilmar,name,id,source,
+estate,ki-kawasan-industri-tuban,name,id,source,
+estate,ki-kawasan-industri-tunas-prima,name,id,source,
+estate,ki-kawasan-industri-wijayakusuma,name,id,source,
+estate,ki-kawasan-pergudangan-dan-industri-kosambi-permai,name,id,source,
+estate,ki-kawasan-taman-industri-busan-kikm,name,id,source,
+estate,sez-galang-batang,name,id,source,
+estate,sez-gresik,name,id,source,
+estate,sez-industropolis-batang,name,id,source,
+estate,sez-kendal,name,id,source,
+estate,sez-palu,name,id,source,
+estate,sez-sei-mangkei,name,id,source,
+estate,sez-tanjung-sauh,name,id,source,
+estate,ki-kertajati-industrial-estate-majalengka,name,id,source,
+estate,ki-ketapang-ecology-and-agriculture-forestery-industrial-park,name,id,source,
+estate,ki-ki-candi-1,name,id,source,
+estate,ki-ki-candi-2,name,id,source,
+estate,ki-ki-takalar,name,id,source,
+estate,ki-ki-terpadu-cikaopark,name,id,source,
+estate,ki-kipi,name,id,source,
+estate,ki-kota-bukit-indah-industrial-city,name,id,source,
+estate,ki-krakatau-industrial-estate-cilegon,name,id,source,
+estate,ki-laksana-business-park,name,id,source,
+estate,ki-mandalapratama-permai-industrial-estate,name,id,source,
+estate,ki-maspion-industrial-estate,name,id,source,
+estate,ki-medanstar-industrial-estate,name,id,source,
+estate,ki-millenium-industrial-estate,name,id,source,
+estate,ki-mm2100-industrial-town-bfie,name,id,source,
+estate,ki-mm2100-industrial-town-bfie-2,name,id,source,
+estate,ki-mm2100-industrial-town-bfie-3,name,id,source,
+estate,ki-mm2100-industrial-town-mmid,name,id,source,
+estate,ki-modern-cikande-industrial-estate,name,id,source,
+estate,ki-modern-cikande-industrial-estate-2,name,id,source,
+estate,ki-modern-cikande-industrial-estate-3,name,id,source,
+estate,ki-neo-energy-parimo-industrial-estate,name,id,source,
+estate,ki-ngoro-industrial-park,name,id,source,
+estate,ki-ngoro-industrial-park-2,name,id,source,
+estate,ki-padang-industrial-park,name,id,source,
+estate,ki-panbil-industrial-estate,name,id,source,
+estate,ki-pasuruan-industrial-estate-rembang,name,id,source,
+estate,ki-pertiwi-lestari-industrial-estate,name,id,source,
+estate,ki-puri-industrial-park-2000,name,id,source,
+estate,ki-qingdao-indonesia-industrial-park,name,id,source,
+estate,ki-sarana-industrial-point,name,id,source,
+estate,ki-sebuku-indonesia-industrial-park,name,id,source,
+estate,ki-sidoarjo-industrial-estate-berbek,name,id,source,
+estate,ki-sinar-primera-industrial-karawang-eco-city-spike,name,id,source,
+estate,ki-surabaya-industrial-estate-rungkut,name,id,source,
+estate,ki-suryacipta-ie,name,id,source,
+estate,ki-suryacipta-subang-smartpolitan,name,id,source,
+estate,ki-suryacipta-subang-smartpolitan-2,name,id,source,
+estate,ki-suryacipta-subang-smartpolitan-3,name,id,source,
+estate,ki-suryacipta-subang-smartpolitan-4,name,id,source,
+estate,ki-suryacipta-subang-smartpolitan-5,name,id,source,
+estate,ki-taman-niaga-karawang-prima-gt-tech-park,name,id,source,
+estate,ki-tunas-industrial-estate,name,id,source,
+estate,ki-union-industrial-park,name,id,source,
+estate,ki-waylaga-bizpark,name,id,source,
+estate,ki-kawasan-industri-kuala-tanjung,name,id,source,
+estate,ki-kawasan-industri-bantaeng,name,id,source,
+estate,ki-indonesia-pomalaa-industry-park,name,id,source,
+estate,ki-indonesia-huali-industry-park,name,id,source,
+estate,ki-kawasan-industri-patimban-industrial-estate,name,id,source,
+estate,ki-neo-energy-morowali-industrial-estate,name,id,source,
+estate,ki-kawasan-industri-pulau-penebang,name,id,source,
+estate,ki-kawasan-industri-alumina-toba,name,id,source,
+estate,psn-estate-093-kawasan-industri-teluk-bintuni-dan-pengembangan-industr,name,id,source,
+estate,psn-estate-100-kawasan-terintegrasi-merak-bakauheni,name,id,source,
+estate,psn-estate-106-kawasan-industri-kendari,name,id,source,
+estate,psn-estate-107-kawasan-industri-pulau-ladi,name,id,source,
+estate,psn-estate-108-kawasan-industri-pupuk-fakfak,name,id,source,
+estate,psn-estate-110-kawasan-industri-indonesia-dahuaxing-industry-park-idip,name,id,source,
+estate,psn-estate-113-kawasan-industri-wiraraja-green-renewable-energy-smart,name,id,source,
+estate,psn-estate-116-kawasan-industri-indonesia-giga-industry-park-igip,name,id,source,
+estate,psn-estate-117-kawasan-industri-kolaka-resources-industrial-park-krip,name,id,source,
+estate,psn-estate-118-kawasan-industri-aspire-stargate-aspr,name,id,source,
+estate,psn-estate-120-pengembangan-kawasan-industri-toapaya-pulau-poto-dan-ka,name,id,source,
+estate,psn-estate-121-kawasan-pesisir-terpadu-surabaya-waterfront-land-swl,name,id,source,
+estate,psn-estate-123-kawasan-industri-tekno-hijau-konasara-kithk,name,id,source,
+estate,psn-estate-124-kawasan-industri-hijau-futong,name,id,source,
+estate,psn-estate-126-kawasan-industri-kumai-multi-energi,name,id,source,
+estate,psn-estate-128-kawasan-industri-indo-mineral-mining,name,id,source,
+estate,psn-estate-129-kawasan-industri-sungai-tabuk,name,id,source,
+estate,psn-estate-130-kawasan-industri-rimau,name,id,source,

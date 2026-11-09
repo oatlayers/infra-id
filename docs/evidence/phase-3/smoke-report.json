@@ -15,7 +15,7 @@
     },
     "data": {
       "conflicts": 19,
-      "dictionary_tables": 22,
+      "dictionary_tables": 23,
       "download_controls": 19
     },
     "drawer": {
@@ -47,7 +47,7 @@
   },
   "protocols": {
     "http": {
-      "port": 51390,
+      "port": 65032,
       "ok": true
     },
     "file": {
@@ -55,6 +55,11 @@
     }
   },
   "screenshots": [
+    "00-language-chooser.png",
+    "08-explore-id-desktop.png",
+    "08b-programmes-id-desktop.png",
+    "08c-estates-id-desktop.png",
+    "08d-data-id-desktop.png",
     "01-explore-desktop.png",
     "02-corridors-desktop.png",
     "02b-corridor-segments-desktop.png",
@@ -64,8 +69,14 @@
     "05-project-drawer.png",
     "06-explore-mobile.png",
     "06b-programmes-mobile.png",
-    "07-data-mobile.png"
+    "07-data-mobile.png",
+    "08e-explore-id-mobile.png"
   ],
+  "locales": {
+    "chooser": true,
+    "en": true,
+    "id": true
+  },
   "external_requests": [],
   "console_errors": [],
   "page_errors": [],

@@ -189,6 +189,47 @@ svg { display: block; }
 .header-link:hover { background: rgba(255, 255, 255, .08); text-decoration: none; }
 .header-link svg { width: 13px; height: 13px; }
 
+.lang-switch {
+  display: inline-flex;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, .2);
+  border-radius: var(--r-sm);
+}
+.lang-switch a {
+  padding: 5px 8px;
+  color: rgba(255, 255, 255, .66);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-decoration: none;
+}
+.lang-switch a + a { border-left: 1px solid rgba(255, 255, 255, .16); }
+.lang-switch a[aria-current="page"] { background: rgba(255, 255, 255, .16); color: #fff; }
+.lang-switch a:hover { background: rgba(255, 255, 255, .08); text-decoration: none; }
+
+.lang-tag {
+  display: inline-block;
+  margin-right: 4px;
+  padding: 1px 4px;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  color: var(--muted);
+  font-family: var(--sans);
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  vertical-align: 1px;
+}
+.translation-note {
+  margin: 0 0 12px;
+  padding: 7px 9px;
+  border-left: 2px solid var(--accent-line);
+  background: var(--surface-warm);
+  color: var(--muted);
+  font-size: 10.5px;
+  line-height: 1.5;
+}
+
 /* ---------- Layout ---------- */
 
 .app-main {
@@ -196,6 +237,27 @@ svg { display: block; }
   grid-template-columns: var(--rail-w) minmax(0, 1fr);
   height: calc(100dvh - var(--header-h));
   min-height: 0;
+}
+
+/* The map is the primary surface for Explore. The register views use the full
+   content width instead of squeezing tables and prose into the rail. */
+@media (min-width: 861px) {
+  .app-main.is-wide { grid-template-columns: minmax(0, 1fr); }
+  .app-main.is-wide .map-wrap { display: none; }
+  .app-main.is-wide .rail { border-right: 0; }
+  .app-main.is-wide .tabs,
+  .app-main.is-wide .rail-body { width: 100%; max-width: 1180px; margin: 0 auto; }
+}
+
+@media (min-width: 1000px) {
+  .app-main.is-wide .programme-stats { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+  .app-main.is-wide .programme-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; }
+  .app-main.is-wide .corridor-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+  .app-main.is-wide .corridor-card { margin: 0; }
 }
 
 .rail {
@@ -611,6 +673,7 @@ svg { display: block; }
 .status-pill.s-operating { border-color: var(--operating-line); background: var(--operating-soft); color: #115e59; }
 .status-pill.s-recently_completed { border-color: var(--done-line); background: var(--done-soft); color: #166534; }
 .status-pill.s-stalled { border-color: var(--stalled-line); background: var(--stalled-soft); color: #991b1b; }
+.status-pill.s-unknown { border-color: #d0d5dd; background: #f2f4f7; color: #475467; }
 .status-pill.plain::before { display: none; }
 
 .list-empty {
@@ -1489,6 +1552,7 @@ svg { display: block; }
 }
 
 .detail-section { margin-top: 20px; }
+.project-summary p { margin: 0; font-size: 12px; line-height: 1.55; }
 .detail-section h3 {
   margin: 0 0 7px;
   color: var(--muted);
@@ -1753,7 +1817,7 @@ svg { display: block; }
 .programme-summary-id { color: var(--muted); margin-bottom: 9px; }
 .programme-lang {
   margin-right: 5px;
-  color: var(--muted-2);
+  color: var(--muted);
   font-size: 8px;
   font-weight: 700;
   letter-spacing: .08em;
@@ -1827,6 +1891,9 @@ svg { display: block; }
 
 @media (max-width: 860px) {
   :root { --header-h: 56px; }
+
+  .lang-switch { margin-left: auto; flex: 0 0 auto; }
+  .lang-switch a { padding: 5px 6px; }
 
   body { overflow: hidden; }
 

@@ -1,0 +1,141 @@
+# UX audit — V4 baseline
+
+**Date:** 9 November 2026
+**Scope:** English and Indonesian editions at desktop, laptop and mobile widths.
+**Evidence:** `docs/evidence/phase-3/` screenshots and `ux-rehearsal.json`;
+`scripts/dev/smoke_site.py`; `scripts/dev/ux_rehearsal.py`;
+`scripts/dev/check_contrast.py`.
+
+## 1. Method and honesty
+
+Two passes were run:
+
+1. **Expert heuristic walkthrough.** The four primary tasks were exercised in
+   both locales on `file://` and a local HTTP server, with keyboard and
+   touch-sized viewports. Findings below are from that walkthrough.
+2. **Automated five-profile rehearsal.** The same four tasks ran through five
+   viewport/locale/input profiles. This catches layout and interaction
+   regressions and gives a time baseline, but it is **not five human users**.
+   The five-participant study is still open; the protocol is in section 6.
+
+The build is local-only. No analytics, account, cookie or remote request is
+involved.
+
+## 2. Profiles
+
+| Profile | Viewport | Locale | Input | Why |
+|---|---|---|---|---|
+| Desk researcher | 1440 × 900 | EN | Mouse | Default international reading case |
+| Policy analyst | 1280 × 800 | ID | Mouse | Indonesian-first user on a smaller desktop |
+| Laptop journalist | 1024 × 768 | EN | Mouse | Constrained width, checking a fact quickly |
+| Field user | 390 × 844 | ID | Touch | One-handed mobile use |
+| Keyboard user | 1440 × 900 | EN | Keyboard search | Non-pointer path |
+
+## 3. Tasks and results
+
+| # | Task | Success criterion | Result | Median time |
+|---|---|---|---|---|
+| 1 | Find a named project and verify its status and source | Drawer opens with title, status pill and at least one source link | 5/5 profiles | 0.54 s |
+| 2 | Read the PSN project coverage row in Data | Coverage table shows 226 current / 226 target | 5/5 profiles | 0.15 s |
+| 3 | Filter to East Java and open the first project | 23 rows, drawer opens | 5/5 profiles | 1.00 s |
+| 4 | Switch language and keep the current view | `lang` changes, `#/data` preserved | 5/5 profiles | 0.92 s |
+
+The mobile profile needed two taps on the sheet handle before the filter tools
+were visible. That was a real finding; the handle now cycles
+peek → half → full → peek on tap, and the rehearsal follows that path.
+
+The search task exposed a relevance issue rather than a failure: searching
+“Trans Sumatra” returns project rows from that corridor before the corridor
+itself, because the corridor name is in every project's search text. Grouped
+search results are not implemented.
+
+## 4. Findings
+
+### Fixed in this build
+
+| Finding | Fix | Evidence |
+|---|---|---|
+| Data, Programmes, Corridors and Estates were squeezed into the 400 px rail beside an unrelated map | Full-width register pages, max 1180 px; map hidden on those views; two-column programme and corridor grids | `04-data-desktop.png`, `03b-programmes-desktop.png`, `02-corridors-desktop.png` |
+| No Indonesian edition, no language switch, English-only chrome | `site/en/`, `site/id/`, chooser, 541-key catalogues, `translations.csv`, language switch preserving the hash | `00-language-chooser.png`, `08-explore-id-desktop.png`, `08d-data-id-desktop.png` |
+| 140 project names fell back to the source name; no project summaries | 140 reviewed Indonesian names plus 88 official PSN aliases; a factual one-sentence summary in both locales, labelled generated | `08-explore-id-desktop.png`, `08f-project-drawer-id.png` |
+| English-only status, sector, filter, sort and Data prose | All chrome and the Data methods are translated; `Intl` number/date/coordinate formatting | `08d-data-id-desktop.png` |
+| English prose in the Indonesian edition could look like a translation failure | `lang="en"` on sourced text and a visible `EN` tag; a quiet note at the top of the project drawer | `05-project-drawer.png` |
+| Mobile filters were unreachable at peek height | Tapping the sheet handle cycles to half and full; filters are then reachable | `ux-rehearsal.json`, field-id profile |
+| Small `EN`/`ID` programme badge used muted-2 at 2.91:1 | Badge now uses muted at 4.73:1 | `check_contrast.py` |
+| Unknown status had no pill treatment | Added `.status-pill.s-unknown` with a grey border, soft fill and text label | style tile |
+
+### Open
+
+| Pri | Finding | Why it matters | Next action |
+|---|---|---|---|
+| Medium | 228 project summaries are generated from fields, not written by an editor | The text is factual but telegraphic and does not explain why a project matters | Review the flagship and high-traffic summaries; keep the generated text for the long tail |
+| High | Explore still uses 9.5–12.5 px for dense rail rows | The plan targets a 14–16 px body and 12–13 px captions | Raise the rail type scale and re-test 320/390 px overflow |
+| High | Search relevance and grouping are flat | A corridor query returns many project rows; no grouped results or synonyms | Implement ranking (exact, prefix, token, edit distance) and grouped Projects/Programmes/Corridors/Estates |
+| Medium | Data coverage `reference_set`, download labels/meta and dictionary descriptions remain English in the ID edition | These are methodological strings, not proper names | Move coverage labels and download labels into the catalogue; translate dictionary descriptions in Release 4.4 |
+| Medium | No charts and no sortable table component in Data | The dashboard is readable but not yet analytical | Add SVG bar/stacked/donut charts and sortable headers |
+| Medium | No map-only mode or rail collapse | Explore still fixes 400 px for the rail | Add a collapse control and a map-only state |
+| Medium | Mobile navigation is still a tab row inside the sheet | The plan calls for a five-item bottom bar with “More” | Add the bottom bar and a full-screen filter sheet |
+| Medium | Drawer only; no shareable project, programme or company page | Deep links are hash-based and the drawer is not a page | Add detail routes and static printable pages |
+| Medium | No list↔map hover linking | Users cannot connect a row to a marker | Add hover/focus highlighting in both directions |
+| Medium | Corridor and estate geometry are still absent | The map is project-only | Add corridor lines and estate polygons once sourced |
+| Low | Tables lack `<caption>`; some table headers are not scoped | WCAG 2.2 AA table semantics | Add captions and `scope` attributes |
+| Low | No print stylesheet | Users cannot print a project or Data page cleanly | Add print CSS for detail and Data pages |
+| Blocked | Five external participants have not been recruited | Cannot claim a human task-success baseline | Run the protocol in section 6 |
+
+## 5. Baseline measurements
+
+| Measure | Value |
+|---|---|
+| Projects / programmes / estates | 228 / 24 / 204 |
+| Mapped project markers | 139 |
+| Locales | 2, 541 UI keys each |
+| Project names | 228 Indonesian display names (140 reviewed + 88 official) |
+| Project summaries | 228 generated in both locales; 0 editorial |
+| Runtime data payload | 1,360 KB |
+| Total payload including downloads | 3,292 KB |
+| Mobile horizontal overflow | none at 390 px (EN and ID) |
+| External requests | none |
+| Console / page errors | none |
+| Contrast pairs asserted | 19; all pass WCAG AA |
+| Keyboard path | skip link, Ctrl+K, Escape, arrow-row navigation, drawer Escape and focus trap |
+| Automated task success | 20/20 steps across five profiles |
+
+## 6. Five-user protocol (open)
+
+**Participants:** five people who use Indonesian infrastructure information in
+their work or study, at least two Indonesian-first readers, at least one
+mobile-first user. No atlas contributor.
+
+**Session (30 minutes):**
+
+1. Consent and background (5 min). No recording without permission.
+2. Tasks (15 min), think-aloud, no coaching:
+   - Find the status and source for a named PSN project.
+   - Find the PSN coverage gap and explain what is missing.
+   - Filter to a province and open a project.
+   - Switch language, then continue the same task.
+3. Short interview (7 min): what was trustworthy, what was confusing, what was
+   missing.
+4. Single Ease Question after each task (1–7).
+5. Close (3 min).
+
+**Metrics:** task success (binary), time on task, SEQ, number of wrong turns,
+and verbatim quotes. Record in a sheet with participant ID only; do not store
+names or contact details in the repository.
+
+**Acceptance:** all four tasks at ≥ 80% success, median time within 20% of the
+automated baseline, and a ≥ 30% success improvement over the first V4 baseline
+after the Release 4.3 changes. The five-user study is not claimed until it is
+run.
+
+## 7. Recommended order
+
+1. Review the generated project summaries and write editorial summaries for the
+   flagships and high-traffic rows (Medium, Release 4.1/4.4).
+2. Raise the Explore type scale (High, Release 4.3).
+3. Search ranking and grouped results (High, Release 4.3).
+4. Charts and sortable tables in Data (Medium, Release 4.3).
+5. Mobile bottom navigation and full-screen filters (Medium, Release 4.3).
+6. Detail pages and list↔map linking (Medium, Release 4.3).
+7. Table semantics and print CSS (Low, Release 4.5).
+8. Run the five-user study before claiming the Release 4.3 success target.

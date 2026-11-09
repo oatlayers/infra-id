@@ -47,6 +47,9 @@ from data_model import (
     STAGES,
     STATUSES,
     TABLES,
+    TRANSLATION_ENTITY_TYPES,
+    TRANSLATION_FIELDS_BY_ENTITY,
+    TRANSLATION_STATUSES,
     VERIFICATIONS,
     as_int,
     is_blank,
@@ -153,6 +156,7 @@ def main() -> None:
     programmes = read_csv(CURATED / "programmes.csv")
     programme_projects = read_csv(CURATED / "programme_projects.csv")
     programme_sources = read_csv(CURATED / "programme_sources.csv")
+    translations = read_csv(CURATED / "translations.csv")
     register = read_csv(CURATED / "psn_register.csv")
 
     project_ids = {row["id"] for row in projects}
@@ -651,6 +655,44 @@ def main() -> None:
         key = (row["programme_id"], row["source_id"], row["claim"])
         if key in seen:
             err(f"{where}: duplicate claim")
+        seen.add(key)
+
+    translation_entities = {
+        "project": project_ids,
+        "programme": programme_ids,
+        "corridor": corridor_ids,
+        "estate": estate_ids,
+    }
+    seen = set()
+    for row in translations:
+        where = "translations {}/{}/{}".format(
+            row["entity_type"] or "?", row["entity_id"] or "?", row["field"] or "?"
+        )
+        check_enum(row["entity_type"], TRANSLATION_ENTITY_TYPES, "entity_type", where)
+        check_enum(row["locale"], {"en", "id"}, "locale", where)
+        check_enum(row["status"], TRANSLATION_STATUSES, "status", where)
+        allowed_fields = TRANSLATION_FIELDS_BY_ENTITY.get(row["entity_type"], set())
+        if row["field"] not in allowed_fields:
+            err(f"{where}: field is not valid for {row['entity_type'] or '?'}")
+        if row["entity_id"] not in translation_entities.get(row["entity_type"], set()):
+            err(f"{where}: unknown {row['entity_type'] or '?'} id")
+        if row["status"] == "missing":
+            if row["text"]:
+                err(f"{where}: a missing row must not carry text")
+        elif is_blank(row["text"]):
+            err(f"{where}: missing text")
+        if row["status"] in {"official", "reviewed"}:
+            if not row["translator"]:
+                err(f"{where}: reviewed translations need a translator")
+            if not row["reviewed_on"]:
+                err(f"{where}: reviewed translations need reviewed_on")
+        if row["reviewed_on"]:
+            check_date(row["reviewed_on"], f"{where} reviewed_on")
+        if row["source_id"] and row["source_id"] not in source_ids:
+            err(f"{where}: unknown source")
+        key = (row["entity_type"], row["entity_id"], row["field"], row["locale"])
+        if key in seen:
+            err(f"{where}: duplicate translation")
         seen.add(key)
 
     seen = set()

@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Atlas style tile — v4 baseline</title>
+<link rel="stylesheet" href="../../site/assets/fonts.css">
+<link rel="stylesheet" href="../../site/assets/tokens.css">
+<link rel="stylesheet" href="../../site/assets/app.css">
+<style>
+  /* The app shell fixes the viewport; this documentation page must scroll. */
+  body { height: auto; min-height: 100dvh; overflow: auto; background: var(--paper); }
+  .tile { max-width: 1080px; margin: 0 auto; padding: 48px 28px 80px; }
+  .tile-head { border-bottom: 1px solid var(--line); padding-bottom: 20px; margin-bottom: 30px; }
+  .tile-head h1 { margin: 0 0 6px; font-family: var(--serif); font-size: 40px; font-weight: 600; letter-spacing: -.02em; }
+  .tile-head p { margin: 0; max-width: 70ch; color: var(--muted); font-size: 14px; line-height: 1.6; }
+  .tile h2 { margin: 36px 0 12px; font-family: var(--serif); font-size: 24px; font-weight: 600; }
+  .tile h3 { margin: 20px 0 8px; color: var(--muted); font-size: 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+  .swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; }
+  .swatch { border: 1px solid var(--line); border-radius: var(--r-md); overflow: hidden; background: var(--surface); }
+  .swatch .chip-color { height: 54px; }
+  .swatch .meta { padding: 8px 10px; font-size: 11px; line-height: 1.4; }
+  .swatch code { display: block; color: var(--muted); font-family: var(--mono); font-size: 10px; }
+  .type-row { display: grid; grid-template-columns: 70px minmax(0, 1fr); gap: 14px; align-items: baseline; padding: 7px 0; border-bottom: 1px solid var(--line); }
+  .type-row code { color: var(--muted); font-family: var(--mono); font-size: 10px; }
+  .spacing { display: flex; align-items: flex-end; gap: 12px; flex-wrap: wrap; }
+  .space { text-align: center; color: var(--muted); font-size: 10px; }
+  .space i { display: block; background: var(--accent-soft); border: 1px solid var(--accent-line); margin-bottom: 4px; }
+  .components { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+  .navy-strip { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; padding: 14px 16px; border-radius: var(--r-md); background: var(--navy); }
+  .note { margin: 18px 0 0; padding: 10px 12px; border-left: 2px solid var(--accent-line); background: var(--surface-warm); color: var(--muted); font-size: 12px; line-height: 1.6; }
+  table.contrast { width: 100%; border-collapse: collapse; font-size: 12px; }
+  table.contrast th, table.contrast td { padding: 7px 8px; border-bottom: 1px solid var(--line); text-align: left; }
+  table.contrast td.num { text-align: right; font-variant-numeric: tabular-nums; }
+  .ok { color: var(--operating); font-weight: 600; }
+</style>
+</head>
+<body>
+<main class="tile">
+  <header class="tile-head">
+    <h1>Atlas style tile</h1>
+    <p>V4 baseline, 9 November 2026. This page imports the live <code>tokens.css</code> and <code>app.css</code>: it is a view of the system, not a second one. The atlas is an editorial reference book that happens to be interactive.</p>
+  </header>
+
+  <h2>Colour</h2>
+  <div class="swatches">
+    <div class="swatch"><div class="chip-color" style="background:var(--paper)"></div><div class="meta">Paper<code>#fbf9f4</code></div></div>
+    <div class="swatch"><div class="chip-color" style="background:var(--surface)"></div><div class="meta">Surface<code>#ffffff</code></div></div>
+    <div class="swatch"><div class="chip-color" style="background:var(--ink)"></div><div class="meta">Ink<code>#101828</code></div></div>
+    <div class="swatch"><div class="chip-color" style="background:var(--navy)"></div><div class="meta">Navy<code>#0b1f33</code></div></div>
+    <div class="swatch"><div class="chip-color" style="background:var(--muted)"></div><div class="meta">Muted<code>#667085</code></div></div>
+    <div class="swatch"><div class="chip-color" style="background:var(--line)"></div><div class="meta">Line<code>#e4e7ec</code></div></div>
+    <div class="swatch"><div class="chip-color" style="background:var(--accent)"></div><div class="meta">Accent<code>#b54708</code></div></div>
+    <div class="swatch"><div class="chip-color" style="background:var(--uc)"></div><div class="meta">Under construction<code>#c2410c</code></div></div>
+    <div class="swatch"><div class="chip-color" style="background:var(--planned)"></div><div class="meta">Planned<code>#1d4ed8</code></div></div>
+    <div class="swatch"><div class="chip-color" style="background:var(--operating)"></div><div class="meta">Operating<code>#0f766e</code></div></div>
+    <div class="swatch"><div class="chip-color" style="background:var(--done)"></div><div class="meta">Recently completed<code>#15803d</code></div></div>
+    <div class="swatch"><div class="chip-color" style="background:var(--stalled)"></div><div class="meta">Stalled<code>#b42318</code></div></div>
+  </div>
+  <p class="note">One accent, one alert. Burnt orange marks action and under construction; red is reserved for stalled. Status always carries a text label and a dot, never colour alone.</p>
+
+  <h2>Type</h2>
+  <div class="type-row"><code>48 / 1.05</code><span style="font-family:var(--serif);font-size:48px;font-weight:600;letter-spacing:-.02em">226 PSN records</span></div>
+  <div class="type-row"><code>36 / 1.1</code><span style="font-family:var(--serif);font-size:36px;font-weight:600;letter-spacing:-.02em">Data and methods</span></div>
+  <div class="type-row"><code>28 / 1.15</code><span style="font-family:var(--serif);font-size:28px;font-weight:600">Trans Sumatra</span></div>
+  <div class="type-row"><code>22 / 1.2</code><span style="font-family:var(--serif);font-size:22px;font-weight:600">Program Ketenagalistrikan</span></div>
+  <div class="type-row"><code>18 / 1.3</code><span style="font-size:18px;font-weight:600">Section heading</span></div>
+  <div class="type-row"><code>16 / 1.6</code><span style="font-size:16px">Body copy for a full-width register page.</span></div>
+  <div class="type-row"><code>14 / 1.5</code><span style="font-size:14px">Interface text and table cells.</span></div>
+  <div class="type-row"><code>12 / 1.4</code><span style="font-size:12px;color:var(--muted)">Captions, units and source metadata.</span></div>
+  <p class="note">The live shell still uses 10–12.5 px for dense rail rows and table captions. Raising the whole interface to the 14–16 px body scale is an open Release 4.3 item; the full-width registers already use the larger scale.</p>
+
+  <h2>Spacing and shape</h2>
+  <div class="spacing">
+    <div class="space"><i style="width:4px;height:4px"></i>4</div>
+    <div class="space"><i style="width:8px;height:8px"></i>8</div>
+    <div class="space"><i style="width:12px;height:12px"></i>12</div>
+    <div class="space"><i style="width:16px;height:16px"></i>16</div>
+    <div class="space"><i style="width:24px;height:24px"></i>24</div>
+    <div class="space"><i style="width:32px;height:32px"></i>32</div>
+    <div class="space"><i style="width:48px;height:48px"></i>48</div>
+  </div>
+  <div class="components" style="margin-top:14px">
+    <span class="status-pill" style="border-radius:var(--r-sm)">radius 8</span>
+    <span class="status-pill" style="border-radius:var(--r-md)">radius 12</span>
+    <span class="status-pill" style="border-radius:var(--r-lg)">radius 16</span>
+    <span class="status-pill" style="border-radius:var(--r-pill)">pill</span>
+  </div>
+
+  <h2>Status</h2>
+  <div class="components">
+    <span class="status-pill s-under_construction">Under construction</span>
+    <span class="status-pill s-planned">Planned</span>
+    <span class="status-pill s-operating">Operating</span>
+    <span class="status-pill s-recently_completed">Recently completed</span>
+    <span class="status-pill s-stalled">Stalled</span>
+    <span class="status-pill s-unknown">Status not sourced</span>
+  </div>
+
+  <h2>Controls</h2>
+  <div class="components">
+    <button class="chip" aria-pressed="true">Semua <span class="chip-count">228</span></button>
+    <button class="chip">Jalan <span class="chip-count">54</span></button>
+    <button class="filter-button">Filter lainnya</button>
+    <button class="filter-clear">Hapus semua</button>
+  </div>
+  <div class="navy-strip" style="margin-top:12px">
+    <span style="color:#fff;font-family:var(--serif);font-size:18px">Atlas Infrastruktur Indonesia</span>
+    <nav class="lang-switch" aria-label="Language">
+      <a href="#" aria-current="page">EN</a><a href="#">ID</a>
+    </nav>
+  </div>
+
+  <h2>Contrast</h2>
+  <table class="contrast">
+    <thead><tr><th>Pair</th><th>Ratio</th><th>Need</th><th>Result</th></tr></thead>
+    <tbody>
+      <tr><td>Ink on paper</td><td class="num">16.87</td><td class="num">4.5</td><td class="ok">Pass</td></tr>
+      <tr><td>Muted on paper</td><td class="num">4.73</td><td class="num">4.5</td><td class="ok">Pass</td></tr>
+      <tr><td>Accent on paper</td><td class="num">5.16</td><td class="num">4.5</td><td class="ok">Pass</td></tr>
+      <tr><td>White on navy</td><td class="num">16.69</td><td class="num">4.5</td><td class="ok">Pass</td></tr>
+      <tr><td>Under construction on soft</td><td class="num">4.63</td><td class="num">4.5</td><td class="ok">Pass</td></tr>
+      <tr><td>Accent focus ring on navy</td><td class="num">3.08</td><td class="num">3.0</td><td class="ok">Pass</td></tr>
+    </tbody>
+  </table>
+  <p class="note">Measured by <code>scripts/dev/check_contrast.py</code> from the live tokens. The decorative chevron uses muted-2 at 2.91:1 and is not relied on for meaning.</p>
+
+  <h2>Motion</h2>
+  <p style="font-size:14px;line-height:1.6;color:var(--muted);max-width:70ch">Hover 120 ms, drawer 180 ms, map fit 240 ms. <code>prefers-reduced-motion</code> removes the map animation; the drawer still opens without a transition.</p>
+</main>
+</body>
+</html>

@@ -40,10 +40,18 @@ TABLE_META = {
     "programmes.csv": ("Programmes", "The 24 active PSN programmes, with bilingual names, summaries, lead agency and source."),
     "programme_projects.csv": ("Programme projects", "Structural links between a programme and the atlas projects that illustrate it."),
     "programme_sources.csv": ("Programme claims", "One atomic fact per programme-source link."),
+    "translations.csv": ("Translations", "Reviewed English and Indonesian text for entity names, summaries and definitions that are not carried in a bilingual curated field."),
 }
 
 FIELD = {
     "id": ("id", "yes", "Stable lowercase-hyphenated identifier used in deep links and joins."),
+    "entity_type": ("enum", "yes", "Entity family being translated: project, programme, corridor, estate, company, indicator or source."),
+    "entity_id": ("id", "yes", "Foreign key to the entity in its own table."),
+    "field": ("enum", "yes", "Translated field: name, summary, target_summary, definition, unit_label or title."),
+    "locale": ("enum", "yes", "Locale code: en or id."),
+    "text": ("text", "yes", "Display text in the stated locale."),
+    "translator": ("text", "conditional", "Translator or editor for a reviewed or official translation."),
+    "reviewed_on": ("date", "conditional", "Review date for a reviewed or official translation."),
     "name": ("text", "yes", "Display name in English with Indonesian proper names."),
     "short_name": ("text", "no", "Short display name or acronym."),
     "subject": ("text", "yes", "Short human-readable label for the conflicted subject."),
@@ -199,6 +207,13 @@ OVERRIDES = {
     ("programmes.csv", "pkpn_id"): ("enum", "no", "Optional PKPN link.", "pkpn-food; pkpn-energy-water; pkpn-education; pkpn-health; pkpn-downstreaming; pkpn-infrastructure; pkpn-housing; pkpn-resilience"),
     ("programme_projects.csv", "role"): ("enum", "yes", "primary, component or related.", "primary; component; related"),
     ("programme_sources.csv", "claim"): ("enum", "yes", "One atomic fact type; commas are not allowed.", ""),
+    ("translations.csv", "entity_type"): ("enum", "yes", "project, programme, corridor, estate, company, indicator or source.", "project; programme; corridor; estate; company; indicator; source"),
+    ("translations.csv", "field"): ("enum", "yes", "name, summary, target_summary, definition, unit_label or title.", "name; summary; target_summary; definition; unit_label; title"),
+    ("translations.csv", "locale"): ("enum", "yes", "en or id.", "en; id"),
+    ("translations.csv", "status"): ("enum", "yes", "official, reviewed, draft, machine or missing.", "official; reviewed; draft; machine; missing"),
+    ("translations.csv", "text"): ("text", "yes", "Display text in the stated locale.", ""),
+    ("translations.csv", "translator"): ("text", "conditional", "Translator or editor for a reviewed or official translation.", ""),
+    ("translations.csv", "reviewed_on"): ("date", "conditional", "Review date for a reviewed or official translation.", ""),
 }
 
 CONDITIONAL = {
@@ -206,6 +221,7 @@ CONDITIONAL = {
     ("projects.csv", "capacity_unit"), ("projects.csv", "opened_year"),
     ("projects.csv", "corridor_id"), ("estates.csv", "regency"),
     ("corridors.csv", "source_id"), ("corridor_segments.csv", "source_id"),
+    ("translations.csv", "translator"), ("translations.csv", "reviewed_on"),
 }
 
 

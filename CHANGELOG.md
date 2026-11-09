@@ -3,6 +3,38 @@
 Public-facing changes to the atlas. Dates are the day the change landed in this
 repository. The Data view renders these entries from this file at build time.
 
+## 2026-11-09 — Bilingual shell and full-width registers
+
+- Added the English and Indonesian editions at `site/en/index.html` and
+  `site/id/index.html`, generated from one template, plus a bilingual chooser at
+  `site/index.html`.
+- Added 541 UI keys per locale in `data/i18n/ui.en.json` and `ui.id.json`, a
+  validated `translations.csv` entity layer, `build_i18n.py` and
+  `build_locales.py`. The build fails on catalogue drift or a missing programme
+  or corridor translation.
+- Translated all chrome, statuses, sectors, filters, programmes, corridors,
+  estates, Data methods and the language switch. All 228 projects now have an
+  Indonesian display name: 140 reviewed names plus the 88 official PSN aliases.
+  Every project also has a factual one-sentence summary generated from its
+  sourced fields in both locales and labelled `AUTO` / `OTOMATIS`; editorial
+  review of those summaries remains open.
+- Numbers, dates and coordinates now use `Intl` with `en-GB` or `id-ID`.
+  Sourced English text in the Indonesian edition carries `lang="en"` and a
+  visible `EN` tag.
+- Data, Programmes, Corridors and Estates now use the full content width (max
+  1180 px) instead of the 400 px rail. Programme and corridor cards use two
+  columns on wide screens.
+- Mobile sheet handle now cycles peek → half → full on tap, so filters are
+  reachable without discovering the drag gesture.
+- Added the design baseline: `docs/design/tokens-v4.md`,
+  `docs/design/style-tile.html`, `docs/design/ux-audit-v4.md`,
+  `scripts/dev/check_contrast.py` and `scripts/dev/ux_rehearsal.py`.
+- The data dictionary grows to 238 fields across 23 tables with
+  `translations.csv`. Payload is 1,360 KB runtime / 3,292 KB total, within the
+  plan budgets. Build, `--check`, link check, smoke test and the five-profile
+  rehearsal pass.
+- Nothing was pushed, deployed or published.
+
 ## 2026-11-09 — PSN register-only closure
 
 - Closed the remaining PSN coverage at Tier C: 88 active PSN projects and 18

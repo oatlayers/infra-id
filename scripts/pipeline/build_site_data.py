@@ -569,81 +569,102 @@ def main() -> None:
         ],
         "downloads": [
             {
+                "key": "projects",
                 "label": "Projects",
                 "file": "downloads/projects.csv",
                 "meta": f"{len(rows)} rows · flat export",
             },
             {
+                "key": "projects_geojson",
                 "label": "Projects (GeoJSON)",
                 "file": "downloads/projects.geojson",
                 "meta": f"{len(rows)} point features",
             },
             {
+                "key": "estates",
                 "label": "Estates and SEZs",
                 "file": "downloads/estates.csv",
                 "meta": f"{len(estates)} rows · table only",
             },
             {
-                "label": "Estate gap ledger",
+                "key": "estate_gap",
+                "label": "2024 estate audit ledger",
                 "file": "downloads/estate-gap.csv",
-                "meta": f"{len(estate_gap)} rows · 179-vs-160 reconciliation",
+                "meta": (
+                    f"{len(estate_gap)} rows · "
+                    f"{sum(1 for row in estate_gap if row['disposition'] == 'resolved')} resolved, "
+                    f"{sum(1 for row in estate_gap if row['disposition'].startswith('unresolved'))} open, "
+                    f"{sum(1 for row in estate_gap if row['disposition'] == 'not-required-for-count')} retired"
+                ),
             },
             {
+                "key": "corridors",
                 "label": "Corridors",
                 "file": "downloads/corridors.json",
                 "meta": f"{len(corridors)} corridor summaries",
             },
             {
+                "key": "corridor_segments",
                 "label": "Corridor segments",
                 "file": "downloads/corridors-segments.csv",
                 "meta": f"{len(segments)} sections · five corridors",
             },
             {
+                "key": "events",
                 "label": "Project events",
                 "file": "downloads/events.csv",
                 "meta": f"{len(events)} dated events",
             },
             {
+                "key": "sources",
                 "label": "Sources",
                 "file": "downloads/sources.csv",
                 "meta": f"{len(sources)} documents",
             },
             {
+                "key": "claims",
                 "label": "Project claims",
                 "file": "downloads/claims.csv",
                 "meta": f"{len(claims)} atomic claims",
             },
             {
+                "key": "programmes",
                 "label": "PSN programmes",
                 "file": "downloads/programmes.csv",
                 "meta": f"{len(programmes)} programmes · bilingual names and summaries",
             },
             {
+                "key": "programme_projects",
                 "label": "Programme project links",
                 "file": "downloads/programme-projects.csv",
                 "meta": f"{len(programme_projects)} structural links",
             },
             {
+                "key": "programme_claims",
                 "label": "Programme claims",
                 "file": "downloads/programme-claims.csv",
                 "meta": f"{len(programme_claims)} atomic claims",
             },
             {
+                "key": "conflicts",
                 "label": "Conflict register",
                 "file": "downloads/conflicts.csv",
                 "meta": f"{len(conflicts)} conflicts · {sum(1 for row in conflicts if row['status'] == 'open')} open",
             },
             {
+                "key": "freshness",
                 "label": "Freshness report",
                 "file": "downloads/freshness.csv",
                 "meta": f"{len(freshness)} rows · as of {os.environ.get('INFRAA_AS_OF', '') or last_verified}",
             },
             {
+                "key": "dictionary",
                 "label": "Data dictionary",
                 "file": "downloads/dictionary.csv",
                 "meta": f"{len(dictionary)} field definitions",
             },
             {
+                "key": "basemap",
                 "label": "Basemap",
                 "file": "downloads/basemap.geojson",
                 "meta": "Natural Earth-derived offline basemap",

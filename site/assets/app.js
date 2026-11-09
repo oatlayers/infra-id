@@ -10,6 +10,17 @@
   const PROGRAMME_THEMES = A.PROGRAMME_THEMES || {};
   const PROGRAMME_THEME_ORDER = A.PROGRAMME_THEME_ORDER || [];
   const STALE_DAYS = A.STALE_DAYS || 183;
+  const I18N = window.AtlasI18n || {};
+  const EVENT_TYPES = [
+    'announced', 'groundbreaking', 'contract', 'financial_close',
+    'section_opened', 'opened', 'stalled', 'resumed', 'target_changed', 'other'
+  ];
+  const METRIC_KEYS = {
+    'toll operational km': 'metric.toll_operational_km',
+    'national road connected km': 'metric.national_road_connected_km',
+    'route length; no current progress series': 'metric.route_length_no_current_series',
+    'route length; no progress series': 'metric.route_length_no_series'
+  };
 
   const features = (window.PROJECTS && window.PROJECTS.features) || [];
   const projects = features.map(function (feature) {
@@ -84,27 +95,72 @@
       .replace(/'/g, '&#39;');
   }
 
+  function t(key, vars) {
+    return I18N.t ? I18N.t(key, vars) : key;
+  }
+
+  function tOr(key, fallback) {
+    const value = t(key);
+    return value === key ? fallback : value;
+  }
+
   function fmtNum(value) {
     const number = Number(value);
     if (!isFinite(number)) return esc(value);
-    return new Intl.NumberFormat('en-US', { maximumFractionDigits: 1 }).format(number);
+    return I18N.fmtNum ? I18N.fmtNum(number) : String(value);
   }
 
   function fmtCoord(value) {
     const number = Number(value);
     if (!isFinite(number)) return esc(value);
-    return new Intl.NumberFormat('en-US', {
-      minimumFractionDigits: 4, maximumFractionDigits: 5
-    }).format(number);
+    return I18N.fmtCoord ? I18N.fmtCoord(number) : String(value);
   }
 
   function fmtDate(value) {
     if (!value) return '';
-    const parsed = new Date(value + 'T00:00:00');
-    if (isNaN(parsed.getTime())) return esc(value);
-    return new Intl.DateTimeFormat('en-GB', {
-      day: 'numeric', month: 'short', year: 'numeric'
-    }).format(parsed);
+    return I18N.fmtDate ? I18N.fmtDate(value) : String(value);
+  }
+
+  function projectName(project) {
+    return I18N.entityName ? I18N.entityName('project', project) : project.name;
+  }
+
+  function corridorName(corridor) {
+    return I18N.entityName ? I18N.entityName('corridor', corridor) : corridor.name;
+  }
+
+  function programmeName(programme) {
+    if (I18N.entity) {
+      return I18N.entity('programme', programme.id, 'name', programme.name_en || '');
+    }
+    return programme.name_en || programme.name_id || '';
+  }
+
+  function programmeField(programme, field) {
+    if (I18N.entity) {
+      return I18N.entity('programme', programme.id, field, '');
+    }
+    return '';
+  }
+
+  function corridorDefinition(corridor) {
+    if (I18N.entity) {
+      return I18N.entity('corridor', corridor.id, 'definition', corridor.definition || '');
+    }
+    return corridor.definition || '';
+  }
+
+  function provinceText(value) {
+    return I18N.provinceName ? I18N.provinceName(value) : value;
+  }
+
+  function islandText(value) {
+    return I18N.islandName ? I18N.islandName(value) : value;
+  }
+
+  function metricLabel(value) {
+    const key = METRIC_KEYS[String(value || '').toLowerCase()];
+    return key ? t(key) : value;
   }
 
   function daysSince(value) {
@@ -120,38 +176,30 @@
   }
 
   function freshnessLabel(state) {
-    return {
-      fresh: 'Verified within six months',
-      due_soon: 'Refresh due soon',
-      stale: 'Stale: re-check required',
-      unknown: 'Verification date unknown'
-    }[state] || 'Verification date unknown';
+    return t('freshness.' + (state || 'unknown'));
   }
 
   function statusLabel(status) {
-    return (STATUS[status] && STATUS[status].label) || status || 'Unknown';
+    if (!status) return t('status.unknown.label');
+    return tOr('status.' + status + '.label', status);
+  }
+
+  function statusShort(status) {
+    if (!status) return t('status.unknown.short');
+    return tOr('status.' + status + '.short', statusLabel(status));
   }
 
   function eventLabel(type) {
-    const labels = {
-      announced: 'Announced',
-      groundbreaking: 'Groundbreaking',
-      contract: 'Contract',
-      financial_close: 'Financial close',
-      section_opened: 'Section opened',
-      opened: 'Opened',
-      stalled: 'Stalled',
-      resumed: 'Resumed',
-      target_changed: 'Target changed',
-      other: 'Event'
-    };
-    return labels[type] || String(type || 'Event').replace(/_/g, ' ');
+    return EVENT_TYPES.indexOf(type) === -1 ? t('event.other') : t('event.' + type);
   }
 
   function sectorLabel(sector, plural) {
-    const record = SECTORS[sector];
-    if (!record) return sector || '';
-    return plural ? record.plural : record.label;
+    if (!sector) return '';
+    return tOr('sector.' + sector + (plural ? '.plural' : '.label'), sector);
+  }
+
+  function sectorShort(sector) {
+    return tOr('sector.' + sector + '.short', sectorLabel(sector, true));
   }
 
   function statusPill(status) {
@@ -177,7 +225,7 @@
   }
 
   function provinceShort(project) {
-    const list = splitProvinces(project.province);
+    const list = splitProvinces(project.province).map(provinceText);
     if (!list.length) return 'Indonesia';
     return list.length > 1 ? list[0] + ' +' + (list.length - 1) : list[0];
   }
@@ -481,7 +529,7 @@
   function renderHeader() {
     const totalProjects = (stats.projects && stats.projects.total) || projects.length;
     const totalCorridors = (stats.corridors && stats.corridors.total) || corridors.length;
-    const totalEstates = (stats.estates && stats.estates.total) || (estates ? estates.length : 186);
+    const totalEstates = (stats.estates && stats.estates.total) || (estates ? estates.length : 0);
     dom.statProjects.textContent = fmtNum(totalProjects);
     dom.statCorridors.textContent = fmtNum(totalCorridors);
     dom.statEstates.textContent = fmtNum(totalEstates);
@@ -503,13 +551,13 @@
     const counts = countByDimension().bySector;
     const allSelected = state.filters.sectors.size === SECTOR_ORDER.length;
     let html = '<button class="chip" data-sector-all aria-pressed="' + allSelected + '">' +
-      'All<span class="chip-count">' + fmtNum(projects.filter(function (project) {
+      esc(t('filter.all')) + '<span class="chip-count">' + fmtNum(projects.filter(function (project) {
         return passesFilters(project, { skipSector: true });
       }).length) + '</span></button>';
     SECTOR_ORDER.forEach(function (sector) {
       const count = counts[sector] || 0;
       const pressed = state.filters.sectors.has(sector);
-      const short = (SECTORS[sector] && SECTORS[sector].short) || sectorLabel(sector, true);
+      const short = sectorShort(sector);
       html += '<button class="chip' + (count === 0 ? ' is-zero' : '') + '" data-sector="' +
         esc(sector) + '" aria-pressed="' + pressed + '" aria-label="' +
         esc(sectorLabel(sector, true)) + '">' +
@@ -524,7 +572,7 @@
     STATUS_ORDER.forEach(function (status) {
       const count = counts[status] || 0;
       const pressed = state.filters.statuses.has(status);
-      const short = (STATUS[status] && STATUS[status].short) || statusLabel(status);
+      const short = statusShort(status);
       html += '<button class="chip' + (count === 0 ? ' is-zero' : '') + '" data-status="' +
         esc(status) + '" aria-pressed="' + pressed + '" aria-label="' +
         esc(statusLabel(status)) + '"><span class="dot" style="--c:' +
@@ -546,15 +594,35 @@
         chips.push({ key: 'status:' + status, label: statusLabel(status) });
       });
     }
-    if (state.filters.island) chips.push({ key: 'island', label: state.filters.island });
-    if (state.filters.province) chips.push({ key: 'province', label: state.filters.province });
-    if (state.filters.psn) chips.push({ key: 'psn', label: 'PSN: ' + state.filters.psn });
+    if (state.filters.island) chips.push({ key: 'island', label: islandText(state.filters.island) });
+    if (state.filters.province) chips.push({ key: 'province', label: provinceText(state.filters.province) });
+    if (state.filters.psn) {
+      chips.push({
+        key: 'psn',
+        label: t('filter.psn_value', {
+          value: state.filters.psn === 'yes' ? 'PSN' : state.filters.psn === 'no'
+            ? t('filter.not_psn') : t('filter.unknown')
+        })
+      });
+    }
     if (state.filters.corridor) {
       const corridor = corridorById.get(state.filters.corridor);
-      chips.push({ key: 'corridor', label: corridor ? corridor.name : state.filters.corridor });
+      chips.push({ key: 'corridor', label: corridor ? corridorName(corridor) : state.filters.corridor });
     }
-    if (state.filters.precision) chips.push({ key: 'precision', label: 'Precision: ' + state.filters.precision });
-    if (state.filters.freshness) chips.push({ key: 'freshness', label: state.filters.freshness === 'fresh' ? 'Verified < 6 months' : 'Stale' });
+    if (state.filters.precision) {
+      chips.push({
+        key: 'precision',
+        label: t('filter.precision_value', {
+          value: tOr('filter.' + state.filters.precision, state.filters.precision)
+        })
+      });
+    }
+    if (state.filters.freshness) {
+      chips.push({
+        key: 'freshness',
+        label: state.filters.freshness === 'fresh' ? t('freshness.fresh_short') : t('filter.stale')
+      });
+    }
 
     if (!chips.length) {
       dom.activeFilters.hidden = true;
@@ -563,8 +631,8 @@
       dom.activeFilters.hidden = false;
       dom.activeFilters.innerHTML = chips.map(function (chip) {
         return '<span class="active-filter">' + esc(chip.label) +
-          '<button type="button" data-remove="' + esc(chip.key) + '" aria-label="Remove filter ' +
-          esc(chip.label) + '">&times;</button></span>';
+          '<button type="button" data-remove="' + esc(chip.key) + '" aria-label="' +
+          esc(t('filter.remove', { name: chip.label })) + '">&times;</button></span>';
       }).join('');
     }
 
@@ -572,36 +640,62 @@
     dom.filterBadge.hidden = count === 0;
     dom.filterBadge.textContent = String(count);
     dom.clearFilters.hidden = !hasAnyFilter();
-    dom.popoverSummary.textContent = filteredProjects().length + ' of ' + projects.length + ' projects match';
+    dom.popoverSummary.textContent = t('filter.match', {
+      count: fmtNum(filteredProjects().length), total: fmtNum(projects.length)
+    });
+  }
+
+  function filterOptions(placeholder, entries) {
+    return '<option value="">' + esc(placeholder) + '</option>' + entries.map(function (entry) {
+      return '<option value="' + esc(entry.value) + '">' + esc(entry.label) + '</option>';
+    }).join('');
   }
 
   function renderFilterControls() {
     if (!dom.filterGrid) return;
-    const islandOptions = ['<option value="">Any island</option>'].concat(
+    const islandOptions = filterOptions(
+      t('filter.any_island'),
       ((stats.projects && stats.projects.island) ? Object.keys(stats.projects.island) : [])
         .sort().map(function (island) {
-          return '<option value="' + esc(island) + '">' + esc(island) + '</option>';
+          return { value: island, label: islandText(island) };
         })
-    ).join('');
-    const provinceOptions = ['<option value="">Any province</option>'].concat(
+    );
+    const provinceOptions = filterOptions(
+      t('filter.any_province'),
       ((stats.projects && stats.projects.by_province) ? Object.keys(stats.projects.by_province) : [])
         .sort().map(function (province) {
-          return '<option value="' + esc(province) + '">' + esc(province) + '</option>';
+          return { value: province, label: provinceText(province) };
         })
-    ).join('');
-    const corridorOptions = ['<option value="">Any corridor</option>'].concat(
+    );
+    const corridorOptions = filterOptions(
+      t('filter.any_corridor'),
       corridors.map(function (corridor) {
-        return '<option value="' + esc(corridor.id) + '">' + esc(corridor.name) + '</option>';
+        return { value: corridor.id, label: corridorName(corridor) };
       })
-    ).join('');
+    );
 
     dom.filterGrid.innerHTML =
-      '<div class="field"><label for="f-island">Island</label><select id="f-island" data-filter="island">' + islandOptions + '</select></div>' +
-      '<div class="field"><label for="f-province">Province</label><select id="f-province" data-filter="province">' + provinceOptions + '</select></div>' +
-      '<div class="field"><label for="f-psn">PSN status</label><select id="f-psn" data-filter="psn"><option value="">Any</option><option value="yes">PSN</option><option value="no">Not PSN</option><option value="unknown">Unknown</option></select></div>' +
-      '<div class="field"><label for="f-corridor">Corridor</label><select id="f-corridor" data-filter="corridor">' + corridorOptions + '</select></div>' +
-      '<div class="field"><label for="f-precision">Precision</label><select id="f-precision" data-filter="precision"><option value="">Any</option><option value="exact">Exact</option><option value="approximate">Approximate</option><option value="regency">Regency</option><option value="province">Province</option></select></div>' +
-      '<div class="field"><label for="f-fresh">Verification</label><select id="f-fresh" data-filter="freshness"><option value="">Any date</option><option value="fresh">Under 6 months</option><option value="stale">Stale</option></select></div>';
+      '<div class="field"><label for="f-island">' + esc(t('filter.island')) + '</label><select id="f-island" data-filter="island">' + islandOptions + '</select></div>' +
+      '<div class="field"><label for="f-province">' + esc(t('filter.province')) + '</label><select id="f-province" data-filter="province">' + provinceOptions + '</select></div>' +
+      '<div class="field"><label for="f-psn">' + esc(t('filter.psn')) + '</label><select id="f-psn" data-filter="psn">' +
+        filterOptions(t('filter.any'), [
+          { value: 'yes', label: 'PSN' },
+          { value: 'no', label: t('filter.not_psn') },
+          { value: 'unknown', label: t('filter.unknown') }
+        ]) + '</select></div>' +
+      '<div class="field"><label for="f-corridor">' + esc(t('filter.corridor')) + '</label><select id="f-corridor" data-filter="corridor">' + corridorOptions + '</select></div>' +
+      '<div class="field"><label for="f-precision">' + esc(t('filter.precision')) + '</label><select id="f-precision" data-filter="precision">' +
+        filterOptions(t('filter.any'), [
+          { value: 'exact', label: t('filter.exact') },
+          { value: 'approximate', label: t('filter.approximate') },
+          { value: 'regency', label: t('filter.regency') },
+          { value: 'province', label: t('filter.province_precision') }
+        ]) + '</select></div>' +
+      '<div class="field"><label for="f-fresh">' + esc(t('filter.verification')) + '</label><select id="f-fresh" data-filter="freshness">' +
+        filterOptions(t('filter.any_date'), [
+          { value: 'fresh', label: t('filter.under_6_months') },
+          { value: 'stale', label: t('filter.stale') }
+        ]) + '</select></div>';
 
     syncFilterControls();
   }
@@ -627,21 +721,21 @@
   function rowFigure(project) {
     const bits = [];
     if (project.length_km) bits.push(fmtNum(project.length_km) + ' km');
-    if (project.operational_km) bits.push(fmtNum(project.operational_km) + ' km open');
+    if (project.operational_km) bits.push(t('row.km_open', { value: fmtNum(project.operational_km) }));
     if (!bits.length && project.investment_idr_t) bits.push('Rp ' + fmtNum(project.investment_idr_t) + ' T');
-    if (!bits.length && project.capacity) bits.push(fmtNum(project.capacity) + ' ' + project.capacity_unit);
-    if (!bits.length && project.opened_year) bits.push('Opened ' + project.opened_year);
-    if (!bits.length && project.expected_open_year) bits.push('Target ' + project.expected_open_year);
-    return bits.join(' · ') || 'No figure yet';
+    if (!bits.length && project.capacity) bits.push(fmtNum(project.capacity) + ' ' + (I18N.unitLabel ? I18N.unitLabel(project.capacity_unit) : project.capacity_unit));
+    if (!bits.length && project.opened_year) bits.push(t('row.opened', { year: project.opened_year }));
+    if (!bits.length && project.expected_open_year) bits.push(t('row.target', { year: project.expected_open_year }));
+    return bits.join(' · ') || t('row.no_figure');
   }
 
   function renderProjectRows(list) {
     if (!list.length) {
       dom.projectList.innerHTML = '<li><div class="list-empty">' +
         '<svg aria-hidden="true"><use href="#i-search"></use></svg>' +
-        '<h3>No projects match</h3>' +
-        '<p>Try removing a filter or searching for a province, corridor or project name.</p>' +
-        '<button class="filter-button" id="empty-clear" type="button">Clear all filters</button>' +
+        '<h3>' + esc(t('result.no_match_title')) + '</h3>' +
+        '<p>' + esc(t('result.no_match_body')) + '</p>' +
+        '<button class="filter-button" id="empty-clear" type="button">' + esc(t('result.clear_filters')) + '</button>' +
         '</div></li>';
       const clear = $('empty-clear');
       if (clear) clear.addEventListener('click', function () { resetFilters(); state.q = ''; commit(false); });
@@ -650,18 +744,19 @@
 
     dom.projectList.innerHTML = list.map(function (project) {
       const share = project.progress_pct ? Number(project.progress_pct) : openShare(project);
-      const shareLabel = project.progress_pct ? fmtNum(project.progress_pct) + '% built' :
-        (share !== null ? fmtNum(share) + '% open' : '');
+      const shareLabel = project.progress_pct ? t('row.built', { value: fmtNum(project.progress_pct) }) :
+        (share !== null ? t('row.open_pct', { value: fmtNum(share) }) : '');
       const current = state.projectId === project.id ? 'true' : 'false';
-      const psn = project.psn === 'yes' ? ' · PSN' : '';
+      const psn = project.psn === 'yes' ? ' · ' + t('row.psn') : '';
+      const name = projectName(project);
       const sub = provinceShort(project) + ' · ' + sectorLabel(project.sector) + psn;
       return '<li><button type="button" class="project-row" data-project="' + esc(project.id) +
-        '" aria-current="' + current + '" aria-label="' + esc(project.name + ', ' +
+        '" aria-current="' + current + '" aria-label="' + esc(name + ', ' +
         statusLabel(project.status) + ', ' + provinceShort(project)) + '">' +
         '<span class="row-status" style="--c:' + esc((STATUS[project.status] && STATUS[project.status].color) || '#667085') + '"></span>' +
         '<span class="row-icon">' + sectorIcon(project.sector, 13) + '</span>' +
         '<span class="row-main">' +
-        '<span class="row-line"><span class="row-title">' + esc(project.name) + '</span>' +
+        '<span class="row-line"><span class="row-title">' + esc(name) + '</span>' +
         statusPill(project.status) + '</span>' +
         '<span class="row-sub">' + esc(sub) + '</span>' +
         '<span class="row-figure"><span>' + esc(rowFigure(project)) + '</span>' +
@@ -688,11 +783,12 @@
     syncFilterControls();
 
     dom.resultCount.innerHTML = list.length === total
-      ? '<strong>' + fmtNum(total) + '</strong> projects'
-      : '<strong>' + fmtNum(list.length) + '</strong> of ' + fmtNum(total) + ' projects';
+      ? t('result.projects', { count: fmtNum(total) })
+      : t('result.of_projects', { count: fmtNum(list.length), total: fmtNum(total) });
     dom.footCount.textContent = fmtNum(list.length);
     dom.footTotal.textContent = fmtNum(total);
     dom.mapCount.textContent = fmtNum(list.filter(isMapped).length);
+    if (dom.mapCaptionText) dom.mapCaptionText.textContent = t('map.caption');
     dom.sort.value = state.sort;
 
     renderProjectRows(list);
@@ -744,46 +840,66 @@
     return '<div class="metric"><div class="k">' + esc(label) + '</div><div class="v">' + value + '</div></div>';
   }
 
+  function untranslated(text) {
+    if (!text) return '';
+    if (I18N.locale === 'id') {
+      return '<span class="lang-tag" title="' + esc(t('app.translation_pending')) + '">EN</span> ' +
+        '<span lang="en">' + esc(text) + '</span>';
+    }
+    return esc(text);
+  }
+
+  function claimLabel(value) {
+    return String(value || '').split(',').map(function (part) {
+      const key = part.trim();
+      return key ? tOr('claim.' + key, key) : '';
+    }).filter(Boolean).join(', ');
+  }
+
   function projectMetrics(project) {
     const metrics = [];
-    if (project.length_km) metrics.push(metricCard('Corridor length', fmtNum(project.length_km) + ' <small>km</small>'));
-    if (project.operational_km) metrics.push(metricCard('Open', fmtNum(project.operational_km) + ' <small>km</small>'));
-    if (project.construction_km) metrics.push(metricCard('Under construction', fmtNum(project.construction_km) + ' <small>km</small>'));
-    if (project.investment_idr_t) metrics.push(metricCard('Investment', 'Rp ' + fmtNum(project.investment_idr_t) + ' <small>T</small>'));
-    if (project.capacity) metrics.push(metricCard('Capacity', fmtNum(project.capacity) + ' <small>' + esc(project.capacity_unit) + '</small>'));
-    if (project.opened_year) metrics.push(metricCard('Opened', esc(project.opened_year)));
-    if (metrics.length < 2) metrics.push(metricCard('PSN', esc(project.psn === 'yes' ? 'Yes' : project.psn === 'no' ? 'No' : 'Unknown')));
-    if (metrics.length < 2) metrics.push(metricCard('Last verified', esc(fmtDate(project.last_verified))));
+    if (project.length_km) metrics.push(metricCard(t('drawer.metric.corridor_length'), fmtNum(project.length_km) + ' <small>km</small>'));
+    if (project.operational_km) metrics.push(metricCard(t('drawer.metric.open'), fmtNum(project.operational_km) + ' <small>km</small>'));
+    if (project.construction_km) metrics.push(metricCard(t('drawer.metric.under_construction'), fmtNum(project.construction_km) + ' <small>km</small>'));
+    if (project.investment_idr_t) metrics.push(metricCard(t('drawer.metric.investment'), 'Rp ' + fmtNum(project.investment_idr_t) + ' <small>T</small>'));
+    if (project.capacity) metrics.push(metricCard(t('drawer.metric.capacity'), fmtNum(project.capacity) + ' <small>' + esc(I18N.unitLabel ? I18N.unitLabel(project.capacity_unit) : project.capacity_unit) + '</small>'));
+    if (project.opened_year) metrics.push(metricCard(t('drawer.metric.opened'), esc(project.opened_year)));
+    if (metrics.length < 2) metrics.push(metricCard(t('drawer.metric.psn'), esc(project.psn === 'yes' ? t('drawer.metric.yes') : project.psn === 'no' ? t('drawer.metric.no') : t('drawer.metric.unknown'))));
+    if (metrics.length < 2) metrics.push(metricCard(t('drawer.metric.last_verified'), esc(fmtDate(project.last_verified))));
     return metrics.slice(0, 4).join('');
   }
 
   function projectSourceList(project) {
     const sources = project.sources || [];
     if (!sources.length) {
-      return '<p class="basis">No source is attached to this row yet.</p>';
+      return '<p class="basis">' + esc(t('drawer.no_source')) + '</p>';
     }
     return '<ul class="source-list">' + sources.map(function (source) {
-      const claim = source.claim ? ' · ' + esc(source.claim) : '';
-      const published = source.published_on ? ' · published ' + esc(fmtDate(source.published_on)) : '';
+      const claim = source.claim ? ' · ' + esc(claimLabel(source.claim)) : '';
+      const published = source.published_on ? ' · ' + esc(t('drawer.published')) + ' ' + esc(fmtDate(source.published_on)) : '';
       return '<li><div class="src-head"><span class="src-name">' + esc(source.title || source.publisher) +
-        '</span><span class="src-type">' + esc(source.source_type || 'source') + '</span></div>' +
-        '<div class="src-meta">' + esc(source.publisher) + claim + ' · retrieved ' +
+        '</span><span class="src-type">' + esc(tOr('data.source_type.' + (source.source_type || 'source'), source.source_type || 'source')) + '</span></div>' +
+        '<div class="src-meta">' + esc(source.publisher) + claim + ' · ' + esc(t('drawer.retrieved')) + ' ' +
         esc(fmtDate(source.retrieved_on)) + published + '</div>' +
-        (source.url ? '<a href="' + esc(source.url) + '" target="_blank" rel="noopener">Open source ↗</a>' : '') +
+        (source.url ? '<a href="' + esc(source.url) + '" target="_blank" rel="noopener">' + esc(t('action.open_source')) + '</a>' : '') +
         '</li>';
     }).join('') + '</ul>';
   }
 
   function renderProjectDrawer(project) {
+    const name = projectName(project);
     dom.drawerPills.innerHTML = statusPill(project.status) + sectorPill(project.sector);
-    dom.drawerTitle.textContent = project.name;
-    dom.drawerLoc.textContent = project.province + ' · ' + project.route;
+    dom.drawerTitle.textContent = name;
+    dom.drawerLoc.textContent = provinceText(project.province) + ' · ' + project.route;
 
     const basisSource = (project.sources && project.sources[0]) || null;
     const share = project.progress_pct ? Number(project.progress_pct) : openShare(project);
-    const shareLabel = project.progress_pct ? 'Reported construction progress' : 'Operational share';
+    const shareLabel = project.progress_pct ? t('drawer.reported_progress') : t('drawer.operational_share');
 
     let body = '';
+    if (I18N.locale === 'id') {
+      body += '<p class="translation-note">' + esc(t('language.note')) + '</p>';
+    }
     body += '<div class="metric-grid">' + projectMetrics(project) + '</div>';
 
     if (share !== null && isFinite(share)) {
@@ -793,57 +909,68 @@
         esc((STATUS[project.status] && STATUS[project.status].color) || '#c2410c') + '"></span></div></div>';
     }
 
-    body += '<section class="detail-section"><h3>Why this status</h3>' +
-      '<p class="basis">' + esc(project.status_basis) + '</p>' +
-      '<div class="basis-meta">Status as of ' + esc(fmtDate(project.status_as_of || project.last_verified)) +
-      (basisSource ? ' · ' + esc(basisSource.publisher) : '') + '</div></section>';
+    const summary = I18N.entity ? I18N.entity('project', project.id, 'summary', '') : '';
+    if (summary) {
+      const generated = I18N.entity('project', project.id, 'summary_state', '') === 'generated';
+      body += '<section class="detail-section project-summary"><h3>' + esc(t('drawer.summary')) + '</h3><p>' +
+        esc(summary) + (generated ? ' <span class="lang-tag" title="' +
+          esc(t('drawer.summary_generated')) + '">' + esc(t('drawer.auto_tag')) + '</span>' : '') +
+        '</p></section>';
+    }
 
-    body += '<section class="detail-section"><h3>Evidence</h3><ul class="evidence-list">' +
-      '<li><time>' + esc(fmtDate(project.last_verified)) + '</time><span>Record verified' +
-      (basisSource ? ' against ' + esc(basisSource.title) : '') + '.</span></li>' +
-      (project.opened_year ? '<li><time>' + esc(project.opened_year) + '</time><span>Opened to service.</span></li>' : '') +
-      (project.corridor_name ? '<li><time>Corridor</time><span>Part of ' + esc(project.corridor_name) +
-        '. <a class="related-link" href="#/corridors/' + esc(project.corridor_id) + '">Open corridor ↗</a></span></li>' : '') +
+    body += '<section class="detail-section"><h3>' + esc(t('drawer.why_status')) + '</h3>' +
+      '<p class="basis">' + untranslated(project.status_basis) + '</p>' +
+      '<div class="basis-meta">' + esc(t('drawer.status_as_of', {
+        date: fmtDate(project.status_as_of || project.last_verified)
+      })) + (basisSource ? ' · ' + esc(basisSource.publisher) : '') + '</div></section>';
+
+    body += '<section class="detail-section"><h3>' + esc(t('drawer.evidence')) + '</h3><ul class="evidence-list">' +
+      '<li><time>' + esc(fmtDate(project.last_verified)) + '</time><span>' + esc(t('drawer.record_verified')) +
+      (basisSource ? esc(t('drawer.against', { title: basisSource.title })) : '') + '.</span></li>' +
+      (project.opened_year ? '<li><time>' + esc(project.opened_year) + '</time><span>' + esc(t('drawer.opened_service')) + '</span></li>' : '') +
+      (project.corridor_name ? '<li><time>' + esc(t('drawer.corridor')) + '</time><span>' +
+        esc(t('drawer.part_of', { name: project.corridor_name })) +
+        ' <a class="related-link" href="#/corridors/' + esc(project.corridor_id) + '">' + esc(t('action.open_corridor')) + '</a></span></li>' : '') +
       '</ul></section>';
 
     if (project.events && project.events.length) {
-      body += '<section class="detail-section"><h3>Timeline</h3>' +
+      body += '<section class="detail-section"><h3>' + esc(t('drawer.timeline')) + '</h3>' +
         '<ul class="evidence-list event-list">' + project.events.map(function (event) {
           return '<li><time>' + esc(fmtDate(event.event_date)) + '</time><span><b>' +
-            esc(eventLabel(event.event_type)) + '</b> · ' + esc(event.description) +
-            (event.source_url ? ' <a href="' + esc(event.source_url) + '" target="_blank" rel="noopener">Source ↗</a>' : '') +
+            esc(eventLabel(event.event_type)) + '</b> · ' + untranslated(event.description) +
+            (event.source_url ? ' <a href="' + esc(event.source_url) + '" target="_blank" rel="noopener">' + esc(t('corridor.source')) + ' ↗</a>' : '') +
             '</span></li>';
         }).join('') + '</ul></section>';
     }
 
-    body += '<section class="detail-section"><h3>Sources</h3>' + projectSourceList(project) + '</section>';
+    body += '<section class="detail-section"><h3>' + esc(t('drawer.sources')) + '</h3>' + projectSourceList(project) + '</section>';
 
     if (project.notes) {
-      body += '<section class="detail-section"><h3>Notes and conflicts</h3>' +
-        '<p class="notes-callout">' + esc(project.notes) + '</p></section>';
+      body += '<section class="detail-section"><h3>' + esc(t('drawer.notes_conflicts')) + '</h3>' +
+        '<p class="notes-callout">' + untranslated(project.notes) + '</p></section>';
     }
 
     const coordinateNote = project.precision === 'province'
-      ? 'Province centroid; not plotted on the map'
-      : project.precision + ' precision';
-    body += '<section class="detail-section"><h3>Data quality</h3><ul class="evidence-list">' +
-      '<li><time>Coordinates</time><span>' + esc(coordinateNote) + ' · ' +
+      ? t('drawer.province_centroid')
+      : t('drawer.precision', { value: tOr('filter.' + project.precision, project.precision) });
+    body += '<section class="detail-section"><h3>' + esc(t('drawer.data_quality')) + '</h3><ul class="evidence-list">' +
+      '<li><time>' + esc(t('drawer.coordinates')) + '</time><span>' + esc(coordinateNote) + ' · ' +
       fmtCoord(project.lat) + ', ' + fmtCoord(project.lon) + '</span></li>' +
-      '<li><time>PSN</time><span>' + esc(project.psn === 'yes' ? 'National Strategic Project' :
-        project.psn === 'no' ? 'Not a PSN' : 'PSN status unknown') + '</span></li>' +
-      '<li><time>Verification</time><span>' + esc(project.verification) +
-      ' · status as of ' + esc(fmtDate(project.status_as_of)) + '</span></li>' +
+      '<li><time>' + esc(t('drawer.psn')) + '</time><span>' + esc(project.psn === 'yes' ? t('drawer.psn_yes') :
+        project.psn === 'no' ? t('drawer.psn_no') : t('drawer.psn_unknown')) + '</span></li>' +
+      '<li><time>' + esc(t('drawer.verification')) + '</time><span>' + esc(tOr('verification.' + project.verification, project.verification)) +
+      ' · ' + esc(t('drawer.status_as_of', { date: fmtDate(project.status_as_of) })) + '</span></li>' +
       ((project.aliases && project.aliases.length)
-        ? '<li><time>Official name</time><span>' + esc(project.aliases.join('; ')) + '</span></li>'
+        ? '<li><time>' + esc(t('drawer.official_name')) + '</time><span>' + esc(project.aliases.join('; ')) + '</span></li>'
         : '') +
       (project.verification === 'unverified' && project.status === 'unknown'
-        ? '<li><time>Record</time><span>Register-only: official PSN name, number, sector and location are sourced; implementation status, cost, capacity and geometry are not yet sourced.</span></li>'
+        ? '<li><time>' + esc(t('drawer.record')) + '</time><span>' + esc(t('drawer.register_only')) + '</span></li>'
         : '') +
-      '<li><time>Freshness</time><span class="freshness-line"><span class="freshness-dot ' +
+      '<li><time>' + esc(t('drawer.freshness')) + '</time><span class="freshness-line"><span class="freshness-dot ' +
       esc(project.freshness_state || 'unknown') + '"></span>' +
-      esc(freshnessLabel(project.freshness_state)) + ' · due ' +
-      esc(fmtDate(project.freshness_due)) + '</span></li>' +
-      '<li><time>Record</time><span>' + esc(project.id) + '</span></li>' +
+      esc(freshnessLabel(project.freshness_state)) + ' · ' +
+      esc(t('drawer.due', { date: fmtDate(project.freshness_due) })) + '</span></li>' +
+      '<li><time>' + esc(t('drawer.record')) + '</time><span>' + esc(project.id) + '</span></li>' +
       '</ul></section>';
 
     dom.drawerBody.innerHTML = body;
@@ -855,16 +982,18 @@
     const next = index !== -1 && index < list.length - 1 ? list[index + 1] : null;
 
     dom.drawerFoot.innerHTML =
-      '<div class="drawer-meta"><span>' + esc(project.precision) + ' coordinates</span>' +
-      '<span>Verified ' + esc(fmtDate(project.last_verified)) + '</span>' +
+      '<div class="drawer-meta"><span>' + esc(t('drawer.precision_coordinates', {
+        value: tOr('filter.' + project.precision, project.precision)
+      })) + '</span>' +
+      '<span>' + esc(t('drawer.verified', { date: fmtDate(project.last_verified) })) + '</span>' +
       '<span>' + esc(project.id) + '</span></div>' +
       '<div class="drawer-nav">' +
       '<button class="nav-btn" type="button" data-nav="prev"' + (prev ? '' : ' disabled') + '>' +
-      '<svg aria-hidden="true"><use href="#i-chevron-left"></use></svg>' + (prev ? esc(prev.name) : 'Previous') + '</button>' +
+      '<svg aria-hidden="true"><use href="#i-chevron-left"></use></svg>' + (prev ? esc(projectName(prev)) : esc(t('action.previous'))) + '</button>' +
       '<button class="share-btn" type="button" data-share="' + esc(project.id) + '">' +
-      '<svg width="11" height="11" aria-hidden="true"><use href="#i-share"></use></svg> Share</button>' +
+      '<svg width="11" height="11" aria-hidden="true"><use href="#i-share"></use></svg> ' + esc(t('action.share')) + '</button>' +
       '<button class="nav-btn" type="button" data-nav="next"' + (next ? '' : ' disabled') + '>' +
-      (next ? esc(next.name) : 'Next') + '<svg aria-hidden="true"><use href="#i-chevron-right"></use></svg></button>' +
+      (next ? esc(projectName(next)) : esc(t('action.next'))) + '<svg aria-hidden="true"><use href="#i-chevron-right"></use></svg></button>' +
       '</div>';
 
     dom.drawer.dataset.kind = 'project';
@@ -875,15 +1004,16 @@
   function corridorSegmentTable(corridor) {
     const segments = corridor.segments || [];
     if (!segments.length) {
-      return '<p class="basis">No section list has been published for this corridor. The route total is the only verified figure; no progress share is inferred.</p>';
+      return '<p class="basis">' + esc(t('corridor.no_segments')) + '</p>';
     }
     return '<div class="segment-wrap"><table class="segment-table"><thead><tr>' +
-      '<th scope="col">Section</th><th scope="col">Length</th><th scope="col">Status</th><th scope="col">Opened</th>' +
+      '<th scope="col">' + esc(t('corridor.section')) + '</th><th scope="col">' + esc(t('corridor.length')) +
+      '</th><th scope="col">' + esc(t('corridor.status')) + '</th><th scope="col">' + esc(t('corridor.opened')) + '</th>' +
       '</tr></thead><tbody>' + segments.map(function (segment) {
         const color = (STATUS[segment.status] && STATUS[segment.status].color) || '#667085';
-        const note = segment.notes ? '<span class="segment-note">' + esc(segment.notes) + '</span>' : '';
+        const note = segment.notes ? '<span class="segment-note">' + untranslated(segment.notes) + '</span>' : '';
         const opened = segment.opened_year ? esc(segment.opened_year) :
-          (segment.expected_open_year ? 'by ' + esc(segment.expected_open_year) : '—');
+          (segment.expected_open_year ? esc(t('corridor.by_year', { year: segment.expected_open_year })) : '—');
         return '<tr><th scope="row">' + esc(segment.name) + note + '</th>' +
           '<td class="num">' + fmtNum(segment.length_km) + ' km</td>' +
           '<td><span class="status-dot" style="--c:' + esc(color) + '"></span>' + esc(statusLabel(segment.status)) + '</td>' +
@@ -894,11 +1024,11 @@
   function corridorTimeline(corridor) {
     const events = corridor.events || [];
     if (!events.length) {
-      return '<p class="basis">No dated event is recorded for this corridor yet. Openings are tracked at project level where an exact date is available.</p>';
+      return '<p class="basis">' + esc(t('corridor.no_events')) + '</p>';
     }
     const groups = [];
     events.forEach(function (event) {
-      const year = String(event.event_date || '').slice(0, 4) || 'Undated';
+      const year = String(event.event_date || '').slice(0, 4) || t('corridor.undated');
       let group = groups[groups.length - 1];
       if (!group || group.year !== year) {
         group = { year: year, items: [] };
@@ -911,22 +1041,23 @@
         '<ul>' + group.items.map(function (event) {
           return '<li><div class="timeline-date">' + esc(fmtDate(event.event_date)) + '</div>' +
             '<div class="timeline-body"><b>' + esc(eventLabel(event.event_type)) + '</b> · ' +
-            esc(event.project_name) + '. ' + esc(event.description) +
-            (event.source_url ? ' <a href="' + esc(event.source_url) + '" target="_blank" rel="noopener">Source ↗</a>' : '') +
+            esc(event.project_name) + '. ' + untranslated(event.description) +
+            (event.source_url ? ' <a href="' + esc(event.source_url) + '" target="_blank" rel="noopener">' + esc(t('corridor.source')) + ' ↗</a>' : '') +
             '</div></li>';
         }).join('') + '</ul></li>';
     }).join('') + '</ol>';
   }
 
   function renderCorridorDrawer(corridor) {
-    dom.drawerPills.innerHTML = '<span class="status-pill plain">Trans corridor</span>' +
-      '<span class="status-pill plain">' + esc(corridor.island) + '</span>';
-    dom.drawerTitle.textContent = corridor.name;
-    dom.drawerLoc.textContent = corridor.definition;
+    const definition = corridorDefinition(corridor);
+    dom.drawerPills.innerHTML = '<span class="status-pill plain">' + esc(t('corridor.trans_corridor')) + '</span>' +
+      '<span class="status-pill plain">' + esc(islandText(corridor.island)) + '</span>';
+    dom.drawerTitle.textContent = corridorName(corridor);
+    dom.drawerLoc.textContent = definition;
 
     const parts = corridorParts(corridor);
     const word = corridorWord(corridor);
-    const metricTitle = word === 'connected' ? 'Connected' : word === 'paved' ? 'Paved' : 'Operating';
+    const metricTitle = word === 'connected' ? t('corridor.connected') : word === 'paved' ? t('corridor.paved') : t('corridor.operating');
     const share = parts.hasTotal && parts.operational ? (parts.operational / parts.total) * 100 : null;
     const remaining = parts.hasTotal && (parts.operational || parts.construction)
       ? Math.max(parts.total - parts.operational - parts.construction, 0)
@@ -936,10 +1067,10 @@
     const state = corridorState(corridor);
 
     let body = '<div class="metric-grid">';
-    body += metricCard('Total', parts.hasTotal ? fmtNum(parts.total) + ' <small>km</small>' : 'Not defined');
+    body += metricCard(t('corridor.total'), parts.hasTotal ? fmtNum(parts.total) + ' <small>km</small>' : t('corridor.not_defined'));
     body += metricCard(metricTitle, parts.operational ? fmtNum(parts.operational) + ' <small>km</small>' : '—');
-    body += metricCard('Under construction', parts.construction ? fmtNum(parts.construction) + ' <small>km</small>' : '—');
-    body += metricCard('Not yet open', remaining ? fmtNum(remaining) + ' <small>km</small>' : '—');
+    body += metricCard(t('corridor.under_construction'), parts.construction ? fmtNum(parts.construction) + ' <small>km</small>' : '—');
+    body += metricCard(t('corridor.not_yet_open'), remaining ? fmtNum(remaining) + ' <small>km</small>' : '—');
     body += '</div>';
 
     if (parts.hasTotal && hasBreakdown(parts)) {
@@ -947,41 +1078,39 @@
     }
 
     if (share !== null) {
-      body += '<div class="progress-block"><div class="progress-head"><span>' + esc(corridor.metric) +
+      body += '<div class="progress-block"><div class="progress-head"><span>' + esc(metricLabel(corridor.metric)) +
         '</span><strong>' + fmtNum(share) + '%</strong></div><div class="progress-track">' +
         '<span style="width:' + pctOf(parts.operational, parts.total) +
         '%;--c:var(--operating)"></span></div></div>';
     }
 
-    body += '<section class="detail-section"><h3>Definition and scope</h3><p class="basis">' +
-      esc(corridor.definition) + '</p><div class="basis-meta">Metric: ' + esc(corridor.metric) +
-      (corridor.as_of ? ' · as of ' + esc(fmtDate(corridor.as_of)) : '') + '</div></section>';
+    body += '<section class="detail-section"><h3>' + esc(t('corridor.definition_scope')) + '</h3><p class="basis">' +
+      esc(definition) + '</p><div class="basis-meta">' + esc(t('corridor.metric')) + ': ' + esc(metricLabel(corridor.metric)) +
+      (corridor.as_of ? ' · ' + esc(t('corridor.as_of', { date: fmtDate(corridor.as_of) })) : '') + '</div></section>';
 
-    body += '<section class="detail-section"><h3>Series coverage</h3><p class="basis">' +
+    body += '<section class="detail-section"><h3>' + esc(t('corridor.series_coverage')) + '</h3><p class="basis">' +
       (segments.length
-        ? segments.length + ' sections covering ' + fmtNum(segmentKm) + ' km' +
-          (parts.hasTotal ? ', ' + fmtNum(corridor.segment_share) + '% of the route total' : '') + '. ' +
-          (state.key === 'partial'
-            ? 'The section table is partial: the unlisted length stays in the corridor total rather than being assigned to a section.'
-            : 'The section lengths reconcile to the published corridor total.')
-        : 'No segment table. The route total is published, but no operational-km series exists, so no percentage is estimated.') +
+        ? esc(t('corridor.sections_covering', { count: segments.length, km: fmtNum(segmentKm) })) +
+          (parts.hasTotal ? esc(t('corridor.of_route_total', { pct: fmtNum(corridor.segment_share) })) : '') + '. ' +
+          esc(state.key === 'partial' ? t('corridor.partial_note') : t('corridor.reconcile_note'))
+        : esc(t('corridor.no_segment_note'))) +
       '</p><div class="basis-meta"><span class="corridor-state ' + esc(state.key) + '">' +
       esc(state.label) + '</span></div></section>';
 
     if (corridor.notes) {
-      body += '<section class="detail-section"><h3>Notes and conflicts</h3><p class="notes-callout">' +
-        esc(corridor.notes) + '</p></section>';
+      body += '<section class="detail-section"><h3>' + esc(t('drawer.notes_conflicts')) + '</h3><p class="notes-callout">' +
+        untranslated(corridor.notes) + '</p></section>';
     }
 
-    body += '<section class="detail-section"><h3>Segments</h3>' + corridorSegmentTable(corridor) + '</section>';
-    body += '<section class="detail-section"><h3>Timeline</h3>' + corridorTimeline(corridor) + '</section>';
+    body += '<section class="detail-section"><h3>' + esc(t('corridor.segments')) + '</h3>' + corridorSegmentTable(corridor) + '</section>';
+    body += '<section class="detail-section"><h3>' + esc(t('corridor.timeline')) + '</h3>' + corridorTimeline(corridor) + '</section>';
 
-    body += '<section class="detail-section"><h3>Source</h3><ul class="source-list"><li>' +
+    body += '<section class="detail-section"><h3>' + esc(t('corridor.source')) + '</h3><ul class="source-list"><li>' +
       '<div class="src-head"><span class="src-name">' + esc(corridor.source_title || corridor.source_publisher) +
-      '</span><span class="src-type">' + esc(corridor.source_type || 'source') + '</span></div>' +
-      '<div class="src-meta">' + esc(corridor.source_publisher) + ' · retrieved ' +
+      '</span><span class="src-type">' + esc(tOr('data.source_type.' + (corridor.source_type || 'source'), corridor.source_type || 'source')) + '</span></div>' +
+      '<div class="src-meta">' + esc(corridor.source_publisher) + ' · ' + esc(t('drawer.retrieved')) + ' ' +
       esc(fmtDate(corridor.retrieved_on)) + '</div>' +
-      (corridor.source_url ? '<a href="' + esc(corridor.source_url) + '" target="_blank" rel="noopener">Open source ↗</a>' : '') +
+      (corridor.source_url ? '<a href="' + esc(corridor.source_url) + '" target="_blank" rel="noopener">' + esc(t('action.open_source')) + '</a>' : '') +
       '</li></ul></section>';
 
     dom.drawerBody.innerHTML = body;
@@ -989,16 +1118,16 @@
 
     const index = corridors.findIndex(function (item) { return item.id === corridor.id; });
     dom.drawerFoot.innerHTML =
-      '<div class="drawer-meta"><span>Metric: ' + esc(corridor.metric) + '</span>' +
-      (corridor.as_of ? '<span>As of ' + esc(fmtDate(corridor.as_of)) + '</span>' : '') +
+      '<div class="drawer-meta"><span>' + esc(t('corridor.metric_aria', { metric: metricLabel(corridor.metric) })) + '</span>' +
+      (corridor.as_of ? '<span>' + esc(t('corridor.as_of', { date: fmtDate(corridor.as_of) })) + '</span>' : '') +
       '<span>' + esc(corridor.id) + '</span></div>' +
       '<div class="drawer-nav">' +
       '<button class="nav-btn" type="button" data-corridor-nav="prev"' + (index > 0 ? '' : ' disabled') + '>' +
-      '<svg aria-hidden="true"><use href="#i-chevron-left"></use></svg>Previous</button>' +
+      '<svg aria-hidden="true"><use href="#i-chevron-left"></use></svg>' + esc(t('action.previous')) + '</button>' +
       '<button class="share-btn" type="button" data-share="' + esc(corridor.id) + '">' +
-      '<svg width="11" height="11" aria-hidden="true"><use href="#i-share"></use></svg> Share</button>' +
+      '<svg width="11" height="11" aria-hidden="true"><use href="#i-share"></use></svg> ' + esc(t('action.share')) + '</button>' +
       '<button class="nav-btn" type="button" data-corridor-nav="next"' +
-      (index !== -1 && index < corridors.length - 1 ? '' : ' disabled') + '>Next' +
+      (index !== -1 && index < corridors.length - 1 ? '' : ' disabled') + '>' + esc(t('action.next')) +
       '<svg aria-hidden="true"><use href="#i-chevron-right"></use></svg></button>' +
       '</div>';
 
@@ -1031,6 +1160,7 @@
     const mapped = list.filter(isMapped);
     window.AtlasMap.setProjects(mapped);
     dom.mapCount.textContent = fmtNum(mapped.length);
+    if (dom.mapCaptionText) dom.mapCaptionText.textContent = t('map.caption');
 
     if (state.projectId && projectById.has(state.projectId) &&
         list.some(function (project) { return project.id === state.projectId; }) &&
@@ -1103,13 +1233,13 @@
 
   function corridorState(corridor) {
     const parts = corridorParts(corridor);
-    if (!parts.hasTotal) return { key: 'none', label: 'No series' };
-    if (!parts.operational) return { key: 'total', label: 'Route total only' };
+    if (!parts.hasTotal) return { key: 'none', label: t('corridor.state.none') };
+    if (!parts.operational) return { key: 'total', label: t('corridor.state.total') };
     const share = Number(corridor.segment_share);
     if (corridor.segment_share !== null && corridor.segment_share !== undefined && isFinite(share) && share < 99.5) {
-      return { key: 'partial', label: 'Partial segment table' };
+      return { key: 'partial', label: t('corridor.state.partial') };
     }
-    return { key: 'full', label: 'Complete series' };
+    return { key: 'full', label: t('corridor.state.full') };
   }
 
   function corridorCard(corridor) {
@@ -1122,33 +1252,33 @@
 
     let figure;
     if (parts.hasTotal && parts.operational) {
-      figure = '<strong>' + fmtNum(parts.operational) + '</strong> of ' + fmtNum(parts.total) + ' km ' + word;
+      figure = '<strong>' + fmtNum(parts.operational) + '</strong> ' + esc(t('footer.of')) + ' ' + fmtNum(parts.total) + ' km ' + esc(word);
     } else if (parts.hasTotal) {
-      figure = '<strong>' + fmtNum(parts.total) + ' km</strong> route · no progress series';
+      figure = '<strong>' + fmtNum(parts.total) + ' km</strong> ' + esc(t('corridor.no_progress_series'));
     } else {
-      figure = '<strong>No series</strong> · aggregate withheld';
+      figure = '<strong>' + esc(t('corridor.state.none')) + '</strong> · ' + esc(t('corridor.aggregate_withheld'));
     }
 
     let meta = '';
     if (share !== null) meta = fmtNum(share) + '% ' + word;
-    else if (parts.hasTotal) meta = 'Route total only';
-    if (corridor.as_of) meta += (meta ? ' · ' : '') + 'as of ' + fmtDate(corridor.as_of);
+    else if (parts.hasTotal) meta = t('corridor.route_total_only');
+    if (corridor.as_of) meta += (meta ? ' · ' : '') + t('corridor.as_of', { date: fmtDate(corridor.as_of) });
 
     const coverage = segments.length
-      ? segments.length + ' sections · ' + fmtNum(segmentKm) + ' km' +
-        (parts.hasTotal && segmentKm ? ' (' + fmtNum(corridor.segment_share) + '% of route)' : '')
-      : 'No segment table';
+      ? t('corridor.sections_meta', { count: segments.length, km: fmtNum(segmentKm) }) +
+        (parts.hasTotal && segmentKm ? t('corridor.of_route_short', { pct: fmtNum(corridor.segment_share) }) : '')
+      : t('corridor.no_segment_table');
 
     return '<button type="button" class="corridor-card" data-corridor="' + esc(corridor.id) + '">' +
-      '<div class="corridor-head"><h3>' + esc(corridor.name) + '</h3>' +
-      '<span class="corridor-metric">' + esc(corridor.metric) + '</span></div>' +
+      '<div class="corridor-head"><h3>' + esc(corridorName(corridor)) + '</h3>' +
+      '<span class="corridor-metric">' + esc(metricLabel(corridor.metric)) + '</span></div>' +
       '<div class="corridor-figure">' + figure + '</div>' +
       (meta ? '<div class="corridor-meta">' + esc(meta) + '</div>' : '') +
-      '<p class="corridor-def">' + esc(corridor.definition) + '</p>' +
+      '<p class="corridor-def">' + esc(corridorDefinition(corridor)) + '</p>' +
       (hasBreakdown(parts) ? corridorBar(corridor) + corridorLegend(corridor) : '') +
       '<div class="corridor-foot"><span class="corridor-state ' + esc(state.key) + '">' + esc(state.label) + '</span>' +
       '<span>' + esc(coverage) + '</span></div>' +
-      (corridor.notes ? '<div class="corridor-gap">' + esc(corridor.notes) + '</div>' : '') +
+      (corridor.notes ? '<div class="corridor-gap">' + untranslated(corridor.notes) + '</div>' : '') +
       '</button>';
   }
 
@@ -1157,8 +1287,8 @@
     dom.exploreContent.style.display = 'none';
     dom.viewPanel.hidden = false;
     dom.viewPanel.innerHTML =
-      '<div class="corridor-intro"><h2>Trans corridors</h2>' +
-      '<p>Five defined corridors. Network progress is shown where a published kilometre breakdown exists; where it does not, the route total is published without a guessed percentage. Segment coverage and unallocated length stay visible.</p></div>' +
+      '<div class="corridor-intro"><h2>' + esc(t('corridor.trans_corridors')) + '</h2>' +
+      '<p>' + esc(t('corridor.intro')) + '</p></div>' +
       '<div class="corridor-list">' + corridors.map(corridorCard).join('') + '</div>';
   }
 
@@ -1168,7 +1298,7 @@
     if (estatesState === 'ready' || estatesState === 'loading') return;
     estatesState = 'loading';
     const script = document.createElement('script');
-    script.src = 'data/estates.js';
+    script.src = (window.ATLAS_BASE || '') + 'data/estates.js';
     script.onload = function () {
       estates = window.INFRA_ESTATES || [];
       estatesState = 'ready';
@@ -1185,7 +1315,7 @@
     if (programmesState === 'ready' || programmesState === 'loading') return;
     programmesState = 'loading';
     const script = document.createElement('script');
-    script.src = 'data/programmes.js';
+    script.src = (window.ATLAS_BASE || '') + 'data/programmes.js';
     script.onload = function () {
       programmes = window.INFRA_PROGRAMMES || [];
       programmesState = 'ready';
@@ -1199,7 +1329,7 @@
   }
 
   function estateTypeLabel(type) {
-    return type === 'sez' ? 'SEZ' : type === 'both' ? 'SEZ + estate' : 'Industrial estate';
+    return tOr('estate_type.' + type, type);
   }
 
   function filteredEstates() {
@@ -1231,13 +1361,13 @@
 
   function estateRow(estate) {
     const expanded = state.expandedEstate === estate.id;
-    const source = estate.source_publisher || 'Source';
+    const source = estate.source_publisher || t('estates.source_label');
     const coords = fmtCoord(estate.lat) + ', ' + fmtCoord(estate.lon);
-    const location = [estate.regency, estate.province].filter(Boolean).join(' · ');
-    const area = estate.area_ha ? fmtNum(estate.area_ha) + ' ha' : 'Area not sourced';
+    const location = [estate.regency, provinceText(estate.province)].filter(Boolean).join(' · ');
+    const area = estate.area_ha ? fmtNum(estate.area_ha) + ' ' + t('estates.ha') : t('estates.area_not_sourced');
     const coordinateNote = estate.coordinate_source === 'unknown'
-      ? 'Province centroid, not an estate boundary'
-      : estate.precision;
+      ? t('estates.province_centroid')
+      : tOr('filter.' + estate.precision, estate.precision);
     return '<div class="estate-row"><button type="button" data-estate="' + esc(estate.id) +
       '" aria-expanded="' + expanded + '"><span><span class="estate-name">' + esc(estate.name) +
       '<span class="type-tag">' + esc(estateTypeLabel(estate.type)) + '</span></span>' +
@@ -1245,15 +1375,15 @@
       '<span class="estate-area">' + esc(area) + '<small>' + esc(statusLabel(estate.status)) +
       '</small></span></button>' +
       (expanded ? '<div class="estate-detail">' +
-        '<dl><dt>Developer</dt><dd>' + esc(estate.developer || 'Not yet sourced') + '</dd>' +
-        '<dt>Sector focus</dt><dd>' + esc(estate.sector_focus || 'Not stated') + '</dd>' +
-        '<dt>Legal basis</dt><dd>' + esc(estate.legal_basis || 'Not stated') + '</dd>' +
-        '<dt>Established</dt><dd>' + esc(estate.established_year || 'Not stated') + '</dd>' +
-        '<dt>Website</dt><dd>' + (estate.website ? '<a href="' + esc(estate.website) + '" target="_blank" rel="noopener">' + esc(estate.website) + '</a>' : 'Not recorded') + '</dd>' +
-        '<dt>Coordinates</dt><dd>' + esc(coords) + ' · ' + esc(coordinateNote) + '</dd>' +
-        '<dt>Source</dt><dd>' + esc(source) + (estate.source_url ? ' · <a href="' + esc(estate.source_url) + '" target="_blank" rel="noopener">open ↗</a>' : '') + '</dd>' +
-        '<dt>Verified</dt><dd>' + esc(fmtDate(estate.last_verified)) + '</dd></dl>' +
-        (estate.notes ? '<p class="estate-detail-note">' + esc(estate.notes) + '</p>' : '') +
+        '<dl><dt>' + esc(t('estates.developer')) + '</dt><dd>' + esc(estate.developer || t('estates.not_sourced')) + '</dd>' +
+        '<dt>' + esc(t('estates.sector_focus')) + '</dt><dd>' + esc(estate.sector_focus || t('estates.not_stated')) + '</dd>' +
+        '<dt>' + esc(t('estates.legal_basis')) + '</dt><dd>' + esc(estate.legal_basis || t('estates.not_stated')) + '</dd>' +
+        '<dt>' + esc(t('estates.established')) + '</dt><dd>' + esc(estate.established_year || t('estates.not_stated')) + '</dd>' +
+        '<dt>' + esc(t('estates.website')) + '</dt><dd>' + (estate.website ? '<a href="' + esc(estate.website) + '" target="_blank" rel="noopener">' + esc(estate.website) + '</a>' : esc(t('estates.not_recorded'))) + '</dd>' +
+        '<dt>' + esc(t('estates.coordinates')) + '</dt><dd>' + esc(coords) + ' · ' + esc(coordinateNote) + '</dd>' +
+        '<dt>' + esc(t('estates.source')) + '</dt><dd>' + esc(source) + (estate.source_url ? ' · <a href="' + esc(estate.source_url) + '" target="_blank" rel="noopener">' + esc(t('estates.open_source')) + '</a>' : '') + '</dd>' +
+        '<dt>' + esc(t('estates.verified')) + '</dt><dd>' + esc(fmtDate(estate.last_verified)) + '</dd></dl>' +
+        (estate.notes ? '<p class="estate-detail-note">' + untranslated(estate.notes) + '</p>' : '') +
         '</div>' : '') + '</div>';
   }
 
@@ -1263,18 +1393,18 @@
     dom.viewPanel.hidden = false;
 
     if (estatesState === 'loading') {
-      dom.viewPanel.innerHTML = '<div class="data-view"><h2>Estates and SEZs</h2>' +
-        '<p class="lede">Loading the estate table…</p></div>';
+      dom.viewPanel.innerHTML = '<div class="data-view"><h2>' + esc(t('estates.title')) + '</h2>' +
+        '<p class="lede">' + esc(t('result.loading_estates')) + '</p></div>';
       return;
     }
     if (estatesState === 'error') {
-      dom.viewPanel.innerHTML = '<div class="data-view"><h2>Estates and SEZs</h2>' +
-        '<p class="notes-callout">The estate payload could not be loaded. Rebuild the site data and try again.</p></div>';
+      dom.viewPanel.innerHTML = '<div class="data-view"><h2>' + esc(t('estates.title')) + '</h2>' +
+        '<p class="notes-callout">' + esc(t('result.estates_error')) + '</p></div>';
       return;
     }
     if (!estates) {
-      dom.viewPanel.innerHTML = '<div class="data-view"><h2>Estates and SEZs</h2>' +
-        '<p class="lede">Loading the estate table…</p></div>';
+      dom.viewPanel.innerHTML = '<div class="data-view"><h2>' + esc(t('estates.title')) + '</h2>' +
+        '<p class="lede">' + esc(t('result.loading_estates')) + '</p></div>';
       ensureEstates();
       return;
     }
@@ -1293,22 +1423,23 @@
     const provinces = Array.from(new Set(estates.map(function (estate) { return estate.province; }))).sort();
     const totalArea = estates.reduce(function (sum, estate) { return sum + (Number(estate.area_ha) || 0); }, 0);
     const types = [
-      { key: 'all', label: 'All', count: typeCounts.all },
-      { key: 'sez', label: 'SEZ', count: typeCounts.sez },
-      { key: 'industrial_estate', label: 'Industrial', count: typeCounts.industrial_estate },
-      { key: 'both', label: 'Both', count: typeCounts.both }
+      { key: 'all', label: t('estates.all'), count: typeCounts.all },
+      { key: 'sez', label: t('estates.sez'), count: typeCounts.sez },
+      { key: 'industrial_estate', label: t('estates.industrial'), count: typeCounts.industrial_estate },
+      { key: 'both', label: t('estates.both'), count: typeCounts.both }
     ];
 
     dom.viewPanel.innerHTML =
-      '<div class="estate-tools"><h2>Estates and SEZs</h2>' +
-      '<p>' + fmtNum(estates.length) + ' records: ' + fmtNum(typeCounts.sez) + ' SEZs and ' +
-      fmtNum(typeCounts.industrial_estate) + ' industrial-estate designations, including ' +
-      fmtNum(typeCounts.both) + ' zones shared with SEZs. This is a table view; the map layer waits for verified coordinates.</p>' +
+      '<div class="estate-tools"><h2>' + esc(t('estates.title')) + '</h2>' +
+      '<p>' + esc(t('estates.records', {
+        total: fmtNum(estates.length), sez: fmtNum(typeCounts.sez),
+        industrial: fmtNum(typeCounts.industrial_estate), both: fmtNum(typeCounts.both)
+      })) + '</p>' +
       '<div class="estate-summary">' +
-      '<div><div class="k">Zones</div><div class="v">' + fmtNum(estates.length) + '</div></div>' +
-      '<div><div class="k">Total area</div><div class="v">' + fmtNum(Math.round(totalArea)) + ' <small>ha</small></div></div>' +
-      '<div><div class="k">SEZs</div><div class="v">' + fmtNum(typeCounts.sez) + '</div></div>' +
-      '<div><div class="k">Provinces</div><div class="v">' + fmtNum(provinces.length) + '</div></div>' +
+      '<div><div class="k">' + esc(t('estates.zones')) + '</div><div class="v">' + fmtNum(estates.length) + '</div></div>' +
+      '<div><div class="k">' + esc(t('estates.total_area')) + '</div><div class="v">' + fmtNum(Math.round(totalArea)) + ' <small>' + esc(t('estates.ha')) + '</small></div></div>' +
+      '<div><div class="k">' + esc(t('estates.sezs')) + '</div><div class="v">' + fmtNum(typeCounts.sez) + '</div></div>' +
+      '<div><div class="k">' + esc(t('estates.provinces')) + '</div><div class="v">' + fmtNum(provinces.length) + '</div></div>' +
       '</div>' +
       '<div class="chip-row" style="margin-bottom:9px">' + types.map(function (type) {
         return '<button class="chip" data-estate-type="' + esc(type.key) + '" aria-pressed="' +
@@ -1316,23 +1447,25 @@
           '<span class="chip-count">' + fmtNum(type.count) + '</span></button>';
       }).join('') + '</div>' +
       '<div class="filter-actions" style="margin-top:0">' +
-      '<label class="field" style="flex:1"><span class="sr-only">Province</span><select id="estate-province">' +
-      '<option value="">Any province</option>' + provinces.map(function (province) {
+      '<label class="field" style="flex:1"><span class="sr-only">' + esc(t('filter.province')) + '</span><select id="estate-province">' +
+      '<option value="">' + esc(t('estates.any_province')) + '</option>' + provinces.map(function (province) {
         return '<option value="' + esc(province) + '"' + (state.estateProvince === province ? ' selected' : '') +
-          '>' + esc(province) + '</option>';
+          '>' + esc(provinceText(province)) + '</option>';
       }).join('') + '</select></label>' +
-      '<label class="field" style="flex:1"><span class="sr-only">Sort estates</span><select id="estate-sort">' +
-      '<option value="name"' + (state.estateSort === 'name' ? ' selected' : '') + '>Name A–Z</option>' +
-      '<option value="area"' + (state.estateSort === 'area' ? ' selected' : '') + '>Largest area</option>' +
-      '<option value="province"' + (state.estateSort === 'province' ? ' selected' : '') + '>Province</option>' +
+      '<label class="field" style="flex:1"><span class="sr-only">' + esc(t('sort.estates')) + '</span><select id="estate-sort">' +
+      '<option value="name"' + (state.estateSort === 'name' ? ' selected' : '') + '>' + esc(t('estates.name_az')) + '</option>' +
+      '<option value="area"' + (state.estateSort === 'area' ? ' selected' : '') + '>' + esc(t('estates.largest_area')) + '</option>' +
+      '<option value="province"' + (state.estateSort === 'province' ? ' selected' : '') + '>' + esc(t('estates.provinces')) + '</option>' +
       '</select></label></div>' +
       '<div class="filter-actions" style="margin-top:9px"><span class="corridor-meta">' +
-      fmtNum(list.length) + ' of ' + fmtNum(estates.length) +
-      ' zones shown</span><button class="filter-clear" type="button" data-export="estates-csv">' +
-      'Download filtered CSV</button></div></div>' +
+      esc(t('estates.shown', { shown: fmtNum(list.length), total: fmtNum(estates.length) })) +
+      '</span><button class="filter-clear" type="button" data-export="estates-csv">' +
+      esc(t('estates.download')) + '</button></div></div>' +
       '<div class="estate-list">' + (list.length ? list.map(estateRow).join('') :
-        '<div class="list-empty"><h3>No estates match</h3><p>Try another province or type.</p></div>') + '</div>' +
-      '<p class="estate-note">Coordinates: 25 SEZs use official KEK points, 27 industrial areas use OSM/Nominatim place points, 133 use regency centroids, one uses a power-station point and 18 register-only PSN areas use province centroids with no estate boundary. The 179 industrial-estate target is met. The 2024 audit ledger has ' + fmtNum(gapResolved) + ' resolved, ' + fmtNum(gapOpen) + ' named additions still open and ' + fmtNum(gapNotRequired) + ' count placeholders no longer needed. Sources: Kemenperin estate directory, KEK profiles, PSN register and industrial-area sources, and <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap (ODbL)</a>.</p>';
+        '<div class="list-empty"><h3>' + esc(t('estates.no_match')) + '</h3><p>' + esc(t('estates.no_match_body')) + '</p></div>') + '</div>' +
+      '<p class="estate-note">' + esc(t('estates.note', {
+        resolved: fmtNum(gapResolved), open: fmtNum(gapOpen), not_required: fmtNum(gapNotRequired)
+      })) + '</p>';
 
     const chips = dom.viewPanel.querySelectorAll('[data-estate-type]');
     chips.forEach(function (chip) {
@@ -1377,7 +1510,7 @@
     link.click();
     document.body.removeChild(link);
     setTimeout(function () { URL.revokeObjectURL(url); }, 1000);
-    toast('Download started: ' + filename);
+    toast(t('toast.download_started', { file: filename }));
   }
 
   const PROJECT_EXPORT_FIELDS = [
@@ -1392,7 +1525,7 @@
   function exportFilteredProjects(format) {
     const list = sortProjects(filteredProjects());
     if (!list.length) {
-      toast('No projects match the current filters');
+      toast(t('toast.no_projects'));
       return;
     }
     if (format === 'geojson') {
@@ -1423,12 +1556,12 @@
   function exportFilteredEstates() {
     if (!estates) {
       ensureEstates();
-      toast('Loading the estate table; try the download again in a moment');
+      toast(t('toast.estates_loading'));
       return;
     }
     const list = filteredEstates();
     if (!list.length) {
-      toast('No estates match the current filters');
+      toast(t('toast.no_estates'));
       return;
     }
     const fields = Object.keys(list[0]);
@@ -1448,7 +1581,7 @@
   /* ---------- programme view ---------- */
 
   function programmeThemeLabel(theme) {
-    return (PROGRAMME_THEMES[theme] && PROGRAMME_THEMES[theme].label) || theme || 'Other';
+    return theme ? tOr('theme.' + theme, theme) : t('theme.other');
   }
 
   function programmeThemeColor(theme) {
@@ -1456,16 +1589,12 @@
   }
 
   function pkpnLabel(id) {
-    return {
-      'pkpn-food': 'Food sovereignty',
-      'pkpn-energy-water': 'Energy and water',
-      'pkpn-education': 'Education',
-      'pkpn-health': 'Health',
-      'pkpn-downstreaming': 'Downstreaming',
-      'pkpn-infrastructure': 'Infrastructure',
-      'pkpn-housing': 'Housing',
-      'pkpn-resilience': 'Resilience and people’s economy'
-    }[id] || 'Not mapped';
+    if (!id) return t('pkpn.none');
+    return tOr('pkpn.' + id.replace(/^pkpn-/, ''), t('pkpn.none'));
+  }
+
+  function programmeRoleLabel(role) {
+    return tOr('programme_role.' + role, role);
   }
 
   function filteredProgrammes() {
@@ -1485,30 +1614,47 @@
 
   function programmeCard(programme) {
     const theme = programmeThemeColor(programme.theme);
-    const lead = programme.lead_org_short || programme.lead_org_name || 'Lead agency not assigned';
+    const lead = programme.lead_org_short || programme.lead_org_name || t('programmes.lead_missing');
     const projects = programme.projects || [];
     const projectList = projects.length
-      ? '<div class="programme-projects"><div class="programme-sub">Linked atlas projects</div><ul>' +
+      ? '<div class="programme-projects"><div class="programme-sub">' + esc(t('programmes.linked_atlas')) + '</div><ul>' +
         projects.map(function (project) {
-          return '<li><a href="#/project/' + esc(project.id) + '">' + esc(project.name) + '</a>' +
-            '<span>' + esc(statusLabel(project.status)) + ' · ' + esc(project.role) + '</span></li>';
+          return '<li><a href="#/project/' + esc(project.id) + '">' + esc(projectName(project)) + '</a>' +
+            '<span>' + esc(statusLabel(project.status)) + ' · ' + esc(programmeRoleLabel(project.role)) + '</span></li>';
         }).join('') + '</ul></div>'
-      : '<p class="programme-empty">No linked atlas project yet. The programme record is complete; project and indicator links are pending.</p>';
+      : '<p class="programme-empty">' + esc(t('programmes.no_projects')) + '</p>';
+    const primaryName = programmeName(programme);
+    const secondaryName = I18N.locale === 'id' ? programme.name_en : programme.name_id;
+    const primarySummary = programmeField(programme, 'summary') ||
+      (I18N.locale === 'id' ? programme.summary_id : programme.summary_en);
+    const secondarySummary = I18N.locale === 'id' ? programme.summary_en : programme.summary_id;
+    const primaryLang = I18N.locale === 'id' ? 'id' : 'en';
+    const secondaryLang = I18N.locale === 'id' ? 'en' : 'id';
+    const primaryLabel = primaryLang.toUpperCase();
+    const secondaryLabel = secondaryLang.toUpperCase();
+    const target = programmeField(programme, 'target_summary') ||
+      (I18N.locale === 'id' ? programme.target_summary_id : programme.target_summary_en);
     return '<article class="programme-card" style="--theme-color:' + esc(theme) + '">' +
-      '<div class="programme-top"><span class="programme-no">PSN ' + esc(programme.psn_no) + '</span>' +
+      '<div class="programme-top"><span class="programme-no">' + esc(t('programmes.psn_no', { number: programme.psn_no })) + '</span>' +
       '<span class="programme-theme">' + esc(programmeThemeLabel(programme.theme)) + '</span></div>' +
-      '<h3>' + esc(programme.name_en) + '</h3>' +
-      '<p class="programme-id">' + esc(programme.name_id) + '</p>' +
-      '<p class="programme-summary" lang="en"><span class="programme-lang">EN</span>' + esc(programme.summary_en) + '</p>' +
-      '<p class="programme-summary programme-summary-id" lang="id"><span class="programme-lang">ID</span>' + esc(programme.summary_id) + '</p>' +
+      '<h3>' + esc(primaryName) + '</h3>' +
+      (secondaryName && secondaryName !== primaryName
+        ? '<p class="programme-id" lang="' + secondaryLang + '">' + esc(secondaryName) + '</p>'
+        : '') +
+      (primarySummary
+        ? '<p class="programme-summary" lang="' + primaryLang + '"><span class="programme-lang">' + primaryLabel + '</span>' + esc(primarySummary) + '</p>'
+        : '<p class="programme-summary programme-summary-missing"><span class="programme-lang">' + primaryLabel + '</span>' + esc(t('programmes.summary_missing')) + '</p>') +
+      (secondarySummary && secondarySummary !== primarySummary
+        ? '<p class="programme-summary programme-summary-id" lang="' + secondaryLang + '"><span class="programme-lang">' + secondaryLabel + '</span>' + esc(secondarySummary) + '</p>'
+        : '') +
       '<dl class="programme-meta">' +
-      '<div><dt>Lead</dt><dd>' + esc(lead) + '</dd></div>' +
-      '<div><dt>PKPN</dt><dd>' + esc(pkpnLabel(programme.pkpn_id)) + '</dd></div>' +
-      '<div><dt>Target</dt><dd>' + esc(programme.target_summary_en || 'Not yet published') + '</dd></div>' +
+      '<div><dt>' + esc(t('programmes.lead')) + '</dt><dd>' + esc(lead) + '</dd></div>' +
+      '<div><dt>' + esc(t('programmes.pkpn')) + '</dt><dd>' + esc(pkpnLabel(programme.pkpn_id)) + '</dd></div>' +
+      '<div><dt>' + esc(t('programmes.target')) + '</dt><dd>' + esc(target || t('programmes.not_published')) + '</dd></div>' +
       '</dl>' + projectList +
       (programme.source_url
         ? '<a class="programme-source" href="' + esc(programme.source_url) + '" target="_blank" rel="noopener">' +
-          esc(programme.source_title || 'Official source') + ' ↗</a>'
+          esc(programme.source_title || t('programmes.official_source')) + ' ↗</a>'
         : '') +
       '</article>';
   }
@@ -1519,18 +1665,18 @@
     dom.viewPanel.hidden = false;
 
     if (programmesState === 'loading') {
-      dom.viewPanel.innerHTML = '<div class="data-view"><h2>Programmes</h2>' +
-        '<p class="lede">Loading the programme register…</p></div>';
+      dom.viewPanel.innerHTML = '<div class="data-view"><h2>' + esc(t('programmes.title')) + '</h2>' +
+        '<p class="lede">' + esc(t('result.loading_programmes')) + '</p></div>';
       return;
     }
     if (programmesState === 'error') {
-      dom.viewPanel.innerHTML = '<div class="data-view"><h2>Programmes</h2>' +
-        '<p class="notes-callout">The programme payload could not be loaded. Rebuild the site data and try again.</p></div>';
+      dom.viewPanel.innerHTML = '<div class="data-view"><h2>' + esc(t('programmes.title')) + '</h2>' +
+        '<p class="notes-callout">' + esc(t('result.programmes_error')) + '</p></div>';
       return;
     }
     if (!programmes) {
-      dom.viewPanel.innerHTML = '<div class="data-view"><h2>Programmes</h2>' +
-        '<p class="lede">Loading the programme register…</p></div>';
+      dom.viewPanel.innerHTML = '<div class="data-view"><h2>' + esc(t('programmes.title')) + '</h2>' +
+        '<p class="lede">' + esc(t('result.loading_programmes')) + '</p></div>';
       ensureProgrammes();
       return;
     }
@@ -1541,7 +1687,7 @@
       themeCounts[programme.theme] = (themeCounts[programme.theme] || 0) + 1;
     });
     const statsProgrammes = stats.programmes || {};
-    const themes = [{ key: 'all', label: 'All', count: themeCounts.all }].concat(
+    const themes = [{ key: 'all', label: t('programmes.all'), count: themeCounts.all }].concat(
       PROGRAMME_THEME_ORDER.filter(function (theme) { return themeCounts[theme]; })
         .map(function (theme) {
           return { key: theme, label: programmeThemeLabel(theme), count: themeCounts[theme] };
@@ -1550,19 +1696,19 @@
 
     dom.viewPanel.innerHTML = '<div class="programme-view">' +
       '<header class="programme-hero">' +
-      '<p class="kicker">PSN programme layer</p>' +
-      '<h2>Programmes</h2>' +
-      '<p class="lede">The 24 active programmes in Permenko 16/2025, one record per official number. Names and summaries are bilingual; targets, budgets and indicators stay blank until an official source states them.</p>' +
+      '<p class="kicker">' + esc(t('programmes.kicker')) + '</p>' +
+      '<h2>' + esc(t('programmes.title')) + '</h2>' +
+      '<p class="lede">' + esc(t('programmes.lede')) + '</p>' +
       '</header>' +
       '<div class="programme-stats">' +
-      '<div><span class="k">Programmes</span><strong>' + fmtNum(statsProgrammes.total || programmes.length) + '</strong><small>active</small></div>' +
-      '<div><span class="k">With a lead agency</span><strong>' + fmtNum(statsProgrammes.with_lead || 0) + '</strong><small>of ' + fmtNum(programmes.length) + '</small></div>' +
-      '<div><span class="k">Linked projects</span><strong>' + fmtNum(statsProgrammes.with_projects || 0) + '</strong><small>programmes</small></div>' +
-      '<div><span class="k">Atomic claims</span><strong>' + fmtNum(statsProgrammes.claims || 0) + '</strong><small>programme facts</small></div>' +
-      '<div><span class="k">Targets published</span><strong>' + fmtNum(statsProgrammes.with_target || 0) + '</strong><small>of ' + fmtNum(programmes.length) + '</small></div>' +
+      '<div><span class="k">' + esc(t('programmes.programmes')) + '</span><strong>' + fmtNum(statsProgrammes.total || programmes.length) + '</strong><small>' + esc(t('programmes.active')) + '</small></div>' +
+      '<div><span class="k">' + esc(t('programmes.with_lead')) + '</span><strong>' + fmtNum(statsProgrammes.with_lead || 0) + '</strong><small>' + esc(t('programmes.of', { total: fmtNum(programmes.length) })) + '</small></div>' +
+      '<div><span class="k">' + esc(t('programmes.linked_projects')) + '</span><strong>' + fmtNum(statsProgrammes.with_projects || 0) + '</strong><small>' + esc(t('programmes.programmes_lower')) + '</small></div>' +
+      '<div><span class="k">' + esc(t('programmes.atomic_claims')) + '</span><strong>' + fmtNum(statsProgrammes.claims || 0) + '</strong><small>' + esc(t('programmes.programme_facts')) + '</small></div>' +
+      '<div><span class="k">' + esc(t('programmes.targets_published')) + '</span><strong>' + fmtNum(statsProgrammes.with_target || 0) + '</strong><small>' + esc(t('programmes.of', { total: fmtNum(programmes.length) })) + '</small></div>' +
       '</div>' +
       '<div class="programme-toolbar">' +
-      '<span class="programme-count">' + fmtNum(list.length) + ' of ' + fmtNum(programmes.length) + ' shown</span>' +
+      '<span class="programme-count">' + esc(t('programmes.shown', { shown: fmtNum(list.length), total: fmtNum(programmes.length) })) + '</span>' +
       '</div>' +
       '<div class="chip-row programme-chips">' + themes.map(function (theme) {
         return '<button class="chip" data-programme-theme="' + esc(theme.key) + '" aria-pressed="' +
@@ -1571,7 +1717,7 @@
       }).join('') + '</div>' +
       (list.length
         ? '<div class="programme-grid">' + list.map(programmeCard).join('') + '</div>'
-        : '<p class="notes-callout">No programme matches this filter.</p>') +
+        : '<p class="notes-callout">' + esc(t('programmes.no_match')) + '</p>') +
       '</div>';
 
     dom.viewPanel.querySelectorAll('[data-programme-theme]').forEach(function (chip) {
@@ -1584,36 +1730,43 @@
 
   /* ---------- data view ---------- */
 
+  function downloadUrl(file) {
+    return (window.ATLAS_BASE || '') + file;
+  }
+
   function coverageRows() {
     const rows = (stats.coverage || []).map(function (row) {
-      return '<tr><td class="layer">' + esc(row.label) + '<br><span style="color:var(--muted);font-size:9px">' +
-        esc(row.reference_set) + '</span></td>' +
+      return '<tr><td class="layer">' + esc(tOr('coverage.' + row.layer, row.label)) +
+        '<br><span style="color:var(--muted);font-size:9px">' + esc(row.reference_set) + '</span></td>' +
         '<td class="num">' + fmtNum(row.current) + '</td>' +
         '<td class="num">' + fmtNum(row.target) + '</td>' +
         '<td class="num ' + (row.status === 'met' ? 'ok' : 'gap') + '">' +
-        (row.status === 'met' ? 'Met' : (row.gap ? '+' + fmtNum(row.gap) : '—')) + '</td></tr>';
+        (row.status === 'met' ? esc(t('data.met')) : (row.gap ? '+' + fmtNum(row.gap) : '—')) + '</td></tr>';
     }).join('');
-    return '<table class="coverage-table"><thead><tr><th>Layer</th><th>Now</th><th>Target</th><th>Gap</th></tr></thead><tbody>' +
-      rows + '</tbody></table>';
+    return '<table class="coverage-table"><thead><tr><th>' + esc(t('data.layer')) + '</th><th>' +
+      esc(t('data.now')) + '</th><th>' + esc(t('data.target')) + '</th><th>' + esc(t('data.gap')) +
+      '</th></tr></thead><tbody>' + rows + '</tbody></table>';
   }
 
   function sourceRegister() {
     const sources = stats.sources || [];
-    if (!sources.length) return '<p>Source register is not available in this build.</p>';
+    if (!sources.length) return '<p>' + esc(t('data.source_missing')) + '</p>';
     const counts = {};
     sources.forEach(function (source) {
       counts[source.source_type] = (counts[source.source_type] || 0) + 1;
     });
-    return '<p class="src-meta">' + fmtNum(sources.length) + ' documents: ' +
-      Object.keys(counts).sort().map(function (type) {
-        return fmtNum(counts[type]) + ' ' + esc(type);
-      }).join(' · ') + '. Each row carries its retrieval date and archive path where a snapshot exists.</p>' +
+    const types = Object.keys(counts).sort().map(function (type) {
+      return fmtNum(counts[type]) + ' ' + esc(tOr('data.source_type.' + type, type));
+    }).join(' · ');
+    return '<p class="src-meta">' + esc(t('data.source_note', {
+      count: fmtNum(sources.length), types: types
+    })) + '</p>' +
       '<ul class="source-register">' + sources.map(function (source) {
       return '<li><div class="src-title">' + esc(source.title) + '</div>' +
-        '<div class="src-meta">' + esc(source.publisher) + ' · ' + esc(source.source_type) +
-        ' · retrieved ' + esc(fmtDate(source.retrieved_on)) +
-        (source.archive_path ? ' · snapshot' : '') + '</div>' +
-        (source.url ? '<a href="' + esc(source.url) + '" target="_blank" rel="noopener">Open source ↗</a>' : '') +
+        '<div class="src-meta">' + esc(source.publisher) + ' · ' + esc(tOr('data.source_type.' + source.source_type, source.source_type)) +
+        ' · ' + esc(t('data.retrieved', { date: fmtDate(source.retrieved_on) })) +
+        (source.archive_path ? ' · ' + esc(t('data.snapshot')) : '') + '</div>' +
+        (source.url ? '<a href="' + esc(source.url) + '" target="_blank" rel="noopener">' + esc(t('action.open_source')) + '</a>' : '') +
         '</li>';
     }).join('') + '</ul>';
   }
@@ -1625,19 +1778,23 @@
     const icon = '<svg width="13" height="13" aria-hidden="true"><use href="#i-download"></use></svg>';
     let html = '<div class="download-list">' +
       '<button class="download download-primary" type="button" data-export="projects-csv">' +
-      '<span>Current filtered view <small>' + fmtNum(projectCount) + ' of ' +
-      fmtNum(projects.length) + ' projects · CSV</small></span>' + icon + '</button>' +
+      '<span>' + esc(t('data.filtered_view')) + ' <small>' +
+      esc(t('data.filtered_projects', { count: fmtNum(projectCount), total: fmtNum(projects.length) })) +
+      '</small></span>' + icon + '</button>' +
       '<button class="download" type="button" data-export="projects-geojson">' +
-      '<span>Current filtered view <small>' + fmtNum(projectCount) +
-      ' point features · GeoJSON</small></span>' + icon + '</button>';
+      '<span>' + esc(t('data.filtered_view')) + ' <small>' +
+      esc(t('data.filtered_points', { count: fmtNum(projectCount) })) +
+      '</small></span>' + icon + '</button>';
     if (estateCount !== null) {
       html += '<button class="download" type="button" data-export="estates-csv">' +
-        '<span>Current estate filter <small>' + fmtNum(estateCount) +
-        ' of ' + fmtNum(estates.length) + ' zones · CSV</small></span>' + icon + '</button>';
+        '<span>' + esc(t('data.filtered_view')) + ' <small>' +
+        esc(t('data.filtered_estates', { count: fmtNum(estateCount), total: fmtNum(estates.length) })) +
+        '</small></span>' + icon + '</button>';
     }
     html += downloads.map(function (item) {
-      return '<a class="download" href="' + esc(item.file) + '" download>' +
-        '<span>' + esc(item.label) + ' <small>' + esc(item.meta) + '</small></span>' +
+      const label = item.key ? tOr('download.' + item.key, item.label) : item.label;
+      return '<a class="download" href="' + esc(downloadUrl(item.file)) + '" download>' +
+        '<span>' + esc(label) + ' <small>' + esc(item.meta) + '</small></span>' +
         icon + '</a>';
     }).join('') + '</div>';
     return html;
@@ -1647,22 +1804,21 @@
     const claims = stats.claims || {};
     const missing = claims.missing || {};
     const missingKeys = Object.keys(missing);
-    return '<section class="data-section"><h3>Claims coverage</h3>' +
+    const gaps = missingKeys.map(function (key) {
+      return esc(key.replace(/_/g, ' ')) + ' (' + fmtNum(missing[key]) + ')';
+    }).join(', ');
+    return '<section class="data-section"><h3>' + esc(t('data.claims_coverage')) + '</h3>' +
       '<div class="data-stats">' +
-      '<div class="data-stat"><div class="k">Fully claimed</div><div class="v">' +
+      '<div class="data-stat"><div class="k">' + esc(t('data.fully_claimed')) + '</div><div class="v">' +
       fmtNum(claims.projects_fully_claimed || 0) + ' / ' + fmtNum(claims.projects_total || 0) +
-      ' <small>projects</small></div></div>' +
-      '<div class="data-stat"><div class="k">Atomic claims</div><div class="v">' +
-      fmtNum(claims.total || 0) + ' <small>rows</small></div></div>' +
-      '<div class="data-stat"><div class="k">Programme claims</div><div class="v">' +
-      fmtNum((stats.programmes && stats.programmes.claims) || 0) + ' <small>rows</small></div></div></div>' +
-      '<p>Every project has a status claim and a claim for each populated numeric fact. ' +
-      (missingKeys.length
-        ? 'Open gaps: ' + missingKeys.map(function (key) {
-          return esc(key.replace(/_/g, ' ')) + ' (' + fmtNum(missing[key]) + ')';
-        }).join(', ') + '.'
-        : 'No claim gaps were found in this build.') +
-      ' Investment figures also carry their own source in <code>investments.csv</code>.</p>' +
+      ' <small>' + esc(t('data.projects')) + '</small></div></div>' +
+      '<div class="data-stat"><div class="k">' + esc(t('data.atomic_claims')) + '</div><div class="v">' +
+      fmtNum(claims.total || 0) + ' <small>' + esc(t('data.rows')) + '</small></div></div>' +
+      '<div class="data-stat"><div class="k">' + esc(t('data.programme_claims')) + '</div><div class="v">' +
+      fmtNum((stats.programmes && stats.programmes.claims) || 0) + ' <small>' + esc(t('data.rows')) + '</small></div></div></div>' +
+      '<p>' + esc(t('data.claims_note')) + ' ' +
+      (missingKeys.length ? esc(t('data.claim_gaps', { gaps: gaps })) : esc(t('data.no_claim_gaps'))) +
+      ' ' + esc(t('data.investments_note')) + '</p>' +
       '</section>';
   }
   function freshnessSection() {
@@ -1671,24 +1827,24 @@
     const projects = counts.project || {};
     const estates = counts.estate || {};
     const attention = freshness.attention || [];
-    let html = '<section class="data-section"><h3>Freshness</h3>' +
+    let html = '<section class="data-section"><h3>' + esc(t('data.freshness')) + '</h3>' +
       '<div class="data-stats">' +
-      '<div class="data-stat"><div class="k">Projects fresh</div><div class="v">' +
+      '<div class="data-stat"><div class="k">' + esc(t('data.projects_fresh')) + '</div><div class="v">' +
       fmtNum(projects.fresh || 0) + ' / ' + fmtNum((projects.fresh || 0) + (projects.due_soon || 0) + (projects.stale || 0) + (projects.unknown || 0)) +
-      ' <small>rows</small></div></div>' +
-      '<div class="data-stat"><div class="k">Estates fresh</div><div class="v">' +
+      ' <small>' + esc(t('data.rows')) + '</small></div></div>' +
+      '<div class="data-stat"><div class="k">' + esc(t('data.estates_fresh')) + '</div><div class="v">' +
       fmtNum(estates.fresh || 0) + ' / ' + fmtNum((estates.fresh || 0) + (estates.due_soon || 0) + (estates.stale || 0) + (estates.unknown || 0)) +
-      ' <small>rows</small></div></div></div>' +
-      '<p>Rows are reported fresh for 183 days after <code>last_verified</code>, due soon in the final 30 days, and stale after six months. ' +
-      'As of ' + esc(fmtDate(freshness.as_of)) + ', the next record falls due on ' +
-      esc(fmtDate(freshness.next_due)) + '.</p>';
+      ' <small>' + esc(t('data.rows')) + '</small></div></div></div>' +
+      '<p>' + esc(t('data.freshness_note', {
+        as_of: fmtDate(freshness.as_of), next_due: fmtDate(freshness.next_due)
+      })) + '</p>';
     if (attention.length) {
       html += '<ul class="gap-list">' + attention.slice(0, 12).map(function (row) {
-        return '<li><b>' + esc(row.state.replace('_', ' ')) + '</b> · ' + esc(row.name) +
-          ' (' + esc(row.entity_type) + ', verified ' + esc(fmtDate(row.last_verified)) + ')</li>';
+        return '<li><b>' + esc(freshnessLabel(row.state)) + '</b> · ' + esc(row.name) +
+          ' (' + esc(row.entity_type) + ', ' + esc(t('drawer.verified', { date: fmtDate(row.last_verified) })) + ')</li>';
       }).join('') + '</ul>';
     } else {
-      html += '<p class="src-meta">No row is stale or due soon in this build. The monthly runbook in the repository lists the refresh order.</p>';
+      html += '<p class="src-meta">' + esc(t('data.no_stale')) + '</p>';
     }
     html += '</section>';
     return html;
@@ -1697,13 +1853,13 @@
   function conflictsSection() {
     const conflicts = stats.conflicts || {};
     const rows = conflicts.rows || [];
-    if (!rows.length) return '<section class="data-section"><h3>Conflict register</h3><p>No conflicts are recorded.</p></section>';
-    return '<section class="data-section"><h3>Conflict register</h3>' +
+    if (!rows.length) return '<section class="data-section"><h3>' + esc(t('data.conflict_register')) + '</h3><p>' + esc(t('data.no_conflicts')) + '</p></section>';
+    return '<section class="data-section"><h3>' + esc(t('data.conflict_register')) + '</h3>' +
       '<div class="data-stats">' +
-      '<div class="data-stat"><div class="k">Open</div><div class="v">' + fmtNum(conflicts.open || 0) + '</div></div>' +
-      '<div class="data-stat"><div class="k">Resolved</div><div class="v">' + fmtNum(conflicts.resolved || 0) + '</div></div></div>' +
-      '<p>Both values and both sources stay visible. A resolution says what the atlas publishes; it does not erase the disagreement.</p>' +
-      '<table class="conflict-table"><thead><tr><th>Subject</th><th>Values and resolution</th><th>State</th></tr></thead><tbody>' +
+      '<div class="data-stat"><div class="k">' + esc(t('data.open')) + '</div><div class="v">' + fmtNum(conflicts.open || 0) + '</div></div>' +
+      '<div class="data-stat"><div class="k">' + esc(t('data.resolved')) + '</div><div class="v">' + fmtNum(conflicts.resolved || 0) + '</div></div></div>' +
+      '<p>' + esc(t('data.conflict_note')) + '</p>' +
+      '<table class="conflict-table"><thead><tr><th>' + esc(t('data.subject')) + '</th><th>' + esc(t('data.values_resolution')) + '</th><th>' + esc(t('data.state')) + '</th></tr></thead><tbody>' +
       rows.map(function (row) {
         return '<tr><td><span class="conflict-subject">' + esc(row.subject) + '</span>' +
           '<span class="conflict-scope">' + esc(row.scope) + (row.field ? ' · ' + esc(row.field) : '') + '</span></td>' +
@@ -1718,7 +1874,7 @@
 
   function dictionarySection() {
     const rows = stats.dictionary || [];
-    if (!rows.length) return '<section class="data-section"><h3>Data dictionary</h3><p>No dictionary in this build.</p></section>';
+    if (!rows.length) return '<section class="data-section"><h3>' + esc(t('data.dictionary')) + '</h3><p>' + esc(t('data.dictionary_missing')) + '</p></section>';
     const tables = [];
     const byTable = {};
     rows.forEach(function (row) {
@@ -1728,18 +1884,21 @@
       }
       byTable[row.table].rows.push(row);
     });
-    return '<section class="data-section"><h3>Data dictionary</h3>' +
-      '<p>' + fmtNum(rows.length) + ' fields across ' + fmtNum(tables.length) +
-      ' tables. The same table is downloadable as CSV.</p>' +
+    return '<section class="data-section"><h3>' + esc(t('data.dictionary')) + '</h3>' +
+      '<p>' + esc(t('data.dictionary_note', {
+        fields: fmtNum(rows.length), tables: fmtNum(tables.length)
+      })) + '</p>' +
       '<div class="dictionary">' + tables.map(function (table) {
         const entry = byTable[table];
-        return '<details><summary>' + esc(entry.label) + ' <span>' + esc(table) + ' · ' +
-          fmtNum(entry.rows.length) + ' fields</span></summary>' +
-          '<table><thead><tr><th>Field</th><th>Type</th><th>Description</th></tr></thead><tbody>' +
+        const tableKey = 'dictionary.table.' + table.replace(/\.csv$/, '');
+        return '<details><summary>' + esc(tOr(tableKey, entry.label)) + ' <span>' + esc(table) + ' · ' +
+          esc(t('data.fields', { count: fmtNum(entry.rows.length) })) + '</span></summary>' +
+          '<table><thead><tr><th>' + esc(t('data.field')) + '</th><th>' + esc(t('data.type')) +
+          '</th><th>' + esc(t('data.description')) + '</th></tr></thead><tbody>' +
           entry.rows.map(function (row) {
             return '<tr><td class="field">' + esc(row.field) + '</td><td class="type">' +
-              esc(row.type) + (row.required === 'yes' ? ' · req' : '') + '</td><td>' +
-              esc(row.description) + (row.allowed_values ? ' <small>Allowed: ' + esc(row.allowed_values) + '</small>' : '') +
+              esc(row.type) + (row.required === 'yes' ? ' · ' + esc(t('data.required')) : '') + '</td><td>' +
+              esc(row.description) + (row.allowed_values ? ' <small>' + esc(t('data.allowed', { values: row.allowed_values })) + '</small>' : '') +
               '</td></tr>';
           }).join('') + '</tbody></table></details>';
       }).join('') + '</div></section>';
@@ -1747,8 +1906,8 @@
 
   function changelogSection() {
     const entries = stats.changelog || [];
-    if (!entries.length) return '<section class="data-section"><h3>Changelog</h3><p>No changelog entries.</p></section>';
-    return '<section class="data-section"><h3>Changelog</h3><ul class="changelog">' +
+    if (!entries.length) return '<section class="data-section"><h3>' + esc(t('data.changelog')) + '</h3><p>' + esc(t('data.no_changelog')) + '</p></section>';
+    return '<section class="data-section"><h3>' + esc(t('data.changelog')) + '</h3><ul class="changelog">' +
       entries.map(function (entry) {
         return '<li><time>' + esc(fmtDate(entry.date)) + '</time><span><b>' +
           esc(entry.title) + '</b><br>' + entry.items.map(function (item) {
@@ -1775,114 +1934,101 @@
     const roadCount = sectorCounts.road || 0;
     const generated = stats.generated_on ? fmtDate(stats.generated_on) : fmtDate(new Date().toISOString().slice(0, 10));
 
+    const v = {
+      total: fmtNum(projectStats.total || 0),
+      investment: fmtNum(projectStats.with_investment || 0),
+      progress: fmtNum(projectStats.with_progress || 0),
+      length: fmtNum(projectStats.with_length || 0),
+      unverified: fmtNum((projectStats.verification && projectStats.verification.unverified) || 0),
+      current: fmtNum(transportCoverage.current),
+      transportTarget: fmtNum(transportCoverage.target),
+      factory: fmtNum(sectorCounts.factory || 0),
+      energy: fmtNum(sectorCounts.energy || 0),
+      water: fmtNum(sectorCounts.water || 0),
+      industrial: fmtNum(estateStats.industrial || 0),
+      sez: fmtNum(estateStats.sez || 0),
+      estateTotal: fmtNum(estateStats.total || 0),
+      both: fmtNum(estateStats.both || 0),
+      unknown: fmtNum((estateStats.coordinate_sources || {}).unknown || 0),
+      gapRows: fmtNum(estateStats.gap_rows || 0),
+      resolved: fmtNum(gapResolved),
+      gapOpen: fmtNum(gapOpen),
+      notRequired: fmtNum(gapNotRequired),
+      official: fmtNum((estateStats.coordinate_sources || {}).official || 0),
+      osm: fmtNum((estateStats.coordinate_sources || {}).osm || 0),
+      regency: fmtNum((estateStats.coordinate_sources || {}).regency || 0),
+      manual: fmtNum((estateStats.coordinate_sources || {}).manual || 0),
+      unknownPsn: fmtNum((projectStats.psn && projectStats.psn.unknown) || 0),
+      roads: fmtNum(roadCount),
+      approximate: fmtNum(projectStats.precision && projectStats.precision.approximate || 0),
+      province: fmtNum(projectStats.precision && projectStats.precision.province || 0),
+      single: fmtNum((projectStats.verification && projectStats.verification.single) || 0),
+      dual: fmtNum((projectStats.verification && projectStats.verification.dual) || 0),
+      claimed: fmtNum((stats.claims && stats.claims.projects_fully_claimed) || 0),
+      claimsTotal: fmtNum((stats.claims && stats.claims.projects_total) || 0),
+      claims: fmtNum((stats.claims && stats.claims.total) || 0),
+      conflicts: fmtNum((stats.conflicts && stats.conflicts.total) || 0),
+      conflictsOpen: fmtNum((stats.conflicts && stats.conflicts.open) || 0),
+      records: fmtNum((stats.freshness && stats.freshness.records) || 0),
+      nextDue: fmtDate(stats.freshness && stats.freshness.next_due),
+      programmes: fmtNum((stats.programmes && stats.programmes.total) || 0),
+      lead: fmtNum((stats.programmes && stats.programmes.with_lead) || 0),
+      links: fmtNum((stats.programmes && stats.programmes.with_projects) || 0),
+      targets: fmtNum((stats.programmes && stats.programmes.with_target) || 0)
+    };
+
     dom.viewPanel.innerHTML =
       '<div class="data-view">' +
-      '<h2>Data and methods</h2>' +
-      '<p class="lede">What this atlas covers, how a status is decided, where the numbers come from, and what is still missing. Counts are generated from the curated tables at build time.</p>' +
+      '<h2>' + esc(t('data.title')) + '</h2>' +
+      '<p class="lede">' + esc(t('data.lede')) + '</p>' +
 
-      '<section class="data-section"><h3>Coverage</h3>' + coverageRows() +
-      '<p style="margin-top:7px;color:var(--muted);font-size:9px">Generated ' + esc(generated) +
-      ' · data as of ' + esc(fmtDate(stats.data_as_of)) + '</p></section>' +
+      '<section class="data-section"><h3>' + esc(t('data.coverage')) + '</h3>' + coverageRows() +
+      '<p style="margin-top:7px;color:var(--muted);font-size:9px">' +
+      esc(t('data.generated', { date: generated, as_of: fmtDate(stats.data_as_of) })) + '</p></section>' +
 
-      '<section class="data-section"><h3>Programme register</h3>' +
-      '<p>All ' + fmtNum((stats.programmes && stats.programmes.total) || 0) +
-      ' active PSN programmes have a record with an official number, bilingual name and summary, and a source. ' +
-      fmtNum((stats.programmes && stats.programmes.with_lead) || 0) + ' have a lead agency, ' +
-      fmtNum((stats.programmes && stats.programmes.with_projects) || 0) + ' have at least one structural project link, and ' +
-      fmtNum((stats.programmes && stats.programmes.with_target) || 0) +
-      ' have a published target. Missing targets, budgets and indicators stay visible rather than being inferred.</p>' +
-      '<p><a href="#/programmes">Open the programme register →</a></p></section>' +
+      '<section class="data-section"><h3>' + esc(t('data.programme_register')) + '</h3>' +
+      '<p>' + esc(t('data.programme_lede', {
+        total: v.programmes, lead: v.lead, links: v.links, target: v.targets
+      })) + '</p>' +
+      '<p><a href="#/programmes">' + esc(t('data.open_programmes')) + '</a></p></section>' +
 
       claimsSection() + freshnessSection() +
 
-      '<section class="data-section"><h3>What this is</h3>' +
-      '<p>A curated, source-linked map of major Indonesian infrastructure. It is not a live tracker, an official government dataset, or a complete list.</p>' +
-      '<p><b>Verification rule.</b> Every row needs a source and a verification date. A status change needs an official source or two independent sources. Each populated numeric fact has an atomic claim, and disagreements stay visible in the notes and the conflict register.</p></section>' +
+      '<section class="data-section"><h3>' + esc(t('data.what')) + '</h3>' +
+      '<p>' + esc(t('data.what_body')) + '</p>' +
+      '<p><b>' + esc(t('data.verification_rule').split('.')[0]) + '.</b> ' +
+      esc(t('data.verification_rule').split('.').slice(1).join('.').trim()) + '</p></section>' +
 
-      '<section class="data-section"><h3>Status definitions</h3><ul class="def-list">' +
+      '<section class="data-section"><h3>' + esc(t('data.status_definitions')) + '</h3><ul class="def-list">' +
       STATUS_ORDER.map(function (status) {
-        const meaning = {
-          planned: 'Designated, contracted or tendered; no physical construction.',
-          under_construction: 'Any material construction active, even if another section is already open.',
-          operating: 'Fully open before the two-year window; context for the network.',
-          recently_completed: 'Fully open on or after 6 November 2024.',
-          stalled: 'Officially delayed or reported stalled.',
-          unknown: 'Listed in the official PSN register, but implementation status is not yet sourced. These rows are not plotted on the map.'
-        }[status] || '';
-        return '<li><b>' + esc(statusLabel(status)) + '</b><span>' + esc(meaning) + '</span></li>';
+        return '<li><b>' + esc(statusLabel(status)) + '</b><span>' +
+          esc(t('status.' + status + '.meaning')) + '</span></li>';
       }).join('') + '</ul></section>' +
 
-      '<section class="data-section"><h3>Inclusion rules</h3>' +
-      '<p><b>Roads:</b> major toll corridors and PSN national roads. <b>Airports and seaports:</b> PSN or KPBU designated. <b>Factories:</b> PSN manufacturing plants, Hilirisasi Stage II plants and private plants with investment of at least Rp 1 trillion; estates and pure mining pits are excluded. <b>Energy:</b> PSN refineries and LNG, plus the 100 GWp solar programme. <b>Water:</b> PSN dams, irrigation and water-supply systems. <b>Urban and coastal:</b> IKN Phase 2 and the Giant Java Sea Wall. <b>Housing, technology, education, tourism and agriculture:</b> active PSN entries in those sectors. <b>Programmes:</b> all 24 active PSN programmes in Permenko 16/2025. <b>Estates:</b> the Kemenperin industrial-estate list, official SEZ profiles and register-only PSN industrial areas, one row per zone.</p>' +
-      '<p>The Bali, Malacca and Sunda strait bridges are excluded by scope. Estates remain table-only until their coordinates are verified. Register-only PSN rows carry the name, number, sector, location and active status from the annex; they do not claim an implementation status, cost or boundary.</p></section>' +
+      '<section class="data-section"><h3>' + esc(t('data.inclusion')) + '</h3>' +
+      '<p>' + esc(t('data.inclusion_body')) + '</p>' +
+      '<p>' + esc(t('data.inclusion_body2')) + '</p></section>' +
 
-      '<section class="data-section"><h3>Known gaps</h3><ul class="gap-list">' +
-      '<li>' + fmtNum(projectStats.total || 0) + ' projects: ' + fmtNum(projectStats.with_investment || 0) +
-      ' with an investment figure, ' + fmtNum(projectStats.with_progress || 0) +
-      ' with reported progress and ' + fmtNum(projectStats.with_length || 0) + ' with a route length. ' +
-      fmtNum((projectStats.verification && projectStats.verification.unverified) || 0) +
-      ' are register-only PSN rows with no implementation facts yet.</li>' +
-      '<li>Transport PSN: ' + fmtNum(transportCoverage.current) + ' of ' +
-      fmtNum(transportCoverage.target) + ' represented (13 rail, 7 airports, 15 seaports). ' +
-      'The Nusantara airport is an additional national gateway, not a PSN row. ' +
-      'Status is as of 19 February 2026, the date of the Kemenhub review.</li>' +
-      '<li>Industry, energy and water: ' + fmtNum(sectorCounts.factory || 0) +
-      ' factory rows, ' + fmtNum(sectorCounts.energy || 0) + ' energy projects and ' +
-      fmtNum(sectorCounts.water || 0) + ' water, irrigation and supply rows. Plant and project points are approximate; ' +
-      'capacity and investment are only as good as the cited company or press source. ' +
-      'Transport points are also approximate, and the PSN review gives no rail length or asset capacity.</li>' +
-      '<li>Programmes: ' + fmtNum((stats.programmes && stats.programmes.total) || 0) +
-      ' of 24 active PSN programmes recorded; ' +
-      fmtNum((stats.programmes && stats.programmes.with_lead) || 0) + ' have a lead agency, ' +
-      fmtNum((stats.programmes && stats.programmes.with_projects) || 0) + ' have a linked project and ' +
-      fmtNum((stats.programmes && stats.programmes.with_target) || 0) +
-      ' have a published target. The annex states no budgets or indicators, so those gaps are explicit.</li>' +
-      '<li>Estate coverage: ' + fmtNum(estateStats.industrial || 0) +
-      ' industrial-estate designations and ' + fmtNum(estateStats.sez || 0) +
-      ' SEZs (' + fmtNum(estateStats.total || 0) + ' rows, ' + fmtNum(estateStats.both || 0) +
-      ' shared) against a 2026 benchmark of 179 industrial estates. The 179 target is met; ' +
-      fmtNum((estateStats.coordinate_sources || {}).unknown || 0) +
-      ' PSN industrial areas are register-only, with no area or boundary yet. The ' +
-      fmtNum(estateStats.gap_rows || 0) + '-row 2024 audit ledger is in Downloads: ' +
-      fmtNum(gapResolved) + ' resolved, ' + fmtNum(gapOpen) + ' named additions still open and ' +
-      fmtNum(gapNotRequired) + ' count placeholders no longer needed.</li>' +
-      '<li>Estate coordinates: ' + fmtNum((estateStats.coordinate_sources || {}).official || 0) +
-      ' SEZ/shared zones use official KEK points, ' +
-      fmtNum((estateStats.coordinate_sources || {}).osm || 0) +
-      ' industrial areas use OSM/Nominatim place points, ' +
-      fmtNum((estateStats.coordinate_sources || {}).regency || 0) +
-      ' still use regency centroids, ' +
-      fmtNum((estateStats.coordinate_sources || {}).manual || 0) +
-      ' uses a power-station point and ' +
-      fmtNum((estateStats.coordinate_sources || {}).unknown || 0) +
-      ' register-only PSN areas use province centroids with no boundary.</li>' +
-      '<li>Trans Sulawesi and Trans Kalimantan publish a route total only: no current operational-km series or segment table was found. Trans Sumatra and Trans Papua segment tables are partial and say so.</li>' +
-      '<li>' + fmtNum((projectStats.psn && projectStats.psn.unknown) || 0) + ' of ' +
-      fmtNum(roadCount) + ' road rows have unknown PSN status; ' +
-      fmtNum(projectStats.precision && projectStats.precision.approximate || 0) + ' of ' +
-      fmtNum(projectStats.total || 0) + ' rows use approximate coordinates; ' +
-      fmtNum(projectStats.precision && projectStats.precision.province || 0) +
-      ' use province centroids and are not plotted.</li>' +
-      '<li>Verification: ' + fmtNum((projectStats.verification && projectStats.verification.official) || 0) +
-      ' official, ' + fmtNum((projectStats.verification && projectStats.verification.single) || 0) +
-      ' single-source, ' + fmtNum((projectStats.verification && projectStats.verification.dual) || 0) +
-      ' dual-source and ' + fmtNum((projectStats.verification && projectStats.verification.unverified) || 0) +
-      ' register-only.</li>' +
-      '<li>Claims: ' + fmtNum((stats.claims && stats.claims.projects_fully_claimed) || 0) + ' of ' +
-      fmtNum((stats.claims && stats.claims.projects_total) || 0) + ' projects have a claim for the status and every populated numeric fact (' +
-      fmtNum((stats.claims && stats.claims.total) || 0) + ' atomic claims). Register-only rows claim the PSN listing, location and active designation, not implementation.</li>' +
-      '<li>Conflicts: ' + fmtNum((stats.conflicts && stats.conflicts.total) || 0) + ' recorded, ' +
-      fmtNum((stats.conflicts && stats.conflicts.open) || 0) + ' still open. Both values and sources stay in the register rather than only in a free-text note.</li>' +
-      '<li>Freshness: ' + fmtNum((stats.freshness && stats.freshness.records) || 0) +
-      ' project and estate rows are checked; the next record falls due on ' +
-      esc(fmtDate(stats.freshness && stats.freshness.next_due)) + '. No stale rows in this build.</li>' +
+      '<section class="data-section"><h3>' + esc(t('data.known_gaps')) + '</h3><ul class="gap-list">' +
+      '<li>' + esc(t('data.gap_projects', v)) + '</li>' +
+      '<li>' + esc(t('data.gap_transport', v)) + '</li>' +
+      '<li>' + esc(t('data.gap_industry', v)) + '</li>' +
+      '<li>' + esc(t('data.gap_programmes', v)) + '</li>' +
+      '<li>' + esc(t('data.gap_estates', v)) + '</li>' +
+      '<li>' + esc(t('data.gap_estate_coords', v)) + '</li>' +
+      '<li>' + esc(t('data.gap_corridors')) + '</li>' +
+      '<li>' + esc(t('data.gap_psn', v)) + '</li>' +
+      '<li>' + esc(t('data.gap_verification', v)) + '</li>' +
+      '<li>' + esc(t('data.gap_claims', v)) + '</li>' +
+      '<li>' + esc(t('data.gap_conflicts', v)) + '</li>' +
+      '<li>' + esc(t('data.gap_freshness', v)) + '</li>' +
       '</ul></section>' +
 
       conflictsSection() +
 
-      '<section class="data-section"><h3>Source register</h3>' + sourceRegister() + '</section>' +
+      '<section class="data-section"><h3>' + esc(t('data.source_register')) + '</h3>' + sourceRegister() + '</section>' +
 
-      '<section class="data-section"><h3>Downloads</h3>' + downloadList() + '</section>' +
+      '<section class="data-section"><h3>' + esc(t('data.downloads')) + '</h3>' + downloadList() + '</section>' +
 
       dictionarySection() +
       changelogSection() +
@@ -1892,6 +2038,13 @@
   /* ---------- render orchestration ---------- */
 
   function renderAll() {
+    const active = state.view === 'project' ? 'explore' : state.view;
+    const appMain = document.querySelector('.app-main');
+    if (appMain) {
+      const wide = active === 'data' || active === 'programmes' ||
+        active === 'estates' || active === 'corridors';
+      appMain.classList.toggle('is-wide', wide);
+    }
     renderHeader();
     renderTabs();
 
@@ -1909,6 +2062,9 @@
 
     renderDrawer();
     renderMap();
+    requestAnimationFrame(function () {
+      if (window.AtlasMap) window.AtlasMap.resize();
+    });
   }
 
   /* ---------- mobile sheet ---------- */
@@ -1960,7 +2116,7 @@
     dom.sheetHandle.addEventListener('pointerdown', function (event) {
       if (!mobileQuery.matches) return;
       const startHeight = dom.rail.getBoundingClientRect().height;
-      sheetDrag = { startY: event.clientY, startHeight: startHeight };
+      sheetDrag = { startY: event.clientY, startHeight: startHeight, moved: false };
       dom.rail.classList.add('is-dragging');
       dom.sheetHandle.setPointerCapture(event.pointerId);
       event.preventDefault();
@@ -1968,20 +2124,28 @@
 
     dom.sheetHandle.addEventListener('pointermove', function (event) {
       if (!sheetDrag) return;
+      if (Math.abs(event.clientY - sheetDrag.startY) > 6) sheetDrag.moved = true;
       const height = sheetDrag.startHeight + (sheetDrag.startY - event.clientY);
       setSheetHeight(height, false);
     });
 
     dom.sheetHandle.addEventListener('pointerup', function (event) {
       if (!sheetDrag) return;
+      const drag = sheetDrag;
       sheetDrag = null;
       dom.rail.classList.remove('is-dragging');
-      const current = dom.rail.getBoundingClientRect().height;
       const snaps = sheetSnaps();
-      const nearest = snaps.reduce(function (best, snap) {
-        return Math.abs(snap - current) < Math.abs(best - current) ? snap : best;
-      }, snaps[0]);
-      setSheetHeight(nearest);
+      if (!drag.moved) {
+        // A tap cycles peek -> half -> full -> peek, so filters are reachable
+        // without discovering the drag gesture.
+        setSheetHeight(snaps[(sheetSnapIndex + 1) % snaps.length]);
+      } else {
+        const current = dom.rail.getBoundingClientRect().height;
+        const nearest = snaps.reduce(function (best, snap) {
+          return Math.abs(snap - current) < Math.abs(best - current) ? snap : best;
+        }, snaps[0]);
+        setSheetHeight(nearest);
+      }
       dom.sheetHandle.releasePointerCapture(event.pointerId);
     });
 
@@ -2057,10 +2221,10 @@
       let ok = false;
       try { ok = document.execCommand('copy'); } catch (error) { ok = false; }
       document.body.removeChild(area);
-      toast(ok ? 'Link copied' : 'Copy the address bar to share this view');
+      toast(ok ? t('toast.link_copied') : t('toast.copy_manual'));
     }
     if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(url).then(function () { toast('Link copied'); }).catch(fallback);
+      navigator.clipboard.writeText(url).then(function () { toast(t('toast.link_copied')); }).catch(fallback);
     } else {
       fallback();
     }
@@ -2313,7 +2477,7 @@
         esc((STATUS[status] && STATUS[status].color) || '#667085') + '"></span>' +
         esc(statusLabel(status)) + '</div>';
     }).join('') +
-      '<div class="legend-sector">Marker glyph shows the sector: road, rail, air, sea, factory, energy, water, urban or coastal. Clusters show a status ring.</div>';
+      '<div class="legend-sector">' + esc(t('map.legend_note')) + '</div>';
   }
 
   /* ---------- boot ---------- */
@@ -2342,6 +2506,7 @@
     dom.footCount = $('foot-count');
     dom.footTotal = $('foot-total');
     dom.mapCount = $('map-count');
+    dom.mapCaptionText = $('map-caption-text');
     dom.drawer = $('drawer');
     dom.drawerClose = $('drawer-close');
     dom.drawerPills = $('drawer-pills');
@@ -2360,9 +2525,9 @@
     dom.mapWrap = document.querySelector('.map-wrap');
 
     if (!features.length) {
-      dom.resultCount.textContent = 'Data not loaded';
-      dom.projectList.innerHTML = '<li><div class="list-empty"><h3>No project data</h3>' +
-        '<p>data/projects.js is missing or empty. Rebuild the site data.</p></div></li>';
+      dom.resultCount.textContent = t('result.data_not_loaded');
+      dom.projectList.innerHTML = '<li><div class="list-empty"><h3>' + esc(t('result.no_data_title')) + '</h3>' +
+        '<p>' + esc(t('result.no_data_body')) + '</p></div></li>';
       return;
     }
 

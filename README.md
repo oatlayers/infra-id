@@ -37,9 +37,10 @@ curated, not exhaustive**.
   or partial coverage.
 - **Programme layer:** all 24 active PSN programmes are first-class records with
   an official number, Indonesian and English names, a summary, a theme and a
-  source. Ten have a lead agency and seven have a structural project link.
-  Targets, budgets and indicators stay blank because the annex does not state
-  them. The layer has its own view, download and 48 atomic claims.
+  source. Sixteen have a lead agency (10 distinct lead organisations) and five
+  have at least one structural project link (seven links). Targets, budgets and
+  indicators stay blank because the annex does not state them. The layer has its
+  own view, download and 48 atomic claims.
 - **Estate dataset:** 204 industrial estates and SEZs, shown as a table; the map
   layer is deliberately off until coordinates are verified. The 179
   industrial-estate benchmark is met: 179 pure industrial rows plus 7 shared
@@ -49,13 +50,24 @@ curated, not exhaustive**.
   claims; 228 of 228 projects have a claim for the status and every populated
   numeric fact. 19 conflicts are recorded with both values and both sources
   (11 resolved, 8 open). A 432-row freshness report marks each project and
-  estate fresh, due soon or stale. A 229-field data dictionary covers all 22
-  curated tables.
+  estate fresh, due soon or stale. A 238-field data dictionary covers all 23
+  curated tables, including the new translation layer.
+- **Bilingual shell:** `site/index.html` is a language chooser; `site/en/` and
+  `site/id/` share one application and one data bundle. Both locales carry 541
+  UI keys, all 24 programme names and summaries, all five corridor definitions,
+  and an Indonesian display name for all 228 projects (140 reviewed, 88 official
+  PSN aliases). Every project also has a factual one-sentence summary generated
+  from its sourced fields in both locales and labelled auto-generated. The
+  switch preserves the current hash, filters and selected record. Data,
+  Programmes, Corridors and Estates are full-width register pages; Explore keeps
+  the map.
 - **Last verification:** 9 November 2026 for the flagship, PSN-road, PSN
   industrial-area and register-only rows; 8 November 2026 for the road, estate
   and factory batches; 7 November for transport; and 6 November for earlier
   rows. The 432-row freshness report is fresh as of 9 November 2026; the first
   record falls due on 11 May 2027.
+- **Payload:** 1,360 KB runtime data and 3,292 KB including downloads, within
+  the plan's 1.5 MB initial and 5 MB total budgets.
 - **Status:** Phase 1, Phase 2 and Phase 3 of the v3 overhaul are complete as of
   8 November 2026. Track 2B (estates) is complete by count and corridor geometry
   (R6) is deferred; both are documented. The 50-entry PSN road reference set is complete.
@@ -63,8 +75,9 @@ curated, not exhaustive**.
   and a local HTTP server. There is **no GitHub remote, push, Pages deployment or
   published URL**. V4 foundation work started on 9 November 2026 with the PSN
   register, reconciliation ledger, 2026 flagship batch, PSN-road completion, the
-  programme layer, the first PSN industrial-area batch and the register-only
-  closure of the remaining PSN records. The released site is still the v3 build.
+  programme layer, the first PSN industrial-area batch, the register-only
+  closure of the remaining PSN records and the bilingual shell. The released
+  site is still the v3 build; V4 remains local.
 - **V4 plan:** [`docs/plan/plan.md`](docs/plan/plan.md) is the current plan: a
   bilingual national delivery atlas with 400+ projects, 226 PSN projects, 24 PSN
   programmes, 8 PKPN programmes, 300 companies, 200 estates and a rebuilt map
@@ -113,7 +126,7 @@ when a source supports that status.
 | Project claims | 863 | 228/228 projects fully claimed | one atomic fact per row; 115 separate estate claims and 48 programme claims; register-only rows claim the listing, location and active designation, not implementation |
 | Conflicts | 19 | 11 resolved, 8 open | both values and both sources, with a recorded resolution; downloadable register |
 | Freshness | 432 | 432 fresh as of 2026-11-09 | 228 projects + 204 estates; 183-day threshold; next due 2027-05-11 |
-| Data dictionary | 229 | 22 tables | generated from the schema; field type, required flag, description, allowed values and example |
+| Data dictionary | 238 | 23 tables | generated from the schema; field type, required flag, description, allowed values and example |
 
 **Why the transport status counts differ from Kemenhub's summary.** The deck's
 headline says 29 complete and 6 under construction. The atlas uses its own
@@ -221,7 +234,7 @@ infra-id/
 │  ├─ operations/refresh-runbook.md
 │  └─ evidence/phase-3/      desktop/mobile screenshots and smoke report
 ├─ data/
-│  ├─ curated/               editable source of truth (22 tables)
+│  ├─ curated/               editable source of truth (23 tables)
 │  ├─ derived/               generated reports, caches and extracted text
 │  ├─ exports/projects.csv   generated flat export
 │  └─ raw/2026-11-06/        sources as fetched, never edited
@@ -322,7 +335,10 @@ What each script does:
 | `imports/build_estates.py` | KEK HTML + BAJRA table + regency cache | `data/curated/estates.csv` + source rows | Merges the 25 SEZs and 153 industrial estates, handles overlaps; run `add_psn_industrial_estates.py` afterwards to restore the PSN rows |
 | `pipeline/freshness.py` | Curated projects and estates | `data/derived/freshness_report.csv` | Fresh / due soon / stale by `last_verified`; deterministic as-of date |
 | `pipeline/audit_claims.py` | Curated projects and claims | `data/derived/claims_audit.csv` | Checks that status and every populated numeric fact has an atomic claim |
-| `pipeline/build_dictionary.py` | Schema field lists | `data/derived/data_dictionary.csv`, `site/downloads/dictionary.csv` | 229 field definitions across 22 tables |
+| `pipeline/build_dictionary.py` | Schema field lists | `data/derived/data_dictionary.csv`, `site/downloads/dictionary.csv` | 238 field definitions across 23 tables |
+| `pipeline/build_i18n.py` | `data/i18n/ui.*.json`, `translations.csv`, bilingual curated fields | `site/data/i18n.*.js`, `data/derived/i18n_report.csv` | Fails on key drift or a missing programme/corridor translation |
+| `pipeline/build_locales.py` | `site/app.html`, `site/chooser.html` | `site/en/index.html`, `site/id/index.html`, `site/index.html` | Rewrites relative paths and the language switch |
+| `dev/check_contrast.py` | `site/assets/tokens.css` | console report | WCAG AA check for every asserted token pair |
 | `pipeline/build_site_data.py` | Flat projects + curated corridors, estates, sources, conflicts and derived reports | `site/data/*.js` and `site/downloads/*` | Site-ready runtime payload and downloads |
 | `pipeline/check_site.py` | Generated payload | exit code | Payload counts, IDs, search coverage, downloads and local-only assets |
 | `build_all.py` | The build scripts above | exit code | Local CI order plus deterministic `--check` hashing |
@@ -360,6 +376,7 @@ rationale and target schema are in `docs/plan/plan.md`.
 | `conflicts.csv` | source disagreement | `id`, `scope`, `subject`, `field`, `value_a`, `source_a`, `value_b`, `source_b`, `status`, `resolution` |
 | `psn_register.csv` | official PSN project or programme | `id`, `kind`, `psn_no`, `sector`, official `name_id`, `location`, `status`, `source_id` |
 | `programmes.csv` | PSN programme | `id`, `psn_no`, `name_id`, `name_en`, `theme`, `pkpn_id`, `lead_org_id`, bilingual summaries, `source_id` |
+| `translations.csv` | reviewed locale text | `entity_type`, `entity_id`, `field`, `locale`, `text`, `status`, `translator`, `reviewed_on`, `source_id` |
 | `programme_projects.csv` | programme–project link | `programme_id`, `project_id`, `role`, `source_id`, `notes` |
 | `programme_sources.csv` | programme–source claim | `programme_id`, `source_id`, one atomic `claim`, `claim_value`, `claim_date` |
 
@@ -449,7 +466,36 @@ Java opening, the Katadata Trans Papua report and the Trans corridor Wikipedia
 revisions. Its mapping and conflicts are in
 [`docs/phases/phase-2-roads.md`](docs/phases/phase-2-roads.md).
 
-## Industrial estates and SEZs
+## Languages
+
+The app has one source template and two generated entry points:
+
+```
+site/index.html      language chooser (plain HTML, no account or redirect)
+site/en/index.html   <html lang="en">
+site/id/index.html   <html lang="id">
+```
+
+UI strings live in [`data/i18n/ui.en.json`](data/i18n/ui.en.json) and
+[`data/i18n/ui.id.json`](data/i18n/ui.id.json). Entity overrides live in
+[`data/curated/translations.csv`](data/curated/translations.csv). Programmes
+already carry `name_id`/`name_en` and bilingual summaries; project aliases carry
+the 88 official Indonesian PSN names; corridor definitions are translated in
+`translations.csv`.
+
+`scripts/pipeline/build_i18n.py` fails if the two catalogues drift or if a
+programme or corridor loses a required translation. It writes a coverage report
+to `data/derived/i18n_report.csv`. The current build has 541 UI keys per locale,
+an Indonesian display name for all 228 projects and a generated summary for all
+228. Project summaries are generated from the curated fields, not editorial
+copy; the drawer labels them `AUTO` / `OTOMATIS`. Sourced English notes keep an
+`EN` tag rather than pretending to be translated.
+
+Numbers, dates and coordinates use `Intl` with `en-GB` or `id-ID`. The header
+switch preserves the current view and hash. Sourced English text inside the
+Indonesian edition carries `lang="en"` and a small `EN` tag.
+
+## Estates and SEZs
 
 `data/curated/estates.csv` holds 204 records, gathered but deliberately **not
 visualised yet**:
@@ -577,7 +623,7 @@ Features:
 - **Data:** generated coverage matrix; programme register; claims coverage;
   freshness; status definitions; inclusion rules; conflict register with both
   values and sources; source register; 16 static downloads plus filtered project
-  CSV/GeoJSON and estate CSV; the 229-field data dictionary; known gaps; and the
+  CSV/GeoJSON and estate CSV; the 238-field data dictionary; known gaps; and the
   changelog parsed from `CHANGELOG.md`.
 - **Mobile:** full-viewport map and a draggable bottom sheet with peek, half and
   full snap points; filters stay in the sheet.
@@ -677,9 +723,9 @@ it writes screenshots and a zero-error report under `docs/evidence/phase-3/`.
 - **BPJT labels are inconsistent.** Some rows marked `Operasi` still have
   unopened length or active construction. Conflicts are recorded, not hidden.
 - **Programme targets and budgets are not in the annex.** All 24 programmes are
-  recorded, but only the official name and active status are claimed. Ten have a
-  lead agency and seven have a structural project link; targets, budgets and
-  indicators remain open.
+  recorded, but only the official name and active status are claimed. Sixteen
+  have a lead agency (10 distinct organisations) and five have structural project
+  links (seven links); targets, budgets and indicators remain open.
 - **No geometry.** Projects are points, not lines or polygons. `project_geometry`
   exists but is empty.
 - **Factory figures are nameplate or project-level.** Capacity is not verified
@@ -800,15 +846,15 @@ it writes screenshots and a zero-error report under `docs/evidence/phase-3/`.
 - **Current plan:** [`docs/plan/plan.md`](docs/plan/plan.md). V3 is complete as
   of 8 November 2026; V4 has its foundation, PSN ledger, 2026 flagship batch,
   50-entry PSN road set, 24-programme layer, first PSN industrial-area batch and
-  the register-only closure of PSN coverage. The bilingual shell, companies view
-  and strategic non-PSN expansion are still open. Track 2B (estates) is complete
-  by count and R6 geometry is deferred; both are documented. Publishing is
-  explicitly deferred.
+  the register-only closure of PSN coverage and the bilingual shell. Project
+  summaries, full name translation, the companies view and strategic non-PSN
+  expansion are still open. Track 2B (estates) is complete by count and R6
+  geometry is deferred; both are documented. Publishing is explicitly deferred.
 - **Next action:** run `python scripts/build_all.py --check`, read
   [`docs/operations/refresh-runbook.md`](docs/operations/refresh-runbook.md),
-  then continue the V4 immediate actions in `docs/plan/plan.md` (file the
-  remaining official sources, prototype the bilingual shell, run the UX audit and
-  extend the schema). Do not push, add a remote or deploy.
+  then continue the V4 immediate actions in `docs/plan/plan.md` (run the
+  five-user UX audit, extend the schema with indicators and phases, and expand
+  strategic non-PSN records). Do not push, add a remote or deploy.
 - **Trust layer:** [`docs/phases/phase-3-trust.md`](docs/phases/phase-3-trust.md) records the
   claims audit, freshness report, conflict register, Data view v2, downloads,
   build CI and smoke-test evidence. The generated files are

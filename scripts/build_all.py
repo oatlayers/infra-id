@@ -27,10 +27,14 @@ STEPS = [
     ("build data dictionary", "pipeline/build_dictionary.py"),
     ("build freshness report", "pipeline/freshness.py"),
     ("audit per-fact claims", "pipeline/audit_claims.py"),
+    ("build i18n payload", "pipeline/build_i18n.py"),
     ("build site payload", "pipeline/build_site_data.py"),
+    ("build locale entry points", "pipeline/build_locales.py"),
     ("build factory ledger", "pipeline/build_factories_ledger.py"),
     ("check site payload", "pipeline/check_site.py"),
 ]
+
+SITE = ROOT / "site"
 
 GENERATED = [
     EXPORTS / "projects.csv",
@@ -39,6 +43,10 @@ GENERATED = [
     DERIVED / "freshness_report.csv",
     DERIVED / "claims_audit.csv",
     DERIVED / "data_dictionary.csv",
+    DERIVED / "i18n_report.csv",
+    SITE / "index.html",
+    SITE / "en" / "index.html",
+    SITE / "id" / "index.html",
 ]
 
 
