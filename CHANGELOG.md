@@ -3,6 +3,27 @@
 Public-facing changes to the atlas. Dates are the day the change landed in this
 repository. The Data view renders these entries from this file at build time.
 
+## 2026-11-09 — IKN Stage II packages
+
+- Added 23 named IKN Stage II package and project rows: government office
+  buildings, the legislative and judicial complexes, internal roads, retention
+  ponds and drinking-water piping; the IKN toll road, Pulau Balang bridge
+  duplication, supporting roads, the completed KIPP 1B–1C upgrade and three
+  2026–2027 road packages; ASN and relocated housing; the Gunadarma campus,
+  Abdi Waluyo Hospital, Teras by Plataran, Star Bright, Fajar Maju, Dian Jaya
+  and Grand Vista Nusantara.
+- Filed three sources and raw snapshots: the OIKN Stage II evaluation as
+  reported on 21 July 2026, the seven-project signing of 14 October 2026 as
+  reported on 8 November 2026, and the Ministry of Public Works Nataru statement
+  of 9 December 2025. The 50.227 km IKN toll-road length is the functional
+  length of sections 3A, 3A2, 3B, 3B2, 5A, 5B, 6A and the Pulau Balang bridge.
+- Added 10 organisations, 30 role links, 54 project claims and four events. IKN
+  package coverage is 24/25. Projects grow to 251, organisations to 111,
+  sources to 138, events to 34 and project claims to 917.
+- Initial payload is 1,217 KB, data 1,753 KB and total 3,876 KB, within the
+  plan budgets. Build, `--check`, smoke test, five-profile rehearsal, contrast
+  check and link check pass. Nothing was pushed, deployed or published.
+
 ## 2026-11-09 — Type scale uplift
 
 - Raised the Explore rail to 13 px row titles and 10.5–12.5 px captions, and

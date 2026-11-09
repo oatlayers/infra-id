@@ -4,10 +4,10 @@
 24-programme layer, the first PSN industrial-area batch and the register-only
 closure of PSN coverage landed on 9 November 2026. The released site is still the
 v3 build: 107 projects, 178 estates and SEZs, 5 corridors, 44 segments, 479 atomic
-claims and 91 sources. The repository now has 228 projects, 24 programmes, 204
-estates and SEZs, 5 corridors, 44 segments, 863 project claims plus 115 estate
+claims and 91 sources. The repository now has 251 projects, 24 programmes, 204
+estates and SEZs, 5 corridors, 44 segments, 917 project claims plus 115 estate
 claims and 48 programme claims, 8 PKPN programmes with 27 claims, 14 indicators,
-4 indicator values, 9 project phases, 135 sources and 30 events, with a
+4 indicator values, 9 project phases, 138 sources and 34 events, with a
 deterministic local build and a browser smoke test. It includes the official Permenko 16/2025
 register (226 active projects and 24 active programmes) and a reconciliation
 ledger showing **226 of 226** project or estate records represented: 94 to 88
@@ -15,7 +15,7 @@ reviewed project rows, 26 to reviewed estates, 88 new register-only project rows
 and 18 new register-only industrial areas, with all 24 programmes matched, 24
 flagship records and all 50 PSN road entries. Every PSN sector is complete.
 Eighty-eight projects and 18 estates are Tier C register-only records. The
-bilingual shell is implemented: `site/en/`, `site/id/`, a chooser, 634 UI keys
+bilingual shell is implemented: `site/en/`, `site/id/`, a chooser, 635 UI keys
 per locale, a language switch that preserves the current view, and full-width
 register pages. The schema v4 translation, indicator and phase layers are in.
 Map v3, project pages, company-profile expansion to 300 and editorial review of
@@ -90,17 +90,17 @@ delivery atlas**. It does five things:
 
 | Dimension | Today | V4 target |
 |---|---:|---:|
-| Project records | 228 (88 register-only) | **400+** (226 PSN + 174 strategic/private records) |
+| Project records | 251 (88 register-only) | **400+** (226 PSN + 174 strategic/private records) |
 | Programmes | 24 PSN + 8 PKPN | **8 PKPN + 24 PSN programmes** plus 40–60 sub-programmes |
-| Companies / organisations | 101 | **300** (top 100 complete) |
+| Companies / organisations | 111 | **300** (top 100 complete) |
 | Estates and SEZs | 204 (18 register-only) | **200+** unique records (25 KEK + 179 industrial estates + 2026 additions) |
 | Corridors / segments | 5 / 44 | 5 / **100+** |
-| Atomic claims | 1,026 (863 project + 115 estate + 48 programme) | **1,500+** |
+| Atomic claims | 1,107 (917 project + 115 estate + 48 programme + 27 PKPN) | **1,500+** |
 | Indicators | 14 | **300+** |
 | Sources | 135 | **250+** |
 | UI languages | 2 (English + Indonesian) | **2** (English + Indonesian) |
-| Data translation coverage | UI 100%; programmes and corridors 100%; 228 project names; 228 generated summaries; editorial summaries 0% | **100%** of names, summaries and programmes, with editorial review of generated summaries |
-| Initial site payload | 1,150 KB initial / 1,667 KB data / 3,677 KB total | **< 1.5 MB initial**, < 5 MB total |
+| Data translation coverage | UI 100%; programmes and corridors 100%; 251 project names; 251 generated summaries; editorial summaries 0% | **100%** of names, summaries and programmes, with editorial review of generated summaries |
+| Initial site payload | 1,217 KB initial / 1,753 KB data / 3,876 KB total | **< 1.5 MB initial**, < 5 MB total |
 
 ### Release shape
 
@@ -443,14 +443,14 @@ day one. A record can enter at Tier C and be upgraded.
 | Strategic non-PSN projects | 3 | **174+** | Ministries, Danantara, private announcements |
 | National programmes (PKPN) | 8 | **8** | 2027 budget speech; Finance Ministry breakdown |
 | Sub-programmes | 0 | **40–60** | Ministry work plans |
-| IKN packages | 1 | **25** | IKN Authority; Setkab releases |
+| IKN packages | 24 | **25** | IKN Authority; Setkab releases |
 | Energy projects | 24 (15 register-only) | **60** | ESDM, PLN, Danantara |
 | Transport projects | 90 | **150** | Kemenhub, PU, BPJT |
 | Water and sanitation | 66 (61 register-only) | **60** | PU, PDAM, KPPIP |
 | Industry and downstreaming | 34 | **80** | Kemenperin, BKPM, company disclosures |
 | Social infrastructure | 4 (2 housing, 1 education, 1 tourism) | **30** | Kemenkes, Kemendikbud, PKP |
 | Estates and SEZs | 204 (18 register-only) | **200+** | KEK Secretariat, Kemenperin |
-| Companies | 101 | **300** | BUMN, Danantara, private, foreign |
+| Companies | 111 | **300** | BUMN, Danantara, private, foreign |
 | Corridor segments | 44 | **100+** | KPPIP, PU, BPJT |
 | Claims | 708 | **1,500+** | Every project, company and indicator |
 | Indicators | 14 | **300+** | PKPN targets and ministry reporting |
@@ -1005,7 +1005,7 @@ Specific moves:
 | Data | Cramped rail beside an unrelated map | Full-width dashboard with coverage, freshness, claims, conflicts, downloads, methods |
 | Project | Drawer only | Drawer plus a shareable project page with timeline and companies |
 | Programmes | None | Eight PKPN cards, target vs current, project lists, indicators |
-| Companies | 101 profiles, 203 roles | 300 profiles, roles, portfolio, project map |
+| Companies | 111 profiles, 227 roles | 300 profiles, roles, portfolio, project map |
 | Mobile | Map + sheet | Map + three-snap sheet + bottom navigation + full-screen detail |
 | Type | 8.5–12 px in many places | 13–16 px body/caption scale, 1.5 line height |
 
@@ -1275,7 +1275,7 @@ Target **WCAG 2.2 AA**. Priority checks:
 
 **Scope**
 
-- Expand to 300 organisations and 200 estates. **Partial:** 101 organisations
+- Expand to 300 organisations and 200 estates. **Partial:** 111 organisations
   and 204 estates; the Companies view is in.
 - Add hilirisasi, petrochemical, steel, battery, EV, data centre and food
   processing projects. **Partial:** 34 factories and the 13 Hilirisasi Stage II
@@ -1284,16 +1284,16 @@ Target **WCAG 2.2 AA**. Priority checks:
   Sekolah Rakyat, school renovation, housing. **Open.**
 - Add fisheries, tourism and digital projects. **Partial:** tourism and
   technology PSN rows are in; fisheries remain.
-- Add company profiles and roles for the top 100. **Partial:** 101 profiles,
-  203 roles, 79 with links; 22 are reference-only.
+- Add company profiles and roles for the top 100. **Partial:** 111 profiles,
+  227 roles, 89 with links; 22 are reference-only.
 - Geocode the remaining large estates; enable the estate map layer for rows
   with better than regency precision. **Open.**
 
 **Acceptance**
 
-- Every project has at least one organisation role. **Open:** 128 of 228.
+- Every project has at least one organisation role. **Open:** 151 of 251.
 - Top 100 companies have a profile, a source and a project list. **Partial:**
-  101 profiles exist; 79 have at least one sourced role and 22 do not.
+  111 profiles exist; 89 have at least one sourced role and 22 do not.
 - Estate map layer is on for at least 80% of rows with point/polygon geometry.
   **Open.**
 - The Company and Estate views pass the smoke test on both locales. **Partial:**
@@ -1487,7 +1487,7 @@ A record is done when:
    location and active-designation claims. PSN coverage is 226/226 and 44/44;
    no PSN record remains. See Appendix G.
 9. **Prototype the bilingual shell.** **Done (9 Nov 2026).** `site/index.html`
-   chooser, `site/en/`, `site/id/`, 634 UI keys per locale, `translations.csv`,
+   chooser, `site/en/`, `site/id/`, 635 UI keys per locale, `translations.csv`,
    `build_i18n.py`, `build_locales.py`, `Intl` formatting, language switch and
    `hreflang`. The smoke test covers EN and ID on `file://` and HTTP.
 10. **Run the UX audit.** **Partial (9 Nov 2026).** Expert heuristic walkthrough
@@ -1551,12 +1551,13 @@ site/data/stats.js
 site/downloads/*.csv, *.json, *.geojson
 ```
 
-The v4 build passes with 228 projects, 24 programmes, 204 estates, 101
-organisations, 133 sources, 5 corridors, 44 segments, 30 events, 26 investments,
-19 conflicts, 863 project claims, 115 estate claims, 48 programme claims, 3
-PKPN programmes, 14 indicators, 4 indicator values, 9 project phases and 286
-dictionary fields across 28 tables. The initial payload is 1,150 KB, the data
-payload is 1,667 KB and the total including downloads is 3,677 KB. The two locale pages, the chooser
+The v4 build passes with 251 projects, 24 programmes, 204 estates, 111
+organisations, 138 sources, 5 corridors, 44 segments, 34 events, 26 investments,
+19 conflicts, 917 project claims, 115 estate claims, 48 programme claims, 8
+PKPN programmes with 27 claims, 14 indicators, 4 indicator values, 9 project
+phases and 286 dictionary fields across 28 tables. The initial payload is
+1,217 KB, the data payload is 1,753 KB and the total including downloads is
+3,876 KB. The two locale pages, the chooser
 and both i18n payloads are generated and checked by the build.
 
 ## Appendix B — Source register (V4 starter)

@@ -27,14 +27,14 @@ projects.csv,Projects,"One row per curated infrastructure project, with status, 
 projects.csv,Projects,"One row per curated infrastructure project, with status, location and key figures.",precision,enum,yes,"exact, approximate, regency or province.",exact; approximate; regency; province,approximate
 projects.csv,Projects,"One row per curated infrastructure project, with status, location and key figures.",last_verified,date,yes,Date the row was last checked against a source.,,2026-11-06
 projects.csv,Projects,"One row per curated infrastructure project, with status, location and key figures.",notes,text,yes,"Conflicts, caveats, section openings and coordinate overrides.",,English Wikipedia says 49.8 km operational of 74 km. BPJT gives no full-corridor opening date. Section 1 Padang Tiji–Seu
-organizations.csv,Organisations,"Companies and agencies that sponsor, own or operate projects.",id,id,yes,Stable lowercase-hyphenated identifier used in deep links and joins.,,org-jasa-marga
-organizations.csv,Organisations,"Companies and agencies that sponsor, own or operate projects.",name,text,yes,Display name in English with Indonesian proper names.,,PT Jasa Marga (Persero) Tbk
-organizations.csv,Organisations,"Companies and agencies that sponsor, own or operate projects.",short_name,text,no,Short display name or acronym.,,Jasa Marga
-organizations.csv,Organisations,"Companies and agencies that sponsor, own or operate projects.",org_type,enum,yes,"Government, state-owned, private, consortium, multilateral or other.",,soe
+organizations.csv,Organisations,"Companies and agencies that sponsor, own or operate projects.",id,id,yes,Stable lowercase-hyphenated identifier used in deep links and joins.,,org-abdi-waluyo
+organizations.csv,Organisations,"Companies and agencies that sponsor, own or operate projects.",name,text,yes,Display name in English with Indonesian proper names.,,Rumah Sakit Abdi Waluyo
+organizations.csv,Organisations,"Companies and agencies that sponsor, own or operate projects.",short_name,text,no,Short display name or acronym.,,Abdi Waluyo
+organizations.csv,Organisations,"Companies and agencies that sponsor, own or operate projects.",org_type,enum,yes,"Government, state-owned, private, consortium, multilateral or other.",,private
 organizations.csv,Organisations,"Companies and agencies that sponsor, own or operate projects.",country_code,text,yes,ISO alpha-2 country code.,,ID
-organizations.csv,Organisations,"Companies and agencies that sponsor, own or operate projects.",parent_id,id,no,Foreign key to a parent organisation.,,org-waskita-karya
-organizations.csv,Organisations,"Companies and agencies that sponsor, own or operate projects.",website,url,no,Official website.,,https://www.jasamarga.com
-organizations.csv,Organisations,"Companies and agencies that sponsor, own or operate projects.",notes,text,yes,"Conflicts, caveats, section openings and coordinate overrides.",,v1 operator string: PT Hutama Karya (Persero)
+organizations.csv,Organisations,"Companies and agencies that sponsor, own or operate projects.",parent_id,id,no,Foreign key to a parent organisation.,,org-amman-mineral-international
+organizations.csv,Organisations,"Companies and agencies that sponsor, own or operate projects.",website,url,no,Official website.,,https://www.amman.co.id/amman-mineral-industri
+organizations.csv,Organisations,"Companies and agencies that sponsor, own or operate projects.",notes,text,yes,"Conflicts, caveats, section openings and coordinate overrides.",,Developer of the IKN hospital under construction.
 project_organizations.csv,Project organisations,Role links between projects and organisations.,project_id,id,yes,Foreign key to projects.csv.,,tol-sigli-banda-aceh
 project_organizations.csv,Project organisations,Role links between projects and organisations.,org_id,id,yes,Foreign key to organizations.csv.,,org-hutama-karya
 project_organizations.csv,Project organisations,Role links between projects and organisations.,role,enum,yes,"sponsor, operator, contractor, lender, off_taker, developer or owner.",sponsor; operator; contractor; lender; off_taker; developer; owner,operator

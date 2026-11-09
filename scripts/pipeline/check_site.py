@@ -98,12 +98,16 @@ def check_i18n() -> None:
                 "i18n: catalogue key mismatch; "
                 f"missing id {sorted(en_keys - id_keys)[:5]}, missing en {sorted(id_keys - en_keys)[:5]}"
             )
+        project_total = len(read_csv(CURATED / "projects.csv"))
         for locale in LOCALES:
             project_entities = [
                 key for key in payloads[locale].get("entities", {}) if key.startswith("project:")
             ]
-            if len(project_entities) != 228:
-                err(f"i18n.{locale}.js: {len(project_entities)} project entities, expected 228")
+            if len(project_entities) != project_total:
+                err(
+                    f"i18n.{locale}.js: {len(project_entities)} project entities, "
+                    f"expected {project_total}"
+                )
             programme_entities = [
                 key for key in payloads[locale].get("entities", {}) if key.startswith("programme:")
             ]

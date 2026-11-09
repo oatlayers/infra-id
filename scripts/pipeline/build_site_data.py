@@ -554,6 +554,9 @@ def main() -> None:
         ),
         "factories": by_sector.get("factory", 0),
         "companies": len(organizations),
+        "ikn_packages": sum(
+            1 for row in rows if row["route"].startswith("KIPP Nusantara")
+        ),
         "transport_psn": sum(
             1 for row in rows
             if row["sector"] in {"railway", "airport", "seaport"} and row["psn"] == "yes"

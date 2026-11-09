@@ -4,11 +4,11 @@ A curated, source-linked map of major Indonesian infrastructure. Every project
 carries a source and a verification date. The map is deliberately **major and
 curated, not exhaustive**.
 
-- **Live data:** 228 projects — 54 toll and PSN roads, 13 railways, 8 airports,
-  15 seaports, 34 factories, 24 energy, 66 water, 2 housing, 6 technology,
-  1 education, 1 tourism, 1 agriculture, 1 urban and 1 coastal project — plus
+- **Live data:** 251 projects — 56 toll and PSN roads, 13 railways, 8 airports,
+  15 seaports, 34 factories, 24 energy, 68 water, 7 housing, 6 technology,
+  2 education, 1 tourism, 2 agriculture, 14 urban and 1 coastal project — plus
   24 PSN programmes, 5 Trans corridor summaries, 44 dated corridor segments and
-  30 project events. Of the 228, **88 are register-only PSN rows** with the
+  34 project events. Of the 251, **88 are register-only PSN rows** with the
   official name, number, sector and province, but no implementation facts yet.
 - **Transport PSN:** 35 of 35 represented. Status is as of 19 February 2026, the
   date of the Kemenhub review. The Nusantara airport is an additional national
@@ -49,22 +49,29 @@ curated, not exhaustive**.
   industrial-estate benchmark is met: 179 pure industrial rows plus 7 shared
   SEZ/estate rows. Eight reviewed PSN industrial areas carry dated area, manager
   and status sources; 18 more are register-only with no invented area or boundary.
-- **Companies and agencies:** 101 organisation profiles and 203 sourced project
-  roles. 79 organisations have at least one project link; 22 are reference-only.
+- **Companies and agencies:** 111 organisation profiles and 227 sourced project
+  roles. 89 organisations have at least one project link; 22 are reference-only.
   The Companies view filters by type, searches the role text, expands each
   profile into its project roles and exports the filtered CSV. The V4 target is
-  300 profiles; 199 remain.
-- **Trust layer:** 863 atomic project claims, 115 estate claims and 48 programme
-  claims; 228 of 228 projects have a claim for the status and every populated
+  300 profiles; 189 remain.
+- **IKN packages:** 24 named Stage II package or project rows, against a V4
+  target of 25. They include the IKN toll road (50.227 km of sections functional
+  for Nataru 2025/2026), the government, legislative and judicial complexes, the
+  KIPP road packages, ASN and relocated housing, the Gunadarma campus, Abdi
+  Waluyo Hospital and the private Teras, Star Bright, Fajar Maju, Dian Jaya and
+  Grand Vista projects. Targets, costs and lengths stay blank where the source
+  is silent.
+- **Trust layer:** 917 atomic project claims, 115 estate claims and 48 programme
+  claims; 251 of 251 projects have a claim for the status and every populated
   numeric fact. 19 conflicts are recorded with both values and both sources
   (11 resolved, 8 open). A 432-row freshness report marks each project and
   estate fresh, due soon or stale. A 286-field data dictionary covers all 28
   curated tables, including translations, indicators, phases and the PKPN layer.
 - **Bilingual shell:** `site/index.html` is a language chooser; `site/en/` and
-  `site/id/` share one application and one data bundle. Both locales carry 634
+  `site/id/` share one application and one data bundle. Both locales carry 635
   UI keys, all 24 programme names and summaries, all eight PKPN names and
   summaries, all five corridor definitions,
-  and an Indonesian display name for all 228 projects (140 reviewed, 88 official
+  and an Indonesian display name for all 251 projects (163 reviewed, 88 official
   PSN aliases). Every project also has a factual one-sentence summary generated
   from its sourced fields in both locales and labelled auto-generated. The
   switch preserves the current hash, filters and selected record. Data,
@@ -82,8 +89,8 @@ curated, not exhaustive**.
   and project drawers. The five dams and Nusantara airport have operational
   phases. Targets, budgets and indicators remain blank where the source is
   silent.
-- **Payload:** 1,150 KB initial (one locale plus core Explore data), 1,667 KB
-  of runtime data and 3,677 KB including downloads, within the plan's 1.5 MB
+- **Payload:** 1,217 KB initial (one locale plus core Explore data), 1,753 KB
+  of runtime data and 3,876 KB including downloads, within the plan's 1.5 MB
   initial and 5 MB total budgets.
 - **Status:** Phase 1, Phase 2 and Phase 3 of the v3 overhaul are complete as of
   8 November 2026. Track 2B (estates) is complete by count and corridor geometry
@@ -131,7 +138,7 @@ when a source supports that status.
 | Transport PSN total | 35 | 24 operating, 1 recently completed, 6 under construction, 4 planned | 35/35; status as of 19 February 2026 |
 | PSN projects (active) | 226 | 226 represented, 226/226 | 94 records to 88 reviewed project rows, 26 to reviewed estates, 88 register-only projects and 18 register-only industrial areas; 0 outstanding |
 | PSN programmes (active) | 24 | 24 represented, 24/24 | one row per official number; bilingual names and summaries; 48 claims |
-| All projects | 228 | 62 operating, 4 recently completed, 55 under construction, 18 planned, 1 stalled, 88 register-only | 54 roads, 13 railways, 8 airports, 15 seaports, 34 factories, 24 energy, 66 water, 2 housing, 6 technology, 1 education, 1 tourism, 1 agriculture, 1 urban and 1 coastal |
+| All projects | 251 | 62 operating, 5 recently completed, 71 under construction, 24 planned, 1 stalled, 88 register-only | 56 roads, 13 railways, 8 airports, 15 seaports, 34 factories, 24 energy, 68 water, 7 housing, 6 technology, 2 education, 1 tourism, 2 agriculture, 14 urban and 1 coastal |
 | Energy projects | 24 | 1 operating, 8 under construction, 15 register-only | Masela, RDMP Balikpapan, 100 GWp solar and six Hilirisasi Stage II energy projects, plus 15 register-only PSN energy rows |
 | Water, dams and irrigation | 66 | 5 operating reviewed, 52 register-only, 9 register-only water and sanitation | Five reviewed dams plus 52 PSN dams/irrigation and 9 PSN water/sanitation rows |
 | Other PSN sectors | 10 | 10 register-only | 2 housing, 6 technology, 1 education, 1 tourism and 2 agriculture rows |
@@ -141,10 +148,10 @@ when a source supports that status.
 | Dated events | 30 | 2018–2026 | Exact dates only; month-end approximations are not used |
 | Factories | 34 | 19 operating, 3 recently completed, 11 under construction, 1 stalled | 27 capacity figures, 18 investment figures; 17 official, 8 dual, 9 single-source |
 | Industrial estates / SEZs | 204 | 179 industrial-only rows, 7 shared rows and 18 SEZ-only rows; 186 industrial-estate designations and 25 SEZs | table view only; 25 official SEZ points, 27 OSM place points, 133 regency centroids, 1 power-station point and 18 province centroids; 179 target met; 19-row 2024 audit ledger |
-| Sources | 135 | 55 official, 53 secondary, 27 company | 43 factory-batch sources, 25 individual SEZ profiles, Permenko 16/2025 and 4/2026, the national register, OSM/Nominatim, the corridor series, the 2026 flagship releases, the PSN-road batch, the PSN industrial-area batch, the register-only batch and the 2027 PKPN speech and Finance Ministry breakdown; V4 target 250 |
-| Project claims | 863 | 228/228 projects fully claimed | one atomic fact per row; 115 estate claims, 48 programme claims and 27 PKPN claims; register-only rows claim the listing, location and active designation, not implementation |
+| Sources | 138 | 56 official, 55 secondary, 27 company | 43 factory-batch sources, 25 individual SEZ profiles, Permenko 16/2025 and 4/2026, the national register, OSM/Nominatim, the corridor series, the 2026 flagship releases, the PSN-road batch, the PSN industrial-area batch, the register-only batch, the 2027 PKPN speech and Finance Ministry breakdown, and the IKN Stage II evaluation, October 2026 signing and 2025 toll-road functional statement; V4 target 250 |
+| Project claims | 917 | 251/251 projects fully claimed | one atomic fact per row; 115 estate claims, 48 programme claims and 27 PKPN claims; register-only rows claim the listing, location and active designation, not implementation |
 | Conflicts | 19 | 11 resolved, 8 open | both values and both sources, with a recorded resolution; downloadable register |
-| Freshness | 432 | 432 fresh as of 2026-11-09 | 228 projects + 204 estates; 183-day threshold; next due 2027-05-11 |
+| Freshness | 455 | 455 fresh as of 2026-11-09 | 251 projects + 204 estates; 183-day threshold; next due 2027-05-11 |
 | Data dictionary | 286 | 28 tables | generated from the schema; field type, required flag, description, allowed values and example |
 
 **Why the transport status counts differ from Kemenhub's summary.** The deck's
@@ -504,9 +511,9 @@ the 88 official Indonesian PSN names; corridor definitions are translated in
 
 `scripts/pipeline/build_i18n.py` fails if the two catalogues drift or if a
 programme or corridor loses a required translation. It writes a coverage report
-to `data/derived/i18n_report.csv`. The current build has 634 UI keys per locale,
-an Indonesian display name for all 228 projects and a generated summary for all
-228. Project summaries are generated from the curated fields, not editorial
+to `data/derived/i18n_report.csv`. The current build has 635 UI keys per locale,
+an Indonesian display name for all 251 projects and a generated summary for all
+251. Project summaries are generated from the curated fields, not editorial
 copy; the drawer labels them `AUTO` / `OTOMATIS`. Sourced English notes keep an
 `EN` tag rather than pretending to be translated.
 
@@ -641,8 +648,8 @@ Features:
 - **Estates:** 204-row table with type/province filters, sort, inline detail,
   area totals, coordinate provenance, a filtered CSV button and CSV downloads
   (including the 19-row 2024 audit ledger). No map layer yet.
-- **Companies:** 101 organisation profiles with type filters, role search,
-  expandable project roles, a filtered CSV and a 101/300 coverage row. 79
+- **Companies:** 111 organisation profiles with type filters, role search,
+  expandable project roles, a filtered CSV and a 111/300 coverage row. 89
   profiles have at least one sourced role; 22 are reference-only.
 - **Data:** generated coverage matrix; native sector, status and freshness
   charts; programme register; indicators and phases; claims coverage; freshness;
@@ -736,7 +743,7 @@ it writes screenshots and a zero-error report under `docs/evidence/phase-3/`.
   Kemenhub deck, but that deck does not give rail lengths or asset capacity. The
   factory batch draws on 43 source rows: 23 company, 18 secondary and 2 official;
   Dexin and Huadi are single-source.
-- **Claim coverage is not claim correctness.** 228/228 projects have the required
+- **Claim coverage is not claim correctness.** 251/251 projects have the required
   atomic claims, but the 88 register-only rows claim only the PSN listing,
   location and active designation; they do not claim implementation status, cost
   or capacity. Twenty-eight reviewed projects are single-source. The audit proves
@@ -819,7 +826,7 @@ it writes screenshots and a zero-error report under `docs/evidence/phase-3/`.
   conflicts. The IPIP location conflict is resolved; Tembesi remains in the
   2024 audit ledger because the second side has no citable source row. Free-text
   `notes` still carries context that is not in a structured field.
-- **Performance at 300 markers is untested.** The 228-project dataset has 139
+- **Performance at 300 markers is untested.** The 251-project dataset has 162
   mapped markers and loads quickly, but the 300-marker 60 fps target still needs a
   dedicated measurement run and a larger mapped set.
 - **Lighthouse is not run.** axe-core 4.10.3 with WCAG A/AA tags reports zero

@@ -40,6 +40,7 @@ TOTAL = str(STATS["projects"]["total"])
 RAIL = str(STATS["projects"]["by_sector"].get("railway", 0))
 ESTATES = str(STATS["estates"]["total"])
 PROGRAMMES = str(STATS["programmes"]["total"])
+COMPANIES = str(STATS["organizations"]["total"])
 
 failures: list[str] = []
 report: dict[str, object] = {
@@ -202,7 +203,8 @@ def desktop_views(page: Page) -> None:
     tab(page, "companies")
     page.wait_for_selector(".company-row")
     page.wait_for_timeout(400)
-    check(page.locator(".company-row").count() == 101, "Companies view lists 101 organisations")
+    check(page.locator(".company-row").count() == int(COMPANIES),
+          f"Companies view lists {COMPANIES} organisations")
     check("PT Jasa Marga" in page.locator(".estate-list").inner_text(),
           "Companies view shows a named organisation")
     page.click('[data-company="org-hutama-karya"]')
@@ -211,11 +213,11 @@ def desktop_views(page: Page) -> None:
           "Company detail lists at least one project role")
     page.click('[data-company-type="government"]')
     page.wait_for_timeout(250)
-    check(page.locator(".company-row").count() < 101,
+    check(page.locator(".company-row").count() < int(COMPANIES),
           "Company type filter narrows the organisation list")
     page.click('[data-company-type="all"]')
     page.wait_for_timeout(250)
-    report["views"]["companies"] = {"rows": 101}  # type: ignore[index]
+    report["views"]["companies"] = {"rows": int(COMPANIES)}  # type: ignore[index]
     screenshot(page, "03d-companies-desktop.png")
 
     tab(page, "programmes")

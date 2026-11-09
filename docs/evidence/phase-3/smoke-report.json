@@ -2,7 +2,7 @@
   "checked_at": "2026-11-09",
   "views": {
     "explore": {
-      "rows": 228
+      "rows": 251
     },
     "corridors": {
       "cards": 5
@@ -11,7 +11,7 @@
       "rows": 204
     },
     "companies": {
-      "rows": 101
+      "rows": 111
     },
     "programmes": {
       "cards": 24
@@ -29,11 +29,11 @@
   "downloads": {
     "projects_csv": {
       "file": "infra-id-projects-filtered.csv",
-      "rows": 228
+      "rows": 251
     },
     "projects_geojson": {
       "file": "infra-id-projects-filtered.geojson",
-      "features": 228
+      "features": 251
     },
     "estates_csv": {
       "file": "infra-id-estates-filtered.csv",
@@ -41,7 +41,7 @@
     },
     "claims_csv": {
       "file": "claims.csv",
-      "rows": 863
+      "rows": 917
     }
   },
   "keyboard": {
@@ -52,7 +52,7 @@
   },
   "protocols": {
     "http": {
-      "port": 51686,
+      "port": 64720,
       "ok": true
     },
     "file": {

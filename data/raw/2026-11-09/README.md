@@ -55,6 +55,18 @@ protection allocation, 10 million local entrepreneurs and the 15-segment sea
 wall. Neither source states a full programme budget or a quantitative target for
 every PKPN; the atlas leaves those fields blank.
 
+## IKN Stage II sources
+
+| File | Source | SHA-256 |
+|---|---|---|
+| `topkonstruksi_ikn_stage_ii_2026.html` | Top Konstruksi, 21 July 2026, reproducing the OIKN Stage II evaluation of 14 July 2026 | `aaca50ea33605b426759abd13faea5f220861c405c7e8826936bdf066b175b95` |
+| `journalarta_ikn_seven_projects_2026.html` | JournalArta, 8 November 2026, on the seven projects signed 14 October 2026 | `a9b3b78c67e4f4c90ee952e6bce12504cd9ef8eb1dc8ce2f62fc76f8e0002ae0` |
+| `kemenpu_nataru_2025.html` | Kementerian Pekerjaan Umum, 9 December 2025, on functional roads for Nataru | `cb06eb92fc8ad7e1b8eb8398ae8bdbf99f7e753b2e69d09a54aabe923f02949d` |
+
+The IKN Authority post itself returned HTTP 403 to the local client. The Top
+Konstruksi report is used as the archived record of the same evaluation. The
+Public Works statement supplies the 50.227 km functional IKN toll-road length.
+
 ## Derived files
 
 - `permenko_16_2025.txt` — text extracted with PyMuPDF.
