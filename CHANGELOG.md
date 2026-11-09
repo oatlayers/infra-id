@@ -3,6 +3,30 @@
 Public-facing changes to the atlas. Dates are the day the change landed in this
 repository. The Data view renders these entries from this file at build time.
 
+## 2026-11-09 — PSN register-only closure
+
+- Closed the remaining PSN coverage at Tier C: 88 active PSN projects and 18
+  PSN industrial areas now have a record with the official name, number, sector,
+  location and active designation.
+- Added 264 project claims (PSN, location and active-in-register status) and 54
+  estate claims, plus 88 official Indonesian-name aliases. No implementation
+  status, cost, capacity, developer, area or boundary was inferred.
+- Added `unknown` status, a `National` island group and five sectors: housing,
+  technology, education, tourism and agriculture. The map omits province-centroid
+  rows so they are not mistaken for site locations; they remain searchable and
+  downloadable.
+- `projects.csv` grows from 140 to 228 rows, `estates.csv` from 186 to 204,
+  `project_sources.csv` from 599 to 863 claims and `estate_sources.csv` from 61
+  to 115. PSN coverage is **226/226** project or estate records and **44/44**
+  industrial areas; all 24 programmes remain matched.
+- Added `scripts/imports/add_psn_register_records.py` (idempotent) and
+  `scripts/tools/build_province_centroids.py`. The ledger now distinguishes
+  `matched_register_project` and `matched_register_estate`.
+- Updated the 2024 estate audit ledger: IPIP and Pulau Penebang are resolved,
+  seven named additions remain open and ten count placeholders are retired. The
+  179 industrial-estate target is met by count (186 designations).
+- Nothing was pushed, deployed or published.
+
 ## 2026-11-09 — PSN industrial-area batch
 
 - Added eight PSN industrial areas to `estates.csv`: Kuala Tanjung, Bantaeng,

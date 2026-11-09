@@ -1,12 +1,12 @@
 table,table_label,table_description,field,type,required,description,allowed_values,example
 projects.csv,Projects,"One row per curated infrastructure project, with status, location and key figures.",id,id,yes,Stable lowercase-hyphenated identifier used in deep links and joins.,,tol-sigli-banda-aceh
 projects.csv,Projects,"One row per curated infrastructure project, with status, location and key figures.",name,text,yes,Display name in English with Indonesian proper names.,,Sigli–Banda Aceh Toll Road
-projects.csv,Projects,"One row per curated infrastructure project, with status, location and key figures.",sector,enum,yes,"road, railway, airport, seaport, factory, energy, water, urban or coastal.",road; railway; airport; seaport; factory; energy; water; urban; coastal,road
+projects.csv,Projects,"One row per curated infrastructure project, with status, location and key figures.",sector,enum,yes,"road, railway, airport, seaport, factory, energy, water, urban, coastal, housing, technology, education, tourism or agriculture.",road; railway; airport; seaport; factory; energy; water; urban; coastal; housing; technology; education; tourism; agriculture,road
 projects.csv,Projects,"One row per curated infrastructure project, with status, location and key figures.",subsector,text,no,"Sector-specific type, such as toll, urban_rail, smelter or alumina.",,toll
-projects.csv,Projects,"One row per curated infrastructure project, with status, location and key figures.",status,enum,yes,"planned, under_construction, operating, recently_completed or stalled.",planned; under_construction; operating; recently_completed; stalled,under_construction
+projects.csv,Projects,"One row per curated infrastructure project, with status, location and key figures.",status,enum,yes,"planned, under_construction, operating, recently_completed, stalled or unknown. Unknown marks a register-only record whose implementation status is not yet sourced.",planned; under_construction; operating; recently_completed; stalled; unknown,under_construction
 projects.csv,Projects,"One row per curated infrastructure project, with status, location and key figures.",status_basis,text,yes,"The evidence behind the status, with figures and dates where possible.",,"BPJT: Operasi Sebagian, 48.58 of 74.21 km operational, 24.67 km under construction; Section 6 Kuto Baro–Baitussalam (5 k"
 projects.csv,Projects,"One row per curated infrastructure project, with status, location and key figures.",corridor_id,id,conditional,Foreign key to corridors.csv.,,trans-sumatera
-projects.csv,Projects,"One row per curated infrastructure project, with status, location and key figures.",island,enum,yes,"Sumatra, Java, Kalimantan, Sulawesi, Papua, Bali-Nusa Tenggara or Maluku.",Sumatra; Java; Kalimantan; Sulawesi; Papua; Bali-Nusa Tenggara; Maluku,Sumatra
+projects.csv,Projects,"One row per curated infrastructure project, with status, location and key figures.",island,enum,yes,"Sumatra, Java, Kalimantan, Sulawesi, Papua, Bali-Nusa Tenggara, Maluku or National.",Sumatra; Java; Kalimantan; Sulawesi; Papua; Bali-Nusa Tenggara; Maluku; National,Sumatra
 projects.csv,Projects,"One row per curated infrastructure project, with status, location and key figures.",province,text,yes,"Province or provinces, semicolon-separated.",,Aceh
 projects.csv,Projects,"One row per curated infrastructure project, with status, location and key figures.",route,text,yes,"Route, corridor or location description.",,Banda Aceh–Sigli
 projects.csv,Projects,"One row per curated infrastructure project, with status, location and key figures.",length_km,decimal,conditional,Total route or corridor length in kilometres.,,74.214
@@ -69,7 +69,7 @@ project_external_ids.csv,External IDs,Project keys in BPJT and other external sy
 project_external_ids.csv,External IDs,Project keys in BPJT and other external systems.,notes,text,yes,"Conflicts, caveats, section openings and coordinate overrides.",,BPJT toll-road list key.
 project_aliases.csv,Project aliases,Alternative names used by search.,project_id,id,yes,Foreign key to projects.csv.,,air-yogyakarta-international
 project_aliases.csv,Project aliases,Alternative names used by search.,alias,text,yes,Alternative project name.,,YIA
-project_aliases.csv,Project aliases,Alternative names used by search.,source_id,id,yes,Foreign key to sources.csv.,,
+project_aliases.csv,Project aliases,Alternative names used by search.,source_id,id,yes,Foreign key to sources.csv.,,src-permenko-16-2025
 project_aliases.csv,Project aliases,Alternative names used by search.,notes,text,yes,"Conflicts, caveats, section openings and coordinate overrides.",,Common alternate name.
 investments.csv,Investments,Commitment or tranche figures with their own source.,id,id,yes,Stable lowercase-hyphenated identifier used in deep links and joins.,,inv-freeport-manyar
 investments.csv,Investments,Commitment or tranche figures with their own source.,project_id,id,yes,Foreign key to projects.csv.,,factory-freeport-manyar-smelter
@@ -150,7 +150,7 @@ estates.csv,Estates and SEZs,Industrial estates and special economic zones.,coor
 estates.csv,Estates and SEZs,Industrial estates and special economic zones.,area_ha,decimal,yes,Zone area in hectares.,,6.64
 estates.csv,Estates and SEZs,Industrial estates and special economic zones.,developer,text,yes,Developer display name from the source.,,PT Patriot Nusantara Aceh
 estates.csv,Estates and SEZs,Industrial estates and special economic zones.,developer_org_id,id,no,Foreign key to organizations.csv.,,org-prima-pengembangan-kawasan
-estates.csv,Estates and SEZs,Industrial estates and special economic zones.,status,enum,yes,"Designation-level operating, under_construction or planned; not independently verified for most estates.",operating; under_construction; planned,operating
+estates.csv,Estates and SEZs,Industrial estates and special economic zones.,status,enum,yes,"Designation-level operating, under_construction, planned or unknown; not independently verified for most estates.",operating; under_construction; planned; unknown,operating
 estates.csv,Estates and SEZs,Industrial estates and special economic zones.,sector_focus,text,no,Estate or SEZ sector focus.,,Manufacturing
 estates.csv,Estates and SEZs,Industrial estates and special economic zones.,legal_basis,text,no,Legal instrument establishing the zone.,,Peraturan Pemerintah Nomor 5 Tahun 2017
 estates.csv,Estates and SEZs,Industrial estates and special economic zones.,established_year,year,no,Year the zone was established.,,2017

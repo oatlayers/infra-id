@@ -1,14 +1,20 @@
 """Build the 179-vs-160 industrial-estate reconciliation ledger.
 
-Kemenperin reports 179 industrial estates in 2026. The curated table carries 160
-industrial-estate designations from a 2024 BAJRA mirror. The difference is 19.
-Nine names are documented in the v3 research backlog; the other ten are not
-named in any source that was reachable on 8 November 2026. This ledger records
-that honestly instead of inventing rows.
+Kemenperin reports 179 industrial estates in 2026. The 2024 BAJRA mirror carried
+160 industrial-estate designations, a difference of 19. This ledger records what
+happened to those 19 names.
+
+By 9 November 2026 the atlas had 179 pure industrial-estate rows plus 7 shared
+SEZ/estate rows, so the 179 target is met by count. The count was closed mainly
+through the 18 register-only PSN industrial areas, not by finding every 2025
+name. Two of the original 19 names are now resolved (IPIP and Pulau Penebang).
+Seven named 2025 additions remain open. The ten unnamed rows are retained for
+audit but marked as no longer required for the count.
 
 The Kemenperin site returned HTTP 502 and satudata.kemenperin.go.id did not
 resolve on 8 November 2026. The 179 count is sourced to ANTARA's report of the
-Kemenperin briefing on 29 June 2026.
+Kemenperin briefing on 29 June 2026; the directory was reachable on 9 November
+2026 and is filed as data/raw/2026-11-09/kemenperin_kawasan.html.
 
 Run: python scripts/imports/extract_estate_gap.py
 Writes: data/derived/estate_gap_2026.csv
@@ -27,22 +33,33 @@ FIELDS = ["name", "province", "regency", "disposition", "source_id", "notes"]
 SOURCE_ID = "src-antara-kemenperin-179-2026"
 COUNT_NOTE = (
     "Kemenperin reports 179 industrial estates in 2026 (ANTARA, 29 June 2026); "
-    "the curated table has 160 industrial-estate designations from the 2024 "
-    "BAJRA mirror. Kemenperin's own list was unreachable on 8 November 2026 "
-    "(HTTP 502 and DNS failure)."
+    "the 2024 BAJRA mirror carried 160 industrial-estate designations. The atlas "
+    "now has 179 pure industrial-estate rows plus 7 shared SEZ/estate rows, so "
+    "the count target is met. This ledger is retained for name-level audit."
 )
 
-NAMED = [
+RESOLVED = [
     (
         "IPIP (Indonesia Pomalaa Industry Park)",
-        "Central Sulawesi",
-        "",
-        "unresolved-location-conflict",
-        "Kemenperin lists IPIP under Central Sulawesi, but PT Indonesia Pomalaa "
-        "Industry Park's project is at Pomalaa, Kolaka, Southeast Sulawesi. The "
-        "official careers site confirms the company name but gives no area or "
-        "estate boundary. Not added without an area and a location source.",
+        "Southeast Sulawesi",
+        "Kolaka",
+        "resolved",
+        "Resolved as ki-indonesia-pomalaa-industry-park. The Kemenperin directory "
+        "lists 686.00 ha in Kabupaten Kolaka, Sulawesi Tenggara; the earlier "
+        "Central Sulawesi location in the 2024 gap note was a directory conflict.",
     ),
+    (
+        "Pulau Penebang",
+        "West Kalimantan",
+        "Kayong Utara",
+        "resolved",
+        "Resolved as ki-kawasan-industri-pulau-penebang. The Kemenperin directory "
+        "lists 1,476.30 ha in Kabupaten Kayong Utara, Kalimantan Barat; the earlier "
+        "Riau Islands/Bintan location in the 2024 gap note was wrong.",
+    ),
+]
+
+NAMED = [
     (
         "I-Sentra Lamongan",
         "East Java",
@@ -84,14 +101,6 @@ NAMED = [
         "specific park has no reachable area or coordinate source.",
     ),
     (
-        "Pulau Penebang",
-        "Riau Islands",
-        "Bintan",
-        "unresolved-no-source",
-        "Named as a 2025 addition. The island location is known, but no reachable "
-        "developer page gives an area or estate boundary.",
-    ),
-    (
         "Seafer",
         "Riau Islands",
         "Batam",
@@ -114,9 +123,10 @@ UNIDENTIFIED = [
         f"Unidentified 2025 addition {index}",
         "",
         "",
-        "unresolved-not-named",
-        "The 179 count exceeds the 160-row table by 19. Nine additions are named; "
-        "this one is not named in any source reachable on 8 November 2026.",
+        "not-required-for-count",
+        "The 179 count is now met by the 179 pure industrial-estate rows plus 7 "
+        "shared SEZ/estate rows. This name remains unidentified but is no longer a "
+        "count gap; it is retained so the original 19-row reconciliation is auditable.",
     )
     for index in range(1, 11)
 ]
@@ -132,7 +142,7 @@ def main() -> None:
             "source_id": SOURCE_ID,
             "notes": f"{COUNT_NOTE} {notes}",
         }
-        for name, province, regency, disposition, notes in NAMED + UNIDENTIFIED
+        for name, province, regency, disposition, notes in RESOLVED + NAMED + UNIDENTIFIED
     ]
     if len(rows) != 19:
         raise SystemExit(f"expected 19 gap rows, got {len(rows)}")
@@ -144,7 +154,10 @@ def main() -> None:
         writer.writerows(rows)
 
     print(f"wrote {len(rows)} gap rows to {OUT.relative_to(ROOT)}")
-    print("named:", len(NAMED), "unidentified:", len(UNIDENTIFIED))
+    print(
+        "resolved:", len(RESOLVED), "named open:", len(NAMED),
+        "not required for count:", len(UNIDENTIFIED),
+    )
 
 
 if __name__ == "__main__":

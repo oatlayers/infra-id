@@ -11,6 +11,7 @@ Run: python scripts/pipeline/build_psn_ledger.py
 
 from __future__ import annotations
 
+import re
 import sys
 from collections import Counter, defaultdict
 from pathlib import Path
@@ -262,6 +263,8 @@ MISSING_FIELDS = {
     "matched_programme": "target_summary, indicators, budget, organization_roles, translation_status",
     "matched_project": "name_id, summary_id, summary_en, programme_id, pkpn_id, translation_status",
     "matched_estate": "name_en, summary_id, summary_en, translation_status",
+    "matched_register_project": "name_id, summary_id, summary_en, status, status_as_of, cost, capacity, organisation_roles, programme_id, coordinates, translation_status",
+    "matched_register_estate": "name_en, summary_id, summary_en, area_ha, occupancy_pct, developer, status, coordinates, source, translation_status",
     "matched_partial": "review_match, name_id, summary_id, summary_en, programme_id",
     "matched_aggregate": "review_match, name_id, summary_id, summary_en, programme_id",
     "deleted": "",
@@ -326,6 +329,37 @@ def main() -> None:
     projects = {row["id"]: row for row in read_csv(CURATED / "projects.csv")}
     estates = {row["id"]: row for row in read_csv(CURATED / "estates.csv")}
     programmes = {row["id"]: row for row in read_csv(CURATED / "programmes.csv")}
+    project_claims = read_csv(CURATED / "project_sources.csv")
+    estate_claims = read_csv(CURATED / "estate_sources.csv")
+
+    # Register-only rows carry an explicit PSN claim. Use it as a fallback after
+    # the hand-reviewed match maps, so a future row can be added without a second
+    # hard-coded mapping. Duplicate claims are an error, not a guess.
+    claimed_projects: dict[int, list[str]] = defaultdict(list)
+    for claim in project_claims:
+        if claim["claim"] != "psn":
+            continue
+        match = re.fullmatch(r"PSN\s+(\d+)", claim["claim_value"].strip())
+        if match:
+            claimed_projects[int(match.group(1))].append(claim["project_id"])
+    duplicate_project_claims = {
+        number: ids for number, ids in claimed_projects.items() if len(ids) > 1
+    }
+    if duplicate_project_claims:
+        raise SystemExit(f"duplicate PSN project claims: {duplicate_project_claims}")
+
+    claimed_estates: dict[int, list[str]] = defaultdict(list)
+    for claim in estate_claims:
+        if claim["claim"] != "psn":
+            continue
+        match = re.fullmatch(r"PSN\s+(\d+)", claim["claim_value"].strip())
+        if match:
+            claimed_estates[int(match.group(1))].append(claim["estate_id"])
+    duplicate_estate_claims = {
+        number: ids for number, ids in claimed_estates.items() if len(ids) > 1
+    }
+    if duplicate_estate_claims:
+        raise SystemExit(f"duplicate PSN estate claims: {duplicate_estate_claims}")
 
     if len(register) != 253:
         raise SystemExit(f"PSN register should have 253 rows, found {len(register)}")
@@ -350,6 +384,19 @@ def main() -> None:
     for number, (estate_id, _, _) in ESTATE_MATCH.items():
         if estate_id not in estates:
             raise SystemExit(f"PSN {number} maps to unknown estate {estate_id}")
+    active_numbers = {int(row["psn_no"]) for row in active_projects}
+    for number, ids in claimed_projects.items():
+        if number not in active_numbers:
+            raise SystemExit(f"PSN claim {number} is not an active register project")
+        for project_id in ids:
+            if project_id not in projects:
+                raise SystemExit(f"PSN claim {number} points to unknown project {project_id}")
+    for number, ids in claimed_estates.items():
+        if number not in active_numbers:
+            raise SystemExit(f"PSN estate claim {number} is not an active register project")
+        for estate_id in ids:
+            if estate_id not in estates:
+                raise SystemExit(f"PSN estate claim {number} points to unknown estate {estate_id}")
     for number, programme_id in PROGRAMME_MATCH.items():
         if programme_id not in programmes:
             raise SystemExit(f"PSN programme {number} maps to unknown programme {programme_id}")
@@ -437,6 +484,28 @@ def main() -> None:
                 release=release_for(row),
                 notes=note,
             )
+        elif number in claimed_projects:
+            atlas_id = claimed_projects[number][0]
+            project = projects[atlas_id]
+            register_only = project["verification"] == "unverified" and project["status"] == "unknown"
+            status = "matched_register_project" if register_only else "matched_project"
+            item.update(
+                atlas_layer="project",
+                atlas_id=atlas_id,
+                atlas_status=project["status"],
+                match_status=status,
+                match_confidence="high",
+                missing_fields=MISSING_FIELDS[status],
+                owner="data",
+                next_action="upgrade_register_record" if register_only else "add_translation",
+                release=release_for(row),
+                notes=(
+                    "Matched by the project's explicit PSN claim. Register-only row: "
+                    "implementation status, cost, capacity, organisations and geometry remain unsourced."
+                    if register_only
+                    else "Matched by the project's explicit PSN claim."
+                ),
+            )
         elif number in ESTATE_MATCH:
             atlas_id, confidence, note = ESTATE_MATCH[number]
             item.update(
@@ -450,6 +519,28 @@ def main() -> None:
                 next_action="add_translation",
                 release=release_for(row),
                 notes=note,
+            )
+        elif number in claimed_estates:
+            atlas_id = claimed_estates[number][0]
+            estate = estates[atlas_id]
+            register_only = estate["status"] == "unknown" and estate["coordinate_source"] == "unknown"
+            status = "matched_register_estate" if register_only else "matched_estate"
+            item.update(
+                atlas_layer="estate",
+                atlas_id=atlas_id,
+                atlas_status=estate["status"],
+                match_status=status,
+                match_confidence="high",
+                missing_fields=MISSING_FIELDS[status],
+                owner="data",
+                next_action="upgrade_register_record" if register_only else "add_translation",
+                release=release_for(row),
+                notes=(
+                    "Matched by the estate's explicit PSN claim. Register-only row: "
+                    "area, developer, status and boundary remain unsourced."
+                    if register_only
+                    else "Matched by the estate's explicit PSN claim."
+                ),
             )
         elif row["sector"] == "industrial_areas":
             item.update(
@@ -477,7 +568,8 @@ def main() -> None:
     print("PSN reconciliation: 226 active projects + 24 active programmes")
     for status in [
         "matched_project", "matched_aggregate", "matched_partial", "matched_estate",
-        "matched_programme", "missing_project", "missing_estate", "missing_programme",
+        "matched_register_project", "matched_register_estate", "matched_programme",
+        "missing_project", "missing_estate", "missing_programme",
     ]:
         print(f"  {status:18} {counts.get(status, 0):3}")
 

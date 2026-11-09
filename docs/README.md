@@ -17,7 +17,7 @@ atlas itself; this page is the map for the working documents.
 |---|---|
 | [`phases/phase-1-decisions.md`](phases/phase-1-decisions.md) | Confirmed design, scope, schema and payload budgets. |
 | [`phases/phase-2-transport.md`](phases/phase-2-transport.md) | Transport PSN extraction, status mapping and conflicts. |
-| [`phases/phase-2-estates.md`](phases/phase-2-estates.md) | Estate gap ledger and coordinate work. |
+| [`phases/phase-2-estates.md`](phases/phase-2-estates.md) | Estate gap ledger, PSN industrial-area completion and coordinate work. |
 | [`phases/phase-2-factories.md`](phases/phase-2-factories.md) | Factory reference set, inclusion rules and conflicts. |
 | [`phases/phase-2-roads.md`](phases/phase-2-roads.md) | BPJT PSN road additions and status mapping. |
 | [`phases/phase-3-trust.md`](phases/phase-3-trust.md) | Claims, freshness, conflicts and local release evidence. |
@@ -29,8 +29,8 @@ atlas itself; this page is the map for the working documents.
 | [`../data/curated/psn_register.csv`](../data/curated/psn_register.csv) | Official Permenko 16/2025 annex: 226 active projects, 24 active programmes and 3 deleted slots. |
 | [`../data/curated/programmes.csv`](../data/curated/programmes.csv) | The 24 active PSN programmes with bilingual names, summaries, theme, lead agency and source. |
 | [`../data/curated/programme_projects.csv`](../data/curated/programme_projects.csv) | Seven structural links between programmes and atlas projects. |
-| [`../data/curated/estates.csv`](../data/curated/estates.csv) | 186 industrial estates and SEZs, including eight PSN industrial areas with dated area, manager and status sources. |
-| [`../data/derived/psn_reconciliation.csv`](../data/derived/psn_reconciliation.csv) | Match ledger: 120 active PSN project or estate records and all 24 programmes matched; 106 project or estate records outstanding, with owner, next action and release. |
+| [`../data/curated/estates.csv`](../data/curated/estates.csv) | 204 industrial estates and SEZs, including eight reviewed and 18 register-only PSN industrial areas. |
+| [`../data/derived/psn_reconciliation.csv`](../data/derived/psn_reconciliation.csv) | Match ledger: 226 of 226 active PSN project or estate records represented and all 24 programmes matched; 88 projects and 18 estates are register-only. |
 
 ## Operations
 

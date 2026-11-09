@@ -1,15 +1,17 @@
 # Phase 2 — Estate Reconciliation and Coordinates
 
 **Date:** 8 November 2026
-**Status:** Track 2B partial. E1 done, E2 blocked, E3 partial, E4 not
-started, E5 shipped in Phase 1, E6 deferred.
+**Status:** Track 2B complete by count. E1 done, E2 resolved by the register-only
+layer, E3 partial, E4 not started, E5 shipped in Phase 1, E6 deferred.
 
 > **V4 update (9 November 2026).** The Kemenperin directory became reachable and
-> is filed as `data/raw/2026-11-09/kemenperin_kawasan.html` (181 rows). Eight PSN
-> industrial areas were added with dated sources, taking the table to 186 rows
-> and 168 industrial-estate designations. IPIP and Pulau Penebang are resolved;
-> 11 industrial estates remain, including seven named and four unidentified
-> rows. See `README.md` and Appendix G of the V4 plan.
+> is filed as `data/raw/2026-11-09/kemenperin_kawasan.html` (181 rows). Eight
+> reviewed PSN industrial areas and 18 register-only PSN industrial areas were
+> added, taking the table to 204 rows and 186 industrial-estate designations
+> (179 pure plus 7 shared). The 179 target is met by count. IPIP and Pulau
+> Penebang are resolved; seven named 2024 additions remain open and ten count
+> placeholders are retired. The register-only rows have no area, developer or
+> boundary. See `README.md` and Appendix G of the V4 plan.
 
 ## E1 — The 179-vs-160 gap
 

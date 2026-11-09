@@ -45,5 +45,11 @@
 - `permenko_16_2025.txt` — text extracted with PyMuPDF.
 - `permenko_16_2025_projects.json` — 228 project slots parsed by column position.
 - `permenko_16_2025_programmes.json` — 25 programme slots parsed by column position.
+- `data/derived/province_centroids.json` — deterministic province centroids used
+  only by the register-only rows; generated from the bundled basemap and curated
+  coordinates, not a source of project facts.
 
-The parsed files are working copies. The PDF is the authoritative snapshot.
+The parsed files are working copies. The PDF is the authoritative snapshot. The
+88 register-only projects and 18 register-only industrial areas use only the
+register's name, number, sector, location and active status; nothing else is
+inferred from the PDF.

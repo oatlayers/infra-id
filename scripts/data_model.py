@@ -134,11 +134,21 @@ PROGRAMME_SOURCE_FIELDS = [
     "programme_id", "source_id", "claim", "claim_value", "claim_date", "notes",
 ]
 
-SECTORS = {"road", "railway", "airport", "seaport", "factory", "energy", "water", "urban", "coastal"}
-STATUSES = {"planned", "under_construction", "recently_completed", "operating", "stalled"}
+SECTORS = {
+    "road", "railway", "airport", "seaport", "factory", "energy", "water",
+    "urban", "coastal", "housing", "technology", "education", "tourism",
+    "agriculture",
+}
+STATUSES = {
+    "planned", "under_construction", "recently_completed", "operating",
+    "stalled", "unknown",
+}
 PSN_VALUES = {"yes", "no", "unknown"}
 PRECISIONS = {"exact", "approximate", "regency", "province"}
-ISLANDS = {"Sumatra", "Java", "Kalimantan", "Sulawesi", "Papua", "Bali-Nusa Tenggara", "Maluku"}
+ISLANDS = {
+    "Sumatra", "Java", "Kalimantan", "Sulawesi", "Papua",
+    "Bali-Nusa Tenggara", "Maluku", "National",
+}
 VERIFICATIONS = {"official", "dual", "single", "unverified"}
 ORG_TYPES = {"government", "soe", "private", "consortium", "multilateral", "other"}
 ROLES = {"sponsor", "operator", "contractor", "lender", "off_taker", "developer", "owner"}
@@ -165,7 +175,7 @@ EVENT_TYPES = {
 GEOMETRY_KINDS = {"line", "point", "polygon"}
 SEGMENT_TYPES = {"section", "phase", "package", "other"}
 ESTATE_TYPES = {"industrial_estate", "sez", "both"}
-ESTATE_STATUSES = {"operating", "under_construction", "planned"}
+ESTATE_STATUSES = {"operating", "under_construction", "planned", "unknown"}
 COORDINATE_SOURCES = {"official", "osm", "regency", "manual", "unknown"}
 CLAIM_TYPES = {
     "status", "length", "operational", "progress", "opening", "investment",

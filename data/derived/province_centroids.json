@@ -1,0 +1,282 @@
+{
+  "Aceh": {
+    "lat": 5.08414,
+    "lon": 96.71107,
+    "method": "curated mean",
+    "points": 8,
+    "source": "Mean of 8 curated atlas points in Aceh"
+  },
+  "Bali": {
+    "lat": -8.54221,
+    "lon": 115.0754,
+    "method": "curated mean",
+    "points": 7,
+    "source": "Mean of 7 curated atlas points in Bali"
+  },
+  "Bangka Belitung": {
+    "lat": -2.36592,
+    "lon": 106.71201,
+    "method": "basemap bbox centre",
+    "points": 0,
+    "source": "Natural Earth province polygon in site/data/basemap.js"
+  },
+  "Banten": {
+    "lat": -6.1662,
+    "lon": 106.311,
+    "method": "curated mean",
+    "points": 31,
+    "source": "Mean of 31 curated atlas points in Banten"
+  },
+  "Bengkulu": {
+    "lat": -3.85987,
+    "lon": 102.4006,
+    "method": "basemap bbox centre",
+    "points": 1,
+    "source": "Natural Earth province polygon in site/data/basemap.js"
+  },
+  "Central Java": {
+    "lat": -7.28449,
+    "lon": 109.92084,
+    "method": "curated mean",
+    "points": 12,
+    "source": "Mean of 12 curated atlas points in Central Java"
+  },
+  "Central Kalimantan": {
+    "lat": -1.40867,
+    "lon": 113.3174,
+    "method": "basemap bbox centre",
+    "points": 0,
+    "source": "Natural Earth province polygon in site/data/basemap.js"
+  },
+  "Central Papua": {
+    "lat": -4.88505,
+    "lon": 137.6154,
+    "method": "parent fallback (Papua)",
+    "points": 1,
+    "source": "Natural Earth parent province polygon in site/data/basemap.js"
+  },
+  "Central Sulawesi": {
+    "lat": -2.32901,
+    "lon": 121.60611,
+    "method": "curated mean",
+    "points": 6,
+    "source": "Mean of 6 curated atlas points in Central Sulawesi"
+  },
+  "DI Yogyakarta": {
+    "lat": -7.61594,
+    "lon": 109.97666,
+    "method": "curated mean",
+    "points": 7,
+    "source": "Mean of 7 curated atlas points in DI Yogyakarta"
+  },
+  "DKI Jakarta": {
+    "lat": -6.23886,
+    "lon": 106.91435,
+    "method": "curated mean",
+    "points": 19,
+    "source": "Mean of 19 curated atlas points in DKI Jakarta"
+  },
+  "East Java": {
+    "lat": -7.36054,
+    "lon": 112.19742,
+    "method": "curated mean",
+    "points": 12,
+    "source": "Mean of 12 curated atlas points in East Java"
+  },
+  "East Kalimantan": {
+    "lat": -0.66745,
+    "lon": 117.04239,
+    "method": "curated mean",
+    "points": 8,
+    "source": "Mean of 8 curated atlas points in East Kalimantan"
+  },
+  "East Nusa Tenggara": {
+    "lat": -8.9465,
+    "lon": 121.38823,
+    "method": "curated mean",
+    "points": 4,
+    "source": "Mean of 4 curated atlas points in East Nusa Tenggara"
+  },
+  "Eastern Indonesia": {
+    "lat": -2.50132,
+    "lon": 118.09141,
+    "method": "national fallback",
+    "points": 0,
+    "source": "Natural Earth Indonesia polygon; register location is a region, not a province"
+  },
+  "Gorontalo": {
+    "lat": 0.66673,
+    "lon": 122.33014,
+    "method": "basemap bbox centre",
+    "points": 0,
+    "source": "Natural Earth province polygon in site/data/basemap.js"
+  },
+  "Highland Papua": {
+    "lat": -4.88505,
+    "lon": 137.6154,
+    "method": "parent fallback (Papua)",
+    "points": 0,
+    "source": "Natural Earth parent province polygon in site/data/basemap.js"
+  },
+  "Indonesia": {
+    "lat": -2.50132,
+    "lon": 118.09141,
+    "method": "national bbox centre",
+    "points": 0,
+    "source": "Natural Earth Indonesia polygon in site/data/basemap.js"
+  },
+  "Jambi": {
+    "lat": -1.5711,
+    "lon": 103.48763,
+    "method": "curated mean",
+    "points": 3,
+    "source": "Mean of 3 curated atlas points in Jambi"
+  },
+  "Lampung": {
+    "lat": -4.83009,
+    "lon": 104.73984,
+    "method": "basemap bbox centre",
+    "points": 1,
+    "source": "Natural Earth province polygon in site/data/basemap.js"
+  },
+  "Maluku": {
+    "lat": -4.86,
+    "lon": 129.74667,
+    "method": "curated mean",
+    "points": 3,
+    "source": "Mean of 3 curated atlas points in Maluku"
+  },
+  "North Kalimantan": {
+    "lat": -0.66745,
+    "lon": 117.04239,
+    "method": "parent fallback (East Kalimantan)",
+    "points": 0,
+    "source": "Mean of 8 curated atlas points in East Kalimantan"
+  },
+  "North Maluku": {
+    "lat": -0.5194,
+    "lon": 127.69488,
+    "method": "curated mean",
+    "points": 4,
+    "source": "Mean of 4 curated atlas points in North Maluku"
+  },
+  "North Sulawesi": {
+    "lat": 1.52254,
+    "lon": 125.07818,
+    "method": "curated mean",
+    "points": 3,
+    "source": "Mean of 3 curated atlas points in North Sulawesi"
+  },
+  "North Sumatra": {
+    "lat": 3.23365,
+    "lon": 99.21523,
+    "method": "curated mean",
+    "points": 9,
+    "source": "Mean of 9 curated atlas points in North Sumatra"
+  },
+  "Papua": {
+    "lat": -4.88505,
+    "lon": 137.6154,
+    "method": "basemap bbox centre",
+    "points": 1,
+    "source": "Natural Earth province polygon in site/data/basemap.js"
+  },
+  "Riau": {
+    "lat": 0.56739,
+    "lon": 101.68747,
+    "method": "curated mean",
+    "points": 8,
+    "source": "Mean of 8 curated atlas points in Riau"
+  },
+  "Riau Islands": {
+    "lat": 1.77927,
+    "lon": 106.10147,
+    "method": "basemap bbox centre",
+    "points": 1,
+    "source": "Natural Earth province polygon in site/data/basemap.js"
+  },
+  "South Kalimantan": {
+    "lat": -2.76531,
+    "lon": 115.43637,
+    "method": "basemap bbox centre",
+    "points": 0,
+    "source": "Natural Earth province polygon in site/data/basemap.js"
+  },
+  "South Papua": {
+    "lat": -4.88505,
+    "lon": 137.6154,
+    "method": "parent fallback (Papua)",
+    "points": 0,
+    "source": "Natural Earth province polygon in site/data/basemap.js"
+  },
+  "South Sulawesi": {
+    "lat": -4.43955,
+    "lon": 120.07563,
+    "method": "curated mean",
+    "points": 4,
+    "source": "Mean of 4 curated atlas points in South Sulawesi"
+  },
+  "South Sumatra": {
+    "lat": -3.10534,
+    "lon": 104.1996,
+    "method": "curated mean",
+    "points": 10,
+    "source": "Mean of 10 curated atlas points in South Sumatra"
+  },
+  "Southeast Sulawesi": {
+    "lat": -3.95366,
+    "lon": 122.1222,
+    "method": "curated mean",
+    "points": 3,
+    "source": "Mean of 3 curated atlas points in Southeast Sulawesi"
+  },
+  "Southwest Papua": {
+    "lat": -2.15171,
+    "lon": 132.5014,
+    "method": "parent fallback (West Papua)",
+    "points": 1,
+    "source": "Natural Earth parent province polygon in site/data/basemap.js"
+  },
+  "West Java": {
+    "lat": -6.48545,
+    "lon": 107.29042,
+    "method": "curated mean",
+    "points": 21,
+    "source": "Mean of 21 curated atlas points in West Java"
+  },
+  "West Kalimantan": {
+    "lat": -0.5706,
+    "lon": 109.35566,
+    "method": "curated mean",
+    "points": 3,
+    "source": "Mean of 3 curated atlas points in West Kalimantan"
+  },
+  "West Nusa Tenggara": {
+    "lat": -8.73452,
+    "lon": 116.39277,
+    "method": "curated mean",
+    "points": 3,
+    "source": "Mean of 3 curated atlas points in West Nusa Tenggara"
+  },
+  "West Papua": {
+    "lat": -2.15171,
+    "lon": 132.5014,
+    "method": "basemap bbox centre",
+    "points": 1,
+    "source": "Natural Earth province polygon in site/data/basemap.js"
+  },
+  "West Sulawesi": {
+    "lat": -2.18645,
+    "lon": 119.3284,
+    "method": "basemap bbox centre",
+    "points": 0,
+    "source": "Natural Earth province polygon in site/data/basemap.js"
+  },
+  "West Sumatra": {
+    "lat": -1.23015,
+    "lon": 100.22138,
+    "method": "basemap bbox centre",
+    "points": 1,
+    "source": "Natural Earth province polygon in site/data/basemap.js"
+  }
+}

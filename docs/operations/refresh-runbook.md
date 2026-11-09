@@ -5,7 +5,7 @@ repository; no remote or deployment is involved. The atlas is a local, curated
 release, not a live tracker.
 
 **Why monthly:** a row is treated as fresh for 183 days after `last_verified`
-and due soon in the final 30 days. The 9 November 2026 build has 326 fresh rows;
+and due soon in the final 30 days. The 9 November 2026 build has 432 fresh rows;
 the first record falls due on **11 May 2027**. A monthly pass keeps the whole
 dataset ahead of that cliff instead of refreshing everything at once.
 
@@ -161,9 +161,12 @@ python scripts/pipeline/build_psn_ledger.py
 
 The script refuses to run unless the register has exactly 226 active projects,
 24 active programmes and 3 deleted slots. Update the explicit match maps in
-`scripts/pipeline/build_psn_ledger.py` when a new atlas row resolves a gap; do
-not replace them with fuzzy matching. The generated ledger is
-`data/derived/psn_reconciliation.csv`.
+`scripts/pipeline/build_psn_ledger.py` when a reviewed row resolves a gap; do
+not replace them with fuzzy matching. A register-only row can instead carry an
+explicit `psn` claim in `project_sources.csv` or `estate_sources.csv`; the ledger
+uses that claim after the hand-reviewed maps and labels it
+`matched_register_project` or `matched_register_estate`. Duplicate PSN claims are
+an error. The generated ledger is `data/derived/psn_reconciliation.csv`.
 
 The programme layer lives in `data/curated/programmes.csv`. Official Indonesian
 names are read from the register by `scripts/imports/add_psn_programmes.py`; do
@@ -182,8 +185,30 @@ estate, and a dated official or company source for status. Do not assume that a
 licensed estate is operating: the older rows use a directory default, but new
 rows need a status claim. Where a developer gives a larger master-plan area than
 the Kemenperin licence, keep the licence figure in `area_ha` and record the
-difference in `notes`. Add the PSN number to `ESTATE_MATCH` in
-`scripts/pipeline/build_psn_ledger.py` and rebuild.
+difference in `notes`. Add the reviewed estate to `ESTATE_MATCH` in
+`scripts/pipeline/build_psn_ledger.py`, or add a `psn` claim for a register-only
+row, then rebuild.
+
+### 4.8 Register-only rows and province centroids
+
+The 88 register-only projects and 18 register-only industrial areas are managed
+by `scripts/imports/add_psn_register_records.py`. Do not edit them by hand; rerun
+the importer after changing the register or a working English name. They carry
+`verification=unverified` or `coordinate_source=unknown`, `status=unknown`, a
+`psn` claim, a `location` claim and an active-designation `status` claim.
+
+Their coordinates are province centroids from
+`data/derived/province_centroids.json`, built by
+`scripts/tools/build_province_centroids.py`. Regenerate that file when the
+basemap or the curated province coverage changes. Province-precision rows are
+excluded from the map by `site/assets/app.js`; do not add a fake site point to
+make one appear.
+
+When an official or company source adds an implementation status, cost,
+capacity, developer, area or boundary, upgrade the row: replace the register-only
+status with a dated status, add the claim, set `verification`, and move the
+coordinate to a real site point if one is sourced. Do not keep
+`status=unknown` once a source states otherwise.
 
 ## 5. Rebuild
 
@@ -310,6 +335,8 @@ the site. The repository owner has deferred publishing explicitly.
       reconciliation ledger regenerated.
 - [ ] Programme names, lead agencies and project links checked against the
       register; programme claims refreshed.
+- [ ] Register-only rows reviewed for an upgrade source; no row left at
+      `status=unknown` when a dated source states implementation.
 - [ ] Trans corridor totals and sections checked.
 - [ ] Factory statuses, capacity and investment checked.
 - [ ] Changed rows updated with atomic claims and `last_verified`.

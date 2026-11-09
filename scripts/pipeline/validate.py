@@ -496,11 +496,20 @@ def main() -> None:
             err(f"{where}: duplicate id")
         seen.add(row["id"])
         check_id(row["id"], where)
-        for field in ("name", "type", "province", "regency", "island", "lat", "lon",
-                      "precision", "coordinate_source", "area_ha", "developer",
-                      "status", "source_id", "last_verified", "notes"):
+        register_only = (
+            row["status"] == "unknown" and row["coordinate_source"] == "unknown"
+        )
+        required = [
+            "name", "type", "province", "island", "lat", "lon", "precision",
+            "coordinate_source", "status", "source_id", "last_verified", "notes",
+        ]
+        if not register_only:
+            required += ["regency", "area_ha", "developer"]
+        for field in required:
             if is_blank(row[field]):
                 err(f"{where}: missing {field}")
+        if register_only and row["precision"] != "province":
+            err(f"{where}: register-only estates need province precision")
         check_enum(row["type"], ESTATE_TYPES, "type", where)
         check_enum(row["status"], ESTATE_STATUSES, "status", where)
         check_enum(row["precision"], PRECISIONS, "precision", where)
@@ -512,7 +521,7 @@ def main() -> None:
             err(f"{where}: unknown developer_org_id")
         check_date(row["last_verified"], f"{where} last_verified")
         area = check_number(row["area_ha"], "area_ha", where, minimum=0.0001)
-        if area is None:
+        if area is None and not register_only:
             err(f"{where}: area_ha must be positive")
         if row["occupancy_pct"]:
             occupancy = check_number(row["occupancy_pct"], "occupancy_pct", where)

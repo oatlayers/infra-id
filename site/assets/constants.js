@@ -5,9 +5,10 @@ window.ATLAS = {
     planned: { label: 'Planned', short: 'Planned', color: '#1d4ed8' },
     operating: { label: 'Operating', short: 'Open', color: '#0f766e' },
     recently_completed: { label: 'Recently completed', short: 'Done', color: '#15803d' },
-    stalled: { label: 'Stalled', short: 'Stalled', color: '#b42318' }
+    stalled: { label: 'Stalled', short: 'Stalled', color: '#b42318' },
+    unknown: { label: 'Status not sourced', short: 'Unknown', color: '#667085' }
   },
-  STATUS_ORDER: ['under_construction', 'planned', 'operating', 'recently_completed', 'stalled'],
+  STATUS_ORDER: ['under_construction', 'planned', 'operating', 'recently_completed', 'stalled', 'unknown'],
   SECTORS: {
     road: { label: 'Road', plural: 'Roads', short: 'Road', icon: '#i-road' },
     railway: { label: 'Railway', plural: 'Railways', short: 'Rail', icon: '#i-railway' },
@@ -17,9 +18,18 @@ window.ATLAS = {
     energy: { label: 'Energy', plural: 'Energy', short: 'Energy', icon: '#i-energy' },
     water: { label: 'Water', plural: 'Water', short: 'Water', icon: '#i-water' },
     urban: { label: 'Urban', plural: 'Urban', short: 'Urban', icon: '#i-urban' },
-    coastal: { label: 'Coastal', plural: 'Coastal', short: 'Coast', icon: '#i-coastal' }
+    coastal: { label: 'Coastal', plural: 'Coastal', short: 'Coast', icon: '#i-coastal' },
+    housing: { label: 'Housing', plural: 'Housing', short: 'Housing', icon: '#i-housing' },
+    technology: { label: 'Technology', plural: 'Technology', short: 'Tech', icon: '#i-technology' },
+    education: { label: 'Education', plural: 'Education', short: 'Education', icon: '#i-education' },
+    tourism: { label: 'Tourism', plural: 'Tourism', short: 'Tourism', icon: '#i-tourism' },
+    agriculture: { label: 'Agriculture', plural: 'Agriculture', short: 'Agriculture', icon: '#i-agriculture' }
   },
-  SECTOR_ORDER: ['road', 'railway', 'airport', 'seaport', 'factory', 'energy', 'water', 'urban', 'coastal'],
+  SECTOR_ORDER: [
+    'road', 'railway', 'airport', 'seaport', 'factory', 'energy', 'water',
+    'urban', 'coastal', 'housing', 'technology', 'education', 'tourism',
+    'agriculture'
+  ],
   PROGRAMME_THEMES: {
     energy: { label: 'Energy', color: '#b45309' },
     economy: { label: 'Economy', color: '#0f766e' },

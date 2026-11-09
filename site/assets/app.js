@@ -692,7 +692,7 @@
       : '<strong>' + fmtNum(list.length) + '</strong> of ' + fmtNum(total) + ' projects';
     dom.footCount.textContent = fmtNum(list.length);
     dom.footTotal.textContent = fmtNum(total);
-    dom.mapCount.textContent = fmtNum(list.length);
+    dom.mapCount.textContent = fmtNum(list.filter(isMapped).length);
     dom.sort.value = state.sort;
 
     renderProjectRows(list);
@@ -823,13 +823,22 @@
         '<p class="notes-callout">' + esc(project.notes) + '</p></section>';
     }
 
+    const coordinateNote = project.precision === 'province'
+      ? 'Province centroid; not plotted on the map'
+      : project.precision + ' precision';
     body += '<section class="detail-section"><h3>Data quality</h3><ul class="evidence-list">' +
-      '<li><time>Coordinates</time><span>' + esc(project.precision) + ' precision · ' +
+      '<li><time>Coordinates</time><span>' + esc(coordinateNote) + ' · ' +
       fmtCoord(project.lat) + ', ' + fmtCoord(project.lon) + '</span></li>' +
       '<li><time>PSN</time><span>' + esc(project.psn === 'yes' ? 'National Strategic Project' :
         project.psn === 'no' ? 'Not a PSN' : 'PSN status unknown') + '</span></li>' +
       '<li><time>Verification</time><span>' + esc(project.verification) +
       ' · status as of ' + esc(fmtDate(project.status_as_of)) + '</span></li>' +
+      ((project.aliases && project.aliases.length)
+        ? '<li><time>Official name</time><span>' + esc(project.aliases.join('; ')) + '</span></li>'
+        : '') +
+      (project.verification === 'unverified' && project.status === 'unknown'
+        ? '<li><time>Record</time><span>Register-only: official PSN name, number, sector and location are sourced; implementation status, cost, capacity and geometry are not yet sourced.</span></li>'
+        : '') +
       '<li><time>Freshness</time><span class="freshness-line"><span class="freshness-dot ' +
       esc(project.freshness_state || 'unknown') + '"></span>' +
       esc(freshnessLabel(project.freshness_state)) + ' · due ' +
@@ -1012,14 +1021,20 @@
 
   /* ---------- map sync ---------- */
 
+  function isMapped(project) {
+    return project.precision !== 'province';
+  }
+
   function renderMap() {
     if (!window.AtlasMap) return;
     const list = filteredProjects();
-    window.AtlasMap.setProjects(list);
-    dom.mapCount.textContent = fmtNum(list.length);
+    const mapped = list.filter(isMapped);
+    window.AtlasMap.setProjects(mapped);
+    dom.mapCount.textContent = fmtNum(mapped.length);
 
     if (state.projectId && projectById.has(state.projectId) &&
-        list.some(function (project) { return project.id === state.projectId; })) {
+        list.some(function (project) { return project.id === state.projectId; }) &&
+        isMapped(projectById.get(state.projectId))) {
       if (mapSelectedId !== state.projectId) {
         window.AtlasMap.select(state.projectId, { drawerWidth: drawerWidth() });
         mapSelectedId = state.projectId;
@@ -1218,19 +1233,24 @@
     const expanded = state.expandedEstate === estate.id;
     const source = estate.source_publisher || 'Source';
     const coords = fmtCoord(estate.lat) + ', ' + fmtCoord(estate.lon);
+    const location = [estate.regency, estate.province].filter(Boolean).join(' · ');
+    const area = estate.area_ha ? fmtNum(estate.area_ha) + ' ha' : 'Area not sourced';
+    const coordinateNote = estate.coordinate_source === 'unknown'
+      ? 'Province centroid, not an estate boundary'
+      : estate.precision;
     return '<div class="estate-row"><button type="button" data-estate="' + esc(estate.id) +
       '" aria-expanded="' + expanded + '"><span><span class="estate-name">' + esc(estate.name) +
       '<span class="type-tag">' + esc(estateTypeLabel(estate.type)) + '</span></span>' +
-      '<span class="estate-sub">' + esc(estate.regency) + ' · ' + esc(estate.province) + '</span></span>' +
-      '<span class="estate-area">' + fmtNum(estate.area_ha) + ' ha<small>' + esc(statusLabel(estate.status)) +
+      '<span class="estate-sub">' + esc(location) + '</span></span>' +
+      '<span class="estate-area">' + esc(area) + '<small>' + esc(statusLabel(estate.status)) +
       '</small></span></button>' +
       (expanded ? '<div class="estate-detail">' +
-        '<dl><dt>Developer</dt><dd>' + esc(estate.developer) + '</dd>' +
+        '<dl><dt>Developer</dt><dd>' + esc(estate.developer || 'Not yet sourced') + '</dd>' +
         '<dt>Sector focus</dt><dd>' + esc(estate.sector_focus || 'Not stated') + '</dd>' +
         '<dt>Legal basis</dt><dd>' + esc(estate.legal_basis || 'Not stated') + '</dd>' +
         '<dt>Established</dt><dd>' + esc(estate.established_year || 'Not stated') + '</dd>' +
         '<dt>Website</dt><dd>' + (estate.website ? '<a href="' + esc(estate.website) + '" target="_blank" rel="noopener">' + esc(estate.website) + '</a>' : 'Not recorded') + '</dd>' +
-        '<dt>Coordinates</dt><dd>' + esc(coords) + ' · ' + esc(estate.precision) + '</dd>' +
+        '<dt>Coordinates</dt><dd>' + esc(coords) + ' · ' + esc(coordinateNote) + '</dd>' +
         '<dt>Source</dt><dd>' + esc(source) + (estate.source_url ? ' · <a href="' + esc(estate.source_url) + '" target="_blank" rel="noopener">open ↗</a>' : '') + '</dd>' +
         '<dt>Verified</dt><dd>' + esc(fmtDate(estate.last_verified)) + '</dd></dl>' +
         (estate.notes ? '<p class="estate-detail-note">' + esc(estate.notes) + '</p>' : '') +
@@ -1260,6 +1280,10 @@
     }
 
     const list = filteredEstates();
+    const gapInfo = (stats.estates && stats.estates.gap_dispositions) || {};
+    const gapResolved = gapInfo.resolved || 0;
+    const gapOpen = (gapInfo['unresolved-no-source'] || 0) + (gapInfo['unresolved-location-conflict'] || 0);
+    const gapNotRequired = gapInfo['not-required-for-count'] || 0;
     const typeCounts = { all: estates.length, sez: 0, industrial_estate: 0, both: 0 };
     estates.forEach(function (estate) {
       if (estate.type === 'sez' || estate.type === 'both') typeCounts.sez += 1;
@@ -1308,7 +1332,7 @@
       'Download filtered CSV</button></div></div>' +
       '<div class="estate-list">' + (list.length ? list.map(estateRow).join('') :
         '<div class="list-empty"><h3>No estates match</h3><p>Try another province or type.</p></div>') + '</div>' +
-      '<p class="estate-note">Coordinates: 25 SEZs use official KEK points, 27 industrial areas use OSM/Nominatim place points, 133 use regency centroids and one uses a power-station point. The 19-row 2025 gap ledger and the 11 remaining industrial estates are documented in the Data view rather than guessed. Sources: Kemenperin estate directory, KEK profiles, PSN industrial-area sources and <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap (ODbL)</a>.</p>';
+      '<p class="estate-note">Coordinates: 25 SEZs use official KEK points, 27 industrial areas use OSM/Nominatim place points, 133 use regency centroids, one uses a power-station point and 18 register-only PSN areas use province centroids with no estate boundary. The 179 industrial-estate target is met. The 2024 audit ledger has ' + fmtNum(gapResolved) + ' resolved, ' + fmtNum(gapOpen) + ' named additions still open and ' + fmtNum(gapNotRequired) + ' count placeholders no longer needed. Sources: Kemenperin estate directory, KEK profiles, PSN register and industrial-area sources, and <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap (ODbL)</a>.</p>';
 
     const chips = dom.viewPanel.querySelectorAll('[data-estate-type]');
     chips.forEach(function (chip) {
@@ -1740,6 +1764,10 @@
 
     const projectStats = stats.projects || {};
     const estateStats = stats.estates || {};
+    const gapInfo = estateStats.gap_dispositions || {};
+    const gapResolved = gapInfo.resolved || 0;
+    const gapOpen = (gapInfo['unresolved-no-source'] || 0) + (gapInfo['unresolved-location-conflict'] || 0);
+    const gapNotRequired = gapInfo['not-required-for-count'] || 0;
     const sectorCounts = projectStats.by_sector || {};
     const coverageByLayer = {};
     (stats.coverage || []).forEach(function (row) { coverageByLayer[row.layer] = row; });
@@ -1778,26 +1806,29 @@
           under_construction: 'Any material construction active, even if another section is already open.',
           operating: 'Fully open before the two-year window; context for the network.',
           recently_completed: 'Fully open on or after 6 November 2024.',
-          stalled: 'Officially delayed or reported stalled.'
+          stalled: 'Officially delayed or reported stalled.',
+          unknown: 'Listed in the official PSN register, but implementation status is not yet sourced. These rows are not plotted on the map.'
         }[status] || '';
         return '<li><b>' + esc(statusLabel(status)) + '</b><span>' + esc(meaning) + '</span></li>';
       }).join('') + '</ul></section>' +
 
       '<section class="data-section"><h3>Inclusion rules</h3>' +
-      '<p><b>Roads:</b> major toll corridors and PSN national roads. <b>Airports and seaports:</b> PSN or KPBU designated. <b>Factories:</b> PSN manufacturing plants, Hilirisasi Stage II plants and private plants with investment of at least Rp 1 trillion; estates and pure mining pits are excluded. <b>Energy:</b> PSN refineries and LNG, plus the 100 GWp solar programme. <b>Water:</b> PSN dams. <b>Urban and coastal:</b> IKN Phase 2 and the Giant Java Sea Wall. <b>Programmes:</b> all 24 active PSN programmes in Permenko 16/2025. <b>Estates:</b> the Kemenperin industrial-estate list and official SEZ profiles, one row per zone.</p>' +
-      '<p>The Bali, Malacca and Sunda strait bridges are excluded by scope. Estates remain table-only until their coordinates are verified.</p></section>' +
+      '<p><b>Roads:</b> major toll corridors and PSN national roads. <b>Airports and seaports:</b> PSN or KPBU designated. <b>Factories:</b> PSN manufacturing plants, Hilirisasi Stage II plants and private plants with investment of at least Rp 1 trillion; estates and pure mining pits are excluded. <b>Energy:</b> PSN refineries and LNG, plus the 100 GWp solar programme. <b>Water:</b> PSN dams, irrigation and water-supply systems. <b>Urban and coastal:</b> IKN Phase 2 and the Giant Java Sea Wall. <b>Housing, technology, education, tourism and agriculture:</b> active PSN entries in those sectors. <b>Programmes:</b> all 24 active PSN programmes in Permenko 16/2025. <b>Estates:</b> the Kemenperin industrial-estate list, official SEZ profiles and register-only PSN industrial areas, one row per zone.</p>' +
+      '<p>The Bali, Malacca and Sunda strait bridges are excluded by scope. Estates remain table-only until their coordinates are verified. Register-only PSN rows carry the name, number, sector, location and active status from the annex; they do not claim an implementation status, cost or boundary.</p></section>' +
 
       '<section class="data-section"><h3>Known gaps</h3><ul class="gap-list">' +
       '<li>' + fmtNum(projectStats.total || 0) + ' projects: ' + fmtNum(projectStats.with_investment || 0) +
       ' with an investment figure, ' + fmtNum(projectStats.with_progress || 0) +
-      ' with reported progress and ' + fmtNum(projectStats.with_length || 0) + ' with a route length.</li>' +
+      ' with reported progress and ' + fmtNum(projectStats.with_length || 0) + ' with a route length. ' +
+      fmtNum((projectStats.verification && projectStats.verification.unverified) || 0) +
+      ' are register-only PSN rows with no implementation facts yet.</li>' +
       '<li>Transport PSN: ' + fmtNum(transportCoverage.current) + ' of ' +
       fmtNum(transportCoverage.target) + ' represented (13 rail, 7 airports, 15 seaports). ' +
       'The Nusantara airport is an additional national gateway, not a PSN row. ' +
       'Status is as of 19 February 2026, the date of the Kemenhub review.</li>' +
       '<li>Industry, energy and water: ' + fmtNum(sectorCounts.factory || 0) +
       ' factory rows, ' + fmtNum(sectorCounts.energy || 0) + ' energy projects and ' +
-      fmtNum(sectorCounts.water || 0) + ' dams mapped. Plant and project points are approximate; ' +
+      fmtNum(sectorCounts.water || 0) + ' water, irrigation and supply rows. Plant and project points are approximate; ' +
       'capacity and investment are only as good as the cited company or press source. ' +
       'Transport points are also approximate, and the PSN review gives no rail length or asset capacity.</li>' +
       '<li>Programmes: ' + fmtNum((stats.programmes && stats.programmes.total) || 0) +
@@ -1809,28 +1840,37 @@
       '<li>Estate coverage: ' + fmtNum(estateStats.industrial || 0) +
       ' industrial-estate designations and ' + fmtNum(estateStats.sez || 0) +
       ' SEZs (' + fmtNum(estateStats.total || 0) + ' rows, ' + fmtNum(estateStats.both || 0) +
-      ' shared) against a 2026 benchmark of 179 industrial estates. The ' +
-      fmtNum(estateStats.gap_rows || 0) + '-row gap ledger is in Downloads: nine named 2025 additions and ten unidentified names; 11 industrial estates remain against 179.</li>' +
+      ' shared) against a 2026 benchmark of 179 industrial estates. The 179 target is met; ' +
+      fmtNum((estateStats.coordinate_sources || {}).unknown || 0) +
+      ' PSN industrial areas are register-only, with no area or boundary yet. The ' +
+      fmtNum(estateStats.gap_rows || 0) + '-row 2024 audit ledger is in Downloads: ' +
+      fmtNum(gapResolved) + ' resolved, ' + fmtNum(gapOpen) + ' named additions still open and ' +
+      fmtNum(gapNotRequired) + ' count placeholders no longer needed.</li>' +
       '<li>Estate coordinates: ' + fmtNum((estateStats.coordinate_sources || {}).official || 0) +
       ' SEZ/shared zones use official KEK points, ' +
       fmtNum((estateStats.coordinate_sources || {}).osm || 0) +
       ' industrial areas use OSM/Nominatim place points, ' +
       fmtNum((estateStats.coordinate_sources || {}).regency || 0) +
-      ' still use regency centroids and ' +
+      ' still use regency centroids, ' +
       fmtNum((estateStats.coordinate_sources || {}).manual || 0) +
-      ' uses a power-station point.</li>' +
+      ' uses a power-station point and ' +
+      fmtNum((estateStats.coordinate_sources || {}).unknown || 0) +
+      ' register-only PSN areas use province centroids with no boundary.</li>' +
       '<li>Trans Sulawesi and Trans Kalimantan publish a route total only: no current operational-km series or segment table was found. Trans Sumatra and Trans Papua segment tables are partial and say so.</li>' +
       '<li>' + fmtNum((projectStats.psn && projectStats.psn.unknown) || 0) + ' of ' +
       fmtNum(roadCount) + ' road rows have unknown PSN status; ' +
       fmtNum(projectStats.precision && projectStats.precision.approximate || 0) + ' of ' +
-      fmtNum(projectStats.total || 0) + ' rows use approximate coordinates.</li>' +
+      fmtNum(projectStats.total || 0) + ' rows use approximate coordinates; ' +
+      fmtNum(projectStats.precision && projectStats.precision.province || 0) +
+      ' use province centroids and are not plotted.</li>' +
       '<li>Verification: ' + fmtNum((projectStats.verification && projectStats.verification.official) || 0) +
       ' official, ' + fmtNum((projectStats.verification && projectStats.verification.single) || 0) +
       ' single-source, ' + fmtNum((projectStats.verification && projectStats.verification.dual) || 0) +
-      ' dual-source.</li>' +
+      ' dual-source and ' + fmtNum((projectStats.verification && projectStats.verification.unverified) || 0) +
+      ' register-only.</li>' +
       '<li>Claims: ' + fmtNum((stats.claims && stats.claims.projects_fully_claimed) || 0) + ' of ' +
       fmtNum((stats.claims && stats.claims.projects_total) || 0) + ' projects have a claim for the status and every populated numeric fact (' +
-      fmtNum((stats.claims && stats.claims.total) || 0) + ' atomic claims).</li>' +
+      fmtNum((stats.claims && stats.claims.total) || 0) + ' atomic claims). Register-only rows claim the PSN listing, location and active designation, not implementation.</li>' +
       '<li>Conflicts: ' + fmtNum((stats.conflicts && stats.conflicts.total) || 0) + ' recorded, ' +
       fmtNum((stats.conflicts && stats.conflicts.open) || 0) + ' still open. Both values and sources stay in the register rather than only in a free-text note.</li>' +
       '<li>Freshness: ' + fmtNum((stats.freshness && stats.freshness.records) || 0) +

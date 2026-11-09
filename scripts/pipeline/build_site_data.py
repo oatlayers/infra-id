@@ -115,6 +115,7 @@ def main() -> None:
     rows = read_csv(PROJECTS_CSV)
     sources = {row["id"]: row for row in read_csv(CURATED / "sources.csv")}
     claims = read_csv(CURATED / "project_sources.csv")
+    aliases = read_csv(CURATED / "project_aliases.csv")
     estates = read_csv(CURATED / "estates.csv")
     estate_gap = read_csv(DERIVED / "estate_gap_2026.csv")
     organizations = read_csv(CURATED / "organizations.csv")
@@ -218,12 +219,17 @@ def main() -> None:
     for records in events_by_project.values():
         records.sort(key=lambda record: record["event_date"])
 
+    aliases_by_project: dict[str, list[str]] = {}
+    for alias in aliases:
+        aliases_by_project.setdefault(alias["project_id"], []).append(alias["alias"])
+
     features = []
     for row in rows:
         properties = {
             field: row[field] for field in DERIVED_FIELDS if field not in {"lat", "lon"}
         }
         properties["corridor_name"] = corridor_names.get(row["corridor_id"], "")
+        properties["aliases"] = aliases_by_project.get(row["id"], [])
         properties["sources"] = [
             source_record(sources[source_id], "; ".join(dict.fromkeys(kinds)))
             for source_id, kinds in claims_by_project.get(row["id"], {}).items()
@@ -354,6 +360,7 @@ def main() -> None:
     verification = Counter(row["verification"] for row in rows)
 
     estate_types = Counter(row["type"] for row in estates)
+    estate_gap_dispositions = Counter(row["disposition"] for row in estate_gap)
     estate_provinces = {row["province"] for row in estates if row["province"]}
     estate_area = sum(float(row["area_ha"]) for row in estates if row["area_ha"])
     estate_coord_sources = Counter(row["coordinate_source"] for row in estates)
@@ -496,6 +503,7 @@ def main() -> None:
             "provinces": len(estate_provinces),
             "coordinate_sources": dict(sorted(estate_coord_sources.items())),
             "gap_rows": len(estate_gap),
+            "gap_dispositions": dict(sorted(estate_gap_dispositions.items())),
             "last_verified": last_verified_estates,
         },
         "programmes": {
@@ -658,6 +666,7 @@ def main() -> None:
                         None,
                         [
                             row["name"],
+                            " ".join(aliases_by_project.get(row["id"], [])),
                             row["province"],
                             row["island"],
                             row["route"],
