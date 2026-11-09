@@ -131,7 +131,7 @@ when a source supports that status.
 
 | Layer | Rows | Status | Notes |
 |---|---:|---|---|
-| Toll roads | 54 | 12 operating, 29 under construction, 13 planned | 50 PSN road entries plus four additional toll-road rows |
+| Toll roads | 56 | 12 operating, 30 under construction, 13 planned, 1 recently completed | 50 PSN road entries represented across 36 PSN rows, plus 20 non-PSN toll, strategic and IKN road rows |
 | Railways | 13 | 6 operating, 5 under construction, 2 planned | 13/13 PSN railways; no rail length or capacity in the source deck |
 | Airports | 8 | 8 operating | 7/7 PSN airports plus Nusantara International (IVD), operating as a special airport |
 | Seaports | 15 | 11 operating, 1 under construction, 1 recently completed, 2 planned | 15/15 PSN seaports; Patimban Phase I-2 still building, Benoa expansion completed 2025 |
@@ -140,15 +140,15 @@ when a source supports that status.
 | PSN programmes (active) | 24 | 24 represented, 24/24 | one row per official number; bilingual names and summaries; 48 claims |
 | All projects | 251 | 62 operating, 5 recently completed, 71 under construction, 24 planned, 1 stalled, 88 register-only | 56 roads, 13 railways, 8 airports, 15 seaports, 34 factories, 24 energy, 68 water, 7 housing, 6 technology, 2 education, 1 tourism, 2 agriculture, 14 urban and 1 coastal |
 | Energy projects | 24 | 1 operating, 8 under construction, 15 register-only | Masela, RDMP Balikpapan, 100 GWp solar and six Hilirisasi Stage II energy projects, plus 15 register-only PSN energy rows |
-| Water, dams and irrigation | 66 | 5 operating reviewed, 52 register-only, 9 register-only water and sanitation | Five reviewed dams plus 52 PSN dams/irrigation and 9 PSN water/sanitation rows |
-| Other PSN sectors | 10 | 10 register-only | 2 housing, 6 technology, 1 education, 1 tourism and 2 agriculture rows |
-| Urban and coastal | 2 | 1 under construction, 1 planned | IKN Phase 2 and the Giant Java Sea Wall |
+| Water, dams and irrigation | 68 | 5 operating reviewed, 2 under construction IKN, 61 register-only | Five reviewed dams, two IKN water packages, 52 PSN dams/irrigation and 9 PSN water/sanitation rows |
+| Other PSN sectors | 12 | 12 register-only | 2 housing, 6 technology, 1 education, 1 tourism and 2 agriculture rows |
+| Urban and coastal | 15 | 10 under construction, 5 planned | IKN Phase 2 and 13 further IKN urban rows; the Giant Java Sea Wall |
 | Trans corridor summaries | 5 | 5 with km totals; 3 with progress series | Sumatra, Java and Papua have a series; Sulawesi and Kalimantan publish route totals only |
 | Corridor segments | 44 | 13 Sumatra, 23 Java, 8 Papua | Section tables only where a published list exists; Sulawesi and Kalimantan are route-total-only |
-| Dated events | 30 | 2018–2026 | Exact dates only; month-end approximations are not used |
+| Dated events | 34 | 2018–2026 | Exact dates only; month-end approximations are not used |
 | Factories | 34 | 19 operating, 3 recently completed, 11 under construction, 1 stalled | 27 capacity figures, 18 investment figures; 17 official, 8 dual, 9 single-source |
 | Industrial estates / SEZs | 204 | 179 industrial-only rows, 7 shared rows and 18 SEZ-only rows; 186 industrial-estate designations and 25 SEZs | table view only; 25 official SEZ points, 27 OSM place points, 133 regency centroids, 1 power-station point and 18 province centroids; 179 target met; 19-row 2024 audit ledger |
-| Sources | 138 | 56 official, 55 secondary, 27 company | 43 factory-batch sources, 25 individual SEZ profiles, Permenko 16/2025 and 4/2026, the national register, OSM/Nominatim, the corridor series, the 2026 flagship releases, the PSN-road batch, the PSN industrial-area batch, the register-only batch, the 2027 PKPN speech and Finance Ministry breakdown, and the IKN Stage II evaluation, October 2026 signing and 2025 toll-road functional statement; V4 target 250 |
+| Sources | 140 | 58 official, 55 secondary, 27 company | 43 factory-batch sources, 25 individual SEZ profiles, Permenko 16/2025 and 4/2026, the national register, OSM/Nominatim, the corridor series, the 2026 flagship releases, the PSN-road batch, the PSN industrial-area batch, the register-only batch, the 2027 PKPN speech and Finance Ministry breakdown, the IKN Stage II evaluation, October 2026 signing and 2025 toll-road functional statement, and the two-year delivery report and Kemendikdasmen release; V4 target 250 |
 | Project claims | 917 | 251/251 projects fully claimed | one atomic fact per row; 115 estate claims, 48 programme claims and 27 PKPN claims; register-only rows claim the listing, location and active designation, not implementation |
 | Conflicts | 19 | 11 resolved, 8 open | both values and both sources, with a recorded resolution; downloadable register |
 | Freshness | 455 | 455 fresh as of 2026-11-09 | 251 projects + 204 estates; 183-day threshold; next due 2027-05-11 |

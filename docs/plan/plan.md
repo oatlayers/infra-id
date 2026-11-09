@@ -438,17 +438,17 @@ day one. A record can enter at Tier C and be upgraded.
 
 | Layer | Today | V4 target | Source of the reference set |
 |---|---:|---:|---|
-| PSN projects | 176 project rows linked; 226 records represented (88 register-only projects + 18 register-only estates) | **226 active** (228 slots, 2 deleted) | Permenko 16/2025; Permenko 4/2026 |
+| PSN projects | 174 project rows linked; 226 records represented (88 register-only projects + 18 register-only estates) | **226 active** (228 slots, 2 deleted) | Permenko 16/2025; Permenko 4/2026 |
 | PSN programmes | 24 programme records; 24/24 represented | **24 active** (25 slots, 1 deleted) | Permenko 16/2025 |
-| Strategic non-PSN projects | 3 | **174+** | Ministries, Danantara, private announcements |
+| Strategic non-PSN projects | 77 | **174+** | Ministries, Danantara, private announcements |
 | National programmes (PKPN) | 8 | **8** | 2027 budget speech; Finance Ministry breakdown |
 | Sub-programmes | 0 | **40–60** | Ministry work plans |
 | IKN packages | 24 | **25** | IKN Authority; Setkab releases |
 | Energy projects | 24 (15 register-only) | **60** | ESDM, PLN, Danantara |
-| Transport projects | 90 | **150** | Kemenhub, PU, BPJT |
-| Water and sanitation | 66 (61 register-only) | **60** | PU, PDAM, KPPIP |
+| Transport projects | 92 | **150** | Kemenhub, PU, BPJT |
+| Water and sanitation | 68 (61 register-only) | **60** | PU, PDAM, KPPIP |
 | Industry and downstreaming | 34 | **80** | Kemenperin, BKPM, company disclosures |
-| Social infrastructure | 4 (2 housing, 1 education, 1 tourism) | **30** | Kemenkes, Kemendikbud, PKP |
+| Social infrastructure | 24 (7 housing, 2 education, 1 tourism and 14 urban) | **30** | Kemenkes, Kemendikbud, PKP |
 | Estates and SEZs | 204 (18 register-only) | **200+** | KEK Secretariat, Kemenperin |
 | Companies | 111 | **300** | BUMN, Danantara, private, foreign |
 | Corridor segments | 44 | **100+** | KPPIP, PU, BPJT |
