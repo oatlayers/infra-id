@@ -3,6 +3,18 @@
 Public-facing changes to the atlas. Dates are the day the change landed in this
 repository. The Data view renders these entries from this file at build time.
 
+## 2026-11-09 — Data dashboard charts
+
+- Added native sector, status and freshness charts to the full-width Data view.
+  Sector bars cover all 14 sectors; the status stack uses the same colours as
+  the map and legend; freshness is shown separately for projects and estates.
+- No chart library, remote request or new data. The charts read the existing
+  `stats.js` payload and are labelled in both locales.
+- The UI catalogue grows to 610 keys per locale; the smoke test checks two chart
+  panels, 14 sector bars and the legend.
+- Build, `--check`, smoke test, five-profile rehearsal, contrast check and link
+  check pass. Nothing was pushed, deployed or published.
+
 ## 2026-11-09 — Companies and agencies view
 
 - Added a full-width Companies view built from `organizations.csv` and

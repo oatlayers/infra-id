@@ -2058,6 +2058,90 @@
       '</th></tr></thead><tbody>' + rows + '</tbody></table>';
   }
 
+  function stackBar(counts) {
+    const order = [
+      ['fresh', 'var(--operating)'],
+      ['due_soon', 'var(--accent)'],
+      ['stale', 'var(--stalled)'],
+      ['unknown', 'var(--muted)']
+    ];
+    const total = order.reduce(function (sum, entry) { return sum + (counts[entry[0]] || 0); }, 0);
+    if (!total) return '<p class="basis">—</p>';
+    const segments = order.map(function (entry) {
+      const count = counts[entry[0]] || 0;
+      if (!count) return '';
+      return '<span style="width:' + ((count / total) * 100) + '%;background:' + entry[1] +
+        '" title="' + esc(t('freshness.' + entry[0])) + ': ' + fmtNum(count) + '"></span>';
+    }).join('');
+    const legend = order.filter(function (entry) { return counts[entry[0]]; }).map(function (entry) {
+      return '<span class="chart-legend-item"><i style="background:' + entry[1] + '"></i>' +
+        esc(entry[0] === 'fresh' ? t('freshness.fresh_short') : t('freshness.' + entry[0])) +
+        ' ' + fmtNum(counts[entry[0]]) + '</span>';
+    }).join('');
+    return '<div class="status-stack" role="img" aria-label="' +
+      esc(t('data.chart_aria', { title: t('data.freshness_chart'), count: fmtNum(total) })) +
+      '">' + segments + '</div><div class="chart-legend">' + legend + '</div>';
+  }
+
+  function chartsSection() {
+    const projectStats = stats.projects || {};
+    const sectorCounts = projectStats.by_sector || {};
+    const statusCounts = projectStats.by_status || {};
+    const freshness = stats.freshness || {};
+    const freshnessCounts = freshness.counts || {};
+    const sectorRows = SECTOR_ORDER
+      .filter(function (sector) { return sectorCounts[sector]; })
+      .sort(function (a, b) { return (sectorCounts[b] || 0) - (sectorCounts[a] || 0); });
+    const sectorMax = sectorRows.reduce(function (best, sector) {
+      return Math.max(best, sectorCounts[sector] || 0);
+    }, 1);
+    const sectorTotal = sectorRows.reduce(function (sum, sector) {
+      return sum + (sectorCounts[sector] || 0);
+    }, 0);
+    const statusTotal = STATUS_ORDER.reduce(function (sum, status) {
+      return sum + (statusCounts[status] || 0);
+    }, 0);
+    const statusSegments = STATUS_ORDER.map(function (status) {
+      const count = statusCounts[status] || 0;
+      if (!count) return '';
+      return '<span style="width:' + ((count / Math.max(statusTotal, 1)) * 100) +
+        '%;background:' + esc((STATUS[status] && STATUS[status].color) || '#667085') +
+        '" title="' + esc(statusLabel(status)) + ': ' + fmtNum(count) + '"></span>';
+    }).join('');
+    const statusLegend = STATUS_ORDER.filter(function (status) {
+      return statusCounts[status];
+    }).map(function (status) {
+      return '<span class="chart-legend-item"><i style="background:' +
+        esc((STATUS[status] && STATUS[status].color) || '#667085') + '"></i>' +
+        esc(statusLabel(status)) + ' ' + fmtNum(statusCounts[status]) + '</span>';
+    }).join('');
+
+    return '<section class="data-section"><h3>' + esc(t('data.charts')) + '</h3>' +
+      '<div class="chart-grid">' +
+      '<div class="chart" role="group" aria-label="' +
+      esc(t('data.chart_aria', { title: t('data.sector_chart'), count: fmtNum(sectorTotal) })) + '">' +
+      '<div class="chart-title">' + esc(t('data.sector_chart')) + '</div>' +
+      sectorRows.map(function (sector) {
+        const count = sectorCounts[sector] || 0;
+        return '<div class="bar-row"><span class="bar-label">' + esc(sectorLabel(sector, true)) +
+          '</span><span class="bar-track"><span class="bar-fill" style="width:' +
+          Math.max(2, (count / sectorMax) * 100) + '%"></span></span><span class="bar-value">' +
+          fmtNum(count) + '</span></div>';
+      }).join('') + '</div>' +
+      '<div class="chart" role="group" aria-label="' +
+      esc(t('data.chart_aria', { title: t('data.status_chart'), count: fmtNum(statusTotal) })) + '">' +
+      '<div class="chart-title">' + esc(t('data.status_chart')) + '</div>' +
+      '<div class="status-stack" role="img" aria-label="' +
+      esc(t('data.chart_aria', { title: t('data.status_chart'), count: fmtNum(statusTotal) })) +
+      '">' + statusSegments + '</div><div class="chart-legend">' + statusLegend + '</div>' +
+      '<div class="chart-title" style="margin-top:16px">' + esc(t('data.freshness_chart')) + '</div>' +
+      '<div class="chart-sub">' + esc(t('data.projects')) + '</div>' +
+      stackBar(freshnessCounts.project || {}) +
+      '<div class="chart-sub">' + esc(t('data.estates_label')) + '</div>' +
+      stackBar(freshnessCounts.estate || {}) + '</div>' +
+      '</div></section>';
+  }
+
   function sourceRegister() {
     const sources = stats.sources || [];
     if (!sources.length) return '<p>' + esc(t('data.source_missing')) + '</p>';
@@ -2310,6 +2394,8 @@
       '<section class="data-section"><h3>' + esc(t('data.coverage')) + '</h3>' + coverageRows() +
       '<p style="margin-top:7px;color:var(--muted);font-size:9px">' +
       esc(t('data.generated', { date: generated, as_of: fmtDate(stats.data_as_of) })) + '</p></section>' +
+
+      chartsSection() +
 
       '<section class="data-section"><h3>' + esc(t('data.programme_register')) + '</h3>' +
       '<p>' + esc(t('data.programme_lede', {

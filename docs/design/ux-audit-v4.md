@@ -56,7 +56,7 @@ search results are not implemented.
 | Finding | Fix | Evidence |
 |---|---|---|
 | Data, Programmes, Corridors and Estates were squeezed into the 400 px rail beside an unrelated map | Full-width register pages, max 1180 px; map hidden on those views; two-column programme and corridor grids | `04-data-desktop.png`, `03b-programmes-desktop.png`, `02-corridors-desktop.png` |
-| No Indonesian edition, no language switch, English-only chrome | `site/en/`, `site/id/`, chooser, 604-key catalogues, `translations.csv`, language switch preserving the hash | `00-language-chooser.png`, `08-explore-id-desktop.png`, `08d-data-id-desktop.png` |
+| No Indonesian edition, no language switch, English-only chrome | `site/en/`, `site/id/`, chooser, 610-key catalogues, `translations.csv`, language switch preserving the hash | `00-language-chooser.png`, `08-explore-id-desktop.png`, `08d-data-id-desktop.png` |
 | 140 project names fell back to the source name; no project summaries | 140 reviewed Indonesian names plus 88 official PSN aliases; a factual one-sentence summary in both locales, labelled generated | `08-explore-id-desktop.png`, `08f-project-drawer-id.png` |
 | English-only status, sector, filter, sort and Data prose | All chrome and the Data methods are translated; `Intl` number/date/coordinate formatting | `08d-data-id-desktop.png` |
 | English prose in the Indonesian edition could look like a translation failure | `lang="en"` on sourced text and a visible `EN` tag; a quiet note at the top of the project drawer | `05-project-drawer.png` |
@@ -64,6 +64,7 @@ search results are not implemented.
 | Small `EN`/`ID` programme badge used muted-2 at 2.91:1 | Badge now uses muted at 4.73:1 | `check_contrast.py` |
 | Unknown status had no pill treatment | Added `.status-pill.s-unknown` with a grey border, soft fill and text label | style tile |
 | No companies or agencies view despite 101 organisation profiles | Full-width Companies view with type filter, role search, expandable project roles, filtered CSV and two downloads | `03d-companies-desktop.png` |
+| Data had no charts | Native sector, status and freshness charts from the existing stats | `04b-data-charts.png` |
 
 ### Open
 
@@ -73,7 +74,7 @@ search results are not implemented.
 | High | Explore still uses 9.5–12.5 px for dense rail rows | The plan targets a 14–16 px body and 12–13 px captions | Raise the rail type scale and re-test 320/390 px overflow |
 | High | Search relevance and grouping are flat | A corridor query returns many project rows; no grouped results or synonyms | Implement ranking (exact, prefix, token, edit distance) and grouped Projects/Programmes/Corridors/Estates |
 | Medium | Data coverage `reference_set`, download labels/meta and dictionary descriptions remain English in the ID edition | These are methodological strings, not proper names | Move coverage labels and download labels into the catalogue; translate dictionary descriptions in Release 4.4 |
-| Medium | No charts and no sortable table component in Data | The dashboard is readable but not yet analytical | Add SVG bar/stacked/donut charts and sortable headers |
+| Medium | No sortable table component in Data | The charts and tables are readable, but headers do not sort | Add sortable headers and a column chooser |
 | Only three indicators and nine phases are sourced | The layer is structurally complete but thin | Extend the indicator layer with the 8 PKPN targets and programme-level baselines as official sources are filed |
 | Only 101 of the 300 company profiles exist; 22 profiles have no project role and 100 projects have no organisation role | The Companies view is useful but the network is incomplete | Add profiles and role links from existing project sources before adding new projects |
 | Medium | No map-only mode or rail collapse | Explore still fixes 400 px for the rail | Add a collapse control and a map-only state |
@@ -91,7 +92,7 @@ search results are not implemented.
 |---|---|
 | Projects / programmes / estates | 228 / 24 / 204 |
 | Mapped project markers | 139 |
-| Locales | 2, 604 UI keys each |
+| Locales | 2, 610 UI keys each |
 | Project names | 228 Indonesian display names (140 reviewed + 88 official) |
 | Project summaries | 228 generated in both locales; 0 editorial |
 | Indicators / values / phases | 3 / 3 / 9 |

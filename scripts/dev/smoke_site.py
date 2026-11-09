@@ -239,6 +239,12 @@ def desktop_views(page: Page) -> None:
     screenshot(page, "03b-programmes-desktop.png")
 
     tab(page, "data")
+    check(page.locator(".chart").count() == 2, "Data view renders two chart panels")
+    check(page.locator(".bar-row").count() == 14, "Sector chart lists all 14 sectors")
+    check(page.locator(".chart-legend-item").count() >= 6,
+          "Status and freshness charts have a legend")
+    check("projects by sector" in page.locator(".data-view").inner_text().lower(),
+          "Data view labels the sector chart")
     check(page.locator(".conflict-table tbody tr").count() == 19, "Conflict register has 19 rows")
     check(page.locator(".dictionary details").count() == 26, "Data dictionary has 26 tables")
     check(page.locator('a.download[href]').count() == 21, "Data view has 21 static downloads")
@@ -257,6 +263,7 @@ def desktop_views(page: Page) -> None:
         "conflicts": 19,
         "dictionary_tables": 26,
         "download_controls": 24,
+        "charts": 2,
     }
     screenshot(page, "04-data-desktop.png")
 

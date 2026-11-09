@@ -58,7 +58,7 @@ curated, not exhaustive**.
   estate fresh, due soon or stale. A 268-field data dictionary covers all 26
   curated tables, including translations, indicators and project phases.
 - **Bilingual shell:** `site/index.html` is a language chooser; `site/en/` and
-  `site/id/` share one application and one data bundle. Both locales carry 604
+  `site/id/` share one application and one data bundle. Both locales carry 610
   UI keys, all 24 programme names and summaries, all five corridor definitions,
   and an Indonesian display name for all 228 projects (140 reviewed, 88 official
   PSN aliases). Every project also has a factual one-sentence summary generated
@@ -447,7 +447,7 @@ possible.
 | BPJT toll-road API | <https://itrams-api.bpjt.pu.go.id/v1/reference/api/toll-road-list> | Official status, operating/construction km, operator, endpoint coordinates | 77 operating or partly operating rows; construction-only rows absent; status labels inconsistent |
 | English Wikipedia, "Indonesian Toll Road System", revision 1329385293 (2025-12-25) | <https://en.wikipedia.org/w/index.php?oldid=1329385293> | Route names, lengths, operators, status markers | Secondary and stale in places; no coordinates or opening years |
 | Indonesian Wikipedia, "Daftar jalan tol di Indonesia", oldid 30025554 (2026-10-03) | <https://id.wikipedia.org/w/index.php?oldid=30025554> | Cross-check of lengths, operating km and concessions | Secondary; figures often differ from BPJT |
-| Kemenhub, "Capaian Progres PSN Sektor Transportasi" (19 Feb 2026) | <https://ppid.kemenhub.go.id/fileupload/informasi-berkala/20260406102830.R1_19022026_Update_PSN_Kemenhub_compressed.pdf> | Transport PSN status, opening years, progress, investment | 35 transport PSNs; 29 complete or operating, 6 in construction |
+| Kemenhub, "Capaian Progres PSN Sektor Transportasi" (19 Feb 2026) | <https://ppid.kemenhub.go.id/fileupload/informasi-berkala/20261006102830.R1_19022026_Update_PSN_Kemenhub_compressed.pdf> | Transport PSN status, opening years, progress, investment | 35 transport PSNs; 29 complete or operating, 6 in construction |
 | KPPIP PSN pages | <https://kppip.go.id/proyek-strategis-nasional/> | Airport, seaport and industrial-area PSN lists | Names and provinces only; status must come from elsewhere |
 | Hutama Karya via Palpres (4 Oct 2026) | <https://palpres.disway.id/news/read/780474/hutama-karya-buka-bukaan-soal-jtts-di-hadapan-bakn-dpr-ri-ini-progresnya> | Trans Sumatra km | Secondary; figures differ by scope and date |
 | BPJT section list via detikFinance (26 Jan 2025) | <https://finance.detik.com/infrastruktur/d-7750531/tol-trans-jawa-belum-tersambung-penuh-masih-ada-sisa-ruas-ini> | Trans Java 20-section operating series | Secondary reporting of BPJT data; article prints 1,232.78 km, section sum is 1,232.80 km |
@@ -498,7 +498,7 @@ the 88 official Indonesian PSN names; corridor definitions are translated in
 
 `scripts/pipeline/build_i18n.py` fails if the two catalogues drift or if a
 programme or corridor loses a required translation. It writes a coverage report
-to `data/derived/i18n_report.csv`. The current build has 604 UI keys per locale,
+to `data/derived/i18n_report.csv`. The current build has 610 UI keys per locale,
 an Indonesian display name for all 228 projects and a generated summary for all
 228. Project summaries are generated from the curated fields, not editorial
 copy; the drawer labels them `AUTO` / `OTOMATIS`. Sourced English notes keep an
@@ -633,11 +633,15 @@ Features:
 - **Estates:** 204-row table with type/province filters, sort, inline detail,
   area totals, coordinate provenance, a filtered CSV button and CSV downloads
   (including the 19-row 2024 audit ledger). No map layer yet.
-- **Data:** generated coverage matrix; programme register; claims coverage;
-  freshness; status definitions; inclusion rules; conflict register with both
-  values and sources; source register; 21 static downloads plus filtered project
-  CSV/GeoJSON and estate CSV; the 268-field data dictionary; known gaps; and the
-  changelog parsed from `CHANGELOG.md`.
+- **Companies:** 101 organisation profiles with type filters, role search,
+  expandable project roles, a filtered CSV and a 101/300 coverage row. 79
+  profiles have at least one sourced role; 22 are reference-only.
+- **Data:** generated coverage matrix; native sector, status and freshness
+  charts; programme register; indicators and phases; claims coverage; freshness;
+  status definitions; inclusion rules; conflict register with both values and
+  sources; source register; 21 static downloads plus filtered project
+  CSV/GeoJSON, estate CSV and company CSV; the 268-field data dictionary; known
+  gaps; and the changelog parsed from `CHANGELOG.md`.
 - **Mobile:** full-viewport map and a draggable bottom sheet with peek, half and
   full snap points; filters stay in the sheet.
 - **Offline:** no tile server, CDN or `fetch`. Leaflet and markercluster are

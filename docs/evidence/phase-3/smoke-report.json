@@ -19,7 +19,8 @@
     "data": {
       "conflicts": 19,
       "dictionary_tables": 26,
-      "download_controls": 24
+      "download_controls": 24,
+      "charts": 2
     },
     "drawer": {
       "title": "100 GWp Solar Programme - Phase 1"
@@ -50,7 +51,7 @@
   },
   "protocols": {
     "http": {
-      "port": 59366,
+      "port": 54183,
       "ok": true
     },
     "file": {
