@@ -1,17 +1,17 @@
 # Indonesia Infrastructure Atlas — V4 Plan
 
-**Status:** V4 foundation, the 2026 flagship batch, the PSN road backlog and the
-24-programme layer landed on 9 November 2026. The released site is still the v3
-build: 107 projects, 178 estates and SEZs, 5 corridors, 44 segments, 479 atomic
-claims and 91 sources. The repository now has 140 projects, 24 programmes, 178
-estates and SEZs, 5 corridors, 44 segments, 599 project claims plus 48 programme
-claims, 122 sources and 30 events, with a deterministic local build and a browser
-smoke test. It includes the official Permenko 16/2025 register (226 active
-projects and 24 active programmes), a reconciliation ledger showing 110 matched
-project or estate records and 116 open project/estate records, with all 24
-programmes matched, 24 flagship records, and all 50 PSN road entries. Roads,
-airports, ports, railways and coastal defence are complete. The new map,
-navigation and bilingual layers are still unimplemented.
+**Status:** V4 foundation, the 2026 flagship batch, the PSN road backlog, the
+24-programme layer and the first PSN industrial-area batch landed on 9 November
+2026. The released site is still the v3 build: 107 projects, 178 estates and SEZs,
+5 corridors, 44 segments, 479 atomic claims and 91 sources. The repository now has
+140 projects, 24 programmes, 186 estates and SEZs, 5 corridors, 44 segments, 599
+project claims plus 61 estate claims and 48 programme claims, 133 sources and 30
+events, with a deterministic local build and a browser smoke test. It includes the
+official Permenko 16/2025 register (226 active projects and 24 active programmes),
+a reconciliation ledger showing 120 matched project or estate records and 106 open
+project/estate records, with all 24 programmes matched, 24 flagship records, and
+all 50 PSN road entries. Roads, airports, ports, railways and coastal defence are
+complete. The new map, navigation and bilingual layers are still unimplemented.
 
 **Supersedes:** the roadmap, scope and "where to pick up" sections of
 [`plan-v3.md`](plan-v3.md). The v1–v3 history, phase records and decisions stay
@@ -84,15 +84,15 @@ delivery atlas**. It does five things:
 |---|---:|---:|
 | Project records | 140 | **400+** (226 PSN + 174 strategic/private records) |
 | Programmes | 24 PSN | **8 PKPN + 24 PSN programmes** plus 40–60 sub-programmes |
-| Companies / organisations | 93 | **300** (top 100 complete) |
-| Estates and SEZs | 178 | **200+** unique records (25 KEK + 179 industrial estates + 2026 additions) |
+| Companies / organisations | 101 | **300** (top 100 complete) |
+| Estates and SEZs | 186 | **200+** unique records (25 KEK + 179 industrial estates + 2026 additions) |
 | Corridors / segments | 5 / 44 | 5 / **100+** |
-| Atomic claims | 667 (599 project + 20 estate + 48 programme) | **1,500+** |
+| Atomic claims | 708 (599 project + 61 estate + 48 programme) | **1,500+** |
 | Indicators | 0 | **300+** |
-| Sources | 122 | **250+** |
+| Sources | 133 | **250+** |
 | UI languages | 1 (English) | **2** (English + Indonesian) |
 | Data translation coverage | Programmes 100%; projects 0% | **100%** of names, summaries and programmes |
-| Initial site payload | 962 KB initial / 2.37 MB total | **< 1.5 MB initial**, < 5 MB total |
+| Initial site payload | 981 KB initial / 2.41 MB total | **< 1.5 MB initial**, < 5 MB total |
 
 ### Release shape
 
@@ -148,8 +148,8 @@ The government's own reporting gives the scale V4 has to cover:
 - **Permenko 16/2025** sets **226 active PSN projects and 24 active PSN
   programmes** (228 project slots with 2 deleted, 25 programme slots with 1
   deleted). The KEK Secretariat lists **25 SEZ detail pages**. The atlas now
-  has 140 project records, matches **110 of the 226 active PSN project or estate
-  records**, and records **all 24 active programmes**; 116 project or estate
+  has 140 project records, matches **120 of the 226 active PSN project or estate
+  records**, and records **all 24 active programmes**; 106 project or estate
   records remain.
 - The **2027 budget speech (14 August 2026)** frames eight **PKPN**: food
   sovereignty; energy and water independence; education; health; downstreaming
@@ -216,7 +216,7 @@ records the 8 November baseline, not the current state.
 | 25 | Trans Java toll | Operating | 1,232.8 km; 1,079.9 km operating | Partial |
 | 26 | Trans Sulawesi / Trans Kalimantan / Trans Papua | Mixed | National road and rail corridors | Partial |
 | 27 | 25 KEKs | Operating / development | 25 official SEZs | Covered |
-| 28 | 179 industrial estates | Operating | 101,351 ha; 57.2% occupancy (2026) | Partial (178) |
+| 28 | 179 industrial estates | Operating | 101,351 ha; 57.2% occupancy (2026) | Partial (186; 168 industrial) |
 | 29 | National car / motor EV ecosystem | Construction / launch | Mass production target 2028 | Missing |
 | 30 | Danantara DDMF | Operating fund | Long-term strategic projects | Missing |
 | 31 | Indonesia Financial Center (PFII) | Planned | Jakarta and Bali | Missing |
@@ -428,7 +428,7 @@ day one. A record can enter at Tier C and be upgraded.
 
 | Layer | Today | V4 target | Source of the reference set |
 |---|---:|---:|---|
-| PSN projects | 88 project rows linked; 110 records represented | **226 active** (228 slots, 2 deleted) | Permenko 16/2025; Permenko 4/2026 |
+| PSN projects | 88 project rows linked; 120 records represented | **226 active** (228 slots, 2 deleted) | Permenko 16/2025; Permenko 4/2026 |
 | PSN programmes | 24 programme records; 24/24 represented | **24 active** (25 slots, 1 deleted) | Permenko 16/2025 |
 | Strategic non-PSN projects | 3 | **174+** | Ministries, Danantara, private announcements |
 | National programmes (PKPN) | 0 | **8** | 2027 budget speech; RPJMN 2025–2029 |
@@ -439,12 +439,12 @@ day one. A record can enter at Tier C and be upgraded.
 | Water and sanitation | 5 | **60** | PU, PDAM, KPPIP |
 | Industry and downstreaming | 34 | **80** | Kemenperin, BKPM, company disclosures |
 | Social infrastructure | 0 | **30** | Kemenkes, Kemendikbud, PKP |
-| Estates and SEZs | 178 | **200+** | KEK Secretariat, Kemenperin |
-| Companies | 93 | **300** | BUMN, Danantara, private, foreign |
+| Estates and SEZs | 186 | **200+** | KEK Secretariat, Kemenperin |
+| Companies | 101 | **300** | BUMN, Danantara, private, foreign |
 | Corridor segments | 44 | **100+** | KPPIP, PU, BPJT |
-| Claims | 599 | **1,500+** | Every project, company and indicator |
+| Claims | 708 | **1,500+** | Every project, company and indicator |
 | Indicators | 0 | **300+** | PKPN targets and ministry reporting |
-| Sources | 122 | **250+** | Official, company, multilateral, news |
+| Sources | 133 | **250+** | Official, company, multilateral, news |
 
 ### 5.3 Inclusion rules
 
@@ -568,7 +568,8 @@ A project is excluded if it is:
 
 - **Reference set:** 25 KEKs plus 179 industrial estates; 2025 additions and exact
   boundaries.
-- **Gap:** 178 rows, only 20/40 large estates geocoded, map layer off.
+- **Gap:** 186 rows, 168 industrial-estate designations against 179, only 20/40
+  large estates geocoded, map layer off.
 - **Fields:** type, area, occupancy, developer, legal basis, incentives,
   sector focus, tenants, coordinates/polygon, sources.
 - **Sources:** KEK Secretariat, Kemenperin, Satu Peta, developers.
@@ -632,8 +633,8 @@ V4 adds a Company view and a richer organisation model:
 
 - Keep the 25 official KEKs; add the 2025–2026 additions and verify the
   current list against the KEK Secretariat.
-- Reconcile 178 rows against the 179-estate Kemenperin count; add the 19-name
-  gap ledger rows.
+- Reconcile 186 rows against the 179-estate Kemenperin count; add the remaining
+  11 industrial estates from the 19-name gap ledger.
 - Geocode the remaining large estates; use Satu Peta polygons where available.
 - Add occupancy, tenants, incentives and sector focus where sourced.
 - Turn the estate map layer on once at least 80% of rows have better than
@@ -1424,7 +1425,7 @@ A record is done when:
    `data/curated/psn_register.csv` holds 253 rows (226 active projects, 24
    active programmes, 3 deleted slots). `data/derived/psn_reconciliation.csv`
    records 79 direct project matches, 8 aggregate matches, 7 partial matches,
-   16 estate matches, 24 programme matches, 88 missing projects and 28 missing
+   26 estate matches, 24 programme matches, 88 missing projects and 18 missing
    estates. The build fails if the register loses its official count.
 4. **Pilot IKN and the 2026 flagships.** **Done (9 Nov 2026).** Added 24
    records: IKN Phase 2, Nusantara airport, Masela, RDMP Balikpapan, 100 GWp
@@ -1438,16 +1439,20 @@ A record is done when:
    programmes with bilingual names and summaries, 10 lead organisations, 7
    structural project links and 48 claims. The programme view, Data section,
    downloads and ledger all use the new layer. See Appendix G.
-7. **Prototype the bilingual shell.** Create `site/en/` and `site/id/`, the UI
+7. **Add the first PSN industrial-area batch.** **Done (9 Nov 2026).** Added
+   eight estates (Kuala Tanjung, Bantaeng, Pomalaa, Huali, Patimban, NEMIE,
+   Pulau Penebang and Alumina Toba) with 11 sources, 8 organisations and 41
+   claims. Industrial coverage is 26/44; 18 remain. See Appendix G.
+8. **Prototype the bilingual shell.** Create `site/en/` and `site/id/`, the UI
    catalogues and the language toggle before translating content.
-8. **Run the UX audit.** Five users, four tasks, baseline success and time.
-9. **Design the map palette and tokens.** Produce a static style tile and test
-   contrast.
-10. **Extend the schema.** Programmes are done; add indicators, translations,
+9. **Run the UX audit.** Five users, four tasks, baseline success and time.
+10. **Design the map palette and tokens.** Produce a static style tile and test
+    contrast.
+11. **Extend the schema.** Programmes are done; add indicators, translations,
     phases and geometry, then write validation and a migration note.
-11. **Build the Data dashboard prototype.** Full width, coverage, freshness,
+12. **Build the Data dashboard prototype.** Full width, coverage, freshness,
     claims, conflicts, downloads.
-12. **Write the acceptance tests.** Payload budget, i18n coverage, both locales,
+13. **Write the acceptance tests.** Payload budget, i18n coverage, both locales,
     keyboard path, `file://` and HTTP.
 
 ---
@@ -1489,9 +1494,9 @@ site/data/stats.js
 site/downloads/*.csv, *.json, *.geojson
 ```
 
-The v4 build passes with 140 projects, 24 programmes, 178 estates, 93
-organisations, 122 sources, 5 corridors, 44 segments, 30 events, 26 investments,
-19 conflicts, 599 project claims, 20 estate claims, 48 programme claims and 229
+The v4 build passes with 140 projects, 24 programmes, 186 estates, 101
+organisations, 133 sources, 5 corridors, 44 segments, 30 events, 26 investments,
+19 conflicts, 599 project claims, 61 estate claims, 48 programme claims and 229
 dictionary fields across 22 tables.
 
 ## Appendix B — Source register (V4 starter)
@@ -1524,11 +1529,11 @@ dictionary fields across 22 tables.
   annex keeps 228 project numbers and 25 programme numbers; project 112
   (Kawasan Industri), project 226 (Sektor Pariwisata) and programme 6 are
   marked deleted. Total investment is reported at Rp 6,491 trillion.
-- The reconciliation ledger matches **110 of 226 active PSN project or estate
-  records**: 94 records map to 88 unique project rows and 16 map to estates, and
-  **all 24 programmes** are recorded. **116 project or estate records remain.**
+- The reconciliation ledger matches **120 of 226 active PSN project or estate
+  records**: 94 records map to 88 unique project rows and 26 map to estates, and
+  **all 24 programmes** are recorded. **106 project or estate records remain.**
   Roads (50/50), airports (7/7), ports (15/15), railways (13/13) and coastal
-  defence (1/1) are complete; industrial areas 16/44; dams and irrigation 5/57;
+  defence (1/1) are complete; industrial areas 26/44; dams and irrigation 5/57;
   water and sanitation 0/9; energy 3/18.
 - KPPIP's road page lists **54 entries**; the atlas now has **54 road rows** and
   matches all **50 PSN road entries** in the Permenko 16/2025 annex. The 12
@@ -1699,11 +1704,12 @@ programme, company, estate and bilingual layers on top.
 | 2026-11-09 | 2026 flagship batch | 24 new project rows in `projects.csv`, 14 sources, 11 organisations, 77 claims, 4 investments and 22 events. New sectors: energy, water, urban and coastal. `scripts/imports/add_flagships.py` is idempotent. |
 | 2026-11-09 | PSN road completion | 9 new project rows in `projects.csv`, 17 sources, 2 organisations, 43 claims, 4 investments and 2 events. Three existing rows absorb PSN 10, 11 and 12 as aggregate or partial matches. `scripts/imports/add_psn_backlog_roads.py` is idempotent. |
 | 2026-11-09 | PSN programme layer | `programmes.csv` (24 rows), `programme_projects.csv` (7 links) and `programme_sources.csv` (48 claims); 10 lead organisations. Bilingual names and summaries; programme view, Data section and three downloads. Dictionary grows to 229 fields across 22 tables. `scripts/imports/add_psn_programmes.py` is idempotent. |
+| 2026-11-09 | PSN industrial-area batch | 8 estate rows (Kuala Tanjung, Bantaeng, Pomalaa, Huali, Patimban, NEMIE, Pulau Penebang, Alumina Toba), 11 sources, 8 organisations and 41 claims. `estates.csv` grows to 186 rows; `sources.csv` to 133. PSN industrial coverage rises from 18/44 to 26/44. `scripts/imports/add_psn_industrial_estates.py` is idempotent. |
 
-**Reconciliation result at 9 November 2026:** 110 of 226 active PSN project or
-estate records matched: 94 records map to 88 unique project rows and 16 map to
-estates, and all 24 programmes are recorded. 116 project or estate records
+**Reconciliation result at 9 November 2026:** 120 of 226 active PSN project or
+estate records matched: 94 records map to 88 unique project rows and 26 map to
+estates, and all 24 programmes are recorded. 106 project or estate records
 remain. Roads, airports, ports, railways and coastal defence are complete;
-industrial areas 16/44; dams and irrigation 5/57; water and sanitation 0/9;
+industrial areas 26/44; dams and irrigation 5/57; water and sanitation 0/9;
 energy 3/18. The build now fails if the register does not contain exactly 226
 active projects, 24 active programmes and 3 deleted slots.

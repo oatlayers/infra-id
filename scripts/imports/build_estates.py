@@ -1,5 +1,9 @@
 """Build data/curated/estates.csv from the KEK profiles and the estate table.
 
+This rebuilds the 25 SEZs and the 2024 Kemenperin-derived base only. Run
+``add_psn_industrial_estates.py`` afterwards to restore the eight PSN
+industrial-area rows; ``build_all.py`` runs neither importer.
+
 Sources:
   * 25 official KEK profile pages (data/raw/2026-11-06/kek_*.html), parsed directly.
   * The 2024 Kemenperin-derived industrial estate table (BAJRA mirror).

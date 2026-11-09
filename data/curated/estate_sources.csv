@@ -19,3 +19,44 @@ ki-pasuruan-industrial-estate-rembang,src-osm-nominatim-2026-11-08,coordinates,"
 ki-karawang-international-industrial-city,src-osm-nominatim-2026-11-08,coordinates,"-6.37176, 107.27309",2026-11-08,Industrial landuse point from OpenStreetMap/Nominatim; approximate.
 ki-jakarta-industrial-estate-pulogadung,src-osm-nominatim-2026-11-08,coordinates,"-6.19865, 106.91289",2026-11-08,Industrial landuse point from OpenStreetMap/Nominatim; approximate.
 ki-maspion-industrial-estate,src-osm-nominatim-2026-11-08,coordinates,"-7.11487, 112.61628",2026-11-08,Industrial landuse point from OpenStreetMap/Nominatim; approximate.
+ki-kawasan-industri-kuala-tanjung,src-permenko-16-2025,psn,PSN 86,2025-09-24,Permenko 16/2025 annex.
+ki-kawasan-industri-kuala-tanjung,src-pelindo-kikt-2024-02-01,location,"Kabupaten Batubara, Sumatera Utara",2024-02-01,
+ki-kawasan-industri-kuala-tanjung,src-pelindo-kikt-2024-02-01,operator,PT Prima Pengembangan Kawasan,2024-02-01,
+ki-kawasan-industri-kuala-tanjung,src-waspada-kikt-2024-12-19,status,under_construction,2024-12-19,"Early phase land clearing, gate and basic infrastructure."
+ki-kawasan-industri-kuala-tanjung,src-osm-nominatim-2026-11-09,coordinates,"3.35960, 99.44993",2026-11-09,Kuala Tanjung place point; approximate.
+ki-kawasan-industri-bantaeng,src-permenko-16-2025,psn,PSN 90,2025-09-24,Permenko 16/2025 annex.
+ki-kawasan-industri-bantaeng,src-indonesiana-bantaeng-2020-09-30,location,"Kecamatan Pa'jukukang, Kabupaten Bantaeng, Sulawesi Selatan",2020-09-30,
+ki-kawasan-industri-bantaeng,src-indonesiana-bantaeng-2020-09-30,operator,PT Bantaeng Sinergi Cemerlang,2020-09-30,
+ki-kawasan-industri-bantaeng,src-indonesiana-bantaeng-2020-09-30,status,operating,2020-09-30,13 firms and a Huadi nickel smelter recorded.
+ki-kawasan-industri-bantaeng,src-osm-nominatim-2026-11-09,coordinates,"-5.54841, 120.03105",2026-11-09,Pa'jukukang district point; approximate.
+ki-indonesia-pomalaa-industry-park,src-permenko-16-2025,psn,PSN 104,2025-09-24,Permenko 16/2025 annex.
+ki-indonesia-pomalaa-industry-park,src-kemenperin-kawasan-2026-11-09,location,"Kabupaten Kolaka, Sulawesi Tenggara",2026-11-09,
+ki-indonesia-pomalaa-industry-park,src-kemenperin-kawasan-2026-11-09,operator,PT Indonesia Pomalaa Industry Park,2026-11-09,
+ki-indonesia-pomalaa-industry-park,src-vale-pomalaa-2025-12-13,status,under_construction,2025-12-13,Pomalaa HPAL project; first autoclaves received.
+ki-indonesia-pomalaa-industry-park,src-osm-nominatim-2026-11-09,coordinates,"-4.05000, 121.60000",2026-11-09,Pomalaa village point; approximate.
+ki-indonesia-huali-industry-park,src-permenko-16-2025,psn,PSN 111,2025-09-24,Permenko 16/2025 annex.
+ki-indonesia-huali-industry-park,src-kemenperin-kawasan-2026-11-09,location,"Kabupaten Luwu Timur, Sulawesi Selatan",2026-11-09,
+ki-indonesia-huali-industry-park,src-kemenperin-kawasan-2026-11-09,operator,PT Indonesia Huali Industry Park,2026-11-09,
+ki-indonesia-huali-industry-park,src-warta-lutim-huali-2025-09-25,status,under_construction,2025-09-25,Permits being completed before construction.
+ki-indonesia-huali-industry-park,src-osm-nominatim-2026-11-09,coordinates,"-2.61907, 121.11634",2026-11-09,Malili town point; approximate.
+ki-kawasan-industri-patimban-industrial-estate,src-permenko-16-2025,psn,PSN 115,2025-09-24,Permenko 16/2025 annex.
+ki-kawasan-industri-patimban-industrial-estate,src-kemenperin-kawasan-2026-11-09,location,"Kabupaten Subang, Jawa Barat",2026-11-09,
+ki-kawasan-industri-patimban-industrial-estate,src-kemenperin-kawasan-2026-11-09,operator,PT Wahana Mitra Semesta,2026-11-09,
+ki-kawasan-industri-patimban-industrial-estate,src-dpn-patimban-2026-04-07,status,under_construction,2026-04-07,"Land maturation, 1.2 km internal road and basic facilities."
+ki-kawasan-industri-patimban-industrial-estate,src-rebana-patimban-2026,status,under_construction,2026-11-09,Land maturation and proposed SEZ.
+ki-kawasan-industri-patimban-industrial-estate,src-osm-nominatim-2026-11-09,coordinates,"-6.25158, 107.87838",2026-11-09,Patimban port access road point; approximate.
+ki-neo-energy-morowali-industrial-estate,src-permenko-16-2025,psn,PSN 119,2025-09-24,Permenko 16/2025 annex.
+ki-neo-energy-morowali-industrial-estate,src-kemenperin-kawasan-2026-11-09,location,"Kabupaten Morowali, Sulawesi Tengah",2026-11-09,
+ki-neo-energy-morowali-industrial-estate,src-kemenperin-kawasan-2026-11-09,operator,PT Morowali Industri Sejahtera,2026-11-09,
+ki-neo-energy-morowali-industrial-estate,src-neo-energy-nemie-2026,status,under_construction,2026-11-09,Groundbreaking 2024; infrastructure target 2026.
+ki-neo-energy-morowali-industrial-estate,src-osm-nominatim-2026-11-09,coordinates,"-3.01462, 122.22482",2026-11-09,Buleleng village point; approximate.
+ki-kawasan-industri-pulau-penebang,src-permenko-16-2025,psn,PSN 125,2025-09-24,Permenko 16/2025 annex.
+ki-kawasan-industri-pulau-penebang,src-kemenperin-kawasan-2026-11-09,location,"Kabupaten Kayong Utara, Kalimantan Barat",2026-11-09,
+ki-kawasan-industri-pulau-penebang,src-kemenperin-kawasan-2026-11-09,operator,PT Dharma Inti Bersama,2026-11-09,
+ki-kawasan-industri-pulau-penebang,src-antara-penebang-2026-08-20,status,under_construction,2026-08-20,Commercial production targeted for 2027.
+ki-kawasan-industri-pulau-penebang,src-osm-nominatim-2026-11-09,coordinates,"-1.21286, 109.24885",2026-11-09,Penebang Island point; approximate.
+ki-kawasan-industri-alumina-toba,src-permenko-16-2025,psn,PSN 127,2025-09-24,Permenko 16/2025 annex.
+ki-kawasan-industri-alumina-toba,src-kemenperin-kawasan-2026-11-09,location,"Kabupaten Sanggau, Kalimantan Barat",2026-11-09,
+ki-kawasan-industri-alumina-toba,src-kemenperin-kawasan-2026-11-09,operator,PT Westerfield Alumina Indonesia,2026-11-09,
+ki-kawasan-industri-alumina-toba,src-gem-alumina-toba-2026,status,under_construction,2026-10-31,Associated captive power station under construction.
+ki-kawasan-industri-alumina-toba,src-gem-alumina-toba-2026,coordinates,"-0.12384, 109.97131",2026-10-31,Power-station point; approximate for the estate.

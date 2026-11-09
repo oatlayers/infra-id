@@ -481,7 +481,7 @@
   function renderHeader() {
     const totalProjects = (stats.projects && stats.projects.total) || projects.length;
     const totalCorridors = (stats.corridors && stats.corridors.total) || corridors.length;
-    const totalEstates = (stats.estates && stats.estates.total) || (estates ? estates.length : 178);
+    const totalEstates = (stats.estates && stats.estates.total) || (estates ? estates.length : 186);
     dom.statProjects.textContent = fmtNum(totalProjects);
     dom.statCorridors.textContent = fmtNum(totalCorridors);
     dom.statEstates.textContent = fmtNum(totalEstates);
@@ -1222,7 +1222,7 @@
       '" aria-expanded="' + expanded + '"><span><span class="estate-name">' + esc(estate.name) +
       '<span class="type-tag">' + esc(estateTypeLabel(estate.type)) + '</span></span>' +
       '<span class="estate-sub">' + esc(estate.regency) + ' · ' + esc(estate.province) + '</span></span>' +
-      '<span class="estate-area">' + fmtNum(estate.area_ha) + ' ha<small>' + esc(estate.status) +
+      '<span class="estate-area">' + fmtNum(estate.area_ha) + ' ha<small>' + esc(statusLabel(estate.status)) +
       '</small></span></button>' +
       (expanded ? '<div class="estate-detail">' +
         '<dl><dt>Developer</dt><dd>' + esc(estate.developer) + '</dd>' +
@@ -1308,7 +1308,7 @@
       'Download filtered CSV</button></div></div>' +
       '<div class="estate-list">' + (list.length ? list.map(estateRow).join('') :
         '<div class="list-empty"><h3>No estates match</h3><p>Try another province or type.</p></div>') + '</div>' +
-      '<p class="estate-note">Coordinates: 25 SEZs use official KEK points, 20 large industrial estates use OSM/Nominatim points, and the rest are regency centroids. The 19-name 2025 gap is documented in the Data view rather than guessed. Sources: Kemenperin-derived estate list, KEK profiles and <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap (ODbL)</a>.</p>';
+      '<p class="estate-note">Coordinates: 25 SEZs use official KEK points, 27 industrial areas use OSM/Nominatim place points, 133 use regency centroids and one uses a power-station point. The 19-row 2025 gap ledger and the 11 remaining industrial estates are documented in the Data view rather than guessed. Sources: Kemenperin estate directory, KEK profiles, PSN industrial-area sources and <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap (ODbL)</a>.</p>';
 
     const chips = dom.viewPanel.querySelectorAll('[data-estate-type]');
     chips.forEach(function (chip) {
@@ -1810,13 +1810,15 @@
       ' industrial-estate designations and ' + fmtNum(estateStats.sez || 0) +
       ' SEZs (' + fmtNum(estateStats.total || 0) + ' rows, ' + fmtNum(estateStats.both || 0) +
       ' shared) against a 2026 benchmark of 179 industrial estates. The ' +
-      fmtNum(estateStats.gap_rows || 0) + '-name gap ledger is in Downloads: nine named 2025 additions and ten unidentified names.</li>' +
+      fmtNum(estateStats.gap_rows || 0) + '-row gap ledger is in Downloads: nine named 2025 additions and ten unidentified names; 11 industrial estates remain against 179.</li>' +
       '<li>Estate coordinates: ' + fmtNum((estateStats.coordinate_sources || {}).official || 0) +
       ' SEZ/shared zones use official KEK points, ' +
       fmtNum((estateStats.coordinate_sources || {}).osm || 0) +
-      ' large industrial estates use OSM/Nominatim points, and ' +
+      ' industrial areas use OSM/Nominatim place points, ' +
       fmtNum((estateStats.coordinate_sources || {}).regency || 0) +
-      ' still use regency centroids.</li>' +
+      ' still use regency centroids and ' +
+      fmtNum((estateStats.coordinate_sources || {}).manual || 0) +
+      ' uses a power-station point.</li>' +
       '<li>Trans Sulawesi and Trans Kalimantan publish a route total only: no current operational-km series or segment table was found. Trans Sumatra and Trans Papua segment tables are partial and say so.</li>' +
       '<li>' + fmtNum((projectStats.psn && projectStats.psn.unknown) || 0) + ' of ' +
       fmtNum(roadCount) + ' road rows have unknown PSN status; ' +

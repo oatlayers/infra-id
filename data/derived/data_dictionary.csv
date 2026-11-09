@@ -51,7 +51,7 @@ sources.csv,Sources,"Documents used as evidence, with retrieval dates and local 
 sources.csv,Sources,"Documents used as evidence, with retrieval dates and local snapshots.",retrieved_on,date,yes,Date the snapshot was retrieved.,,2026-11-06
 sources.csv,Sources,"Documents used as evidence, with retrieval dates and local snapshots.",source_type,enum,yes,"official, secondary, company or multilateral.",official; secondary; company; multilateral,official
 sources.csv,Sources,"Documents used as evidence, with retrieval dates and local snapshots.",language,enum,yes,"en, id or other.",en; id; other,id
-sources.csv,Sources,"Documents used as evidence, with retrieval dates and local snapshots.",snapshot_hash,text,no,Hash of the saved snapshot when available.,,1dcd0d5545ef33df70269b404aa08e00ba0de19c32fcb5e120511cf8c3238b39
+sources.csv,Sources,"Documents used as evidence, with retrieval dates and local snapshots.",snapshot_hash,text,no,Hash of the saved snapshot when available.,,e74414947ef3947c8247a85a30733dd5ee585245c1a9dab0830cb9c116a15bcc
 sources.csv,Sources,"Documents used as evidence, with retrieval dates and local snapshots.",accessed_via,text,no,"API, page fetch, PDF download or manual transcription.",,"Nominatim API, one request per second"
 sources.csv,Sources,"Documents used as evidence, with retrieval dates and local snapshots.",archive_path,text,no,Repository-relative path to the raw snapshot.,,data/raw/2026-11-06/bpjt_toll_road_list.json
 sources.csv,Sources,"Documents used as evidence, with retrieval dates and local snapshots.",licence,text,no,Licence or reuse terms stated by the source.,,Government public data; check portal terms
@@ -149,12 +149,12 @@ estates.csv,Estates and SEZs,Industrial estates and special economic zones.,prec
 estates.csv,Estates and SEZs,Industrial estates and special economic zones.,coordinate_source,enum,yes,"official, osm, regency, manual or unknown.",official; osm; regency; manual; unknown,official
 estates.csv,Estates and SEZs,Industrial estates and special economic zones.,area_ha,decimal,yes,Zone area in hectares.,,6.64
 estates.csv,Estates and SEZs,Industrial estates and special economic zones.,developer,text,yes,Developer display name from the source.,,PT Patriot Nusantara Aceh
-estates.csv,Estates and SEZs,Industrial estates and special economic zones.,developer_org_id,id,no,Foreign key to organizations.csv.,,
+estates.csv,Estates and SEZs,Industrial estates and special economic zones.,developer_org_id,id,no,Foreign key to organizations.csv.,,org-prima-pengembangan-kawasan
 estates.csv,Estates and SEZs,Industrial estates and special economic zones.,status,enum,yes,"Designation-level operating, under_construction or planned; not independently verified for most estates.",operating; under_construction; planned,operating
 estates.csv,Estates and SEZs,Industrial estates and special economic zones.,sector_focus,text,no,Estate or SEZ sector focus.,,Manufacturing
 estates.csv,Estates and SEZs,Industrial estates and special economic zones.,legal_basis,text,no,Legal instrument establishing the zone.,,Peraturan Pemerintah Nomor 5 Tahun 2017
 estates.csv,Estates and SEZs,Industrial estates and special economic zones.,established_year,year,no,Year the zone was established.,,2017
-estates.csv,Estates and SEZs,Industrial estates and special economic zones.,website,url,no,Official website.,,
+estates.csv,Estates and SEZs,Industrial estates and special economic zones.,website,url,no,Official website.,,https://neoenergy.co.id/nemie
 estates.csv,Estates and SEZs,Industrial estates and special economic zones.,occupancy_pct,decimal,no,"Reported occupancy, 0-100.",,
 estates.csv,Estates and SEZs,Industrial estates and special economic zones.,kemenperin_id,text,no,Kemenperin estate identifier when known.,,
 estates.csv,Estates and SEZs,Industrial estates and special economic zones.,sez_id,text,no,KEK National Council identifier when known.,,kek-arun-lhokseumawe

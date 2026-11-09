@@ -1,0 +1,610 @@
+{
+  "kuala-tanjung": {
+    "query": "Kuala Tanjung Industrial Estate, Kabupaten Batubara, Sumatera Utara, Indonesia",
+    "results": []
+  },
+  "bantaeng": {
+    "query": "Kawasan Industri Bantaeng, Kabupaten Bantaeng, Sulawesi Selatan, Indonesia",
+    "results": []
+  },
+  "pomalaa": {
+    "query": "Indonesia Pomalaa Industry Park, Kabupaten Kolaka, Sulawesi Tenggara, Indonesia",
+    "results": []
+  },
+  "huali": {
+    "query": "Indonesia Huali Industry Park, Kabupaten Luwu Timur, Sulawesi Selatan, Indonesia",
+    "results": []
+  },
+  "patimban": {
+    "query": "Patimban Industrial Estate, Kabupaten Subang, Jawa Barat, Indonesia",
+    "results": []
+  },
+  "nemie": {
+    "query": "Neo Energy Morowali Industrial Estate, Kabupaten Morowali, Sulawesi Tengah, Indonesia",
+    "results": []
+  },
+  "penebang": {
+    "query": "Pulau Penebang, Kayong Utara, Kalimantan Barat, Indonesia",
+    "results": [
+      {
+        "place_id": 33387331,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+        "osm_type": "way",
+        "osm_id": 44297259,
+        "lat": "-1.2128579",
+        "lon": "109.2488463",
+        "category": "place",
+        "type": "island",
+        "place_rank": 17,
+        "importance": 0.17338333485923552,
+        "addresstype": "island",
+        "name": "Penebang Island",
+        "display_name": "Penebang Island, Pelapis, Kepulauan Karimata, Kayong Utara, West Kalimantan, Indonesia",
+        "address": {
+          "island": "Penebang Island",
+          "village": "Pelapis",
+          "municipality": "Kepulauan Karimata",
+          "county": "Kayong Utara",
+          "state": "West Kalimantan",
+          "ISO3166-2-lvl4": "ID-KB",
+          "country": "Indonesia",
+          "country_code": "id"
+        },
+        "boundingbox": [
+          "-1.2436748",
+          "-1.1820421",
+          "109.2171049",
+          "109.2707974"
+        ]
+      }
+    ]
+  },
+  "alumina-toba": {
+    "query": "Kawasan Industri Alumina Toba, Kabupaten Sanggau, Kalimantan Barat, Indonesia",
+    "results": []
+  },
+  "reg-batubara": {
+    "query": "Kabupaten Batubara, Sumatera Utara, Indonesia",
+    "results": [
+      {
+        "place_id": 254750285,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+        "osm_type": "way",
+        "osm_id": 851618493,
+        "lat": "3.1715314",
+        "lon": "99.4202461",
+        "category": "office",
+        "type": "government",
+        "place_rank": 30,
+        "importance": 4.0000762951049326e-05,
+        "addresstype": "office",
+        "name": "Kantor DPRD Kabupaten Batubara",
+        "display_name": "Kantor DPRD Kabupaten Batubara, Jalan Lintas Sumatera, Limapuluh, Datuk Tanah Datar, Batu Bara, North Sumatra, Indonesia",
+        "address": {
+          "office": "Kantor DPRD Kabupaten Batubara",
+          "road": "Jalan Lintas Sumatera",
+          "town": "Limapuluh",
+          "municipality": "Datuk Tanah Datar",
+          "county": "Batu Bara",
+          "state": "North Sumatra",
+          "ISO3166-2-lvl4": "ID-SU",
+          "country": "Indonesia",
+          "country_code": "id"
+        },
+        "boundingbox": [
+          "3.1712449",
+          "3.1718180",
+          "99.4198647",
+          "99.4206275"
+        ]
+      },
+      {
+        "place_id": 254561205,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+        "osm_type": "way",
+        "osm_id": 801402963,
+        "lat": "3.1706506",
+        "lon": "99.4185425",
+        "category": "office",
+        "type": "government",
+        "place_rank": 30,
+        "importance": 4.0000762951049326e-05,
+        "addresstype": "office",
+        "name": "Dinas Kesehatan Kabupaten Batubara",
+        "display_name": "Dinas Kesehatan Kabupaten Batubara, Jalan Lintas Sumatera, Limapuluh, Datuk Tanah Datar, Batu Bara, North Sumatra, Indonesia",
+        "address": {
+          "office": "Dinas Kesehatan Kabupaten Batubara",
+          "road": "Jalan Lintas Sumatera",
+          "town": "Limapuluh",
+          "municipality": "Datuk Tanah Datar",
+          "county": "Batu Bara",
+          "state": "North Sumatra",
+          "ISO3166-2-lvl4": "ID-SU",
+          "country": "Indonesia",
+          "country_code": "id"
+        },
+        "boundingbox": [
+          "3.1705413",
+          "3.1707746",
+          "99.4184411",
+          "99.4186443"
+        ]
+      },
+      {
+        "place_id": 254662563,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+        "osm_type": "way",
+        "osm_id": 851618496,
+        "lat": "3.1718937",
+        "lon": "99.4210577",
+        "category": "office",
+        "type": "government",
+        "place_rank": 30,
+        "importance": 4.0000762951049326e-05,
+        "addresstype": "office",
+        "name": "Kantor Bupati Kabupaten Batubara",
+        "display_name": "Kantor Bupati Kabupaten Batubara, Jalan Juanda, Lima Puluh Kota, Lima Puluh, Batu Bara, North Sumatra, Indonesia",
+        "address": {
+          "office": "Kantor Bupati Kabupaten Batubara",
+          "road": "Jalan Juanda",
+          "village": "Lima Puluh Kota",
+          "town": "Lima Puluh",
+          "county": "Batu Bara",
+          "state": "North Sumatra",
+          "ISO3166-2-lvl4": "ID-SU",
+          "country": "Indonesia",
+          "country_code": "id"
+        },
+        "boundingbox": [
+          "3.1715819",
+          "3.1722328",
+          "99.4206593",
+          "99.4214562"
+        ]
+      },
+      {
+        "place_id": 254789830,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+        "osm_type": "node",
+        "osm_id": 5793082540,
+        "lat": "3.2968921",
+        "lon": "99.4894948",
+        "category": "office",
+        "type": "government",
+        "place_rank": 30,
+        "importance": 3.5632104982025135e-05,
+        "addresstype": "office",
+        "name": "DInas Pendidikan Kabupaten Batubara",
+        "display_name": "DInas Pendidikan Kabupaten Batubara, Jalan Besar Perupuk, Gambus Laut, Lima Puluh Pesisir, Batu Bara, North Sumatra, Indonesia",
+        "address": {
+          "office": "DInas Pendidikan Kabupaten Batubara",
+          "road": "Jalan Besar Perupuk",
+          "village": "Gambus Laut",
+          "municipality": "Lima Puluh Pesisir",
+          "county": "Batu Bara",
+          "state": "North Sumatra",
+          "ISO3166-2-lvl4": "ID-SU",
+          "country": "Indonesia",
+          "country_code": "id"
+        },
+        "boundingbox": [
+          "3.2968421",
+          "3.2969421",
+          "99.4894448",
+          "99.4895448"
+        ]
+      }
+    ]
+  },
+  "reg-bantaeng": {
+    "query": "Kabupaten Bantaeng, Sulawesi Selatan, Indonesia",
+    "results": [
+      {
+        "place_id": 29267133,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+        "osm_type": "relation",
+        "osm_id": 12573476,
+        "lat": "-5.4709449",
+        "lon": "119.9871679",
+        "category": "boundary",
+        "type": "administrative",
+        "place_rank": 12,
+        "importance": 0.44875702593866645,
+        "addresstype": "county",
+        "name": "Bantaeng",
+        "display_name": "Bantaeng, South Sulawesi, Indonesia",
+        "address": {
+          "county": "Bantaeng",
+          "state": "South Sulawesi",
+          "ISO3166-2-lvl4": "ID-SN",
+          "country": "Indonesia",
+          "country_code": "id"
+        },
+        "boundingbox": [
+          "-5.5884970",
+          "-5.3536654",
+          "119.8533770",
+          "120.1022842"
+        ]
+      }
+    ]
+  },
+  "reg-kolaka": {
+    "query": "Kabupaten Kolaka, Sulawesi Tenggara, Indonesia",
+    "results": [
+      {
+        "place_id": 29983738,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+        "osm_type": "relation",
+        "osm_id": 16197255,
+        "lat": "-4.1213511",
+        "lon": "121.6929444",
+        "category": "boundary",
+        "type": "administrative",
+        "place_rank": 12,
+        "importance": 0.39319777097137304,
+        "addresstype": "county",
+        "name": "Kolaka",
+        "display_name": "Kolaka, Southeast Sulawesi, 93563, Indonesia",
+        "address": {
+          "county": "Kolaka",
+          "state": "Southeast Sulawesi",
+          "ISO3166-2-lvl4": "ID-SG",
+          "postcode": "93563",
+          "country": "Indonesia",
+          "country_code": "id"
+        },
+        "boundingbox": [
+          "-4.6152185",
+          "-3.6279473",
+          "121.1054049",
+          "121.8114147"
+        ]
+      }
+    ]
+  },
+  "reg-luwu-timur": {
+    "query": "Kabupaten Luwu Timur, Sulawesi Selatan, Indonesia",
+    "results": [
+      {
+        "place_id": 28891945,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+        "osm_type": "relation",
+        "osm_id": 14757149,
+        "lat": "-2.5304830",
+        "lon": "121.1224205",
+        "category": "boundary",
+        "type": "administrative",
+        "place_rank": 12,
+        "importance": 0.45258876044696167,
+        "addresstype": "county",
+        "name": "Luwu Timur",
+        "display_name": "Luwu Timur, South Sulawesi, Indonesia",
+        "address": {
+          "county": "Luwu Timur",
+          "state": "South Sulawesi",
+          "ISO3166-2-lvl4": "ID-SN",
+          "country": "Indonesia",
+          "country_code": "id"
+        },
+        "boundingbox": [
+          "-3.0171407",
+          "-2.0430317",
+          "120.4738425",
+          "121.7904642"
+        ]
+      }
+    ]
+  },
+  "reg-kayong-utara": {
+    "query": "Kabupaten Kayong Utara, Kalimantan Barat, Indonesia",
+    "results": [
+      {
+        "place_id": 33107748,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+        "osm_type": "relation",
+        "osm_id": 10617338,
+        "lat": "-1.0435067",
+        "lon": "110.0589495",
+        "category": "boundary",
+        "type": "administrative",
+        "place_rank": 12,
+        "importance": 0.3704139248106284,
+        "addresstype": "county",
+        "name": "Kayong Utara",
+        "display_name": "Kayong Utara, West Kalimantan, Indonesia",
+        "address": {
+          "county": "Kayong Utara",
+          "state": "West Kalimantan",
+          "ISO3166-2-lvl4": "ID-KB",
+          "country": "Indonesia",
+          "country_code": "id"
+        },
+        "boundingbox": [
+          "-1.7445476",
+          "-0.7230258",
+          "108.6771870",
+          "110.4218092"
+        ]
+      }
+    ]
+  },
+  "reg-sanggau": {
+    "query": "Kabupaten Sanggau, Kalimantan Barat, Indonesia",
+    "results": [
+      {
+        "place_id": 255732582,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+        "osm_type": "relation",
+        "osm_id": 10621499,
+        "lat": "0.3502299",
+        "lon": "110.5470424",
+        "category": "boundary",
+        "type": "administrative",
+        "place_rank": 12,
+        "importance": 0.4269424380574794,
+        "addresstype": "county",
+        "name": "Sanggau",
+        "display_name": "Sanggau, West Kalimantan, Indonesia",
+        "address": {
+          "county": "Sanggau",
+          "state": "West Kalimantan",
+          "ISO3166-2-lvl4": "ID-KB",
+          "country": "Indonesia",
+          "country_code": "id"
+        },
+        "boundingbox": [
+          "-0.4995236",
+          "1.1999331",
+          "109.8421383",
+          "111.0131219"
+        ]
+      }
+    ]
+  },
+  "kuala-tanjung-port": {
+    "query": "Pelabuhan Kuala Tanjung, Batubara, Sumatera Utara, Indonesia",
+    "results": []
+  },
+  "sei-suka": {
+    "query": "Sei Suka, Batubara, Sumatera Utara, Indonesia",
+    "results": []
+  },
+  "patimban-port": {
+    "query": "Pelabuhan Patimban, Subang, Jawa Barat, Indonesia",
+    "results": [
+      {
+        "place_id": 31467008,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+        "osm_type": "way",
+        "osm_id": 854921352,
+        "lat": "-6.2515829",
+        "lon": "107.8783753",
+        "category": "highway",
+        "type": "trunk",
+        "place_rank": 26,
+        "importance": 0.05337333409628439,
+        "addresstype": "trunk",
+        "name": "Jalan Akses Pelabuhan Patimban",
+        "display_name": "Jalan Akses Pelabuhan Patimban, Gempol Dua, Gempol, Subang, West Java, Indonesia",
+        "address": {
+          "road": "Jalan Akses Pelabuhan Patimban",
+          "hamlet": "Gempol Dua",
+          "village": "Gempol",
+          "town": "Subang",
+          "state": "West Java",
+          "ISO3166-2-lvl4": "ID-JB",
+          "country": "Indonesia",
+          "country_code": "id"
+        },
+        "boundingbox": [
+          "-6.2766354",
+          "-6.2367084",
+          "107.8680147",
+          "107.8963324"
+        ]
+      },
+      {
+        "place_id": 31443974,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+        "osm_type": "way",
+        "osm_id": 1409297764,
+        "lat": "-6.2777226",
+        "lon": "107.8670225",
+        "category": "highway",
+        "type": "trunk",
+        "place_rank": 26,
+        "importance": 0.05337333409628439,
+        "addresstype": "trunk",
+        "name": "Jalan Akses Pelabuhan Patimban",
+        "display_name": "Jalan Akses Pelabuhan Patimban, Gempol Dua, Kotasari, Subang, West Java, Indonesia",
+        "address": {
+          "road": "Jalan Akses Pelabuhan Patimban",
+          "hamlet": "Gempol Dua",
+          "village": "Kotasari",
+          "town": "Subang",
+          "state": "West Java",
+          "ISO3166-2-lvl4": "ID-JB",
+          "country": "Indonesia",
+          "country_code": "id"
+        },
+        "boundingbox": [
+          "-6.2788405",
+          "-6.2766354",
+          "107.8660753",
+          "107.8680147"
+        ]
+      },
+      {
+        "place_id": 31456458,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+        "osm_type": "way",
+        "osm_id": 1156521959,
+        "lat": "-6.2800707",
+        "lon": "107.8652784",
+        "category": "highway",
+        "type": "trunk",
+        "place_rank": 26,
+        "importance": 0.05337333409628439,
+        "addresstype": "trunk",
+        "name": "Jalan Akses Pelabuhan Patimban",
+        "display_name": "Jalan Akses Pelabuhan Patimban, Kotasari, Subang, West Java, Indonesia",
+        "address": {
+          "road": "Jalan Akses Pelabuhan Patimban",
+          "village": "Kotasari",
+          "town": "Subang",
+          "state": "West Java",
+          "ISO3166-2-lvl4": "ID-JB",
+          "country": "Indonesia",
+          "country_code": "id"
+        },
+        "boundingbox": [
+          "-6.2807530",
+          "-6.2792860",
+          "107.8645992",
+          "107.8658178"
+        ]
+      }
+    ]
+  },
+  "pomalaa-town": {
+    "query": "Pomalaa, Kolaka, Sulawesi Tenggara, Indonesia",
+    "results": [
+      {
+        "place_id": 30462936,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+        "osm_type": "node",
+        "osm_id": 3239301940,
+        "lat": "-4.0500000",
+        "lon": "121.6000000",
+        "category": "place",
+        "type": "village",
+        "place_rank": 19,
+        "importance": 0.14670666742961772,
+        "addresstype": "village",
+        "name": "Pomalaa",
+        "display_name": "Pomalaa, Kolaka, Southeast Sulawesi, Indonesia",
+        "address": {
+          "village": "Pomalaa",
+          "county": "Kolaka",
+          "state": "Southeast Sulawesi",
+          "ISO3166-2-lvl4": "ID-SG",
+          "country": "Indonesia",
+          "country_code": "id"
+        },
+        "boundingbox": [
+          "-4.0700000",
+          "-4.0300000",
+          "121.5800000",
+          "121.6200000"
+        ]
+      }
+    ]
+  },
+  "pajukukang": {
+    "query": "Pajukukang, Bantaeng, Sulawesi Selatan, Indonesia",
+    "results": [
+      {
+        "place_id": 430279262,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+        "osm_type": "relation",
+        "osm_id": 21621370,
+        "lat": "-5.5484130",
+        "lon": "120.0310528",
+        "category": "boundary",
+        "type": "administrative",
+        "place_rank": 14,
+        "importance": 0.25352702198722055,
+        "addresstype": "municipality",
+        "name": "Pajukukang",
+        "display_name": "Pajukukang, Bantaeng, South Sulawesi, Indonesia",
+        "address": {
+          "municipality": "Pajukukang",
+          "county": "Bantaeng",
+          "state": "South Sulawesi",
+          "ISO3166-2-lvl4": "ID-SN",
+          "country": "Indonesia",
+          "country_code": "id"
+        },
+        "boundingbox": [
+          "-5.5884970",
+          "-5.5086013",
+          "119.9843797",
+          "120.1022842"
+        ]
+      }
+    ]
+  },
+  "malili": {
+    "query": "Malili, Luwu Timur, Sulawesi Selatan, Indonesia",
+    "results": [
+      {
+        "place_id": 431750096,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+        "osm_type": "node",
+        "osm_id": 1271819952,
+        "lat": "-2.6190658",
+        "lon": "121.1163447",
+        "category": "place",
+        "type": "city",
+        "place_rank": 16,
+        "importance": 0.18672166857404437,
+        "addresstype": "city",
+        "name": "Malili",
+        "display_name": "Malili, Luwu Timur, South Sulawesi, Indonesia",
+        "address": {
+          "city": "Malili",
+          "county": "Luwu Timur",
+          "state": "South Sulawesi",
+          "ISO3166-2-lvl4": "ID-SN",
+          "country": "Indonesia",
+          "country_code": "id"
+        },
+        "boundingbox": [
+          "-2.7790658",
+          "-2.4590658",
+          "120.9563447",
+          "121.2763447"
+        ]
+      }
+    ]
+  },
+  "bungku-pesisir": {
+    "query": "Bungku Pesisir, Morowali, Sulawesi Tengah, Indonesia",
+    "results": []
+  },
+  "toba-sanggau": {
+    "query": "Toba, Sanggau, Kalimantan Barat, Indonesia",
+    "results": [
+      {
+        "place_id": 33346501,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+        "osm_type": "relation",
+        "osm_id": 10621749,
+        "lat": "-0.2724310",
+        "lon": "110.0727916",
+        "category": "boundary",
+        "type": "administrative",
+        "place_rank": 14,
+        "importance": 0.26124069590558274,
+        "addresstype": "municipality",
+        "name": "Toba",
+        "display_name": "Toba, Sanggau, West Kalimantan, Indonesia",
+        "address": {
+          "municipality": "Toba",
+          "county": "Sanggau",
+          "state": "West Kalimantan",
+          "ISO3166-2-lvl4": "ID-KB",
+          "country": "Indonesia",
+          "country_code": "id"
+        },
+        "boundingbox": [
+          "-0.4995236",
+          "-0.0447072",
+          "109.9243227",
+          "110.2524750"
+        ]
+      }
+    ]
+  }
+}

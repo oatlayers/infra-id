@@ -3,6 +3,24 @@
 Public-facing changes to the atlas. Dates are the day the change landed in this
 repository. The Data view renders these entries from this file at build time.
 
+## 2026-11-09 — PSN industrial-area batch
+
+- Added eight PSN industrial areas to `estates.csv`: Kuala Tanjung, Bantaeng,
+  Pomalaa, Huali, Patimban, NEMIE, Pulau Penebang and Alumina Toba.
+- Added 11 sources, including the official Kemenperin estate directory (181
+  rows), the Pelindo and Waspada reporting on Kuala Tanjung, the DPN and Rebana
+  pages on Patimban, the Luwu Timur government page on Huali, Neo Energy on
+  NEMIE, ANTARA on Pulau Penebang, Global Energy Monitor on Alumina Toba and
+  OpenStreetMap/Nominatim for place points.
+- Added 8 developer organisations and 41 atomic estate claims. Seven rows are
+  under construction and one is operating; each status has a dated source.
+- `estates.csv` grows from 178 to 186 rows, `organizations.csv` from 93 to 101,
+  `sources.csv` from 122 to 133 and `estate_sources.csv` from 20 to 61. PSN
+  industrial coverage rises from 18/44 to 26/44; overall PSN coverage is
+  120/226 with 106 project or estate records remaining.
+- Added `scripts/imports/add_psn_industrial_estates.py`; idempotent.
+- Nothing was pushed, deployed or published.
+
 ## 2026-11-09 — PSN programme layer
 
 - Added `programmes.csv` with all 24 active PSN programmes: official number,

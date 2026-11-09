@@ -4,6 +4,13 @@
 **Status:** Track 2B partial. E1 done, E2 blocked, E3 partial, E4 not
 started, E5 shipped in Phase 1, E6 deferred.
 
+> **V4 update (9 November 2026).** The Kemenperin directory became reachable and
+> is filed as `data/raw/2026-11-09/kemenperin_kawasan.html` (181 rows). Eight PSN
+> industrial areas were added with dated sources, taking the table to 186 rows
+> and 168 industrial-estate designations. IPIP and Pulau Penebang are resolved;
+> 11 industrial estates remain, including seven named and four unidentified
+> rows. See `README.md` and Appendix G of the V4 plan.
+
 ## E1 — The 179-vs-160 gap
 
 Kemenperin reports **179 industrial estates** in 2026. The curated table carries

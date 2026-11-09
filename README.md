@@ -12,11 +12,11 @@ curated, not exhaustive**.
   date of the Kemenhub review. The Nusantara airport is an additional national
   gateway, not a PSN row.
 - **PSN reconciliation:** the official Permenko 16/2025 list has 226 active
-  projects and 24 active programmes. The atlas matches 110 of the 226 active
-  project/estate records — 94 PSN records map to 88 unique project rows and 16
+  projects and 24 active programmes. The atlas matches 120 of the 226 active
+  project/estate records — 94 PSN records map to 88 unique project rows and 26
   map to estates — and all 24 programmes. Roads (50/50), airports (7/7), ports
   (15/15), railways (13/13) and coastal defence (1/1) are complete; industrial
-  areas are 16/44, dams 5/57 and energy 3/18. The register and ledger are
+  areas are 26/44, dams 5/57 and energy 3/18. The register and ledger are
   [`data/curated/psn_register.csv`](data/curated/psn_register.csv) and
   [`data/derived/psn_reconciliation.csv`](data/derived/psn_reconciliation.csv).
 - **Factories:** 34 plants and smelters: 19 operating, 3 recently completed,
@@ -35,17 +35,19 @@ curated, not exhaustive**.
   source. Sixteen have a lead agency and five have a structural project link.
   Targets, budgets and indicators stay blank because the annex does not state
   them. The layer has its own view, download and 48 atomic claims.
-- **Estate dataset:** 178 industrial estates and SEZs, shown as a table; the map
-  layer is deliberately off until coordinates are verified.
-- **Trust layer:** 599 atomic project claims, 20 estate claims and 48 programme
+- **Estate dataset:** 186 industrial estates and SEZs, shown as a table; the map
+  layer is deliberately off until coordinates are verified. The first PSN
+  industrial-area batch adds eight records with dated area, manager and status
+  sources.
+- **Trust layer:** 599 atomic project claims, 61 estate claims and 48 programme
   claims; 140 of 140 projects have a claim for the status and every populated
   numeric fact. 19 conflicts are recorded with both values and both sources
-  (11 resolved, 8 open). A 318-row freshness report marks each project and
+  (11 resolved, 8 open). A 326-row freshness report marks each project and
   estate fresh, due soon or stale. A 229-field data dictionary covers all 22
   curated tables.
-- **Last verification:** 9 November 2026 for the flagship and PSN-road rows;
-  8 November 2026 for the road, estate and factory batches; 7 November for
-  transport; and 6 November for earlier rows. The 318-row freshness report is
+- **Last verification:** 9 November 2026 for the flagship, PSN-road and PSN
+  industrial-area rows; 8 November 2026 for the road, estate and factory batches; 7 November for
+  transport; and 6 November for earlier rows. The 326-row freshness report is
   fresh as of 9 November 2026; the first record falls due on 11 May 2027.
 - **Status:** Phase 1, Phase 2 and Phase 3 of the v3 overhaul are complete as of
   8 November 2026. Track 2B (estates) is partial and corridor geometry (R6) is
@@ -53,8 +55,9 @@ curated, not exhaustive**.
   Phase 3 ends with a **local release only**: the site is verified from `file://`
   and a local HTTP server. There is **no GitHub remote, push, Pages deployment or
   published URL**. V4 foundation work started on 9 November 2026 with the PSN
-  register, reconciliation ledger, 2026 flagship batch, PSN-road completion and
-  the programme layer. The released site is still the v3 build.
+  register, reconciliation ledger, 2026 flagship batch, PSN-road completion, the
+  programme layer and the first PSN industrial-area batch. The released site is
+  still the v3 build.
 - **V4 plan:** [`docs/plan/plan.md`](docs/plan/plan.md) is the current plan: a
   bilingual national delivery atlas with 400+ projects, 226 PSN projects, 24 PSN
   programmes, 8 PKPN programmes, 300 companies, 200 estates and a rebuilt map
@@ -87,7 +90,7 @@ when a source supports that status.
 | Airports | 8 | 8 operating | 7/7 PSN airports plus Nusantara International (IVD), operating as a special airport |
 | Seaports | 15 | 11 operating, 1 under construction, 1 recently completed, 2 planned | 15/15 PSN seaports; Patimban Phase I-2 still building, Benoa expansion completed 2025 |
 | Transport PSN total | 35 | 24 operating, 1 recently completed, 6 under construction, 4 planned | 35/35; status as of 19 February 2026 |
-| PSN projects (active) | 226 | 110 matched (94 PSN records to 88 project rows + 16 estates) | Permenko 16/2025; 116 project/estate records outstanding |
+| PSN projects (active) | 226 | 120 matched (94 PSN records to 88 project rows + 26 estates) | Permenko 16/2025; 106 project/estate records outstanding |
 | PSN programmes (active) | 24 | 24 represented, 24/24 | one row per official number; bilingual names and summaries; 48 claims |
 | All projects | 140 | 62 operating, 4 recently completed, 55 under construction, 18 planned, 1 stalled | 54 roads, 13 railways, 8 airports, 15 seaports, 34 factories, 9 energy, 5 dams, 1 urban and 1 coastal |
 | Energy projects | 9 | 1 operating, 8 under construction | Masela, RDMP Balikpapan, 100 GWp solar and six Hilirisasi Stage II energy projects |
@@ -97,11 +100,11 @@ when a source supports that status.
 | Corridor segments | 44 | 13 Sumatra, 23 Java, 8 Papua | Section tables only where a published list exists; Sulawesi and Kalimantan are route-total-only |
 | Dated events | 30 | 2018–2026 | Exact dates only; month-end approximations are not used |
 | Factories | 34 | 19 operating, 3 recently completed, 11 under construction, 1 stalled | 27 capacity figures, 18 investment figures; 17 official, 8 dual, 9 single-source |
-| Industrial estates / SEZs | 178 | 160 industrial-estate designations (153 industrial-only + 7 shared), 25 SEZs | table view only; 25 official SEZ points, 20 OSM points, 133 regency centroids; 19-name gap ledger |
-| Sources | 122 | 49 official, 48 secondary, 25 company | 43 factory-batch sources, 25 individual SEZ profiles, Permenko 16/2025 and 4/2026, the national register, OSM/Nominatim, the corridor series, the 2026 flagship releases and the PSN-road batch; V4 target 250 |
-| Project claims | 599 | 140/140 projects fully claimed | one atomic fact per row; 20 separate estate claims and 48 programme claims; 264 carry a transcribed value and 199 a source-stated fact date |
+| Industrial estates / SEZs | 186 | 168 industrial-estate designations (161 industrial-only + 7 shared), 25 SEZs | table view only; 25 official SEZ points, 27 OSM place points, 133 regency centroids and 1 power-station point; 19-row gap ledger, 11 industrial estates remain |
+| Sources | 133 | 53 official, 53 secondary, 27 company | 43 factory-batch sources, 25 individual SEZ profiles, Permenko 16/2025 and 4/2026, the national register, OSM/Nominatim, the corridor series, the 2026 flagship releases, the PSN-road batch and the PSN industrial-area batch; V4 target 250 |
+| Project claims | 599 | 140/140 projects fully claimed | one atomic fact per row; 61 separate estate claims and 48 programme claims; 264 carry a transcribed value and 199 a source-stated fact date |
 | Conflicts | 19 | 11 resolved, 8 open | both values and both sources, with a recorded resolution; downloadable register |
-| Freshness | 318 | 318 fresh as of 2026-11-09 | 140 projects + 178 estates; 183-day threshold; next due 2027-05-11 |
+| Freshness | 326 | 326 fresh as of 2026-11-09 | 140 projects + 186 estates; 183-day threshold; next due 2027-05-11 |
 | Data dictionary | 229 | 22 tables | generated from the schema; field type, required flag, description, allowed values and example |
 
 **Why the transport status counts differ from Kemenhub's summary.** The deck's
@@ -117,8 +120,8 @@ construction and 4 planned. The full mapping and conflicts are in
 seven Hilirisasi Stage II plants and private plants with investment of at least
 Rp 1 trillion. The list covers copper, nickel, steel, alumina, aluminium,
 battery, petrochemical, oleochemical, pulp and fertiliser plants. Industrial
-estates and pure mining pits are excluded; KIPI Bulungan remains an estate gap,
-while GEM steel and Hailiang announcements did not meet the dated
+estates and pure mining pits are excluded; KIPI Bulungan is now in the estate
+layer, while GEM steel and Hailiang announcements did not meet the dated
 status-and-capacity rule. The original 27-plant batch is documented in
 [`docs/phases/phase-2-factories.md`](docs/phases/phase-2-factories.md); the seven
 Stage II additions are in `scripts/imports/add_flagships.py`.
@@ -299,13 +302,14 @@ What each script does:
 | `imports/add_flagships.py` | 2026 flagship research + curated tables | 24 project rows, 14 sources, 11 organisations, 77 claims, 4 investments and 22 events | Idempotent; replaces the flagship rows on rerun |
 | `imports/add_psn_backlog_roads.py` | PSN road research + curated tables | 9 project rows, 17 sources, 2 organisations, 43 claims, 4 investments and 2 events | Idempotent; completes the 50-entry PSN road set |
 | `imports/add_psn_programmes.py` | Permenko 16/2025 programme annex + curated tables | 24 programme rows, 10 organisations, 7 project links and 48 claims | Reads the official Indonesian names from the register; idempotent |
+| `imports/add_psn_industrial_estates.py` | Kemenperin directory + PSN industrial-area sources | 8 estate rows, 11 sources, 8 organisations and 41 claims | Explicit area, manager and status sources; idempotent |
 | `tools/geocode_factories.py` | Nominatim + factory queries | `data/derived/nominatim_factories.json` | Provenance cache only; does not change curated coordinates |
 | `pipeline/build_factories_ledger.py` | Curated project, organisation, link and claim tables | `data/derived/factories_2026.csv` | Frozen review ledger for the 34 factory rows |
 | `pipeline/build_psn_ledger.py` | `psn_register.csv` + curated projects, estates and programmes | `data/derived/psn_reconciliation.csv` | Explicit PSN-to-atlas match ledger; fails if the official counts change |
 | `pipeline/validate.py` | `data/curated/*.csv` | exit code | Schema, enums, dates, coordinates, foreign keys, events, geometry, atomic claims, programmes, conflicts and coverage checks |
 | `tools/normalize_claims.py` | Project and estate claim tables | Split claim rows | One atomic fact per row; backfills missing investment, operational, opening and location claims |
 | `pipeline/build_projects.py` | Curated tables + BPJT JSON | `data/exports/projects.csv` | Joins operator and source, fills gaps from BPJT, writes the flat export |
-| `imports/build_estates.py` | KEK HTML + BAJRA table + regency cache | `data/curated/estates.csv` + source rows | Merges the 25 SEZs and 153 industrial estates, handles overlaps |
+| `imports/build_estates.py` | KEK HTML + BAJRA table + regency cache | `data/curated/estates.csv` + source rows | Merges the 25 SEZs and 153 industrial estates, handles overlaps; run `add_psn_industrial_estates.py` afterwards to restore the PSN rows |
 | `pipeline/freshness.py` | Curated projects and estates | `data/derived/freshness_report.csv` | Fresh / due soon / stale by `last_verified`; deterministic as-of date |
 | `pipeline/audit_claims.py` | Curated projects and claims | `data/derived/claims_audit.csv` | Checks that status and every populated numeric fact has an atomic claim |
 | `pipeline/build_dictionary.py` | Schema field lists | `data/derived/data_dictionary.csv`, `site/downloads/dictionary.csv` | 229 field definitions across 22 tables |
@@ -411,14 +415,17 @@ possible.
 | Katadata (21 Jul 2025) | <https://katadata.co.id/berita/industri/687e4748a975f/tni-targetkan-proyek-trans-papua-rampung-di-era-prabowo> | Trans Papua km | Secondary; connected vs paved metrics differ |
 | Wikipedia Trans corridor revisions (2026) | <https://en.wikipedia.org/wiki/Trans-Papua_Highway> | Trans Java, Sulawesi, Kalimantan and Papua definitions, section lengths and opening years | Secondary; used for discovery and cross-checks, never for a status change |
 | KEK National Council profiles (25 pages) | <https://kek.go.id/id/investment/distribution> | SEZ name, address, coordinates, area, developer, legal basis, category | Official; one page per zone. Operational maturity is not stated |
+| Kemenperin estate directory (2026) | <https://kemenperin.go.id/kawasan> | Industrial estate name, manager, regency/province and land area | Official; 181 rows. It does not state operational status or coordinates |
 | BAJRA, "Daftar Kawasan Industri Indonesia" (17 Aug 2024) | <https://www.bajra.id/2024/08/daftar-kawasan-industri-indonesia.html> | Industrial estate name, developer, regency, province, area | Secondary mirror of Kemenperin data; 159 estates, not the 179 reported in 2026 |
+| PSN industrial-area batch (2024–2026) | Pelindo, Waspada, DPN, Rebana, Indonesiana, Luwu Timur, Neo Energy, ANTARA, GEM and OSM/Nominatim | Area, manager, status and place points for Kuala Tanjung, Bantaeng, Pomalaa, Huali, Patimban, NEMIE, Pulau Penebang and Alumina Toba | Each row names its own dated source; developer master-plan areas can exceed the licensed Kemenperin area |
 | ANTARA, Kemenperin estate count (2026) | <https://www.antaranews.com/berita/5627392/kemenperin-catat-kawasan-industri-serap-235-juta-pekerja> | Coverage benchmark: 179 estates, 101,351.45 ha, 57.20% occupancy | Secondary; used only as a benchmark, not as a row source |
 | Natural Earth 1:50m countries, provinces, lakes, rivers, urban areas and populated places | <https://www.naturalearthdata.com/> | Basemap layers and city labels | Public domain; clipped and simplified |
 
 Raw snapshots are never edited. Current contents include the Wikipedia
 snapshots, the BPJT JSON, the Kemenhub PDF, the KPPIP HTML pages, the 25 KEK
 profile pages, the BAJRA estate table and the Natural Earth GeoJSON under
-`data/raw/2026-11-06/`.
+`data/raw/2026-11-06/`; Permenko 16/2025 and 4/2026, the Kemenperin directory and
+the PSN industrial-area sources under `data/raw/2026-11-09/`.
 
 The KPPIP pages and the Kemenhub PSN deck are saved for the transport batch and
 are reflected in the 35 transport rows. Factory sources are the 43 source rows
@@ -434,25 +441,26 @@ revisions. Its mapping and conflicts are in
 
 ## Industrial estates and SEZs
 
-`data/curated/estates.csv` holds 178 records, gathered but deliberately **not
+`data/curated/estates.csv` holds 186 records, gathered but deliberately **not
 visualised yet**:
 
 - **25 SEZs** from the official KEK National Council profiles. Each has a name,
   address, province/regency, official zone coordinate, area in hectares,
   developer, legal basis, establishment year and category.
-- **153 industrial estates** from the 2024 Kemenperin-derived list. Each has a
-  developer, regency/province and area. Coordinates are regency/city centroids,
-  so `precision=regency`. The centroids are cached in
-  `data/derived/regency_coords.json`; the cache lets the build run without
-  network access.
+- **161 industrial estates**: 153 from the 2024 Kemenperin-derived list and
+  8 PSN industrial areas added in November 2026. The older rows carry a
+  developer, regency/province and area, with regency/city centroids; the PSN
+  batch has a dated area, manager, status and place-level coordinate source.
 - **7 zones are both** a SEZ and an industrial estate; they are one row with
   `type=both`, not duplicates.
 
-The industrial-estate source is a secondary mirror of Kemenperin data. Kemenperin
-reported 179 estates in 2026; the 160-row source table is a 2024 snapshot, so the
-list is close but not complete. The `notes` field says this on every row. SEZ
+The 2024 industrial-estate source is a secondary mirror of Kemenperin data.
+Kemenperin reported 179 estates in 2026, and the official directory now in
+`data/raw/2026-11-09/kemenperin_kawasan.html` lists 181 rows. The atlas has 168
+industrial-estate designations (161 pure rows plus 7 shared), so 11 remain. SEZ
 rows use `status=operating` as a designation-level default; operational maturity
-is not independently verified.
+is not independently verified. The eight PSN rows use dated status claims
+instead of the default.
 
 Estate fields:
 
@@ -468,12 +476,12 @@ last_verified,notes
 into `site/data/estates.js`; the map layer is still gated on verified
 coordinates.
 
-**Known gap.** Kemenperin announced nine new estates in 2025. They are not in the
-table yet because each needs its own source for area, developer and coordinates:
-IPIP (Kemenperin lists it under Central Sulawesi; the Pomalaa project is in
-Southeast Sulawesi), I-Sentra Lamongan, Huadi Bantaeng, Cikembar II, Losarang,
-Purwakarta Integrated Industrial Park, Pulau Penebang, Seafer and Tembesi. Add
-them with individual sources rather than copying the press release.
+**Known gap.** Eleven industrial estates remain against the 179 target. Seven
+are named in the 2024 gap ledger: I-Sentra Lamongan, Huadi Bantaeng, Cikembar
+II, Losarang, Purwakarta Integrated Industrial Park, Seafer and Tembesi. The
+other four are still unidentified. The PSN batch added IPIP and Pulau Penebang;
+the remaining rows need an individual source for area, developer and
+coordinates rather than a copied press release.
 
 ## Adding or updating a project
 
@@ -548,7 +556,7 @@ Features:
 - **Programmes:** all 24 active PSN programmes with theme filters, bilingual
   names and summaries, lead agency, PKPN mapping, linked projects and source,
   plus an explicit target gap.
-- **Estates:** 178-row table with type/province filters, sort, inline detail,
+- **Estates:** 186-row table with type/province filters, sort, inline detail,
   area totals, coordinate provenance, a filtered CSV button and CSV downloads
   (including the 19-row gap ledger). No map layer yet.
 - **Data:** generated coverage matrix; programme register; claims coverage;
@@ -647,7 +655,7 @@ it writes screenshots and a zero-error report under `docs/evidence/phase-3/`.
   state a fact date; they link to the source without duplicating the project row.
   Twenty-eight projects are single-source. The audit proves coverage, not that
   every source agrees.
-- **Freshness is a date check, not a live re-verification.** All 318 rows are
+- **Freshness is a date check, not a live re-verification.** All 326 rows are
   fresh as of 9 November 2026 because they were curated in the 6–9 November
   batches. The first record falls due on 11 May 2027; the monthly runbook is the
   real test.
@@ -684,16 +692,21 @@ it writes screenshots and a zero-error report under `docs/evidence/phase-3/`.
   2026, not a live check. `last_verified` is the curation date.
 - **PSN status is incomplete for roads.** 12 of 54 road rows have `psn=unknown`; the 50-entry PSN road set is separately matched in the ledger.
 - **Estate coordinates are mixed.** 25 SEZ/shared zones use official KEK points,
-  20 large industrial estates use OSM/Nominatim industrial points, and 133 still
-  use regency centroids, not estate boundaries. 20 of the 40 largest were
-  geocoded; the rest had no reliable OSM match.
-- **Estate coverage is partial.** The industrial-estate table is a 2024 secondary
-  mirror with 160 rows; Kemenperin reported 179 estates in 2026. The 19-name gap
-  ledger is downloadable: nine named 2025 additions and ten unidentified names.
-  The Kemenperin list was unreachable on 8 November 2026 (HTTP 502 / DNS failure).
-- **Estate status is still blanket `operating`.** The 160 industrial-estate rows
-  come from the 2024 table and have not been individually re-verified. Their
-  sector focus, website, legal basis and established year are mostly blank.
+  27 industrial areas use OSM/Nominatim place points, 133 still use regency
+  centroids and one uses a power-station point, not estate boundaries. 20 of the
+  40 largest were geocoded against industrial landuse; the rest had no reliable
+  OSM match.
+- **Estate coverage is partial.** The table has 168 industrial-estate
+  designations against Kemenperin's 179, so 11 remain. The 19-name gap ledger is
+  downloadable: nine named 2025 additions and ten unidentified names; the PSN
+  batch resolves IPIP and Pulau Penebang. The Kemenperin directory was
+  snapshotted on 9 November 2026.
+- **Estate status is mixed but still mostly defaulted.** The 160 older
+  industrial-estate designations (153 pure rows plus 7 shared) carry the
+  directory default `operating` and have not been individually re-verified. The
+  eight PSN rows carry dated status claims: seven under construction and one
+  operating. Sector focus, website, legal basis and established year are mostly
+  blank.
 - **No recently completed toll roads.** The four `recently_completed` rows are
   Benoa Port and three factories; see Current coverage.
 - **Trans Sulawesi and Trans Kalimantan have route totals but no progress
@@ -736,9 +749,10 @@ it writes screenshots and a zero-error report under `docs/evidence/phase-3/`.
 4. ~~Phase 2: data completion.~~ Done 8 November 2026. Transport PSN (13 rail,
    7 airports, 15 seaports), the 27-plant factory reference set and the road/corridor
    batch are complete. Roads meet the 45-corridor target; five corridors carry 44
-   segments and six exact-dated events. Estates: the 19-name gap ledger is done
-   and 20 of the 40 largest are geocoded; the nine 2025 additions remain blocked
-   by the unavailable Kemenperin list. Corridor geometry (R6) is deferred.
+   segments and six exact-dated events. Estates: the 19-name gap ledger is done,
+   20 of the 40 largest are geocoded, and eight PSN industrial areas have entered
+   with dated sources; seven named 2025 additions and four unidentified names
+   remain. Corridor geometry (R6) is deferred.
 5. ~~Phase 3: trust and local release.~~ Done 8 November 2026. 479 atomic
    claims, 107/107 projects fully claimed, a 19-row conflict register, a 285-row
    freshness report, a 200-field dictionary, Data view v2, filtered downloads,
@@ -762,14 +776,14 @@ it writes screenshots and a zero-error report under `docs/evidence/phase-3/`.
 
 - **Current plan:** [`docs/plan/plan.md`](docs/plan/plan.md). V3 is complete as
   of 8 November 2026; V4 has its foundation, PSN ledger, 2026 flagship batch,
-  50-entry PSN road set and 24-programme layer in the repository. The bilingual
-  shell, companies view and the 116-record project/estate backlog are still
-  open. Track 2B (estates) is partial and R6 geometry is deferred; both are
-  documented. Publishing is explicitly deferred.
+  50-entry PSN road set, 24-programme layer and first PSN industrial-area batch
+  in the repository. The bilingual shell, companies view and the 106-record
+  project/estate backlog are still open. Track 2B (estates) is partial and R6
+  geometry is deferred; both are documented. Publishing is explicitly deferred.
 - **Next action:** run `python scripts/build_all.py --check`, read
   [`docs/operations/refresh-runbook.md`](docs/operations/refresh-runbook.md),
   then continue the V4 immediate actions in `docs/plan/plan.md` (file the
-  remaining official sources, work the 116-record PSN project/estate backlog,
+  remaining official sources, work the 106-record PSN project/estate backlog,
   prototype the bilingual shell). Do not push, add a remote or deploy.
 - **Trust layer:** [`docs/phases/phase-3-trust.md`](docs/phases/phase-3-trust.md) records the
   claims audit, freshness report, conflict register, Data view v2, downloads,
@@ -795,11 +809,11 @@ it writes screenshots and a zero-error report under `docs/evidence/phase-3/`.
   conflicts are in [`docs/phases/phase-2-roads.md`](docs/phases/phase-2-roads.md). Next: R6
   simplified geometry, more exact-dated openings, and a refresh of the Trans
   Sulawesi and Trans Kalimantan series.
-- **Estates:** 178 rows in `data/curated/estates.csv`; the 19-name gap ledger is
+- **Estates:** 186 rows in `data/curated/estates.csv`; the 19-name gap ledger is
   `data/derived/estate_gap_2026.csv` and the coordinate work is documented in
-  [`docs/phases/phase-2-estates.md`](docs/phases/phase-2-estates.md). Next: resolve the
-  Kemenperin list or a dated 2025 provincial announcement, add the nine named
-  estates, geocode the remaining 20 large estates, and verify status and
+  [`docs/phases/phase-2-estates.md`](docs/phases/phase-2-estates.md). Next: add the
+  seven named 2025 estates and four unidentified names, geocode the remaining 20
+  large estates, and verify status and
   attributes. Keep the map layer off until then.
 - **Before changing schema:** read the Data architecture section in
   `docs/plan/plan.md`, `docs/phases/phase-1-decisions.md` and the schema section

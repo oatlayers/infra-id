@@ -8,7 +8,7 @@
       "cards": 5
     },
     "estates": {
-      "rows": 178
+      "rows": 186
     },
     "programmes": {
       "cards": 24
@@ -33,7 +33,7 @@
     },
     "estates_csv": {
       "file": "infra-id-estates-filtered.csv",
-      "rows": 178
+      "rows": 186
     },
     "claims_csv": {
       "file": "claims.csv",
@@ -47,7 +47,7 @@
   },
   "protocols": {
     "http": {
-      "port": 59503,
+      "port": 65094,
       "ok": true
     },
     "file": {

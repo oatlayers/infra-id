@@ -207,7 +207,25 @@ PROJECT_MATCH = {
 
 # Explicit matches for the 44 industrial-area entries.
 ESTATE_MATCH = {
+    86: ("ki-kawasan-industri-kuala-tanjung", "high", ""),
     87: ("ki-kawasan-industri-landak", "high", ""),
+    90: ("ki-kawasan-industri-bantaeng", "high", ""),
+    104: ("ki-indonesia-pomalaa-industry-park", "high", ""),
+    111: ("ki-indonesia-huali-industry-park", "high", ""),
+    115: ("ki-kawasan-industri-patimban-industrial-estate", "high", ""),
+    119: ("ki-neo-energy-morowali-industrial-estate", "high", ""),
+    125: ("ki-kawasan-industri-pulau-penebang", "high", ""),
+    127: ("ki-kawasan-industri-alumina-toba", "high", ""),
+    94: (
+        "ki-kipi",
+        "high",
+        "Atlas row uses the operator acronym KIPI; the official name is Kawasan Industri Tanah Kuning in Bulungan, North Kalimantan.",
+    ),
+    122: (
+        "sez-bumi-serpong-damai",
+        "medium",
+        "The atlas row covers the education, technology and health SEZ inside the BSD area; other BSD components are not separately recorded.",
+    ),
     88: (
         "ki-ketapang-ecology-and-agriculture-forestery-industrial-park",
         "medium",

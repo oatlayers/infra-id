@@ -5,7 +5,7 @@ repository; no remote or deployment is involved. The atlas is a local, curated
 release, not a live tracker.
 
 **Why monthly:** a row is treated as fresh for 183 days after `last_verified`
-and due soon in the final 30 days. The 9 November 2026 build has 318 fresh rows;
+and due soon in the final 30 days. The 9 November 2026 build has 326 fresh rows;
 the first record falls due on **11 May 2027**. A monthly pass keeps the whole
 dataset ahead of that cliff instead of refreshing everything at once.
 
@@ -47,7 +47,7 @@ or to discover a change.
 | 2 | Kemenhub transport PSN deck | `https://ppid.kemenhub.go.id/fileupload/informasi-berkala/20260406102830.R1_19022026_Update_PSN_Kemenhub_compressed.pdf` | A newer deck; opening dates, progress, targets |
 | 3 | KPPIP PSN pages | `https://kppip.go.id/proyek-strategis-nasional/` | Airport, seaport and industrial-area list changes |
 | 4 | KEK National Council | `https://kek.go.id/id/investment/distribution` | New zones, changed coordinates, area or developer |
-| 5 | Kemenperin / BAJRA estate list | The 2024 BAJRA mirror; retry `kemenperin.go.id` and `satudata.kemenperin.go.id` | The 179-vs-160 gap; any 2025/2026 additions |
+| 5 | Kemenperin estate directory | `https://kemenperin.go.id/kawasan` and the 2024 BAJRA mirror | The 179-estate reference set; manager, location, area and 2025/2026 additions |
 | 6 | BPJT Trans Java section list and Trans corridor pages | The dated article and the Wikipedia revisions already in `sources.csv` | Section openings, total vs operating km, definition changes |
 | 7 | Factory company and official pages | Each factory's source rows in `sources.csv` | Status, capacity, investment, restart or halt |
 | 8 | Hutama Karya, Bina Marga and Katadata corridor items | The rows already in `sources.csv` | Operational km, connected/paved metrics, target changes |
@@ -65,7 +65,8 @@ PDF. Record the retrieval date and a hash in `sources.csv`.
 
 If a source is unreachable, write that down; do not substitute an undated
 search-result snippet. The 8 November 2026 run recorded Kemenperin HTTP 502 and
-`satudata.kemenperin.go.id` DNS failure, which is why the estate gap remains.
+`satudata.kemenperin.go.id` DNS failure; the directory was reachable again on
+9 November 2026 and is filed as `data/raw/2026-11-09/kemenperin_kawasan.html`.
 
 ## 3. Diff and triage
 
@@ -171,6 +172,18 @@ register and the importer together, then check that every programme has two
 claims (PSN status and active status) in `programme_sources.csv`. Targets,
 budgets and indicators are not in the annex and must not be inferred from
 unrelated reporting.
+
+### 4.7 PSN industrial areas
+
+When a PSN industrial area is resolved, add an estate row through
+`scripts/imports/add_psn_industrial_estates.py`, not by editing the CSV by hand.
+Use the Kemenperin directory for manager, regency and area where it lists the
+estate, and a dated official or company source for status. Do not assume that a
+licensed estate is operating: the older rows use a directory default, but new
+rows need a status claim. Where a developer gives a larger master-plan area than
+the Kemenperin licence, keep the licence figure in `area_ha` and record the
+difference in `notes`. Add the PSN number to `ESTATE_MATCH` in
+`scripts/pipeline/build_psn_ledger.py` and rebuild.
 
 ## 5. Rebuild
 
