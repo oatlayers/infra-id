@@ -276,6 +276,7 @@ svg { display: block; }
 .tabs {
   display: flex;
   flex: none;
+  flex-wrap: wrap;
   gap: 2px;
   padding: 0 14px;
   overflow-x: auto;
@@ -521,6 +522,30 @@ svg { display: block; }
 .active-filter button:hover { background: rgba(181, 71, 8, .12); }
 
 /* ---------- List ---------- */
+
+.search-groups {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  padding: 0 16px 7px;
+}
+.search-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  min-height: 24px;
+  padding: 2px 7px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-pill);
+  background: var(--surface);
+  color: var(--ink);
+  font-size: 10px;
+  font-weight: 600;
+}
+.search-group:hover { border-color: var(--line-strong); background: var(--surface-warm); }
+.search-group .chip-count { color: var(--muted); font-weight: 500; }
+.search-group.is-empty { color: var(--muted); font-weight: 500; }
+.search-groups-empty { color: var(--muted); font-size: 10.5px; padding: 2px 0; }
 
 .list-meta {
   display: flex;

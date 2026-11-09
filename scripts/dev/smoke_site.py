@@ -317,11 +317,29 @@ def desktop_keyboard(page: Page) -> None:
     check(page.input_value("#search") == "", "Escape clears search")
     check(page.locator(".project-row").count() == int(TOTAL), "Clearing search restores the list")
 
+    page.fill("#search", "Trans Sumatra")
+    page.wait_for_timeout(300)
+    check(page.locator("#search-groups").is_visible(), "Search shows grouped results")
+    check(page.locator('[data-search-type="corridor"]').count() == 1,
+          "Search groups include corridors")
+    check("1" in page.locator('[data-search-type="corridor"]').inner_text(),
+          "The Trans Sumatra corridor is in the group count")
+    page.click('[data-search-type="corridor"]')
+    page.wait_for_selector(".corridor-card")
+    page.wait_for_timeout(300)
+    check(page.locator(".corridor-card").count() == 1,
+          "A corridor search opens the matching corridor view")
+    page.fill("#search", "")
+    page.wait_for_selector(".project-row")
+    page.wait_for_timeout(300)
+
     page.locator(".project-row").first.focus()
     page.keyboard.press("ArrowDown")
     focused_row = page.evaluate("document.activeElement && document.activeElement.getAttribute('data-project')")
     check(bool(focused_row), "ArrowDown moves focus to the next project row")
-    report["keyboard"] = {"skip_link": True, "ctrl_k": True, "arrow_nav": True}  # type: ignore[index]
+    report["keyboard"] = {  # type: ignore[index]
+        "skip_link": True, "ctrl_k": True, "arrow_nav": True, "grouped_search": True
+    }
 
 
 def desktop_downloads(page: Page) -> None:

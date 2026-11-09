@@ -333,6 +333,41 @@
 
   /* ---------- filtering and search ---------- */
 
+  const SEARCH_ALIASES = {
+    tol: ['toll'], toll: ['tol'],
+    bandara: ['airport'], airport: ['bandara'],
+    pelabuhan: ['port', 'seaport'], port: ['pelabuhan'], seaport: ['pelabuhan'],
+    kereta: ['railway'], railway: ['kereta'],
+    bendungan: ['dam'], dam: ['bendungan'],
+    jalan: ['road'], road: ['jalan'],
+    pabrik: ['factory'], factory: ['pabrik'],
+    energi: ['energy'], energy: ['energi'],
+    air: ['water'], water: ['air'],
+    perumahan: ['housing'], housing: ['perumahan'],
+    pendidikan: ['education'], education: ['pendidikan'],
+    pariwisata: ['tourism'], tourism: ['pariwisata'],
+    pertanian: ['agriculture'], agriculture: ['pertanian'],
+    proyek: ['project'], project: ['proyek'],
+    program: ['programme'], programme: ['program'],
+    perusahaan: ['company'], company: ['perusahaan'],
+    koridor: ['corridor'], corridor: ['koridor'],
+    kek: ['sez'], sez: ['kek']
+  };
+
+  function tokenMatches(haystack, token) {
+    if (haystack.indexOf(token) !== -1) return true;
+    return (SEARCH_ALIASES[token] || []).some(function (alias) {
+      return haystack.indexOf(alias) !== -1;
+    });
+  }
+
+  function matchesHaystack(haystack, query) {
+    if (!query) return true;
+    return query.toLowerCase().split(/\s+/).filter(Boolean).every(function (token) {
+      return tokenMatches(haystack, token);
+    });
+  }
+
   function matchesQuery(project, query) {
     if (!query) return true;
     const entry = searchProjects.get(project.id);
@@ -342,9 +377,7 @@
       sectorLabel(project.sector), statusLabel(project.status),
       project.psn === 'yes' ? 'psn' : ''
     ].join(' ')).toLowerCase();
-    return query.toLowerCase().split(/\s+/).filter(Boolean).every(function (token) {
-      return haystack.indexOf(token) !== -1;
-    });
+    return matchesHaystack(haystack, query);
   }
 
   function passesFilters(project, options) {
@@ -851,6 +884,49 @@
     }).join('');
   }
 
+  function searchGroupCounts() {
+    const counts = { project: 0, programme: 0, corridor: 0, estate: 0, company: 0 };
+    const query = state.q.trim();
+    if (!query) return counts;
+    searchIndex.forEach(function (entry) {
+      if (entry.text && matchesHaystack(entry.text.toLowerCase(), query)) {
+        counts[entry.type] = (counts[entry.type] || 0) + 1;
+      }
+    });
+    return counts;
+  }
+
+  function renderSearchGroups() {
+    if (!dom.searchGroups) return;
+    const query = state.q.trim();
+    if (!query) {
+      dom.searchGroups.hidden = true;
+      dom.searchGroups.innerHTML = '';
+      return;
+    }
+    const counts = searchGroupCounts();
+    const groups = [
+      ['project', t('search.projects'), 'explore'],
+      ['programme', t('search.programmes'), 'programmes'],
+      ['corridor', t('search.corridors'), 'corridors'],
+      ['estate', t('search.estates'), 'estates'],
+      ['company', t('search.companies'), 'companies']
+    ];
+    dom.searchGroups.hidden = false;
+    if (!groups.some(function (group) { return counts[group[0]]; })) {
+      dom.searchGroups.innerHTML = '<span class="search-groups-empty">' +
+        esc(t('search.no_results')) + '</span>';
+      return;
+    }
+    dom.searchGroups.innerHTML = groups.map(function (group) {
+      const count = counts[group[0]] || 0;
+      return '<button type="button" class="search-group' + (count ? '' : ' is-empty') +
+        '" data-search-view="' + group[2] + '" data-search-type="' + group[0] + '"' +
+        (count ? '' : ' disabled') + '>' + esc(group[1]) +
+        '<span class="chip-count">' + fmtNum(count) + '</span></button>';
+    }).join('');
+  }
+
   function renderExplore() {
     dom.exploreContent.hidden = false;
     dom.viewPanel.hidden = true;
@@ -862,6 +938,7 @@
     renderSectorChips();
     renderStatusChips();
     renderActiveFilters();
+    renderSearchGroups();
     syncFilterControls();
 
     dom.resultCount.innerHTML = list.length === total
@@ -1333,6 +1410,18 @@
     return { key: 'full', label: t('corridor.state.full') };
   }
 
+  function filteredCorridors() {
+    const query = state.q.trim();
+    if (!query) return corridors;
+    return corridors.filter(function (corridor) {
+      return matchesHaystack(
+        [corridor.name, corridor.definition, corridor.island, corridor.metric]
+          .join(' ').toLowerCase(),
+        query
+      );
+    });
+  }
+
   function corridorCard(corridor) {
     const parts = corridorParts(corridor);
     const word = corridorWord(corridor);
@@ -1377,10 +1466,14 @@
     dom.exploreContent.hidden = true;
     dom.exploreContent.style.display = 'none';
     dom.viewPanel.hidden = false;
+    const list = filteredCorridors();
     dom.viewPanel.innerHTML =
       '<div class="corridor-intro"><h2>' + esc(t('corridor.trans_corridors')) + '</h2>' +
       '<p>' + esc(t('corridor.intro')) + '</p></div>' +
-      '<div class="corridor-list">' + corridors.map(corridorCard).join('') + '</div>';
+      '<div class="corridor-list">' + (list.length
+        ? list.map(corridorCard).join('')
+        : '<div class="list-empty"><h3>' + esc(t('corridors.no_match')) + '</h3><p>' +
+          esc(t('corridors.no_match_body')) + '</p></div>') + '</div>';
   }
 
   /* ---------- estates view ---------- */
@@ -1455,7 +1548,7 @@
         const haystack = (entry ? entry.text :
           [estate.name, estate.province, estate.regency, estate.developer, estate.sector_focus]
             .join(' ')).toLowerCase();
-        if (!query.split(/\s+/).every(function (token) { return haystack.indexOf(token) !== -1; })) return false;
+        if (!matchesHaystack(haystack, query)) return false;
       }
       return true;
     }).sort(function (a, b) {
@@ -1739,7 +1832,7 @@
         programme.lead_org_name, programme.lead_org_short, programme.pkpn_id,
         programmeThemeLabel(programme.theme)
       ].join(' ').toLowerCase();
-      return query.split(/\s+/).every(function (token) { return haystack.indexOf(token) !== -1; });
+      return matchesHaystack(haystack, query);
     });
   }
 
@@ -1891,7 +1984,7 @@
       const haystack = (entry ? entry.text :
         [company.name, company.short_name, company.org_type, company.country_code]
           .join(' ')).toLowerCase();
-      return query.split(/\s+/).every(function (token) { return haystack.indexOf(token) !== -1; });
+      return matchesHaystack(haystack, query);
     }).sort(function (a, b) {
       if (state.companySort === 'projects') {
         return (b.project_count || 0) - (a.project_count || 0) || a.name.localeCompare(b.name);
@@ -2724,6 +2817,16 @@
       commit(false);
     });
 
+    dom.searchGroups.addEventListener('click', function (event) {
+      const button = event.target.closest('[data-search-view]');
+      if (!button) return;
+      const view = button.getAttribute('data-search-view');
+      state.view = view;
+      state.projectId = null;
+      state.corridorId = null;
+      commit(true);
+    });
+
     dom.activeFilters.addEventListener('click', function (event) {
       const button = event.target.closest('[data-remove]');
       if (!button) return;
@@ -2913,6 +3016,7 @@
     dom.sectorChips = $('sector-chips');
     dom.statusChips = $('status-chips');
     dom.activeFilters = $('active-filters');
+    dom.searchGroups = $('search-groups');
     dom.filterBadge = $('filter-badge');
     dom.clearFilters = $('clear-filters');
     dom.moreFilters = $('more-filters');

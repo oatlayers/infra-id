@@ -895,6 +895,48 @@ def main() -> None:
                 ),
             }
         )
+    for row in programmes:
+        search.append(
+            {
+                "type": "programme",
+                "id": row["id"],
+                "name": row["name_en"],
+                "theme": row["theme"],
+                "text": " ".join(
+                    filter(
+                        None,
+                        [
+                            row["name_en"],
+                            row["name_id"],
+                            row["summary_en"],
+                            row["summary_id"],
+                            row["theme"].replace("_", " "),
+                            row["pkpn_id"],
+                        ],
+                    )
+                ),
+            }
+        )
+    for row in corridors:
+        search.append(
+            {
+                "type": "corridor",
+                "id": row["id"],
+                "name": row["name"],
+                "island": row["island"],
+                "text": " ".join(
+                    filter(
+                        None,
+                        [
+                            row["name"],
+                            row["definition"],
+                            row["island"],
+                            row["metric"],
+                        ],
+                    )
+                ),
+            }
+        )
 
     SITE_DATA.mkdir(parents=True, exist_ok=True)
     SITE_DOWNLOADS.mkdir(parents=True, exist_ok=True)

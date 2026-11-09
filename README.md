@@ -58,7 +58,7 @@ curated, not exhaustive**.
   estate fresh, due soon or stale. A 268-field data dictionary covers all 26
   curated tables, including translations, indicators and project phases.
 - **Bilingual shell:** `site/index.html` is a language chooser; `site/en/` and
-  `site/id/` share one application and one data bundle. Both locales carry 610
+  `site/id/` share one application and one data bundle. Both locales carry 618
   UI keys, all 24 programme names and summaries, all five corridor definitions,
   and an Indonesian display name for all 228 projects (140 reviewed, 88 official
   PSN aliases). Every project also has a factual one-sentence summary generated
@@ -101,9 +101,11 @@ curated, not exhaustive**.
 
 ## What it is, and what it is not
 
-It is a static site with four views: **Explore** (map, search, filters and a
-detail drawer), **Corridors** (Trans network summaries), **Estates** (the
-industrial-estate and SEZ table) and **Data** (coverage, methods, sources,
+It is a static site with six views: **Explore** (map, search, filters and a
+detail drawer), **Programmes** (the 24 PSN programmes), **Corridors** (Trans
+network summaries), **Estates** (the industrial-estate and SEZ table),
+**Companies** (organisations and their project roles) and **Data** (coverage,
+methods, sources,
 downloads and known gaps). Projects are coloured by status, filtered by sector,
 status, island, province, PSN, corridor, precision and verification age, and
 open a drawer with the evidence behind the status, the operator, the length,
@@ -210,7 +212,7 @@ neither is needed to view or ship the site:
 python scripts/dev/smoke_site.py
 ```
 
-It checks the four views, keyboard access, filtered downloads, `file://`, a local
+It checks all six views, keyboard access, grouped search, filtered downloads, `file://`, a local
 HTTP server and the no-network rule, then writes screenshots to
 `docs/evidence/phase-3/`. The monthly procedure is
 [`docs/operations/refresh-runbook.md`](docs/operations/refresh-runbook.md).
@@ -447,7 +449,7 @@ possible.
 | BPJT toll-road API | <https://itrams-api.bpjt.pu.go.id/v1/reference/api/toll-road-list> | Official status, operating/construction km, operator, endpoint coordinates | 77 operating or partly operating rows; construction-only rows absent; status labels inconsistent |
 | English Wikipedia, "Indonesian Toll Road System", revision 1329385293 (2025-12-25) | <https://en.wikipedia.org/w/index.php?oldid=1329385293> | Route names, lengths, operators, status markers | Secondary and stale in places; no coordinates or opening years |
 | Indonesian Wikipedia, "Daftar jalan tol di Indonesia", oldid 30025554 (2026-10-03) | <https://id.wikipedia.org/w/index.php?oldid=30025554> | Cross-check of lengths, operating km and concessions | Secondary; figures often differ from BPJT |
-| Kemenhub, "Capaian Progres PSN Sektor Transportasi" (19 Feb 2026) | <https://ppid.kemenhub.go.id/fileupload/informasi-berkala/20261006102830.R1_19022026_Update_PSN_Kemenhub_compressed.pdf> | Transport PSN status, opening years, progress, investment | 35 transport PSNs; 29 complete or operating, 6 in construction |
+| Kemenhub, "Capaian Progres PSN Sektor Transportasi" (19 Feb 2026) | <https://ppid.kemenhub.go.id/fileupload/informasi-berkala/20261806182830.R1_19022026_Update_PSN_Kemenhub_compressed.pdf> | Transport PSN status, opening years, progress, investment | 35 transport PSNs; 29 complete or operating, 6 in construction |
 | KPPIP PSN pages | <https://kppip.go.id/proyek-strategis-nasional/> | Airport, seaport and industrial-area PSN lists | Names and provinces only; status must come from elsewhere |
 | Hutama Karya via Palpres (4 Oct 2026) | <https://palpres.disway.id/news/read/780474/hutama-karya-buka-bukaan-soal-jtts-di-hadapan-bakn-dpr-ri-ini-progresnya> | Trans Sumatra km | Secondary; figures differ by scope and date |
 | BPJT section list via detikFinance (26 Jan 2025) | <https://finance.detik.com/infrastruktur/d-7750531/tol-trans-jawa-belum-tersambung-penuh-masih-ada-sisa-ruas-ini> | Trans Java 20-section operating series | Secondary reporting of BPJT data; article prints 1,232.78 km, section sum is 1,232.80 km |
@@ -498,7 +500,7 @@ the 88 official Indonesian PSN names; corridor definitions are translated in
 
 `scripts/pipeline/build_i18n.py` fails if the two catalogues drift or if a
 programme or corridor loses a required translation. It writes a coverage report
-to `data/derived/i18n_report.csv`. The current build has 610 UI keys per locale,
+to `data/derived/i18n_report.csv`. The current build has 618 UI keys per locale,
 an Indonesian display name for all 228 projects and a generated summary for all
 228. Project summaries are generated from the curated fields, not editorial
 copy; the drawer labels them `AUTO` / `OTOMATIS`. Sourced English notes keep an
@@ -606,9 +608,11 @@ Rules that apply to every row:
 `site/index.html` is the shell; CSS and JavaScript live under `site/assets/`.
 Features:
 
-- **Explore:** search across name, province, corridor and operator; sector,
-  status, island, province, PSN, corridor, precision and freshness filters;
-  five sort modes; URL state; map/list selection; keyboard navigation.
+- **Explore:** search across name, province, corridor and operator, with grouped
+  counts for projects, programmes, corridors, estates and companies and
+  Indonesian–English synonyms (`tol`/`toll`, `bandara`/`airport`, `KEK`/`SEZ`);
+  sector, status, island, province, PSN, corridor, precision and freshness
+  filters; five sort modes; URL state; map/list selection; keyboard navigation.
 - **Map:** Natural Earth provinces, lakes, rivers, urban areas and city labels;
   sector glyphs inside status-coloured markers; status-ring clusters below zoom
   7; selected marker label; drawer-aware panning. The map is inert while the

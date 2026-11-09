@@ -3,6 +3,21 @@
 Public-facing changes to the atlas. Dates are the day the change landed in this
 repository. The Data view renders these entries from this file at build time.
 
+## 2026-11-09 — Grouped search and synonyms
+
+- Search now shows grouped counts for projects, programmes, corridors, estates
+  and companies. A corridor query can open the corridor itself instead of only
+  its project rows. Programme and corridor entries are in the search index.
+- Added Indonesian–English synonyms (`tol`/`toll`, `bandara`/`airport`,
+  `pelabuhan`/`port`, `KEK`/`SEZ`, and sector names) to search across both
+  locales. The Companies, Estates and Programmes views use the same matcher.
+- The six-tab row now wraps rather than clipping the Companies tab at the 400 px
+  rail width.
+- UI catalogue grows to 618 keys per locale. Initial payload is 1,139 KB, data
+  1,625 KB and total 3,617 KB. Build, `--check`, smoke test, five-profile
+  rehearsal, contrast check and link check pass. Nothing was pushed, deployed or
+  published.
+
 ## 2026-11-09 — Data dashboard charts
 
 - Added native sector, status and freshness charts to the full-width Data view.
@@ -26,7 +41,7 @@ repository. The Data view renders these entries from this file at build time.
   101/300 coverage row.
 - The UI catalogue grows to 604 keys per locale. The smoke test covers the
   English Companies view, the Indonesian tab label and the filtered CSV.
-- Initial payload is 1,126 KB, data 1,612 KB and total 3,604 KB. Build,
+- Initial payload is 1,139 KB, data 1,625 KB and total 3,617 KB. Build,
   `--check`, smoke test, five-profile rehearsal, contrast check and link check
   pass. Nothing was pushed, deployed or published.
 

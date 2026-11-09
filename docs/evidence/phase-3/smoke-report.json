@@ -47,11 +47,12 @@
   "keyboard": {
     "skip_link": true,
     "ctrl_k": true,
-    "arrow_nav": true
+    "arrow_nav": true,
+    "grouped_search": true
   },
   "protocols": {
     "http": {
-      "port": 54183,
+      "port": 52904,
       "ok": true
     },
     "file": {

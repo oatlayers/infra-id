@@ -217,6 +217,8 @@ def main() -> None:
     search_projects = {row["id"] for row in search if row.get("type") == "project"}
     search_estates = {row["id"] for row in search if row.get("type") == "estate"}
     search_companies = {row["id"] for row in search if row.get("type") == "company"}
+    search_programmes = {row["id"] for row in search if row.get("type") == "programme"}
+    search_corridors = {row["id"] for row in search if row.get("type") == "corridor"}
     if search_projects != project_ids:
         err("search.js: project coverage does not match projects.js")
     if search_estates != estate_ids:
@@ -224,6 +226,10 @@ def main() -> None:
     company_ids = {row["id"] for row in organizations}
     if search_companies != company_ids:
         err("search.js: company coverage does not match organizations.csv")
+    if search_programmes != {row["id"] for row in programmes}:
+        err("search.js: programme coverage does not match programmes.csv")
+    if search_corridors != {row["id"] for row in corridors}:
+        err("search.js: corridor coverage does not match corridors.csv")
     for company in company_payload:
         for role in company.get("roles", []):
             if role.get("project_id") not in project_ids:

@@ -45,9 +45,10 @@ were visible. That was a real finding; the handle now cycles
 peek → half → full → peek on tap, and the rehearsal follows that path.
 
 The search task exposed a relevance issue rather than a failure: searching
-“Trans Sumatra” returns project rows from that corridor before the corridor
+“Trans Sumatra” returned project rows from that corridor before the corridor
 itself, because the corridor name is in every project's search text. Grouped
-search results are not implemented.
+counts now show `Projects 18 · Corridors 1 · Companies 1`, and clicking the
+corridor group opens the matching corridor. Fuzzy ranking is still open.
 
 ## 4. Findings
 
@@ -56,7 +57,7 @@ search results are not implemented.
 | Finding | Fix | Evidence |
 |---|---|---|
 | Data, Programmes, Corridors and Estates were squeezed into the 400 px rail beside an unrelated map | Full-width register pages, max 1180 px; map hidden on those views; two-column programme and corridor grids | `04-data-desktop.png`, `03b-programmes-desktop.png`, `02-corridors-desktop.png` |
-| No Indonesian edition, no language switch, English-only chrome | `site/en/`, `site/id/`, chooser, 610-key catalogues, `translations.csv`, language switch preserving the hash | `00-language-chooser.png`, `08-explore-id-desktop.png`, `08d-data-id-desktop.png` |
+| No Indonesian edition, no language switch, English-only chrome | `site/en/`, `site/id/`, chooser, 618-key catalogues, `translations.csv`, language switch preserving the hash | `00-language-chooser.png`, `08-explore-id-desktop.png`, `08d-data-id-desktop.png` |
 | 140 project names fell back to the source name; no project summaries | 140 reviewed Indonesian names plus 88 official PSN aliases; a factual one-sentence summary in both locales, labelled generated | `08-explore-id-desktop.png`, `08f-project-drawer-id.png` |
 | English-only status, sector, filter, sort and Data prose | All chrome and the Data methods are translated; `Intl` number/date/coordinate formatting | `08d-data-id-desktop.png` |
 | English prose in the Indonesian edition could look like a translation failure | `lang="en"` on sourced text and a visible `EN` tag; a quiet note at the top of the project drawer | `05-project-drawer.png` |
@@ -72,7 +73,7 @@ search results are not implemented.
 |---|---|---|---|
 | Medium | 228 project summaries are generated from fields, not written by an editor | The text is factual but telegraphic and does not explain why a project matters | Review the flagship and high-traffic summaries; keep the generated text for the long tail |
 | High | Explore still uses 9.5–12.5 px for dense rail rows | The plan targets a 14–16 px body and 12–13 px captions | Raise the rail type scale and re-test 320/390 px overflow |
-| High | Search relevance and grouping are flat | A corridor query returns many project rows; no grouped results or synonyms | Implement ranking (exact, prefix, token, edit distance) and grouped Projects/Programmes/Corridors/Estates |
+| Medium | Search ranking is still token containment, with no edit distance or arrow-key result navigation | Grouped counts and synonyms fix discovery, but typo tolerance and keyboard result movement remain | Add fuzzy ranking and result-list arrow navigation |
 | Medium | Data coverage `reference_set`, download labels/meta and dictionary descriptions remain English in the ID edition | These are methodological strings, not proper names | Move coverage labels and download labels into the catalogue; translate dictionary descriptions in Release 4.4 |
 | Medium | No sortable table component in Data | The charts and tables are readable, but headers do not sort | Add sortable headers and a column chooser |
 | Only three indicators and nine phases are sourced | The layer is structurally complete but thin | Extend the indicator layer with the 8 PKPN targets and programme-level baselines as official sources are filed |
@@ -92,7 +93,7 @@ search results are not implemented.
 |---|---|
 | Projects / programmes / estates | 228 / 24 / 204 |
 | Mapped project markers | 139 |
-| Locales | 2, 610 UI keys each |
+| Locales | 2, 618 UI keys each |
 | Project names | 228 Indonesian display names (140 reviewed + 88 official) |
 | Project summaries | 228 generated in both locales; 0 editorial |
 | Indicators / values / phases | 3 / 3 / 9 |
@@ -140,7 +141,7 @@ run.
 1. Review the generated project summaries and write editorial summaries for the
    flagships and high-traffic rows (Medium, Release 4.1/4.4).
 2. Raise the Explore type scale (High, Release 4.3).
-3. Search ranking and grouped results (High, Release 4.3).
+3. Search fuzzy ranking and result navigation (Medium, Release 4.3).
 4. Charts and sortable tables in Data (Medium, Release 4.3).
 5. Mobile bottom navigation and full-screen filters (Medium, Release 4.3).
 6. Detail pages and list↔map linking (Medium, Release 4.3).
