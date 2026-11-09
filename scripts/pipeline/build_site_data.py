@@ -756,6 +756,12 @@ def main() -> None:
                 "meta": f"{len(estates)} rows · table only",
             },
             {
+                "key": "estates_json",
+                "label": "Estates and SEZs (JSON)",
+                "file": "downloads/estates.json",
+                "meta": f"{len(estates)} records · table only",
+            },
+            {
                 "key": "estate_gap",
                 "label": "2024 estate audit ledger",
                 "file": "downloads/estate-gap.csv",

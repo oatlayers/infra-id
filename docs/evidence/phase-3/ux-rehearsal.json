@@ -5,22 +5,22 @@
       "tasks": {
         "project": {
           "ok": true,
-          "seconds": 0.564,
+          "seconds": 0.635,
           "note": "Bengkulu–Lubuk Linggau Toll Road"
         },
         "coverage": {
           "ok": true,
-          "seconds": 0.243,
+          "seconds": 0.265,
           "note": "PSN projects (active) Permenko 16/2025 annex; 228 numbered slots with 2 deleted (112 and 2"
         },
         "province": {
           "ok": true,
-          "seconds": 0.871,
+          "seconds": 0.9,
           "note": "23 rows; Double Track Java South"
         },
         "language": {
           "ok": true,
-          "seconds": 1.187,
+          "seconds": 1.04,
           "note": "EN + #/data preserved"
         }
       }
@@ -30,22 +30,22 @@
       "tasks": {
         "project": {
           "ok": true,
-          "seconds": 0.56,
+          "seconds": 0.555,
           "note": "Jalan Tol Bengkulu–Lubuk Linggau"
         },
         "coverage": {
           "ok": true,
-          "seconds": 0.336,
+          "seconds": 0.204,
           "note": "Proyek PSN (aktif) Permenko 16/2025 annex; 228 numbered slots with 2 deleted (112 and 226)"
         },
         "province": {
           "ok": true,
-          "seconds": 0.918,
+          "seconds": 0.863,
           "note": "23 rows; Jalur Ganda Jawa Selatan"
         },
         "language": {
           "ok": true,
-          "seconds": 0.793,
+          "seconds": 0.753,
           "note": "EN + #/data preserved"
         }
       }
@@ -55,22 +55,22 @@
       "tasks": {
         "project": {
           "ok": true,
-          "seconds": 0.59,
+          "seconds": 0.549,
           "note": "Bengkulu–Lubuk Linggau Toll Road"
         },
         "coverage": {
           "ok": true,
-          "seconds": 0.196,
+          "seconds": 0.21,
           "note": "PSN projects (active) Permenko 16/2025 annex; 228 numbered slots with 2 deleted (112 and 2"
         },
         "province": {
           "ok": true,
-          "seconds": 1.14,
+          "seconds": 1.018,
           "note": "23 rows; Double Track Java South"
         },
         "language": {
           "ok": true,
-          "seconds": 1.129,
+          "seconds": 0.974,
           "note": "EN + #/data preserved"
         }
       }
@@ -80,22 +80,22 @@
       "tasks": {
         "project": {
           "ok": true,
-          "seconds": 0.713,
+          "seconds": 0.644,
           "note": "Jalan Tol Bengkulu–Lubuk Linggau"
         },
         "coverage": {
           "ok": true,
-          "seconds": 0.279,
+          "seconds": 0.218,
           "note": "Proyek PSN (aktif) Permenko 16/2025 annex; 228 numbered slots with 2 deleted (112 and 226)"
         },
         "province": {
           "ok": true,
-          "seconds": 1.789,
+          "seconds": 1.623,
           "note": "23 rows; Jalur Ganda Jawa Selatan"
         },
         "language": {
           "ok": true,
-          "seconds": 0.793,
+          "seconds": 0.829,
           "note": "EN + #/data preserved"
         }
       }
@@ -105,22 +105,22 @@
       "tasks": {
         "project": {
           "ok": true,
-          "seconds": 0.562,
+          "seconds": 0.59,
           "note": "Bengkulu–Lubuk Linggau Toll Road"
         },
         "coverage": {
           "ok": true,
-          "seconds": 0.276,
+          "seconds": 0.217,
           "note": "PSN projects (active) Permenko 16/2025 annex; 228 numbered slots with 2 deleted (112 and 2"
         },
         "province": {
           "ok": true,
-          "seconds": 0.858,
+          "seconds": 0.972,
           "note": "23 rows; Double Track Java South"
         },
         "language": {
           "ok": true,
-          "seconds": 1.052,
+          "seconds": 1.107,
           "note": "EN + #/data preserved"
         }
       }

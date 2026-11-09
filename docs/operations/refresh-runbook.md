@@ -287,7 +287,7 @@ refresh the underlying rows.
 python scripts/build_all.py --check
 ```
 
-The run must end with `deterministic rebuild, 26 generated files unchanged`.
+The run must end with `deterministic rebuild, 45 generated files unchanged`.
 This is the local CI gate. It does not touch git or the network.
 
 ### 6.2 Browser smoke test
@@ -330,7 +330,7 @@ Review the diff, then commit locally:
 ```bash
 git status --short
 git diff --stat
-git add data/curated data/raw data/derived data/exports/projects.csv site scripts docs README.md CHANGELOG.md plan-v3.md plan.md
+git add data/curated data/raw data/derived data/exports/projects.csv site scripts docs README.md CHANGELOG.md
 git commit -m "Refresh sources and verification dates for <month>"
 ```
 

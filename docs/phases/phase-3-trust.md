@@ -4,8 +4,8 @@
 only**. Nothing was pushed, no remote was added, and no GitHub Pages deployment
 or public release was made.
 
-**Scope:** Q1–Q5 (trust layer) and S1–S5 (local release and hand-off) from
-[`plan-v3.md`](../plan/plan-v3.md). The site and the curated tables are the
+**Scope:** Q1-Q5 (trust layer) and S1-S5 (local release and hand-off) from the
+completed v3 plan, which is retained in git history. The site and the curated tables are the
 deliverables; the evidence is in this document, `CHANGELOG.md` and
 `docs/evidence/phase-3/`.
 
@@ -47,7 +47,8 @@ disagree?".
 
 Phase 2 stored claims as combined strings such as
 `status,length,operator,location` (283 rows, 87 with a comma-separated claim).
-That made a per-fact audit impossible. `scripts/tools/normalize_claims.py` splits every
+That made a per-fact audit impossible. A one-off normalisation script, retained
+in git history, splits every
 string into one row per claim type, lower-cases `PSN`, merges duplicate notes,
 and backfills claims that existed only on the project row.
 
@@ -312,7 +313,8 @@ Updated on 8 November 2026:
 
 - `README.md` — current counts, trust layer, scripts, data model, site features,
   validation rules, known limitations, roadmap and "Where to pick up".
-- `plan-v3.md` — Phase 3 marked complete; evidence and exit criteria recorded.
+- The completed v3 plan in git history - Phase 3 marked complete; evidence and
+  exit criteria recorded.
 - `plan.md` — status, phases and next steps aligned with the 107-project build.
 - `CHANGELOG.md` — public-facing Phase 3 entry, parsed by the Data view.
 - `docs/operations/refresh-runbook.md` — the monthly procedure.
@@ -357,6 +359,6 @@ These are known, documented and not silently patched:
 | S2 | `file://` and local HTTP, relative paths, no CDN/tiles | Both protocols checked; 0 external requests |
 | S3 | Desktop/mobile screenshots, keyboard, offline | 8 screenshots; smoke report; all checks pass |
 | S4 | Monthly fetch → diff → review → update → rebuild → verify | `docs/operations/refresh-runbook.md` |
-| S5 | README, changelog and plan current; gaps listed | README, `plan-v3.md`, `plan.md`, `CHANGELOG.md`, this file |
+| S5 | README, changelog and plan current; gaps listed | README, `plan.md`, `CHANGELOG.md`, this file |
 
 **Exit gate:** met, with the remaining gaps above. The release is local only.

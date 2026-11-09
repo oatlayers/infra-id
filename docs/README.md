@@ -1,15 +1,18 @@
 # Documentation
 
-This directory holds the project's plans, phase records, operations runbook and
-release evidence. The top-level [README](../README.md) is the entry point for the
-atlas itself; this page is the map for the working documents.
+This directory holds the current plan, data and source references, design notes,
+phase records, operations runbook and release evidence. The top-level
+[README](../README.md) is the entry point for the atlas itself; this page is the
+map for the working documents.
 
-## Plans
+## Start here
 
-| File | Contents |
+| Document | Contents |
 |---|---|
-| [`plan/plan.md`](plan/plan.md) | Current V4 plan: national delivery atlas, 226 PSN projects + 24 programmes, bilingual UI, map and Data-view rebuild. |
-| [`plan/plan-v3.md`](plan/plan-v3.md) | Completed three-phase overhaul backlog: site experience, data completeness and trust. |
+| [`plan/plan.md`](plan/plan.md) | Remaining V4 work, coverage gaps, acceptance criteria, blockers and invariants. |
+| [`data-model.md`](data-model.md) | Curated tables, project columns, status definitions, claims and generated outputs. |
+| [`sources.md`](sources.md) | Source register, raw snapshots, archive rules and provenance gaps. |
+| [`operations/refresh-runbook.md`](operations/refresh-runbook.md) | Monthly fetch, diff, review, rebuild and verify procedure. |
 
 ## Design
 
@@ -20,6 +23,9 @@ atlas itself; this page is the map for the working documents.
 | [`design/ux-audit-v4.md`](design/ux-audit-v4.md) | Expert audit, five-profile rehearsal, open findings and the five-user protocol. |
 
 ## Phase records
+
+These are historical records of completed work. They explain how the current
+data, trust layer and local release were built.
 
 | File | Contents |
 |---|---|
@@ -39,22 +45,16 @@ atlas itself; this page is the map for the working documents.
 | [`../data/curated/pkpn_programmes.csv`](../data/curated/pkpn_programmes.csv) | The eight 2027 PKPN priorities with bilingual summaries, targets, budgets and sources. |
 | [`../data/curated/pkpn_sources.csv`](../data/curated/pkpn_sources.csv) | 27 atomic claims for the PKPN layer. |
 | [`../data/curated/programme_projects.csv`](../data/curated/programme_projects.csv) | Seven structural links between programmes and atlas projects. |
-| [`../data/curated/organizations.csv`](../data/curated/organizations.csv) | 101 companies, agencies and consortia, with type, country and website. |
-| [`../data/curated/project_organizations.csv`](../data/curated/project_organizations.csv) | 203 sourced project-role links (sponsor, operator, owner, contractor). |
+| [`../data/curated/organizations.csv`](../data/curated/organizations.csv) | 111 companies, agencies and consortia, with type, country and website. |
+| [`../data/curated/project_organizations.csv`](../data/curated/project_organizations.csv) | 227 sourced project-role links (sponsor, operator, owner, contractor). |
 | [`../data/curated/translations.csv`](../data/curated/translations.csv) | Reviewed entity text and official Indonesian names used by the bilingual build. |
 | [`../data/i18n/ui.en.json`](../data/i18n/ui.en.json) | English UI catalogue: 635 semantic keys. |
 | [`../data/i18n/ui.id.json`](../data/i18n/ui.id.json) | Indonesian UI catalogue: the same 635 keys. |
-| [`../data/curated/indicators.csv`](../data/curated/indicators.csv) | Programme and project targets, baselines and units. |
-| [`../data/curated/indicator_values.csv`](../data/curated/indicator_values.csv) | Dated indicator observations. |
-| [`../data/curated/project_phases.csv`](../data/curated/project_phases.csv) | Sourced project phases with dates, cost and progress where stated. |
+| [`../data/curated/indicators.csv`](../data/curated/indicators.csv) | 35 programme and project targets, baselines and units. |
+| [`../data/curated/indicator_values.csv`](../data/curated/indicator_values.csv) | 18 dated indicator observations. |
+| [`../data/curated/project_phases.csv`](../data/curated/project_phases.csv) | Nine sourced project phases with dates, cost and progress where stated. |
 | [`../data/curated/estates.csv`](../data/curated/estates.csv) | 204 industrial estates and SEZs, including eight reviewed and 18 register-only PSN industrial areas. |
-| [`../data/derived/psn_reconciliation.csv`](../data/derived/psn_reconciliation.csv) | Match ledger: 226 of 226 active PSN project or estate records represented and all 24 programmes matched; 88 projects and 18 estates are register-only. |
-
-## Operations
-
-| File | Contents |
-|---|---|
-| [`operations/refresh-runbook.md`](operations/refresh-runbook.md) | Monthly fetch, diff, review, rebuild and verify procedure. |
+| [`../data/derived/psn_reconciliation.csv`](../data/derived/psn_reconciliation.csv) | Match ledger: all 226 active PSN project or estate records represented and all 24 programmes matched; 88 projects and 18 estates are register-only. |
 
 ## Evidence
 
@@ -62,19 +62,18 @@ atlas itself; this page is the map for the working documents.
 Indonesian views, the language chooser, the browser smoke report and the
 five-profile UX rehearsal. The report records zero external requests and zero
 console errors. The screenshots are evidence for the 9 November 2026 V4
-bilingual shell.
+bilingual shell and later increments.
 
 ## Reading order
 
 1. [README](../README.md) for what the atlas contains and how to open it.
-2. [`plan/plan.md`](plan/plan.md) for the V4 scope, data expansion, bilingual
-   architecture and delivery plan.
-3. [`plan/plan-v3.md`](plan/plan-v3.md) for the completed v3 backlog and the
-   history behind the current build.
+2. [`plan/plan.md`](plan/plan.md) for what remains.
+3. [`data-model.md`](data-model.md) and [`sources.md`](sources.md) before editing
+   data.
 4. [`phases/phase-3-trust.md`](phases/phase-3-trust.md) for how facts are sourced
    and verified.
-5. [`design/ux-audit-v4.md`](design/ux-audit-v4.md) for the current usability
-   findings and the open five-user study.
+5. [`design/ux-audit-v4.md`](design/ux-audit-v4.md) for usability findings and the
+   open five-user study.
 6. [`operations/refresh-runbook.md`](operations/refresh-runbook.md) before
    refreshing any source.
 

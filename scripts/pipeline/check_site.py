@@ -21,7 +21,6 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from data_model import CURATED, ROOT, SITE_DATA, SITE_DOWNLOADS, read_csv
 
 SITE = ROOT / "site"
-INDEX = SITE / "app.html"
 CHOOSER = SITE / "index.html"
 LOCALES = ("en", "id")
 errors: list[str] = []

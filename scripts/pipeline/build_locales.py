@@ -1,6 +1,6 @@
 """Generate the English, Indonesian and chooser entry points.
 
-One application template (``site/app.html``) produces two static pages:
+One application template (``site/templates/app.html``) produces two static pages:
 
 * ``site/en/index.html`` — ``<html lang="en">``
 * ``site/id/index.html`` — ``<html lang="id">``
@@ -25,8 +25,9 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from data_model import ROOT  # noqa: E402
 
 SITE = ROOT / "site"
-TEMPLATE = SITE / "app.html"
-CHOOSER = SITE / "chooser.html"
+TEMPLATES = SITE / "templates"
+TEMPLATE = TEMPLATES / "app.html"
+CHOOSER = TEMPLATES / "chooser.html"
 I18N = ROOT / "data" / "i18n"
 LOCALES = ("en", "id")
 LOCALE_NAMES = {"en": "English", "id": "Bahasa Indonesia"}
@@ -102,7 +103,7 @@ def main() -> None:
 
     chooser = CHOOSER.read_text(encoding="utf-8")
     if "__" in chooser:
-        raise SystemExit("chooser.html contains an unresolved placeholder")
+        raise SystemExit("templates/chooser.html contains an unresolved placeholder")
     (SITE / "index.html").write_text(chooser, encoding="utf-8")
     print("wrote site/index.html")
 

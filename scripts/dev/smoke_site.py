@@ -260,7 +260,7 @@ def desktop_views(page: Page) -> None:
           "Data view labels the sector chart")
     check(page.locator(".conflict-table tbody tr").count() == 19, "Conflict register has 19 rows")
     check(page.locator(".dictionary details").count() == 28, "Data dictionary has 28 tables")
-    check(page.locator('a.download[href]').count() == 23, "Data view has 23 static downloads")
+    check(page.locator('a.download[href]').count() == 24, "Data view has 24 static downloads")
     check("programme register" in page.locator(".data-view").inner_text().lower(),
           "Data view has a programme register section")
     check(page.locator('.download[data-export="projects-csv"]').count() == 1,

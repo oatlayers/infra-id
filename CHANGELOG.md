@@ -3,6 +3,26 @@
 Public-facing changes to the atlas. Dates are the day the change landed in this
 repository. The Data view renders these entries from this file at build time.
 
+## 2026-11-09 — Repository cleanup and documentation restructure
+
+- Moved the page source templates to `site/templates/app.html` and
+  `site/templates/chooser.html`; the generated pages remain at `site/index.html`,
+  `site/en/index.html` and `site/id/index.html`.
+- Removed orphaned files: the superseded `docs/plan/plan-v3.md`, the one-off
+  `migrate_schema_v3.py`, `normalize_claims.py` and
+  `add_project_name_translations.py`, two unused derived intermediates, and eight
+  unreferenced evidence screenshots. The deleted history remains in git.
+- Rewrote `docs/plan/plan.md` as remaining work only: coverage gaps, workstreams,
+  priority order, blockers, invariants and acceptance criteria.
+- Rewrote `README.md` as a short entry point for humans and agents, with a
+  repository map, quick start, build pipeline, editing rules and a documentation
+  index.
+- Added `docs/data-model.md` and `docs/sources.md` for the detailed schema and
+  provenance material that no longer belongs in the README; updated
+  `docs/README.md`, `scripts/README.md` and the refresh runbook.
+- No curated data changed. Build, `--check`, smoke test, five-profile rehearsal,
+  contrast check and link check pass. Nothing was pushed, deployed or published.
+
 ## 2026-11-09 — Sortable coverage table
 
 - The Data coverage table now sorts by layer, current count, target and gap.

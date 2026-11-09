@@ -1,7 +1,8 @@
 # Phase 1 Decisions and Guardrails
 
 **Date:** 7 November 2026
-**Status:** confirmed. This file closes D1–D5 in `plan-v3.md`.
+**Status:** confirmed. This file closes D1-D5 in the completed v3 plan, which is
+retained in git history.
 **Publishing:** no GitHub remote, push, Pages deployment or public release. Phase 1
 ends with a local, offline-capable preview. Publishing is deferred until the
 repository owner asks for it explicitly.
@@ -63,7 +64,8 @@ Schema v3 is frozen in `scripts/data_model.py` and enforced by
 construction km, progress, expected opening year and a geometry link.
 `estates.csv` carries the new fields above.
 
-The one-off migration is `scripts/tools/migrate_schema_v3.py`. Existing values were
+A one-off schema v3 migration script performed the change; the script is retained
+in git history. Existing values were
 preserved; `island`, `status_as_of`, `verification` and `coordinate_source`
 were backfilled from existing rows. No status or numeric claim was guessed.
 
@@ -87,8 +89,8 @@ target.
 
 ## D5 — Tracking
 
-`plan-v3.md` is the work-status record. Phase 1 is marked complete with a
-completion log. Phase 2 and Phase 3 remain open.
+The completed v3 plan is the work-status record in git history. Phase 1 is marked
+complete with a completion log. Phase 2 and Phase 3 remain open.
 
 ## Phase 1 deviations from the original plan
 
