@@ -7,6 +7,8 @@
   const STATUS_ORDER = A.STATUS_ORDER || [];
   const SECTORS = A.SECTORS || {};
   const SECTOR_ORDER = A.SECTOR_ORDER || [];
+  const PROGRAMME_THEMES = A.PROGRAMME_THEMES || {};
+  const PROGRAMME_THEME_ORDER = A.PROGRAMME_THEME_ORDER || [];
   const STALE_DAYS = A.STALE_DAYS || 183;
 
   const features = (window.PROJECTS && window.PROJECTS.features) || [];
@@ -32,6 +34,8 @@
 
   let estates = window.INFRA_ESTATES || null;
   let estatesState = estates ? 'ready' : 'idle';
+  let programmes = window.INFRA_PROGRAMMES || null;
+  let programmesState = programmes ? 'ready' : 'idle';
 
   const state = {
     view: 'explore',
@@ -52,7 +56,8 @@
     estateType: 'all',
     estateProvince: '',
     estateSort: 'name',
-    expandedEstate: null
+    expandedEstate: null,
+    programmeTheme: 'all'
   };
 
   let mapSelectedId = null;
@@ -396,6 +401,8 @@
       if (state.corridorId && !corridorById.has(state.corridorId)) state.corridorId = null;
     } else if (view === 'estates') {
       state.view = 'estates';
+    } else if (view === 'programmes') {
+      state.view = 'programmes';
     } else if (view === 'data') {
       state.view = 'data';
     } else {
@@ -449,12 +456,15 @@
     renderAll();
     setHash(buildHash(), !!push);
     if (state.view === 'estates') ensureEstates();
+    if (state.view === 'programmes') ensureProgrammes();
   }
 
   function applyRoute() {
     parseHash();
     renderAll();
     if (state.view === 'estates') ensureEstates();
+    if (state.view === 'programmes') ensureProgrammes();
+    if (mobileQuery.matches) setSheetHeight(sheetSnapForView());
     requestAnimationFrame(function () { window.AtlasMap && window.AtlasMap.resize(); });
     if (!initialFitDone && !state.projectId) {
       initialFitDone = true;
@@ -477,6 +487,9 @@
     dom.statEstates.textContent = fmtNum(totalEstates);
     if (dom.search.value !== state.q) dom.search.value = state.q;
     dom.tabCountExplore.textContent = fmtNum(totalProjects);
+    if (dom.tabCountProgrammes) {
+      dom.tabCountProgrammes.textContent = fmtNum((stats.programmes && stats.programmes.total) || 24);
+    }
   }
 
   function renderTabs() {
@@ -1153,6 +1166,23 @@
     document.body.appendChild(script);
   }
 
+  function ensureProgrammes() {
+    if (programmesState === 'ready' || programmesState === 'loading') return;
+    programmesState = 'loading';
+    const script = document.createElement('script');
+    script.src = 'data/programmes.js';
+    script.onload = function () {
+      programmes = window.INFRA_PROGRAMMES || [];
+      programmesState = 'ready';
+      if (state.view === 'programmes') renderAll();
+    };
+    script.onerror = function () {
+      programmesState = 'error';
+      if (state.view === 'programmes') renderAll();
+    };
+    document.body.appendChild(script);
+  }
+
   function estateTypeLabel(type) {
     return type === 'sez' ? 'SEZ' : type === 'both' ? 'SEZ + estate' : 'Industrial estate';
   }
@@ -1391,6 +1421,143 @@
     else if (kind === 'estates-csv') exportFilteredEstates();
   }
 
+  /* ---------- programme view ---------- */
+
+  function programmeThemeLabel(theme) {
+    return (PROGRAMME_THEMES[theme] && PROGRAMME_THEMES[theme].label) || theme || 'Other';
+  }
+
+  function programmeThemeColor(theme) {
+    return (PROGRAMME_THEMES[theme] && PROGRAMME_THEMES[theme].color) || '#475569';
+  }
+
+  function pkpnLabel(id) {
+    return {
+      'pkpn-food': 'Food sovereignty',
+      'pkpn-energy-water': 'Energy and water',
+      'pkpn-education': 'Education',
+      'pkpn-health': 'Health',
+      'pkpn-downstreaming': 'Downstreaming',
+      'pkpn-infrastructure': 'Infrastructure',
+      'pkpn-housing': 'Housing',
+      'pkpn-resilience': 'Resilience and people’s economy'
+    }[id] || 'Not mapped';
+  }
+
+  function filteredProgrammes() {
+    if (!programmes) return [];
+    const query = state.q.toLowerCase().trim();
+    return programmes.filter(function (programme) {
+      if (state.programmeTheme !== 'all' && programme.theme !== state.programmeTheme) return false;
+      if (!query) return true;
+      const haystack = [
+        programme.name_en, programme.name_id, programme.summary_en, programme.summary_id,
+        programme.lead_org_name, programme.lead_org_short, programme.pkpn_id,
+        programmeThemeLabel(programme.theme)
+      ].join(' ').toLowerCase();
+      return query.split(/\s+/).every(function (token) { return haystack.indexOf(token) !== -1; });
+    });
+  }
+
+  function programmeCard(programme) {
+    const theme = programmeThemeColor(programme.theme);
+    const lead = programme.lead_org_short || programme.lead_org_name || 'Lead agency not assigned';
+    const projects = programme.projects || [];
+    const projectList = projects.length
+      ? '<div class="programme-projects"><div class="programme-sub">Linked atlas projects</div><ul>' +
+        projects.map(function (project) {
+          return '<li><a href="#/project/' + esc(project.id) + '">' + esc(project.name) + '</a>' +
+            '<span>' + esc(statusLabel(project.status)) + ' · ' + esc(project.role) + '</span></li>';
+        }).join('') + '</ul></div>'
+      : '<p class="programme-empty">No linked atlas project yet. The programme record is complete; project and indicator links are pending.</p>';
+    return '<article class="programme-card" style="--theme-color:' + esc(theme) + '">' +
+      '<div class="programme-top"><span class="programme-no">PSN ' + esc(programme.psn_no) + '</span>' +
+      '<span class="programme-theme">' + esc(programmeThemeLabel(programme.theme)) + '</span></div>' +
+      '<h3>' + esc(programme.name_en) + '</h3>' +
+      '<p class="programme-id">' + esc(programme.name_id) + '</p>' +
+      '<p class="programme-summary" lang="en"><span class="programme-lang">EN</span>' + esc(programme.summary_en) + '</p>' +
+      '<p class="programme-summary programme-summary-id" lang="id"><span class="programme-lang">ID</span>' + esc(programme.summary_id) + '</p>' +
+      '<dl class="programme-meta">' +
+      '<div><dt>Lead</dt><dd>' + esc(lead) + '</dd></div>' +
+      '<div><dt>PKPN</dt><dd>' + esc(pkpnLabel(programme.pkpn_id)) + '</dd></div>' +
+      '<div><dt>Target</dt><dd>' + esc(programme.target_summary_en || 'Not yet published') + '</dd></div>' +
+      '</dl>' + projectList +
+      (programme.source_url
+        ? '<a class="programme-source" href="' + esc(programme.source_url) + '" target="_blank" rel="noopener">' +
+          esc(programme.source_title || 'Official source') + ' ↗</a>'
+        : '') +
+      '</article>';
+  }
+
+  function renderProgrammes() {
+    dom.exploreContent.hidden = true;
+    dom.exploreContent.style.display = 'none';
+    dom.viewPanel.hidden = false;
+
+    if (programmesState === 'loading') {
+      dom.viewPanel.innerHTML = '<div class="data-view"><h2>Programmes</h2>' +
+        '<p class="lede">Loading the programme register…</p></div>';
+      return;
+    }
+    if (programmesState === 'error') {
+      dom.viewPanel.innerHTML = '<div class="data-view"><h2>Programmes</h2>' +
+        '<p class="notes-callout">The programme payload could not be loaded. Rebuild the site data and try again.</p></div>';
+      return;
+    }
+    if (!programmes) {
+      dom.viewPanel.innerHTML = '<div class="data-view"><h2>Programmes</h2>' +
+        '<p class="lede">Loading the programme register…</p></div>';
+      ensureProgrammes();
+      return;
+    }
+
+    const list = filteredProgrammes();
+    const themeCounts = { all: programmes.length };
+    programmes.forEach(function (programme) {
+      themeCounts[programme.theme] = (themeCounts[programme.theme] || 0) + 1;
+    });
+    const statsProgrammes = stats.programmes || {};
+    const themes = [{ key: 'all', label: 'All', count: themeCounts.all }].concat(
+      PROGRAMME_THEME_ORDER.filter(function (theme) { return themeCounts[theme]; })
+        .map(function (theme) {
+          return { key: theme, label: programmeThemeLabel(theme), count: themeCounts[theme] };
+        })
+    );
+
+    dom.viewPanel.innerHTML = '<div class="programme-view">' +
+      '<header class="programme-hero">' +
+      '<p class="kicker">PSN programme layer</p>' +
+      '<h2>Programmes</h2>' +
+      '<p class="lede">The 24 active programmes in Permenko 16/2025, one record per official number. Names and summaries are bilingual; targets, budgets and indicators stay blank until an official source states them.</p>' +
+      '</header>' +
+      '<div class="programme-stats">' +
+      '<div><span class="k">Programmes</span><strong>' + fmtNum(statsProgrammes.total || programmes.length) + '</strong><small>active</small></div>' +
+      '<div><span class="k">With a lead agency</span><strong>' + fmtNum(statsProgrammes.with_lead || 0) + '</strong><small>of ' + fmtNum(programmes.length) + '</small></div>' +
+      '<div><span class="k">Linked projects</span><strong>' + fmtNum(statsProgrammes.with_projects || 0) + '</strong><small>programmes</small></div>' +
+      '<div><span class="k">Atomic claims</span><strong>' + fmtNum(statsProgrammes.claims || 0) + '</strong><small>programme facts</small></div>' +
+      '<div><span class="k">Targets published</span><strong>' + fmtNum(statsProgrammes.with_target || 0) + '</strong><small>of ' + fmtNum(programmes.length) + '</small></div>' +
+      '</div>' +
+      '<div class="programme-toolbar">' +
+      '<span class="programme-count">' + fmtNum(list.length) + ' of ' + fmtNum(programmes.length) + ' shown</span>' +
+      '</div>' +
+      '<div class="chip-row programme-chips">' + themes.map(function (theme) {
+        return '<button class="chip" data-programme-theme="' + esc(theme.key) + '" aria-pressed="' +
+          String(state.programmeTheme === theme.key) + '">' + esc(theme.label) +
+          '<span class="chip-count">' + fmtNum(theme.count) + '</span></button>';
+      }).join('') + '</div>' +
+      (list.length
+        ? '<div class="programme-grid">' + list.map(programmeCard).join('') + '</div>'
+        : '<p class="notes-callout">No programme matches this filter.</p>') +
+      '</div>';
+
+    dom.viewPanel.querySelectorAll('[data-programme-theme]').forEach(function (chip) {
+      chip.addEventListener('click', function () {
+        state.programmeTheme = chip.getAttribute('data-programme-theme');
+        renderAll();
+      });
+    });
+  }
+
   /* ---------- data view ---------- */
 
   function coverageRows() {
@@ -1462,7 +1629,9 @@
       fmtNum(claims.projects_fully_claimed || 0) + ' / ' + fmtNum(claims.projects_total || 0) +
       ' <small>projects</small></div></div>' +
       '<div class="data-stat"><div class="k">Atomic claims</div><div class="v">' +
-      fmtNum(claims.total || 0) + ' <small>rows</small></div></div></div>' +
+      fmtNum(claims.total || 0) + ' <small>rows</small></div></div>' +
+      '<div class="data-stat"><div class="k">Programme claims</div><div class="v">' +
+      fmtNum((stats.programmes && stats.programmes.claims) || 0) + ' <small>rows</small></div></div></div>' +
       '<p>Every project has a status claim and a claim for each populated numeric fact. ' +
       (missingKeys.length
         ? 'Open gaps: ' + missingKeys.map(function (key) {
@@ -1472,7 +1641,6 @@
       ' Investment figures also carry their own source in <code>investments.csv</code>.</p>' +
       '</section>';
   }
-
   function freshnessSection() {
     const freshness = stats.freshness || {};
     const counts = freshness.counts || {};
@@ -1588,6 +1756,15 @@
       '<p style="margin-top:7px;color:var(--muted);font-size:9px">Generated ' + esc(generated) +
       ' · data as of ' + esc(fmtDate(stats.data_as_of)) + '</p></section>' +
 
+      '<section class="data-section"><h3>Programme register</h3>' +
+      '<p>All ' + fmtNum((stats.programmes && stats.programmes.total) || 0) +
+      ' active PSN programmes have a record with an official number, bilingual name and summary, and a source. ' +
+      fmtNum((stats.programmes && stats.programmes.with_lead) || 0) + ' have a lead agency, ' +
+      fmtNum((stats.programmes && stats.programmes.with_projects) || 0) + ' have at least one structural project link, and ' +
+      fmtNum((stats.programmes && stats.programmes.with_target) || 0) +
+      ' have a published target. Missing targets, budgets and indicators stay visible rather than being inferred.</p>' +
+      '<p><a href="#/programmes">Open the programme register →</a></p></section>' +
+
       claimsSection() + freshnessSection() +
 
       '<section class="data-section"><h3>What this is</h3>' +
@@ -1607,7 +1784,7 @@
       }).join('') + '</ul></section>' +
 
       '<section class="data-section"><h3>Inclusion rules</h3>' +
-      '<p><b>Roads:</b> major toll corridors and PSN national roads. <b>Airports and seaports:</b> PSN or KPBU designated. <b>Factories:</b> PSN manufacturing plants, Hilirisasi Stage II plants and private plants with investment of at least Rp 1 trillion; estates and pure mining pits are excluded. <b>Energy:</b> PSN refineries and LNG, plus the 100 GWp solar programme. <b>Water:</b> PSN dams. <b>Urban and coastal:</b> IKN Phase 2 and the Giant Java Sea Wall. <b>Estates:</b> the Kemenperin industrial-estate list and official SEZ profiles, one row per zone.</p>' +
+      '<p><b>Roads:</b> major toll corridors and PSN national roads. <b>Airports and seaports:</b> PSN or KPBU designated. <b>Factories:</b> PSN manufacturing plants, Hilirisasi Stage II plants and private plants with investment of at least Rp 1 trillion; estates and pure mining pits are excluded. <b>Energy:</b> PSN refineries and LNG, plus the 100 GWp solar programme. <b>Water:</b> PSN dams. <b>Urban and coastal:</b> IKN Phase 2 and the Giant Java Sea Wall. <b>Programmes:</b> all 24 active PSN programmes in Permenko 16/2025. <b>Estates:</b> the Kemenperin industrial-estate list and official SEZ profiles, one row per zone.</p>' +
       '<p>The Bali, Malacca and Sunda strait bridges are excluded by scope. Estates remain table-only until their coordinates are verified.</p></section>' +
 
       '<section class="data-section"><h3>Known gaps</h3><ul class="gap-list">' +
@@ -1623,6 +1800,12 @@
       fmtNum(sectorCounts.water || 0) + ' dams mapped. Plant and project points are approximate; ' +
       'capacity and investment are only as good as the cited company or press source. ' +
       'Transport points are also approximate, and the PSN review gives no rail length or asset capacity.</li>' +
+      '<li>Programmes: ' + fmtNum((stats.programmes && stats.programmes.total) || 0) +
+      ' of 24 active PSN programmes recorded; ' +
+      fmtNum((stats.programmes && stats.programmes.with_lead) || 0) + ' have a lead agency, ' +
+      fmtNum((stats.programmes && stats.programmes.with_projects) || 0) + ' have a linked project and ' +
+      fmtNum((stats.programmes && stats.programmes.with_target) || 0) +
+      ' have a published target. The annex states no budgets or indicators, so those gaps are explicit.</li>' +
       '<li>Estate coverage: ' + fmtNum(estateStats.industrial || 0) +
       ' industrial-estate designations and ' + fmtNum(estateStats.sez || 0) +
       ' SEZs (' + fmtNum(estateStats.total || 0) + ' rows, ' + fmtNum(estateStats.both || 0) +
@@ -1676,6 +1859,8 @@
       renderCorridors();
     } else if (state.view === 'estates') {
       renderEstates();
+    } else if (state.view === 'programmes') {
+      renderProgrammes();
     } else if (state.view === 'data') {
       renderData();
     }
@@ -1689,6 +1874,13 @@
   function sheetSnaps() {
     const viewport = window.innerHeight - (mobileQuery.matches ? 56 : 64);
     return [220, Math.round(viewport * 0.52), viewport - 12];
+  }
+
+  function sheetSnapForView() {
+    const snaps = sheetSnaps();
+    if (state.view === 'data' || state.view === 'programmes') return snaps[2];
+    if (state.view === 'corridors' || state.view === 'estates') return snaps[1];
+    return snaps[0];
   }
 
   function setSheetHeight(height, animate) {
@@ -1717,8 +1909,7 @@
       setSheetHeight(0);
       return;
     }
-    const snaps = sheetSnaps();
-    setSheetHeight(snaps[0]);
+    setSheetHeight(sheetSnapForView());
   }
 
   function bindSheet() {
@@ -1842,7 +2033,7 @@
         state.corridorId = null;
         if (mobileQuery.matches) {
           const snaps = sheetSnaps();
-          setSheetHeight(view === 'data' ? snaps[2] : snaps[1]);
+          setSheetHeight((view === 'data' || view === 'programmes') ? snaps[2] : snaps[1]);
         }
         commit(true);
       });
@@ -2120,6 +2311,7 @@
     dom.statCorridors = $('stat-corridors');
     dom.statEstates = $('stat-estates');
     dom.tabCountExplore = $('tab-count-explore');
+    dom.tabCountProgrammes = $('tab-count-programmes');
     dom.layerProjects = $('layer-projects');
     dom.layerLabels = $('layer-labels');
     dom.legendBody = $('legend-body');
@@ -2156,6 +2348,7 @@
       if (legend) legend.removeAttribute('open');
     }
     if (state.view === 'estates') ensureEstates();
+    if (state.view === 'programmes') ensureProgrammes();
 
     requestAnimationFrame(function () {
       if (window.AtlasMap) window.AtlasMap.resize();

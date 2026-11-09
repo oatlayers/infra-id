@@ -33,7 +33,11 @@ from data_model import (
     LANGUAGES,
     LAW_LEVELS,
     ORG_TYPES,
+    PKPN_IDS,
     PRECISIONS,
+    PROGRAMME_ROLES,
+    PROGRAMME_STATUSES,
+    PROGRAMME_THEMES,
     PSN_VALUES,
     ROOT,
     ROLES,
@@ -146,6 +150,10 @@ def main() -> None:
     estate_sources = read_csv(CURATED / "estate_sources.csv")
     coverage = read_csv(CURATED / "coverage_targets.csv")
     conflicts = read_csv(CURATED / "conflicts.csv")
+    programmes = read_csv(CURATED / "programmes.csv")
+    programme_projects = read_csv(CURATED / "programme_projects.csv")
+    programme_sources = read_csv(CURATED / "programme_sources.csv")
+    register = read_csv(CURATED / "psn_register.csv")
 
     project_ids = {row["id"] for row in projects}
     org_ids = {row["id"] for row in organizations}
@@ -154,6 +162,7 @@ def main() -> None:
     law_ids = {row["id"] for row in laws}
     estate_ids = {row["id"] for row in estates}
     geometry_ids = {row["id"] for row in geometry}
+    programme_ids = {row["id"] for row in programmes}
 
     seen: set[str] = set()
     for row in projects:
@@ -544,6 +553,97 @@ def main() -> None:
             err(f"{where}: duplicate claim")
         seen.add(key)
 
+    register_names = {
+        (row["kind"], int(row["psn_no"])): row["name_id"]
+        for row in register
+        if row["status"] == "active"
+    }
+    active_programme_numbers = {
+        number for (kind, number) in register_names if kind == "programme"
+    }
+
+    seen_ids: set[str] = set()
+    seen_numbers: set[int] = set()
+    for row in programmes:
+        where = f"programmes {row['id'] or '?'}"
+        if row["id"] in seen_ids:
+            err(f"{where}: duplicate id")
+        seen_ids.add(row["id"])
+        check_id(row["id"], where)
+        for field in (
+            "name_id", "name_en", "theme", "psn_no", "summary_id", "summary_en",
+            "status", "source_id", "last_verified", "notes",
+        ):
+            if is_blank(row[field]):
+                err(f"{where}: missing {field}")
+        check_enum(row["theme"], PROGRAMME_THEMES, "theme", where)
+        check_enum(row["status"], PROGRAMME_STATUSES, "status", where)
+        number = as_int(row["psn_no"])
+        if number is None or not 1 <= number <= 25:
+            err(f"{where}: psn_no must be 1-25")
+        elif number in seen_numbers:
+            err(f"{where}: duplicate psn_no {number}")
+        else:
+            seen_numbers.add(number)
+        if row["psn_no"] and number is not None:
+            expected = register_names.get(("programme", number))
+            if expected is None:
+                err(f"{where}: psn_no {number} is not an active register programme")
+            elif row["name_id"] != expected:
+                err(f"{where}: name_id does not match the register")
+        if row["pkpn_id"]:
+            check_enum(row["pkpn_id"], PKPN_IDS, "pkpn_id", where)
+        if row["lead_org_id"] and row["lead_org_id"] not in org_ids:
+            err(f"{where}: unknown lead_org_id {row['lead_org_id']!r}")
+        if row["source_id"] not in source_ids:
+            err(f"{where}: unknown source")
+        check_date(row["last_verified"], f"{where} last_verified")
+        start = check_year(row["start_year"], "start_year", where) if row["start_year"] else None
+        target = check_year(row["target_year"], "target_year", where) if row["target_year"] else None
+        if start is not None and target is not None and target < start:
+            err(f"{where}: target_year is before start_year")
+        check_number(row["budget_idr_t"], "budget_idr_t", where)
+
+    if seen_numbers != active_programme_numbers:
+        missing = sorted(active_programme_numbers - seen_numbers)
+        extra = sorted(seen_numbers - active_programme_numbers)
+        err(f"programmes: register coverage mismatch; missing {missing}, extra {extra}")
+
+    seen = set()
+    for row in programme_projects:
+        where = f"programme_projects {row['programme_id']}/{row['project_id']}"
+        if row["programme_id"] not in programme_ids:
+            err(f"{where}: unknown programme")
+        if row["project_id"] not in project_ids:
+            err(f"{where}: unknown project")
+        if row["source_id"] not in source_ids:
+            err(f"{where}: unknown source")
+        check_enum(row["role"], PROGRAMME_ROLES, "role", where)
+        key = (row["programme_id"], row["project_id"])
+        if key in seen:
+            err(f"{where}: duplicate link")
+        seen.add(key)
+
+    seen = set()
+    for row in programme_sources:
+        where = f"programme_sources {row['programme_id']}/{row['source_id']}"
+        if row["programme_id"] not in programme_ids:
+            err(f"{where}: unknown programme")
+        if row["source_id"] not in source_ids:
+            err(f"{where}: unknown source")
+        if not row["claim"]:
+            err(f"{where}: missing claim")
+        elif "," in row["claim"]:
+            err(f"{where}: claim must be one atomic type, got {row['claim']!r}")
+        elif row["claim"] not in CLAIM_TYPES:
+            err(f"{where}: unknown claim type {row['claim']!r}")
+        if row["claim_date"]:
+            check_date(row["claim_date"], f"{where} claim_date")
+        key = (row["programme_id"], row["source_id"], row["claim"])
+        if key in seen:
+            err(f"{where}: duplicate claim")
+        seen.add(key)
+
     seen = set()
     for row in conflicts:
         where = f"conflicts {row['id'] or '?'}"
@@ -600,7 +700,7 @@ def main() -> None:
         f"{len(organizations)} organisations, {len(sources)} sources, "
         f"{len(corridors)} corridors, {len(segments)} segments, "
         f"{len(events)} events, {len(geometry)} geometry, {len(investments)} investments, "
-        f"{len(conflicts)} conflicts"
+        f"{len(conflicts)} conflicts, {len(programmes)} programmes"
     )
 
 

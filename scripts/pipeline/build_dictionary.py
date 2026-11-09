@@ -37,6 +37,9 @@ TABLE_META = {
     "coverage_targets.csv": ("Coverage targets", "The reference set and target count for every data layer."),
     "conflicts.csv": ("Conflict register", "Known disagreements between sources, with both values and resolutions."),
     "psn_register.csv": ("PSN register", "The 226 active projects and 24 active programmes in Permenko 16/2025, with deleted slots retained for audit."),
+    "programmes.csv": ("Programmes", "The 24 active PSN programmes, with bilingual names, summaries, lead agency and source."),
+    "programme_projects.csv": ("Programme projects", "Structural links between a programme and the atlas projects that illustrate it."),
+    "programme_sources.csv": ("Programme claims", "One atomic fact per programme-source link."),
 }
 
 FIELD = {
@@ -150,6 +153,17 @@ FIELD = {
     "sector_code": ("text", "yes", "Official annex letter A-N for projects, or programme for the programme section."),
     "name_id": ("text", "yes", "Official Indonesian name as printed in the regulation."),
     "location": ("text", "no", "Official location text as printed in the regulation."),
+    "name_en": ("text", "yes", "Display name in English."),
+    "theme": ("enum", "yes", "Programme theme used for filtering and display."),
+    "pkpn_id": ("enum", "no", "Optional link to one of the eight national priority programmes (PKPN)."),
+    "lead_org_id": ("id", "conditional", "Foreign key to the organisation leading the programme."),
+    "summary_id": ("text", "yes", "Short Indonesian summary of the programme scope."),
+    "summary_en": ("text", "yes", "Short English summary of the programme scope."),
+    "target_summary_id": ("text", "no", "Indonesian summary of the published target; blank when the source states none."),
+    "target_summary_en": ("text", "no", "English summary of the published target; blank when the source states none."),
+    "target_year": ("year", "no", "Target completion year when a source states one."),
+    "budget_idr_t": ("decimal", "no", "Programme budget in trillion rupiah when a source states one."),
+    "programme_id": ("id", "yes", "Foreign key to programmes.csv."),
 }
 
 # Context-specific overrides: status and type mean different things by table.
@@ -180,6 +194,11 @@ OVERRIDES = {
     ("psn_register.csv", "status"): ("enum", "yes", "active or deleted in the current annex.", "active; deleted"),
     ("psn_register.csv", "sector"): ("enum", "yes", "Normalised sector key used by the reconciliation ledger.", "roads_and_bridges; ports; airports; railways; industrial_areas; housing; dams_and_irrigation; water_and_sanitation; coastal_defence; energy; technology; education; tourism; agriculture; programme"),
     ("psn_register.csv", "description"): ("text", "no", "Programme description from the annex; blank for projects.", ""),
+    ("programmes.csv", "status"): ("enum", "yes", "active, paused or completed.", "active; paused; completed"),
+    ("programmes.csv", "theme"): ("enum", "yes", "Programme theme used for filtering.", "energy; economy; border; transport; tourism; industry; food; urban; water; health; education; social; environment"),
+    ("programmes.csv", "pkpn_id"): ("enum", "no", "Optional PKPN link.", "pkpn-food; pkpn-energy-water; pkpn-education; pkpn-health; pkpn-downstreaming; pkpn-infrastructure; pkpn-housing; pkpn-resilience"),
+    ("programme_projects.csv", "role"): ("enum", "yes", "primary, component or related.", "primary; component; related"),
+    ("programme_sources.csv", "claim"): ("enum", "yes", "One atomic fact type; commas are not allowed.", ""),
 }
 
 CONDITIONAL = {

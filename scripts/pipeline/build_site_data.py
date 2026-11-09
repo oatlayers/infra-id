@@ -33,6 +33,9 @@ from data_model import (
     DERIVED_FIELDS,
     EVENT_FIELDS,
     EXPORTS,
+    PROGRAMME_FIELDS,
+    PROGRAMME_PROJECT_FIELDS,
+    PROGRAMME_SOURCE_FIELDS,
     ROOT,
     SEGMENT_FIELDS,
     SITE_DATA,
@@ -114,6 +117,10 @@ def main() -> None:
     claims = read_csv(CURATED / "project_sources.csv")
     estates = read_csv(CURATED / "estates.csv")
     estate_gap = read_csv(DERIVED / "estate_gap_2026.csv")
+    organizations = read_csv(CURATED / "organizations.csv")
+    programmes = read_csv(CURATED / "programmes.csv")
+    programme_projects = read_csv(CURATED / "programme_projects.csv")
+    programme_claims = read_csv(CURATED / "programme_sources.csv")
     corridors = read_csv(CURATED / "corridors.csv")
     segments = read_csv(CURATED / "corridor_segments.csv")
     events = read_csv(CURATED / "project_events.csv")
@@ -140,6 +147,35 @@ def main() -> None:
             ).append(claim["claim"])
 
     projects_by_id = {row["id"]: row for row in rows}
+    organizations_by_id = {row["id"]: row for row in organizations}
+    links_by_programme: dict[str, list[dict[str, str]]] = {}
+    for link in programme_projects:
+        project = projects_by_id.get(link["project_id"])
+        if not project:
+            continue
+        links_by_programme.setdefault(link["programme_id"], []).append(
+            {
+                "id": project["id"],
+                "name": project["name"],
+                "status": project["status"],
+                "sector": project["sector"],
+                "role": link["role"],
+                "notes": link["notes"],
+            }
+        )
+    claims_by_programme: dict[str, list[dict[str, str]]] = {}
+    for claim in programme_claims:
+        source = sources.get(claim["source_id"])
+        claims_by_programme.setdefault(claim["programme_id"], []).append(
+            {
+                "claim": claim["claim"],
+                "claim_value": claim["claim_value"],
+                "claim_date": claim["claim_date"],
+                "source_id": claim["source_id"],
+                "source_title": source["title"] if source else "",
+                "source_url": source["url"] if source else "",
+            }
+        )
     claim_payload = []
     for claim in claims:
         source = sources.get(claim["source_id"], {})
@@ -289,6 +325,24 @@ def main() -> None:
         )
     estate_payload.sort(key=lambda row: row["name"].casefold())
 
+    programme_payload = []
+    for row in sorted(programmes, key=lambda item: int(item["psn_no"])):
+        source = sources.get(row["source_id"])
+        lead = organizations_by_id.get(row["lead_org_id"], {})
+        programme_payload.append(
+            {
+                **row,
+                "lead_org_name": lead.get("name", ""),
+                "lead_org_short": lead.get("short_name", ""),
+                "source_publisher": source["publisher"] if source else "",
+                "source_title": source["title"] if source else "",
+                "source_url": source["url"] if source else "",
+                "retrieved_on": source["retrieved_on"] if source else "",
+                "claims": claims_by_programme.get(row["id"], []),
+                "projects": links_by_programme.get(row["id"], []),
+            }
+        )
+
     by_status = Counter(row["status"] for row in rows)
     by_sector = Counter(row["sector"] for row in rows)
     by_province: Counter[str] = Counter()
@@ -306,7 +360,10 @@ def main() -> None:
 
     last_verified_projects = max((row["last_verified"] for row in rows), default="")
     last_verified_estates = max((row["last_verified"] for row in estates), default="")
-    last_verified = max(last_verified_projects, last_verified_estates)
+    last_verified_programmes = max(
+        (row["last_verified"] for row in programmes), default=""
+    )
+    last_verified = max(last_verified_projects, last_verified_estates, last_verified_programmes)
 
     freshness_counts = Counter(
         (row["entity_type"], row["state"]) for row in freshness
@@ -441,6 +498,20 @@ def main() -> None:
             "gap_rows": len(estate_gap),
             "last_verified": last_verified_estates,
         },
+        "programmes": {
+            "total": len(programmes),
+            "by_theme": dict(sorted(Counter(row["theme"] for row in programmes).items())),
+            "by_status": dict(sorted(Counter(row["status"] for row in programmes).items())),
+            "with_lead": sum(1 for row in programmes if row["lead_org_id"]),
+            "with_projects": len(links_by_programme),
+            "with_target": sum(
+                1 for row in programmes
+                if row["target_summary_id"] or row["target_summary_en"]
+            ),
+            "claims": len(programme_claims),
+            "links": len(programme_projects),
+            "last_verified": last_verified_programmes,
+        },
         "freshness": {
             "as_of": os.environ.get("INFRAA_AS_OF", "") or last_verified,
             "stale_after_days": 183,
@@ -535,6 +606,21 @@ def main() -> None:
                 "meta": f"{len(claims)} atomic claims",
             },
             {
+                "label": "PSN programmes",
+                "file": "downloads/programmes.csv",
+                "meta": f"{len(programmes)} programmes · bilingual names and summaries",
+            },
+            {
+                "label": "Programme project links",
+                "file": "downloads/programme-projects.csv",
+                "meta": f"{len(programme_projects)} structural links",
+            },
+            {
+                "label": "Programme claims",
+                "file": "downloads/programme-claims.csv",
+                "meta": f"{len(programme_claims)} atomic claims",
+            },
+            {
                 "label": "Conflict register",
                 "file": "downloads/conflicts.csv",
                 "meta": f"{len(conflicts)} conflicts · {sum(1 for row in conflicts if row['status'] == 'open')} open",
@@ -621,6 +707,22 @@ def main() -> None:
 
     write_download_json("estates.json", estate_payload, indent=2)
     write_global("estates.js", "INFRA_ESTATES", estate_payload)
+    write_global("programmes.js", "INFRA_PROGRAMMES", programme_payload)
+    write_csv(
+        SITE_DOWNLOADS / "programmes.csv",
+        PROGRAMME_FIELDS,
+        programmes,
+    )
+    write_csv(
+        SITE_DOWNLOADS / "programme-projects.csv",
+        PROGRAMME_PROJECT_FIELDS,
+        programme_projects,
+    )
+    write_csv(
+        SITE_DOWNLOADS / "programme-claims.csv",
+        PROGRAMME_SOURCE_FIELDS,
+        programme_claims,
+    )
     write_csv(
         SITE_DOWNLOADS / "estates.csv",
         list(estates[0].keys()) if estates else [],
@@ -657,7 +759,8 @@ def main() -> None:
 
     print(
         f"wrote {len(features)} projects, {len(corridor_payload)} corridors, "
-        f"{len(estate_payload)} estates, {len(sources)} sources"
+        f"{len(estate_payload)} estates, {len(programme_payload)} programmes, "
+        f"{len(sources)} sources"
     )
     print(
         f"site payload: {sum(p.stat().st_size for p in SITE_DATA.iterdir()) / 1024:.0f} KB runtime, "

@@ -37,6 +37,7 @@ STATS = json.loads(re.search(r"window\.INFRA_STATS\s*=\s*(\{.*\});?", STATS_TEXT
 TOTAL = str(STATS["projects"]["total"])
 RAIL = str(STATS["projects"]["by_sector"].get("railway", 0))
 ESTATES = str(STATS["estates"]["total"])
+PROGRAMMES = str(STATS["programmes"]["total"])
 
 failures: list[str] = []
 report: dict[str, object] = {
@@ -134,10 +135,31 @@ def desktop_views(page: Page) -> None:
     report["views"]["estates"] = {"rows": int(ESTATES)}  # type: ignore[index]
     screenshot(page, "03-estates-desktop.png")
 
+    tab(page, "programmes")
+    page.wait_for_selector(".programme-card")
+    page.wait_for_timeout(400)
+    check(page.locator(".programme-card").count() == int(PROGRAMMES),
+          f"Programmes view lists {PROGRAMMES} programmes")
+    check("Program Ketenagalistrikan" in page.locator(".programme-view").inner_text(),
+          "Programme cards show the official Indonesian name")
+    check("Mencakup kebijakan" in page.locator(".programme-view").inner_text(),
+          "Programme cards show the Indonesian summary")
+    check(page.locator('.programme-card a[href="#/project/energy-plts-100gw-phase-1"]').count() == 1,
+          "Programme cards link to a curated project")
+    page.click('[data-programme-theme="food"]')
+    page.wait_for_timeout(200)
+    check(page.locator(".programme-card").count() == 4, "Food theme narrows to four programmes")
+    page.click('[data-programme-theme="all"]')
+    page.wait_for_timeout(200)
+    report["views"]["programmes"] = {"cards": int(PROGRAMMES)}  # type: ignore[index]
+    screenshot(page, "03b-programmes-desktop.png")
+
     tab(page, "data")
     check(page.locator(".conflict-table tbody tr").count() == 19, "Conflict register has 19 rows")
-    check(page.locator(".dictionary details").count() == 19, "Data dictionary has 19 tables")
-    check(page.locator('a.download[href]').count() == 13, "Data view has 13 static downloads")
+    check(page.locator(".dictionary details").count() == 22, "Data dictionary has 22 tables")
+    check(page.locator('a.download[href]').count() == 16, "Data view has 16 static downloads")
+    check("programme register" in page.locator(".data-view").inner_text().lower(),
+          "Data view has a programme register section")
     check(page.locator('.download[data-export="projects-csv"]').count() == 1,
           "Data view offers the filtered project CSV")
     check(page.locator('.download[data-export="projects-geojson"]').count() == 1,
@@ -147,8 +169,8 @@ def desktop_views(page: Page) -> None:
     check(f"{TOTAL} / {TOTAL}" in page.locator(".data-view").inner_text(), f"Claims coverage is {TOTAL} / {TOTAL}")
     report["views"]["data"] = {  # type: ignore[index]
         "conflicts": 19,
-        "dictionary_tables": 18,
-        "download_controls": 16,
+        "dictionary_tables": 22,
+        "download_controls": 19,
     }
     screenshot(page, "04-data-desktop.png")
 
@@ -261,6 +283,15 @@ def mobile(page: Page) -> None:
     width = page.evaluate("document.documentElement.scrollWidth")
     check(width <= 391, f"Mobile layout has no horizontal overflow (width {width})")
     screenshot(page, "06-explore-mobile.png")
+
+    page.goto(FILE_URL + "#/programmes")
+    page.wait_for_selector(".programme-card")
+    page.wait_for_timeout(400)
+    check(page.locator(".programme-card").count() == int(PROGRAMMES),
+          f"Mobile Programmes renders {PROGRAMMES} cards")
+    width = page.evaluate("document.documentElement.scrollWidth")
+    check(width <= 391, f"Mobile Programmes has no horizontal overflow (width {width})")
+    screenshot(page, "06b-programmes-mobile.png")
 
     page.goto(FILE_URL + "#/data")
     page.wait_for_selector(".data-view")

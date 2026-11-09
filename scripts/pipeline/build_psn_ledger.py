@@ -241,11 +241,41 @@ MISSING_FIELDS = {
     "project": "name_en, summary_id, summary_en, sector_detail, status, status_as_of, coordinates, source, claim, programme_id, organization_roles",
     "estate": "name_en, summary_id, summary_en, area_ha, occupancy_pct, developer, coordinates, source",
     "programme": "name_en, summary_id, summary_en, indicators, budget, lead_org, sources",
+    "matched_programme": "target_summary, indicators, budget, organization_roles, translation_status",
     "matched_project": "name_id, summary_id, summary_en, programme_id, pkpn_id, translation_status",
     "matched_estate": "name_en, summary_id, summary_en, translation_status",
     "matched_partial": "review_match, name_id, summary_id, summary_en, programme_id",
     "matched_aggregate": "review_match, name_id, summary_id, summary_en, programme_id",
     "deleted": "",
+}
+
+# Explicit programme matches, keyed by the official programme number. The
+# programme ids are semantic; the register number is the audit key.
+PROGRAMME_MATCH = {
+    1: "prog-electricity",
+    2: "prog-economic-equity",
+    3: "prog-border-areas",
+    4: "prog-toll-exit-access",
+    5: "prog-national-tourism-areas",
+    7: "prog-smelters",
+    8: "prog-food-supply",
+    9: "prog-superhub",
+    10: "prog-accelerated-regions",
+    11: "prog-special-economic-zones",
+    12: "prog-sugar-palm-downstreaming",
+    13: "prog-eco-city",
+    14: "prog-tourism-aviation",
+    15: "prog-toll-operation",
+    16: "prog-jakarta-flood-control",
+    17: "prog-free-nutritious-meals",
+    18: "prog-peoples-schools",
+    19: "prog-village-cooperatives",
+    20: "prog-education-digitalisation",
+    21: "prog-poverty-reduction",
+    22: "prog-integrated-waste",
+    23: "prog-merauke-food-energy-water",
+    24: "prog-pantura-ponds",
+    25: "prog-east-sumba-shrimp",
 }
 
 RELEASE_BY_SECTOR = {
@@ -277,6 +307,7 @@ def main() -> None:
     register = read_csv(CURATED / "psn_register.csv")
     projects = {row["id"]: row for row in read_csv(CURATED / "projects.csv")}
     estates = {row["id"]: row for row in read_csv(CURATED / "estates.csv")}
+    programmes = {row["id"]: row for row in read_csv(CURATED / "programmes.csv")}
 
     if len(register) != 253:
         raise SystemExit(f"PSN register should have 253 rows, found {len(register)}")
@@ -289,6 +320,8 @@ def main() -> None:
         raise SystemExit(f"PSN register should have 24 active programmes, found {len(active_programmes)}")
     if len(deleted) != 3:
         raise SystemExit(f"PSN register should have 3 deleted slots, found {len(deleted)}")
+    if set(PROGRAMME_MATCH) != {int(row["psn_no"]) for row in active_programmes}:
+        raise SystemExit("PROGRAMME_MATCH does not cover the active programme numbers")
 
     for number, (project_id, _, _, _) in TRANSPORT_MATCH.items():
         if project_id not in projects:
@@ -299,6 +332,13 @@ def main() -> None:
     for number, (estate_id, _, _) in ESTATE_MATCH.items():
         if estate_id not in estates:
             raise SystemExit(f"PSN {number} maps to unknown estate {estate_id}")
+    for number, programme_id in PROGRAMME_MATCH.items():
+        if programme_id not in programmes:
+            raise SystemExit(f"PSN programme {number} maps to unknown programme {programme_id}")
+        if int(programmes[programme_id]["psn_no"]) != number:
+            raise SystemExit(
+                f"programme {programme_id} has psn_no {programmes[programme_id]['psn_no']}, expected {number}"
+            )
 
     out = []
     for row in register:
@@ -334,13 +374,18 @@ def main() -> None:
             continue
 
         if row["kind"] == "programme":
+            programme_id = PROGRAMME_MATCH[int(row["psn_no"])]
             item.update(
-                match_status="missing_programme",
-                missing_fields=MISSING_FIELDS["programme"],
+                atlas_layer="programme",
+                atlas_id=programme_id,
+                atlas_status=programmes[programme_id]["status"],
+                match_status="matched_programme",
+                match_confidence="high",
+                missing_fields=MISSING_FIELDS["matched_programme"],
                 owner="data",
-                next_action="add_programme",
+                next_action="add_indicators",
                 release=release_for(row),
-                notes="Programme-level record; the atlas has no programme layer yet.",
+                notes="Programme record added in the v4 programme layer; targets and indicators are still blank.",
             )
             out.append(item)
             continue
@@ -414,7 +459,7 @@ def main() -> None:
     print("PSN reconciliation: 226 active projects + 24 active programmes")
     for status in [
         "matched_project", "matched_aggregate", "matched_partial", "matched_estate",
-        "missing_project", "missing_estate", "missing_programme",
+        "matched_programme", "missing_project", "missing_estate", "missing_programme",
     ]:
         print(f"  {status:18} {counts.get(status, 0):3}")
 
@@ -422,6 +467,10 @@ def main() -> None:
     print(f"  atlas projects linked {len(linked):3} of {len(projects)}")
     linked_estates = {item["atlas_id"] for item in out if item["atlas_layer"] == "estate"}
     print(f"  atlas estates linked  {len(linked_estates):3} of {len(estates)}")
+    linked_programmes = {
+        item["atlas_id"] for item in out if item["atlas_layer"] == "programme"
+    }
+    print(f"  atlas programmes linked {len(linked_programmes):3} of {len(programmes)}")
 
     by_sector = defaultdict(lambda: [0, 0, 0])
     for item in out:

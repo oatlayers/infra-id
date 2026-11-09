@@ -117,6 +117,23 @@ PSN_REGISTER_FIELDS = [
     "status", "description", "source_id", "notes",
 ]
 
+# Schema v4 programme layer. A programme aggregates projects and indicators;
+# it is not a project and does not carry coordinates or a construction status.
+PROGRAMME_FIELDS = [
+    "id", "name_id", "name_en", "theme", "psn_no", "pkpn_id", "lead_org_id",
+    "summary_id", "summary_en", "target_summary_id", "target_summary_en",
+    "start_year", "target_year", "status", "budget_idr_t", "source_id",
+    "last_verified", "notes",
+]
+
+PROGRAMME_PROJECT_FIELDS = [
+    "programme_id", "project_id", "role", "source_id", "notes",
+]
+
+PROGRAMME_SOURCE_FIELDS = [
+    "programme_id", "source_id", "claim", "claim_value", "claim_date", "notes",
+]
+
 SECTORS = {"road", "railway", "airport", "seaport", "factory", "energy", "water", "urban", "coastal"}
 STATUSES = {"planned", "under_construction", "recently_completed", "operating", "stalled"}
 PSN_VALUES = {"yes", "no", "unknown"}
@@ -125,6 +142,17 @@ ISLANDS = {"Sumatra", "Java", "Kalimantan", "Sulawesi", "Papua", "Bali-Nusa Teng
 VERIFICATIONS = {"official", "dual", "single", "unverified"}
 ORG_TYPES = {"government", "soe", "private", "consortium", "multilateral", "other"}
 ROLES = {"sponsor", "operator", "contractor", "lender", "off_taker", "developer", "owner"}
+PROGRAMME_STATUSES = {"active", "paused", "completed"}
+PROGRAMME_THEMES = {
+    "energy", "economy", "border", "transport", "tourism", "industry", "food",
+    "urban", "water", "health", "education", "social", "environment",
+}
+PROGRAMME_ROLES = {"primary", "component", "related"}
+PKPN_IDS = {
+    "pkpn-food", "pkpn-energy-water", "pkpn-education", "pkpn-health",
+    "pkpn-downstreaming", "pkpn-infrastructure", "pkpn-housing",
+    "pkpn-resilience",
+}
 SOURCE_TYPES = {"official", "secondary", "company", "multilateral"}
 LANGUAGES = {"en", "id", "other"}
 STAGES = {"announced", "committed", "financial_close", "disbursed"}
@@ -214,6 +242,9 @@ TABLES = {
     "coverage_targets.csv": COVERAGE_FIELDS,
     "conflicts.csv": CONFLICT_FIELDS,
     "psn_register.csv": PSN_REGISTER_FIELDS,
+    "programmes.csv": PROGRAMME_FIELDS,
+    "programme_projects.csv": PROGRAMME_PROJECT_FIELDS,
+    "programme_sources.csv": PROGRAMME_SOURCE_FIELDS,
 }
 
 

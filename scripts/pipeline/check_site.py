@@ -70,10 +70,14 @@ def main() -> None:
     events = read_csv(CURATED / "project_events.csv")
     conflicts = read_csv(CURATED / "conflicts.csv")
     claims = read_csv(CURATED / "project_sources.csv")
+    programmes = read_csv(CURATED / "programmes.csv")
+    programme_projects = read_csv(CURATED / "programme_projects.csv")
+    programme_claims = read_csv(CURATED / "programme_sources.csv")
 
     payload = load_global(SITE_DATA / "projects.js", "PROJECTS")
     features = payload.get("features", [])
     estate_payload = load_global(SITE_DATA / "estates.js", "INFRA_ESTATES")
+    programme_payload = load_global(SITE_DATA / "programmes.js", "INFRA_PROGRAMMES")
     corridor_payload = load_global(SITE_DATA / "corridors.js", "CORRIDORS")
     stats = load_global(SITE_DATA / "stats.js", "INFRA_STATS")
     search = load_global(SITE_DATA / "search.js", "INFRA_SEARCH")
@@ -82,6 +86,8 @@ def main() -> None:
         err(f"projects.js: {len(features)} features, expected {len(projects)}")
     if len(estate_payload) != len(estates):
         err(f"estates.js: {len(estate_payload)} rows, expected {len(estates)}")
+    if len(programme_payload) != len(programmes):
+        err(f"programmes.js: {len(programme_payload)} rows, expected {len(programmes)}")
     if len(corridor_payload) != len(corridors):
         err(f"corridors.js: {len(corridor_payload)} rows, expected {len(corridors)}")
 
@@ -125,6 +131,33 @@ def main() -> None:
     if search_estates != estate_ids:
         err("search.js: estate coverage does not match estates.js")
 
+    programme_ids = set()
+    programme_numbers = set()
+    for programme in programme_payload:
+        programme_id = programme.get("id", "")
+        if programme_id in programme_ids or programme_id in project_ids or programme_id in estate_ids:
+            err(f"programmes.js: duplicate or colliding id {programme_id!r}")
+        programme_ids.add(programme_id)
+        number = str(programme.get("psn_no", ""))
+        if number in programme_numbers:
+            err(f"programmes.js: duplicate PSN number {number!r}")
+        programme_numbers.add(number)
+        for field in (
+            "name_id", "name_en", "theme", "summary_id", "summary_en", "status",
+            "source_id", "last_verified", "claims",
+        ):
+            if not programme.get(field):
+                err(f"programmes.js {programme_id}: missing {field}")
+        if len(programme.get("claims", [])) < 2:
+            err(f"programmes.js {programme_id}: fewer than two programme claims")
+        linked = programme.get("projects", [])
+        if any(link.get("id") not in project_ids for link in linked):
+            err(f"programmes.js {programme_id}: unknown linked project")
+    if programme_ids != {row["id"] for row in programmes}:
+        err("programmes.js: ids do not match the curated programme table")
+    if len(programme_numbers) != 24:
+        err(f"programmes.js: {len(programme_numbers)} PSN numbers, expected 24")
+
     project_stats = stats.get("projects", {})
     if project_stats.get("total") != len(projects):
         err("stats.js: project total does not match the curated table")
@@ -142,6 +175,12 @@ def main() -> None:
         err("stats.js: claim count does not match the curated table")
     if stats.get("claims", {}).get("projects_fully_claimed") != len(projects):
         err("stats.js: not every project is fully claimed")
+    if stats.get("programmes", {}).get("total") != len(programmes):
+        err("stats.js: programme total does not match the curated table")
+    if stats.get("programmes", {}).get("claims") != len(programme_claims):
+        err("stats.js: programme claim count does not match the curated table")
+    if stats.get("programmes", {}).get("links") != len(programme_projects):
+        err("stats.js: programme link count does not match the curated table")
     if stats.get("freshness", {}).get("records") != len(projects) + len(estates):
         err("stats.js: freshness report does not cover every project and estate")
     if not stats.get("freshness", {}).get("next_due"):
@@ -162,6 +201,13 @@ def main() -> None:
         err("claims.csv: row count does not match the curated claims")
     if any(row["project_id"] not in project_ids for row in claim_rows):
         err("claims.csv: unknown project id")
+
+    with (SITE_DOWNLOADS / "programme-claims.csv").open(encoding="utf-8", newline="") as fh:
+        programme_claim_rows = list(csv.DictReader(fh))
+    if len(programme_claim_rows) != len(programme_claims):
+        err("programme-claims.csv: row count does not match the curated claims")
+    if any(row["programme_id"] not in programme_ids for row in programme_claim_rows):
+        err("programme-claims.csv: unknown programme id")
 
     check_local_assets()
 

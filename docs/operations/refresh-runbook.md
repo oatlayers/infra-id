@@ -164,6 +164,14 @@ The script refuses to run unless the register has exactly 226 active projects,
 not replace them with fuzzy matching. The generated ledger is
 `data/derived/psn_reconciliation.csv`.
 
+The programme layer lives in `data/curated/programmes.csv`. Official Indonesian
+names are read from the register by `scripts/imports/add_psn_programmes.py`; do
+not retype them. If a future annex adds or removes a programme, update the
+register and the importer together, then check that every programme has two
+claims (PSN status and active status) in `programme_sources.csv`. Targets,
+budgets and indicators are not in the annex and must not be inferred from
+unrelated reporting.
+
 ## 5. Rebuild
 
 Run the whole pipeline, not a subset:
@@ -287,6 +295,8 @@ the site. The repository owner has deferred publishing explicitly.
 - [ ] KPPIP, KEK and Kemenperin/BAJRA estate sources retried.
 - [ ] PSN regulation and `psn_register.csv` checked for a newer Permenko;
       reconciliation ledger regenerated.
+- [ ] Programme names, lead agencies and project links checked against the
+      register; programme claims refreshed.
 - [ ] Trans corridor totals and sections checked.
 - [ ] Factory statuses, capacity and investment checked.
 - [ ] Changed rows updated with atomic claims and `last_verified`.

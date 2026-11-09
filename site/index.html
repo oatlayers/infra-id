@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Indonesia Infrastructure Atlas</title>
-<meta name="description" content="A curated, source-linked atlas of major Indonesian infrastructure: roads, railways, airports, seaports and factories that are operating, under construction, planned or stalled.">
+<meta name="description" content="A curated, source-linked atlas of major Indonesian infrastructure and PSN programmes: roads, railways, airports, seaports, factories, energy, water, urban and coastal projects that are operating, under construction, planned or stalled.">
 <meta name="theme-color" content="#0b1f33">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%230b1f33'/%3E%3Ccircle cx='16' cy='16' r='10' fill='none' stroke='%23f3c99a' stroke-width='1.5'/%3E%3Cpath d='m21 11-3 7-7 3 3-7 7-3Z' fill='%23f3c99a'/%3E%3C/svg%3E">
 <link rel="stylesheet" href="assets/fonts.css">
@@ -97,8 +97,8 @@
 
   <div class="header-search">
     <svg aria-hidden="true"><use href="#i-search"/></svg>
-    <label class="sr-only" for="search">Search projects, provinces, corridors and estates</label>
-    <input id="search" type="search" placeholder="Search projects, provinces, corridors…" autocomplete="off" spellcheck="false">
+    <label class="sr-only" for="search">Search projects, programmes, provinces, corridors and estates</label>
+    <input id="search" type="search" placeholder="Search projects, programmes, provinces…" autocomplete="off" spellcheck="false">
     <kbd aria-hidden="true">Ctrl K</kbd>
   </div>
 
@@ -115,6 +115,7 @@
     <button class="sheet-handle" id="sheet-handle" type="button" aria-label="Resize panel" aria-controls="rail-body"></button>
     <nav class="tabs" role="tablist" aria-label="Views">
       <button class="tab" role="tab" data-view="explore" aria-selected="true" aria-controls="rail-body">Explore<span class="tab-count" id="tab-count-explore"></span></button>
+      <button class="tab" role="tab" data-view="programmes" aria-selected="false" aria-controls="rail-body">Programmes<span class="tab-count" id="tab-count-programmes"></span></button>
       <button class="tab" role="tab" data-view="corridors" aria-selected="false" aria-controls="rail-body">Corridors</button>
       <button class="tab" role="tab" data-view="estates" aria-selected="false" aria-controls="rail-body">Estates</button>
       <button class="tab" role="tab" data-view="data" aria-selected="false" aria-controls="rail-body">Data</button>

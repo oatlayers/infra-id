@@ -1,8 +1,8 @@
 {
-  "checked_at": "2026-11-08",
+  "checked_at": "2026-11-09",
   "views": {
     "explore": {
-      "rows": 107
+      "rows": 140
     },
     "corridors": {
       "cards": 5
@@ -10,23 +10,26 @@
     "estates": {
       "rows": 178
     },
+    "programmes": {
+      "cards": 24
+    },
     "data": {
       "conflicts": 19,
-      "dictionary_tables": 18,
-      "download_controls": 16
+      "dictionary_tables": 22,
+      "download_controls": 19
     },
     "drawer": {
-      "title": "Balikpapan–Samarinda Toll Road"
+      "title": "100 GWp Solar Programme - Phase 1"
     }
   },
   "downloads": {
     "projects_csv": {
       "file": "infra-id-projects-filtered.csv",
-      "rows": 107
+      "rows": 140
     },
     "projects_geojson": {
       "file": "infra-id-projects-filtered.geojson",
-      "features": 107
+      "features": 140
     },
     "estates_csv": {
       "file": "infra-id-estates-filtered.csv",
@@ -34,7 +37,7 @@
     },
     "claims_csv": {
       "file": "claims.csv",
-      "rows": 479
+      "rows": 599
     }
   },
   "keyboard": {
@@ -44,7 +47,7 @@
   },
   "protocols": {
     "http": {
-      "port": 57735,
+      "port": 59503,
       "ok": true
     },
     "file": {
@@ -56,9 +59,11 @@
     "02-corridors-desktop.png",
     "02b-corridor-segments-desktop.png",
     "03-estates-desktop.png",
+    "03b-programmes-desktop.png",
     "04-data-desktop.png",
     "05-project-drawer.png",
     "06-explore-mobile.png",
+    "06b-programmes-mobile.png",
     "07-data-mobile.png"
   ],
   "external_requests": [],

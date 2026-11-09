@@ -20,6 +20,25 @@ window.ATLAS = {
     coastal: { label: 'Coastal', plural: 'Coastal', short: 'Coast', icon: '#i-coastal' }
   },
   SECTOR_ORDER: ['road', 'railway', 'airport', 'seaport', 'factory', 'energy', 'water', 'urban', 'coastal'],
+  PROGRAMME_THEMES: {
+    energy: { label: 'Energy', color: '#b45309' },
+    economy: { label: 'Economy', color: '#0f766e' },
+    border: { label: 'Border areas', color: '#1d4ed8' },
+    transport: { label: 'Transport', color: '#c2410c' },
+    tourism: { label: 'Tourism', color: '#7c3aed' },
+    industry: { label: 'Industry', color: '#475569' },
+    food: { label: 'Food', color: '#15803d' },
+    urban: { label: 'Urban', color: '#334155' },
+    water: { label: 'Water', color: '#0369a1' },
+    health: { label: 'Health', color: '#be123c' },
+    education: { label: 'Education', color: '#4338ca' },
+    social: { label: 'Social', color: '#a16207' },
+    environment: { label: 'Environment', color: '#047857' }
+  },
+  PROGRAMME_THEME_ORDER: [
+    'energy', 'economy', 'border', 'transport', 'tourism', 'industry', 'food',
+    'urban', 'water', 'health', 'education', 'social', 'environment'
+  ],
   STALE_DAYS: 183,
   VERIFY_MONTHS: 6
 };

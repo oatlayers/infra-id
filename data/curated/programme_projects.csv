@@ -1,0 +1,8 @@
+programme_id,project_id,role,source_id,notes
+prog-electricity,energy-plts-100gw-phase-1,component,src-setneg-plts-100gw-2026-08-25,The 100 GWp solar phase is an electricity programme component; this link is structural.
+prog-smelters,factory-hilirisasi-2-07-imip-stainless-steel,component,src-setkab-hilirisasi-stage-ii-2026-04-29,Hilirisasi Stage II smelter project; the annex does not name individual plants under the programme.
+prog-smelters,factory-hilirisasi-2-08-cilegon-carbon-steel,component,src-setkab-hilirisasi-stage-ii-2026-04-29,Hilirisasi Stage II smelter project; the annex does not name individual plants under the programme.
+prog-smelters,factory-hilirisasi-2-10-gresik-copper-gold,component,src-setkab-hilirisasi-stage-ii-2026-04-29,Hilirisasi Stage II smelter project; the annex does not name individual plants under the programme.
+prog-sugar-palm-downstreaming,factory-hilirisasi-2-11-sei-mangkei-oleofood,component,src-setkab-hilirisasi-stage-ii-2026-04-29,Palm-oil downstreaming component; this link is structural.
+prog-accelerated-regions,urban-ikn-phase-2,component,src-bisnis-ikn-phase-2-2026-09-28,IKN is named in the programme scope; this row covers Phase 2.
+prog-jakarta-flood-control,coastal-java-sea-wall,related,src-antara-sea-wall-2026-09-16,"The sea wall is a coastal-defence asset related to Jakarta flood control, not a direct programme component."

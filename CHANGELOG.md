@@ -3,6 +3,25 @@
 Public-facing changes to the atlas. Dates are the day the change landed in this
 repository. The Data view renders these entries from this file at build time.
 
+## 2026-11-09 — PSN programme layer
+
+- Added `programmes.csv` with all 24 active PSN programmes: official number,
+  official Indonesian name, English name, theme, lead agency, bilingual summary
+  and source. The importer reads the Indonesian names from `psn_register.csv`
+  and fails if the register or programme number set changes.
+- Added `programme_projects.csv` with seven structural project links and
+  `programme_sources.csv` with 48 atomic claims (PSN status and active status per
+  programme). Targets, budgets and indicators are left blank because Permenko
+  16/2025 does not state them.
+- Added a Programmes view with theme filters, bilingual cards, linked projects
+  and sources; a programme register section in Data; and three downloads
+  (`programmes.csv`, `programme-projects.csv`, `programme-claims.csv`).
+- Extended validation, the data dictionary to 229 fields across 22 tables, the
+  site payload checks and the browser smoke test.
+- PSN coverage is now 110/226 project or estate records plus 24/24 programmes;
+  116 project or estate records remain. Added 10 government organisations.
+- Nothing was pushed, deployed or published.
+
 ## 2026-11-09 — PSN road completion
 
 - Added nine road rows for the remaining PSN road entries: Kisaran–Tebing

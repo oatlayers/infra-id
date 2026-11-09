@@ -27,7 +27,9 @@ atlas itself; this page is the map for the working documents.
 | File | Contents |
 |---|---|
 | [`../data/curated/psn_register.csv`](../data/curated/psn_register.csv) | Official Permenko 16/2025 annex: 226 active projects, 24 active programmes and 3 deleted slots. |
-| [`../data/derived/psn_reconciliation.csv`](../data/derived/psn_reconciliation.csv) | Match ledger: 110 active PSN records matched, 116 project or estate records plus 24 programmes outstanding, with owner, next action and release. |
+| [`../data/curated/programmes.csv`](../data/curated/programmes.csv) | The 24 active PSN programmes with bilingual names, summaries, theme, lead agency and source. |
+| [`../data/curated/programme_projects.csv`](../data/curated/programme_projects.csv) | Seven structural links between programmes and atlas projects. |
+| [`../data/derived/psn_reconciliation.csv`](../data/derived/psn_reconciliation.csv) | Match ledger: 110 active PSN project or estate records and all 24 programmes matched; 116 project or estate records outstanding, with owner, next action and release. |
 
 ## Operations
 
