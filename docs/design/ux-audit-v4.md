@@ -67,6 +67,7 @@ corridor group opens the matching corridor. Fuzzy ranking is still open.
 | No companies or agencies view despite 101 organisation profiles | Full-width Companies view with type filter, role search, expandable project roles, filtered CSV and two downloads | `03d-companies-desktop.png` |
 | The atlas had one IKN Phase 2 row against a 25-package target | Added 23 named IKN package and project rows with status, location and source claims; the package count is now 24/25 | `09-ikn-search-desktop.png`, `09b-ikn-toll-drawer.png` |
 | Data had no charts | Native sector, status and freshness charts from the existing stats | `04b-data-charts.png` |
+| Data headers did not sort | The four coverage headers now sort by layer, current count, target and gap, with `aria-sort`, a visible arrow and focus retention. The curated order is unchanged until a header is activated. | `11-data-sort-desktop.png` |
 | The indicator layer was thin | Added 21 delivery-report indicators and 14 dated values; programme cards now show education, health, housing, infrastructure and energy measures | `10-education-pkpn-card.png`, `10c-data-indicators.png` |
 | Leaflet scale and attribution leaked above the full-height mobile sheet on register views | The map is hidden for wide views on mobile, matching the existing desktop rule | `10e-education-mobile.png` |
 | The 2027 PKPN were absent from the programme register | Eight PKPN cards with bilingual summaries, targets, budgets and indicators, in speech order | `03b-programmes-desktop.png` |
@@ -79,7 +80,6 @@ corridor group opens the matching corridor. Fuzzy ranking is still open.
 | Medium | Explore now uses 13 px row titles and 10.5–12.5 px captions; the 14–16 px body scale is not complete | The plan targets a 14–16 px body and 12–13 px captions | Finish the body scale in Release 4.3 and re-test 320/390 px overflow |
 | Medium | Search ranking is still token containment, with no edit distance or arrow-key result navigation | Grouped counts and synonyms fix discovery, but typo tolerance and keyboard result movement remain | Add fuzzy ranking and result-list arrow navigation |
 | Medium | Data coverage `reference_set`, download labels/meta and dictionary descriptions remain English in the ID edition | These are methodological strings, not proper names | Move coverage labels and download labels into the catalogue; translate dictionary descriptions in Release 4.4 |
-| Medium | No sortable table component in Data | The charts and tables are readable, but headers do not sort | Add sortable headers and a column chooser |
 | Thirty-five indicators and nine phases are sourced | The layer is structurally complete but still thin against the 300-indicator target | Add ministry baseline values and project-level output indicators as official reporting is filed |
 | Only 111 of the 300 company profiles exist; 22 profiles have no project role and 100 projects have no organisation role | The Companies view is useful but the network is incomplete | Add profiles and role links from existing project sources before adding new projects |
 | Medium | No map-only mode or rail collapse | Explore still fixes 400 px for the rail | Add a collapse control and a map-only state |
@@ -101,6 +101,7 @@ corridor group opens the matching corridor. Fuzzy ranking is still open.
 | Project names | 251 Indonesian display names (163 reviewed + 88 official) |
 | Project summaries | 251 generated in both locales; 0 editorial |
 | Indicators / values / phases | 35 / 18 / 9 |
+| Sortable coverage headers | 4 |
 | PKPN programmes | 8, with 27 claims |
 | Companies / role links | 111 / 227 |
 | Sources / dictionary tables | 140 / 28 |
@@ -111,7 +112,7 @@ corridor group opens the matching corridor. Fuzzy ranking is still open.
 | External requests | none |
 | Console / page errors | none |
 | Contrast pairs asserted | 19; all pass WCAG AA |
-| Keyboard path | skip link, Ctrl+K, Escape, arrow-row navigation, drawer Escape and focus trap |
+| Keyboard path | skip link, Ctrl+K, Escape, coverage sort buttons, arrow-row navigation, drawer Escape and focus trap |
 | Automated task success | 20/20 steps across five profiles |
 
 ## 6. Five-user protocol (open)
@@ -148,7 +149,7 @@ run.
    flagships and high-traffic rows (Medium, Release 4.1/4.4).
 2. Raise the Explore type scale (High, Release 4.3).
 3. Search fuzzy ranking and result navigation (Medium, Release 4.3).
-4. Charts and sortable tables in Data (Medium, Release 4.3).
+4. A general sortable table component and column chooser in Data (Medium, Release 4.3); the coverage table now sorts.
 5. Mobile bottom navigation and full-screen filters (Medium, Release 4.3).
 6. Detail pages and list↔map linking (Medium, Release 4.3).
 7. Table semantics and print CSS (Low, Release 4.5).

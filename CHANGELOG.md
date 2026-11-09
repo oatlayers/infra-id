@@ -3,6 +3,17 @@
 Public-facing changes to the atlas. Dates are the day the change landed in this
 repository. The Data view renders these entries from this file at build time.
 
+## 2026-11-09 — Sortable coverage table
+
+- The Data coverage table now sorts by layer, current count, target and gap.
+  Headers are buttons with `aria-sort`, a visible direction arrow and focus
+  retention after the re-render. Numeric headers are right-aligned. The
+  curated default order is unchanged until a header is activated.
+- Added a smoke assertion that the current-count sort is descending on the first
+  click and that the layer order is restored on the third.
+- Build, `--check`, smoke test, five-profile rehearsal, contrast check and link
+  check pass. Nothing was pushed, deployed or published.
+
 ## 2026-11-09 — Two-year delivery indicators
 
 - Added 21 sourced programme indicators and 14 dated values from the 20 October

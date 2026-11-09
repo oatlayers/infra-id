@@ -78,7 +78,8 @@
     programmeTheme: 'all',
     companyType: 'all',
     companySort: 'name',
-    expandedCompany: null
+    expandedCompany: null,
+    coverageSort: { key: '', dir: 1 }
   };
 
   let mapSelectedId = null;
@@ -2218,18 +2219,53 @@
     return (window.ATLAS_BASE || '') + file;
   }
 
+  function coverageLabel(row) {
+    return tOr('coverage.' + row.layer, row.label);
+  }
+
+  function coverageHeader(key, label) {
+    const active = state.coverageSort.key === key;
+    const direction = active ? state.coverageSort.dir : 0;
+    const ariaSort = active ? (direction > 0 ? 'ascending' : 'descending') : 'none';
+    const indicator = active
+      ? '<span class="sort-indicator" aria-hidden="true">' + (direction > 0 ? '▲' : '▼') + '</span>'
+      : '';
+    return '<th class="' + (key === 'layer' ? '' : 'num') + '" aria-sort="' + ariaSort + '">' +
+      '<button type="button" class="sort-button" data-coverage-sort="' + key + '">' +
+      esc(label) + indicator + '</button></th>';
+  }
+
   function coverageRows() {
-    const rows = (stats.coverage || []).map(function (row) {
-      return '<tr><td class="layer">' + esc(tOr('coverage.' + row.layer, row.label)) +
+    const source = stats.coverage || [];
+    const sorted = state.coverageSort.key ? source.slice().sort(function (a, b) {
+      const key = state.coverageSort.key;
+      const factor = state.coverageSort.dir;
+      if (key === 'layer') {
+        return coverageLabel(a).localeCompare(
+          coverageLabel(b), I18N.locale === 'id' ? 'id' : 'en'
+        ) * factor;
+      }
+      const aValue = key === 'gap' && a.status === 'met' ? 0 : Number(a[key] || 0);
+      const bValue = key === 'gap' && b.status === 'met' ? 0 : Number(b[key] || 0);
+      if (aValue !== bValue) return (aValue - bValue) * factor;
+      return coverageLabel(a).localeCompare(
+        coverageLabel(b), I18N.locale === 'id' ? 'id' : 'en'
+      );
+    }) : source;
+    const rows = sorted.map(function (row) {
+      return '<tr><td class="layer">' + esc(coverageLabel(row)) +
         '<br><span style="color:var(--muted);font-size:9px">' + esc(row.reference_set) + '</span></td>' +
         '<td class="num">' + fmtNum(row.current) + '</td>' +
         '<td class="num">' + fmtNum(row.target) + '</td>' +
         '<td class="num ' + (row.status === 'met' ? 'ok' : 'gap') + '">' +
         (row.status === 'met' ? esc(t('data.met')) : (row.gap ? '+' + fmtNum(row.gap) : '—')) + '</td></tr>';
     }).join('');
-    return '<table class="coverage-table"><thead><tr><th>' + esc(t('data.layer')) + '</th><th>' +
-      esc(t('data.now')) + '</th><th>' + esc(t('data.target')) + '</th><th>' + esc(t('data.gap')) +
-      '</th></tr></thead><tbody>' + rows + '</tbody></table>';
+    return '<table class="coverage-table"><thead><tr>' +
+      coverageHeader('layer', t('data.layer')) +
+      coverageHeader('current', t('data.now')) +
+      coverageHeader('target', t('data.target')) +
+      coverageHeader('gap', t('data.gap')) +
+      '</tr></thead><tbody>' + rows + '</tbody></table>';
   }
 
   function stackBar(counts) {
@@ -3011,6 +3047,21 @@
     });
 
     dom.viewPanel.addEventListener('click', function (event) {
+      const sortButton = event.target.closest('[data-coverage-sort]');
+      if (sortButton) {
+        const key = sortButton.getAttribute('data-coverage-sort');
+        if (state.coverageSort.key === key) {
+          state.coverageSort.dir *= -1;
+        } else {
+          state.coverageSort = { key: key, dir: key === 'layer' ? 1 : -1 };
+        }
+        const scrollTop = dom.viewPanel.scrollTop;
+        renderData();
+        dom.viewPanel.scrollTop = scrollTop;
+        const next = dom.viewPanel.querySelector('[data-coverage-sort="' + key + '"]');
+        if (next) next.focus();
+        return;
+      }
       const exporter = event.target.closest('[data-export]');
       if (exporter) {
         handleExport(exporter.getAttribute('data-export'));

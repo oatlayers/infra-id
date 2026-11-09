@@ -272,13 +272,31 @@ def desktop_views(page: Page) -> None:
     check(page.locator('.download[data-export="companies-csv"]').count() == 1,
           "Loaded companies add the filtered company CSV")
     check(f"{TOTAL} / {TOTAL}" in page.locator(".data-view").inner_text(), f"Claims coverage is {TOTAL} / {TOTAL}")
+    check(page.locator(".coverage-table th[aria-sort]").count() == 4,
+          "Coverage table exposes four sortable headers")
     report["views"]["data"] = {  # type: ignore[index]
         "conflicts": 19,
         "dictionary_tables": 28,
         "download_controls": 26,
         "charts": 2,
+        "sortable_coverage_headers": 4,
     }
+    page.evaluate("document.getElementById('view-panel').scrollTop = 0")
+    page.wait_for_timeout(150)
     screenshot(page, "04-data-desktop.png")
+    page.click('[data-coverage-sort="current"]')
+    page.wait_for_timeout(150)
+    check(page.locator(".coverage-table thead th").nth(1).get_attribute("aria-sort") == "descending",
+          "Coverage sort toggles to descending")
+    values = [
+        int(value.replace(",", ""))
+        for value in page.locator(".coverage-table tbody tr td:nth-child(2)").all_inner_texts()
+    ]
+    check(values == sorted(values, reverse=True), "Coverage rows sort by current count")
+    page.click('[data-coverage-sort="layer"]')
+    page.wait_for_timeout(150)
+    check(page.locator(".coverage-table thead th").nth(0).get_attribute("aria-sort") == "ascending",
+          "Coverage sort returns to layer order")
 
 
 def desktop_drawer(page: Page) -> None:

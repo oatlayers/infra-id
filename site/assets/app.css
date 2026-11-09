@@ -1188,6 +1188,31 @@ svg { display: block; }
 .coverage-table .gap { color: var(--accent); font-weight: 600; }
 .coverage-table .ok { color: var(--operating); font-weight: 600; }
 .coverage-table .layer { font-weight: 500; }
+.coverage-table th.num { text-align: right; }
+.coverage-table .sort-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  width: 100%;
+  min-height: 20px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  letter-spacing: inherit;
+  text-align: inherit;
+  text-transform: inherit;
+  cursor: pointer;
+}
+.coverage-table th.num .sort-button { justify-content: flex-end; }
+.coverage-table .sort-button:hover { color: var(--ink); }
+.coverage-table .sort-button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+.coverage-table .sort-indicator { color: var(--accent); font-size: 8px; line-height: 1; }
 .def-list { margin: 0; padding: 0; list-style: none; }
 .def-list li {
   display: grid;

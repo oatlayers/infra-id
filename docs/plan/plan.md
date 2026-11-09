@@ -1310,7 +1310,7 @@ Target **WCAG 2.2 AA**. Priority checks:
 - Map v3 with province boundaries, labels, linked highlighting and corridor
   and estate layers.
 - Project, programme, corridor, estate and company detail pages.
-- Full-width Data dashboard with charts and downloads.
+- Full-width Data dashboard with charts, downloads and a sortable coverage table.
 - Search v2 with ranking, aliases and grouped results. **Partial:** grouped
   counts, corridor results and Indonesian–English synonyms are in; fuzzy
   ranking and arrow-key result navigation remain.
@@ -1504,8 +1504,9 @@ A record is done when:
     polygon is added; the migration note is in the changelog and runbook.
 13. **Build the Data dashboard prototype.** **Partial (9 Nov 2026).** Full-width
     coverage, native sector/status/freshness charts, freshness, claims,
-    conflicts, sources, downloads and methods are in. A sortable table component
-    remains.
+    conflicts, sources, downloads and methods are in. The coverage table sorts
+    by layer, current count, target and gap; a general sortable table component
+    and column chooser remain.
 14. **Write the acceptance tests.** **Done (9 Nov 2026).** Payload budget, i18n
     coverage, catalogue parity, both locales, keyboard path, `file://` and HTTP
     are in the build or the browser smoke test.
