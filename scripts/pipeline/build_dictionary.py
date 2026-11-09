@@ -44,6 +44,8 @@ TABLE_META = {
     "indicators.csv": ("Indicators", "Programme or project targets, baselines and units, with their own source."),
     "indicator_values.csv": ("Indicator values", "Dated observations for an indicator, each with its own source."),
     "project_phases.csv": ("Project phases", "Sourced stages of a project, with status, dates, cost and progress where stated."),
+    "pkpn_programmes.csv": ("PKPN programmes", "The eight 2027 Program Kerja Prioritas Nasional, with bilingual summaries, targets, budget and source."),
+    "pkpn_sources.csv": ("PKPN claims", "One atomic fact per PKPN-source link."),
 }
 
 FIELD = {
@@ -241,6 +243,8 @@ OVERRIDES = {
     ("project_phases.csv", "start_date"): ("date", "no", "Phase start date when the source states one.", ""),
     ("project_phases.csv", "end_date"): ("date", "no", "Phase end or opening date when the source states one.", ""),
     ("project_phases.csv", "progress_pct"): ("decimal", "no", "Reported phase progress, 0-100.", ""),
+    ("pkpn_sources.csv", "claim"): ("enum", "yes", "One atomic fact type; commas are not allowed.", ""),
+    ("pkpn_programmes.csv", "theme"): ("enum", "yes", "Programme theme used for filtering.", "energy; economy; border; transport; infrastructure; tourism; industry; food; urban; water; health; education; social; environment"),
 }
 
 CONDITIONAL = {

@@ -3,6 +3,25 @@
 Public-facing changes to the atlas. Dates are the day the change landed in this
 repository. The Data view renders these entries from this file at build time.
 
+## 2026-11-09 — Eight PKPN priorities
+
+- Added `pkpn_programmes.csv` (eight 2027 Program Kerja Prioritas Nasional with
+  bilingual names, summaries and targets) and `pkpn_sources.csv` (27 claims).
+  The layer is separate from the 24 PSN programmes and links to the PKPN IDs
+  already used by the PSN programmes.
+- Filed two official snapshots: the 14 August 2026 budget speech and the
+  16 September 2026 Finance Ministry breakdown. These state the 100 GWp solar
+  target, 10,000 Puskesmas, 514 Labkesmas, 441 RSUD, the Rp820.9T education and
+  Rp244.9T health allocations, 10 million local entrepreneurs, the 15-segment
+  Giant Sea Wall and the 2027 poverty, unemployment and Gini ranges.
+- Added 11 PKPN indicators and one current value. The Programme view shows eight
+  PKPN cards in speech order with target, budget and target-versus-current
+  blocks; Data adds `pkpn-programmes.csv`, `pkpn-claims.csv` and a 28-table
+  dictionary. UI catalogue grows to 634 keys per locale.
+- Sources grow to 135; initial payload 1,150 KB, data 1,667 KB and total
+  3,677 KB. Build, `--check`, smoke test, five-profile rehearsal, contrast check
+  and link check pass. Nothing was pushed, deployed or published.
+
 ## 2026-11-09 — Grouped search and synonyms
 
 - Search now shows grouped counts for projects, programmes, corridors, estates
@@ -13,8 +32,8 @@ repository. The Data view renders these entries from this file at build time.
   locales. The Companies, Estates and Programmes views use the same matcher.
 - The six-tab row now wraps rather than clipping the Companies tab at the 400 px
   rail width.
-- UI catalogue grows to 618 keys per locale. Initial payload is 1,139 KB, data
-  1,625 KB and total 3,617 KB. Build, `--check`, smoke test, five-profile
+- UI catalogue grows to 634 keys per locale. Initial payload is 1,150 KB, data
+  1,667 KB and total 3,677 KB. Build, `--check`, smoke test, five-profile
   rehearsal, contrast check and link check pass. Nothing was pushed, deployed or
   published.
 
@@ -41,7 +60,7 @@ repository. The Data view renders these entries from this file at build time.
   101/300 coverage row.
 - The UI catalogue grows to 604 keys per locale. The smoke test covers the
   English Companies view, the Indonesian tab label and the filtered CSV.
-- Initial payload is 1,139 KB, data 1,625 KB and total 3,617 KB. Build,
+- Initial payload is 1,150 KB, data 1,667 KB and total 3,677 KB. Build,
   `--check`, smoke test, five-profile rehearsal, contrast check and link check
   pass. Nothing was pushed, deployed or published.
 

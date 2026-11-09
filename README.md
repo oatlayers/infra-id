@@ -40,7 +40,10 @@ curated, not exhaustive**.
   source. Sixteen have a lead agency (10 distinct lead organisations) and five
   have at least one structural project link (seven links). Targets, budgets and
   indicators stay blank because the annex does not state them. The layer has its
-  own view, download and 48 atomic claims.
+  own view, download and 48 atomic claims. A separate PKPN layer adds the eight
+  2027 Program Kerja Prioritas Nasional from the 14 August 2026 budget speech
+  and the Finance Ministry breakdown, with 27 claims and sourced targets where
+  stated.
 - **Estate dataset:** 204 industrial estates and SEZs, shown as a table; the map
   layer is deliberately off until coordinates are verified. The 179
   industrial-estate benchmark is met: 179 pure industrial rows plus 7 shared
@@ -55,11 +58,12 @@ curated, not exhaustive**.
   claims; 228 of 228 projects have a claim for the status and every populated
   numeric fact. 19 conflicts are recorded with both values and both sources
   (11 resolved, 8 open). A 432-row freshness report marks each project and
-  estate fresh, due soon or stale. A 268-field data dictionary covers all 26
-  curated tables, including translations, indicators and project phases.
+  estate fresh, due soon or stale. A 286-field data dictionary covers all 28
+  curated tables, including translations, indicators, phases and the PKPN layer.
 - **Bilingual shell:** `site/index.html` is a language chooser; `site/en/` and
-  `site/id/` share one application and one data bundle. Both locales carry 618
-  UI keys, all 24 programme names and summaries, all five corridor definitions,
+  `site/id/` share one application and one data bundle. Both locales carry 634
+  UI keys, all 24 programme names and summaries, all eight PKPN names and
+  summaries, all five corridor definitions,
   and an Indonesian display name for all 228 projects (140 reviewed, 88 official
   PSN aliases). Every project also has a factual one-sentence summary generated
   from its sourced fields in both locales and labelled auto-generated. The
@@ -71,15 +75,15 @@ curated, not exhaustive**.
   and factory batches; 7 November for transport; and 6 November for earlier
   rows. The 432-row freshness report is fresh as of 9 November 2026; the first
   record falls due on 11 May 2027.
-- **Indicators and phases:** the new `indicators.csv`, `indicator_values.csv`
-  and `project_phases.csv` tables carry three sourced indicators and nine
+- **Indicators and phases:** the `indicators.csv`, `indicator_values.csv`
+  and `project_phases.csv` tables carry 14 sourced indicators and nine
   sourced phases. The 100 GWp programme target (100 GWp, 5.3 GWp current), the
   Phase 1 target (17 GWp) and Nusantara's 3,000 m runway are in the Programme
   and project drawers. The five dams and Nusantara airport have operational
   phases. Targets, budgets and indicators remain blank where the source is
   silent.
-- **Payload:** 1,099 KB initial (one locale plus core Explore data), 1,467 KB
-  of runtime data and 3,428 KB including downloads, within the plan's 1.5 MB
+- **Payload:** 1,150 KB initial (one locale plus core Explore data), 1,667 KB
+  of runtime data and 3,677 KB including downloads, within the plan's 1.5 MB
   initial and 5 MB total budgets.
 - **Status:** Phase 1, Phase 2 and Phase 3 of the v3 overhaul are complete as of
   8 November 2026. Track 2B (estates) is complete by count and corridor geometry
@@ -137,11 +141,11 @@ when a source supports that status.
 | Dated events | 30 | 2018–2026 | Exact dates only; month-end approximations are not used |
 | Factories | 34 | 19 operating, 3 recently completed, 11 under construction, 1 stalled | 27 capacity figures, 18 investment figures; 17 official, 8 dual, 9 single-source |
 | Industrial estates / SEZs | 204 | 179 industrial-only rows, 7 shared rows and 18 SEZ-only rows; 186 industrial-estate designations and 25 SEZs | table view only; 25 official SEZ points, 27 OSM place points, 133 regency centroids, 1 power-station point and 18 province centroids; 179 target met; 19-row 2024 audit ledger |
-| Sources | 133 | 53 official, 53 secondary, 27 company | 43 factory-batch sources, 25 individual SEZ profiles, Permenko 16/2025 and 4/2026, the national register, OSM/Nominatim, the corridor series, the 2026 flagship releases, the PSN-road batch, the PSN industrial-area batch and the register-only batch; V4 target 250 |
-| Project claims | 863 | 228/228 projects fully claimed | one atomic fact per row; 115 separate estate claims and 48 programme claims; register-only rows claim the listing, location and active designation, not implementation |
+| Sources | 135 | 55 official, 53 secondary, 27 company | 43 factory-batch sources, 25 individual SEZ profiles, Permenko 16/2025 and 4/2026, the national register, OSM/Nominatim, the corridor series, the 2026 flagship releases, the PSN-road batch, the PSN industrial-area batch, the register-only batch and the 2027 PKPN speech and Finance Ministry breakdown; V4 target 250 |
+| Project claims | 863 | 228/228 projects fully claimed | one atomic fact per row; 115 estate claims, 48 programme claims and 27 PKPN claims; register-only rows claim the listing, location and active designation, not implementation |
 | Conflicts | 19 | 11 resolved, 8 open | both values and both sources, with a recorded resolution; downloadable register |
 | Freshness | 432 | 432 fresh as of 2026-11-09 | 228 projects + 204 estates; 183-day threshold; next due 2027-05-11 |
-| Data dictionary | 268 | 26 tables | generated from the schema; field type, required flag, description, allowed values and example |
+| Data dictionary | 286 | 28 tables | generated from the schema; field type, required flag, description, allowed values and example |
 
 **Why the transport status counts differ from Kemenhub's summary.** The deck's
 headline says 29 complete and 6 under construction. The atlas uses its own
@@ -249,7 +253,7 @@ infra-id/
 │  ├─ operations/refresh-runbook.md
 │  └─ evidence/phase-3/      desktop/mobile screenshots and smoke report
 ├─ data/
-│  ├─ curated/               editable source of truth (26 tables)
+│  ├─ curated/               editable source of truth (28 tables)
 │  ├─ derived/               generated reports, caches and extracted text
 │  ├─ exports/projects.csv   generated flat export
 │  └─ raw/2026-11-06/        sources as fetched, never edited
@@ -350,7 +354,7 @@ What each script does:
 | `imports/build_estates.py` | KEK HTML + BAJRA table + regency cache | `data/curated/estates.csv` + source rows | Merges the 25 SEZs and 153 industrial estates, handles overlaps; run `add_psn_industrial_estates.py` afterwards to restore the PSN rows |
 | `pipeline/freshness.py` | Curated projects and estates | `data/derived/freshness_report.csv` | Fresh / due soon / stale by `last_verified`; deterministic as-of date |
 | `pipeline/audit_claims.py` | Curated projects and claims | `data/derived/claims_audit.csv` | Checks that status and every populated numeric fact has an atomic claim |
-| `pipeline/build_dictionary.py` | Schema field lists | `data/derived/data_dictionary.csv`, `site/downloads/dictionary.csv` | 268 field definitions across 26 tables |
+| `pipeline/build_dictionary.py` | Schema field lists | `data/derived/data_dictionary.csv`, `site/downloads/dictionary.csv` | 286 field definitions across 28 tables |
 | `pipeline/build_i18n.py` | `data/i18n/ui.*.json`, `translations.csv`, bilingual curated fields | `site/data/i18n.*.js`, `data/derived/i18n_report.csv` | Fails on key drift or a missing programme/corridor translation |
 | `pipeline/build_locales.py` | `site/app.html`, `site/chooser.html` | `site/en/index.html`, `site/id/index.html`, `site/index.html` | Rewrites relative paths and the language switch |
 | `dev/check_contrast.py` | `site/assets/tokens.css` | console report | WCAG AA check for every asserted token pair |
@@ -449,7 +453,7 @@ possible.
 | BPJT toll-road API | <https://itrams-api.bpjt.pu.go.id/v1/reference/api/toll-road-list> | Official status, operating/construction km, operator, endpoint coordinates | 77 operating or partly operating rows; construction-only rows absent; status labels inconsistent |
 | English Wikipedia, "Indonesian Toll Road System", revision 1329385293 (2025-12-25) | <https://en.wikipedia.org/w/index.php?oldid=1329385293> | Route names, lengths, operators, status markers | Secondary and stale in places; no coordinates or opening years |
 | Indonesian Wikipedia, "Daftar jalan tol di Indonesia", oldid 30025554 (2026-10-03) | <https://id.wikipedia.org/w/index.php?oldid=30025554> | Cross-check of lengths, operating km and concessions | Secondary; figures often differ from BPJT |
-| Kemenhub, "Capaian Progres PSN Sektor Transportasi" (19 Feb 2026) | <https://ppid.kemenhub.go.id/fileupload/informasi-berkala/20261806182830.R1_19022026_Update_PSN_Kemenhub_compressed.pdf> | Transport PSN status, opening years, progress, investment | 35 transport PSNs; 29 complete or operating, 6 in construction |
+| Kemenhub, "Capaian Progres PSN Sektor Transportasi" (19 Feb 2026) | <https://ppid.kemenhub.go.id/fileupload/informasi-berkala/20263406342830.R1_19022026_Update_PSN_Kemenhub_compressed.pdf> | Transport PSN status, opening years, progress, investment | 35 transport PSNs; 29 complete or operating, 6 in construction |
 | KPPIP PSN pages | <https://kppip.go.id/proyek-strategis-nasional/> | Airport, seaport and industrial-area PSN lists | Names and provinces only; status must come from elsewhere |
 | Hutama Karya via Palpres (4 Oct 2026) | <https://palpres.disway.id/news/read/780474/hutama-karya-buka-bukaan-soal-jtts-di-hadapan-bakn-dpr-ri-ini-progresnya> | Trans Sumatra km | Secondary; figures differ by scope and date |
 | BPJT section list via detikFinance (26 Jan 2025) | <https://finance.detik.com/infrastruktur/d-7750531/tol-trans-jawa-belum-tersambung-penuh-masih-ada-sisa-ruas-ini> | Trans Java 20-section operating series | Secondary reporting of BPJT data; article prints 1,232.78 km, section sum is 1,232.80 km |
@@ -500,7 +504,7 @@ the 88 official Indonesian PSN names; corridor definitions are translated in
 
 `scripts/pipeline/build_i18n.py` fails if the two catalogues drift or if a
 programme or corridor loses a required translation. It writes a coverage report
-to `data/derived/i18n_report.csv`. The current build has 618 UI keys per locale,
+to `data/derived/i18n_report.csv`. The current build has 634 UI keys per locale,
 an Indonesian display name for all 228 projects and a generated summary for all
 228. Project summaries are generated from the curated fields, not editorial
 copy; the drawer labels them `AUTO` / `OTOMATIS`. Sourced English notes keep an
@@ -643,8 +647,8 @@ Features:
 - **Data:** generated coverage matrix; native sector, status and freshness
   charts; programme register; indicators and phases; claims coverage; freshness;
   status definitions; inclusion rules; conflict register with both values and
-  sources; source register; 21 static downloads plus filtered project
-  CSV/GeoJSON, estate CSV and company CSV; the 268-field data dictionary; known
+  sources; source register; 23 static downloads plus filtered project
+  CSV/GeoJSON, estate CSV and company CSV; the 286-field data dictionary; known
   gaps; and the changelog parsed from `CHANGELOG.md`.
 - **Mobile:** full-viewport map and a draggable bottom sheet with peek, half and
   full snap points; filters stay in the sheet.

@@ -134,6 +134,14 @@ PROGRAMME_SOURCE_FIELDS = [
     "programme_id", "source_id", "claim", "claim_value", "claim_date", "notes",
 ]
 
+# The eight 2027 PKPN are a separate programme layer from the 24 PSN
+# programmes. They carry no PSN number and can be linked to indicators.
+PKPN_PROGRAMME_FIELDS = [
+    "id", "name_id", "name_en", "theme", "summary_id", "summary_en",
+    "target_summary_id", "target_summary_en", "budget_idr_t", "source_id",
+    "last_verified", "notes",
+]
+
 # Schema v4 translation layer. Entity text that is not already carried in a
 # bilingual curated field lives here. ``text`` is the display value; proper
 # names may be identical in both locales and still need a row so the build can
@@ -191,12 +199,13 @@ PROGRAMME_STATUSES = {"active", "paused", "completed"}
 PROGRAMME_THEMES = {
     "energy", "economy", "border", "transport", "tourism", "industry", "food",
     "urban", "water", "health", "education", "social", "environment",
+    "infrastructure",
 }
 PROGRAMME_ROLES = {"primary", "component", "related"}
 PKPN_IDS = {
     "pkpn-food", "pkpn-energy-water", "pkpn-education", "pkpn-health",
-    "pkpn-downstreaming", "pkpn-infrastructure", "pkpn-housing",
-    "pkpn-resilience",
+    "pkpn-downstreaming", "pkpn-infrastructure", "pkpn-resilience",
+    "pkpn-poverty",
 }
 SOURCE_TYPES = {"official", "secondary", "company", "multilateral"}
 LANGUAGES = {"en", "id", "other"}
@@ -216,7 +225,8 @@ CLAIM_TYPES = {
     "status", "length", "operational", "progress", "opening", "investment",
     "capacity", "design capacity", "current capacity", "output", "location",
     "coordinates", "operator", "psn", "target", "restart", "ramp-up", "layoffs",
-    "production halt", "startup schedule", "history", "timeline",
+    "production halt", "startup schedule", "history", "timeline", "budget",
+    "name",
 }
 CONFLICT_SCOPES = {"project", "corridor", "estate", "dataset", "method"}
 CONFLICT_STATUSES = {"open", "resolved"}
@@ -290,6 +300,8 @@ TABLES = {
     "programmes.csv": PROGRAMME_FIELDS,
     "programme_projects.csv": PROGRAMME_PROJECT_FIELDS,
     "programme_sources.csv": PROGRAMME_SOURCE_FIELDS,
+    "pkpn_programmes.csv": PKPN_PROGRAMME_FIELDS,
+    "pkpn_sources.csv": PROGRAMME_SOURCE_FIELDS,
     "translations.csv": TRANSLATION_FIELDS,
     "indicators.csv": INDICATOR_FIELDS,
     "indicator_values.csv": INDICATOR_VALUE_FIELDS,

@@ -158,6 +158,8 @@ def main() -> None:
     programme_projects = read_csv(CURATED / "programme_projects.csv")
     programme_sources = read_csv(CURATED / "programme_sources.csv")
     translations = read_csv(CURATED / "translations.csv")
+    pkpn_programmes = read_csv(CURATED / "pkpn_programmes.csv")
+    pkpn_sources = read_csv(CURATED / "pkpn_sources.csv")
     indicators = read_csv(CURATED / "indicators.csv")
     indicator_values = read_csv(CURATED / "indicator_values.csv")
     phases = read_csv(CURATED / "project_phases.csv")
@@ -700,6 +702,49 @@ def main() -> None:
         seen.add(key)
 
     seen = set()
+    pkpn_ids = set()
+    for row in pkpn_programmes:
+        where = f"pkpn_programmes {row['id'] or '?'}"
+        if row["id"] in seen:
+            err(f"{where}: duplicate id")
+        seen.add(row["id"])
+        pkpn_ids.add(row["id"])
+        check_id(row["id"], where)
+        for field in ("name_en", "name_id", "summary_en", "summary_id"):
+            if is_blank(row[field]):
+                err(f"{where}: missing {field}")
+        check_enum(row["theme"], PROGRAMME_THEMES, "theme", where)
+        if row["source_id"] not in source_ids:
+            err(f"{where}: unknown source")
+        check_date(row["last_verified"], f"{where} last_verified")
+        check_number(row["budget_idr_t"], "budget_idr_t", where)
+    if pkpn_ids != PKPN_IDS:
+        missing = sorted(PKPN_IDS - pkpn_ids)
+        extra = sorted(pkpn_ids - PKPN_IDS)
+        err(f"pkpn_programmes: id mismatch; missing {missing}, extra {extra}")
+
+    seen = set()
+    for row in pkpn_sources:
+        where = f"pkpn_sources {row['programme_id']}/{row['source_id']}"
+        if row["programme_id"] not in pkpn_ids:
+            err(f"{where}: unknown programme")
+        if row["source_id"] not in source_ids:
+            err(f"{where}: unknown source")
+        if not row["claim"]:
+            err(f"{where}: missing claim")
+        elif "," in row["claim"]:
+            err(f"{where}: claim must be one atomic type")
+        elif row["claim"] not in CLAIM_TYPES:
+            err(f"{where}: unknown claim type {row['claim']!r}")
+        if row["claim_date"]:
+            check_date(row["claim_date"], f"{where} claim_date")
+        key = (row["programme_id"], row["source_id"], row["claim"])
+        if key in seen:
+            err(f"{where}: duplicate claim")
+        seen.add(key)
+
+    all_programme_ids = programme_ids | pkpn_ids
+    seen = set()
     represented_indicators = set()
     for row in indicators:
         where = f"indicators {row['id'] or '?'}"
@@ -709,7 +754,7 @@ def main() -> None:
         check_id(row["id"], where)
         if not row["programme_id"] and not row["project_id"]:
             err(f"{where}: needs programme_id or project_id")
-        if row["programme_id"] and row["programme_id"] not in programme_ids:
+        if row["programme_id"] and row["programme_id"] not in all_programme_ids:
             err(f"{where}: unknown programme_id")
         if row["project_id"] and row["project_id"] not in project_ids:
             err(f"{where}: unknown project_id")
@@ -838,8 +883,8 @@ def main() -> None:
         f"{len(corridors)} corridors, {len(segments)} segments, "
         f"{len(events)} events, {len(geometry)} geometry, {len(investments)} investments, "
         f"{len(conflicts)} conflicts, {len(programmes)} programmes, "
-        f"{len(indicators)} indicators, {len(indicator_values)} indicator values, "
-        f"{len(phases)} phases"
+        f"{len(pkpn_programmes)} PKPN programmes, {len(indicators)} indicators, "
+        f"{len(indicator_values)} indicator values, {len(phases)} phases"
     )
 
 

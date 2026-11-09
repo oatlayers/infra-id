@@ -35,6 +35,7 @@ window.ATLAS = {
     economy: { label: 'Economy', color: '#0f766e' },
     border: { label: 'Border areas', color: '#1d4ed8' },
     transport: { label: 'Transport', color: '#c2410c' },
+    infrastructure: { label: 'Infrastructure', color: '#475569' },
     tourism: { label: 'Tourism', color: '#7c3aed' },
     industry: { label: 'Industry', color: '#475569' },
     food: { label: 'Food', color: '#15803d' },
@@ -46,8 +47,9 @@ window.ATLAS = {
     environment: { label: 'Environment', color: '#047857' }
   },
   PROGRAMME_THEME_ORDER: [
-    'energy', 'economy', 'border', 'transport', 'tourism', 'industry', 'food',
-    'urban', 'water', 'health', 'education', 'social', 'environment'
+    'energy', 'economy', 'border', 'transport', 'infrastructure', 'tourism',
+    'industry', 'food', 'urban', 'water', 'health', 'education', 'social',
+    'environment'
   ],
   STALE_DAYS: 183,
   VERIFY_MONTHS: 6

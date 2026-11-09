@@ -51,6 +51,7 @@
   let estatesState = estates ? 'ready' : 'idle';
   let programmes = window.INFRA_PROGRAMMES || null;
   let programmesState = programmes ? 'ready' : 'idle';
+  let pkpn = window.INFRA_PKPN || null;
   let companies = window.INFRA_COMPANIES || null;
   let companiesState = companies ? 'ready' : 'idle';
 
@@ -177,15 +178,23 @@
     return record.name_en || record.name_id || '';
   }
 
+  function indicatorValue(value, unit) {
+    if (String(unit).indexOf('Rp ') === 0) {
+      const suffix = String(unit).slice(3);
+      return 'Rp ' + fmtNum(value) + (suffix ? ' ' + suffix : '');
+    }
+    return fmtNum(value) + (unit ? ' ' + unit : '');
+  }
+
   function indicatorSummary(indicator) {
     const values = indicator.values || [];
     const latest = values.length ? values[values.length - 1] : null;
     const unit = indicator.unit || '';
     const current = latest
-      ? fmtNum(latest.value) + ' ' + unit
+      ? indicatorValue(latest.value, unit)
       : t('indicator.no_value');
     const target = indicator.target_value
-      ? fmtNum(indicator.target_value) + ' ' + unit
+      ? indicatorValue(indicator.target_value, unit)
       : '';
     const asOf = latest ? t('indicator.as_of', { date: fmtDate(latest.as_of) }) : '';
     const source = indicator.source_url
@@ -195,6 +204,7 @@
     return {
       name: localName(indicator),
       current: current,
+      hasValue: !!latest,
       target: target,
       asOf: asOf,
       source: source
@@ -208,8 +218,10 @@
         ? ' · <b>' + esc(t('indicator.target')) + '</b> ' + esc(info.target)
         : '';
       const meta = [info.asOf].filter(Boolean).join(' ');
-      return '<li><time>' + esc(info.name) + '</time><span><b>' + esc(t('indicator.current')) +
-        '</b> ' + esc(info.current) + target +
+      const current = info.hasValue
+        ? '<b>' + esc(t('indicator.current')) + '</b> ' + esc(info.current)
+        : esc(t('indicator.no_value'));
+      return '<li><time>' + esc(info.name) + '</time><span>' + current + target +
         (meta ? '<span class="indicator-meta">' + esc(meta) + info.source + '</span>' : info.source) +
         '</span></li>';
     }).join('');
@@ -1515,6 +1527,22 @@
   function ensureProgrammes() {
     if (programmesState === 'ready' || programmesState === 'loading') return;
     programmesState = 'loading';
+    // Load the eight PKPN first, then the 24 PSN programmes. A missing PKPN
+    // file must not block the PSN register.
+    const script = document.createElement('script');
+    script.src = (window.ATLAS_BASE || '') + 'data/pkpn.js';
+    script.onload = function () {
+      pkpn = window.INFRA_PKPN || [];
+      loadProgrammesPayload();
+    };
+    script.onerror = function () {
+      pkpn = [];
+      loadProgrammesPayload();
+    };
+    document.body.appendChild(script);
+  }
+
+  function loadProgrammesPayload() {
     const script = document.createElement('script');
     script.src = (window.ATLAS_BASE || '') + 'data/programmes.js';
     script.onload = function () {
@@ -1882,8 +1910,10 @@
           programme.indicators.map(function (indicator) {
             const info = indicatorSummary(indicator);
             const targetText = info.target ? ' · ' + t('indicator.target') + ' ' + info.target : '';
-            return '<li><b>' + esc(info.name) + '</b><span>' + esc(t('indicator.current')) + ' ' +
-              esc(info.current) + esc(targetText) +
+            const current = info.hasValue
+              ? t('indicator.current') + ' ' + info.current
+              : t('indicator.no_value');
+            return '<li><b>' + esc(info.name) + '</b><span>' + esc(current) + esc(targetText) +
               (info.asOf ? ' · ' + esc(info.asOf) : '') + '</span></li>';
           }).join('') + '</ul></div>'
         : '') +
@@ -1891,6 +1921,48 @@
       (programme.source_url
         ? '<a class="programme-source" href="' + esc(programme.source_url) + '" target="_blank" rel="noopener">' +
           esc(programme.source_title || t('programmes.official_source')) + ' ↗</a>'
+        : '') +
+      '</article>';
+  }
+
+  function pkpnCard(item) {
+    const name = localName(item);
+    const secondary = I18N.locale === 'id' ? item.name_en : item.name_id;
+    const secondaryLang = I18N.locale === 'id' ? 'en' : 'id';
+    const summary = I18N.locale === 'id' ? item.summary_id : item.summary_en;
+    const target = I18N.locale === 'id' ? item.target_summary_id : item.target_summary_en;
+    const budget = item.budget_idr_t
+      ? 'Rp ' + fmtNum(item.budget_idr_t) + ' T'
+      : t('programmes.not_published');
+    const indicators = (item.indicators || []).map(function (indicator) {
+      const info = indicatorSummary(indicator);
+      const targetText = info.target ? ' · ' + t('indicator.target') + ' ' + info.target : '';
+      const current = info.hasValue
+        ? t('indicator.current') + ' ' + info.current
+        : t('indicator.no_value');
+      return '<li><b>' + esc(info.name) + '</b><span>' + esc(current) + esc(targetText) +
+        (info.asOf ? ' · ' + esc(info.asOf) : '') + '</span></li>';
+    }).join('');
+    return '<article class="pkpn-card" style="--theme-color:' + esc(programmeThemeColor(item.theme)) + '">' +
+      '<div class="programme-top"><span class="programme-no">PKPN</span>' +
+      '<span class="programme-theme">' + esc(programmeThemeLabel(item.theme)) + '</span></div>' +
+      '<h3>' + esc(name) + '</h3>' +
+      (secondary && secondary !== name
+        ? '<p class="programme-id" lang="' + secondaryLang + '">' + esc(secondary) + '</p>'
+        : '') +
+      '<p class="programme-summary">' + esc(summary) + '</p>' +
+      '<dl class="programme-meta">' +
+      '<div><dt>' + esc(t('programmes.pkpn_target')) + '</dt><dd>' +
+      esc(target || t('programmes.pkpn_no_target')) + '</dd></div>' +
+      '<div><dt>' + esc(t('programmes.pkpn_budget')) + '</dt><dd>' + esc(budget) + '</dd></div>' +
+      '</dl>' +
+      (indicators
+        ? '<div class="programme-indicators"><div class="programme-sub">' +
+          esc(t('programmes.target_current')) + '</div><ul>' + indicators + '</ul></div>'
+        : '') +
+      (item.source_url
+        ? '<a class="programme-source" href="' + esc(item.source_url) + '" target="_blank" rel="noopener">' +
+          esc(item.source_title || t('programmes.official_source')) + ' ↗</a>'
         : '') +
       '</article>';
   }
@@ -1932,10 +2004,19 @@
 
     dom.viewPanel.innerHTML = '<div class="programme-view">' +
       '<header class="programme-hero">' +
-      '<p class="kicker">' + esc(t('programmes.kicker')) + '</p>' +
+      '<p class="kicker">' + esc(t('programmes.register_kicker')) + '</p>' +
       '<h2>' + esc(t('programmes.title')) + '</h2>' +
-      '<p class="lede">' + esc(t('programmes.lede')) + '</p>' +
+      '<p class="lede">' + esc(t('programmes.register_lede')) + '</p>' +
       '</header>' +
+      (pkpn && pkpn.length
+        ? '<section class="pkpn-section"><div class="psn-head"><p class="kicker">' +
+          esc(t('programmes.pkpn_kicker')) + '</p><h3>' + esc(t('programmes.pkpn_title')) +
+          '</h3><p class="lede">' + esc(t('programmes.pkpn_lede')) + '</p></div>' +
+          '<div class="pkpn-grid">' + pkpn.map(pkpnCard).join('') + '</div></section>'
+        : '') +
+      '<div class="psn-head"><p class="kicker">' + esc(t('programmes.kicker')) +
+      '</p><h3>' + esc(t('programmes.psn_title')) + '</h3>' +
+      '<p class="lede">' + esc(t('programmes.lede')) + '</p></div>' +
       '<div class="programme-stats">' +
       '<div><span class="k">' + esc(t('programmes.programmes')) + '</span><strong>' + fmtNum(statsProgrammes.total || programmes.length) + '</strong><small>' + esc(t('programmes.active')) + '</small></div>' +
       '<div><span class="k">' + esc(t('programmes.with_lead')) + '</span><strong>' + fmtNum(statsProgrammes.with_lead || 0) + '</strong><small>' + esc(t('programmes.of', { total: fmtNum(programmes.length) })) + '</small></div>' +

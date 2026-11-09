@@ -127,6 +127,10 @@ def locale_shell(page: Page) -> None:
     page.wait_for_timeout(400)
     check(page.locator(".programme-card").count() == int(PROGRAMMES),
           f"Indonesian edition renders {PROGRAMMES} programme cards")
+    check(page.locator(".pkpn-card").count() == 8,
+          "Indonesian edition renders eight PKPN cards")
+    check("Delapan PKPN" in page.locator(".programme-view").inner_text(),
+          "Indonesian edition translates the PKPN section")
     screenshot(page, "08b-programmes-id-desktop.png")
 
     page.goto(ID_FILE_URL + "#/estates")
@@ -141,8 +145,8 @@ def locale_shell(page: Page) -> None:
     page.wait_for_timeout(400)
     check("Data dan metode" in page.locator(".data-view").inner_text(),
           "Indonesian edition translates the Data view")
-    check(page.locator(".dictionary details").count() == 26,
-          "Indonesian edition renders 26 dictionary tables")
+    check(page.locator(".dictionary details").count() == 28,
+          "Indonesian edition renders 28 dictionary tables")
     screenshot(page, "08d-data-id-desktop.png")
     page.click('[data-lang-target="en"]')
     page.wait_for_selector(".data-view")
@@ -217,8 +221,15 @@ def desktop_views(page: Page) -> None:
     tab(page, "programmes")
     page.wait_for_selector(".programme-card")
     page.wait_for_timeout(400)
+    check(page.locator(".pkpn-card").count() == 8, "Programme view lists eight PKPN priorities")
+    check("Kedaulatan Pangan" in page.locator(".programme-view").inner_text(),
+          "PKPN cards show the official Indonesian priority name")
+    check("820.9" in page.locator(".programme-view").inner_text(),
+          "The education PKPN budget is visible")
+    check("10,000" in page.locator(".programme-view").inner_text(),
+          "The health PKPN target is visible")
     check(page.locator(".programme-card").count() == int(PROGRAMMES),
-          f"Programmes view lists {PROGRAMMES} programmes")
+          f"Programmes view lists {PROGRAMMES} PSN programmes")
     check("Program Ketenagalistrikan" in page.locator(".programme-view").inner_text(),
           "Programme cards show the official Indonesian name")
     check("Mencakup kebijakan" in page.locator(".programme-view").inner_text(),
@@ -246,8 +257,8 @@ def desktop_views(page: Page) -> None:
     check("projects by sector" in page.locator(".data-view").inner_text().lower(),
           "Data view labels the sector chart")
     check(page.locator(".conflict-table tbody tr").count() == 19, "Conflict register has 19 rows")
-    check(page.locator(".dictionary details").count() == 26, "Data dictionary has 26 tables")
-    check(page.locator('a.download[href]').count() == 21, "Data view has 21 static downloads")
+    check(page.locator(".dictionary details").count() == 28, "Data dictionary has 28 tables")
+    check(page.locator('a.download[href]').count() == 23, "Data view has 23 static downloads")
     check("programme register" in page.locator(".data-view").inner_text().lower(),
           "Data view has a programme register section")
     check(page.locator('.download[data-export="projects-csv"]').count() == 1,
@@ -261,8 +272,8 @@ def desktop_views(page: Page) -> None:
     check(f"{TOTAL} / {TOTAL}" in page.locator(".data-view").inner_text(), f"Claims coverage is {TOTAL} / {TOTAL}")
     report["views"]["data"] = {  # type: ignore[index]
         "conflicts": 19,
-        "dictionary_tables": 26,
-        "download_controls": 24,
+        "dictionary_tables": 28,
+        "download_controls": 26,
         "charts": 2,
     }
     screenshot(page, "04-data-desktop.png")

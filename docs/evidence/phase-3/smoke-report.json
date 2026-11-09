@@ -18,8 +18,8 @@
     },
     "data": {
       "conflicts": 19,
-      "dictionary_tables": 26,
-      "download_controls": 24,
+      "dictionary_tables": 28,
+      "download_controls": 26,
       "charts": 2
     },
     "drawer": {
@@ -52,7 +52,7 @@
   },
   "protocols": {
     "http": {
-      "port": 52904,
+      "port": 63395,
       "ok": true
     },
     "file": {

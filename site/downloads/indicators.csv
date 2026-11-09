@@ -1,4 +1,15 @@
 id,programme_id,project_id,name_en,name_id,unit,direction,baseline_value,baseline_date,target_value,target_date,source_id,notes
-ind-psn-100gw-programme,prog-electricity,,Solar capacity target,Target kapasitas surya,GWp,increase,,,100,,src-setneg-plts-100gw-2026-08-25,100 GWp solar programme under the electricity programme; 5.3 GWp launched by 25 August 2026.
 ind-100gw-phase1,,energy-plts-100gw-phase-1,Phase 1 installed capacity,Kapasitas terpasang Tahap 1,GWp,increase,,,17,2029-12-31,src-setneg-plts-100gw-2026-08-25,Target year 2029; the source states a three-year build from August 2026. The date uses the year-end convention.
 ind-nusantara-runway,,air-nusantara-ikn,Runway length,Panjang landasan pacu,m,target,,,3000,,src-hubud-nusantara-airport,"3,000 x 45 m; source page retrieved 9 November 2026."
+ind-pkpn-education-budget,pkpn-education,,Education budget,Anggaran pendidikan,Rp T,target,,,820.9,2027-12-31,src-kemenkeu-pkpn-2026-09-16,"Rp820.9T, the 20% education mandate; annual 2027 allocation."
+ind-pkpn-energy-solar,pkpn-energy-water,,Solar capacity,Kapasitas surya,GWp,increase,,,100,,src-setneg-rapbn-2027-2026-08-14,100 GWp solar target; 30 GW built in 2026 and 13 GW of diesel retired.
+ind-pkpn-gini,pkpn-poverty,,Gini ratio,Rasio Gini,index,decrease,,,0.367,2027-12-31,src-setneg-rapbn-2027-2026-08-14,Target range 0.362-0.367; the upper bound is used as the single target value.
+ind-pkpn-health-budget,pkpn-health,,Health budget,Anggaran kesehatan,Rp T,target,,,244.9,2027-12-31,src-kemenkeu-pkpn-2026-09-16,Rp244.9T health allocation for 2027.
+ind-pkpn-health-labkesmas,pkpn-health,,Labkesmas renovated,Labkesmas direnovasi,facilities,increase,,,514,2030-12-31,src-setneg-rapbn-2027-2026-08-14,514 district/city public-health laboratories; complete by 2030.
+ind-pkpn-health-puskesmas,pkpn-health,,Puskesmas renovated,Puskesmas direnovasi,facilities,increase,,,10000,2030-12-31,src-setneg-rapbn-2027-2026-08-14,"10,000 Puskesmas in 7,280 kecamatan; about Rp4B each; complete by 2030."
+ind-pkpn-health-rsud,pkpn-health,,RSUD revitalised,RSUD direvitalisasi,hospitals,increase,,,441,2030-12-31,src-setneg-rapbn-2027-2026-08-14,441 regional public hospitals; complete by 2030.
+ind-pkpn-infrastructure-seawall,pkpn-infrastructure,,Giant Sea Wall segments,Segmen Giant Sea Wall,segments,target,,,15,,src-kemenkeu-pkpn-2026-09-16,15 segments from Banten to Gresik over 15-20 years.
+ind-pkpn-poverty-rate,pkpn-poverty,,Poverty rate,Tingkat kemiskinan,%,decrease,,,6.5,2027-12-31,src-setneg-rapbn-2027-2026-08-14,Target range 6.0-6.5%; the upper bound is used as the single target value.
+ind-pkpn-resilience-entrepreneurs,pkpn-resilience,,Local entrepreneurs reached,Pelaku usaha lokal terjangkau,people,increase,,,10000000,,src-kemenkeu-pkpn-2026-09-16,10 million local entrepreneurs through KDMP and Pro-Kesra.
+ind-pkpn-unemployment,pkpn-poverty,,Open unemployment rate,Tingkat pengangguran terbuka,%,decrease,,,4.87,2027-12-31,src-setneg-rapbn-2027-2026-08-14,Target range 4.30-4.87%; the upper bound is used as the single target value.
+ind-psn-100gw-programme,prog-electricity,,Solar capacity target,Target kapasitas surya,GWp,increase,,,100,,src-setneg-plts-100gw-2026-08-25,100 GWp solar programme under the electricity programme; 5.3 GWp launched by 25 August 2026.

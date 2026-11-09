@@ -147,6 +147,8 @@ def main() -> None:
     programmes = read_csv(CURATED / "programmes.csv")
     programme_projects = read_csv(CURATED / "programme_projects.csv")
     programme_claims = read_csv(CURATED / "programme_sources.csv")
+    pkpn_programmes = read_csv(CURATED / "pkpn_programmes.csv")
+    pkpn_claims = read_csv(CURATED / "pkpn_sources.csv")
     indicators = read_csv(CURATED / "indicators.csv")
     indicator_values = read_csv(CURATED / "indicator_values.csv")
     phases = read_csv(CURATED / "project_phases.csv")
@@ -156,6 +158,7 @@ def main() -> None:
     estate_payload = load_global(SITE_DATA / "estates.js", "INFRA_ESTATES")
     company_payload = load_global(SITE_DATA / "companies.js", "INFRA_COMPANIES")
     programme_payload = load_global(SITE_DATA / "programmes.js", "INFRA_PROGRAMMES")
+    pkpn_payload = load_global(SITE_DATA / "pkpn.js", "INFRA_PKPN")
     corridor_payload = load_global(SITE_DATA / "corridors.js", "CORRIDORS")
     stats = load_global(SITE_DATA / "stats.js", "INFRA_STATS")
     search = load_global(SITE_DATA / "search.js", "INFRA_SEARCH")
@@ -168,6 +171,8 @@ def main() -> None:
         err(f"companies.js: {len(company_payload)} rows, expected {len(organizations)}")
     if len(programme_payload) != len(programmes):
         err(f"programmes.js: {len(programme_payload)} rows, expected {len(programmes)}")
+    if len(pkpn_payload) != len(pkpn_programmes):
+        err(f"pkpn.js: {len(pkpn_payload)} rows, expected {len(pkpn_programmes)}")
     if len(corridor_payload) != len(corridors):
         err(f"corridors.js: {len(corridor_payload)} rows, expected {len(corridors)}")
 
@@ -226,8 +231,8 @@ def main() -> None:
     company_ids = {row["id"] for row in organizations}
     if search_companies != company_ids:
         err("search.js: company coverage does not match organizations.csv")
-    if search_programmes != {row["id"] for row in programmes}:
-        err("search.js: programme coverage does not match programmes.csv")
+    if search_programmes != ({row["id"] for row in programmes} | {row["id"] for row in pkpn_programmes}):
+        err("search.js: programme coverage does not match the programme tables")
     if search_corridors != {row["id"] for row in corridors}:
         err("search.js: corridor coverage does not match corridors.csv")
     for company in company_payload:
@@ -265,6 +270,26 @@ def main() -> None:
     if len(programme_numbers) != 24:
         err(f"programmes.js: {len(programme_numbers)} PSN numbers, expected 24")
 
+    pkpn_ids = set()
+    for pkpn in pkpn_payload:
+        pkpn_id = pkpn.get("id", "")
+        if pkpn_id in pkpn_ids or pkpn_id in programme_ids or pkpn_id in project_ids:
+            err(f"pkpn.js: duplicate or colliding id {pkpn_id!r}")
+        pkpn_ids.add(pkpn_id)
+        for field in (
+            "name_id", "name_en", "theme", "summary_id", "summary_en",
+            "source_id", "last_verified", "claims",
+        ):
+            if not pkpn.get(field):
+                err(f"pkpn.js {pkpn_id}: missing {field}")
+        if len(pkpn.get("claims", [])) < 2:
+            err(f"pkpn.js {pkpn_id}: fewer than two claims")
+        for indicator in pkpn.get("indicators", []):
+            if indicator.get("programme_id") != pkpn_id:
+                err(f"pkpn.js {pkpn_id}: indicator does not point back to the programme")
+    if pkpn_ids != {row["id"] for row in pkpn_programmes}:
+        err("pkpn.js: ids do not match the curated PKPN table")
+
     project_stats = stats.get("projects", {})
     if project_stats.get("total") != len(projects):
         err("stats.js: project total does not match the curated table")
@@ -288,6 +313,10 @@ def main() -> None:
         err("stats.js: organisation link count does not match the curated table")
     if stats.get("programmes", {}).get("total") != len(programmes):
         err("stats.js: programme total does not match the curated table")
+    if stats.get("pkpn", {}).get("total") != len(pkpn_programmes):
+        err("stats.js: PKPN total does not match the curated table")
+    if stats.get("pkpn", {}).get("claims") != len(pkpn_claims):
+        err("stats.js: PKPN claim count does not match the curated table")
     if stats.get("programmes", {}).get("claims") != len(programme_claims):
         err("stats.js: programme claim count does not match the curated table")
     if stats.get("programmes", {}).get("links") != len(programme_projects):
@@ -367,7 +396,8 @@ def main() -> None:
     )
     print(
         f"OK: {len(features)} projects, {len(estate_payload)} estates, "
-        f"{len(company_payload)} companies, {len(corridor_payload)} corridors, {len(claim_rows)} claims, "
+        f"{len(company_payload)} companies, {len(pkpn_payload)} PKPN programmes, "
+        f"{len(corridor_payload)} corridors, {len(claim_rows)} claims, "
         f"{len(conflicts)} conflicts, {len(indicators)} indicators, "
         f"{len(phases)} phases; initial {initial_bytes / 1024:.0f} KB, "
         f"data {data_bytes / 1024:.0f} KB, total {(data_bytes + download_bytes) / 1024:.0f} KB"

@@ -37,6 +37,7 @@ from data_model import (
     INDICATOR_VALUE_FIELDS,
     ORG_FIELDS,
     PHASE_FIELDS,
+    PKPN_PROGRAMME_FIELDS,
     PROGRAMME_FIELDS,
     PROGRAMME_PROJECT_FIELDS,
     PROGRAMME_SOURCE_FIELDS,
@@ -128,6 +129,8 @@ def main() -> None:
     programmes = read_csv(CURATED / "programmes.csv")
     programme_projects = read_csv(CURATED / "programme_projects.csv")
     programme_claims = read_csv(CURATED / "programme_sources.csv")
+    pkpn_programmes = read_csv(CURATED / "pkpn_programmes.csv")
+    pkpn_claims = read_csv(CURATED / "pkpn_sources.csv")
     indicators = read_csv(CURATED / "indicators.csv")
     indicator_values = read_csv(CURATED / "indicator_values.csv")
     phases = read_csv(CURATED / "project_phases.csv")
@@ -171,6 +174,19 @@ def main() -> None:
                 "sector": project["sector"],
                 "role": link["role"],
                 "notes": link["notes"],
+            }
+        )
+    claims_by_pkpn: dict[str, list[dict[str, str]]] = {}
+    for claim in pkpn_claims:
+        source = sources.get(claim["source_id"])
+        claims_by_pkpn.setdefault(claim["programme_id"], []).append(
+            {
+                "claim": claim["claim"],
+                "claim_value": claim["claim_value"],
+                "claim_date": claim["claim_date"],
+                "source_id": claim["source_id"],
+                "source_title": source["title"] if source else "",
+                "source_url": source["url"] if source else "",
             }
         )
     claims_by_programme: dict[str, list[dict[str, str]]] = {}
@@ -430,6 +446,27 @@ def main() -> None:
         )
     estate_payload.sort(key=lambda row: row["name"].casefold())
 
+    pkpn_order = [
+        "pkpn-food", "pkpn-energy-water", "pkpn-education", "pkpn-health",
+        "pkpn-downstreaming", "pkpn-infrastructure", "pkpn-resilience",
+        "pkpn-poverty",
+    ]
+    pkpn_payload = []
+    for row in sorted(pkpn_programmes, key=lambda item: pkpn_order.index(item["id"])):
+        source = sources.get(row["source_id"])
+        pkpn_payload.append(
+            {
+                **{field: row[field] for field in PKPN_PROGRAMME_FIELDS},
+                "source_publisher": source["publisher"] if source else "",
+                "source_title": source["title"] if source else "",
+                "source_url": source["url"] if source else "",
+                "source_type": source["source_type"] if source else "",
+                "retrieved_on": source["retrieved_on"] if source else "",
+                "claims": claims_by_pkpn.get(row["id"], []),
+                "indicators": indicators_by_programme.get(row["id"], []),
+            }
+        )
+
     programme_payload = []
     for row in sorted(programmes, key=lambda item: int(item["psn_no"])):
         source = sources.get(row["source_id"])
@@ -628,6 +665,15 @@ def main() -> None:
             "links": len(programme_projects),
             "last_verified": last_verified_programmes,
         },
+        "pkpn": {
+            "total": len(pkpn_programmes),
+            "with_target": sum(
+                1 for row in pkpn_programmes
+                if row["target_summary_id"] or row["target_summary_en"]
+            ),
+            "with_budget": sum(1 for row in pkpn_programmes if row["budget_idr_t"]),
+            "claims": len(pkpn_claims),
+        },
         "indicators": {
             "total": len(indicators),
             "with_target": sum(1 for row in indicators if row["target_value"]),
@@ -757,6 +803,18 @@ def main() -> None:
                 "label": "Company project roles",
                 "file": "downloads/company-projects.csv",
                 "meta": f"{len(project_orgs)} role links",
+            },
+            {
+                "key": "pkpn_programmes",
+                "label": "PKPN programmes",
+                "file": "downloads/pkpn-programmes.csv",
+                "meta": f"{len(pkpn_programmes)} programmes · 2027 priorities",
+            },
+            {
+                "key": "pkpn_claims",
+                "label": "PKPN claims",
+                "file": "downloads/pkpn-claims.csv",
+                "meta": f"{len(pkpn_claims)} atomic claims",
             },
             {
                 "key": "programmes",
@@ -899,6 +957,7 @@ def main() -> None:
         search.append(
             {
                 "type": "programme",
+                "kind": "psn",
                 "id": row["id"],
                 "name": row["name_en"],
                 "theme": row["theme"],
@@ -912,6 +971,30 @@ def main() -> None:
                             row["summary_id"],
                             row["theme"].replace("_", " "),
                             row["pkpn_id"],
+                        ],
+                    )
+                ),
+            }
+        )
+    for row in pkpn_programmes:
+        search.append(
+            {
+                "type": "programme",
+                "kind": "pkpn",
+                "id": row["id"],
+                "name": row["name_en"],
+                "theme": row["theme"],
+                "text": " ".join(
+                    filter(
+                        None,
+                        [
+                            row["name_en"],
+                            row["name_id"],
+                            row["summary_en"],
+                            row["summary_id"],
+                            row["target_summary_en"],
+                            row["target_summary_id"],
+                            "PKPN",
                         ],
                     )
                 ),
@@ -951,7 +1034,14 @@ def main() -> None:
     write_download_json("estates.json", estate_payload, indent=2)
     write_global("estates.js", "INFRA_ESTATES", estate_payload)
     write_global("companies.js", "INFRA_COMPANIES", company_payload)
+    write_global("pkpn.js", "INFRA_PKPN", pkpn_payload)
     write_global("programmes.js", "INFRA_PROGRAMMES", programme_payload)
+    write_csv(SITE_DOWNLOADS / "pkpn-programmes.csv", PKPN_PROGRAMME_FIELDS, pkpn_programmes)
+    write_csv(
+        SITE_DOWNLOADS / "pkpn-claims.csv",
+        PROGRAMME_SOURCE_FIELDS,
+        pkpn_claims,
+    )
     write_csv(SITE_DOWNLOADS / "companies.csv", ORG_FIELDS, organizations)
     write_csv(
         SITE_DOWNLOADS / "company-projects.csv",
@@ -1017,7 +1107,7 @@ def main() -> None:
     print(
         f"wrote {len(features)} projects, {len(corridor_payload)} corridors, "
         f"{len(estate_payload)} estates, {len(company_payload)} companies, "
-        f"{len(programme_payload)} programmes, "
+        f"{len(programme_payload)} PSN programmes, {len(pkpn_payload)} PKPN programmes, "
         f"{len(indicators)} indicators, {len(phases)} phases, {len(sources)} sources"
     )
     print(

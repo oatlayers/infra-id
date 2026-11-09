@@ -40,6 +40,21 @@
 | `gem_alumina_toba_2026.html` | Global Energy Monitor, alumina power station | `f520e1852af9f6ad89a1e85e7e64338a7b8483be39f201a93ec8944d4bf29270` |
 | `vale_pomalaa_2025.html` | Vale, Pomalaa HPAL milestone | `e74414947ef3947c8247a85a30733dd5ee585245c1a9dab0830cb9c116a15bcc` |
 
+## 2027 PKPN sources
+
+| File | Source | SHA-256 |
+|---|---|---|
+| `setneg_rapbn_2027.html` | Kementerian Sekretariat Negara, 2027 budget speech, 14 August 2026 | `a6e864edd63060cda634a72cedd051396c93589a862a6caac8ff0b9150114d8a` |
+| `kemenkeu_pkpn_2027.html` | Media Keuangan, Finance Ministry PKPN breakdown, 16 September 2026 | `3b0512a7fb6c531b6ce7c1f440f94e3e8e0b6271ba5c689463632c71f4a45c47` |
+
+The speech names the eight PKPN and states the 100 GWp solar target, 10,000
+Puskesmas, 514 Labkesmas, 441 RSUD, school renovation, the Giant Sea Wall and
+the 2027 poverty, unemployment and Gini ranges. The Finance Ministry article
+adds the Rp820.9T education and Rp244.9T health allocations, the Rp549.9T social
+protection allocation, 10 million local entrepreneurs and the 15-segment sea
+wall. Neither source states a full programme budget or a quantitative target for
+every PKPN; the atlas leaves those fields blank.
+
 ## Derived files
 
 - `permenko_16_2025.txt` — text extracted with PyMuPDF.

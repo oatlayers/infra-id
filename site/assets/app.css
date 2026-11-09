@@ -1815,6 +1815,41 @@ svg { display: block; }
 /* ---------- Programmes ---------- */
 
 .programme-view { padding: 18px 18px 30px; }
+.psn-head { margin: 0 0 12px; }
+.psn-head h3 {
+  margin: 0 0 5px;
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -.01em;
+}
+.psn-head .lede { margin: 0; }
+.pkpn-section {
+  margin: 0 0 24px;
+  padding: 16px 16px 18px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  background: var(--surface-warm);
+}
+.pkpn-grid { display: grid; gap: 10px; }
+.pkpn-card {
+  padding: 12px 14px 12px;
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--theme-color, var(--line-strong));
+  border-radius: var(--r-md);
+  background: var(--surface);
+}
+.pkpn-card h3 {
+  margin: 7px 0 2px;
+  font-family: var(--serif);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+.pkpn-card .programme-summary { font-size: 11px; }
+@media (min-width: 1000px) {
+  .app-main.is-wide .pkpn-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
 .programme-hero .kicker {
   margin: 0 0 4px;
   color: var(--accent);

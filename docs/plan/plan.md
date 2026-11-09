@@ -6,16 +6,16 @@ closure of PSN coverage landed on 9 November 2026. The released site is still th
 v3 build: 107 projects, 178 estates and SEZs, 5 corridors, 44 segments, 479 atomic
 claims and 91 sources. The repository now has 228 projects, 24 programmes, 204
 estates and SEZs, 5 corridors, 44 segments, 863 project claims plus 115 estate
-claims and 48 programme claims, 3 indicators, 3 indicator values, 9 project
-phases, 133 sources and 30 events, with a deterministic local build and a
-browser smoke test. It includes the official Permenko 16/2025
+claims and 48 programme claims, 8 PKPN programmes with 27 claims, 14 indicators,
+4 indicator values, 9 project phases, 135 sources and 30 events, with a
+deterministic local build and a browser smoke test. It includes the official Permenko 16/2025
 register (226 active projects and 24 active programmes) and a reconciliation
 ledger showing **226 of 226** project or estate records represented: 94 to 88
 reviewed project rows, 26 to reviewed estates, 88 new register-only project rows
 and 18 new register-only industrial areas, with all 24 programmes matched, 24
 flagship records and all 50 PSN road entries. Every PSN sector is complete.
 Eighty-eight projects and 18 estates are Tier C register-only records. The
-bilingual shell is implemented: `site/en/`, `site/id/`, a chooser, 618 UI keys
+bilingual shell is implemented: `site/en/`, `site/id/`, a chooser, 634 UI keys
 per locale, a language switch that preserves the current view, and full-width
 register pages. The schema v4 translation, indicator and phase layers are in.
 Map v3, project pages, company-profile expansion to 300 and editorial review of
@@ -91,16 +91,16 @@ delivery atlas**. It does five things:
 | Dimension | Today | V4 target |
 |---|---:|---:|
 | Project records | 228 (88 register-only) | **400+** (226 PSN + 174 strategic/private records) |
-| Programmes | 24 PSN | **8 PKPN + 24 PSN programmes** plus 40–60 sub-programmes |
+| Programmes | 24 PSN + 8 PKPN | **8 PKPN + 24 PSN programmes** plus 40–60 sub-programmes |
 | Companies / organisations | 101 | **300** (top 100 complete) |
 | Estates and SEZs | 204 (18 register-only) | **200+** unique records (25 KEK + 179 industrial estates + 2026 additions) |
 | Corridors / segments | 5 / 44 | 5 / **100+** |
 | Atomic claims | 1,026 (863 project + 115 estate + 48 programme) | **1,500+** |
-| Indicators | 0 | **300+** |
-| Sources | 133 | **250+** |
+| Indicators | 14 | **300+** |
+| Sources | 135 | **250+** |
 | UI languages | 2 (English + Indonesian) | **2** (English + Indonesian) |
 | Data translation coverage | UI 100%; programmes and corridors 100%; 228 project names; 228 generated summaries; editorial summaries 0% | **100%** of names, summaries and programmes, with editorial review of generated summaries |
-| Initial site payload | 1,099 KB initial / 1,467 KB data / 3,428 KB total | **< 1.5 MB initial**, < 5 MB total |
+| Initial site payload | 1,150 KB initial / 1,667 KB data / 3,677 KB total | **< 1.5 MB initial**, < 5 MB total |
 
 ### Release shape
 
@@ -441,7 +441,7 @@ day one. A record can enter at Tier C and be upgraded.
 | PSN projects | 176 project rows linked; 226 records represented (88 register-only projects + 18 register-only estates) | **226 active** (228 slots, 2 deleted) | Permenko 16/2025; Permenko 4/2026 |
 | PSN programmes | 24 programme records; 24/24 represented | **24 active** (25 slots, 1 deleted) | Permenko 16/2025 |
 | Strategic non-PSN projects | 3 | **174+** | Ministries, Danantara, private announcements |
-| National programmes (PKPN) | 0 | **8** | 2027 budget speech; RPJMN 2025–2029 |
+| National programmes (PKPN) | 8 | **8** | 2027 budget speech; Finance Ministry breakdown |
 | Sub-programmes | 0 | **40–60** | Ministry work plans |
 | IKN packages | 1 | **25** | IKN Authority; Setkab releases |
 | Energy projects | 24 (15 register-only) | **60** | ESDM, PLN, Danantara |
@@ -453,8 +453,8 @@ day one. A record can enter at Tier C and be upgraded.
 | Companies | 101 | **300** | BUMN, Danantara, private, foreign |
 | Corridor segments | 44 | **100+** | KPPIP, PU, BPJT |
 | Claims | 708 | **1,500+** | Every project, company and indicator |
-| Indicators | 0 | **300+** | PKPN targets and ministry reporting |
-| Sources | 133 | **250+** | Official, company, multilateral, news |
+| Indicators | 14 | **300+** | PKPN targets and ministry reporting |
+| Sources | 135 | **250+** | Official, company, multilateral, news |
 
 ### 5.3 Inclusion rules
 
@@ -1254,7 +1254,10 @@ Target **WCAG 2.2 AA**. Priority checks:
   the 13 stage II projects and the 11 IWIP projects. **Partly done:** Masela,
   RDMP, solar and stage II are in; the 37 electricity and 11 IWIP packages are
   not yet separate rows.
-- Add the 8 PKPN programmes and their headline indicators. **Open.**
+- Add the 8 PKPN programmes and their headline indicators. **Done (9 Nov
+  2026):** `pkpn_programmes.csv` (8 rows, bilingual summaries and targets, 27
+  claims, 2 sourced budgets) and 11 PKPN indicators. Current values are shown
+  only where sourced; the rest say "No observation yet".
 - Seed 20–30 company records for the new projects. **Open.**
 
 **Acceptance**
@@ -1263,9 +1266,9 @@ Target **WCAG 2.2 AA**. Priority checks:
 - Every new record has a source, a claim and a status date. **Met for Tier C**
   through the PSN, location and active-designation claims; full EN/ID names and
   implementation facts remain to be upgraded.
-- The Programme view shows target vs current for 8 programmes. **Partial:**
-  the 100 GWp programme target is in; the 8 PKPN targets still need official
-  sources.
+- The Programme view shows target vs current for 8 programmes. **Met for target
+  visibility:** all eight PKPN cards show the sourced target and budget where
+  stated; current values appear only where a source states one.
 - Coverage report shows the PSN gap at zero. **Met.**
 
 ### Release 4.2 — Industry, companies and estates (4 weeks)
@@ -1484,7 +1487,7 @@ A record is done when:
    location and active-designation claims. PSN coverage is 226/226 and 44/44;
    no PSN record remains. See Appendix G.
 9. **Prototype the bilingual shell.** **Done (9 Nov 2026).** `site/index.html`
-   chooser, `site/en/`, `site/id/`, 618 UI keys per locale, `translations.csv`,
+   chooser, `site/en/`, `site/id/`, 634 UI keys per locale, `translations.csv`,
    `build_i18n.py`, `build_locales.py`, `Intl` formatting, language switch and
    `hreflang`. The smoke test covers EN and ID on `file://` and HTTP.
 10. **Run the UX audit.** **Partial (9 Nov 2026).** Expert heuristic walkthrough
@@ -1523,6 +1526,7 @@ estate_sources.csv           coverage_targets.csv
 conflicts.csv                psn_register.csv
 programmes.csv               programme_projects.csv
 programme_sources.csv        translations.csv
+pkpn_programmes.csv          pkpn_sources.csv
 indicators.csv               indicator_values.csv
 project_phases.csv
 ```
@@ -1550,9 +1554,9 @@ site/downloads/*.csv, *.json, *.geojson
 The v4 build passes with 228 projects, 24 programmes, 204 estates, 101
 organisations, 133 sources, 5 corridors, 44 segments, 30 events, 26 investments,
 19 conflicts, 863 project claims, 115 estate claims, 48 programme claims, 3
-indicators, 3 indicator values, 9 project phases and 268 dictionary fields
-across 26 tables. The initial payload is 1,099 KB, the data payload is 1,467 KB
-and the total including downloads is 3,428 KB. The two locale pages, the chooser
+PKPN programmes, 14 indicators, 4 indicator values, 9 project phases and 286
+dictionary fields across 28 tables. The initial payload is 1,150 KB, the data
+payload is 1,667 KB and the total including downloads is 3,677 KB. The two locale pages, the chooser
 and both i18n payloads are generated and checked by the build.
 
 ## Appendix B — Source register (V4 starter)
@@ -1606,9 +1610,12 @@ and both i18n payloads are generated and checked by the build.
   toll roads) plus three aggregate or partial matches to existing rows.
 - The 2027 budget speech lists eight PKPN: food sovereignty; energy and water
   independence; education; health; downstreaming and industrialisation;
-  infrastructure; housing; disaster resilience, people's economy and village
-  development; poverty reduction is named in the same passage as a cross-cutting
-  goal.
+  infrastructure, housing and disaster resilience; people's economy and village
+  development; and poverty reduction. The Finance Ministry breakdown adds the
+  Rp820.9T education and Rp244.9T health allocations, the Rp549.9T social
+  protection allocation, 10 million local entrepreneurs and the 15-segment
+  Giant Sea Wall. The atlas records these as a separate PKPN layer with 27
+  claims; it does not infer a full budget or target where the source is silent.
 - The 100 GW solar programme was launched at Gilimanuk on 25 August 2026; the
   first phase is 17 GWp, with 30 GW targeted in 2026 and 13 GW of diesel
   retired.
@@ -1775,10 +1782,11 @@ programme, company, estate and bilingual layers on top.
 | 2026-11-09 | PSN programme layer | `programmes.csv` (24 rows), `programme_projects.csv` (7 links) and `programme_sources.csv` (48 claims); 10 lead organisations. Bilingual names and summaries; programme view, Data section and three downloads. Dictionary grows to 229 fields across 22 tables. `scripts/imports/add_psn_programmes.py` is idempotent. |
 | 2026-11-09 | PSN industrial-area batch | 8 estate rows (Kuala Tanjung, Bantaeng, Pomalaa, Huali, Patimban, NEMIE, Pulau Penebang, Alumina Toba), 11 sources, 8 organisations and 41 claims. `estates.csv` grows to 186 rows; `sources.csv` to 133. PSN industrial coverage rises from 18/44 to 26/44. `scripts/imports/add_psn_industrial_estates.py` is idempotent. |
 | 2026-11-09 | PSN register-only closure | 88 project rows and 18 industrial-area rows, 264 project claims and 54 estate claims, 88 official-name aliases, 5 new sectors and an `unknown` status. `projects.csv` grows to 228 rows, `estates.csv` to 204, project claims to 863 and estate claims to 115. PSN coverage is 226/226 and 44/44. `scripts/imports/add_psn_register_records.py` is idempotent; `scripts/tools/build_province_centroids.py` supplies province centroids. |
-| 2026-11-09 | Bilingual shell | `site/en/index.html`, `site/id/index.html` and `site/index.html`; 618 UI keys per locale; `data/curated/translations.csv`; `build_i18n.py`, `build_locales.py`, `assets/i18n.js`; 24 programme and 5 corridor translations; 228 project names (140 reviewed + 88 official); 228 generated summaries; both locales smoke-tested on `file://` and HTTP. |
+| 2026-11-09 | Bilingual shell | `site/en/index.html`, `site/id/index.html` and `site/index.html`; 634 UI keys per locale; `data/curated/translations.csv`; `build_i18n.py`, `build_locales.py`, `assets/i18n.js`; 24 programme and 5 corridor translations; 228 project names (140 reviewed + 88 official); 228 generated summaries; both locales smoke-tested on `file://` and HTTP. |
 | 2026-11-09 | Full-width registers and UX baseline | Data, Programmes, Corridors and Estates use the full content width; tap-to-expand mobile sheet; `docs/design/tokens-v4.md`, `style-tile.html`, `ux-audit-v4.md`; 19 contrast pairs pass; 20/20 automated task steps across five profiles; 238-field dictionary across 23 tables. |
-| 2026-11-09 | Data charts | Native sector, status and freshness charts on the full-width Data view. Sector bars cover all 14 sectors; the status and freshness stacks reuse the existing status colours. No chart library; 618 UI keys per locale. |
-| 2026-11-09 | Companies view | `companies.js` from 101 organisations and 203 project-role links; full-width Companies view with type filter, role search, expandable role list, filtered CSV, two downloads and a coverage row (101/300). 79 organisations have a link; 22 are reference-only. Initial payload 1,139 KB, data 1,625 KB, total 3,618 KB. |
+| 2026-11-09 | PKPN layer | `pkpn_programmes.csv` (8 rows with bilingual summaries, targets, budgets and sources), `pkpn_sources.csv` (27 claims), 11 PKPN indicators and one value. Source snapshots `setneg_rapbn_2027.html` and `kemenkeu_pkpn_2027.html`. Programme view adds eight PKPN cards in speech order; Data adds two downloads. Sources 135; dictionary 286 fields across 28 tables; initial payload 1,150 KB, total 3,677 KB. |
+| 2026-11-09 | Data charts | Native sector, status and freshness charts on the full-width Data view. Sector bars cover all 14 sectors; the status and freshness stacks reuse the existing status colours. No chart library; 634 UI keys per locale. |
+| 2026-11-09 | Companies view | `companies.js` from 101 organisations and 203 project-role links; full-width Companies view with type filter, role search, expandable role list, filtered CSV, two downloads and a coverage row (101/300). 79 organisations have a link; 22 are reference-only. Initial payload 1,150 KB, data 1,667 KB, total 3,634 KB. |
 | 2026-11-09 | Indicators, values and phases | `indicators.csv` (3), `indicator_values.csv` (3) and `project_phases.csv` (9), with validation, dictionary entries, project/programme payloads, three downloads and a Programme target-vs-current view. The 100 GWp programme target is 100 GWp against 5.3 GWp current; Phase 1 targets 17 GWp; Nusantara's runway is 3,000 m. Dictionary 268 fields across 26 tables; initial payload 1,099 KB, total 3,428 KB. |
 
 **Reconciliation result at 9 November 2026:** 226 of 226 active PSN project or
