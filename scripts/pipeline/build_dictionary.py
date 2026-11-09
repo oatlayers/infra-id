@@ -41,6 +41,9 @@ TABLE_META = {
     "programme_projects.csv": ("Programme projects", "Structural links between a programme and the atlas projects that illustrate it."),
     "programme_sources.csv": ("Programme claims", "One atomic fact per programme-source link."),
     "translations.csv": ("Translations", "Reviewed English and Indonesian text for entity names, summaries and definitions that are not carried in a bilingual curated field."),
+    "indicators.csv": ("Indicators", "Programme or project targets, baselines and units, with their own source."),
+    "indicator_values.csv": ("Indicator values", "Dated observations for an indicator, each with its own source."),
+    "project_phases.csv": ("Project phases", "Sourced stages of a project, with status, dates, cost and progress where stated."),
 }
 
 FIELD = {
@@ -52,6 +55,19 @@ FIELD = {
     "text": ("text", "yes", "Display text in the stated locale."),
     "translator": ("text", "conditional", "Translator or editor for a reviewed or official translation."),
     "reviewed_on": ("date", "conditional", "Review date for a reviewed or official translation."),
+    "direction": ("enum", "yes", "Whether the indicator should increase, decrease, hold or reach a target."),
+    "unit": ("text", "yes", "Unit of the indicator, such as GWp, km, % or million m3."),
+    "baseline_value": ("decimal", "no", "Starting value for the indicator."),
+    "baseline_date": ("date", "no", "Date of the baseline value."),
+    "target_value": ("decimal", "no", "Target value for the indicator."),
+    "target_date": ("date", "no", "Date by which the target is to be reached."),
+    "indicator_id": ("id", "yes", "Foreign key to indicators.csv."),
+    "value": ("decimal", "yes", "Observed value at as_of."),
+    "as_of": ("date", "yes", "Date of the observed value."),
+    "phase": ("text", "yes", "Stable phase key, such as phase_1 or operation."),
+    "cost_idr_t": ("decimal", "no", "Phase cost in trillion rupiah, only when the source splits it."),
+    "start_date": ("date", "no", "Phase start date when the source states one."),
+    "end_date": ("date", "no", "Phase end or opening date when the source states one."),
     "name": ("text", "yes", "Display name in English with Indonesian proper names."),
     "short_name": ("text", "no", "Short display name or acronym."),
     "subject": ("text", "yes", "Short human-readable label for the conflicted subject."),
@@ -214,6 +230,17 @@ OVERRIDES = {
     ("translations.csv", "text"): ("text", "yes", "Display text in the stated locale.", ""),
     ("translations.csv", "translator"): ("text", "conditional", "Translator or editor for a reviewed or official translation.", ""),
     ("translations.csv", "reviewed_on"): ("date", "conditional", "Review date for a reviewed or official translation.", ""),
+    ("indicators.csv", "direction"): ("enum", "yes", "increase, decrease, target or maintain.", "increase; decrease; target; maintain"),
+    ("indicators.csv", "programme_id"): ("id", "conditional", "Foreign key to programmes.csv; at least one of programme_id or project_id is required.", ""),
+    ("indicators.csv", "project_id"): ("id", "conditional", "Foreign key to projects.csv; at least one of programme_id or project_id is required.", ""),
+    ("indicators.csv", "notes"): ("text", "no", "Caveats, target-year convention and source context.", ""),
+    ("indicator_values.csv", "notes"): ("text", "no", "Observation context and source caveats.", ""),
+    ("project_phases.csv", "status"): ("enum", "yes", "planned, under_construction, operating, recently_completed, stalled or unknown.", "planned; under_construction; operating; recently_completed; stalled; unknown"),
+    ("project_phases.csv", "notes"): ("text", "no", "Scope, package context and caveats.", ""),
+    ("project_phases.csv", "cost_idr_t"): ("decimal", "no", "Phase cost in trillion rupiah, only when the source splits it.", ""),
+    ("project_phases.csv", "start_date"): ("date", "no", "Phase start date when the source states one.", ""),
+    ("project_phases.csv", "end_date"): ("date", "no", "Phase end or opening date when the source states one.", ""),
+    ("project_phases.csv", "progress_pct"): ("decimal", "no", "Reported phase progress, 0-100.", ""),
 }
 
 CONDITIONAL = {
@@ -222,6 +249,9 @@ CONDITIONAL = {
     ("projects.csv", "corridor_id"), ("estates.csv", "regency"),
     ("corridors.csv", "source_id"), ("corridor_segments.csv", "source_id"),
     ("translations.csv", "translator"), ("translations.csv", "reviewed_on"),
+    ("indicators.csv", "programme_id"), ("indicators.csv", "project_id"),
+    ("project_phases.csv", "cost_idr_t"), ("project_phases.csv", "start_date"),
+    ("project_phases.csv", "end_date"), ("project_phases.csv", "progress_pct"),
 }
 
 

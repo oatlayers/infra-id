@@ -33,6 +33,9 @@ from data_model import (
     DERIVED_FIELDS,
     EVENT_FIELDS,
     EXPORTS,
+    INDICATOR_FIELDS,
+    INDICATOR_VALUE_FIELDS,
+    PHASE_FIELDS,
     PROGRAMME_FIELDS,
     PROGRAMME_PROJECT_FIELDS,
     PROGRAMME_SOURCE_FIELDS,
@@ -122,6 +125,9 @@ def main() -> None:
     programmes = read_csv(CURATED / "programmes.csv")
     programme_projects = read_csv(CURATED / "programme_projects.csv")
     programme_claims = read_csv(CURATED / "programme_sources.csv")
+    indicators = read_csv(CURATED / "indicators.csv")
+    indicator_values = read_csv(CURATED / "indicator_values.csv")
+    phases = read_csv(CURATED / "project_phases.csv")
     corridors = read_csv(CURATED / "corridors.csv")
     segments = read_csv(CURATED / "corridor_segments.csv")
     events = read_csv(CURATED / "project_events.csv")
@@ -223,6 +229,55 @@ def main() -> None:
     for alias in aliases:
         aliases_by_project.setdefault(alias["project_id"], []).append(alias["alias"])
 
+    values_by_indicator: dict[str, list[dict[str, str]]] = {}
+    for value in indicator_values:
+        source = sources.get(value["source_id"])
+        values_by_indicator.setdefault(value["indicator_id"], []).append(
+            {
+                "value": value["value"],
+                "as_of": value["as_of"],
+                "source_id": value["source_id"],
+                "source_title": source["title"] if source else "",
+                "source_url": source["url"] if source else "",
+                "notes": value["notes"],
+            }
+        )
+    for values in values_by_indicator.values():
+        values.sort(key=lambda record: record["as_of"])
+
+    indicators_by_project: dict[str, list[dict[str, object]]] = {}
+    indicators_by_programme: dict[str, list[dict[str, object]]] = {}
+    indicator_payload = []
+    for row in indicators:
+        source = sources.get(row["source_id"])
+        record = {
+            **{field: row[field] for field in INDICATOR_FIELDS},
+            "source_publisher": source["publisher"] if source else "",
+            "source_title": source["title"] if source else "",
+            "source_url": source["url"] if source else "",
+            "values": values_by_indicator.get(row["id"], []),
+        }
+        indicator_payload.append(record)
+        if row["project_id"]:
+            indicators_by_project.setdefault(row["project_id"], []).append(record)
+        if row["programme_id"]:
+            indicators_by_programme.setdefault(row["programme_id"], []).append(record)
+
+    phases_by_project: dict[str, list[dict[str, object]]] = {}
+    phase_payload = []
+    for row in phases:
+        source = sources.get(row["source_id"])
+        record = {
+            **{field: row[field] for field in PHASE_FIELDS},
+            "source_publisher": source["publisher"] if source else "",
+            "source_title": source["title"] if source else "",
+            "source_url": source["url"] if source else "",
+        }
+        phase_payload.append(record)
+        phases_by_project.setdefault(row["project_id"], []).append(record)
+    for records in phases_by_project.values():
+        records.sort(key=lambda record: (record["start_date"], record["end_date"], record["id"]))
+
     features = []
     for row in rows:
         properties = {
@@ -230,6 +285,8 @@ def main() -> None:
         }
         properties["corridor_name"] = corridor_names.get(row["corridor_id"], "")
         properties["aliases"] = aliases_by_project.get(row["id"], [])
+        properties["indicators"] = indicators_by_project.get(row["id"], [])
+        properties["phases"] = phases_by_project.get(row["id"], [])
         properties["sources"] = [
             source_record(sources[source_id], "; ".join(dict.fromkeys(kinds)))
             for source_id, kinds in claims_by_project.get(row["id"], {}).items()
@@ -346,6 +403,7 @@ def main() -> None:
                 "retrieved_on": source["retrieved_on"] if source else "",
                 "claims": claims_by_programme.get(row["id"], []),
                 "projects": links_by_programme.get(row["id"], []),
+                "indicators": indicators_by_programme.get(row["id"], []),
             }
         )
 
@@ -520,6 +578,17 @@ def main() -> None:
             "links": len(programme_projects),
             "last_verified": last_verified_programmes,
         },
+        "indicators": {
+            "total": len(indicators),
+            "with_target": sum(1 for row in indicators if row["target_value"]),
+            "values": len(indicator_values),
+            "projects_with_indicators": len(indicators_by_project),
+            "programmes_with_indicators": len(indicators_by_programme),
+        },
+        "phases": {
+            "total": len(phases),
+            "projects_with_phases": len(phases_by_project),
+        },
         "freshness": {
             "as_of": os.environ.get("INFRAA_AS_OF", "") or last_verified,
             "stale_after_days": 183,
@@ -646,6 +715,24 @@ def main() -> None:
                 "meta": f"{len(programme_claims)} atomic claims",
             },
             {
+                "key": "indicators",
+                "label": "Indicators",
+                "file": "downloads/indicators.csv",
+                "meta": f"{len(indicators)} indicators · {len(indicator_values)} values",
+            },
+            {
+                "key": "indicator_values",
+                "label": "Indicator values",
+                "file": "downloads/indicator-values.csv",
+                "meta": f"{len(indicator_values)} dated observations",
+            },
+            {
+                "key": "project_phases",
+                "label": "Project phases",
+                "file": "downloads/project-phases.csv",
+                "meta": f"{len(phases)} sourced phases",
+            },
+            {
                 "key": "conflicts",
                 "label": "Conflict register",
                 "file": "downloads/conflicts.csv",
@@ -753,6 +840,13 @@ def main() -> None:
         PROGRAMME_SOURCE_FIELDS,
         programme_claims,
     )
+    write_csv(SITE_DOWNLOADS / "indicators.csv", INDICATOR_FIELDS, indicators)
+    write_csv(
+        SITE_DOWNLOADS / "indicator-values.csv",
+        INDICATOR_VALUE_FIELDS,
+        indicator_values,
+    )
+    write_csv(SITE_DOWNLOADS / "project-phases.csv", PHASE_FIELDS, phases)
     write_csv(
         SITE_DOWNLOADS / "estates.csv",
         list(estates[0].keys()) if estates else [],
@@ -790,7 +884,7 @@ def main() -> None:
     print(
         f"wrote {len(features)} projects, {len(corridor_payload)} corridors, "
         f"{len(estate_payload)} estates, {len(programme_payload)} programmes, "
-        f"{len(sources)} sources"
+        f"{len(indicators)} indicators, {len(phases)} phases, {len(sources)} sources"
     )
     print(
         f"site payload: {sum(p.stat().st_size for p in SITE_DATA.iterdir()) / 1024:.0f} KB runtime, "

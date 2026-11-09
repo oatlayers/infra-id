@@ -145,6 +145,9 @@ def main() -> None:
     programmes = read_csv(CURATED / "programmes.csv")
     programme_projects = read_csv(CURATED / "programme_projects.csv")
     programme_claims = read_csv(CURATED / "programme_sources.csv")
+    indicators = read_csv(CURATED / "indicators.csv")
+    indicator_values = read_csv(CURATED / "indicator_values.csv")
+    phases = read_csv(CURATED / "project_phases.csv")
 
     payload = load_global(SITE_DATA / "projects.js", "PROJECTS")
     features = payload.get("features", [])
@@ -185,6 +188,16 @@ def main() -> None:
             err(f"projects.js {project_id}: no source attached")
         if props.get("freshness_state") not in {"fresh", "due_soon", "stale", "unknown"}:
             err(f"projects.js {project_id}: bad freshness state")
+        for indicator in props.get("indicators", []):
+            if indicator.get("project_id") != project_id:
+                err(f"projects.js {project_id}: indicator does not point back to the project")
+            if not indicator.get("source_id"):
+                err(f"projects.js {project_id}: indicator has no source")
+        for phase in props.get("phases", []):
+            if phase.get("project_id") != project_id:
+                err(f"projects.js {project_id}: phase does not point back to the project")
+            if not phase.get("source_id"):
+                err(f"projects.js {project_id}: phase has no source")
 
     estate_ids = set()
     for estate in estate_payload:
@@ -225,6 +238,9 @@ def main() -> None:
         linked = programme.get("projects", [])
         if any(link.get("id") not in project_ids for link in linked):
             err(f"programmes.js {programme_id}: unknown linked project")
+        for indicator in programme.get("indicators", []):
+            if indicator.get("programme_id") != programme_id:
+                err(f"programmes.js {programme_id}: indicator does not point back to the programme")
     if programme_ids != {row["id"] for row in programmes}:
         err("programmes.js: ids do not match the curated programme table")
     if len(programme_numbers) != 24:
@@ -253,6 +269,12 @@ def main() -> None:
         err("stats.js: programme claim count does not match the curated table")
     if stats.get("programmes", {}).get("links") != len(programme_projects):
         err("stats.js: programme link count does not match the curated table")
+    if stats.get("indicators", {}).get("total") != len(indicators):
+        err("stats.js: indicator total does not match the curated table")
+    if stats.get("indicators", {}).get("values") != len(indicator_values):
+        err("stats.js: indicator value count does not match the curated table")
+    if stats.get("phases", {}).get("total") != len(phases):
+        err("stats.js: phase total does not match the curated table")
     if stats.get("freshness", {}).get("records") != len(projects) + len(estates):
         err("stats.js: freshness report does not cover every project and estate")
     if not stats.get("freshness", {}).get("next_due"):
@@ -284,19 +306,27 @@ def main() -> None:
     check_local_assets()
     check_i18n()
 
-    # The payload budget tracks the browser data payload, matching the plan's
-    # earlier 1,224 KB runtime / 3,152 KB total figures. Fonts, the app shell
-    # and the bundled Leaflet runtime are cached assets, not data.
-    initial_files = [path for path in SITE_DATA.glob("*") if path.is_file()]
+    # The initial payload is the shell for one locale and the Explore view:
+    # basemap, projects, corridors, stats, search and one i18n payload.
+    # Estates and programmes are lazy view bundles; the other locale is never
+    # loaded. The total includes every data file and every download.
+    core_names = ("basemap.js", "projects.js", "corridors.js", "stats.js", "search.js")
+    initial_files = [SITE_DATA / name for name in core_names if (SITE_DATA / name).exists()]
+    locale_payloads = sorted(
+        SITE_DATA.glob("i18n.*.js"), key=lambda path: path.stat().st_size
+    )
+    if locale_payloads:
+        initial_files.append(locale_payloads[-1])
     initial_bytes = sum(path.stat().st_size for path in initial_files)
+    data_bytes = sum(path.stat().st_size for path in SITE_DATA.glob("*") if path.is_file())
     download_bytes = sum(
         path.stat().st_size for path in SITE_DOWNLOADS.glob("*") if path.is_file()
     )
     if initial_bytes > 1_500_000:
         err(f"payload: initial {initial_bytes / 1024:.0f} KB exceeds the 1.5 MB budget")
-    if initial_bytes + download_bytes > 5_000_000:
+    if data_bytes + download_bytes > 5_000_000:
         err(
-            f"payload: total {(initial_bytes + download_bytes) / 1024:.0f} KB "
+            f"payload: total {(data_bytes + download_bytes) / 1024:.0f} KB "
             "exceeds the 5 MB budget"
         )
 
@@ -315,8 +345,9 @@ def main() -> None:
     print(
         f"OK: {len(features)} projects, {len(estate_payload)} estates, "
         f"{len(corridor_payload)} corridors, {len(claim_rows)} claims, "
-        f"{len(conflicts)} conflicts; runtime {initial_bytes / 1024:.0f} KB, "
-        f"total {(initial_bytes + download_bytes) / 1024:.0f} KB"
+        f"{len(conflicts)} conflicts, {len(indicators)} indicators, "
+        f"{len(phases)} phases; initial {initial_bytes / 1024:.0f} KB, "
+        f"data {data_bytes / 1024:.0f} KB, total {(data_bytes + download_bytes) / 1024:.0f} KB"
     )
 
 

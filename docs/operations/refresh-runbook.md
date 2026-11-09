@@ -210,6 +210,25 @@ status with a dated status, add the claim, set `verification`, and move the
 coordinate to a real site point if one is sourced. Do not keep
 `status=unknown` once a source states otherwise.
 
+### 4.9 Indicators, values and phases
+
+Add an indicator to `data/curated/indicators.csv` only when a source states the
+name, unit and at least a baseline or target. Link it to a programme, a project,
+or both. Add an observation to `indicator_values.csv` with its own `as_of` date
+and source. Do not derive a target from the atlas's own project fields; a target
+must come from the source.
+
+Add a phase to `data/curated/project_phases.csv` only when a source states the
+stage, status or dates. Do not split a package cost across projects unless the
+source does. The five dams are the reference case: the Rp9.79T package total
+stays in the notes, and `cost_idr_t` is blank.
+
+The project drawer reads indicators and phases from the feature payload; the
+Programme view reads programme indicators. Run `validate.py`,
+`build_i18n.py`, `build_site_data.py` and the smoke test after editing. The
+`AUTO` / `OTOMATIS` summary label is generated text, not an editorial summary;
+do not remove the label until a human writes and reviews the summary.
+
 ## 5. Rebuild
 
 Run the whole pipeline, not a subset:
@@ -221,13 +240,16 @@ python scripts/build_all.py
 This runs, in order:
 
 1. `scripts/pipeline/validate.py`
-2. `scripts/pipeline/build_projects.py`
-3. `scripts/pipeline/build_dictionary.py`
-4. `scripts/pipeline/freshness.py`
-5. `scripts/pipeline/audit_claims.py`
-6. `scripts/pipeline/build_site_data.py`
-7. `scripts/pipeline/build_factories_ledger.py`
-8. `scripts/pipeline/check_site.py`
+2. `scripts/pipeline/build_psn_ledger.py`
+3. `scripts/pipeline/build_projects.py`
+4. `scripts/pipeline/build_dictionary.py`
+5. `scripts/pipeline/freshness.py`
+6. `scripts/pipeline/audit_claims.py`
+7. `scripts/pipeline/build_i18n.py`
+8. `scripts/pipeline/build_site_data.py`
+9. `scripts/pipeline/build_locales.py`
+10. `scripts/pipeline/build_factories_ledger.py`
+11. `scripts/pipeline/check_site.py`
 
 A successful run prints the current counts and ends with the site payload size.
 For a report-only check, use an explicit as-of date:
@@ -337,6 +359,7 @@ the site. The repository owner has deferred publishing explicitly.
       register; programme claims refreshed.
 - [ ] Register-only rows reviewed for an upgrade source; no row left at
       `status=unknown` when a dated source states implementation.
+- [ ] Indicator values and phases checked; no target inferred from the atlas.
 - [ ] Trans corridor totals and sections checked.
 - [ ] Factory statuses, capacity and investment checked.
 - [ ] Changed rows updated with atomic claims and `last_verified`.

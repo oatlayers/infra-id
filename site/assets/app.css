@@ -1583,6 +1583,7 @@ svg { display: block; }
 }
 .evidence-list li:last-child { border-bottom: 0; }
 .evidence-list time { color: var(--muted); font-variant-numeric: tabular-nums; }
+.indicator-meta { display: block; margin-top: 2px; color: var(--muted); font-size: 9.5px; }
 .source-list { margin: 0; padding: 0; list-style: none; }
 .source-list li {
   padding: 7px 0;
@@ -1835,11 +1836,17 @@ svg { display: block; }
   line-height: 1.5;
 }
 .programme-meta dd { margin: 0; line-height: 1.45; }
-.programme-projects {
+.programme-projects,
+.programme-indicators {
   margin-top: 10px;
   padding-top: 8px;
   border-top: 1px dashed var(--line);
 }
+.programme-indicators ul { margin: 4px 0 0; padding: 0; list-style: none; }
+.programme-indicators li { padding: 5px 0; border-bottom: 1px solid var(--line); }
+.programme-indicators li:last-child { border-bottom: 0; }
+.programme-indicators b { font-size: 11px; }
+.programme-indicators span { display: block; color: var(--muted); font-size: 9.5px; }
 .programme-sub {
   color: var(--muted);
   font-size: 8.5px;

@@ -139,8 +139,8 @@ def locale_shell(page: Page) -> None:
     page.wait_for_timeout(400)
     check("Data dan metode" in page.locator(".data-view").inner_text(),
           "Indonesian edition translates the Data view")
-    check(page.locator(".dictionary details").count() == 23,
-          "Indonesian edition renders 23 dictionary tables")
+    check(page.locator(".dictionary details").count() == 26,
+          "Indonesian edition renders 26 dictionary tables")
     screenshot(page, "08d-data-id-desktop.png")
     page.click('[data-lang-target="en"]')
     page.wait_for_selector(".data-view")
@@ -204,6 +204,11 @@ def desktop_views(page: Page) -> None:
           "Programme cards show the Indonesian summary")
     check(page.locator('.programme-card a[href="#/project/energy-plts-100gw-phase-1"]').count() == 1,
           "Programme cards link to a curated project")
+    check(page.locator(".programme-indicators").count() >= 1,
+          "Programme cards show a target-versus-current indicator")
+    programme_text = page.locator(".programme-view").inner_text().lower()
+    check("target vs current" in programme_text and "100 gwp" in programme_text,
+          "The 100 GWp target is visible on the programme card")
     page.click('[data-programme-theme="food"]')
     page.wait_for_timeout(200)
     check(page.locator(".programme-card").count() == 4, "Food theme narrows to four programmes")
@@ -214,8 +219,8 @@ def desktop_views(page: Page) -> None:
 
     tab(page, "data")
     check(page.locator(".conflict-table tbody tr").count() == 19, "Conflict register has 19 rows")
-    check(page.locator(".dictionary details").count() == 23, "Data dictionary has 23 tables")
-    check(page.locator('a.download[href]').count() == 16, "Data view has 16 static downloads")
+    check(page.locator(".dictionary details").count() == 26, "Data dictionary has 26 tables")
+    check(page.locator('a.download[href]').count() == 19, "Data view has 19 static downloads")
     check("programme register" in page.locator(".data-view").inner_text().lower(),
           "Data view has a programme register section")
     check(page.locator('.download[data-export="projects-csv"]').count() == 1,
@@ -227,8 +232,8 @@ def desktop_views(page: Page) -> None:
     check(f"{TOTAL} / {TOTAL}" in page.locator(".data-view").inner_text(), f"Claims coverage is {TOTAL} / {TOTAL}")
     report["views"]["data"] = {  # type: ignore[index]
         "conflicts": 19,
-        "dictionary_tables": 23,
-        "download_controls": 19,
+        "dictionary_tables": 26,
+        "download_controls": 22,
     }
     screenshot(page, "04-data-desktop.png")
 
@@ -243,6 +248,18 @@ def desktop_drawer(page: Page) -> None:
     check(bool(title), "Project drawer opens with a title")
     check(page.locator(".freshness-line").count() == 1, "Drawer shows the freshness line")
     check(page.locator("#drawer-body a[href]").count() >= 1, "Drawer lists at least one source link")
+    page.keyboard.press("Escape")
+    page.wait_for_timeout(300)
+    page.fill("#search", "100 GWp")
+    page.wait_for_timeout(250)
+    page.locator(".project-row").first.click()
+    page.wait_for_selector("#drawer:not([hidden])")
+    page.wait_for_timeout(300)
+    drawer_text = page.locator("#drawer-body").inner_text().lower()
+    check("indicators" in drawer_text and "5.3" in drawer_text,
+          "Drawer shows the 100 GWp indicator and current value")
+    check("phases" in drawer_text and "phase 1" in drawer_text,
+          "Drawer shows the sourced project phase")
     report["views"]["drawer"] = {"title": title}  # type: ignore[index]
     screenshot(page, "05-project-drawer.png")
     page.keyboard.press("Escape")

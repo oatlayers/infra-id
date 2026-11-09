@@ -237,3 +237,33 @@ translations.csv,Translations,"Reviewed English and Indonesian text for entity n
 translations.csv,Translations,"Reviewed English and Indonesian text for entity names, summaries and definitions that are not carried in a bilingual curated field.",translator,text,conditional,Translator or editor for a reviewed or official translation.,,atlas-editor
 translations.csv,Translations,"Reviewed English and Indonesian text for entity names, summaries and definitions that are not carried in a bilingual curated field.",reviewed_on,date,conditional,Review date for a reviewed or official translation.,,2026-11-09
 translations.csv,Translations,"Reviewed English and Indonesian text for entity names, summaries and definitions that are not carried in a bilingual curated field.",source_id,id,yes,Foreign key to sources.csv.,,
+indicators.csv,Indicators,"Programme or project targets, baselines and units, with their own source.",id,id,yes,Stable lowercase-hyphenated identifier used in deep links and joins.,,ind-psn-100gw-programme
+indicators.csv,Indicators,"Programme or project targets, baselines and units, with their own source.",programme_id,id,conditional,Foreign key to programmes.csv; at least one of programme_id or project_id is required.,,prog-electricity
+indicators.csv,Indicators,"Programme or project targets, baselines and units, with their own source.",project_id,id,conditional,Foreign key to projects.csv; at least one of programme_id or project_id is required.,,energy-plts-100gw-phase-1
+indicators.csv,Indicators,"Programme or project targets, baselines and units, with their own source.",name_en,text,yes,Display name in English.,,Solar capacity target
+indicators.csv,Indicators,"Programme or project targets, baselines and units, with their own source.",name_id,text,yes,Official Indonesian name as printed in the regulation.,,Target kapasitas surya
+indicators.csv,Indicators,"Programme or project targets, baselines and units, with their own source.",unit,text,yes,Unit counted by the coverage target.,,GWp
+indicators.csv,Indicators,"Programme or project targets, baselines and units, with their own source.",direction,enum,yes,"increase, decrease, target or maintain.",increase; decrease; target; maintain,increase
+indicators.csv,Indicators,"Programme or project targets, baselines and units, with their own source.",baseline_value,decimal,no,Starting value for the indicator.,,
+indicators.csv,Indicators,"Programme or project targets, baselines and units, with their own source.",baseline_date,date,no,Date of the baseline value.,,
+indicators.csv,Indicators,"Programme or project targets, baselines and units, with their own source.",target_value,decimal,no,Target value for the indicator.,,100
+indicators.csv,Indicators,"Programme or project targets, baselines and units, with their own source.",target_date,date,no,Date by which the target is to be reached.,,2029-12-31
+indicators.csv,Indicators,"Programme or project targets, baselines and units, with their own source.",source_id,id,yes,Foreign key to sources.csv.,,src-setneg-plts-100gw-2026-08-25
+indicators.csv,Indicators,"Programme or project targets, baselines and units, with their own source.",notes,text,no,"Caveats, target-year convention and source context.",,100 GWp solar programme under the electricity programme; 5.3 GWp launched by 25 August 2026.
+indicator_values.csv,Indicator values,"Dated observations for an indicator, each with its own source.",indicator_id,id,yes,Foreign key to indicators.csv.,,ind-psn-100gw-programme
+indicator_values.csv,Indicator values,"Dated observations for an indicator, each with its own source.",value,decimal,yes,Observed value at as_of.,,5.3
+indicator_values.csv,Indicator values,"Dated observations for an indicator, each with its own source.",as_of,date,yes,Date of the corridor figures.,,2026-08-25
+indicator_values.csv,Indicator values,"Dated observations for an indicator, each with its own source.",source_id,id,yes,Foreign key to sources.csv.,,src-setneg-plts-100gw-2026-08-25
+indicator_values.csv,Indicator values,"Dated observations for an indicator, each with its own source.",notes,text,no,Observation context and source caveats.,,14 early projects totalling 5.3 GWp; the phase 1 target is 17 GWp.
+project_phases.csv,Project phases,"Sourced stages of a project, with status, dates, cost and progress where stated.",id,id,yes,Stable lowercase-hyphenated identifier used in deep links and joins.,,phase-100gw-phase1
+project_phases.csv,Project phases,"Sourced stages of a project, with status, dates, cost and progress where stated.",project_id,id,yes,Foreign key to projects.csv.,,energy-plts-100gw-phase-1
+project_phases.csv,Project phases,"Sourced stages of a project, with status, dates, cost and progress where stated.",phase,text,yes,"Stable phase key, such as phase_1 or operation.",,phase_1
+project_phases.csv,Project phases,"Sourced stages of a project, with status, dates, cost and progress where stated.",name_en,text,yes,Display name in English.,,Phase 1
+project_phases.csv,Project phases,"Sourced stages of a project, with status, dates, cost and progress where stated.",name_id,text,yes,Official Indonesian name as printed in the regulation.,,Tahap 1
+project_phases.csv,Project phases,"Sourced stages of a project, with status, dates, cost and progress where stated.",status,enum,yes,"planned, under_construction, operating, recently_completed, stalled or unknown.",planned; under_construction; operating; recently_completed; stalled; unknown,under_construction
+project_phases.csv,Project phases,"Sourced stages of a project, with status, dates, cost and progress where stated.",cost_idr_t,decimal,conditional,"Phase cost in trillion rupiah, only when the source splits it.",,
+project_phases.csv,Project phases,"Sourced stages of a project, with status, dates, cost and progress where stated.",start_date,date,conditional,Phase start date when the source states one.,,
+project_phases.csv,Project phases,"Sourced stages of a project, with status, dates, cost and progress where stated.",end_date,date,conditional,Phase end or opening date when the source states one.,,2025-06-12
+project_phases.csv,Project phases,"Sourced stages of a project, with status, dates, cost and progress where stated.",progress_pct,decimal,conditional,"Reported phase progress, 0-100.",,
+project_phases.csv,Project phases,"Sourced stages of a project, with status, dates, cost and progress where stated.",source_id,id,yes,Foreign key to sources.csv.,,src-setneg-plts-100gw-2026-08-25
+project_phases.csv,Project phases,"Sourced stages of a project, with status, dates, cost and progress where stated.",notes,text,no,"Scope, package context and caveats.",,Target year 2029; 14 early projects totalling 5.3 GWp.

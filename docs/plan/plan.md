@@ -6,18 +6,20 @@ closure of PSN coverage landed on 9 November 2026. The released site is still th
 v3 build: 107 projects, 178 estates and SEZs, 5 corridors, 44 segments, 479 atomic
 claims and 91 sources. The repository now has 228 projects, 24 programmes, 204
 estates and SEZs, 5 corridors, 44 segments, 863 project claims plus 115 estate
-claims and 48 programme claims, 133 sources and 30 events, with a deterministic
-local build and a browser smoke test. It includes the official Permenko 16/2025
+claims and 48 programme claims, 3 indicators, 3 indicator values, 9 project
+phases, 133 sources and 30 events, with a deterministic local build and a
+browser smoke test. It includes the official Permenko 16/2025
 register (226 active projects and 24 active programmes) and a reconciliation
 ledger showing **226 of 226** project or estate records represented: 94 to 88
 reviewed project rows, 26 to reviewed estates, 88 new register-only project rows
 and 18 new register-only industrial areas, with all 24 programmes matched, 24
 flagship records and all 50 PSN road entries. Every PSN sector is complete.
 Eighty-eight projects and 18 estates are Tier C register-only records. The
-bilingual shell is implemented: `site/en/`, `site/id/`, a chooser, 541 UI keys
+bilingual shell is implemented: `site/en/`, `site/id/`, a chooser, 559 UI keys
 per locale, a language switch that preserves the current view, and full-width
-register pages. Map v3, project pages, company profiles and complete entity
-translation are still open.
+register pages. The schema v4 translation, indicator and phase layers are in.
+Map v3, project pages, company profiles and editorial review of the generated
+summaries are still open.
 
 **Supersedes:** the roadmap, scope and "where to pick up" sections of
 [`plan-v3.md`](plan-v3.md). The v1–v3 history, phase records and decisions stay
@@ -98,7 +100,7 @@ delivery atlas**. It does five things:
 | Sources | 133 | **250+** |
 | UI languages | 2 (English + Indonesian) | **2** (English + Indonesian) |
 | Data translation coverage | UI 100%; programmes and corridors 100%; 228 project names; 228 generated summaries; editorial summaries 0% | **100%** of names, summaries and programmes, with editorial review of generated summaries |
-| Initial site payload | 1,360 KB initial / 3,292 KB total | **< 1.5 MB initial**, < 5 MB total |
+| Initial site payload | 1,099 KB initial / 1,467 KB data / 3,428 KB total | **< 1.5 MB initial**, < 5 MB total |
 
 ### Release shape
 
@@ -1261,7 +1263,9 @@ Target **WCAG 2.2 AA**. Priority checks:
 - Every new record has a source, a claim and a status date. **Met for Tier C**
   through the PSN, location and active-designation claims; full EN/ID names and
   implementation facts remain to be upgraded.
-- The Programme view shows target vs current for 8 programmes. **Open.**
+- The Programme view shows target vs current for 8 programmes. **Partial:**
+  the 100 GWp programme target is in; the 8 PKPN targets still need official
+  sources.
 - Coverage report shows the PSN gap at zero. **Met.**
 
 ### Release 4.2 — Industry, companies and estates (4 weeks)
@@ -1470,7 +1474,7 @@ A record is done when:
    location and active-designation claims. PSN coverage is 226/226 and 44/44;
    no PSN record remains. See Appendix G.
 9. **Prototype the bilingual shell.** **Done (9 Nov 2026).** `site/index.html`
-   chooser, `site/en/`, `site/id/`, 541 UI keys per locale, `translations.csv`,
+   chooser, `site/en/`, `site/id/`, 559 UI keys per locale, `translations.csv`,
    `build_i18n.py`, `build_locales.py`, `Intl` formatting, language switch and
    `hreflang`. The smoke test covers EN and ID on `file://` and HTTP.
 10. **Run the UX audit.** **Partial (9 Nov 2026).** Expert heuristic walkthrough
@@ -1479,8 +1483,10 @@ A record is done when:
 11. **Design the map palette and tokens.** **Done (9 Nov 2026).**
     `docs/design/style-tile.html`, `docs/design/tokens-v4.md` and
     `scripts/dev/check_contrast.py`.
-12. **Extend the schema.** **Partial (9 Nov 2026).** Programmes and translations
-    are done; add indicators, phases and geometry, then write the migration note.
+12. **Extend the schema.** **Done (9 Nov 2026).** Programmes, translations,
+    indicators, indicator values and project phases are in with validation and
+    dictionary entries. Geometry remains an empty table until a sourced line or
+    polygon is added; the migration note is in the changelog and runbook.
 13. **Build the Data dashboard prototype.** **Partial (9 Nov 2026).** Full-width
     coverage, freshness, claims, conflicts, sources, downloads and methods are
     in. Charts and a sortable table component remain.
@@ -1506,6 +1512,8 @@ estate_sources.csv           coverage_targets.csv
 conflicts.csv                psn_register.csv
 programmes.csv               programme_projects.csv
 programme_sources.csv        translations.csv
+indicators.csv               indicator_values.csv
+project_phases.csv
 ```
 
 Generated outputs:
@@ -1530,10 +1538,11 @@ site/downloads/*.csv, *.json, *.geojson
 
 The v4 build passes with 228 projects, 24 programmes, 204 estates, 101
 organisations, 133 sources, 5 corridors, 44 segments, 30 events, 26 investments,
-19 conflicts, 863 project claims, 115 estate claims, 48 programme claims and 238
-dictionary fields across 23 tables. The site payload is 1,360 KB runtime and
-3,292 KB including downloads. The two locale pages, the chooser and both i18n
-payloads are generated and checked by the build.
+19 conflicts, 863 project claims, 115 estate claims, 48 programme claims, 3
+indicators, 3 indicator values, 9 project phases and 268 dictionary fields
+across 26 tables. The initial payload is 1,099 KB, the data payload is 1,467 KB
+and the total including downloads is 3,428 KB. The two locale pages, the chooser
+and both i18n payloads are generated and checked by the build.
 
 ## Appendix B — Source register (V4 starter)
 
@@ -1755,8 +1764,9 @@ programme, company, estate and bilingual layers on top.
 | 2026-11-09 | PSN programme layer | `programmes.csv` (24 rows), `programme_projects.csv` (7 links) and `programme_sources.csv` (48 claims); 10 lead organisations. Bilingual names and summaries; programme view, Data section and three downloads. Dictionary grows to 229 fields across 22 tables. `scripts/imports/add_psn_programmes.py` is idempotent. |
 | 2026-11-09 | PSN industrial-area batch | 8 estate rows (Kuala Tanjung, Bantaeng, Pomalaa, Huali, Patimban, NEMIE, Pulau Penebang, Alumina Toba), 11 sources, 8 organisations and 41 claims. `estates.csv` grows to 186 rows; `sources.csv` to 133. PSN industrial coverage rises from 18/44 to 26/44. `scripts/imports/add_psn_industrial_estates.py` is idempotent. |
 | 2026-11-09 | PSN register-only closure | 88 project rows and 18 industrial-area rows, 264 project claims and 54 estate claims, 88 official-name aliases, 5 new sectors and an `unknown` status. `projects.csv` grows to 228 rows, `estates.csv` to 204, project claims to 863 and estate claims to 115. PSN coverage is 226/226 and 44/44. `scripts/imports/add_psn_register_records.py` is idempotent; `scripts/tools/build_province_centroids.py` supplies province centroids. |
-| 2026-11-09 | Bilingual shell | `site/en/index.html`, `site/id/index.html` and `site/index.html`; 541 UI keys per locale; `data/curated/translations.csv`; `build_i18n.py`, `build_locales.py`, `assets/i18n.js`; 24 programme and 5 corridor translations; 228 project names (140 reviewed + 88 official); 228 generated summaries; both locales smoke-tested on `file://` and HTTP. |
+| 2026-11-09 | Bilingual shell | `site/en/index.html`, `site/id/index.html` and `site/index.html`; 559 UI keys per locale; `data/curated/translations.csv`; `build_i18n.py`, `build_locales.py`, `assets/i18n.js`; 24 programme and 5 corridor translations; 228 project names (140 reviewed + 88 official); 228 generated summaries; both locales smoke-tested on `file://` and HTTP. |
 | 2026-11-09 | Full-width registers and UX baseline | Data, Programmes, Corridors and Estates use the full content width; tap-to-expand mobile sheet; `docs/design/tokens-v4.md`, `style-tile.html`, `ux-audit-v4.md`; 19 contrast pairs pass; 20/20 automated task steps across five profiles; 238-field dictionary across 23 tables. |
+| 2026-11-09 | Indicators, values and phases | `indicators.csv` (3), `indicator_values.csv` (3) and `project_phases.csv` (9), with validation, dictionary entries, project/programme payloads, three downloads and a Programme target-vs-current view. The 100 GWp programme target is 100 GWp against 5.3 GWp current; Phase 1 targets 17 GWp; Nusantara's runway is 3,000 m. Dictionary 268 fields across 26 tables; initial payload 1,099 KB, total 3,428 KB. |
 
 **Reconciliation result at 9 November 2026:** 226 of 226 active PSN project or
 estate records represented: 94 records map to 88 reviewed project rows, 26 map to

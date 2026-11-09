@@ -163,6 +163,65 @@
     return key ? t(key) : value;
   }
 
+  function localName(record) {
+    if (I18N.locale === 'id') return record.name_id || record.name_en || '';
+    return record.name_en || record.name_id || '';
+  }
+
+  function indicatorSummary(indicator) {
+    const values = indicator.values || [];
+    const latest = values.length ? values[values.length - 1] : null;
+    const unit = indicator.unit || '';
+    const current = latest
+      ? fmtNum(latest.value) + ' ' + unit
+      : t('indicator.no_value');
+    const target = indicator.target_value
+      ? fmtNum(indicator.target_value) + ' ' + unit
+      : '';
+    const asOf = latest ? t('indicator.as_of', { date: fmtDate(latest.as_of) }) : '';
+    const source = indicator.source_url
+      ? ' <a href="' + esc(indicator.source_url) + '" target="_blank" rel="noopener">' +
+        esc(t('action.open_source')) + '</a>'
+      : '';
+    return {
+      name: localName(indicator),
+      current: current,
+      target: target,
+      asOf: asOf,
+      source: source
+    };
+  }
+
+  function indicatorItems(indicators, compact) {
+    return (indicators || []).map(function (indicator) {
+      const info = indicatorSummary(indicator);
+      const target = info.target
+        ? ' · <b>' + esc(t('indicator.target')) + '</b> ' + esc(info.target)
+        : '';
+      const meta = [info.asOf].filter(Boolean).join(' ');
+      return '<li><time>' + esc(info.name) + '</time><span><b>' + esc(t('indicator.current')) +
+        '</b> ' + esc(info.current) + target +
+        (meta ? '<span class="indicator-meta">' + esc(meta) + info.source + '</span>' : info.source) +
+        '</span></li>';
+    }).join('');
+  }
+
+  function phaseItems(phases) {
+    return (phases || []).map(function (phase) {
+      const dates = [];
+      if (phase.start_date) dates.push(t('phase.start') + ' ' + fmtDate(phase.start_date));
+      if (phase.end_date) dates.push(t('phase.end') + ' ' + fmtDate(phase.end_date));
+      const facts = [];
+      if (phase.cost_idr_t) facts.push(t('phase.cost') + ' Rp ' + fmtNum(phase.cost_idr_t) + ' T');
+      if (phase.progress_pct) facts.push(t('phase.progress') + ' ' + fmtNum(phase.progress_pct) + '%');
+      const detail = dates.concat(facts).join(' · ');
+      return '<li><time>' + esc(localName(phase)) + '</time><span><b>' +
+        esc(statusLabel(phase.status)) + '</b>' + (detail ? ' · ' + esc(detail) : '') +
+        (phase.source_url ? ' · <a href="' + esc(phase.source_url) + '" target="_blank" rel="noopener">' +
+          esc(t('action.open_source')) + '</a>' : '') + '</span></li>';
+    }).join('');
+  }
+
   function daysSince(value) {
     if (!value) return Infinity;
     const parsed = new Date(value + 'T00:00:00');
@@ -918,6 +977,15 @@
         '</p></section>';
     }
 
+    if (project.indicators && project.indicators.length) {
+      body += '<section class="detail-section"><h3>' + esc(t('drawer.indicators')) +
+        '</h3><ul class="evidence-list">' + indicatorItems(project.indicators) + '</ul></section>';
+    }
+    if (project.phases && project.phases.length) {
+      body += '<section class="detail-section"><h3>' + esc(t('drawer.phases')) +
+        '</h3><ul class="evidence-list">' + phaseItems(project.phases) + '</ul></section>';
+    }
+
     body += '<section class="detail-section"><h3>' + esc(t('drawer.why_status')) + '</h3>' +
       '<p class="basis">' + untranslated(project.status_basis) + '</p>' +
       '<div class="basis-meta">' + esc(t('drawer.status_as_of', {
@@ -1651,7 +1719,19 @@
       '<div><dt>' + esc(t('programmes.lead')) + '</dt><dd>' + esc(lead) + '</dd></div>' +
       '<div><dt>' + esc(t('programmes.pkpn')) + '</dt><dd>' + esc(pkpnLabel(programme.pkpn_id)) + '</dd></div>' +
       '<div><dt>' + esc(t('programmes.target')) + '</dt><dd>' + esc(target || t('programmes.not_published')) + '</dd></div>' +
-      '</dl>' + projectList +
+      '</dl>' +
+      ((programme.indicators && programme.indicators.length)
+        ? '<div class="programme-indicators"><div class="programme-sub">' +
+          esc(t('programmes.target_current')) + '</div><ul>' +
+          programme.indicators.map(function (indicator) {
+            const info = indicatorSummary(indicator);
+            const targetText = info.target ? ' · ' + t('indicator.target') + ' ' + info.target : '';
+            return '<li><b>' + esc(info.name) + '</b><span>' + esc(t('indicator.current')) + ' ' +
+              esc(info.current) + esc(targetText) +
+              (info.asOf ? ' · ' + esc(info.asOf) : '') + '</span></li>';
+          }).join('') + '</ul></div>'
+        : '') +
+      projectList +
       (programme.source_url
         ? '<a class="programme-source" href="' + esc(programme.source_url) + '" target="_blank" rel="noopener">' +
           esc(programme.source_title || t('programmes.official_source')) + ' ↗</a>'
@@ -1974,7 +2054,11 @@
       programmes: fmtNum((stats.programmes && stats.programmes.total) || 0),
       lead: fmtNum((stats.programmes && stats.programmes.with_lead) || 0),
       links: fmtNum((stats.programmes && stats.programmes.with_projects) || 0),
-      targets: fmtNum((stats.programmes && stats.programmes.with_target) || 0)
+      targets: fmtNum((stats.programmes && stats.programmes.with_target) || 0),
+      indicators: fmtNum((stats.indicators && stats.indicators.total) || 0),
+      indicatorValues: fmtNum((stats.indicators && stats.indicators.values) || 0),
+      phases: fmtNum((stats.phases && stats.phases.total) || 0),
+      indicatorProjects: fmtNum((stats.indicators && stats.indicators.projects_with_indicators) || 0)
     };
 
     dom.viewPanel.innerHTML =
@@ -1991,6 +2075,12 @@
         total: v.programmes, lead: v.lead, links: v.links, target: v.targets
       })) + '</p>' +
       '<p><a href="#/programmes">' + esc(t('data.open_programmes')) + '</a></p></section>' +
+
+      '<section class="data-section"><h3>' + esc(t('data.indicators')) + '</h3>' +
+      '<p>' + esc(t('data.indicator_lede', {
+        indicators: v.indicators, values: v.indicatorValues,
+        phases: v.phases, projects: v.indicatorProjects
+      })) + '</p></section>' +
 
       claimsSection() + freshnessSection() +
 

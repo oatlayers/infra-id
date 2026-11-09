@@ -43,6 +43,8 @@
         "notes": "English Wikipedia says 49.8 km operational of 74 km. BPJT gives no full-corridor opening date. Section 1 Padang Tiji–Seulimeum (24.67 km) was targeted for 2026.",
         "corridor_name": "Trans Sumatra",
         "aliases": [],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-bpjt-toll-road-list-2026-11-06",
@@ -106,6 +108,8 @@
         "notes": "BPJT status says Operasi although 73.7 km is not open; idwiki marks the corridor as partly open. Conflict recorded.",
         "corridor_name": "Trans Sumatra",
         "aliases": [],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-bpjt-toll-road-list-2026-11-06",
@@ -169,6 +173,8 @@
         "notes": "English Wikipedia says 38 km of 255 km operational (stale). The BPJT row covers the full Padang–Pekanbaru corridor via Bangkinang, Payakumbuh, Bukittinggi and Padang Panjang.",
         "corridor_name": "Trans Sumatra",
         "aliases": [],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-bpjt-toll-road-list-2026-11-06",
@@ -232,6 +238,8 @@
         "notes": "English Wikipedia says 18 km of 95 km operational. BPJT shows no active construction despite the partial status; verify before treating the remaining sections as active.",
         "corridor_name": "Trans Sumatra",
         "aliases": [],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-bpjt-toll-road-list-2026-11-06",
@@ -295,6 +303,8 @@
         "notes": "The corridor is split across two BPJT rows. Length and operating figures conflict. Palembang–Betung sections were targeted for 2026.",
         "corridor_name": "Trans Sumatra",
         "aliases": [],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-bpjt-toll-road-list-2026-11-06",
@@ -358,6 +368,8 @@
         "notes": "Not in the BPJT toll-road-list API. English Wikipedia omits this corridor. Source is Indonesian Wikipedia, so treat the status as secondary.",
         "corridor_name": "Trans Sumatra",
         "aliases": [],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-idwiki-daftar-jalan-tol-30025554",
@@ -434,6 +446,8 @@
         "notes": "Section 4 Tempino–Interchange Ness (18.49 km) was in ULFO in September 2025. Section 2 Tungkal Jaya–Bayung Lencir (54.3 km) was targeted for 2026.",
         "corridor_name": "Trans Sumatra",
         "aliases": [],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-bpjt-toll-road-list-2026-11-06",
@@ -508,6 +522,8 @@
         "notes": "English Wikipedia says 15.7 of 23 km (stale). BPJT lists no active construction; the remaining section may be delayed. Verify.",
         "corridor_name": "",
         "aliases": [],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-bpjt-toll-road-list-2026-11-06",
@@ -571,6 +587,8 @@
         "notes": "English Wikipedia gives 69.77 km for six inner-city toll roads. Only Sunter–Pulogebang is open; the other five sections have no construction recorded by BPJT. Status may be planned or stalled.",
         "corridor_name": "",
         "aliases": [],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-bpjt-toll-road-list-2026-11-06",
@@ -634,6 +652,8 @@
         "notes": "English Wikipedia says 21.49 of 33.89 km; idwiki says 11.54 of 21.04 km. The three sources disagree on scope. BPJT status says Operasi despite the shortfall.",
         "corridor_name": "",
         "aliases": [],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-bpjt-toll-road-list-2026-11-06",
@@ -697,6 +717,8 @@
         "notes": "English Wikipedia lists 9.6 km under construction. The BPJT row covers a wider 36 km set of sections; 9.6 km is the Harbour Road II component. BPJT's 27.05 km operational and 8.95 km construction cover the wider Cawang-Tanjung Priok-Pluit set; 9.6 km is the Harbour Road II component.",
         "corridor_name": "",
         "aliases": [],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-bpjt-toll-road-list-2026-11-06",
@@ -760,6 +782,8 @@
         "notes": "The BPJT toll-road-list API has no row for this project. 54.75 km was targeted for 2026. Coordinates are an approximate midpoint of the Setu–Sadang alignment.",
         "corridor_name": "",
         "aliases": [],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-enwiki-toll-road-system-1329385293",
@@ -823,6 +847,8 @@
         "notes": "English Wikipedia says 8.5 of 13 km (stale). Only the BORR 3B section remains. BPJT endpoint coordinates for this row fall west of Bogor city, so the marker uses Bogor city centre.",
         "corridor_name": "",
         "aliases": [],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-bpjt-toll-road-list-2026-11-06",
@@ -886,6 +912,8 @@
         "notes": "Section 1 Serang–Rangkasbitung (26.5 km) opened in 2021. Sections 2 and 3 were targeted for 2026.",
         "corridor_name": "",
         "aliases": [],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-bpjt-toll-road-list-2026-11-06",
@@ -949,6 +977,8 @@
         "notes": "English Wikipedia says 27.3 of 53.6 km. Section 3 Cibadak–Cisaat (13.7 km) was targeted for 2026.",
         "corridor_name": "",
         "aliases": [],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-bpjt-toll-road-list-2026-11-06",
@@ -1012,6 +1042,8 @@
         "notes": "English Wikipedia says 16.01 of 24.74 km. Section 1A/1C (3.66 km) was targeted for 2026.",
         "corridor_name": "",
         "aliases": [],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-bpjt-toll-road-list-2026-11-06",
@@ -1075,6 +1107,8 @@
         "notes": "English Wikipedia splits the corridor into Yogyakarta–Solo (58.01 km, under construction) and Yogyakarta–Sleman–YIA (35.74 km, in preparation). BPJT treats it as one 96.57 km corridor.",
         "corridor_name": "",
         "aliases": [],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-bpjt-toll-road-list-2026-11-06",
@@ -1138,6 +1172,8 @@
         "notes": "idwiki lists 0 km operational. The BPJT toll-road-list API has no row. Coordinates are an approximate midpoint of the alignment.",
         "corridor_name": "",
         "aliases": [],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-enwiki-toll-road-system-1329385293",
@@ -1201,6 +1237,8 @@
         "notes": "BPJT status says Operasi despite 9.29 km under construction. English Wikipedia says 29 of 38 km.",
         "corridor_name": "",
         "aliases": [],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-bpjt-toll-road-list-2026-11-06",
@@ -1264,6 +1302,8 @@
         "notes": "English Wikipedia says 176.4 km. idwiki says 173 km and 23.515 km operational.",
         "corridor_name": "Trans Java",
         "aliases": [],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-bpjt-toll-road-list-2026-11-06",
@@ -1338,6 +1378,8 @@
         "notes": "Master-plan ring road with sections at different stages. Kamal–Teluknaga–Rajeg (4.7 of 38.6 km open) and Serpong–Balaraja (9.3 of 30 km open) are under construction; others are planned. BPJT API has no JORR 3 row.",
         "corridor_name": "",
         "aliases": [],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-enwiki-toll-road-system-1329385293",
@@ -1401,6 +1443,8 @@
         "notes": "idwiki: 206.65 km, 0 operational. Not in the BPJT toll-road-list API. Also called Getaci. A 2026 report says it is still at the potential/tender stage.",
         "corridor_name": "",
         "aliases": [],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-enwiki-toll-road-system-1329385293",
@@ -1464,6 +1508,8 @@
         "notes": "idwiki: 171.93 km, 0 operational. Not in the BPJT toll-road-list API. Operators conflict between the two Wikipedia articles.",
         "corridor_name": "",
         "aliases": [],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-enwiki-toll-road-system-1329385293",
@@ -1527,6 +1573,8 @@
         "notes": "Not in the BPJT toll-road-list API.",
         "corridor_name": "",
         "aliases": [],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-enwiki-toll-road-system-1329385293",
@@ -1590,6 +1638,8 @@
         "notes": "Not in the BPJT toll-road-list API.",
         "corridor_name": "",
         "aliases": [],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-enwiki-toll-road-system-1329385293",
@@ -1653,6 +1703,8 @@
         "notes": "idwiki: 121.75 km, 0 operational. Not in the BPJT toll-road-list API. Length and operator conflict between the two Wikipedia articles.",
         "corridor_name": "",
         "aliases": [],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-enwiki-toll-road-system-1329385293",
@@ -1716,6 +1768,8 @@
         "notes": "idwiki: 95.51 km, 0 operational. Not in the BPJT toll-road-list API. Also called Tol Bali Barat.",
         "corridor_name": "",
         "aliases": [],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-enwiki-toll-road-system-1329385293",
@@ -1782,6 +1836,8 @@
           "YIA",
           "Bandar Udara Internasional Yogyakarta"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-kemenhub-psn-progress-2026-02-19",
@@ -1848,6 +1904,8 @@
           "LBJ",
           "Bandar Udara Komodo"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-kemenhub-psn-progress-2026-02-19",
@@ -1914,6 +1972,8 @@
           "LOP",
           "Bandar Udara Lombok"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-kemenhub-psn-progress-2026-02-19",
@@ -1980,6 +2040,8 @@
           "Nabire Baru",
           "Bandar Udara Nabire"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-kemenhub-psn-progress-2026-02-19",
@@ -2046,6 +2108,8 @@
           "Siboru",
           "Bandar Udara Siboru Fakfak"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-kemenhub-psn-progress-2026-02-19",
@@ -2112,6 +2176,8 @@
           "Dhoho",
           "Bandar Udara Kediri"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-kemenhub-psn-progress-2026-02-19",
@@ -2178,6 +2244,8 @@
           "Karimun",
           "Bandar Udara Raja Haji Abdullah"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-kemenhub-psn-progress-2026-02-19",
@@ -2244,6 +2312,8 @@
           "Pelabuhan Maloy",
           "Maloy Batuta Port"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-kemenhub-psn-progress-2026-02-19",
@@ -2310,6 +2380,8 @@
           "Terminal Multipurpose Labuan Bajo",
           "Pelabuhan Labuan Bajo"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-kemenhub-psn-progress-2026-02-19",
@@ -2376,6 +2448,8 @@
           "Pelabuhan Bitung",
           "Bitung Hub Port"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-kemenhub-psn-progress-2026-02-19",
@@ -2442,6 +2516,8 @@
           "Pelabuhan Kupang",
           "Tenau Kupang"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-kemenhub-psn-progress-2026-02-19",
@@ -2508,6 +2584,8 @@
           "Pelabuhan Kuala Tanjung",
           "Kuala Tanjung Hub"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-kemenhub-psn-progress-2026-02-19",
@@ -2574,6 +2652,8 @@
           "Terminal Kijing",
           "Pelabuhan Kijing"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-kemenhub-psn-progress-2026-02-19",
@@ -2640,6 +2720,8 @@
           "Pelabuhan Sanur",
           "Sanur–Nusa Ceningan"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-kemenhub-psn-progress-2026-02-19",
@@ -2705,6 +2787,8 @@
         "aliases": [
           "Pelabuhan Likupang"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-kemenhub-psn-progress-2026-02-19",
@@ -2771,6 +2855,8 @@
           "Makassar New Port",
           "MNP"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-kemenhub-psn-progress-2026-02-19",
@@ -2837,6 +2923,8 @@
           "Pelabuhan Teluk Palu",
           "Pelabuhan Palu"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-kemenhub-psn-progress-2026-02-19",
@@ -2902,6 +2990,8 @@
         "aliases": [
           "Pelabuhan Sorong"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-kemenhub-psn-progress-2026-02-19",
@@ -2967,6 +3057,26 @@
         "aliases": [
           "Pelabuhan Patimban",
           "Patimban"
+        ],
+        "indicators": [],
+        "phases": [
+          {
+            "id": "phase-patimban-1-2",
+            "project_id": "port-patimban",
+            "phase": "phase_i_2",
+            "name_en": "Phase I-2",
+            "name_id": "Tahap I-2",
+            "status": "under_construction",
+            "cost_idr_t": "",
+            "start_date": "",
+            "end_date": "",
+            "progress_pct": "",
+            "source_id": "src-kemenhub-psn-progress-2026-02-19",
+            "notes": "Phase I-2 is still under construction; the summary's completed-project label conflicts.",
+            "source_publisher": "Kementerian Perhubungan",
+            "source_title": "Capaian Progres Proyek Strategis Nasional Sektor Transportasi",
+            "source_url": "https://ppid.kemenhub.go.id/fileupload/informasi-berkala/20260406102830.R1_19022026_Update_PSN_Kemenhub_compressed.pdf"
+          }
         ],
         "sources": [
           {
@@ -3034,6 +3144,8 @@
           "Pelabuhan Benoa",
           "BMTH"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-kemenhub-psn-progress-2026-02-19",
@@ -3100,6 +3212,8 @@
           "Pelabuhan Palembang Baru",
           "New Palembang Port"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-kemenhub-psn-progress-2026-02-19",
@@ -3166,6 +3280,8 @@
           "Terminal Peti Kemas Muaro Jambi",
           "Muaro Jambi Container Terminal"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-kemenhub-psn-progress-2026-02-19",
@@ -3232,6 +3348,8 @@
           "LRT Palembang",
           "Light Rail Transit Sumatera Selatan"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-kemenhub-psn-progress-2026-02-19",
@@ -3298,6 +3416,8 @@
           "Double-Double Track Java",
           "Jalur Ganda Jawa Selatan"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-kemenhub-psn-progress-2026-02-19",
@@ -3363,6 +3483,8 @@
         "aliases": [
           "KA Tebing Tinggi–Kuala Tanjung"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-kemenhub-psn-progress-2026-02-19",
@@ -3429,6 +3551,8 @@
           "KA Bandara YIA",
           "Yogyakarta International Airport Rail Link"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-kemenhub-psn-progress-2026-02-19",
@@ -3495,6 +3619,8 @@
           "KA Trans Sulawesi",
           "Makassar–Parepare"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-kemenhub-psn-progress-2026-02-19",
@@ -3561,6 +3687,8 @@
           "LRT Jabodetabek",
           "LRT Jabodebek"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-kemenhub-psn-progress-2026-02-19",
@@ -3628,6 +3756,8 @@
           "Whoosh",
           "Kereta Cepat Jakarta–Bandung"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-kemenhub-psn-progress-2026-02-19",
@@ -3693,6 +3823,8 @@
         "aliases": [
           "KA Rantau Prapat–Kota Pinang"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-kemenhub-psn-progress-2026-02-19",
@@ -3759,6 +3891,8 @@
           "KA Logistik Lahat–Kertapati",
           "Lahat–Kertapati"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-kemenhub-psn-progress-2026-02-19",
@@ -3825,6 +3959,8 @@
           "KA Logistik Kalimantan Timur",
           "Bayan Rail"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-kemenhub-psn-progress-2026-02-19",
@@ -3891,6 +4027,8 @@
           "MRT Jakarta",
           "MRT North–South"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-kemenhub-psn-progress-2026-02-19",
@@ -3957,6 +4095,8 @@
           "MRT East–West",
           "MRT Timur–Barat"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-kemenhub-psn-progress-2026-02-19",
@@ -4023,6 +4163,8 @@
           "LRT Jakarta Fase 1B",
           "LRT Velodrome–Manggarai"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-kemenhub-psn-progress-2026-02-19",
@@ -4097,6 +4239,8 @@
         "notes": "Coordinates are the midpoint of the BPJT start and end points, approximate. BPJT labels the corridor Operasi, but only part of the recorded length is open; the remainder is not recorded as operational.",
         "corridor_name": "Trans Sumatra",
         "aliases": [],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-bpjt-toll-road-list-2026-11-06",
@@ -4160,6 +4304,8 @@
         "notes": "Coordinates are the midpoint of the BPJT start and end points, approximate. BPJT labels the corridor Operasi Sebagian; the recorded operational length does not mean the whole corridor is open.",
         "corridor_name": "",
         "aliases": [],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-bpjt-toll-road-list-2026-11-06",
@@ -4223,6 +4369,8 @@
         "notes": "Coordinates are the midpoint of the BPJT start and end points, approximate.",
         "corridor_name": "",
         "aliases": [],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-bpjt-toll-road-list-2026-11-06",
@@ -4286,6 +4434,8 @@
         "notes": "Coordinates are the midpoint of the BPJT start and end points, approximate.",
         "corridor_name": "",
         "aliases": [],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-bpjt-toll-road-list-2026-11-06",
@@ -4349,6 +4499,8 @@
         "notes": "Coordinates are the midpoint of the BPJT start and end points, approximate.",
         "corridor_name": "",
         "aliases": [],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-bpjt-toll-road-list-2026-11-06",
@@ -4412,6 +4564,8 @@
         "notes": "Coordinates are the midpoint of the BPJT start and end points, approximate. BPJT labels the corridor Operasi, but only part of the recorded length is open; the remainder is not recorded as operational.",
         "corridor_name": "Trans Sumatra",
         "aliases": [],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-bpjt-toll-road-list-2026-11-06",
@@ -4475,6 +4629,8 @@
         "notes": "Coordinates are the midpoint of the BPJT start and end points, approximate.",
         "corridor_name": "",
         "aliases": [],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-bpjt-toll-road-list-2026-11-06",
@@ -4538,6 +4694,8 @@
         "notes": "Coordinates are the midpoint of the BPJT start and end points, approximate. BPJT labels the corridor Operasi Sebagian; the recorded operational length does not mean the whole corridor is open.",
         "corridor_name": "",
         "aliases": [],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-bpjt-toll-road-list-2026-11-06",
@@ -4601,6 +4759,8 @@
         "notes": "Coordinates are the midpoint of the BPJT start and end points, approximate.",
         "corridor_name": "",
         "aliases": [],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-bpjt-toll-road-list-2026-11-06",
@@ -4664,6 +4824,8 @@
         "notes": "Coordinates are the midpoint of the BPJT start and end points, approximate.",
         "corridor_name": "Trans Java",
         "aliases": [],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-bpjt-toll-road-list-2026-11-06",
@@ -4727,6 +4889,8 @@
         "notes": "Coordinates are the midpoint of the BPJT start and end points, approximate.",
         "corridor_name": "",
         "aliases": [],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-bpjt-toll-road-list-2026-11-06",
@@ -4790,6 +4954,8 @@
         "notes": "Coordinates are the midpoint of the BPJT start and end points, approximate. BPJT labels the corridor Operasi Sebagian; the recorded operational length does not mean the whole corridor is open.",
         "corridor_name": "Trans Java",
         "aliases": [],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-bpjt-toll-road-list-2026-11-06",
@@ -4864,6 +5030,8 @@
         "notes": "Coordinates are the midpoint of the BPJT start and end points, approximate.",
         "corridor_name": "Trans Sumatra",
         "aliases": [],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-bpjt-toll-road-list-2026-11-06",
@@ -4927,6 +5095,8 @@
         "notes": "Coordinates are the midpoint of the BPJT start and end points, approximate.",
         "corridor_name": "",
         "aliases": [],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-bpjt-toll-road-list-2026-11-06",
@@ -4990,6 +5160,8 @@
         "notes": "Coordinates are the midpoint of the BPJT start and end points, approximate.",
         "corridor_name": "",
         "aliases": [],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-bpjt-toll-road-list-2026-11-06",
@@ -5053,6 +5225,8 @@
         "notes": "US$3.7B. Design feed 1.7 Mtpa concentrate; cathode output is reported as 480 ktpa by Reuters and 600-650 ktpa elsewhere. PTFI's page describes a 2 Mtpa design; the conflict is recorded. Investment converted at Rp16,500/USD.",
         "corridor_name": "",
         "aliases": [],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-freeport-manyar-restart-2026-08-07",
@@ -5142,6 +5316,8 @@
         "notes": "Indonesia's first copper smelter and refinery. Expansion lifted concentrate processing to 1.3 Mtpa and cathode capacity to 342 ktpa.",
         "corridor_name": "",
         "aliases": [],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-ptsmelting-overview",
@@ -5218,6 +5394,8 @@
         "notes": "900 ktpa concentrate feed and 830 ktpa sulfuric acid. Investment about US$1.4B; the earlier US$2.1B planning figure is not used. Converted at Rp16,500/USD.",
         "corridor_name": "",
         "aliases": [],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-amman-smelter",
@@ -5307,6 +5485,8 @@
         "notes": "Part of IMIP, which is a separate estate row. Wood Mackenzie puts the wider Morowali stainless complex at 2 Mtpa in 2017 and 3 Mtpa in 2018; this row covers ITSS's 1 Mtpa line. Coordinate is a manual approximate point inside IMIP, not an OSM match.",
         "corridor_name": "",
         "aliases": [],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-tsingshan-footprint",
@@ -5383,6 +5563,8 @@
         "notes": "US$2.2B investment; capacity raised from 4 to 7 Mtpa. Converted at Rp16,500/USD. Coordinate is a manual approximate point inside IMIP, not an OSM match.",
         "corridor_name": "",
         "aliases": [],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-dexin-bigmint",
@@ -5446,6 +5628,8 @@
         "notes": "Also produces about 15 ktpa cobalt in MHP. US$2.08B; converted at Rp16,500/USD. Coordinate is a manual approximate point in IWIP, not an OSM match.",
         "corridor_name": "",
         "aliases": [],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-huafei-huayou-ar2023",
@@ -5522,6 +5706,8 @@
         "notes": "Nickel Industries owns 80%. Capacity is 66 ktpa nickel metal following the 2021 expansion; 2025 output was 46,429 t Ni. Coordinate is a manual approximate point in IWIP, not an OSM match.",
         "corridor_name": "",
         "aliases": [],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-angel-nickel-nic",
@@ -5585,6 +5771,8 @@
         "notes": "Atlas capacity is 55 ktpa Ni+Co in MHP; the first phase is also reported as 37,260 t Ni plus 4,577 t Co contained in 96,000 t MHP. About US$1B; converted at Rp16,500/USD.",
         "corridor_name": "",
         "aliases": [],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-hpl-sustainability-2024",
@@ -5674,6 +5862,8 @@
         "notes": "Adds 65 ktpa MHP; Harita's combined MHP capacity is 120 ktpa. About US$1.1B; converted at Rp16,500/USD. Coordinate is a manual approximate point at Obi, not an OSM match.",
         "corridor_name": "",
         "aliases": [],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-onc-2025-03-25",
@@ -5737,6 +5927,8 @@
         "notes": "120 ktpa nickel in NPI, about 800 ktpa NPI alloy. The attached OSS stainless plant is a separate row. Investment about US$1.4B; converted at Rp16,500/USD.",
         "corridor_name": "",
         "aliases": [],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-kppip-vdni",
@@ -5826,6 +6018,8 @@
         "notes": "Integrated ferronickel-to-stainless complex; 2.5 Mtpa stainless steel. Coordinate is a manual approximate point in the Morosi park, not an OSM match.",
         "corridor_name": "",
         "aliases": [],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-oss-official",
@@ -5889,6 +6083,8 @@
         "notes": "The PKPU is a court-supervised restructuring stay, not liquidation. Management said operations continued in June 2026, but most of the 20 lines had stopped. Capacity 1.8 Mtpa NPI. US$3.0B; converted at Rp16,500/USD. Coordinate is a manual approximate point at Bunta, not an OSM match.",
         "corridor_name": "",
         "aliases": [],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-gni-pkpu-2026",
@@ -5989,6 +6185,8 @@
         "notes": "Rp6.5T was the 2020 expansion, not total investment. The initial plant predates it; opened_year records the expanded eight-furnace configuration.",
         "corridor_name": "",
         "aliases": [],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-huadi-sonora-2020",
@@ -6065,6 +6263,8 @@
         "notes": "Part of the Indonesia Growth Project. Investment about US$2.7B for the HPAL plant; some sources include the mine and quote US$4.5B. Converted at Rp16,500/USD.",
         "corridor_name": "",
         "aliases": [],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-vale-pomalaa-2025-12-13",
@@ -6154,6 +6354,8 @@
         "notes": "60 ktpa MHP; target Q4 2026. Investment about US$1.4B; converted at Rp16,500/USD.",
         "corridor_name": "",
         "aliases": [],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-vale-base-metals",
@@ -6230,6 +6432,8 @@
         "notes": "Investment range US$1.9-2.1B; atlas uses US$2.0B. Converted at Rp16,500/USD.",
         "corridor_name": "",
         "aliases": [],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-vale-sr-2022",
@@ -6306,6 +6510,8 @@
         "notes": "Smelter-grade alumina. Total investment about US$1.3B; converted at Rp16,500/USD.",
         "corridor_name": "",
         "aliases": [],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-whw-official",
@@ -6395,6 +6601,8 @@
         "notes": "Phase 1 is 1 Mtpa alumina; Phase 2 (2 Mtpa) is planned. 60% INALUM and 40% ANTAM. US$900M; converted at Rp16,500/USD. Coordinate is a manual approximate point at Sungai Kunyit, not an OSM match.",
         "corridor_name": "",
         "aliases": [],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-bai-official",
@@ -6471,6 +6679,8 @@
         "notes": "Expansion to 400-600 ktpa is discussed but not committed in a source used here.",
         "corridor_name": "",
         "aliases": [],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-inalum-isp",
@@ -6547,6 +6757,8 @@
         "notes": "Group rolling capacity is larger; this row covers the Cilegon slab plant.",
         "corridor_name": "",
         "aliases": [],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-krakatau-profile-2026",
@@ -6623,6 +6835,8 @@
         "notes": "EAF-based flat and long steel producer.",
         "corridor_name": "",
         "aliases": [],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-grp-profile-2021",
@@ -6699,6 +6913,8 @@
         "notes": "Phase 2 adds US$299M and doubles capacity to 160 ktpa; not confirmed complete. US$478M converted at Rp16,500/USD.",
         "corridor_name": "",
         "aliases": [],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-btr-prn-2024-08-07",
@@ -6775,6 +6991,8 @@
         "notes": "US$6B covers the full battery integration project (mine, materials, recycling and plant), not just Karawang. Phase 1 is 6.9 GWh, later 15 GWh. JV with ANTAM and IBC. Converted at Rp16,500/USD.",
         "corridor_name": "",
         "aliases": [],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-catl-2025-06-30",
@@ -6864,6 +7082,8 @@
         "notes": "Also 520 ktpa propylene, 140 ktpa butadiene and 250 ktpa PP. US$3.95B converted at Rp16,500/USD.",
         "corridor_name": "",
         "aliases": [],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-lotte-2025-11-07",
@@ -6964,6 +7184,8 @@
         "notes": "The company is also building a 500 ktpa EDC and 400 ktpa caustic soda plant in Cilegon (target 2027); it is not part of this row.",
         "corridor_name": "",
         "aliases": [],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-chandra-asri-profile",
@@ -7040,6 +7262,8 @@
         "notes": "Original project was 2 Mtpa pulp plus 0.5 Mtpa tissue; current capacity is 2.8 Mtpa. US$2.6B converted at Rp16,500/USD. Coordinate is a manual approximate point at Air Sugihan, not an OSM match.",
         "corridor_name": "",
         "aliases": [],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-oki-app-2013",
@@ -7116,6 +7340,8 @@
         "notes": "Also 1.85 Mtpa ammonia across four plants.",
         "corridor_name": "",
         "aliases": [],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-wikipedia-pupuk-kaltim",
@@ -7205,6 +7431,8 @@
         "notes": "0-km concession. No BPJT row and no construction recorded. Coordinates are an approximate midpoint of the alignment.",
         "corridor_name": "Trans Sumatra",
         "aliases": [],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-idwiki-daftar-jalan-tol-30025554",
@@ -7268,6 +7496,8 @@
         "notes": "0-km concession. No BPJT row and no construction recorded. Coordinates are an approximate midpoint of the alignment.",
         "corridor_name": "Trans Sumatra",
         "aliases": [],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-idwiki-daftar-jalan-tol-30025554",
@@ -7331,6 +7561,8 @@
         "notes": "0-km concession. No BPJT row and no construction recorded. Coordinates are an approximate midpoint of the alignment.",
         "corridor_name": "Trans Sumatra",
         "aliases": [],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-idwiki-daftar-jalan-tol-30025554",
@@ -7394,6 +7626,26 @@
         "notes": "Phase 2 covers the legislative and judicial buildings, supporting offices, embankments, retention ponds and water piping; phase 3 covers ASN and state-institution housing. Rp48.8T is the APBN allocation, not total project cost; KPBU adds Rp134.22T and private investment Rp74.54T. IKN is a national priority programme outside the PSN annex.",
         "corridor_name": "",
         "aliases": [],
+        "indicators": [],
+        "phases": [
+          {
+            "id": "phase-ikn-phase2",
+            "project_id": "urban-ikn-phase-2",
+            "phase": "phase_2",
+            "name_en": "Phase 2",
+            "name_id": "Tahap 2",
+            "status": "under_construction",
+            "cost_idr_t": "",
+            "start_date": "",
+            "end_date": "",
+            "progress_pct": "",
+            "source_id": "src-bisnis-ikn-phase-2-2026-09-28",
+            "notes": "Legislative and judicial buildings, offices, embankments, retention ponds and water piping. Target year 2028.",
+            "source_publisher": "Bisnis Indonesia",
+            "source_title": "Konstruksi IKN Tahap 2 Serap hingga 8.200 Tenaga Kerja",
+            "source_url": "https://ekonomi.bisnis.com/read/20260928/45/2007905/konstruksi-ikn-tahap-2-serap-hingga-8200-tenaga-kerja"
+          }
+        ],
         "sources": [
           {
             "id": "src-bisnis-ikn-phase-2-2026-09-28",
@@ -7470,6 +7722,55 @@
         "notes": "ICAO WALK, IATA IVD. 3,000 x 45 m runway, 7,350 m2 terminal and 621 ha airport area. Public-airport conversion and hajj embarkation status are pending; the runway can take a Boeing 777-300.",
         "corridor_name": "",
         "aliases": [],
+        "indicators": [
+          {
+            "id": "ind-nusantara-runway",
+            "programme_id": "",
+            "project_id": "air-nusantara-ikn",
+            "name_en": "Runway length",
+            "name_id": "Panjang landasan pacu",
+            "unit": "m",
+            "direction": "target",
+            "baseline_value": "",
+            "baseline_date": "",
+            "target_value": "3000",
+            "target_date": "",
+            "source_id": "src-hubud-nusantara-airport",
+            "notes": "3,000 x 45 m; source page retrieved 9 November 2026.",
+            "source_publisher": "Direktorat Jenderal Perhubungan Udara",
+            "source_title": "Bandar Udara Internasional Nusantara",
+            "source_url": "https://hubud.kemenhub.go.id/bandara/499",
+            "values": [
+              {
+                "value": "3000",
+                "as_of": "2026-11-09",
+                "source_id": "src-hubud-nusantara-airport",
+                "source_title": "Bandar Udara Internasional Nusantara",
+                "source_url": "https://hubud.kemenhub.go.id/bandara/499",
+                "notes": "3,000 x 45 m runway; retrieved 9 November 2026."
+              }
+            ]
+          }
+        ],
+        "phases": [
+          {
+            "id": "phase-nusantara-operation",
+            "project_id": "air-nusantara-ikn",
+            "phase": "operation",
+            "name_en": "Operation",
+            "name_id": "Operasi",
+            "status": "operating",
+            "cost_idr_t": "",
+            "start_date": "",
+            "end_date": "2025-06-12",
+            "progress_pct": "",
+            "source_id": "src-bisnis-ikn-airport-2026-07-16",
+            "notes": "Runway and terminal opened 12 June 2025.",
+            "source_publisher": "Bisnis Indonesia",
+            "source_title": "Kapan Bandara IKN Dibuka untuk Umum? Ini Jawaban Kemenhub",
+            "source_url": "https://ekonomi.bisnis.com/read/20260716/98/1988635/kapan-bandara-ikn-dibuka-untuk-umum-ini-jawaban-kemehub"
+          }
+        ],
         "sources": [
           {
             "id": "src-hubud-nusantara-airport",
@@ -7546,6 +7847,8 @@
         "notes": "US$20.9B including US$1B for CCS; 9.5 Mtpa LNG, 150 MMSCFD domestic gas and 35,000 bpd condensate. Developed by INPEX Masela with Pertamina and Petronas. The map point is the Tanimbar onshore site/regency centre, not the offshore Abadi field.",
         "corridor_name": "",
         "aliases": [],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-antara-masela-2026-07-16",
@@ -7633,6 +7936,8 @@
         "notes": "US$7.4B; Euro V fuel; LPG output 48 to 384 ktpa; petrochemical output 283 ktpa. The PSN register lists RDMP as an aggregate (No. 207); this row is the Balikpapan component.",
         "corridor_name": "",
         "aliases": [],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-esdm-rdmp-balikpapan-2026-01-12",
@@ -7707,6 +8012,55 @@
         "notes": "Programme total 100 GWp; phases of 17, 18 and 30 GWp are named before the remainder. Rp1,140T investment, Rp73.9T annual subsidy saving and 5.52 million jobs. The map point is the Gilimanuk launch site, not a national footprint.",
         "corridor_name": "",
         "aliases": [],
+        "indicators": [
+          {
+            "id": "ind-100gw-phase1",
+            "programme_id": "",
+            "project_id": "energy-plts-100gw-phase-1",
+            "name_en": "Phase 1 installed capacity",
+            "name_id": "Kapasitas terpasang Tahap 1",
+            "unit": "GWp",
+            "direction": "increase",
+            "baseline_value": "",
+            "baseline_date": "",
+            "target_value": "17",
+            "target_date": "2029-12-31",
+            "source_id": "src-setneg-plts-100gw-2026-08-25",
+            "notes": "Target year 2029; the source states a three-year build from August 2026. The date uses the year-end convention.",
+            "source_publisher": "Kementerian Sekretariat Negara",
+            "source_title": "Presiden Prabowo Luncurkan PLTS 100 GWp, Diawali 14 PLTS Berkapasitas 5,3 GWp",
+            "source_url": "https://setneg.go.id/baca/index/presiden_prabowo_luncurkan_plts_100_gwp_diawali_14_plts_berkapasitas_53_gwp",
+            "values": [
+              {
+                "value": "5.3",
+                "as_of": "2026-08-25",
+                "source_id": "src-setneg-plts-100gw-2026-08-25",
+                "source_title": "Presiden Prabowo Luncurkan PLTS 100 GWp, Diawali 14 PLTS Berkapasitas 5,3 GWp",
+                "source_url": "https://setneg.go.id/baca/index/presiden_prabowo_luncurkan_plts_100_gwp_diawali_14_plts_berkapasitas_53_gwp",
+                "notes": "14 early projects totalling 5.3 GWp launched."
+              }
+            ]
+          }
+        ],
+        "phases": [
+          {
+            "id": "phase-100gw-phase1",
+            "project_id": "energy-plts-100gw-phase-1",
+            "phase": "phase_1",
+            "name_en": "Phase 1",
+            "name_id": "Tahap 1",
+            "status": "under_construction",
+            "cost_idr_t": "",
+            "start_date": "",
+            "end_date": "",
+            "progress_pct": "",
+            "source_id": "src-setneg-plts-100gw-2026-08-25",
+            "notes": "Target year 2029; 14 early projects totalling 5.3 GWp.",
+            "source_publisher": "Kementerian Sekretariat Negara",
+            "source_title": "Presiden Prabowo Luncurkan PLTS 100 GWp, Diawali 14 PLTS Berkapasitas 5,3 GWp",
+            "source_url": "https://setneg.go.id/baca/index/presiden_prabowo_luncurkan_plts_100_gwp_diawali_14_plts_berkapasitas_53_gwp"
+          }
+        ],
         "sources": [
           {
             "id": "src-setneg-plts-100gw-2026-08-25",
@@ -7794,6 +8148,8 @@
         "notes": "Part of the Rp116T Hilirisasi Stage II package (5 energy, 5 mineral, 3 agriculture). Project-level investment and completion date were not published.",
         "corridor_name": "",
         "aliases": [],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-setkab-hilirisasi-stage-ii-2026-04-29",
@@ -7868,6 +8224,8 @@
         "notes": "Part of the Rp116T Hilirisasi Stage II package. This is the gasoline refinery project, not the Cilacap green refinery listed separately in PSN register No. 213.",
         "corridor_name": "",
         "aliases": [],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-setkab-hilirisasi-stage-ii-2026-04-29",
@@ -7942,6 +8300,8 @@
         "notes": "Operational fuel tank package in the Rp116T Hilirisasi Stage II programme. Project-level investment and completion date were not published.",
         "corridor_name": "",
         "aliases": [],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-setkab-hilirisasi-stage-ii-2026-04-29",
@@ -8016,6 +8376,8 @@
         "notes": "Operational fuel tank package in the Rp116T Hilirisasi Stage II programme. Project-level investment and completion date were not published.",
         "corridor_name": "",
         "aliases": [],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-setkab-hilirisasi-stage-ii-2026-04-29",
@@ -8090,6 +8452,8 @@
         "notes": "Operational fuel tank package in the Rp116T Hilirisasi Stage II programme. Project-level investment and completion date were not published.",
         "corridor_name": "",
         "aliases": [],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-setkab-hilirisasi-stage-ii-2026-04-29",
@@ -8164,6 +8528,8 @@
         "notes": "1.4 Mtpa dimethyl ether plant. The PSN register lists coal gasification at Tanjung Enim as No. 215; this row is the stage II DME component. Package investment was not split by project.",
         "corridor_name": "",
         "aliases": [],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-setkab-hilirisasi-stage-ii-2026-04-29",
@@ -8238,6 +8604,8 @@
         "notes": "Stainless-steel manufacturing from nickel, inside IMIP. Part of the Rp116T Hilirisasi Stage II package; project-level investment and completion date were not published.",
         "corridor_name": "",
         "aliases": [],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-setkab-hilirisasi-stage-ii-2026-04-29",
@@ -8312,6 +8680,8 @@
         "notes": "Carbon steel slab from local iron ore. Part of the Rp116T Hilirisasi Stage II package; project-level investment and completion date were not published.",
         "corridor_name": "",
         "aliases": [],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-setkab-hilirisasi-stage-ii-2026-04-29",
@@ -8386,6 +8756,8 @@
         "notes": "Buton asphalt ecosystem and production facility. Part of the Rp116T Hilirisasi Stage II package; project-level investment and completion date were not published.",
         "corridor_name": "",
         "aliases": [],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-setkab-hilirisasi-stage-ii-2026-04-29",
@@ -8460,6 +8832,8 @@
         "notes": "Copper and gold downstreaming in Gresik. Part of the Rp116T Hilirisasi Stage II package; project-level investment and completion date were not published.",
         "corridor_name": "",
         "aliases": [],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-setkab-hilirisasi-stage-ii-2026-04-29",
@@ -8534,6 +8908,8 @@
         "notes": "Palm oil to oleofood and biodiesel at the Sei Mangkei estate. Part of the Rp116T Hilirisasi Stage II package; project-level investment and completion date were not published.",
         "corridor_name": "",
         "aliases": [],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-setkab-hilirisasi-stage-ii-2026-04-29",
@@ -8608,6 +8984,8 @@
         "notes": "Nutmeg to oleoresin. Part of the Rp116T Hilirisasi Stage II package; project-level investment and completion date were not published.",
         "corridor_name": "",
         "aliases": [],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-setkab-hilirisasi-stage-ii-2026-04-29",
@@ -8682,6 +9060,8 @@
         "notes": "Integrated coconut facility producing MCT, coconut flour and activated carbon. Part of the Rp116T Hilirisasi Stage II package; project-level investment and completion date were not published.",
         "corridor_name": "",
         "aliases": [],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-setkab-hilirisasi-stage-ii-2026-04-29",
@@ -8756,6 +9136,26 @@
         "notes": "Storage 9.91 million m3 (other reports 13.14 million m3); 46.16 ha inundation; 1,500 ha irrigation and 0.15 m3/s raw water. Part of the Rp9.79T five-dam package; project-level cost was not split.",
         "corridor_name": "",
         "aliases": [],
+        "indicators": [],
+        "phases": [
+          {
+            "id": "phase-meninting-operation",
+            "project_id": "dam-meninting",
+            "phase": "operation",
+            "name_en": "Operation",
+            "name_id": "Operasi",
+            "status": "operating",
+            "cost_idr_t": "",
+            "start_date": "",
+            "end_date": "2026-07-10",
+            "progress_pct": "",
+            "source_id": "src-setkab-five-dams-2026-07-10",
+            "notes": "Inaugurated 10 July 2026; part of the Rp9.79T five-dam package.",
+            "source_publisher": "Sekretariat Kabinet Republik Indonesia",
+            "source_title": "Gov't Inaugurates Five Newly Completed Dams Across Indonesia",
+            "source_url": "https://setkab.go.id/en/govt-inaugurates-five-newly-completed-dams-across-indonesia"
+          }
+        ],
         "sources": [
           {
             "id": "src-setkab-five-dams-2026-07-10",
@@ -8843,6 +9243,26 @@
         "notes": "Storage 215.94 million m3 and 896.39 ha inundation. Part of the Rp9.79T five-dam package; project-level cost was not split.",
         "corridor_name": "",
         "aliases": [],
+        "indicators": [],
+        "phases": [
+          {
+            "id": "phase-keureuto-operation",
+            "project_id": "dam-keureuto",
+            "phase": "operation",
+            "name_en": "Operation",
+            "name_id": "Operasi",
+            "status": "operating",
+            "cost_idr_t": "",
+            "start_date": "",
+            "end_date": "2026-07-10",
+            "progress_pct": "",
+            "source_id": "src-setkab-five-dams-2026-07-10",
+            "notes": "Inaugurated 10 July 2026; part of the Rp9.79T five-dam package.",
+            "source_publisher": "Sekretariat Kabinet Republik Indonesia",
+            "source_title": "Gov't Inaugurates Five Newly Completed Dams Across Indonesia",
+            "source_url": "https://setkab.go.id/en/govt-inaugurates-five-newly-completed-dams-across-indonesia"
+          }
+        ],
         "sources": [
           {
             "id": "src-setkab-five-dams-2026-07-10",
@@ -8930,6 +9350,26 @@
         "notes": "Storage 128.65 million m3 and 700 ha inundation; includes the Rukoh diversion structure. Part of the Rp9.79T five-dam package; project-level cost was not split.",
         "corridor_name": "",
         "aliases": [],
+        "indicators": [],
+        "phases": [
+          {
+            "id": "phase-rukoh-operation",
+            "project_id": "dam-rukoh",
+            "phase": "operation",
+            "name_en": "Operation",
+            "name_id": "Operasi",
+            "status": "operating",
+            "cost_idr_t": "",
+            "start_date": "",
+            "end_date": "2026-07-10",
+            "progress_pct": "",
+            "source_id": "src-setkab-five-dams-2026-07-10",
+            "notes": "Inaugurated 10 July 2026; part of the Rp9.79T five-dam package.",
+            "source_publisher": "Sekretariat Kabinet Republik Indonesia",
+            "source_title": "Gov't Inaugurates Five Newly Completed Dams Across Indonesia",
+            "source_url": "https://setkab.go.id/en/govt-inaugurates-five-newly-completed-dams-across-indonesia"
+          }
+        ],
         "sources": [
           {
             "id": "src-setkab-five-dams-2026-07-10",
@@ -9017,6 +9457,26 @@
         "notes": "Storage 10.97 million m3 and 50 ha inundation; 1,494 ha irrigation and 47.74 km of irrigation network. Part of the Rp9.79T five-dam package; project-level cost was not split.",
         "corridor_name": "",
         "aliases": [],
+        "indicators": [],
+        "phases": [
+          {
+            "id": "phase-jlantah-operation",
+            "project_id": "dam-jlantah",
+            "phase": "operation",
+            "name_en": "Operation",
+            "name_id": "Operasi",
+            "status": "operating",
+            "cost_idr_t": "",
+            "start_date": "",
+            "end_date": "2026-07-10",
+            "progress_pct": "",
+            "source_id": "src-setkab-five-dams-2026-07-10",
+            "notes": "Inaugurated 10 July 2026; part of the Rp9.79T five-dam package.",
+            "source_publisher": "Sekretariat Kabinet Republik Indonesia",
+            "source_title": "Gov't Inaugurates Five Newly Completed Dams Across Indonesia",
+            "source_url": "https://setkab.go.id/en/govt-inaugurates-five-newly-completed-dams-across-indonesia"
+          }
+        ],
         "sources": [
           {
             "id": "src-setkab-five-dams-2026-07-10",
@@ -9104,6 +9564,26 @@
         "notes": "Storage 5.76 million m3 and 37.15 ha inundation. Part of the Rp9.79T five-dam package; project-level cost was not split.",
         "corridor_name": "",
         "aliases": [],
+        "indicators": [],
+        "phases": [
+          {
+            "id": "phase-sidan-operation",
+            "project_id": "dam-sidan",
+            "phase": "operation",
+            "name_en": "Operation",
+            "name_id": "Operasi",
+            "status": "operating",
+            "cost_idr_t": "",
+            "start_date": "",
+            "end_date": "2026-07-10",
+            "progress_pct": "",
+            "source_id": "src-setkab-five-dams-2026-07-10",
+            "notes": "Inaugurated 10 July 2026; part of the Rp9.79T five-dam package.",
+            "source_publisher": "Sekretariat Kabinet Republik Indonesia",
+            "source_title": "Gov't Inaugurates Five Newly Completed Dams Across Indonesia",
+            "source_url": "https://setkab.go.id/en/govt-inaugurates-five-newly-completed-dams-across-indonesia"
+          }
+        ],
         "sources": [
           {
             "id": "src-setkab-five-dams-2026-07-10",
@@ -9191,6 +9671,8 @@
         "notes": "575 km and 15 segments; other official statements give about 500 km. US$80B total estimate, with US$8-10B for the Jakarta Bay first phase; 15-20 years, or about 8 years if segments run in parallel. The PSN register lists the Jakarta/West Java coastal dyke as No. 199; this row covers the national programme. The map point is Jakarta Bay, not the full alignment.",
         "corridor_name": "",
         "aliases": [],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-antara-sea-wall-2026-09-16",
@@ -9278,6 +9760,8 @@
         "notes": "PSN No. 7. The missing link between the operating Indrapura–Kisaran section and the Kuala Tanjung–Tebing Tinggi corridor. The 39.68 km figure is the Phase I length.",
         "corridor_name": "Trans Sumatra",
         "aliases": [],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-cnbc-trans-sumatra-remaining-2026-06-14",
@@ -9354,6 +9838,8 @@
         "notes": "PSN No. 14. Three phases; phase 1 Sp. Ness–Merlung is 67.45 km. The PU KPBU page gives Rp49.60T and 198.13 km. AIIB and IsDB are indicated financiers.",
         "corridor_name": "Trans Sumatra",
         "aliases": [],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-antara-jambi-rengat-2026-09-29",
@@ -9430,6 +9916,8 @@
         "notes": "PSN No. 15. 206.67 km per the PU KPBU page; other plans give 175 km. The 30.5 km Pekanbaru ring-road section is part of the corridor and was 77% complete in June 2026.",
         "corridor_name": "Trans Sumatra",
         "aliases": [],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-antara-pekanbaru-ring-road-2026-07-08",
@@ -9506,6 +9994,8 @@
         "notes": "PSN No. 22. JORR 2 link: Section I Serpong–Pamulang 6.5 km and Section II Pamulang–Cinere 3.64 km. Operated by PT Cinere Serpong Jaya.",
         "corridor_name": "",
         "aliases": [],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-jasamarga-serpong-cinere",
@@ -9593,6 +10083,8 @@
         "notes": "PSN No. 24. Final JORR 2 link, connecting Jagorawi and the Jakarta–Cikampek corridor. Operated by PT Cimanggis Cibitung Tollways.",
         "corridor_name": "",
         "aliases": [],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-bpjt-cimanggis-cibitung-2024-07-11",
@@ -9667,6 +10159,8 @@
         "notes": "PSN No. 40. 2.4 km including 0.45 km elevated; connects Terminal Teluk Lamong to the Surabaya–Gresik toll road, the GBT access road and the west outer ring road.",
         "corridor_name": "",
         "aliases": [],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-voiceofasia-teluk-lamong-2026-06-29",
@@ -9743,6 +10237,8 @@
         "notes": "PSN No. 46. 37.05 km total: 22.94 km government packages and 14.11 km BUJT. Target operation 2027; connects Cipali at Junction Cipeundeuy to Patimban.",
         "corridor_name": "",
         "aliases": [],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-binamarga-patimban-2026-06-09",
@@ -9819,6 +10315,8 @@
         "notes": "PSN No. 48. Connects the Kalibaru container terminal to the Cibitung–Cilincing toll road. Section I is 2.78 km; Section II is about 3.4 km.",
         "corridor_name": "",
         "aliases": [],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-cnbc-npea-2026-06-27",
@@ -9895,6 +10393,8 @@
         "notes": "PSN No. 50. Two components, the North–South Link and the Bandung Inter Urban Toll Road; Rp7.83T. The Pasteur–Pasupati–Gasibu–Cileunyi route is still being finalised.",
         "corridor_name": "",
         "aliases": [],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-tribunjabar-bandung-toll-2026-06-18",
@@ -9973,6 +10473,8 @@
         "aliases": [
           "Pembangunan Rumah Susun"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-permenko-16-2025",
@@ -10038,6 +10540,8 @@
         "aliases": [
           "Pembangunan Bantuan Rumah Swadaya"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-permenko-16-2025",
@@ -10103,6 +10607,8 @@
         "aliases": [
           "Bendungan Marangkayu"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-permenko-16-2025",
@@ -10168,6 +10674,8 @@
         "aliases": [
           "Bendungan Kuningan"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-permenko-16-2025",
@@ -10233,6 +10741,8 @@
         "aliases": [
           "Bendungan Bendo"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-permenko-16-2025",
@@ -10298,6 +10808,8 @@
         "aliases": [
           "Bendungan Gongseng"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-permenko-16-2025",
@@ -10363,6 +10875,8 @@
         "aliases": [
           "Bendungan Tukul"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-permenko-16-2025",
@@ -10428,6 +10942,8 @@
         "aliases": [
           "Bendungan Pidekso"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-permenko-16-2025",
@@ -10493,6 +11009,8 @@
         "aliases": [
           "Bendungan Tugu"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-permenko-16-2025",
@@ -10558,6 +11076,8 @@
         "aliases": [
           "Bendungan Karalloe"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-permenko-16-2025",
@@ -10623,6 +11143,8 @@
         "aliases": [
           "Bendungan Tapin"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-permenko-16-2025",
@@ -10688,6 +11210,8 @@
         "aliases": [
           "Bendungan Passeloreng"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-permenko-16-2025",
@@ -10753,6 +11277,8 @@
         "aliases": [
           "Bendungan Lolak"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-permenko-16-2025",
@@ -10818,6 +11344,8 @@
         "aliases": [
           "Bendungan Bintang Bano"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-permenko-16-2025",
@@ -10883,6 +11411,8 @@
         "aliases": [
           "Bendungan Karian"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-permenko-16-2025",
@@ -10948,6 +11478,8 @@
         "aliases": [
           "Bendungan Way Sekampung"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-permenko-16-2025",
@@ -11013,6 +11545,8 @@
         "aliases": [
           "Bendungan Kuwil Kawangkoan"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-permenko-16-2025",
@@ -11078,6 +11612,8 @@
         "aliases": [
           "Bendungan Ladongi"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-permenko-16-2025",
@@ -11143,6 +11679,8 @@
         "aliases": [
           "Bendungan Ciawi"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-permenko-16-2025",
@@ -11208,6 +11746,8 @@
         "aliases": [
           "Bendungan Sukamahi"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-permenko-16-2025",
@@ -11273,6 +11813,8 @@
         "aliases": [
           "Bendungan Leuwikeris"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-permenko-16-2025",
@@ -11338,6 +11880,8 @@
         "aliases": [
           "Bendungan Cipanas"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-permenko-16-2025",
@@ -11403,6 +11947,8 @@
         "aliases": [
           "Bendungan Tiga Dihaji"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-permenko-16-2025",
@@ -11468,6 +12014,8 @@
         "aliases": [
           "Bendungan Semantok"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-permenko-16-2025",
@@ -11533,6 +12081,8 @@
         "aliases": [
           "Bendungan Pamukkulu"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-permenko-16-2025",
@@ -11598,6 +12148,8 @@
         "aliases": [
           "Bendungan Bener"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-permenko-16-2025",
@@ -11663,6 +12215,8 @@
         "aliases": [
           "Bendungan Sadawarna"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-permenko-16-2025",
@@ -11728,6 +12282,8 @@
         "aliases": [
           "Bendungan Lausimeme"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-permenko-16-2025",
@@ -11793,6 +12349,8 @@
         "aliases": [
           "Bendungan Marga Tiga"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-permenko-16-2025",
@@ -11858,6 +12416,8 @@
         "aliases": [
           "Bendungan Bagong"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-permenko-16-2025",
@@ -11923,6 +12483,8 @@
         "aliases": [
           "Bendungan Randugunting"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-permenko-16-2025",
@@ -11988,6 +12550,8 @@
         "aliases": [
           "Bendungan Mbay"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-permenko-16-2025",
@@ -12053,6 +12617,8 @@
         "aliases": [
           "Bendungan Bulango Ulu"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-permenko-16-2025",
@@ -12118,6 +12684,8 @@
         "aliases": [
           "Bendungan Napun Gete"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-permenko-16-2025",
@@ -12183,6 +12751,8 @@
         "aliases": [
           "Bendungan Temef"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-permenko-16-2025",
@@ -12248,6 +12818,8 @@
         "aliases": [
           "Bendungan Way Apu"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-permenko-16-2025",
@@ -12313,6 +12885,8 @@
         "aliases": [
           "Bendungan Tamblang"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-permenko-16-2025",
@@ -12378,6 +12952,8 @@
         "aliases": [
           "Bendungan Beringin Sila"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-permenko-16-2025",
@@ -12443,6 +13019,8 @@
         "aliases": [
           "Bendungan Tiu Suntuk"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-permenko-16-2025",
@@ -12508,6 +13086,8 @@
         "aliases": [
           "Bendungan Manikin"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-permenko-16-2025",
@@ -12573,6 +13153,8 @@
         "aliases": [
           "Bendungan Jragung"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-permenko-16-2025",
@@ -12638,6 +13220,8 @@
         "aliases": [
           "Bendungan Sepaku Semoi"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-permenko-16-2025",
@@ -12703,6 +13287,8 @@
         "aliases": [
           "Bendungan Budong-Budong"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-permenko-16-2025",
@@ -12768,6 +13354,8 @@
         "aliases": [
           "Bendungan Ameroro"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-permenko-16-2025",
@@ -12833,6 +13421,8 @@
         "aliases": [
           "Bendungan Karangnongko"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-permenko-16-2025",
@@ -12898,6 +13488,8 @@
         "aliases": [
           "Pembangunan Jaringan Irigasi Daerah Irigasi Lhok Guci"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-permenko-16-2025",
@@ -12963,6 +13555,8 @@
         "aliases": [
           "Pembangunan Jaringan Irigasi Daerah Irigasi Jambo Aye Kanan"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-permenko-16-2025",
@@ -13028,6 +13622,8 @@
         "aliases": [
           "Pembangunan Jaringan Irigasi Daerah Irigasi Lematang"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-permenko-16-2025",
@@ -13093,6 +13689,8 @@
         "aliases": [
           "Pembangunan Bendung dan Jaringan Irigasi Daerah Irigasi Baliase"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-permenko-16-2025",
@@ -13158,6 +13756,8 @@
         "aliases": [
           "Rehabilitasi Jaringan Irigasi Daerah Irigasi Gumbasa"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-permenko-16-2025",
@@ -13223,6 +13823,8 @@
         "aliases": [
           "Rehabilitasi Jaringan Irigasi Daerah Irigasi Rentang"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-permenko-16-2025",
@@ -13288,6 +13890,8 @@
         "aliases": [
           "Rehabilitasi Jaringan Irigasi Daerah Irigasi Glapan"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-permenko-16-2025",
@@ -13353,6 +13957,8 @@
         "aliases": [
           "Pengembangan dan Pengelolaan Jaringan Irigasi Komering"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-permenko-16-2025",
@@ -13418,6 +14024,8 @@
         "aliases": [
           "Pembangunan dan Pengelolaan Estuary Dam di Teluk Bintan dan Pengembangan Sistem Penyediaan Air Minum (SPAM)"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-permenko-16-2025",
@@ -13483,6 +14091,8 @@
         "aliases": [
           "Sistem Penyediaan Air Minum (SPAM) Semarang Barat"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-permenko-16-2025",
@@ -13548,6 +14158,8 @@
         "aliases": [
           "Sistem Penyediaan Air Minum (SPAM) Umbulan"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-permenko-16-2025",
@@ -13613,6 +14225,8 @@
         "aliases": [
           "Sistem Penyediaan Air Minum (SPAM) Kota Bandar Lampung"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-permenko-16-2025",
@@ -13678,6 +14292,8 @@
         "aliases": [
           "Sistem Penyediaan Air Minum (SPAM) Regional Jatiluhur"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-permenko-16-2025",
@@ -13743,6 +14359,8 @@
         "aliases": [
           "Sistem Penyediaan Air Minum (SPAM) Regional Wosusokas"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-permenko-16-2025",
@@ -13808,6 +14426,8 @@
         "aliases": [
           "Sistem Penyediaan Air Minum (SPAM) Regional Karian - Serpong"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-permenko-16-2025",
@@ -13873,6 +14493,8 @@
         "aliases": [
           "Sistem Penyediaan Air Minum (SPAM) Regional Benteng - Kobema (Bengkulu Tengah, Kota Bengkulu, dan Seluma)"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-permenko-16-2025",
@@ -13938,6 +14560,8 @@
         "aliases": [
           "Sarana dan Prasarana Air Baku Karian"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-permenko-16-2025",
@@ -14003,6 +14627,8 @@
         "aliases": [
           "Jakarta Sewerage System (JSS)"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-permenko-16-2025",
@@ -14068,6 +14694,8 @@
         "aliases": [
           "Pengembangan Lapangan Gendalo, Gandang, Gehem, dan Bangka (Indonesia Deepwater Development Project/IDD)"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-permenko-16-2025",
@@ -14133,6 +14761,8 @@
         "aliases": [
           "Proyek Tangguh LNG Train 3"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-permenko-16-2025",
@@ -14198,6 +14828,8 @@
         "aliases": [
           "Pengembangan Lapangan Unitisasi Gas Jambaran - Tiung Biru"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-permenko-16-2025",
@@ -14263,6 +14895,8 @@
         "aliases": [
           "Pengembangan Lapangan Ubadari, CCUS, dan Compresion (UCC Project) di Teluk Bintuni"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-permenko-16-2025",
@@ -14328,6 +14962,8 @@
         "aliases": [
           "Pengembangan Lapangan Gas Asap, Kido, dan Merah (AKM)"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-permenko-16-2025",
@@ -14393,6 +15029,8 @@
         "aliases": [
           "Kilang Minyak Tuban (Ekspansi)"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-permenko-16-2025",
@@ -14458,6 +15096,8 @@
         "aliases": [
           "Upgrading Kilang Eksisting (RDMP) dan Industri Petrokimia Balongan"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-permenko-16-2025",
@@ -14523,6 +15163,8 @@
         "aliases": [
           "Konstruksi Tangki Penyimpanan BBM"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-permenko-16-2025",
@@ -14588,6 +15230,8 @@
         "aliases": [
           "Konstruksi Tangki Penyimpanan LPG"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-permenko-16-2025",
@@ -14653,6 +15297,8 @@
         "aliases": [
           "Pembangunan Jaringan Gas Kota"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-permenko-16-2025",
@@ -14718,6 +15364,8 @@
         "aliases": [
           "Pembangunan Pipa Transmisi Gas Bumi Ruas Cirebon - Semarang (Tahap I Ruas Semarang - Batang dan Tahap II Ruas Batang - Indramayu) serta Ruas Kawasan Ekonomi Khusus Sei Mangkei - Dumai"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-permenko-16-2025",
@@ -14783,6 +15431,8 @@
         "aliases": [
           "Pembangunan Bahan Bakar Hijau (Green Refinery RU IV Cilacap, Hidrogenasi CPO RU IV Cilacap, Green Refinery RU III Plaju, Katalis Merah Putih Pupuk Kujang Cikampek)"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-permenko-16-2025",
@@ -14848,6 +15498,8 @@
         "aliases": [
           "Pengembangan Biofuel dari Metanol dan Etanol di Kabupaten Bojonegoro"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-permenko-16-2025",
@@ -14913,6 +15565,8 @@
         "aliases": [
           "Gasifikasi Batubara di Kutai Timur"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-permenko-16-2025",
@@ -14978,6 +15632,8 @@
         "aliases": [
           "North Hub Development Project Selat Makassar"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-permenko-16-2025",
@@ -15043,6 +15699,8 @@
         "aliases": [
           "Percepatan Pembangunan Technopark"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-permenko-16-2025",
@@ -15108,6 +15766,8 @@
         "aliases": [
           "Proyek Satelit Multifungsi"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-permenko-16-2025",
@@ -15173,6 +15833,8 @@
         "aliases": [
           "Pengembangan Drone Male Kombatan (Male Unmaned Combat Aerial Vehicle)"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-permenko-16-2025",
@@ -15238,6 +15900,8 @@
         "aliases": [
           "Pengembangan Teknologi Produksi IVO dan Bensin Sawit dengan Katalis Merah Putih yang Terintegrasi dengan Kebun Rakyat"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-permenko-16-2025",
@@ -15303,6 +15967,8 @@
         "aliases": [
           "Pengembangan Industri Garam"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-permenko-16-2025",
@@ -15368,6 +16034,8 @@
         "aliases": [
           "Palapa Ring Integrasi"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-permenko-16-2025",
@@ -15433,6 +16101,8 @@
         "aliases": [
           "Pembangunan Kampus Universitas Islam Internasional Indonesia"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-permenko-16-2025",
@@ -15498,6 +16168,8 @@
         "aliases": [
           "Proyek Pariwisata Seribu Pulau di Kepulauan Seribu"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-permenko-16-2025",
@@ -15563,6 +16235,8 @@
         "aliases": [
           "Pembangunan Kelapa Dalam dan Industri Turunannya"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-permenko-16-2025",
@@ -15628,6 +16302,8 @@
         "aliases": [
           "Pengembangan Lahan Sawah Rawa Pasang Surut Tanah Mineral dan Rawa Lebak Tanah Mineral"
         ],
+        "indicators": [],
+        "phases": [],
         "sources": [
           {
             "id": "src-permenko-16-2025",

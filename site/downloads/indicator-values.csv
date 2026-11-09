@@ -1,0 +1,4 @@
+indicator_id,value,as_of,source_id,notes
+ind-psn-100gw-programme,5.3,2026-08-25,src-setneg-plts-100gw-2026-08-25,14 early projects totalling 5.3 GWp; the phase 1 target is 17 GWp.
+ind-100gw-phase1,5.3,2026-08-25,src-setneg-plts-100gw-2026-08-25,14 early projects totalling 5.3 GWp launched.
+ind-nusantara-runway,3000,2026-11-09,src-hubud-nusantara-airport,"3,000 x 45 m runway; retrieved 9 November 2026."

@@ -29,6 +29,7 @@ from data_model import (
     EVENT_TYPES,
     GEOMETRY_KINDS,
     INSTRUMENTS,
+    INDICATOR_DIRECTIONS,
     ISLANDS,
     LANGUAGES,
     LAW_LEVELS,
@@ -157,6 +158,9 @@ def main() -> None:
     programme_projects = read_csv(CURATED / "programme_projects.csv")
     programme_sources = read_csv(CURATED / "programme_sources.csv")
     translations = read_csv(CURATED / "translations.csv")
+    indicators = read_csv(CURATED / "indicators.csv")
+    indicator_values = read_csv(CURATED / "indicator_values.csv")
+    phases = read_csv(CURATED / "project_phases.csv")
     register = read_csv(CURATED / "psn_register.csv")
 
     project_ids = {row["id"] for row in projects}
@@ -696,6 +700,88 @@ def main() -> None:
         seen.add(key)
 
     seen = set()
+    represented_indicators = set()
+    for row in indicators:
+        where = f"indicators {row['id'] or '?'}"
+        if row["id"] in seen:
+            err(f"{where}: duplicate id")
+        seen.add(row["id"])
+        check_id(row["id"], where)
+        if not row["programme_id"] and not row["project_id"]:
+            err(f"{where}: needs programme_id or project_id")
+        if row["programme_id"] and row["programme_id"] not in programme_ids:
+            err(f"{where}: unknown programme_id")
+        if row["project_id"] and row["project_id"] not in project_ids:
+            err(f"{where}: unknown project_id")
+        for field in ("name_en", "name_id", "unit"):
+            if is_blank(row[field]):
+                err(f"{where}: missing {field}")
+        check_enum(row["direction"], INDICATOR_DIRECTIONS, "direction", where)
+        check_number(row["baseline_value"], "baseline_value", where)
+        check_number(row["target_value"], "target_value", where)
+        if row["baseline_date"]:
+            check_date(row["baseline_date"], f"{where} baseline_date")
+        if row["target_date"]:
+            check_date(row["target_date"], f"{where} target_date")
+        if row["baseline_date"] and row["target_date"] and row["target_date"] < row["baseline_date"]:
+            err(f"{where}: target_date is before baseline_date")
+        if row["source_id"] not in source_ids:
+            err(f"{where}: unknown source")
+
+    seen_values = set()
+    for row in indicator_values:
+        where = f"indicator_values {row['indicator_id'] or '?'}/{row['as_of'] or '?'}"
+        if row["indicator_id"] not in seen:
+            err(f"{where}: unknown indicator_id")
+        represented_indicators.add(row["indicator_id"])
+        value = check_number(row["value"], "value", where)
+        if value is None:
+            err(f"{where}: value is required")
+        if not row["as_of"]:
+            err(f"{where}: missing as_of")
+        else:
+            check_date(row["as_of"], f"{where} as_of")
+        if row["source_id"] not in source_ids:
+            err(f"{where}: unknown source")
+        key = (row["indicator_id"], row["as_of"], row["source_id"])
+        if key in seen_values:
+            err(f"{where}: duplicate value")
+        seen_values.add(key)
+
+    for row in indicators:
+        if row["baseline_value"] or row["target_value"]:
+            represented_indicators.add(row["id"])
+    missing_values = sorted(set(row["id"] for row in indicators) - represented_indicators)
+    if missing_values:
+        err(f"indicators: no baseline, target or value for {missing_values}")
+
+    seen = set()
+    for row in phases:
+        where = f"project_phases {row['id'] or '?'}"
+        if row["id"] in seen:
+            err(f"{where}: duplicate id")
+        seen.add(row["id"])
+        check_id(row["id"], where)
+        if row["project_id"] not in project_ids:
+            err(f"{where}: unknown project_id")
+        for field in ("phase", "name_en", "name_id"):
+            if is_blank(row[field]):
+                err(f"{where}: missing {field}")
+        check_enum(row["status"], STATUSES, "status", where)
+        check_number(row["cost_idr_t"], "cost_idr_t", where)
+        progress = check_number(row["progress_pct"], "progress_pct", where)
+        if progress is not None and progress > 100:
+            err(f"{where}: progress_pct must be <= 100")
+        if row["start_date"]:
+            check_date(row["start_date"], f"{where} start_date")
+        if row["end_date"]:
+            check_date(row["end_date"], f"{where} end_date")
+        if row["start_date"] and row["end_date"] and row["end_date"] < row["start_date"]:
+            err(f"{where}: end_date is before start_date")
+        if row["source_id"] not in source_ids:
+            err(f"{where}: unknown source")
+
+    seen = set()
     for row in conflicts:
         where = f"conflicts {row['id'] or '?'}"
         if row["id"] in seen:
@@ -751,7 +837,9 @@ def main() -> None:
         f"{len(organizations)} organisations, {len(sources)} sources, "
         f"{len(corridors)} corridors, {len(segments)} segments, "
         f"{len(events)} events, {len(geometry)} geometry, {len(investments)} investments, "
-        f"{len(conflicts)} conflicts, {len(programmes)} programmes"
+        f"{len(conflicts)} conflicts, {len(programmes)} programmes, "
+        f"{len(indicators)} indicators, {len(indicator_values)} indicator values, "
+        f"{len(phases)} phases"
     )
 
 

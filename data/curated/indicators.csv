@@ -1,0 +1,4 @@
+id,programme_id,project_id,name_en,name_id,unit,direction,baseline_value,baseline_date,target_value,target_date,source_id,notes
+ind-psn-100gw-programme,prog-electricity,,Solar capacity target,Target kapasitas surya,GWp,increase,,,100,,src-setneg-plts-100gw-2026-08-25,"100 GWp solar programme under the electricity programme; 5.3 GWp launched by 25 August 2026."
+ind-100gw-phase1,,energy-plts-100gw-phase-1,Phase 1 installed capacity,Kapasitas terpasang Tahap 1,GWp,increase,,,17,2029-12-31,src-setneg-plts-100gw-2026-08-25,"Target year 2029; the source states a three-year build from August 2026. The date uses the year-end convention."
+ind-nusantara-runway,,air-nusantara-ikn,Runway length,Panjang landasan pacu,m,target,,,3000,,src-hubud-nusantara-airport,"3,000 x 45 m; source page retrieved 9 November 2026."

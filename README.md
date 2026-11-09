@@ -50,10 +50,10 @@ curated, not exhaustive**.
   claims; 228 of 228 projects have a claim for the status and every populated
   numeric fact. 19 conflicts are recorded with both values and both sources
   (11 resolved, 8 open). A 432-row freshness report marks each project and
-  estate fresh, due soon or stale. A 238-field data dictionary covers all 23
-  curated tables, including the new translation layer.
+  estate fresh, due soon or stale. A 268-field data dictionary covers all 26
+  curated tables, including translations, indicators and project phases.
 - **Bilingual shell:** `site/index.html` is a language chooser; `site/en/` and
-  `site/id/` share one application and one data bundle. Both locales carry 541
+  `site/id/` share one application and one data bundle. Both locales carry 559
   UI keys, all 24 programme names and summaries, all five corridor definitions,
   and an Indonesian display name for all 228 projects (140 reviewed, 88 official
   PSN aliases). Every project also has a factual one-sentence summary generated
@@ -66,8 +66,16 @@ curated, not exhaustive**.
   and factory batches; 7 November for transport; and 6 November for earlier
   rows. The 432-row freshness report is fresh as of 9 November 2026; the first
   record falls due on 11 May 2027.
-- **Payload:** 1,360 KB runtime data and 3,292 KB including downloads, within
-  the plan's 1.5 MB initial and 5 MB total budgets.
+- **Indicators and phases:** the new `indicators.csv`, `indicator_values.csv`
+  and `project_phases.csv` tables carry three sourced indicators and nine
+  sourced phases. The 100 GWp programme target (100 GWp, 5.3 GWp current), the
+  Phase 1 target (17 GWp) and Nusantara's 3,000 m runway are in the Programme
+  and project drawers. The five dams and Nusantara airport have operational
+  phases. Targets, budgets and indicators remain blank where the source is
+  silent.
+- **Payload:** 1,099 KB initial (one locale plus core Explore data), 1,467 KB
+  of runtime data and 3,428 KB including downloads, within the plan's 1.5 MB
+  initial and 5 MB total budgets.
 - **Status:** Phase 1, Phase 2 and Phase 3 of the v3 overhaul are complete as of
   8 November 2026. Track 2B (estates) is complete by count and corridor geometry
   (R6) is deferred; both are documented. The 50-entry PSN road reference set is complete.
@@ -126,7 +134,7 @@ when a source supports that status.
 | Project claims | 863 | 228/228 projects fully claimed | one atomic fact per row; 115 separate estate claims and 48 programme claims; register-only rows claim the listing, location and active designation, not implementation |
 | Conflicts | 19 | 11 resolved, 8 open | both values and both sources, with a recorded resolution; downloadable register |
 | Freshness | 432 | 432 fresh as of 2026-11-09 | 228 projects + 204 estates; 183-day threshold; next due 2027-05-11 |
-| Data dictionary | 238 | 23 tables | generated from the schema; field type, required flag, description, allowed values and example |
+| Data dictionary | 268 | 26 tables | generated from the schema; field type, required flag, description, allowed values and example |
 
 **Why the transport status counts differ from Kemenhub's summary.** The deck's
 headline says 29 complete and 6 under construction. The atlas uses its own
@@ -234,7 +242,7 @@ infra-id/
 │  ├─ operations/refresh-runbook.md
 │  └─ evidence/phase-3/      desktop/mobile screenshots and smoke report
 ├─ data/
-│  ├─ curated/               editable source of truth (23 tables)
+│  ├─ curated/               editable source of truth (26 tables)
 │  ├─ derived/               generated reports, caches and extracted text
 │  ├─ exports/projects.csv   generated flat export
 │  └─ raw/2026-11-06/        sources as fetched, never edited
@@ -335,7 +343,7 @@ What each script does:
 | `imports/build_estates.py` | KEK HTML + BAJRA table + regency cache | `data/curated/estates.csv` + source rows | Merges the 25 SEZs and 153 industrial estates, handles overlaps; run `add_psn_industrial_estates.py` afterwards to restore the PSN rows |
 | `pipeline/freshness.py` | Curated projects and estates | `data/derived/freshness_report.csv` | Fresh / due soon / stale by `last_verified`; deterministic as-of date |
 | `pipeline/audit_claims.py` | Curated projects and claims | `data/derived/claims_audit.csv` | Checks that status and every populated numeric fact has an atomic claim |
-| `pipeline/build_dictionary.py` | Schema field lists | `data/derived/data_dictionary.csv`, `site/downloads/dictionary.csv` | 238 field definitions across 23 tables |
+| `pipeline/build_dictionary.py` | Schema field lists | `data/derived/data_dictionary.csv`, `site/downloads/dictionary.csv` | 268 field definitions across 26 tables |
 | `pipeline/build_i18n.py` | `data/i18n/ui.*.json`, `translations.csv`, bilingual curated fields | `site/data/i18n.*.js`, `data/derived/i18n_report.csv` | Fails on key drift or a missing programme/corridor translation |
 | `pipeline/build_locales.py` | `site/app.html`, `site/chooser.html` | `site/en/index.html`, `site/id/index.html`, `site/index.html` | Rewrites relative paths and the language switch |
 | `dev/check_contrast.py` | `site/assets/tokens.css` | console report | WCAG AA check for every asserted token pair |
@@ -485,7 +493,7 @@ the 88 official Indonesian PSN names; corridor definitions are translated in
 
 `scripts/pipeline/build_i18n.py` fails if the two catalogues drift or if a
 programme or corridor loses a required translation. It writes a coverage report
-to `data/derived/i18n_report.csv`. The current build has 541 UI keys per locale,
+to `data/derived/i18n_report.csv`. The current build has 559 UI keys per locale,
 an Indonesian display name for all 228 projects and a generated summary for all
 228. Project summaries are generated from the curated fields, not editorial
 copy; the drawer labels them `AUTO` / `OTOMATIS`. Sourced English notes keep an
@@ -623,7 +631,7 @@ Features:
 - **Data:** generated coverage matrix; programme register; claims coverage;
   freshness; status definitions; inclusion rules; conflict register with both
   values and sources; source register; 16 static downloads plus filtered project
-  CSV/GeoJSON and estate CSV; the 238-field data dictionary; known gaps; and the
+  CSV/GeoJSON and estate CSV; the 268-field data dictionary; known gaps; and the
   changelog parsed from `CHANGELOG.md`.
 - **Mobile:** full-viewport map and a draggable bottom sheet with peek, half and
   full snap points; filters stay in the sheet.

@@ -1,0 +1,10 @@
+id,project_id,phase,name_en,name_id,status,cost_idr_t,start_date,end_date,progress_pct,source_id,notes
+phase-100gw-phase1,energy-plts-100gw-phase-1,phase_1,Phase 1,Tahap 1,under_construction,,,,,src-setneg-plts-100gw-2026-08-25,"Target year 2029; 14 early projects totalling 5.3 GWp."
+phase-ikn-phase2,urban-ikn-phase-2,phase_2,Phase 2,Tahap 2,under_construction,,,,,src-bisnis-ikn-phase-2-2026-09-28,"Legislative and judicial buildings, offices, embankments, retention ponds and water piping. Target year 2028."
+phase-patimban-1-2,port-patimban,phase_i_2,Phase I-2,Tahap I-2,under_construction,,,,,src-kemenhub-psn-progress-2026-02-19,"Phase I-2 is still under construction; the summary's completed-project label conflicts."
+phase-nusantara-operation,air-nusantara-ikn,operation,Operation,Operasi,operating,,,2025-06-12,,src-bisnis-ikn-airport-2026-07-16,"Runway and terminal opened 12 June 2025."
+phase-meninting-operation,dam-meninting,operation,Operation,Operasi,operating,,,2026-07-10,,src-setkab-five-dams-2026-07-10,"Inaugurated 10 July 2026; part of the Rp9.79T five-dam package."
+phase-keureuto-operation,dam-keureuto,operation,Operation,Operasi,operating,,,2026-07-10,,src-setkab-five-dams-2026-07-10,"Inaugurated 10 July 2026; part of the Rp9.79T five-dam package."
+phase-rukoh-operation,dam-rukoh,operation,Operation,Operasi,operating,,,2026-07-10,,src-setkab-five-dams-2026-07-10,"Inaugurated 10 July 2026; part of the Rp9.79T five-dam package."
+phase-jlantah-operation,dam-jlantah,operation,Operation,Operasi,operating,,,2026-07-10,,src-setkab-five-dams-2026-07-10,"Inaugurated 10 July 2026; part of the Rp9.79T five-dam package."
+phase-sidan-operation,dam-sidan,operation,Operation,Operasi,operating,,,2026-07-10,,src-setkab-five-dams-2026-07-10,"Inaugurated 10 July 2026; part of the Rp9.79T five-dam package."

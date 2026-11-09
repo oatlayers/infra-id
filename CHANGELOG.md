@@ -3,6 +3,24 @@
 Public-facing changes to the atlas. Dates are the day the change landed in this
 repository. The Data view renders these entries from this file at build time.
 
+## 2026-11-09 — Indicators, values and project phases
+
+- Added `indicators.csv`, `indicator_values.csv` and `project_phases.csv` with
+  schema validation, dictionary entries and exports. The seed is deliberately
+  small and sourced: the 100 GWp programme target (100 GWp against 5.3 GWp
+  current), the Phase 1 target (17 GWp), Nusantara's 3,000 m runway, and nine
+  phases including the five dams' 10 July 2026 operation.
+- The Programme view now shows a target-versus-current block. The project drawer
+  shows indicators and phases with their source. Data adds three downloads and
+  an indicators-and-phases section.
+- The build checks indicator values, project/programme links, phase dates and
+  progress, and the new download files. The dictionary grows to 268 fields
+  across 26 tables. The UI catalogue grows to 559 keys per locale.
+- Initial payload is 1,099 KB (one locale plus core Explore data), runtime data
+  1,467 KB and total 3,428 KB. Build, `--check`, smoke test, five-profile
+  rehearsal, contrast check and link check pass. Nothing was pushed, deployed or
+  published.
+
 ## 2026-11-09 — Bilingual shell and full-width registers
 
 - Added the English and Indonesian editions at `site/en/index.html` and

@@ -38,8 +38,11 @@ atlas itself; this page is the map for the working documents.
 | [`../data/curated/programmes.csv`](../data/curated/programmes.csv) | The 24 active PSN programmes with bilingual names, summaries, theme, lead agency and source. |
 | [`../data/curated/programme_projects.csv`](../data/curated/programme_projects.csv) | Seven structural links between programmes and atlas projects. |
 | [`../data/curated/translations.csv`](../data/curated/translations.csv) | Reviewed entity text and official Indonesian names used by the bilingual build. |
-| [`../data/i18n/ui.en.json`](../data/i18n/ui.en.json) | English UI catalogue: 541 semantic keys. |
-| [`../data/i18n/ui.id.json`](../data/i18n/ui.id.json) | Indonesian UI catalogue: the same 541 keys. |
+| [`../data/i18n/ui.en.json`](../data/i18n/ui.en.json) | English UI catalogue: 559 semantic keys. |
+| [`../data/i18n/ui.id.json`](../data/i18n/ui.id.json) | Indonesian UI catalogue: the same 559 keys. |
+| [`../data/curated/indicators.csv`](../data/curated/indicators.csv) | Programme and project targets, baselines and units. |
+| [`../data/curated/indicator_values.csv`](../data/curated/indicator_values.csv) | Dated indicator observations. |
+| [`../data/curated/project_phases.csv`](../data/curated/project_phases.csv) | Sourced project phases with dates, cost and progress where stated. |
 | [`../data/curated/estates.csv`](../data/curated/estates.csv) | 204 industrial estates and SEZs, including eight reviewed and 18 register-only PSN industrial areas. |
 | [`../data/derived/psn_reconciliation.csv`](../data/derived/psn_reconciliation.csv) | Match ledger: 226 of 226 active PSN project or estate records represented and all 24 programmes matched; 88 projects and 18 estates are register-only. |
 

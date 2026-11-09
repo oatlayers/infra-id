@@ -151,6 +151,24 @@ TRANSLATION_FIELDS_BY_ENTITY = {
 }
 TRANSLATION_STATUSES = {"official", "reviewed", "draft", "machine", "missing"}
 
+# Schema v4 indicators and phases. An indicator belongs to a programme, a
+# project, or both; a value row carries the dated observation. A phase is a
+# sourced stage of one project, not a replacement for its current status.
+INDICATOR_FIELDS = [
+    "id", "programme_id", "project_id", "name_en", "name_id", "unit",
+    "direction", "baseline_value", "baseline_date", "target_value",
+    "target_date", "source_id", "notes",
+]
+INDICATOR_VALUE_FIELDS = [
+    "indicator_id", "value", "as_of", "source_id", "notes",
+]
+PHASE_FIELDS = [
+    "id", "project_id", "phase", "name_en", "name_id", "status",
+    "cost_idr_t", "start_date", "end_date", "progress_pct", "source_id",
+    "notes",
+]
+INDICATOR_DIRECTIONS = {"increase", "decrease", "target", "maintain"}
+
 SECTORS = {
     "road", "railway", "airport", "seaport", "factory", "energy", "water",
     "urban", "coastal", "housing", "technology", "education", "tourism",
@@ -273,6 +291,9 @@ TABLES = {
     "programme_projects.csv": PROGRAMME_PROJECT_FIELDS,
     "programme_sources.csv": PROGRAMME_SOURCE_FIELDS,
     "translations.csv": TRANSLATION_FIELDS,
+    "indicators.csv": INDICATOR_FIELDS,
+    "indicator_values.csv": INDICATOR_VALUE_FIELDS,
+    "project_phases.csv": PHASE_FIELDS,
 }
 
 
