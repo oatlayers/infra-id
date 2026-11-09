@@ -3,6 +3,30 @@
 Public-facing changes to the atlas. Dates are the day the change landed in this
 repository. The Data view renders these entries from this file at build time.
 
+## 2026-11-09 — Two-year delivery indicators
+
+- Added 21 sourced programme indicators and 14 dated values from the 20 October
+  2026 two-year delivery report and the 27 October 2026 Kemendikdasmen release.
+  Education now records 265 Sekolah Rakyat, 30,000 renovated schools, 288,180
+  interactive screens, 2,389 schools with electricity and 8,152 with internet,
+  17 operating SNT and 100 SNT schools planned for 2027. Health adds 22 new
+  hospitals, the Rp4B per-Puskesmas renovation budget and the 7,280-kecamatan
+  coverage target. Housing records 400,000 repaired houses.
+- Added the delivery-report infrastructure counts: more than 9,000 km of
+  irrigation, 3,500 bridges, 2,228 km of Inpres roads, 3,000 boreholes, 100
+  fishing villages and 26 downstreaming groundbreakings. Added the speech's
+  2026 targets of 30 GW of solar, 13 GW of retired diesel and Rp73.9T of annual
+  generation-cost savings at 100 GW, plus three additional screens per school.
+- Corrected the 441 RSUD indicator: the speech's 2030 deadline applies to the
+  Puskesmas and Labkesmas renovation, not to the RSUD. The Health programme
+  target now separates the two.
+- Hid the map behind full-height mobile register views, removing the Leaflet
+  scale bar that leaked through the gap above the sheet.
+- Indicators grow from 14 to 35 and values from 4 to 18; sources grow to 140.
+  Initial payload is 1,219 KB, data 1,777 KB and total 3,909 KB. Build,
+  `--check`, smoke test, five-profile rehearsal, contrast check and link check
+  pass. Nothing was pushed, deployed or published.
+
 ## 2026-11-09 — IKN Stage II packages
 
 - Added 23 named IKN Stage II package and project rows: government office

@@ -6,8 +6,8 @@ closure of PSN coverage landed on 9 November 2026. The released site is still th
 v3 build: 107 projects, 178 estates and SEZs, 5 corridors, 44 segments, 479 atomic
 claims and 91 sources. The repository now has 251 projects, 24 programmes, 204
 estates and SEZs, 5 corridors, 44 segments, 917 project claims plus 115 estate
-claims and 48 programme claims, 8 PKPN programmes with 27 claims, 14 indicators,
-4 indicator values, 9 project phases, 138 sources and 34 events, with a
+claims and 48 programme claims, 8 PKPN programmes with 27 claims, 35 indicators,
+18 indicator values, 9 project phases, 140 sources and 34 events, with a
 deterministic local build and a browser smoke test. It includes the official Permenko 16/2025
 register (226 active projects and 24 active programmes) and a reconciliation
 ledger showing **226 of 226** project or estate records represented: 94 to 88
@@ -96,11 +96,11 @@ delivery atlas**. It does five things:
 | Estates and SEZs | 204 (18 register-only) | **200+** unique records (25 KEK + 179 industrial estates + 2026 additions) |
 | Corridors / segments | 5 / 44 | 5 / **100+** |
 | Atomic claims | 1,107 (917 project + 115 estate + 48 programme + 27 PKPN) | **1,500+** |
-| Indicators | 14 | **300+** |
+| Indicators | 35 | **300+** |
 | Sources | 135 | **250+** |
 | UI languages | 2 (English + Indonesian) | **2** (English + Indonesian) |
 | Data translation coverage | UI 100%; programmes and corridors 100%; 251 project names; 251 generated summaries; editorial summaries 0% | **100%** of names, summaries and programmes, with editorial review of generated summaries |
-| Initial site payload | 1,217 KB initial / 1,753 KB data / 3,876 KB total | **< 1.5 MB initial**, < 5 MB total |
+| Initial site payload | 1,219 KB initial / 1,777 KB data / 3,909 KB total | **< 1.5 MB initial**, < 5 MB total |
 
 ### Release shape
 
@@ -453,7 +453,7 @@ day one. A record can enter at Tier C and be upgraded.
 | Companies | 111 | **300** | BUMN, Danantara, private, foreign |
 | Corridor segments | 44 | **100+** | KPPIP, PU, BPJT |
 | Claims | 708 | **1,500+** | Every project, company and indicator |
-| Indicators | 14 | **300+** | PKPN targets and ministry reporting |
+| Indicators | 35 | **300+** | PKPN targets and ministry reporting |
 | Sources | 135 | **250+** | Official, company, multilateral, news |
 
 ### 5.3 Inclusion rules
@@ -1256,8 +1256,10 @@ Target **WCAG 2.2 AA**. Priority checks:
   not yet separate rows.
 - Add the 8 PKPN programmes and their headline indicators. **Done (9 Nov
   2026):** `pkpn_programmes.csv` (8 rows, bilingual summaries and targets, 27
-  claims, 2 sourced budgets) and 11 PKPN indicators. Current values are shown
-  only where sourced; the rest say "No observation yet".
+  claims, 2 sourced budgets) and 32 PKPN indicators. Current values are shown
+  only where sourced; the rest say "No observation yet". The 20 October 2026
+  delivery report adds education, health, housing, infrastructure and
+  downstreaming values.
 - Seed 20–30 company records for the new projects. **Open.**
 
 **Acceptance**
@@ -1552,12 +1554,12 @@ site/downloads/*.csv, *.json, *.geojson
 ```
 
 The v4 build passes with 251 projects, 24 programmes, 204 estates, 111
-organisations, 138 sources, 5 corridors, 44 segments, 34 events, 26 investments,
+organisations, 140 sources, 5 corridors, 44 segments, 34 events, 26 investments,
 19 conflicts, 917 project claims, 115 estate claims, 48 programme claims, 8
-PKPN programmes with 27 claims, 14 indicators, 4 indicator values, 9 project
+PKPN programmes with 27 claims, 35 indicators, 18 indicator values, 9 project
 phases and 286 dictionary fields across 28 tables. The initial payload is
-1,217 KB, the data payload is 1,753 KB and the total including downloads is
-3,876 KB. The two locale pages, the chooser
+1,219 KB, the data payload is 1,777 KB and the total including downloads is
+3,909 KB. The two locale pages, the chooser
 and both i18n payloads are generated and checked by the build.
 
 ## Appendix B — Source register (V4 starter)
@@ -1788,6 +1790,8 @@ programme, company, estate and bilingual layers on top.
 | 2026-11-09 | PKPN layer | `pkpn_programmes.csv` (8 rows with bilingual summaries, targets, budgets and sources), `pkpn_sources.csv` (27 claims), 11 PKPN indicators and one value. Source snapshots `setneg_rapbn_2027.html` and `kemenkeu_pkpn_2027.html`. Programme view adds eight PKPN cards in speech order; Data adds two downloads. Sources 135; dictionary 286 fields across 28 tables; initial payload 1,150 KB, total 3,677 KB. |
 | 2026-11-09 | Data charts | Native sector, status and freshness charts on the full-width Data view. Sector bars cover all 14 sectors; the status and freshness stacks reuse the existing status colours. No chart library; 634 UI keys per locale. |
 | 2026-11-09 | Companies view | `companies.js` from 101 organisations and 203 project-role links; full-width Companies view with type filter, role search, expandable role list, filtered CSV, two downloads and a coverage row (101/300). 79 organisations have a link; 22 are reference-only. Initial payload 1,150 KB, data 1,667 KB, total 3,634 KB. |
+| 2026-11-09 | IKN Stage II packages | 23 new project rows in `projects.csv`, 10 organisations, 30 role links, 54 project claims, 4 events and 3 sources. The 50.227 km IKN toll length is the functional length of the named sections. Projects grow to 251, organisations to 111, sources to 138, events to 34 and project claims to 917. IKN package coverage is 24/25. `scripts/imports/add_ikn_packages.py` is idempotent. Initial payload 1,217 KB, data 1,753 KB, total 3,876 KB. |
+| 2026-11-09 | Two-year delivery indicators | 21 new programme indicators and 14 dated values from the 20 October 2026 delivery report, the 27 October 2026 Kemendikdasmen release and the 2026 budget speech. Education, health, housing, irrigation, bridges, Inpres roads, boreholes, fishing villages, downstreaming, 30 GW solar, 13 GW diesel retirement and Rp73.9T annual saving. The unsupported 2030 RSUD deadline is removed. Indicators grow from 14 to 35, values from 4 to 18 and sources to 140. `scripts/imports/add_two_year_indicators.py` is idempotent. Initial payload 1,219 KB, data 1,777 KB, total 3,909 KB. |
 | 2026-11-09 | Indicators, values and phases | `indicators.csv` (3), `indicator_values.csv` (3) and `project_phases.csv` (9), with validation, dictionary entries, project/programme payloads, three downloads and a Programme target-vs-current view. The 100 GWp programme target is 100 GWp against 5.3 GWp current; Phase 1 targets 17 GWp; Nusantara's runway is 3,000 m. Dictionary 268 fields across 26 tables; initial payload 1,099 KB, total 3,428 KB. |
 
 **Reconciliation result at 9 November 2026:** 226 of 226 active PSN project or

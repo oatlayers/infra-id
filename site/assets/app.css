@@ -2116,6 +2116,8 @@ svg { display: block; }
     inset: 0;
   }
 
+  .app-main.is-wide .map-wrap { display: none; }
+
   .rail {
     position: fixed;
     z-index: 1000;

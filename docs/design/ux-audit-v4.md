@@ -58,7 +58,7 @@ corridor group opens the matching corridor. Fuzzy ranking is still open.
 |---|---|---|
 | Data, Programmes, Corridors and Estates were squeezed into the 400 px rail beside an unrelated map | Full-width register pages, max 1180 px; map hidden on those views; two-column programme and corridor grids | `04-data-desktop.png`, `03b-programmes-desktop.png`, `02-corridors-desktop.png` |
 | No Indonesian edition, no language switch, English-only chrome | `site/en/`, `site/id/`, chooser, 635-key catalogues, `translations.csv`, language switch preserving the hash | `00-language-chooser.png`, `08-explore-id-desktop.png`, `08d-data-id-desktop.png` |
-| 140 project names fell back to the source name; no project summaries | 140 reviewed Indonesian names plus 88 official PSN aliases; a factual one-sentence summary in both locales, labelled generated | `08-explore-id-desktop.png`, `08f-project-drawer-id.png` |
+| 140 project names fell back to the source name; no project summaries | 163 reviewed Indonesian names plus 88 official PSN aliases; a factual one-sentence summary in both locales, labelled generated | `08-explore-id-desktop.png`, `08f-project-drawer-id.png` |
 | English-only status, sector, filter, sort and Data prose | All chrome and the Data methods are translated; `Intl` number/date/coordinate formatting | `08d-data-id-desktop.png` |
 | English prose in the Indonesian edition could look like a translation failure | `lang="en"` on sourced text and a visible `EN` tag; a quiet note at the top of the project drawer | `05-project-drawer.png` |
 | Mobile filters were unreachable at peek height | Tapping the sheet handle cycles to half and full; filters are then reachable | `ux-rehearsal.json`, field-id profile |
@@ -67,6 +67,8 @@ corridor group opens the matching corridor. Fuzzy ranking is still open.
 | No companies or agencies view despite 101 organisation profiles | Full-width Companies view with type filter, role search, expandable project roles, filtered CSV and two downloads | `03d-companies-desktop.png` |
 | The atlas had one IKN Phase 2 row against a 25-package target | Added 23 named IKN package and project rows with status, location and source claims; the package count is now 24/25 | `09-ikn-search-desktop.png`, `09b-ikn-toll-drawer.png` |
 | Data had no charts | Native sector, status and freshness charts from the existing stats | `04b-data-charts.png` |
+| The indicator layer was thin | Added 21 delivery-report indicators and 14 dated values; programme cards now show education, health, housing, infrastructure and energy measures | `10-education-pkpn-card.png`, `10c-data-indicators.png` |
+| Leaflet scale and attribution leaked above the full-height mobile sheet on register views | The map is hidden for wide views on mobile, matching the existing desktop rule | `10e-education-mobile.png` |
 | The 2027 PKPN were absent from the programme register | Eight PKPN cards with bilingual summaries, targets, budgets and indicators, in speech order | `03b-programmes-desktop.png` |
 
 ### Open
@@ -78,7 +80,7 @@ corridor group opens the matching corridor. Fuzzy ranking is still open.
 | Medium | Search ranking is still token containment, with no edit distance or arrow-key result navigation | Grouped counts and synonyms fix discovery, but typo tolerance and keyboard result movement remain | Add fuzzy ranking and result-list arrow navigation |
 | Medium | Data coverage `reference_set`, download labels/meta and dictionary descriptions remain English in the ID edition | These are methodological strings, not proper names | Move coverage labels and download labels into the catalogue; translate dictionary descriptions in Release 4.4 |
 | Medium | No sortable table component in Data | The charts and tables are readable, but headers do not sort | Add sortable headers and a column chooser |
-| Fourteen indicators and nine phases are sourced | The layer is structurally complete but thin against the 300-indicator target | Add ministry baseline values and project-level output indicators as official reporting is filed |
+| Thirty-five indicators and nine phases are sourced | The layer is structurally complete but still thin against the 300-indicator target | Add ministry baseline values and project-level output indicators as official reporting is filed |
 | Only 111 of the 300 company profiles exist; 22 profiles have no project role and 100 projects have no organisation role | The Companies view is useful but the network is incomplete | Add profiles and role links from existing project sources before adding new projects |
 | Medium | No map-only mode or rail collapse | Explore still fixes 400 px for the rail | Add a collapse control and a map-only state |
 | Medium | Mobile navigation is still a tab row inside the sheet | The plan calls for a five-item bottom bar with “More” | Add the bottom bar and a full-screen filter sheet |
@@ -98,13 +100,13 @@ corridor group opens the matching corridor. Fuzzy ranking is still open.
 | Locales | 2, 635 UI keys each |
 | Project names | 251 Indonesian display names (163 reviewed + 88 official) |
 | Project summaries | 251 generated in both locales; 0 editorial |
-| Indicators / values / phases | 14 / 4 / 9 |
+| Indicators / values / phases | 35 / 18 / 9 |
 | PKPN programmes | 8, with 27 claims |
 | Companies / role links | 111 / 227 |
-| Sources / dictionary tables | 138 / 28 |
-| Initial payload (one locale + core Explore) | 1,217 KB |
-| Runtime data payload | 1,753 KB |
-| Total payload including downloads | 3,876 KB |
+| Sources / dictionary tables | 140 / 28 |
+| Initial payload (one locale + core Explore) | 1,219 KB |
+| Runtime data payload | 1,777 KB |
+| Total payload including downloads | 3,909 KB |
 | Mobile horizontal overflow | none at 390 px (EN and ID) |
 | External requests | none |
 | Console / page errors | none |

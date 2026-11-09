@@ -1,5 +1,19 @@
 indicator_id,value,as_of,source_id,notes
 ind-100gw-phase1,5.3,2026-08-25,src-setneg-plts-100gw-2026-08-25,14 early projects totalling 5.3 GWp launched.
 ind-nusantara-runway,3000,2026-11-09,src-hubud-nusantara-airport,"3,000 x 45 m runway; retrieved 9 November 2026."
+ind-pkpn-downstreaming-groundbreakings,26,2026-10-20,src-setkab-two-year-report-2026-10-20,26 downstreaming projects broke ground in the first two years.
+ind-pkpn-education-schools-electricity,2389,2026-10-27,src-kemendikdasmen-two-year-2026-10-27,"2,389 schools given electricity access; the release does not state a separate year."
+ind-pkpn-education-schools-internet,8152,2026-10-27,src-kemendikdasmen-two-year-2026-10-27,"8,152 schools given internet access; the release does not state a separate year."
+ind-pkpn-education-schools-renovated,30000,2026-10-20,src-setkab-two-year-report-2026-10-20,"30,000 schools renovated in the first two years."
+ind-pkpn-education-screens,288180,2026-10-20,src-setkab-two-year-report-2026-10-20,"288,180 interactive screens distributed in the first two years."
+ind-pkpn-education-sekolah-rakyat,265,2026-10-20,src-setkab-two-year-report-2026-10-20,265 Sekolah Rakyat opened by 20 October 2026.
+ind-pkpn-education-snt,17,2026-10-27,src-kemendikdasmen-two-year-2026-10-27,17 SNT operating in the 2026/2027 school year.
 ind-pkpn-energy-solar,5.3,2026-08-25,src-setneg-plts-100gw-2026-08-25,14 early projects totalling 5.3 GWp launched.
+ind-pkpn-energy-water-boreholes,3000,2026-10-20,src-setkab-two-year-report-2026-10-20,"3,000 new borehole water points reported in the first two years."
+ind-pkpn-food-fishing-villages,100,2026-10-20,src-setkab-two-year-report-2026-10-20,100 fishing villages developed in the first two years.
+ind-pkpn-health-new-hospitals,22,2026-10-20,src-setkab-two-year-report-2026-10-20,22 new hospitals reported in the first two years.
+ind-pkpn-housing-repaired,400000,2026-10-20,src-setkab-two-year-report-2026-10-20,"400,000 houses repaired in the first two years."
+ind-pkpn-infrastructure-bridges,3500,2026-10-20,src-setkab-two-year-report-2026-10-20,"3,500 bridges reported in the first two years."
+ind-pkpn-infrastructure-inpres-roads,2228,2026-10-20,src-setkab-two-year-report-2026-10-20,"2,228 km of Inpres roads reported in the first two years."
+ind-pkpn-infrastructure-irrigation,9000,2026-10-20,src-setkab-two-year-report-2026-10-20,"More than 9,000 km; recorded as a lower bound."
 ind-psn-100gw-programme,5.3,2026-08-25,src-setneg-plts-100gw-2026-08-25,14 early projects totalling 5.3 GWp; the phase 1 target is 17 GWp.

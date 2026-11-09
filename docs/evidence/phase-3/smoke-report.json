@@ -52,7 +52,7 @@
   },
   "protocols": {
     "http": {
-      "port": 64720,
+      "port": 60677,
       "ok": true
     },
     "file": {

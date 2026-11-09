@@ -55,6 +55,22 @@ protection allocation, 10 million local entrepreneurs and the 15-segment sea
 wall. Neither source states a full programme budget or a quantitative target for
 every PKPN; the atlas leaves those fields blank.
 
+## Two-year delivery-report sources
+
+| File | Source | SHA-256 |
+|---|---|---|
+| `setkab_two_year_report_2026-10-20.html` | Sekretariat Kabinet, 20 October 2026, two-year delivery report | `2c40dbf172a3a6c7f784d4467d68bd257a9143ad46ab5eaac7d9c80f482650e2` |
+| `kemendikdasmen_two_year_2026-10-27.html` | Kemendikdasmen, 27 October 2026, two-year education release | `1d2983b656f43ed77edcb1950e97f75884abffdac1ee04b7eaf9b39562890a9d` |
+
+The Setkab release reports 265 Sekolah Rakyat, 30,000 renovated schools,
+288,180 interactive screens, 400,000 repaired houses, 22 new hospitals, 100
+fishing villages, more than 9,000 km of irrigation, 3,500 bridges, 2,228 km of
+Inpres roads, 3,000 boreholes and 26 downstreaming groundbreakings. The
+Kemendikdasmen release adds 2,389 schools with electricity, 8,152 with
+internet, 17 SNT operating and 100 SNT schools planned for 2027. The
+Presidential Secretariat release of 29 October 2026 repeats the headline
+figures but returned HTTP 403 to the local client, so it is not archived.
+
 ## IKN Stage II sources
 
 | File | Source | SHA-256 |

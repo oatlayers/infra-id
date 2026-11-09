@@ -83,14 +83,14 @@ curated, not exhaustive**.
   rows. The 432-row freshness report is fresh as of 9 November 2026; the first
   record falls due on 11 May 2027.
 - **Indicators and phases:** the `indicators.csv`, `indicator_values.csv`
-  and `project_phases.csv` tables carry 14 sourced indicators and nine
-  sourced phases. The 100 GWp programme target (100 GWp, 5.3 GWp current), the
+  and `project_phases.csv` tables carry 35 sourced indicators, 18 dated values
+  and nine sourced phases. The 100 GWp programme target (100 GWp, 5.3 GWp current), the
   Phase 1 target (17 GWp) and Nusantara's 3,000 m runway are in the Programme
   and project drawers. The five dams and Nusantara airport have operational
   phases. Targets, budgets and indicators remain blank where the source is
   silent.
-- **Payload:** 1,217 KB initial (one locale plus core Explore data), 1,753 KB
-  of runtime data and 3,876 KB including downloads, within the plan's 1.5 MB
+- **Payload:** 1,219 KB initial (one locale plus core Explore data), 1,777 KB
+  of runtime data and 3,909 KB including downloads, within the plan's 1.5 MB
   initial and 5 MB total budgets.
 - **Status:** Phase 1, Phase 2 and Phase 3 of the v3 overhaul are complete as of
   8 November 2026. Track 2B (estates) is complete by count and corridor geometry

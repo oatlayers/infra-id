@@ -213,10 +213,13 @@ coordinate to a real site point if one is sourced. Do not keep
 ### 4.9 Indicators, values and phases
 
 Add an indicator to `data/curated/indicators.csv` only when a source states the
-name, unit and at least a baseline or target. Link it to a programme, a project,
-or both. Add an observation to `indicator_values.csv` with its own `as_of` date
-and source. Do not derive a target from the atlas's own project fields; a target
-must come from the source.
+name, unit and at least a baseline, a target or a dated observation. Link it to
+a programme, a project, or both. Add an observation to `indicator_values.csv`
+with its own `as_of` date and source. Do not derive a target from the atlas's
+own project fields; a target must come from the source. Record a range as the
+stated bound and name the bound in the notes; record "more than X" as X and mark
+it as a lower bound. A completion year that the source attaches to a different
+measure must not be copied onto the indicator.
 
 Add a phase to `data/curated/project_phases.csv` only when a source states the
 stage, status or dates. Do not split a package cost across projects unless the
