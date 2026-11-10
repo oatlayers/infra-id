@@ -3,6 +3,20 @@
 Public-facing changes to the atlas. Dates are the day the change landed in this
 repository. The Data view renders these entries from this file at build time.
 
+## 2026-11-10 — Move the plan to the root and remove the docs tree
+
+- Moved the remaining-work plan to `plan.md` at the repository root and rewrote
+  it to contain only open work: 54 strategic records, 110 sources, 255
+  indicators, the UX backlog, trust tasks, blockers, invariants and verification.
+- Removed the `docs/` tree (41 tracked files): plan, phases, design notes,
+  evidence screenshots, data model, sources and runbook. The content remains in
+  git history. README now points to `plan.md`, `scripts/README.md` and
+  `CHANGELOG.md`.
+- The browser smoke test and UX rehearsal now write screenshots and reports to
+  `%TEMP%/opencode/atlas-evidence/`, so the docs tree is not recreated.
+- Build, `--check`, smoke test, five-profile rehearsal, contrast check and link
+  check pass. Nothing was pushed, deployed or published.
+
 ## 2026-11-10 — Close the English–Indonesian bilingual gap
 
 - Translated the coverage `reference_set` for all 17 layers, the 24 download

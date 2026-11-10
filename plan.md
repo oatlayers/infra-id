@@ -2,84 +2,27 @@
 
 **Status:** V4 in progress. Local-only build; nothing is published.
 **Baseline data:** 10 November 2026 build.
-**Scope of this file:** remaining work only. Completed work is recorded in
-[`CHANGELOG.md`](../../CHANGELOG.md), the phase records in
-[`docs/phases/`](../phases/), and git history.
+**Completed work:** recorded in [`CHANGELOG.md`](CHANGELOG.md) and git history.
 
-## 1. Definition of done
-
-V4 is complete when:
-
-1. The reference set reaches **400 records**: 226 active PSN project or estate
-   records plus 174 strategic and private records.
-2. The atlas has **300 company profiles**, **250 archived sources** and
-   **300 sourced indicators**.
-3. IKN coverage reaches **28 of 28** and every other coverage target in
-   `data/curated/coverage_targets.csv` is met or explicitly marked blocked.
-4. Every project has a status source and an atomic claim for each populated
-   numeric fact. Register-only rows remain visibly labelled.
-5. English and Indonesian editions have full UI parity, reviewed entity names,
-   and no untranslated chrome.
-6. The UX backlog in section 5 is complete.
-7. `build_all.py`, `build_all.py --check`, the browser smoke test, the
-   five-profile rehearsal, the contrast check and the Markdown link check pass.
-8. The build remains offline: no remote, push, Pages deployment or published URL.
-
-## 2. Current baseline
-
-| Measure | Current |
-|---|---:|
-| Project rows | 294 |
-| PSN project/estate records represented | 226 / 226 |
-| PSN programmes represented | 24 / 24 |
-| PKPN programmes | 8 / 8 |
-| Estates | 204 |
-| Companies and agencies | 314 |
-| Sources | 140 |
-| Indicators / dated values / phases | 45 / 28 / 9 |
-| IKN package rows | 28 / 28 |
-| Project claims / estate claims | 1,169 / 115 |
-| Programme claims / PKPN claims | 48 / 27 |
-| Events | 77 |
-| Data dictionary | 286 fields across 28 tables |
-| Initial / data / total payload | 1,422 / 2,175 / 4,661 KB |
-
-### Reference-set accounting
-
-The 226 active PSN records are fully represented: 182 matches sit on 174
-project rows (86 reviewed rows and 88 register-only rows) and 44 records are
-estate rows. Fifteen PSN records are aggregate or partial matches to an existing
-row, so the number of matches is higher than the number of rows.
-
-The 400-record target is therefore **226 PSN records + 174 strategic/private
-records**, not 400 project-table rows. The atlas currently has 120 strategic
-records, so **54 strategic records remain**. The project table will grow to
-about 348 rows when those records are added; 44 PSN records live in the estate
-layer and eight PSN records share an existing project row, so 400 reference
-records correspond to about 392 rows.
-
-## 3. Coverage gaps
+## 1. Remaining coverage
 
 | Layer | Current | Target | Remaining |
 |---|---:|---:|---:|
-| PSN project/estate records | 226 | 226 | 0 |
-| PSN programmes | 24 | 24 | 0 |
-| Strategic/private records | 120 | 174 | **54** |
-| Companies and agencies | 314 | 300 | 0 |
+| Strategic and private records | 120 | 174 | **54** |
 | Sources | 140 | 250 | **110** |
 | Indicators | 45 | 300 | **255** |
-| IKN package rows | 28 | 28 | 0 |
-| Factories | 34 | 34 | 0 |
-| Industrial estates | 204 | 197 | 0 |
-| Roads | 95 | 54 | 0 |
-| Railways, airports, seaports, transport PSN | 13 / 8 / 15 / 35 | met | 0 |
 
-The Data view renders these numbers from `site/data/stats.js`. Update
-`coverage_targets.csv` only when a target is genuinely met.
+Everything else is met: 226/226 PSN project and estate records, 24/24 PSN
+programmes, 28/28 IKN packages, 314 companies against a 300 target, 204 estates,
+34 factories, and the road, rail, airport, seaport and transport targets.
 
-## 4. Data workstreams
+The 400-record reference set is **226 PSN records + 174 strategic/private
+records**. The atlas has 120 strategic records, so 54 remain. The project table
+will grow to about 348 rows when they are added; 44 PSN records live in the
+estate layer and eight share an existing project row, so 400 reference records
+correspond to about 392 rows.
 
-### 4.1 Strategic and private records — 54 records
+## 2. Strategic and private records — 54
 
 Add sourced records outside the PSN list. Search `projects.csv`,
 `psn_register.csv` and `estates.csv` first; upgrade an existing row instead of
@@ -121,23 +64,7 @@ Acceptance for each record:
 - no duplicate of a PSN, estate or existing project record;
 - updated coverage count and changelog entry.
 
-### 4.2 Companies and agencies — target met
-
-The 300-profile target is met at 314 organisations. 300 have a sourced role:
-271 project role links and 186 estate developer links. The 171 new profiles come
-from developers named in the Kemenperin/BAJRA estate directory and the KEK
-profiles already in the estate layer, so every new profile carries a sourced
-developer role rather than a bare reference record.
-
-Remaining review, not a coverage gap:
-
-- 14 reference-only profiles (agencies and holdings named in sources without a
-  project or estate role) gain a sourced role where possible.
-- 100 projects still have no organisation role; review the source before adding
-  one.
-- Add websites and parent links where a source states them.
-
-### 4.3 Sources — 110 documents
+## 3. Sources — 110 documents
 
 Priority order:
 
@@ -153,7 +80,7 @@ Every new source needs publisher, title, URL, publication date, retrieval date,
 source type, language, snapshot hash and archive path. If a page cannot be
 archived, record why in `notes`.
 
-### 4.4 Indicators — 265 indicators
+## 4. Indicators — 255
 
 Add an indicator only when the source states the name, unit and at least one of:
 a baseline, a target or a dated observation. Never infer a target from the
@@ -175,20 +102,6 @@ Rules:
 - Link every indicator to a programme, a project, or both.
 - Add dated observations to `indicator_values.csv` with their own source.
 
-### 4.5 IKN packages and private investments 28 of 28 — complete
-
-The 28 rows cover every IKN package and private investment named in the
-archived OIKN signing reports. The 25th row is PT Berdikari (Persero)'s
-integrated chicken downstreaming facility in Wilayah Perencanaan 3. The same
-14 October 2026 signing named three further private investments — PT Laziz
-Nusantara Grup (restaurant, gelato and multipurpose building), PT FYP Karya
-Perdana (Teras Padu sports and commercial hub) and PT Java Teak Indo (Jepara
-furniture showroom) — so the census target rose from 25 to 28. All are private
-investments, not OIKN construction packages, and each row is labelled
-accordingly. No package total is split across rows. The IKN Authority site
-still returns HTTP 403 to some clients, so the archived secondary report
-remains the available source.
-
 ## 5. UX workstream
 
 | Pri | Item | Acceptance |
@@ -205,27 +118,27 @@ remains the available source.
 
 ## 6. Trust and evidence
 
-- Resolve or document the eight open conflicts. Do not pick a winner silently.
-- Complete the missing official snapshots listed in section 4.3.
-- Refresh rows through the monthly procedure in
-  [`docs/operations/refresh-runbook.md`](../operations/refresh-runbook.md).
+- Resolve or document the 10 open conflicts. Do not pick a winner silently.
+- Complete the missing official snapshots listed in section 3.
 - Add the seven named 2024 estate additions and upgrade the 18 register-only PSN
   industrial areas with a sourced area, developer, status and boundary where
   possible.
 - Geocode the remaining large estates and review the 12 PSN road rows with
   `psn=unknown`.
+- 14 company profiles remain reference-only and 100 projects have no
+  organisation role; add a role only where a source names one.
 
 ## 7. Priority order
 
-1. **P0 — measurable coverage:** strategic records, sources and indicators.
-   IKN coverage is complete at 28/28 and the 300-company target is met at 314.
+1. **P0 — measurable coverage:** the 54 strategic records, 110 sources and 255
+   indicators.
 2. **P1 — UX rebuild:** bottom navigation, detail pages, map v3, editorial
    summaries.
 3. **P2 — Data and search polish:** column chooser, fuzzy ranking, type scale,
    table semantics, print.
 4. **P3 — optional geometry and estate verification.**
 
-## 8. Blockers and source gaps
+## 8. Blockers
 
 | Blocker | Effect | Workaround |
 |---|---|---|
@@ -263,16 +176,6 @@ python scripts/dev/ux_rehearsal.py
 python scripts/dev/check_contrast.py
 ```
 
-Also run the Markdown link check described in the repository README. A change is
-complete only when the build is deterministic, the smoke tests pass in both
-locales, and the coverage table, dictionary and changelog reflect the change.
-
-## 11. Out of scope
-
-- A live, real-time project tracker.
-- An exhaustive list of every Indonesian infrastructure asset.
-- Full financial statements for companies.
-- Ten-thousand-row facility lists; social infrastructure stays at programme
-  level plus representative sites.
-- Publishing or deployment.
-- Additional interface languages beyond English and Indonesian.
+A change is complete only when the build is deterministic, the smoke tests pass
+in both locales, and the coverage table, dictionary and changelog reflect the
+change.

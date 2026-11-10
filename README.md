@@ -32,7 +32,7 @@ project-table rows, because 44 PSN records live in the estate layer.
 
 Nothing is published. The site in this repository is the current local V4 build;
 there is no remote, deployment or public URL. Remaining work is in
-[`docs/plan/plan.md`](docs/plan/plan.md).
+[`plan.md`](plan.md).
 
 ## What this is, and what it is not
 
@@ -92,6 +92,7 @@ site/index.html#/data
 ```text
 infra-id/
 ├─ README.md                     this file
+├─ plan.md                       remaining V4 work
 ├─ CHANGELOG.md                  public change log, parsed into the Data view
 ├─ requirements.txt              Python dependencies for data scripts
 ├─ data/
@@ -100,14 +101,6 @@ infra-id/
 │  ├─ exports/projects.csv       generated flat export
 │  ├─ i18n/                      English and Indonesian UI catalogues
 │  └─ raw/<YYYY-MM-DD>/          source snapshots, never edited
-├─ docs/
-│  ├─ plan/plan.md               remaining V4 work
-│  ├─ data-model.md              tables, columns, statuses and claim rules
-│  ├─ sources.md                 source register and provenance policy
-│  ├─ design/                    tokens, style tile and UX audit
-│  ├─ operations/                monthly refresh runbook
-│  ├─ phases/                    completed phase records
-│  └─ evidence/                  screenshots and automated test reports
 ├─ scripts/
 │  ├─ data_model.py              shared paths, schemas, enums and CSV helpers
 │  ├─ build_all.py               local CI and deterministic --check
@@ -156,9 +149,8 @@ See [`scripts/README.md`](scripts/README.md) for every script and importer.
 ## Data model
 
 `data/curated/` is normalised: one entity or relationship per row, with foreign
-keys and one atomic fact per source claim. The full table list, project columns,
-status definitions and claim rules are in
-[`docs/data-model.md`](docs/data-model.md).
+keys and one atomic fact per source claim. The table list below covers the
+project and relationship tables; `data/curated/` is the authoritative schema.
 
 Core tables:
 
@@ -296,20 +288,13 @@ The Data view renders coverage from `data/curated/coverage_targets.csv` and
 
 | Document | Use |
 |---|---|
-| [`docs/plan/plan.md`](docs/plan/plan.md) | Remaining V4 work and acceptance criteria |
-| [`docs/data-model.md`](docs/data-model.md) | Tables, columns, statuses and claim rules |
-| [`docs/sources.md`](docs/sources.md) | Source register, snapshots and provenance policy |
-| [`docs/design/tokens-v4.md`](docs/design/tokens-v4.md) | Tokens, type scale and contrast baseline |
-| [`docs/design/ux-audit-v4.md`](docs/design/ux-audit-v4.md) | UX findings and rehearsal |
-| [`docs/operations/refresh-runbook.md`](docs/operations/refresh-runbook.md) | Monthly fetch, review, rebuild and verify procedure |
-| [`docs/phases/`](docs/phases/) | Completed phase records and methodology |
-| [`docs/README.md`](docs/README.md) | Map of the documentation directory |
+| [`plan.md`](plan.md) | Remaining V4 work and acceptance criteria |
 | [`scripts/README.md`](scripts/README.md) | Every build step, importer and development check |
 | [`CHANGELOG.md`](CHANGELOG.md) | Public change log, rendered in the Data view |
 
 ## Agent quick reference
 
-- Read [`docs/plan/plan.md`](docs/plan/plan.md) before starting a new increment.
+- Read [`plan.md`](plan.md) before starting a new increment.
 - Edit `data/curated/` and `site/templates/`. Do not hand-edit generated files.
 - Add a source, an atomic claim and a verification date for every new fact.
 - Keep English and Indonesian in step; update both catalogues when adding UI text.

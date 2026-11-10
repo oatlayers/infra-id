@@ -18,7 +18,7 @@ Tasks:
   3. Filter to East Java and open the first project.
   4. Switch language and keep the current Data view.
 
-Writes docs/evidence/phase-3/ux-rehearsal.json.
+Writes ``%TEMP%/opencode/atlas-evidence/ux-rehearsal.json``.
 
 Run: python scripts/dev/ux_rehearsal.py
 """
@@ -26,6 +26,7 @@ Run: python scripts/dev/ux_rehearsal.py
 from __future__ import annotations
 
 import json
+import tempfile
 import time
 from pathlib import Path
 
@@ -33,7 +34,7 @@ from playwright.sync_api import Page, sync_playwright
 
 ROOT = Path(__file__).resolve().parents[2]
 SITE = ROOT / "site"
-EVIDENCE = ROOT / "docs" / "evidence" / "phase-3"
+EVIDENCE = Path(tempfile.gettempdir()) / "opencode" / "atlas-evidence"
 EN = (SITE / "en" / "index.html").as_uri()
 ID = (SITE / "id" / "index.html").as_uri()
 

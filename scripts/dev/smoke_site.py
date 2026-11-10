@@ -8,7 +8,7 @@ Checks the four views, a project drawer, keyboard basics, filtered CSV/GeoJSON
 downloads, a static CSV download, ``file://`` and a local HTTP server, and
 asserts that the page makes no external request and logs no console error.
 
-Writes screenshots and a JSON report to ``docs/evidence/phase-3/``.
+Writes screenshots and a JSON report to ``%TEMP%/opencode/atlas-evidence``.
 
 Run: python scripts/dev/smoke_site.py
 """
@@ -19,6 +19,7 @@ import csv
 import io
 import json
 import re
+import tempfile
 import threading
 from datetime import date
 from functools import partial
@@ -29,7 +30,7 @@ from playwright.sync_api import Page, sync_playwright
 
 ROOT = Path(__file__).resolve().parents[2]
 SITE = ROOT / "site"
-EVIDENCE = ROOT / "docs" / "evidence" / "phase-3"
+EVIDENCE = Path(tempfile.gettempdir()) / "opencode" / "atlas-evidence"
 FILE_URL = (SITE / "en" / "index.html").as_uri()
 ID_FILE_URL = (SITE / "id" / "index.html").as_uri()
 CHOOSER_URL = (SITE / "index.html").as_uri()
@@ -89,7 +90,7 @@ def screenshot(page: Page, name: str) -> None:
     target = EVIDENCE / name
     page.screenshot(path=str(target), animations="disabled")
     report["screenshots"].append(name)  # type: ignore[union-attr]
-    print(f"SHOT docs/evidence/phase-3/{name}")
+    print(f"SHOT {target}")
 
 
 def tab(page: Page, view: str) -> None:
