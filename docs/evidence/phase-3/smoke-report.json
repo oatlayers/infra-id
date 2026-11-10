@@ -2,7 +2,7 @@
   "checked_at": "2026-11-10",
   "views": {
     "explore": {
-      "rows": 255
+      "rows": 294
     },
     "corridors": {
       "cards": 5
@@ -11,13 +11,13 @@
       "rows": 204
     },
     "companies": {
-      "rows": 116
+      "rows": 143
     },
     "programmes": {
       "cards": 24
     },
     "data": {
-      "conflicts": 20,
+      "conflicts": 23,
       "dictionary_tables": 28,
       "download_controls": 26,
       "charts": 2,
@@ -30,11 +30,11 @@
   "downloads": {
     "projects_csv": {
       "file": "infra-id-projects-filtered.csv",
-      "rows": 255
+      "rows": 294
     },
     "projects_geojson": {
       "file": "infra-id-projects-filtered.geojson",
-      "features": 255
+      "features": 294
     },
     "estates_csv": {
       "file": "infra-id-estates-filtered.csv",
@@ -42,7 +42,7 @@
     },
     "claims_csv": {
       "file": "claims.csv",
-      "rows": 936
+      "rows": 1169
     }
   },
   "keyboard": {
@@ -53,7 +53,7 @@
   },
   "protocols": {
     "http": {
-      "port": 59586,
+      "port": 51853,
       "ok": true
     },
     "file": {

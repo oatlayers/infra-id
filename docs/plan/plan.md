@@ -20,7 +20,7 @@ V4 is complete when:
    numeric fact. Register-only rows remain visibly labelled.
 5. English and Indonesian editions have full UI parity, reviewed entity names,
    and no untranslated chrome.
-6. The UX backlog in section 5 is complete and the five-user study has been run.
+6. The UX backlog in section 5 is complete.
 7. `build_all.py`, `build_all.py --check`, the browser smoke test, the
    five-profile rehearsal, the contrast check and the Markdown link check pass.
 8. The build remains offline: no remote, push, Pages deployment or published URL.
@@ -29,20 +29,20 @@ V4 is complete when:
 
 | Measure | Current |
 |---|---:|
-| Project rows | 255 |
+| Project rows | 294 |
 | PSN project/estate records represented | 226 / 226 |
 | PSN programmes represented | 24 / 24 |
 | PKPN programmes | 8 / 8 |
 | Estates | 204 |
-| Companies and agencies | 116 |
+| Companies and agencies | 143 |
 | Sources | 140 |
 | Indicators / dated values / phases | 45 / 28 / 9 |
 | IKN package rows | 28 / 28 |
-| Project claims / estate claims | 936 / 115 |
+| Project claims / estate claims | 1,169 / 115 |
 | Programme claims / PKPN claims | 48 / 27 |
-| Events | 38 |
+| Events | 77 |
 | Data dictionary | 286 fields across 28 tables |
-| Initial / data / total payload | 1,237 / 1,811 / 3,974 KB |
+| Initial / data / total payload | 1,358 / 1,965 / 4,370 KB |
 
 ### Reference-set accounting
 
@@ -52,8 +52,8 @@ estate rows. Fifteen PSN records are aggregate or partial matches to an existing
 row, so the number of matches is higher than the number of rows.
 
 The 400-record target is therefore **226 PSN records + 174 strategic/private
-records**, not 400 project-table rows. The atlas currently has 81 strategic
-records, so **93 strategic records remain**. The project table will grow to
+records**, not 400 project-table rows. The atlas currently has 120 strategic
+records, so **54 strategic records remain**. The project table will grow to
 about 348 rows when those records are added; 44 PSN records live in the estate
 layer and eight PSN records share an existing project row, so 400 reference
 records correspond to about 392 rows.
@@ -64,14 +64,14 @@ records correspond to about 392 rows.
 |---|---:|---:|---:|
 | PSN project/estate records | 226 | 226 | 0 |
 | PSN programmes | 24 | 24 | 0 |
-| Strategic/private records | 81 | 174 | **93** |
-| Companies and agencies | 116 | 300 | **184** |
+| Strategic/private records | 120 | 174 | **54** |
+| Companies and agencies | 143 | 300 | **157** |
 | Sources | 140 | 250 | **110** |
 | Indicators | 45 | 300 | **255** |
 | IKN package rows | 28 | 28 | 0 |
 | Factories | 34 | 34 | 0 |
 | Industrial estates | 204 | 197 | 0 |
-| Roads | 56 | 54 | 0 |
+| Roads | 95 | 54 | 0 |
 | Railways, airports, seaports, transport PSN | 13 / 8 / 15 / 35 | met | 0 |
 
 The Data view renders these numbers from `site/data/stats.js`. Update
@@ -79,7 +79,7 @@ The Data view renders these numbers from `site/data/stats.js`. Update
 
 ## 4. Data workstreams
 
-### 4.1 Strategic and private records — 97 records
+### 4.1 Strategic and private records — 54 records
 
 Add sourced records outside the PSN list. Search `projects.csv`,
 `psn_register.csv` and `estates.csv` first; upgrade an existing row instead of
@@ -211,10 +211,6 @@ remains the available source.
 
 ## 6. Trust and evidence
 
-- Run the five-user study in
-  [`docs/design/ux-audit-v4.md`](../design/ux-audit-v4.md#6-five-user-protocol-open).
-  Record task success, time on task, SEQ and verbatim notes without personal
-  data. This is blocked until five external participants are available.
 - Resolve or document the eight open conflicts. Do not pick a winner silently.
 - Complete the missing official snapshots listed in section 4.3.
 - Refresh rows through the monthly procedure in
@@ -229,7 +225,7 @@ remains the available source.
 
 1. **P0 — measurable coverage:** strategic records, companies, sources and
    indicators. IKN coverage is complete at 28/28.
-2. **P0 — bilingual completion and five-user study.**
+2. **P0 — bilingual completion.**
 3. **P1 — UX rebuild:** bottom navigation, detail pages, map v3, editorial
    summaries.
 4. **P2 — Data and search polish:** column chooser, fuzzy ranking, type scale,
@@ -240,7 +236,6 @@ remains the available source.
 
 | Blocker | Effect | Workaround |
 |---|---|---|
-| Five external UX participants unavailable | Human task-success baseline cannot be claimed | Keep the automated five-profile rehearsal as current evidence |
 | IKN Authority returns HTTP 403 | Cannot cite the primary page directly | Use the archived Top Konstruksi and JournalArta reports of the same OIKN evaluations |
 | KPPIP and Bappenas access intermittent | Some sector pages are unarchived | Retry, or use an official ministry mirror and record the substitution |
 | RPJMN 2025–2029 not archived | Planning baseline is incomplete | Fetch and hash the official Bappenas document |

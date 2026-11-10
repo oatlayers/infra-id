@@ -12,21 +12,21 @@ HTTP server, with no tile server, CDN or remote request.
 
 | Measure | Current |
 |---|---:|
-| Project rows | 255 |
+| Project rows | 294 |
 | Active PSN project/estate records represented | 226 / 226 |
 | Active PSN programmes represented | 24 / 24 |
 | 2027 PKPN programmes | 8 / 8 |
 | Industrial estates and SEZs | 204 |
-| Companies and agencies | 116 |
+| Companies and agencies | 143 |
 | Sources | 140 |
 | Indicators / dated values / phases | 45 / 28 / 9 |
 | IKN package rows | 28 / 28 |
-| Project claims / estate claims | 936 / 115 |
+| Project claims / estate claims | 1,169 / 115 |
 | Programme claims / PKPN claims | 48 / 27 |
-| Initial / data / total payload | 1,237 / 1,811 / 3,974 KB |
+| Initial / data / total payload | 1,358 / 1,965 / 4,370 KB |
 
-**Reference set:** 307 of 400 records are represented — all 226 active PSN
-records plus 81 strategic and private records. The remaining **93 records are
+**Reference set:** 346 of 400 records are represented — all 226 active PSN
+records plus 120 strategic and private records. The remaining **54 records are
 strategic/private**, not PSN. The 400 target counts reference records, not
 project-table rows, because 44 PSN records live in the estate layer.
 
@@ -42,7 +42,7 @@ there is no remote, deployment or public URL. Remaining work is in
 - **Programmes:** the 24 PSN programmes and the eight 2027 PKPN priorities.
 - **Corridors:** five Trans corridor summaries with 44 segments.
 - **Estates:** 204 industrial estates and SEZs.
-- **Companies:** 116 organisations and their sourced project roles.
+- **Companies:** 143 organisations and their sourced project roles.
 - **Data:** coverage, charts, methods, sources, downloads and known gaps.
 
 **It is not** a live project tracker, an official government dataset, or a
@@ -245,22 +245,22 @@ text inside the Indonesian edition carries `lang="en"` and an `EN` tag.
 
 | Layer | Rows | Status | Notes |
 |---|---:|---|---|
-| Toll roads | 56 | 12 operating, 30 under construction, 13 planned, 1 recently completed | 50 PSN road entries represented across 36 PSN rows, plus 20 non-PSN road rows |
+| Toll roads | 95 | 48 operating, 33 under construction, 13 planned, 1 recently completed | all 77 BPJT register sections represented; 50 PSN road entries across 36 PSN rows plus 59 non-PSN road rows |
 | Railways | 13 | 6 operating, 5 under construction, 2 planned | 13/13 PSN railways |
 | Airports | 8 | 8 operating | 7/7 PSN airports plus Nusantara International |
 | Seaports | 15 | 11 operating, 1 under construction, 1 recently completed, 2 planned | 15/15 PSN seaports |
 | Transport PSN total | 35 | 24 operating, 1 recently completed, 6 under construction, 4 planned | Status as of 19 February 2026 |
-| All projects | 255 | 62 operating, 5 recently completed, 71 under construction, 28 planned, 1 stalled, 88 unknown | 88 register-only PSN rows |
+| All projects | 294 | 98 operating, 5 recently completed, 74 under construction, 28 planned, 1 stalled, 88 unknown | 88 register-only PSN rows |
 | PSN projects (active) | 226 | 226/226 represented | 182 matches on 174 project rows plus 44 estate rows; 0 outstanding |
 | PSN programmes (active) | 24 | 24/24 | one row per official number; 48 claims |
 | 2027 PKPN | 8 | 8/8 | bilingual summaries, sourced targets and budgets |
 | Factories | 34 | 19 operating, 3 recently completed, 11 under construction, 1 stalled | 27 capacity figures, 18 investment figures |
 | Industrial estates / SEZs | 204 | 179 industrial-only, 7 shared, 18 SEZ-only | table view only; 179 target met |
-| Companies and agencies | 116 | 94 with a project role, 22 reference-only | V4 target 300 |
+| Companies and agencies | 143 | 121 with a project role, 22 reference-only | V4 target 300 |
 | Sources | 140 | 58 official, 55 secondary, 27 company | V4 target 250 |
 | Indicators | 45 | 28 dated values | V4 target 300 |
-| Dated events | 38 | 2018–2026 | exact dates only |
-| Conflicts | 20 | 11 resolved, 9 open | both values and both sources |
+| Dated events | 77 | 2018–2026 | exact dates only |
+| Conflicts | 23 | 13 resolved, 10 open | both values and both sources |
 | Data dictionary | 286 fields | 28 tables | generated from the schema |
 
 The Data view renders coverage from `data/curated/coverage_targets.csv` and
@@ -300,7 +300,7 @@ The Data view renders coverage from `data/curated/coverage_targets.csv` and
 | [`docs/data-model.md`](docs/data-model.md) | Tables, columns, statuses and claim rules |
 | [`docs/sources.md`](docs/sources.md) | Source register, snapshots and provenance policy |
 | [`docs/design/tokens-v4.md`](docs/design/tokens-v4.md) | Tokens, type scale and contrast baseline |
-| [`docs/design/ux-audit-v4.md`](docs/design/ux-audit-v4.md) | UX findings, rehearsal and five-user protocol |
+| [`docs/design/ux-audit-v4.md`](docs/design/ux-audit-v4.md) | UX findings and rehearsal |
 | [`docs/operations/refresh-runbook.md`](docs/operations/refresh-runbook.md) | Monthly fetch, review, rebuild and verify procedure |
 | [`docs/phases/`](docs/phases/) | Completed phase records and methodology |
 | [`docs/README.md`](docs/README.md) | Map of the documentation directory |

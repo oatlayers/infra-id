@@ -42,7 +42,7 @@ project_organizations.csv,Project organisations,Role links between projects and 
 project_organizations.csv,Project organisations,Role links between projects and organisations.,start_year,year,no,First year of the role or investment.,,
 project_organizations.csv,Project organisations,Role links between projects and organisations.,end_year,year,no,Last year of the role or investment.,,
 project_organizations.csv,Project organisations,Role links between projects and organisations.,source_id,id,yes,Foreign key to sources.csv.,,src-bpjt-toll-road-list-2026-11-06
-project_organizations.csv,Project organisations,Role links between projects and organisations.,notes,text,yes,"Conflicts, caveats, section openings and coordinate overrides.",,Signed a cooperation agreement with OIKN for the WP3 integrated chicken facility.
+project_organizations.csv,Project organisations,Role links between projects and organisations.,notes,text,yes,"Conflicts, caveats, section openings and coordinate overrides.",,The BPJT list names PT Hutama Marga Waskita; Indonesian Wikipedia named PT Hutama Karya (conflict-kuala-tanjung-operator
 sources.csv,Sources,"Documents used as evidence, with retrieval dates and local snapshots.",id,id,yes,Stable lowercase-hyphenated identifier used in deep links and joins.,,src-aeer-vdni-2023
 sources.csv,Sources,"Documents used as evidence, with retrieval dates and local snapshots.",publisher,text,yes,Publisher or institution.,,AEER
 sources.csv,Sources,"Documents used as evidence, with retrieval dates and local snapshots.",title,text,yes,Document title.,,Multinational Corporations and Nickel Downstreaming in Indonesia
@@ -61,7 +61,7 @@ project_sources.csv,Project claims,One atomic fact per project-source link.,sour
 project_sources.csv,Project claims,One atomic fact per project-source link.,claim,enum,yes,One atomic fact type; commas are not allowed.,,status
 project_sources.csv,Project claims,One atomic fact per project-source link.,claim_value,text,no,"The value stated by the source, when transcribed.",,operating
 project_sources.csv,Project claims,One atomic fact per project-source link.,claim_date,date,no,Date the source states the fact.,,2026-02-19
-project_sources.csv,Project claims,One atomic fact per project-source link.,notes,text,yes,"Conflicts, caveats, section openings and coordinate overrides.",,Kemenhub deck p.7.
+project_sources.csv,Project claims,One atomic fact per project-source link.,notes,text,yes,"Conflicts, caveats, section openings and coordinate overrides.",,Indonesian Wikipedia names PT Hutama Karya; the BPJT list names PT Hutama Marga Waskita. See conflict-kuala-tanjung-oper
 project_external_ids.csv,External IDs,Project keys in BPJT and other external systems.,project_id,id,yes,Foreign key to projects.csv.,,tol-sigli-banda-aceh
 project_external_ids.csv,External IDs,Project keys in BPJT and other external systems.,system,text,yes,"External system name, such as bpjt-ruas.",,bpjt-ruas
 project_external_ids.csv,External IDs,Project keys in BPJT and other external systems.,external_id,text,yes,Identifier in the external system.,,Sigli - Banda Aceh
@@ -173,7 +173,7 @@ coverage_targets.csv,Coverage targets,The reference set and target count for eve
 coverage_targets.csv,Coverage targets,The reference set and target count for every data layer.,target_count,integer,yes,Target number of rows for the layer.,,54
 coverage_targets.csv,Coverage targets,The reference set and target count for every data layer.,reference_set,text,yes,Definition of the target reference set.,,"50 PSN road entries plus four additional major road rows; excludes the Bali, Malacca and Sunda strait bridges"
 coverage_targets.csv,Coverage targets,The reference set and target count for every data layer.,source_id,id,yes,Foreign key to sources.csv.,,src-bpjt-toll-road-list-2026-11-06
-coverage_targets.csv,Coverage targets,The reference set and target count for every data layer.,notes,text,yes,"Conflicts, caveats, section openings and coordinate overrides.",,54 road rows at 9 November 2026: all 50 PSN road entries plus four additional toll-road rows outside the PSN list.
+coverage_targets.csv,Coverage targets,The reference set and target count for every data layer.,notes,text,yes,"Conflicts, caveats, section openings and coordinate overrides.",,"95 road rows at 10 November 2026: all 50 PSN road entries, the four additional rows outside the PSN list and all 77 sect"
 conflicts.csv,Conflict register,"Known disagreements between sources, with both values and resolutions.",id,id,yes,Stable lowercase-hyphenated identifier used in deep links and joins.,,conflict-trans-sumatra-operational-km
 conflicts.csv,Conflict register,"Known disagreements between sources, with both values and resolutions.",scope,enum,yes,"project, corridor, estate, dataset or method.",project; corridor; estate; dataset; method,corridor
 conflicts.csv,Conflict register,"Known disagreements between sources, with both values and resolutions.",subject,text,yes,Short human-readable label for the conflicted subject.,,Trans Sumatra operational km

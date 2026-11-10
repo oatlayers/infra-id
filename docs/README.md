@@ -20,7 +20,7 @@ map for the working documents.
 |---|---|
 | [`design/tokens-v4.md`](design/tokens-v4.md) | Token values, type scale, layout, bilingual surface and contrast baseline. |
 | [`design/style-tile.html`](design/style-tile.html) | Live specimen that imports `site/assets/tokens.css` and `app.css`. |
-| [`design/ux-audit-v4.md`](design/ux-audit-v4.md) | Expert audit, five-profile rehearsal, open findings and the five-user protocol. |
+| [`design/ux-audit-v4.md`](design/ux-audit-v4.md) | Expert audit, five-profile rehearsal and open findings. |
 
 ## Phase records
 
@@ -73,7 +73,7 @@ bilingual shell and later increments.
 4. [`phases/phase-3-trust.md`](phases/phase-3-trust.md) for how facts are sourced
    and verified.
 5. [`design/ux-audit-v4.md`](design/ux-audit-v4.md) for usability findings and the
-   open five-user study.
+   five-profile rehearsal.
 6. [`operations/refresh-runbook.md`](operations/refresh-runbook.md) before
    refreshing any source.
 

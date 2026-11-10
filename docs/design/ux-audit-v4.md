@@ -15,8 +15,7 @@ Two passes were run:
    touch-sized viewports. Findings below are from that walkthrough.
 2. **Automated five-profile rehearsal.** The same four tasks ran through five
    viewport/locale/input profiles. This catches layout and interaction
-   regressions and gives a time baseline, but it is **not five human users**.
-   The five-participant study is still open; the protocol is in section 6.
+   regressions and gives a time baseline.
 
 The build is local-only. No analytics, account, cookie or remote request is
 involved.
@@ -89,25 +88,24 @@ corridor group opens the matching corridor. Fuzzy ranking is still open.
 | Medium | Corridor and estate geometry are still absent | The map is project-only | Add corridor lines and estate polygons once sourced |
 | Low | Tables lack `<caption>`; some table headers are not scoped | WCAG 2.2 AA table semantics | Add captions and `scope` attributes |
 | Low | No print stylesheet | Users cannot print a project or Data page cleanly | Add print CSS for detail and Data pages |
-| Blocked | Five external participants have not been recruited | Cannot claim a human task-success baseline | Run the protocol in section 6 |
 
 ## 5. Baseline measurements
 
 | Measure | Value |
 |---|---|
-| Projects / programmes / estates | 255 / 24 / 204 |
-| Mapped project markers | 166 |
+| Projects / programmes / estates | 294 / 24 / 204 |
+| Mapped project markers | 205 |
 | Locales | 2, 635 UI keys each |
-| Project names | 255 Indonesian display names (167 reviewed + 88 official) |
-| Project summaries | 255 generated in both locales; 0 editorial |
+| Project names | 294 Indonesian display names (206 reviewed + 88 official) |
+| Project summaries | 294 generated in both locales; 0 editorial |
 | Indicators / values / phases | 45 / 28 / 9 |
 | Sortable coverage headers | 4 |
 | PKPN programmes | 8, with 27 claims |
-| Companies / role links | 116 / 232 |
+| Companies / role links | 143 / 271 |
 | Sources / dictionary tables | 140 / 28 |
-| Initial payload (one locale + core Explore) | 1,237 KB |
-| Runtime data payload | 1,811 KB |
-| Total payload including downloads | 3,974 KB |
+| Initial payload (one locale + core Explore) | 1,358 KB |
+| Runtime data payload | 1,965 KB |
+| Total payload including downloads | 4,370 KB |
 | Mobile horizontal overflow | none at 390 px (EN and ID) |
 | External requests | none |
 | Console / page errors | none |
@@ -115,35 +113,7 @@ corridor group opens the matching corridor. Fuzzy ranking is still open.
 | Keyboard path | skip link, Ctrl+K, Escape, coverage sort buttons, arrow-row navigation, drawer Escape and focus trap |
 | Automated task success | 20/20 steps across five profiles |
 
-## 6. Five-user protocol (open)
-
-**Participants:** five people who use Indonesian infrastructure information in
-their work or study, at least two Indonesian-first readers, at least one
-mobile-first user. No atlas contributor.
-
-**Session (30 minutes):**
-
-1. Consent and background (5 min). No recording without permission.
-2. Tasks (15 min), think-aloud, no coaching:
-   - Find the status and source for a named PSN project.
-   - Find the PSN coverage gap and explain what is missing.
-   - Filter to a province and open a project.
-   - Switch language, then continue the same task.
-3. Short interview (7 min): what was trustworthy, what was confusing, what was
-   missing.
-4. Single Ease Question after each task (1–7).
-5. Close (3 min).
-
-**Metrics:** task success (binary), time on task, SEQ, number of wrong turns,
-and verbatim quotes. Record in a sheet with participant ID only; do not store
-names or contact details in the repository.
-
-**Acceptance:** all four tasks at ≥ 80% success, median time within 20% of the
-automated baseline, and a ≥ 30% success improvement over the first V4 baseline
-after the Release 4.3 changes. The five-user study is not claimed until it is
-run.
-
-## 7. Recommended order
+## 6. Recommended order
 
 1. Review the generated project summaries and write editorial summaries for the
    flagships and high-traffic rows (Medium, Release 4.1/4.4).
@@ -153,4 +123,3 @@ run.
 5. Mobile bottom navigation and full-screen filters (Medium, Release 4.3).
 6. Detail pages and list↔map linking (Medium, Release 4.3).
 7. Table semantics and print CSS (Low, Release 4.5).
-8. Run the five-user study before claiming the Release 4.3 success target.

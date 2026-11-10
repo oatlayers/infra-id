@@ -41,6 +41,7 @@ RAIL = str(STATS["projects"]["by_sector"].get("railway", 0))
 ESTATES = str(STATS["estates"]["total"])
 PROGRAMMES = str(STATS["programmes"]["total"])
 COMPANIES = str(STATS["organizations"]["total"])
+CONFLICTS = str(STATS["conflicts"]["total"])
 
 failures: list[str] = []
 report: dict[str, object] = {
@@ -258,7 +259,8 @@ def desktop_views(page: Page) -> None:
           "Status and freshness charts have a legend")
     check("projects by sector" in page.locator(".data-view").inner_text().lower(),
           "Data view labels the sector chart")
-    check(page.locator(".conflict-table tbody tr").count() == 20, "Conflict register has 20 rows")
+    check(page.locator(".conflict-table tbody tr").count() == int(CONFLICTS),
+          f"Conflict register has {CONFLICTS} rows")
     check(page.locator(".dictionary details").count() == 28, "Data dictionary has 28 tables")
     check(page.locator('a.download[href]').count() == 24, "Data view has 24 static downloads")
     check("programme register" in page.locator(".data-view").inner_text().lower(),
@@ -275,7 +277,7 @@ def desktop_views(page: Page) -> None:
     check(page.locator(".coverage-table th[aria-sort]").count() == 4,
           "Coverage table exposes four sortable headers")
     report["views"]["data"] = {  # type: ignore[index]
-        "conflicts": 20,
+        "conflicts": int(CONFLICTS),
         "dictionary_tables": 28,
         "download_controls": 26,
         "charts": 2,
@@ -450,7 +452,8 @@ def mobile(page: Page) -> None:
     page.goto(FILE_URL + "#/data")
     page.wait_for_selector(".data-view")
     page.wait_for_timeout(400)
-    check(page.locator(".conflict-table tbody tr").count() == 20, "Mobile Data view renders conflicts")
+    check(page.locator(".conflict-table tbody tr").count() == int(CONFLICTS),
+          f"Mobile Data view renders {CONFLICTS} conflicts")
     screenshot(page, "07-data-mobile.png")
 
     page.goto(ID_FILE_URL + "#/explore")
@@ -480,8 +483,8 @@ def http_check(page: Page) -> None:
         page.wait_for_timeout(500)
         check(page.locator("#stat-projects").inner_text() == TOTAL,
               f"Local HTTP server serves the {TOTAL}-project build")
-        check(page.locator(".conflict-table tbody tr").count() == 20,
-              "Local HTTP build renders 20 conflicts")
+        check(page.locator(".conflict-table tbody tr").count() == int(CONFLICTS),
+              f"Local HTTP build renders {CONFLICTS} conflicts")
         page.goto(f"http://127.0.0.1:{port}/id/index.html#/explore")
         page.wait_for_selector(".project-row")
         page.wait_for_timeout(500)

@@ -3,6 +3,28 @@
 Public-facing changes to the atlas. Dates are the day the change landed in this
 repository. The Data view renders these entries from this file at build time.
 
+## 2026-11-10 — Complete BPJT toll-road register
+
+- Added the 39 non-PSN sections that were missing from the official BPJT
+  toll-road register archived on 6 November 2026, so all 77 sections are now
+  represented. Projects grow from 255 to 294 and road rows from 56 to 95.
+- Added 27 concession-operator organisations, 39 operator role links, 233 atomic
+  claims, 39 operation events and 39 reviewed Indonesian names. Companies grow
+  from 116 to 143 and role links from 232 to 271.
+- Corrected Kuala Tanjung–Tebing Tinggi–Parapat: the BPJT register does list the
+  section and names PT Hutama Marga Waskita as concession operator. The row now
+  publishes the BPJT operator and 96.402 km operational, with two resolved
+  conflicts keeping the Indonesian Wikipedia figures.
+- Kept BPJT operational km that exceeds the section length in the claim only
+  (nine sections) and recorded the pattern as one open dataset conflict. Three
+  zero-length sections use the operational length with a row note.
+- Removed the five-user study from the plan and UX audit. The automated
+  five-profile rehearsal remains the recorded UX evidence; no human
+  task-success baseline is claimed.
+- Initial payload is 1,358 KB, data 1,965 KB and total 4,370 KB. Build,
+  `--check`, smoke test, five-profile rehearsal, contrast check and link check
+  pass. Nothing was pushed, deployed or published.
+
 ## 2026-11-10 — Three more IKN private investments and Intiland correction
 
 - Added the three remaining private investments named in the same 14 October

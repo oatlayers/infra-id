@@ -4,7 +4,7 @@ tol-binjai-langsa,org-hutama-karya,operator,,,,src-bpjt-toll-road-list-2026-11-0
 tol-padang-pekanbaru,org-hutama-karya,operator,,,,src-bpjt-toll-road-list-2026-11-06,
 tol-bengkulu-lubuk-linggau,org-hutama-karya,operator,,,,src-bpjt-toll-road-list-2026-11-06,
 tol-kayu-agung-palembang-betung,org-waskita-sriwijaya-tol,operator,,,,src-bpjt-toll-road-list-2026-11-06,
-tol-kuala-tanjung-tebing-tinggi-parapat,org-hutama-karya,operator,,,,src-idwiki-daftar-jalan-tol-30025554,
+tol-kuala-tanjung-tebing-tinggi-parapat,org-hutama-marga-waskita,operator,,,,src-bpjt-toll-road-list-2026-11-06,The BPJT list names PT Hutama Marga Waskita; Indonesian Wikipedia named PT Hutama Karya (conflict-kuala-tanjung-operator).
 tol-betung-tempino-jambi,org-hutama-karya,operator,,,,src-bpjt-toll-road-list-2026-11-06,
 tol-depok-antasari,org-citra-waspphutowa,operator,,,,src-bpjt-toll-road-list-2026-11-06,
 tol-jakarta-inner-ring-road-2,org-jakarta-tollroad-development,operator,,,,src-bpjt-toll-road-list-2026-11-06,
@@ -231,3 +231,42 @@ urban-laziz-arabic-resto,org-laziz-nusantara,developer,,,,src-journalarta-ikn-se
 urban-teras-padu,org-fyp-karya-perdana,developer,,,,src-journalarta-ikn-seven-projects-2026-11-08,Signed a cooperation agreement with OIKN for the KIPP 1A Teras Padu sports and commercial hub.
 urban-java-teak-showroom,org-java-teak-indo,developer,,,,src-journalarta-ikn-seven-projects-2026-11-08,Signed a cooperation agreement with OIKN for the KIPP 1A furniture showroom.
 housing-ikn-rusun-asn,org-nindya-estate-management,developer,,,,src-journalarta-ikn-seven-projects-2026-11-08,Co-initiator (pemrakarsa) with PT Nindya Karya of the eight ASN apartment towers.
+tol-pemalang-batang,org-pemalang-batang-tol-road,operator,,,,src-bpjt-toll-road-list-2026-11-06,Concession operator named in the BPJT toll-road list.
+tol-indrapura-kisaran,org-hutama-karya,operator,,,,src-bpjt-toll-road-list-2026-11-06,Concession operator named in the BPJT toll-road list.
+tol-cikampek-padalarang,org-jasa-marga,operator,,,,src-bpjt-toll-road-list-2026-11-06,Concession operator named in the BPJT toll-road list.
+tol-jakarta-cikampek-2-elevated,org-jasamarga-jalanlayang-cikampek,operator,,,,src-bpjt-toll-road-list-2026-11-06,Concession operator named in the BPJT toll-road list.
+tol-terbanggi-besar-kayu-agung,org-hutama-karya,operator,,,,src-bpjt-toll-road-list-2026-11-06,Concession operator named in the BPJT toll-road list.
+tol-batang-semarang,org-jasamarga-semarang-batang,operator,,,,src-bpjt-toll-road-list-2026-11-06,Concession operator named in the BPJT toll-road list.
+tol-bakauheni-terbanggi-besar,org-bakauheni-terbanggi-besar-toll,operator,,,,src-bpjt-toll-road-list-2026-11-06,Concession operator named in the BPJT toll-road list.
+tol-solo-mantingan-ngawi,org-jasamarga-solo-ngawi,operator,,,,src-bpjt-toll-road-list-2026-11-06,Concession operator named in the BPJT toll-road list.
+tol-soreang-pasirkoja,org-citra-marga-lintas-jabar,operator,,,,src-bpjt-toll-road-list-2026-11-06,Concession operator named in the BPJT toll-road list.
+tol-palembang-simpang-indralaya,org-hutama-karya,operator,,,,src-bpjt-toll-road-list-2026-11-06,Concession operator named in the BPJT toll-road list.
+tol-medan-kualanamu-tebing-tinggi,org-jasamarga-kualanamu-tol,operator,,,,src-bpjt-toll-road-list-2026-11-06,Concession operator named in the BPJT toll-road list.
+tol-pejagan-pemalang,org-pejagan-pemalang-tol-road,operator,,,,src-bpjt-toll-road-list-2026-11-06,Concession operator named in the BPJT toll-road list.
+tol-gempol-pandaan,org-jasamarga-pandaan-tol,operator,,,,src-bpjt-toll-road-list-2026-11-06,Concession operator named in the BPJT toll-road list.
+tol-cikampek-palimanan,org-lintas-marga-sedaya,operator,,,,src-bpjt-toll-road-list-2026-11-06,Concession operator named in the BPJT toll-road list.
+tol-kertosono-mojokerto,org-marga-harjaya-infrastruktur,operator,,,,src-bpjt-toll-road-list-2026-11-06,Concession operator named in the BPJT toll-road list.
+tol-jorr-w2-utara,org-marga-lingkar-jakarta,operator,,,,src-bpjt-toll-road-list-2026-11-06,Concession operator named in the BPJT toll-road list.
+tol-bali-mandara,org-jasamarga-bali-tol,operator,,,,src-bpjt-toll-road-list-2026-11-06,Concession operator named in the BPJT toll-road list.
+tol-semarang-solo,org-trans-marga-jateng,operator,,,,src-bpjt-toll-road-list-2026-11-06,Concession operator named in the BPJT toll-road list.
+tol-surabaya-mojokerto,org-jasamarga-surabaya-mojokerto,operator,,,,src-bpjt-toll-road-list-2026-11-06,Concession operator named in the BPJT toll-road list.
+tol-jorr-w1,org-jakarta-lingkar-baratsatu,operator,,,,src-bpjt-toll-road-list-2026-11-06,Concession operator named in the BPJT toll-road list.
+tol-kanci-pejagan,org-semesta-marga-raya,operator,,,,src-bpjt-toll-road-list-2026-11-06,Concession operator named in the BPJT toll-road list.
+tol-makassar-section-4,org-jalan-tol-seksi-empat,operator,,,,src-bpjt-toll-road-list-2026-11-06,Concession operator named in the BPJT toll-road list.
+tol-waru-juanda,org-citra-margatama-surabaya,operator,,,,src-bpjt-toll-road-list-2026-11-06,Concession operator named in the BPJT toll-road list.
+tol-jorr-non-s,org-jasa-marga,operator,,,,src-bpjt-toll-road-list-2026-11-06,Concession operator named in the BPJT toll-road list.
+tol-gempol-pasuruan,org-jasamarga-gempol-pasuruan,operator,,,,src-bpjt-toll-road-list-2026-11-06,Concession operator named in the BPJT toll-road list.
+tol-pondok-aren-serpong,org-bintaro-serpong-damai,operator,,,,src-bpjt-toll-road-list-2026-11-06,Concession operator named in the BPJT toll-road list.
+tol-pondok-aren-bintaro-ulujami,org-jasa-marga,operator,,,,src-bpjt-toll-road-list-2026-11-06,Concession operator named in the BPJT toll-road list.
+tol-ujung-pandang-1-3,org-makassar-metro-network,operator,,,,src-bpjt-toll-road-list-2026-11-06,Concession operator named in the BPJT toll-road list.
+tol-palimanan-plumbon-kanci,org-jasamarga-transjawa-tol,operator,,,,src-bpjt-toll-road-list-2026-11-06,Concession operator named in the BPJT toll-road list.
+tol-cawang-tomang-pluit,org-jasa-marga,operator,,,,src-bpjt-toll-road-list-2026-11-06,Concession operator named in the BPJT toll-road list.
+tol-jorr-s,org-hutama-karya,operator,,,,src-bpjt-toll-road-list-2026-11-06,Concession operator named in the BPJT toll-road list.
+tol-surabaya-gresik,org-margabumi-matraraya,operator,,,,src-bpjt-toll-road-list-2026-11-06,Concession operator named in the BPJT toll-road list.
+tol-tangerang-merak,org-marga-mandala-sakti,operator,,,,src-bpjt-toll-road-list-2026-11-06,Concession operator named in the BPJT toll-road list.
+tol-padalarang-cileunyi,org-jasa-marga,operator,,,,src-bpjt-toll-road-list-2026-11-06,Concession operator named in the BPJT toll-road list.
+tol-belawan-medan-tanjung-morawa,org-jasa-marga,operator,,,,src-bpjt-toll-road-list-2026-11-06,Concession operator named in the BPJT toll-road list.
+tol-surabaya-gempol,org-jasamarga-transjawa-tol,operator,,,,src-bpjt-toll-road-list-2026-11-06,Concession operator named in the BPJT toll-road list.
+tol-soedijatmo,org-jasa-marga,operator,,,,src-bpjt-toll-road-list-2026-11-06,Concession operator named in the BPJT toll-road list.
+tol-semarang-abc,org-jasamarga-transjawa-tol,operator,,,,src-bpjt-toll-road-list-2026-11-06,Concession operator named in the BPJT toll-road list.
+tol-jakarta-bogor-ciawi,org-jasa-marga,operator,,,,src-bpjt-toll-road-list-2026-11-06,Concession operator named in the BPJT toll-road list.
