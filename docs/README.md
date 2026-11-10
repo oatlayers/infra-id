@@ -45,13 +45,13 @@ data, trust layer and local release were built.
 | [`../data/curated/pkpn_programmes.csv`](../data/curated/pkpn_programmes.csv) | The eight 2027 PKPN priorities with bilingual summaries, targets, budgets and sources. |
 | [`../data/curated/pkpn_sources.csv`](../data/curated/pkpn_sources.csv) | 27 atomic claims for the PKPN layer. |
 | [`../data/curated/programme_projects.csv`](../data/curated/programme_projects.csv) | Seven structural links between programmes and atlas projects. |
-| [`../data/curated/organizations.csv`](../data/curated/organizations.csv) | 111 companies, agencies and consortia, with type, country and website. |
-| [`../data/curated/project_organizations.csv`](../data/curated/project_organizations.csv) | 227 sourced project-role links (sponsor, operator, owner, contractor). |
+| [`../data/curated/organizations.csv`](../data/curated/organizations.csv) | 112 companies, agencies and consortia, with type, country and website. |
+| [`../data/curated/project_organizations.csv`](../data/curated/project_organizations.csv) | 228 sourced project-role links (sponsor, operator, owner, contractor). |
 | [`../data/curated/translations.csv`](../data/curated/translations.csv) | Reviewed entity text and official Indonesian names used by the bilingual build. |
 | [`../data/i18n/ui.en.json`](../data/i18n/ui.en.json) | English UI catalogue: 635 semantic keys. |
 | [`../data/i18n/ui.id.json`](../data/i18n/ui.id.json) | Indonesian UI catalogue: the same 635 keys. |
-| [`../data/curated/indicators.csv`](../data/curated/indicators.csv) | 35 programme and project targets, baselines and units. |
-| [`../data/curated/indicator_values.csv`](../data/curated/indicator_values.csv) | 18 dated indicator observations. |
+| [`../data/curated/indicators.csv`](../data/curated/indicators.csv) | 45 programme and project targets, baselines and units. |
+| [`../data/curated/indicator_values.csv`](../data/curated/indicator_values.csv) | 28 dated indicator observations. |
 | [`../data/curated/project_phases.csv`](../data/curated/project_phases.csv) | Nine sourced project phases with dates, cost and progress where stated. |
 | [`../data/curated/estates.csv`](../data/curated/estates.csv) | 204 industrial estates and SEZs, including eight reviewed and 18 register-only PSN industrial areas. |
 | [`../data/derived/psn_reconciliation.csv`](../data/derived/psn_reconciliation.csv) | Match ledger: all 226 active PSN project or estate records represented and all 24 programmes matched; 88 projects and 18 estates are register-only. |

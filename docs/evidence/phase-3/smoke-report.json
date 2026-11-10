@@ -1,8 +1,8 @@
 {
-  "checked_at": "2026-11-09",
+  "checked_at": "2026-11-10",
   "views": {
     "explore": {
-      "rows": 251
+      "rows": 252
     },
     "corridors": {
       "cards": 5
@@ -11,7 +11,7 @@
       "rows": 204
     },
     "companies": {
-      "rows": 111
+      "rows": 112
     },
     "programmes": {
       "cards": 24
@@ -30,11 +30,11 @@
   "downloads": {
     "projects_csv": {
       "file": "infra-id-projects-filtered.csv",
-      "rows": 251
+      "rows": 252
     },
     "projects_geojson": {
       "file": "infra-id-projects-filtered.geojson",
-      "features": 251
+      "features": 252
     },
     "estates_csv": {
       "file": "infra-id-estates-filtered.csv",
@@ -42,7 +42,7 @@
     },
     "claims_csv": {
       "file": "claims.csv",
-      "rows": 917
+      "rows": 921
     }
   },
   "keyboard": {
@@ -53,7 +53,7 @@
   },
   "protocols": {
     "http": {
-      "port": 57110,
+      "port": 64271,
       "ok": true
     },
     "file": {

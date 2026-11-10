@@ -3,6 +3,31 @@
 Public-facing changes to the atlas. Dates are the day the change landed in this
 repository. The Data view renders these entries from this file at build time.
 
+## 2026-11-10 — 25th IKN row and education delivery indicators
+
+- Added the 25th IKN row: PT Berdikari (Persero)'s integrated chicken
+  downstreaming facility in Wilayah Perencanaan 3, from the 14 October 2026
+  OIKN signing reported by JournalArta. It is a private investment, not an OIKN
+  construction package: 17.27 ha, about Rp177B and a capacity of about 140,000
+  chickens. IKN coverage is now 25/25.
+- Added 10 sourced delivery indicators and 10 dated values from the 20 October
+  2026 two-year report and the 27 October 2026 Kemendikdasmen release: a 5.2
+  million-tonne national food reserve, eight self-sufficient food commodities,
+  108 million free health-check services, 43,000 street children back in school,
+  55,451 schools reached in 2025–2026, 16,167 schools against a 10,440 target in
+  2025, 39,284 against a 31,744 target in 2026, 72,258 interactive panels against
+  a 742,536 target, 3,134 of 3,178 disaster-affected schools and 1,360 new SNT
+  pupils.
+- Added PT Berdikari, one developer role, four project claims, one contract event
+  and one reviewed Indonesian project name. Projects grow from 251 to 252,
+  companies from 111 to 112, indicators from 35 to 45, values from 18 to 28,
+  events from 34 to 35 and project claims from 917 to 921.
+- Corrected the Data coverage notes for sources, companies, IKN and indicators
+  so the displayed notes match the generated counts.
+- Initial payload is 1,225 KB, data 1,795 KB and total 3,937 KB. Build,
+  `--check`, smoke test, five-profile rehearsal, contrast check and link check
+  pass. Nothing was pushed, deployed or published.
+
 ## 2026-11-09 — Repository cleanup and documentation restructure
 
 - Moved the page source templates to `site/templates/app.html` and

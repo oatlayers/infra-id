@@ -1,7 +1,7 @@
 # Indonesia Infrastructure Atlas — Remaining Work
 
 **Status:** V4 in progress. Local-only build; nothing is published.
-**Baseline data:** 9 November 2026 build (`570213d`).
+**Baseline data:** 10 November 2026 build.
 **Scope of this file:** remaining work only. Completed work is recorded in
 [`CHANGELOG.md`](../../CHANGELOG.md), the phase records in
 [`docs/phases/`](../phases/), and git history.
@@ -29,20 +29,20 @@ V4 is complete when:
 
 | Measure | Current |
 |---|---:|
-| Project rows | 251 |
+| Project rows | 252 |
 | PSN project/estate records represented | 226 / 226 |
 | PSN programmes represented | 24 / 24 |
 | PKPN programmes | 8 / 8 |
 | Estates | 204 |
-| Companies and agencies | 111 |
+| Companies and agencies | 112 |
 | Sources | 140 |
-| Indicators / dated values / phases | 35 / 18 / 9 |
-| IKN package rows | 24 / 25 |
-| Project claims / estate claims | 917 / 115 |
+| Indicators / dated values / phases | 45 / 28 / 9 |
+| IKN package rows | 25 / 25 |
+| Project claims / estate claims | 921 / 115 |
 | Programme claims / PKPN claims | 48 / 27 |
-| Events | 34 |
+| Events | 35 |
 | Data dictionary | 286 fields across 28 tables |
-| Initial / data / total payload | 1,221 / 1,779 / 3,911 KB |
+| Initial / data / total payload | 1,225 / 1,795 / 3,937 KB |
 
 ### Reference-set accounting
 
@@ -52,8 +52,8 @@ estate rows. Fifteen PSN records are aggregate or partial matches to an existing
 row, so the number of matches is higher than the number of rows.
 
 The 400-record target is therefore **226 PSN records + 174 strategic/private
-records**, not 400 project-table rows. The atlas currently has 77 strategic
-records, so **97 strategic records remain**. The project table will grow to
+records**, not 400 project-table rows. The atlas currently has 78 strategic
+records, so **96 strategic records remain**. The project table will grow to
 about 348 rows when those records are added; 44 PSN records live in the estate
 layer and eight PSN records share an existing project row, so 400 reference
 records correspond to about 392 rows.
@@ -64,11 +64,11 @@ records correspond to about 392 rows.
 |---|---:|---:|---:|
 | PSN project/estate records | 226 | 226 | 0 |
 | PSN programmes | 24 | 24 | 0 |
-| Strategic/private records | 77 | 174 | **97** |
-| Companies and agencies | 111 | 300 | **189** |
+| Strategic/private records | 78 | 174 | **96** |
+| Companies and agencies | 112 | 300 | **188** |
 | Sources | 140 | 250 | **110** |
-| Indicators | 35 | 300 | **265** |
-| IKN package rows | 24 | 25 | **1** |
+| Indicators | 45 | 300 | **255** |
+| IKN package rows | 25 | 25 | 0 |
 | Factories | 34 | 34 | 0 |
 | Industrial estates | 204 | 197 | 0 |
 | Roads | 56 | 54 | 0 |
@@ -180,12 +180,14 @@ Rules:
 - Link every indicator to a programme, a project, or both.
 - Add dated observations to `indicator_values.csv` with their own source.
 
-### 4.5 IKN package 25 of 25
+### 4.5 IKN package 25 of 25 — complete
 
-Add one named package with a dated source, status, location and claim. The IKN
-Authority site returns HTTP 403 to some clients; use an archived OIKN
-evaluation, a presidential or ministerial release, or a named contractor
-statement. Do not split a package total across rows.
+The 25th row is PT Berdikari (Persero)'s integrated chicken downstreaming
+facility in Wilayah Perencanaan 3, named in the 14 October 2026 OIKN signing
+and reported by JournalArta on 8 November 2026. It is a private investment,
+not an OIKN construction package; the row is labelled accordingly. No package
+total is split across rows. The IKN Authority site still returns HTTP 403 to
+some clients, so the archived secondary report remains the available source.
 
 ## 5. UX workstream
 
@@ -220,8 +222,8 @@ statement. Do not split a package total across rows.
 
 ## 7. Priority order
 
-1. **P0 — measurable coverage:** strategic records, companies, sources,
-   indicators, IKN 25th package.
+1. **P0 — measurable coverage:** strategic records, companies, sources and
+   indicators. IKN package coverage is complete at 25/25.
 2. **P0 — bilingual completion and five-user study.**
 3. **P1 — UX rebuild:** bottom navigation, detail pages, map v3, editorial
    summaries.
@@ -234,12 +236,11 @@ statement. Do not split a package total across rows.
 | Blocker | Effect | Workaround |
 |---|---|---|
 | Five external UX participants unavailable | Human task-success baseline cannot be claimed | Keep the automated five-profile rehearsal as current evidence |
-| IKN Authority returns HTTP 403 | Cannot cite the primary page directly | Use the archived Top Konstruksi report of the same OIKN evaluation |
+| IKN Authority returns HTTP 403 | Cannot cite the primary page directly | Use the archived Top Konstruksi and JournalArta reports of the same OIKN evaluations |
 | KPPIP and Bappenas access intermittent | Some sector pages are unarchived | Retry, or use an official ministry mirror and record the substitution |
 | RPJMN 2025–2029 not archived | Planning baseline is incomplete | Fetch and hash the official Bappenas document |
 | Dishub Sanggau page returns HTTP 500 | Alumina Toba lacks that source | Use GEM and Kemenperin archives already filed |
 | Some flagship and road sources are URL-only | Weaker provenance | Archive the page or record why it cannot be archived |
-| IKN 25th package not yet named | Coverage remains 24/25 | Wait for a named OIKN, ministerial or contractor source |
 
 ## 9. Invariants
 
