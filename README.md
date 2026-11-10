@@ -12,21 +12,21 @@ HTTP server, with no tile server, CDN or remote request.
 
 | Measure | Current |
 |---|---:|
-| Project rows | 252 |
+| Project rows | 255 |
 | Active PSN project/estate records represented | 226 / 226 |
 | Active PSN programmes represented | 24 / 24 |
 | 2027 PKPN programmes | 8 / 8 |
 | Industrial estates and SEZs | 204 |
-| Companies and agencies | 112 |
+| Companies and agencies | 116 |
 | Sources | 140 |
 | Indicators / dated values / phases | 45 / 28 / 9 |
-| IKN package rows | 25 / 25 |
-| Project claims / estate claims | 921 / 115 |
+| IKN package rows | 28 / 28 |
+| Project claims / estate claims | 936 / 115 |
 | Programme claims / PKPN claims | 48 / 27 |
-| Initial / data / total payload | 1,225 / 1,795 / 3,937 KB |
+| Initial / data / total payload | 1,237 / 1,811 / 3,974 KB |
 
-**Reference set:** 304 of 400 records are represented — all 226 active PSN
-records plus 78 strategic and private records. The remaining **96 records are
+**Reference set:** 307 of 400 records are represented — all 226 active PSN
+records plus 81 strategic and private records. The remaining **93 records are
 strategic/private**, not PSN. The 400 target counts reference records, not
 project-table rows, because 44 PSN records live in the estate layer.
 
@@ -42,7 +42,7 @@ there is no remote, deployment or public URL. Remaining work is in
 - **Programmes:** the 24 PSN programmes and the eight 2027 PKPN priorities.
 - **Corridors:** five Trans corridor summaries with 44 segments.
 - **Estates:** 204 industrial estates and SEZs.
-- **Companies:** 112 organisations and their sourced project roles.
+- **Companies:** 116 organisations and their sourced project roles.
 - **Data:** coverage, charts, methods, sources, downloads and known gaps.
 
 **It is not** a live project tracker, an official government dataset, or a
@@ -250,17 +250,17 @@ text inside the Indonesian edition carries `lang="en"` and an `EN` tag.
 | Airports | 8 | 8 operating | 7/7 PSN airports plus Nusantara International |
 | Seaports | 15 | 11 operating, 1 under construction, 1 recently completed, 2 planned | 15/15 PSN seaports |
 | Transport PSN total | 35 | 24 operating, 1 recently completed, 6 under construction, 4 planned | Status as of 19 February 2026 |
-| All projects | 252 | 62 operating, 5 recently completed, 71 under construction, 25 planned, 1 stalled, 88 unknown | 88 register-only PSN rows |
+| All projects | 255 | 62 operating, 5 recently completed, 71 under construction, 28 planned, 1 stalled, 88 unknown | 88 register-only PSN rows |
 | PSN projects (active) | 226 | 226/226 represented | 182 matches on 174 project rows plus 44 estate rows; 0 outstanding |
 | PSN programmes (active) | 24 | 24/24 | one row per official number; 48 claims |
 | 2027 PKPN | 8 | 8/8 | bilingual summaries, sourced targets and budgets |
 | Factories | 34 | 19 operating, 3 recently completed, 11 under construction, 1 stalled | 27 capacity figures, 18 investment figures |
 | Industrial estates / SEZs | 204 | 179 industrial-only, 7 shared, 18 SEZ-only | table view only; 179 target met |
-| Companies and agencies | 112 | 90 with a project role, 22 reference-only | V4 target 300 |
+| Companies and agencies | 116 | 94 with a project role, 22 reference-only | V4 target 300 |
 | Sources | 140 | 58 official, 55 secondary, 27 company | V4 target 250 |
 | Indicators | 45 | 28 dated values | V4 target 300 |
-| Dated events | 35 | 2018–2026 | exact dates only |
-| Conflicts | 19 | 11 resolved, 8 open | both values and both sources |
+| Dated events | 38 | 2018–2026 | exact dates only |
+| Conflicts | 20 | 11 resolved, 9 open | both values and both sources |
 | Data dictionary | 286 fields | 28 tables | generated from the schema |
 
 The Data view renders coverage from `data/curated/coverage_targets.csv` and

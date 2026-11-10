@@ -585,6 +585,12 @@ project,urban-grand-vista-nusantara,name,en,source,
 project,urban-grand-vista-nusantara,summary,en,generated,Generated from curated fields; not editorial.
 project,agri-ikn-berdikari-chicken,name,en,source,
 project,agri-ikn-berdikari-chicken,summary,en,generated,Generated from curated fields; not editorial.
+project,urban-laziz-arabic-resto,name,en,source,
+project,urban-laziz-arabic-resto,summary,en,generated,Generated from curated fields; not editorial.
+project,urban-teras-padu,name,en,source,
+project,urban-teras-padu,summary,en,generated,Generated from curated fields; not editorial.
+project,urban-java-teak-showroom,name,en,source,
+project,urban-java-teak-showroom,summary,en,generated,Generated from curated fields; not editorial.
 estate,sez-arun-lhokseumawe,name,en,source,
 estate,sez-batam-aero-technic,name,en,source,
 estate,sez-bitung,name,en,source,
@@ -1375,6 +1381,12 @@ project,urban-grand-vista-nusantara,name,id,translated,
 project,urban-grand-vista-nusantara,summary,id,generated,Generated from curated fields; not editorial.
 project,agri-ikn-berdikari-chicken,name,id,translated,src-journalarta-ikn-seven-projects-2026-11-08
 project,agri-ikn-berdikari-chicken,summary,id,generated,Generated from curated fields; not editorial.
+project,urban-laziz-arabic-resto,name,id,translated,src-journalarta-ikn-seven-projects-2026-11-08
+project,urban-laziz-arabic-resto,summary,id,generated,Generated from curated fields; not editorial.
+project,urban-teras-padu,name,id,translated,src-journalarta-ikn-seven-projects-2026-11-08
+project,urban-teras-padu,summary,id,generated,Generated from curated fields; not editorial.
+project,urban-java-teak-showroom,name,id,translated,src-journalarta-ikn-seven-projects-2026-11-08
+project,urban-java-teak-showroom,summary,id,generated,Generated from curated fields; not editorial.
 estate,sez-arun-lhokseumawe,name,id,source,
 estate,sez-batam-aero-technic,name,id,source,
 estate,sez-bitung,name,id,source,

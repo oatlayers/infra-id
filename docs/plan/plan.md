@@ -14,7 +14,7 @@ V4 is complete when:
    records plus 174 strategic and private records.
 2. The atlas has **300 company profiles**, **250 archived sources** and
    **300 sourced indicators**.
-3. IKN package coverage reaches **25 of 25** and every other coverage target in
+3. IKN coverage reaches **28 of 28** and every other coverage target in
    `data/curated/coverage_targets.csv` is met or explicitly marked blocked.
 4. Every project has a status source and an atomic claim for each populated
    numeric fact. Register-only rows remain visibly labelled.
@@ -29,20 +29,20 @@ V4 is complete when:
 
 | Measure | Current |
 |---|---:|
-| Project rows | 252 |
+| Project rows | 255 |
 | PSN project/estate records represented | 226 / 226 |
 | PSN programmes represented | 24 / 24 |
 | PKPN programmes | 8 / 8 |
 | Estates | 204 |
-| Companies and agencies | 112 |
+| Companies and agencies | 116 |
 | Sources | 140 |
 | Indicators / dated values / phases | 45 / 28 / 9 |
-| IKN package rows | 25 / 25 |
-| Project claims / estate claims | 921 / 115 |
+| IKN package rows | 28 / 28 |
+| Project claims / estate claims | 936 / 115 |
 | Programme claims / PKPN claims | 48 / 27 |
-| Events | 35 |
+| Events | 38 |
 | Data dictionary | 286 fields across 28 tables |
-| Initial / data / total payload | 1,225 / 1,795 / 3,937 KB |
+| Initial / data / total payload | 1,237 / 1,811 / 3,974 KB |
 
 ### Reference-set accounting
 
@@ -52,8 +52,8 @@ estate rows. Fifteen PSN records are aggregate or partial matches to an existing
 row, so the number of matches is higher than the number of rows.
 
 The 400-record target is therefore **226 PSN records + 174 strategic/private
-records**, not 400 project-table rows. The atlas currently has 78 strategic
-records, so **96 strategic records remain**. The project table will grow to
+records**, not 400 project-table rows. The atlas currently has 81 strategic
+records, so **93 strategic records remain**. The project table will grow to
 about 348 rows when those records are added; 44 PSN records live in the estate
 layer and eight PSN records share an existing project row, so 400 reference
 records correspond to about 392 rows.
@@ -64,11 +64,11 @@ records correspond to about 392 rows.
 |---|---:|---:|---:|
 | PSN project/estate records | 226 | 226 | 0 |
 | PSN programmes | 24 | 24 | 0 |
-| Strategic/private records | 78 | 174 | **96** |
-| Companies and agencies | 112 | 300 | **188** |
+| Strategic/private records | 81 | 174 | **93** |
+| Companies and agencies | 116 | 300 | **184** |
 | Sources | 140 | 250 | **110** |
 | Indicators | 45 | 300 | **255** |
-| IKN package rows | 25 | 25 | 0 |
+| IKN package rows | 28 | 28 | 0 |
 | Factories | 34 | 34 | 0 |
 | Industrial estates | 204 | 197 | 0 |
 | Roads | 56 | 54 | 0 |
@@ -180,14 +180,19 @@ Rules:
 - Link every indicator to a programme, a project, or both.
 - Add dated observations to `indicator_values.csv` with their own source.
 
-### 4.5 IKN package 25 of 25 — complete
+### 4.5 IKN packages and private investments 28 of 28 — complete
 
-The 25th row is PT Berdikari (Persero)'s integrated chicken downstreaming
-facility in Wilayah Perencanaan 3, named in the 14 October 2026 OIKN signing
-and reported by JournalArta on 8 November 2026. It is a private investment,
-not an OIKN construction package; the row is labelled accordingly. No package
-total is split across rows. The IKN Authority site still returns HTTP 403 to
-some clients, so the archived secondary report remains the available source.
+The 28 rows cover every IKN package and private investment named in the
+archived OIKN signing reports. The 25th row is PT Berdikari (Persero)'s
+integrated chicken downstreaming facility in Wilayah Perencanaan 3. The same
+14 October 2026 signing named three further private investments — PT Laziz
+Nusantara Grup (restaurant, gelato and multipurpose building), PT FYP Karya
+Perdana (Teras Padu sports and commercial hub) and PT Java Teak Indo (Jepara
+furniture showroom) — so the census target rose from 25 to 28. All are private
+investments, not OIKN construction packages, and each row is labelled
+accordingly. No package total is split across rows. The IKN Authority site
+still returns HTTP 403 to some clients, so the archived secondary report
+remains the available source.
 
 ## 5. UX workstream
 
@@ -223,7 +228,7 @@ some clients, so the archived secondary report remains the available source.
 ## 7. Priority order
 
 1. **P0 — measurable coverage:** strategic records, companies, sources and
-   indicators. IKN package coverage is complete at 25/25.
+   indicators. IKN coverage is complete at 28/28.
 2. **P0 — bilingual completion and five-user study.**
 3. **P1 — UX rebuild:** bottom navigation, detail pages, map v3, editorial
    summaries.

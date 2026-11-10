@@ -3,6 +3,34 @@
 Public-facing changes to the atlas. Dates are the day the change landed in this
 repository. The Data view renders these entries from this file at build time.
 
+## 2026-11-10 — Three more IKN private investments and Intiland correction
+
+- Added the three remaining private investments named in the same 14 October
+  2026 OIKN signing: PT Laziz Nusantara Grup's Arabic restaurant, gelato outlet
+  and multipurpose building (KIPP 1B, 0.54 ha, about Rp10B); PT FYP Karya
+  Perdana's Teras Padu sports and commercial hub (KIPP 1A, 0.45 ha, about
+  Rp20B); and PT Java Teak Indo's Jepara furniture showroom and office (KIPP 1A,
+  0.2 ha, about Rp1.5B).
+- Added four organisations (Laziz Nusantara, FYP Karya Perdana, Java Teak Indo
+  and Nindya Estate Management), four sourced role links, twelve project claims,
+  three contract events, three reviewed Indonesian names and one open conflict.
+  Projects grow from 252 to 255 and companies from 112 to 116.
+- Raised the IKN coverage target from 25 to 28 because the archived signing
+  report names 28 package and private-investment rows once these three are
+  included. IKN coverage remains 100% of the named set.
+- Corrected the Intiland landed-house row: the source says 109 houses (not 108),
+  390 sqm each on 9.17 ha, Rp2.819T, a 10-year cooperation and completion in Q4
+  2028. The signing date is 6 October 2026, not 14 October.
+- Recorded the signing report's internal mismatch: its five stated project
+  estimates sum to Rp1.2085T against a Rp1.11T headline. Each project keeps its
+  own stated estimate; no row is rescaled.
+- Small commitments now render in billions (Rp 10B, Rp 20B, Rp 1.5B) in the
+  list, drawer and generated summaries instead of rounding to Rp 0T. Values at
+  or above Rp0.1T keep the trillion format.
+- Initial payload is 1,237 KB, data 1,811 KB and total 3,974 KB. Build,
+  `--check`, smoke test, five-profile rehearsal, contrast check and link check
+  pass. Nothing was pushed, deployed or published.
+
 ## 2026-11-10 — 25th IKN row and education delivery indicators
 
 - Added the 25th IKN row: PT Berdikari (Persero)'s integrated chicken

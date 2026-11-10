@@ -17350,7 +17350,7 @@
         "sector": "housing",
         "subsector": "civil-servant housing",
         "status": "planned",
-        "status_basis": "PT Intiland Development signed a KPBU for 108 landed ASN houses on 14 October 2026; construction was about to start.",
+        "status_basis": "PT Intiland Development signed a KPBU for 109 landed ASN houses on 6 October 2026; construction was about to start.",
         "corridor_id": "",
         "island": "Kalimantan",
         "province": "East Kalimantan",
@@ -17359,22 +17359,22 @@
         "operational_km": "",
         "construction_km": "",
         "progress_pct": "",
-        "investment_idr_t": "",
-        "capacity": "",
-        "capacity_unit": "",
+        "investment_idr_t": "2.819",
+        "capacity": "109",
+        "capacity_unit": "houses",
         "psn": "no",
         "opened_year": "",
         "opened_date": "",
-        "expected_open_year": "",
-        "status_as_of": "2026-10-14",
+        "expected_open_year": "2028",
+        "status_as_of": "2026-10-06",
         "verification": "single",
         "precision": "approximate",
         "operator": "tba",
         "source_url": "https://journalarta.com/news/2026/11/08/investasi-ikn-tujuh-proyek-rp3739-triliun/",
         "source_type": "secondary",
         "retrieved_on": "2026-11-09",
-        "last_verified": "2026-11-09",
-        "notes": "KPBU housing package. The source does not state the contract value separately.",
+        "last_verified": "2026-11-10",
+        "notes": "109 landed houses of 390 sqm each on 9.17 ha across two parcels (79 units on 6.6 ha and 30 on 2.4 ha). The 10-year cooperation covers two years of construction and eight years of service; completion is expected in Q4 2028. Signed on 6 October 2026.",
         "corridor_name": "",
         "aliases": [],
         "indicators": [],
@@ -17391,15 +17391,15 @@
             "language": "id",
             "archive_path": "data/raw/2026-11-09/journalarta_ikn_seven_projects_2026.html",
             "notes": "Seven projects signed on 14 October 2026 worth Rp3.739T: eight ASN apartment towers at Rp2.629T and five private investments at Rp1.11T, including Grand Vista Nusantara (3.57 ha, Rp1T).",
-            "claim": "status; location"
+            "claim": "status; location; investment; capacity; target"
           }
         ],
         "events": [
           {
             "id": "evt-ikn-intiland-pks",
-            "event_date": "2026-10-14",
+            "event_date": "2026-10-06",
             "event_type": "contract",
-            "description": "PT Intiland Development signed a KPBU for 108 landed ASN houses.",
+            "description": "PT Intiland Development signed a KPBU for 109 landed ASN houses worth Rp2.819T.",
             "source_id": "src-journalarta-ikn-seven-projects-2026-11-08",
             "source_title": "Investasi IKN Rp3,739 Triliun: Tujuh Proyek Baru",
             "source_url": "https://journalarta.com/news/2026/11/08/investasi-ikn-tujuh-proyek-rp3739-triliun/",
@@ -17407,8 +17407,8 @@
           }
         ],
         "freshness_state": "fresh",
-        "freshness_age_days": "1",
-        "freshness_due": "2027-05-11"
+        "freshness_age_days": "0",
+        "freshness_due": "2027-05-12"
       }
     },
     {
@@ -17942,6 +17942,234 @@
             "event_date": "2026-10-14",
             "event_type": "contract",
             "description": "PT Berdikari signed a cooperation agreement for an integrated chicken downstreaming facility in IKN Wilayah Perencanaan 3.",
+            "source_id": "src-journalarta-ikn-seven-projects-2026-11-08",
+            "source_title": "Investasi IKN Rp3,739 Triliun: Tujuh Proyek Baru",
+            "source_url": "https://journalarta.com/news/2026/11/08/investasi-ikn-tujuh-proyek-rp3739-triliun/",
+            "notes": ""
+          }
+        ],
+        "freshness_state": "fresh",
+        "freshness_age_days": "0",
+        "freshness_due": "2027-05-12"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          116.708,
+          -0.974
+        ]
+      },
+      "properties": {
+        "id": "urban-laziz-arabic-resto",
+        "name": "Laziz Arabic Resto and Gelato IKN",
+        "sector": "urban",
+        "subsector": "food and beverage",
+        "status": "planned",
+        "status_basis": "PT Laziz Nusantara Grup signed a cooperation agreement with OIKN on 14 October 2026 for an Arabic restaurant, gelato outlet and multipurpose building at KIPP 1B; construction had not started in the source.",
+        "corridor_id": "",
+        "island": "Kalimantan",
+        "province": "East Kalimantan",
+        "route": "KIPP Nusantara, KIPP 1B, Penajam Paser Utara",
+        "length_km": "",
+        "operational_km": "",
+        "construction_km": "",
+        "progress_pct": "",
+        "investment_idr_t": "0.010",
+        "capacity": "0.54",
+        "capacity_unit": "ha",
+        "psn": "no",
+        "opened_year": "",
+        "opened_date": "",
+        "expected_open_year": "",
+        "status_as_of": "2026-10-14",
+        "verification": "single",
+        "precision": "approximate",
+        "operator": "tba",
+        "source_url": "https://journalarta.com/news/2026/11/08/investasi-ikn-tujuh-proyek-rp3739-triliun/",
+        "source_type": "secondary",
+        "retrieved_on": "2026-11-09",
+        "last_verified": "2026-11-10",
+        "notes": "Arabic restaurant, gelato outlet and multipurpose building on 0.54 ha. The source gives an estimated investment of Rp10B and no completion date.",
+        "corridor_name": "",
+        "aliases": [],
+        "indicators": [],
+        "phases": [],
+        "sources": [
+          {
+            "id": "src-journalarta-ikn-seven-projects-2026-11-08",
+            "publisher": "JournalArta",
+            "title": "Investasi IKN Rp3,739 Triliun: Tujuh Proyek Baru",
+            "url": "https://journalarta.com/news/2026/11/08/investasi-ikn-tujuh-proyek-rp3739-triliun/",
+            "published_on": "2026-11-08",
+            "retrieved_on": "2026-11-09",
+            "source_type": "secondary",
+            "language": "id",
+            "archive_path": "data/raw/2026-11-09/journalarta_ikn_seven_projects_2026.html",
+            "notes": "Seven projects signed on 14 October 2026 worth Rp3.739T: eight ASN apartment towers at Rp2.629T and five private investments at Rp1.11T, including Grand Vista Nusantara (3.57 ha, Rp1T).",
+            "claim": "status; location; investment; capacity"
+          }
+        ],
+        "events": [
+          {
+            "id": "evt-laziz-pks",
+            "event_date": "2026-10-14",
+            "event_type": "contract",
+            "description": "PT Laziz Nusantara Grup signed a cooperation agreement for an Arabic restaurant, gelato outlet and multipurpose building at KIPP 1B.",
+            "source_id": "src-journalarta-ikn-seven-projects-2026-11-08",
+            "source_title": "Investasi IKN Rp3,739 Triliun: Tujuh Proyek Baru",
+            "source_url": "https://journalarta.com/news/2026/11/08/investasi-ikn-tujuh-proyek-rp3739-triliun/",
+            "notes": ""
+          }
+        ],
+        "freshness_state": "fresh",
+        "freshness_age_days": "0",
+        "freshness_due": "2027-05-12"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          116.708,
+          -0.974
+        ]
+      },
+      "properties": {
+        "id": "urban-teras-padu",
+        "name": "Teras Padu Sports and Commercial Hub IKN",
+        "sector": "urban",
+        "subsector": "sports and commercial",
+        "status": "planned",
+        "status_basis": "PT FYP Karya Perdana signed a cooperation agreement with OIKN on 14 October 2026 for the Teras Padu sports and commercial support facilities at KIPP 1A; construction had not started in the source.",
+        "corridor_id": "",
+        "island": "Kalimantan",
+        "province": "East Kalimantan",
+        "route": "KIPP Nusantara, KIPP 1A, Penajam Paser Utara",
+        "length_km": "",
+        "operational_km": "",
+        "construction_km": "",
+        "progress_pct": "",
+        "investment_idr_t": "0.020",
+        "capacity": "0.45",
+        "capacity_unit": "ha",
+        "psn": "no",
+        "opened_year": "",
+        "opened_date": "",
+        "expected_open_year": "",
+        "status_as_of": "2026-10-14",
+        "verification": "single",
+        "precision": "approximate",
+        "operator": "tba",
+        "source_url": "https://journalarta.com/news/2026/11/08/investasi-ikn-tujuh-proyek-rp3739-triliun/",
+        "source_type": "secondary",
+        "retrieved_on": "2026-11-09",
+        "last_verified": "2026-11-10",
+        "notes": "Sports and commercial support facilities on 0.45 ha. The source gives an estimated investment of Rp20B and no completion date.",
+        "corridor_name": "",
+        "aliases": [],
+        "indicators": [],
+        "phases": [],
+        "sources": [
+          {
+            "id": "src-journalarta-ikn-seven-projects-2026-11-08",
+            "publisher": "JournalArta",
+            "title": "Investasi IKN Rp3,739 Triliun: Tujuh Proyek Baru",
+            "url": "https://journalarta.com/news/2026/11/08/investasi-ikn-tujuh-proyek-rp3739-triliun/",
+            "published_on": "2026-11-08",
+            "retrieved_on": "2026-11-09",
+            "source_type": "secondary",
+            "language": "id",
+            "archive_path": "data/raw/2026-11-09/journalarta_ikn_seven_projects_2026.html",
+            "notes": "Seven projects signed on 14 October 2026 worth Rp3.739T: eight ASN apartment towers at Rp2.629T and five private investments at Rp1.11T, including Grand Vista Nusantara (3.57 ha, Rp1T).",
+            "claim": "status; location; investment; capacity"
+          }
+        ],
+        "events": [
+          {
+            "id": "evt-teras-padu-pks",
+            "event_date": "2026-10-14",
+            "event_type": "contract",
+            "description": "PT FYP Karya Perdana signed a cooperation agreement for the Teras Padu sports and commercial hub at KIPP 1A.",
+            "source_id": "src-journalarta-ikn-seven-projects-2026-11-08",
+            "source_title": "Investasi IKN Rp3,739 Triliun: Tujuh Proyek Baru",
+            "source_url": "https://journalarta.com/news/2026/11/08/investasi-ikn-tujuh-proyek-rp3739-triliun/",
+            "notes": ""
+          }
+        ],
+        "freshness_state": "fresh",
+        "freshness_age_days": "0",
+        "freshness_due": "2027-05-12"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          116.708,
+          -0.974
+        ]
+      },
+      "properties": {
+        "id": "urban-java-teak-showroom",
+        "name": "Java Teak Jepara Furniture Showroom IKN",
+        "sector": "urban",
+        "subsector": "showroom",
+        "status": "planned",
+        "status_basis": "PT Java Teak Indo signed a cooperation agreement with OIKN on 14 October 2026 for a Jepara furniture showroom and office at KIPP 1A; construction had not started in the source.",
+        "corridor_id": "",
+        "island": "Kalimantan",
+        "province": "East Kalimantan",
+        "route": "KIPP Nusantara, KIPP 1A, Penajam Paser Utara",
+        "length_km": "",
+        "operational_km": "",
+        "construction_km": "",
+        "progress_pct": "",
+        "investment_idr_t": "0.0015",
+        "capacity": "0.2",
+        "capacity_unit": "ha",
+        "psn": "no",
+        "opened_year": "",
+        "opened_date": "",
+        "expected_open_year": "",
+        "status_as_of": "2026-10-14",
+        "verification": "single",
+        "precision": "approximate",
+        "operator": "tba",
+        "source_url": "https://journalarta.com/news/2026/11/08/investasi-ikn-tujuh-proyek-rp3739-triliun/",
+        "source_type": "secondary",
+        "retrieved_on": "2026-11-09",
+        "last_verified": "2026-11-10",
+        "notes": "Jepara furniture showroom and office on 0.2 ha. The source gives an estimated investment of Rp1.5B and no completion date.",
+        "corridor_name": "",
+        "aliases": [],
+        "indicators": [],
+        "phases": [],
+        "sources": [
+          {
+            "id": "src-journalarta-ikn-seven-projects-2026-11-08",
+            "publisher": "JournalArta",
+            "title": "Investasi IKN Rp3,739 Triliun: Tujuh Proyek Baru",
+            "url": "https://journalarta.com/news/2026/11/08/investasi-ikn-tujuh-proyek-rp3739-triliun/",
+            "published_on": "2026-11-08",
+            "retrieved_on": "2026-11-09",
+            "source_type": "secondary",
+            "language": "id",
+            "archive_path": "data/raw/2026-11-09/journalarta_ikn_seven_projects_2026.html",
+            "notes": "Seven projects signed on 14 October 2026 worth Rp3.739T: eight ASN apartment towers at Rp2.629T and five private investments at Rp1.11T, including Grand Vista Nusantara (3.57 ha, Rp1T).",
+            "claim": "status; location; investment; capacity"
+          }
+        ],
+        "events": [
+          {
+            "id": "evt-java-teak-pks",
+            "event_date": "2026-10-14",
+            "event_type": "contract",
+            "description": "PT Java Teak Indo signed a cooperation agreement for a Jepara furniture showroom and office at KIPP 1A.",
             "source_id": "src-journalarta-ikn-seven-projects-2026-11-08",
             "source_title": "Investasi IKN Rp3,739 Triliun: Tujuh Proyek Baru",
             "source_url": "https://journalarta.com/news/2026/11/08/investasi-ikn-tujuh-proyek-rp3739-triliun/",

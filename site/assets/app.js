@@ -121,6 +121,20 @@
     return I18N.fmtNum ? I18N.fmtNum(number) : String(value);
   }
 
+  // Investments are stored in trillions. Small commitments read better in
+  // billions than as a rounded "Rp 0 T".
+  function investmentParts(value) {
+    const number = Number(value);
+    if (!isFinite(number) || number === 0) return null;
+    if (number >= 0.1) return [fmtNum(number), 'T'];
+    return [fmtNum(number * 1000), 'B'];
+  }
+
+  function fmtInvestment(value) {
+    const parts = investmentParts(value);
+    return parts ? 'Rp ' + parts[0] + ' ' + parts[1] : '';
+  }
+
   function fmtCoord(value) {
     const number = Number(value);
     if (!isFinite(number)) return esc(value);
@@ -234,7 +248,7 @@
       if (phase.start_date) dates.push(t('phase.start') + ' ' + fmtDate(phase.start_date));
       if (phase.end_date) dates.push(t('phase.end') + ' ' + fmtDate(phase.end_date));
       const facts = [];
-      if (phase.cost_idr_t) facts.push(t('phase.cost') + ' Rp ' + fmtNum(phase.cost_idr_t) + ' T');
+      if (phase.cost_idr_t) facts.push(t('phase.cost') + ' ' + fmtInvestment(phase.cost_idr_t));
       if (phase.progress_pct) facts.push(t('phase.progress') + ' ' + fmtNum(phase.progress_pct) + '%');
       const detail = dates.concat(facts).join(' · ');
       return '<li><time>' + esc(localName(phase)) + '</time><span><b>' +
@@ -850,7 +864,7 @@
     const bits = [];
     if (project.length_km) bits.push(fmtNum(project.length_km) + ' km');
     if (project.operational_km) bits.push(t('row.km_open', { value: fmtNum(project.operational_km) }));
-    if (!bits.length && project.investment_idr_t) bits.push('Rp ' + fmtNum(project.investment_idr_t) + ' T');
+    if (!bits.length && project.investment_idr_t) bits.push(fmtInvestment(project.investment_idr_t));
     if (!bits.length && project.capacity) bits.push(fmtNum(project.capacity) + ' ' + (I18N.unitLabel ? I18N.unitLabel(project.capacity_unit) : project.capacity_unit));
     if (!bits.length && project.opened_year) bits.push(t('row.opened', { year: project.opened_year }));
     if (!bits.length && project.expected_open_year) bits.push(t('row.target', { year: project.expected_open_year }));
@@ -1033,7 +1047,10 @@
     if (project.length_km) metrics.push(metricCard(t('drawer.metric.corridor_length'), fmtNum(project.length_km) + ' <small>km</small>'));
     if (project.operational_km) metrics.push(metricCard(t('drawer.metric.open'), fmtNum(project.operational_km) + ' <small>km</small>'));
     if (project.construction_km) metrics.push(metricCard(t('drawer.metric.under_construction'), fmtNum(project.construction_km) + ' <small>km</small>'));
-    if (project.investment_idr_t) metrics.push(metricCard(t('drawer.metric.investment'), 'Rp ' + fmtNum(project.investment_idr_t) + ' <small>T</small>'));
+    if (project.investment_idr_t) {
+      const inv = investmentParts(project.investment_idr_t);
+      if (inv) metrics.push(metricCard(t('drawer.metric.investment'), 'Rp ' + inv[0] + ' <small>' + inv[1] + '</small>'));
+    }
     if (project.capacity) metrics.push(metricCard(t('drawer.metric.capacity'), fmtNum(project.capacity) + ' <small>' + esc(I18N.unitLabel ? I18N.unitLabel(project.capacity_unit) : project.capacity_unit) + '</small>'));
     if (project.opened_year) metrics.push(metricCard(t('drawer.metric.opened'), esc(project.opened_year)));
     if (metrics.length < 2) metrics.push(metricCard(t('drawer.metric.psn'), esc(project.psn === 'yes' ? t('drawer.metric.yes') : project.psn === 'no' ? t('drawer.metric.no') : t('drawer.metric.unknown'))));
@@ -1933,7 +1950,7 @@
     const summary = I18N.locale === 'id' ? item.summary_id : item.summary_en;
     const target = I18N.locale === 'id' ? item.target_summary_id : item.target_summary_en;
     const budget = item.budget_idr_t
-      ? 'Rp ' + fmtNum(item.budget_idr_t) + ' T'
+      ? fmtInvestment(item.budget_idr_t)
       : t('programmes.not_published');
     const indicators = (item.indicators || []).map(function (indicator) {
       const info = indicatorSummary(indicator);

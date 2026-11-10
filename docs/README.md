@@ -45,8 +45,8 @@ data, trust layer and local release were built.
 | [`../data/curated/pkpn_programmes.csv`](../data/curated/pkpn_programmes.csv) | The eight 2027 PKPN priorities with bilingual summaries, targets, budgets and sources. |
 | [`../data/curated/pkpn_sources.csv`](../data/curated/pkpn_sources.csv) | 27 atomic claims for the PKPN layer. |
 | [`../data/curated/programme_projects.csv`](../data/curated/programme_projects.csv) | Seven structural links between programmes and atlas projects. |
-| [`../data/curated/organizations.csv`](../data/curated/organizations.csv) | 112 companies, agencies and consortia, with type, country and website. |
-| [`../data/curated/project_organizations.csv`](../data/curated/project_organizations.csv) | 228 sourced project-role links (sponsor, operator, owner, contractor). |
+| [`../data/curated/organizations.csv`](../data/curated/organizations.csv) | 116 companies, agencies and consortia, with type, country and website. |
+| [`../data/curated/project_organizations.csv`](../data/curated/project_organizations.csv) | 232 sourced project-role links (sponsor, operator, owner, contractor). |
 | [`../data/curated/translations.csv`](../data/curated/translations.csv) | Reviewed entity text and official Indonesian names used by the bilingual build. |
 | [`../data/i18n/ui.en.json`](../data/i18n/ui.en.json) | English UI catalogue: 635 semantic keys. |
 | [`../data/i18n/ui.id.json`](../data/i18n/ui.id.json) | Indonesian UI catalogue: the same 635 keys. |

@@ -31,6 +31,7 @@ org-ditjen-perhubungan-udara,Directorate General of Civil Aviation,Hubud,governm
 org-ditjen-perkeretaapian,Directorate General of Railways,DJKA,government,ID,org-kemenhub,,Owner of the railway PSNs.
 org-fajar-maju,PT Fajar Maju Karya Gemilang,Fajar Maju,private,ID,,,Developer of the IKN mixed-use area under construction.
 org-freeport-indonesia,PT Freeport Indonesia,Freeport Indonesia,private,ID,,https://ptfi.co.id,Operator of the Manyar smelter; subsidiary of Freeport-McMoRan and MIND ID.
+org-fyp-karya-perdana,PT FYP Karya Perdana,FYP Karya Perdana,private,ID,,,Signed an IKN cooperation agreement on 14 October 2026 for the Teras Padu sports and commercial hub.
 org-gni,PT Gunbuster Nickel Industry,GNI,private,ID,,https://gunbusternickelindustry.com,Delong-backed NPI smelter in North Morowali; under PKPU in 2026.
 org-gunadarma,Universitas Gunadarma,Gunadarma,private,ID,,,Developer of the Nusantara campus under construction.
 org-gunung-raja-paksi,PT Gunung Raja Paksi Tbk,GRP,private,ID,,https://gunungrajapaksi.com,Private steel producer at Cikarang Barat.
@@ -43,7 +44,7 @@ org-indonesia-belt-road,PT Indonesia Belt Road High Tech Development Park,Indone
 org-indonesia-huali-industry-park,PT Indonesia Huali Industry Park,IHIP,private,ID,,,Developer of the Huali nickel industrial park in Luwu Timur.
 org-indonesia-pomalaa-industry-park,PT Indonesia Pomalaa Industry Park,IPIP,consortium,ID,,,"Joint-venture estate company at Pomalaa, Kolaka."
 org-inpex-masela,"INPEX Masela, Ltd.",INPEX Masela,private,ID,,https://www.inpex.co.jp/english/,Operator of the Abadi Masela LNG project.
-org-intiland,PT Intiland Development Tbk,Intiland,private,ID,,,Sponsor of 108 landed ASN houses signed in October 2026.
+org-intiland,PT Intiland Development Tbk,Intiland,private,ID,,,Sponsor of 109 landed ASN houses signed in October 2026.
 org-itss,PT Indonesia Tsingshan Stainless Steel,ITSS,private,ID,,,Tsingshan stainless steel unit in IMIP.
 org-jakarta-tollroad-development,PT Jakarta Tollroad Development,Jakarta Tollroad Development,consortium,ID,,,v1 operator string: PT Jakarta Tollroad Development
 org-jasa-marga,PT Jasa Marga (Persero) Tbk,Jasa Marga,soe,ID,,https://www.jasamarga.com,
@@ -56,6 +57,7 @@ org-jasamarga-manado-bitung,PT Jasamarga Manado Bitung,,private,ID,,,Toll-road c
 org-jasamarga-ngawi-kertosono-kediri,PT Jasamarga Ngawi Kertosono Kediri,,private,ID,,,Toll-road concession operator from the BPJT list.
 org-jasamarga-pandaan-malang,PT Jasamarga Pandaan Malang,,private,ID,,,Toll-road concession operator from the BPJT list.
 org-jasamarga-probolinggo-banyuwangi,PT Jasamarga Probolinggo Banyuwangi,Jasamarga Probolinggo Banyuwangi,private,ID,org-jasa-marga,,v1 operator string: PT Jasamarga Probolinggo Banyuwangi
+org-java-teak-indo,PT Java Teak Indo,Java Teak Indo,private,ID,,,Signed an IKN cooperation agreement on 14 October 2026 for a Jepara furniture showroom and office.
 org-kai,PT Kereta Api Indonesia (Persero),KAI,soe,ID,,https://www.kai.id,State railway operator.
 org-kcic,PT Kereta Cepat Indonesia China,KCIC,consortium,ID,,https://whoosh.co.id,Jakarta–Bandung high-speed rail consortium.
 org-kemendikdasmen,Kementerian Pendidikan Dasar dan Menengah,Kemendikdasmen,government,ID,,,Ministry of Primary and Secondary Education.
@@ -72,6 +74,7 @@ org-kementerian-pu,Kementerian Pekerjaan Umum,Kementerian PU,government,ID,,http
 org-kementerian-sosial,Kementerian Sosial,Kemensos,government,ID,,https://kemensos.go.id,Ministry of Social Affairs.
 org-krakatau-steel,PT Krakatau Steel (Persero) Tbk,Krakatau Steel,soe,ID,,https://krakatausteel.com,Integrated steel producer in Cilegon.
 org-kresna-kusuma-dyandra-marga,PT Kresna Kusuma Dyandra Marga,Kresna Kusuma Dyandra Marga,private,ID,,,v1 operator string: PT Kresna Kusuma Dyandra Marga
+org-laziz-nusantara,PT Laziz Nusantara Grup,Laziz Nusantara,private,ID,,,"Signed an IKN cooperation agreement on 14 October 2026 for an Arabic restaurant, gelato outlet and multipurpose building."
 org-lotte-chemical-indonesia,PT Lotte Chemical Indonesia,LCI,private,ID,,https://www.lottechem.com,"Operator of the LINE naphtha cracker at Merak, Cilegon."
 org-lrt-jakarta,PT LRT Jakarta,LRT Jakarta,soe,ID,,https://www.lrtjakarta.co.id,Jakarta LRT operator.
 org-lrt-sumsel,PT LRT Sumatera Selatan,LRT Sumsel,soe,ID,,,South Sumatra LRT operator.
@@ -80,6 +83,7 @@ org-marga-trans-nusantara,PT Marga Trans Nusantara,,private,ID,,,Toll-road conce
 org-medan-binjai-tol,PT Medan Binjai Tol,,private,ID,,,Toll-road concession operator from the BPJT list.
 org-morowali-industri-sejahtera,PT Morowali Industri Sejahtera,MIS,private,ID,,https://neoenergy.co.id,Neo Energy subsidiary managing NEMIE.
 org-mrt-jakarta,PT MRT Jakarta (Persero),MRT Jakarta,soe,ID,,https://www.mrtjakarta.co.id,Jakarta metro operator and developer.
+org-nindya-estate-management,PT Nindya Estate Management,Nindya Estate Management,private,ID,,,Co-initiator with PT Nindya Karya of the eight ASN apartment towers signed on 14 October 2026.
 org-nindya-karya,PT Nindya Karya (Persero),Nindya Karya,soe,ID,,,Sponsor of the eight ASN apartment towers signed in October 2026.
 org-oki-pulp,PT OKI Pulp & Paper Mills,OKI Pulp,private,ID,,https://okipulppaper.co.id,APP/Sinar Mas pulp and tissue mill in Ogan Komering Ilir.
 org-onc,PT Obi Nickel Cobalt,ONC,private,ID,,https://tbpnickel.com,Harita Nickel and Lygend second Obi refinery.

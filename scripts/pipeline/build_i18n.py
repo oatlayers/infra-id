@@ -142,6 +142,25 @@ def number(value: str, locale: str = "en") -> str:
     return text
 
 
+def investment_text(value: str, locale: str = "en") -> str:
+    """Render a trillion-rupiah value, switching to billions when small."""
+    try:
+        amount = float(value)
+    except (TypeError, ValueError):
+        return ""
+    if amount and amount < 0.1:
+        amount_text = number(str(amount * 1000), locale)
+        return (
+            f"Rp {amount_text} billion" if locale == "en"
+            else f"Rp {amount_text} miliar"
+        )
+    amount_text = number(value, locale)
+    return (
+        f"Rp {amount_text} trillion" if locale == "en"
+        else f"Rp {amount_text} triliun"
+    )
+
+
 def display_date(value: str, locale: str) -> str:
     try:
         year, month, day = (int(part) for part in value.split("-"))
@@ -212,8 +231,8 @@ def generated_summary(project: dict[str, str], locale: str) -> str:
         )
     if project["investment_idr_t"]:
         facts.append(
-            f"Rp {number(project['investment_idr_t'], locale)} trillion investment" if locale == "en"
-            else f"investasi Rp {number(project['investment_idr_t'], locale)} triliun"
+            f"{investment_text(project['investment_idr_t'], locale)} investment" if locale == "en"
+            else f"investasi {investment_text(project['investment_idr_t'], locale)}"
         )
     if project["capacity"]:
         unit = project["capacity_unit"]
