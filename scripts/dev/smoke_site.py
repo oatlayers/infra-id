@@ -149,6 +149,14 @@ def locale_shell(page: Page) -> None:
           "Indonesian edition translates the Data view")
     check(page.locator(".dictionary details").count() == 28,
           "Indonesian edition renders 28 dictionary tables")
+    check("Daftar PSN transportasi Kemenhub" in page.locator(".coverage-table").inner_text(),
+          "Indonesian edition translates the coverage reference set")
+    check("baris · ekspor datar" in page.locator('a.download[href]').first.inner_text(),
+          "Indonesian edition translates download metadata")
+    page.locator(".dictionary details").first.click()
+    page.wait_for_timeout(100)
+    check("Pengenal stabil huruf kecil" in page.locator(".dictionary details").first.inner_text(),
+          "Indonesian edition translates field descriptions")
     screenshot(page, "08d-data-id-desktop.png")
     page.click('[data-lang-target="en"]')
     page.wait_for_selector(".data-view")
@@ -263,6 +271,14 @@ def desktop_views(page: Page) -> None:
           f"Conflict register has {CONFLICTS} rows")
     check(page.locator(".dictionary details").count() == 28, "Data dictionary has 28 tables")
     check(page.locator('a.download[href]').count() == 24, "Data view has 24 static downloads")
+    check("rows · flat export" in page.locator('a.download[href]').first.inner_text(),
+          "Download metadata is rendered from an i18n template")
+    check("50 PSN road entries" in page.locator(".coverage-table").inner_text(),
+          "Coverage table shows the English reference set")
+    page.locator(".dictionary details").first.click()
+    page.wait_for_timeout(100)
+    check("Stable lowercase-hyphenated identifier" in page.locator(".dictionary details").first.inner_text(),
+          "Data dictionary shows English field descriptions")
     check("programme register" in page.locator(".data-view").inner_text().lower(),
           "Data view has a programme register section")
     check(page.locator('.download[data-export="projects-csv"]').count() == 1,

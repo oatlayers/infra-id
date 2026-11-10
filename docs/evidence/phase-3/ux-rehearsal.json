@@ -5,22 +5,22 @@
       "tasks": {
         "project": {
           "ok": true,
-          "seconds": 0.595,
+          "seconds": 0.548,
           "note": "Bakauheni–Terbanggi Besar Toll Road"
         },
         "coverage": {
           "ok": true,
-          "seconds": 0.238,
+          "seconds": 0.225,
           "note": "PSN projects (active) Permenko 16/2025 annex; 228 numbered slots with 2 deleted (112 and 2"
         },
         "province": {
           "ok": true,
-          "seconds": 0.877,
+          "seconds": 0.876,
           "note": "31 rows; Double Track Java South"
         },
         "language": {
           "ok": true,
-          "seconds": 1.096,
+          "seconds": 0.932,
           "note": "EN + #/data preserved"
         }
       }
@@ -30,22 +30,22 @@
       "tasks": {
         "project": {
           "ok": true,
-          "seconds": 0.569,
+          "seconds": 0.559,
           "note": "Jalan Tol Bakauheni–Terbanggi Besar"
         },
         "coverage": {
           "ok": true,
-          "seconds": 0.219,
-          "note": "Proyek PSN (aktif) Permenko 16/2025 annex; 228 numbered slots with 2 deleted (112 and 226)"
+          "seconds": 0.226,
+          "note": "Proyek PSN (aktif) Lampiran Permenko 16/2025; 228 slot bernomor dengan 2 dihapus (112 dan "
         },
         "province": {
           "ok": true,
-          "seconds": 0.904,
+          "seconds": 1.042,
           "note": "31 rows; Jalur Ganda Jawa Selatan"
         },
         "language": {
           "ok": true,
-          "seconds": 0.855,
+          "seconds": 0.798,
           "note": "EN + #/data preserved"
         }
       }
@@ -55,22 +55,22 @@
       "tasks": {
         "project": {
           "ok": true,
-          "seconds": 0.578,
+          "seconds": 0.571,
           "note": "Bakauheni–Terbanggi Besar Toll Road"
         },
         "coverage": {
           "ok": true,
-          "seconds": 0.23,
+          "seconds": 0.205,
           "note": "PSN projects (active) Permenko 16/2025 annex; 228 numbered slots with 2 deleted (112 and 2"
         },
         "province": {
           "ok": true,
-          "seconds": 0.862,
+          "seconds": 1.003,
           "note": "31 rows; Double Track Java South"
         },
         "language": {
           "ok": true,
-          "seconds": 0.991,
+          "seconds": 0.931,
           "note": "EN + #/data preserved"
         }
       }
@@ -80,22 +80,22 @@
       "tasks": {
         "project": {
           "ok": true,
-          "seconds": 0.871,
+          "seconds": 0.614,
           "note": "Jalan Tol Bakauheni–Terbanggi Besar"
         },
         "coverage": {
           "ok": true,
-          "seconds": 0.352,
-          "note": "Proyek PSN (aktif) Permenko 16/2025 annex; 228 numbered slots with 2 deleted (112 and 226)"
+          "seconds": 0.22,
+          "note": "Proyek PSN (aktif) Lampiran Permenko 16/2025; 228 slot bernomor dengan 2 dihapus (112 dan "
         },
         "province": {
           "ok": true,
-          "seconds": 1.771,
+          "seconds": 1.728,
           "note": "31 rows; Jalur Ganda Jawa Selatan"
         },
         "language": {
           "ok": true,
-          "seconds": 0.836,
+          "seconds": 0.765,
           "note": "EN + #/data preserved"
         }
       }
@@ -105,22 +105,22 @@
       "tasks": {
         "project": {
           "ok": true,
-          "seconds": 0.603,
+          "seconds": 0.557,
           "note": "Bakauheni–Terbanggi Besar Toll Road"
         },
         "coverage": {
           "ok": true,
-          "seconds": 0.24,
+          "seconds": 0.224,
           "note": "PSN projects (active) Permenko 16/2025 annex; 228 numbered slots with 2 deleted (112 and 2"
         },
         "province": {
           "ok": true,
-          "seconds": 0.892,
+          "seconds": 0.896,
           "note": "31 rows; Double Track Java South"
         },
         "language": {
           "ok": true,
-          "seconds": 1.023,
+          "seconds": 0.959,
           "note": "EN + #/data preserved"
         }
       }

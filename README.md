@@ -23,7 +23,7 @@ HTTP server, with no tile server, CDN or remote request.
 | IKN package rows | 28 / 28 |
 | Project claims / estate claims | 1,169 / 115 |
 | Programme claims / PKPN claims | 48 / 27 |
-| Initial / data / total payload | 1,398 / 2,149 / 4,600 KB |
+| Initial / data / total payload | 1,422 / 2,175 / 4,661 KB |
 
 **Reference set:** 346 of 400 records are represented — all 226 active PSN
 records plus 120 strategic and private records. The remaining **54 records are

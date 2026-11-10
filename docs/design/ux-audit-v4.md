@@ -78,7 +78,6 @@ corridor group opens the matching corridor. Fuzzy ranking is still open.
 | Medium | 294 project summaries are generated from fields, not written by an editor | The text is factual but telegraphic and does not explain why a project matters | Review the flagship and high-traffic summaries; keep the generated text for the long tail |
 | Medium | Explore now uses 13 px row titles and 10.5–12.5 px captions; the 14–16 px body scale is not complete | The plan targets a 14–16 px body and 12–13 px captions | Finish the body scale in Release 4.3 and re-test 320/390 px overflow |
 | Medium | Search ranking is still token containment, with no edit distance or arrow-key result navigation | Grouped counts and synonyms fix discovery, but typo tolerance and keyboard result movement remain | Add fuzzy ranking and result-list arrow navigation |
-| Medium | Data coverage `reference_set`, download labels/meta and dictionary descriptions remain English in the ID edition | These are methodological strings, not proper names | Move coverage labels and download labels into the catalogue; translate dictionary descriptions in Release 4.4 |
 | Forty-five indicators and nine phases are sourced | The layer is structurally complete but still thin against the 300-indicator target | Add ministry baseline values and project-level output indicators as official reporting is filed |
 | Low | The 300-company target is met at 314 profiles; 14 profiles remain reference-only and 100 projects have no organisation role | The Companies view now covers project and estate roles, but the network is not complete | Add sourced roles where a source names one; do not add bare profiles |
 | Medium | No map-only mode or rail collapse | Explore still fixes 400 px for the rail | Add a collapse control and a map-only state |
@@ -89,13 +88,16 @@ corridor group opens the matching corridor. Fuzzy ranking is still open.
 | Low | Tables lack `<caption>`; some table headers are not scoped | WCAG 2.2 AA table semantics | Add captions and `scope` attributes |
 | Low | No print stylesheet | Users cannot print a project or Data page cleanly | Add print CSS for detail and Data pages |
 
+The bilingual gap (coverage `reference_set`, download labels and metadata, and
+dictionary descriptions) was closed on 10 November 2026; see `CHANGELOG.md`.
+
 ## 5. Baseline measurements
 
 | Measure | Value |
 |---|---|
 | Projects / programmes / estates | 294 / 24 / 204 |
 | Mapped project markers | 205 |
-| Locales | 2, 635 UI keys each |
+| Locales | 2, 679 UI keys each |
 | Project names | 294 Indonesian display names (206 reviewed + 88 official) |
 | Project summaries | 294 generated in both locales; 0 editorial |
 | Indicators / values / phases | 45 / 28 / 9 |
@@ -103,9 +105,9 @@ corridor group opens the matching corridor. Fuzzy ranking is still open.
 | PKPN programmes | 8, with 27 claims |
 | Companies / role links | 314 / 457 (271 project, 186 estate) |
 | Sources / dictionary tables | 140 / 28 |
-| Initial payload (one locale + core Explore) | 1,398 KB |
-| Runtime data payload | 2,149 KB |
-| Total payload including downloads | 4,600 KB |
+| Initial payload (one locale + core Explore) | 1,422 KB |
+| Runtime data payload | 2,175 KB |
+| Total payload including downloads | 4,661 KB |
 | Mobile horizontal overflow | none at 390 px (EN and ID) |
 | External requests | none |
 | Console / page errors | none |

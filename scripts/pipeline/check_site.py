@@ -349,6 +349,21 @@ def main() -> None:
         err("stats.js: changelog is empty")
     if len(stats.get("dictionary", [])) < 100:
         err("stats.js: data dictionary looks incomplete")
+    dictionary = stats.get("dictionary", [])
+    if any(not row.get("description_id") for row in dictionary):
+        err("stats.js: data dictionary is missing Indonesian descriptions")
+
+    id_messages = load_global(SITE_DATA / "i18n.id.js", "INFRA_I18N").get("messages", {})
+    for row in stats.get("coverage", []):
+        key = "coverage.ref." + row["layer"]
+        if key not in id_messages:
+            err(f"i18n.id.js: missing coverage reference for {row['layer']}")
+    for download in stats.get("downloads", []):
+        key = download.get("meta_key")
+        if not key:
+            err(f"downloads: {download.get('key')} has no meta_key")
+        elif key not in id_messages:
+            err(f"i18n.id.js: missing download meta {key}")
 
     for download in stats.get("downloads", []):
         path = SITE / download["file"]

@@ -1,7 +1,8 @@
 """Build the field-level data dictionary.
 
 The dictionary is generated from the schema in ``data_model.py`` plus the
-descriptions below, so it cannot drift from the CSV headers. It is written to
+descriptions below, so it cannot drift from the CSV headers. Indonesian
+descriptions come from ``data/i18n/dictionary.id.json``. It is written to
 ``data/derived/data_dictionary.csv`` and copied to ``site/downloads/dictionary.csv``
 for download.
 
@@ -10,12 +11,15 @@ Run: python scripts/pipeline/build_dictionary.py
 
 from __future__ import annotations
 
+import json
 import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from data_model import CURATED, DERIVED, SITE_DOWNLOADS, TABLES, read_csv, write_csv
+from data_model import CURATED, DERIVED, ROOT, SITE_DOWNLOADS, TABLES, read_csv, write_csv
+
+DICTIONARY_I18N = ROOT / "data" / "i18n" / "dictionary.id.json"
 
 TABLE_META = {
     "projects.csv": ("Projects", "One row per curated infrastructure project, with status, location and key figures."),
@@ -260,6 +264,10 @@ CONDITIONAL = {
 
 
 def main() -> None:
+    i18n = json.loads(DICTIONARY_I18N.read_text(encoding="utf-8"))
+    table_id = i18n.get("table", {})
+    field_id = i18n.get("field", {})
+
     examples: dict[str, dict[str, str]] = {}
     for name in TABLES:
         path = CURATED / name
@@ -294,10 +302,12 @@ def main() -> None:
                     "table": name,
                     "table_label": label,
                     "table_description": description,
+                    "table_description_id": table_id.get(description, ""),
                     "field": field,
                     "type": kind,
                     "required": required,
                     "description": text,
+                    "description_id": field_id.get(text, ""),
                     "allowed_values": allowed,
                     "example": examples.get(name, {}).get(field, ""),
                 }
@@ -306,9 +316,19 @@ def main() -> None:
     if missing:
         raise SystemExit(f"dictionary has no description for: {', '.join(missing)}")
 
+    missing_id = [
+        f"{row['table']}.{row['field']}"
+        for row in out
+        if not row["description_id"] or not row["table_description_id"]
+    ]
+    if missing_id:
+        raise SystemExit(
+            f"dictionary has no Indonesian description for: {', '.join(missing_id[:20])}"
+        )
+
     fields = [
-        "table", "table_label", "table_description", "field", "type", "required",
-        "description", "allowed_values", "example",
+        "table", "table_label", "table_description", "table_description_id", "field",
+        "type", "required", "description", "description_id", "allowed_values", "example",
     ]
     DERIVED.mkdir(parents=True, exist_ok=True)
     write_csv(DERIVED / "data_dictionary.csv", fields, out)

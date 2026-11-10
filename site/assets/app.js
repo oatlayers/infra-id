@@ -2283,7 +2283,8 @@
     }) : source;
     const rows = sorted.map(function (row) {
       return '<tr><td class="layer">' + esc(coverageLabel(row)) +
-        '<br><span style="color:var(--muted);font-size:9px">' + esc(row.reference_set) + '</span></td>' +
+        '<br><span style="color:var(--muted);font-size:9px">' +
+        esc(tOr('coverage.ref.' + row.layer, row.reference_set)) + '</span></td>' +
         '<td class="num">' + fmtNum(row.current) + '</td>' +
         '<td class="num">' + fmtNum(row.target) + '</td>' +
         '<td class="num ' + (row.status === 'met' ? 'ok' : 'gap') + '">' +
@@ -2433,8 +2434,17 @@
     }
     html += downloads.map(function (item) {
       const label = item.key ? tOr('download.' + item.key, item.label) : item.label;
+      let meta = item.meta || '';
+      if (item.meta_key) {
+        const vars = {};
+        const source = item.meta_vars || {};
+        Object.keys(source).forEach(function (name) {
+          vars[name] = name === 'date' ? fmtDate(source[name]) : fmtNum(source[name]);
+        });
+        meta = t(item.meta_key, vars);
+      }
       return '<a class="download" href="' + esc(downloadUrl(item.file)) + '" download>' +
-        '<span>' + esc(label) + ' <small>' + esc(item.meta) + '</small></span>' +
+        '<span>' + esc(label) + ' <small>' + esc(meta) + '</small></span>' +
         icon + '</a>';
     }).join('') + '</div>';
     return html;
@@ -2536,9 +2546,11 @@
           '<table><thead><tr><th>' + esc(t('data.field')) + '</th><th>' + esc(t('data.type')) +
           '</th><th>' + esc(t('data.description')) + '</th></tr></thead><tbody>' +
           entry.rows.map(function (row) {
+            const description = I18N.locale === 'id' && row.description_id
+              ? row.description_id : row.description;
             return '<tr><td class="field">' + esc(row.field) + '</td><td class="type">' +
               esc(row.type) + (row.required === 'yes' ? ' · ' + esc(t('data.required')) : '') + '</td><td>' +
-              esc(row.description) + (row.allowed_values ? ' <small>' + esc(t('data.allowed', { values: row.allowed_values })) + '</small>' : '') +
+              esc(description) + (row.allowed_values ? ' <small>' + esc(t('data.allowed', { values: row.allowed_values })) + '</small>' : '') +
               '</td></tr>';
           }).join('') + '</tbody></table></details>';
       }).join('') + '</div></section>';

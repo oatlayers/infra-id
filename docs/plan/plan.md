@@ -42,7 +42,7 @@ V4 is complete when:
 | Programme claims / PKPN claims | 48 / 27 |
 | Events | 77 |
 | Data dictionary | 286 fields across 28 tables |
-| Initial / data / total payload | 1,398 / 2,149 / 4,600 KB |
+| Initial / data / total payload | 1,422 / 2,175 / 4,661 KB |
 
 ### Reference-set accounting
 
@@ -193,7 +193,6 @@ remains the available source.
 
 | Pri | Item | Acceptance |
 |---|---|---|
-| P0 | Bilingual gaps | Coverage `reference_set`, download labels and metadata, dictionary descriptions and any new entity text are translated. Proper names and sourced English stay tagged `EN`. |
 | P1 | Editorial summaries | Replace the generated `AUTO` / `OTOMATIS` text for flagships and high-traffic rows with reviewed bilingual summaries; keep the generated text for the long tail. |
 | P1 | Mobile bottom navigation | Five-item bottom bar with a `More` item; full-screen filter sheet; 320 px and 390 px with no horizontal overflow. |
 | P1 | Project and entity detail pages | Shareable hash routes for projects, programmes and companies, printable and keyboard accessible; the drawer remains the quick view. |
@@ -220,12 +219,11 @@ remains the available source.
 
 1. **P0 — measurable coverage:** strategic records, sources and indicators.
    IKN coverage is complete at 28/28 and the 300-company target is met at 314.
-2. **P0 — bilingual completion.**
-3. **P1 — UX rebuild:** bottom navigation, detail pages, map v3, editorial
+2. **P1 — UX rebuild:** bottom navigation, detail pages, map v3, editorial
    summaries.
-4. **P2 — Data and search polish:** column chooser, fuzzy ranking, type scale,
+3. **P2 — Data and search polish:** column chooser, fuzzy ranking, type scale,
    table semantics, print.
-5. **P3 — optional geometry and estate verification.**
+4. **P3 — optional geometry and estate verification.**
 
 ## 8. Blockers and source gaps
 

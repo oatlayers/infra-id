@@ -3,6 +3,22 @@
 Public-facing changes to the atlas. Dates are the day the change landed in this
 repository. The Data view renders these entries from this file at build time.
 
+## 2026-11-10 — Close the English–Indonesian bilingual gap
+
+- Translated the coverage `reference_set` for all 17 layers, the 24 download
+  metadata templates and the missing `download.estates_json` label, so the
+  Indonesian Data view no longer falls back to English methodological text.
+- Added Indonesian descriptions for all 286 data-dictionary fields and 28 table
+  summaries in `data/i18n/dictionary.id.json`. The dictionary CSV and the Data
+  view now carry both `description` and `description_id`.
+- Download metadata is built from catalogue templates with count, open/resolved
+  and date placeholders instead of preformatted English strings; numbers and
+  dates follow the active locale.
+- The UI catalogue grows from 635 to 679 keys per locale. Initial payload is
+  1,422 KB, data 2,175 KB and total 4,661 KB, still inside the 5 MB budget.
+- Build, `--check`, smoke test, five-profile rehearsal, contrast check and link
+  check pass. Nothing was pushed, deployed or published.
+
 ## 2026-11-10 — Estate developers as sourced company profiles
 
 - Created a company profile for every developer named in the estate layer and

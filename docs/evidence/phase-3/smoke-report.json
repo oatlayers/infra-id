@@ -53,7 +53,7 @@
   },
   "protocols": {
     "http": {
-      "port": 53750,
+      "port": 60388,
       "ok": true
     },
     "file": {
