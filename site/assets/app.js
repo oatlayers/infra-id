@@ -1832,7 +1832,7 @@
     }
     const fields = [
       'id', 'name', 'short_name', 'org_type', 'country_code', 'parent_id',
-      'website', 'project_count', 'role_count', 'notes',
+      'website', 'project_count', 'estate_count', 'role_count', 'notes',
     ];
     downloadBlob(
       'infra-id-companies-filtered.csv',
@@ -2098,6 +2098,15 @@
       return '<p class="programme-empty">' + esc(t('companies.no_roles')) + '</p>';
     }
     return '<ul class="company-role-list">' + roles.map(function (role) {
+      if (role.kind === 'estate') {
+        const meta = [roleLabel(role.role), statusLabel(role.status), role.province]
+          .filter(Boolean).join(' · ');
+        return '<li><span class="company-estate">' + esc(role.estate_name) + '</span>' +
+          '<span>' + esc(meta) + '</span>' +
+          (role.source_url ? '<a class="company-source" href="' + esc(role.source_url) +
+            '" target="_blank" rel="noopener">' + esc(t('companies.source')) + ' ↗</a>' : '') +
+          '</li>';
+      }
       const years = role.start_year || role.end_year
         ? t('companies.years', {
           start: role.start_year || '—', end: role.end_year || '—'
@@ -2120,9 +2129,12 @@
     const expanded = state.expandedCompany === company.id;
     const roles = company.roles || [];
     const projectCount = company.project_count || 0;
+    const estateCount = company.estate_count || 0;
     const location = [company.country_code,
-      projectCount === 1 ? t('companies.project_count_one') :
-        t('companies.project_count', { count: fmtNum(projectCount) })
+      projectCount ? (projectCount === 1 ? t('companies.project_count_one') :
+        t('companies.project_count', { count: fmtNum(projectCount) })) : '',
+      estateCount ? (estateCount === 1 ? t('companies.estate_count_one') :
+        t('companies.estate_count', { count: fmtNum(estateCount) })) : ''
     ].filter(Boolean).join(' · ');
     return '<div class="company-row"><button type="button" data-company="' + esc(company.id) +
       '" aria-expanded="' + expanded + '"><span><span class="company-name">' + esc(company.name) +

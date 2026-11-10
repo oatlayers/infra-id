@@ -11,6 +11,7 @@ generated.
 | `projects.csv` | project | `id`, `name`, `sector`, `status`, `corridor_id`, `island`, km, investment, location, `status_as_of`, `verification` |
 | `organizations.csv` | company or agency | `id`, `name`, `org_type`, `country_code`, `parent_id`, `website` |
 | `project_organizations.csv` | project–organisation role | `project_id`, `org_id`, `role`, `share_pct`, `source_id` |
+| `estates.csv` `developer_org_id` | estate developer role | links the estate to the developer organisation; the source is the estate `source_id` |
 | `investments.csv` | commitment or tranche | `project_id`, `investor_org_id`, `amount`, `currency`, `amount_idr_t`, `stage`, `instrument` |
 | `sources.csv` | source document | `id`, `publisher`, `title`, `url`, `published_on`, `retrieved_on`, `source_type`, `language`, `archive_path` |
 | `project_sources.csv` | project–source claim | `project_id`, `source_id`, one atomic `claim`, `claim_value`, `claim_date` |
@@ -35,6 +36,12 @@ generated.
 | `indicators.csv` | measurable target | `id`, `programme_id`, `project_id`, bilingual name, `unit`, `direction`, baseline, target, `source_id` |
 | `indicator_values.csv` | dated observation | `indicator_id`, `value`, `as_of`, `source_id` |
 | `project_phases.csv` | project phase or package | `project_id`, phase name, status, dates, cost and source where stated |
+
+A company profile can carry two kinds of role: a project role from
+`project_organizations.csv`, or an estate developer role from an estate's
+`developer_org_id`. The Companies view merges both and labels the estate roles
+separately. The `company-projects.csv` download stays project-only; the
+company profile download includes `project_count` and `estate_count`.
 
 ## Project columns
 

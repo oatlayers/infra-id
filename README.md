@@ -17,13 +17,13 @@ HTTP server, with no tile server, CDN or remote request.
 | Active PSN programmes represented | 24 / 24 |
 | 2027 PKPN programmes | 8 / 8 |
 | Industrial estates and SEZs | 204 |
-| Companies and agencies | 143 |
+| Companies and agencies | 314 |
 | Sources | 140 |
 | Indicators / dated values / phases | 45 / 28 / 9 |
 | IKN package rows | 28 / 28 |
 | Project claims / estate claims | 1,169 / 115 |
 | Programme claims / PKPN claims | 48 / 27 |
-| Initial / data / total payload | 1,358 / 1,965 / 4,370 KB |
+| Initial / data / total payload | 1,398 / 2,149 / 4,600 KB |
 
 **Reference set:** 346 of 400 records are represented — all 226 active PSN
 records plus 120 strategic and private records. The remaining **54 records are
@@ -42,7 +42,7 @@ there is no remote, deployment or public URL. Remaining work is in
 - **Programmes:** the 24 PSN programmes and the eight 2027 PKPN priorities.
 - **Corridors:** five Trans corridor summaries with 44 segments.
 - **Estates:** 204 industrial estates and SEZs.
-- **Companies:** 143 organisations and their sourced project roles.
+- **Companies:** 314 organisations and their sourced project and estate roles.
 - **Data:** coverage, charts, methods, sources, downloads and known gaps.
 
 **It is not** a live project tracker, an official government dataset, or a
@@ -256,7 +256,7 @@ text inside the Indonesian edition carries `lang="en"` and an `EN` tag.
 | 2027 PKPN | 8 | 8/8 | bilingual summaries, sourced targets and budgets |
 | Factories | 34 | 19 operating, 3 recently completed, 11 under construction, 1 stalled | 27 capacity figures, 18 investment figures |
 | Industrial estates / SEZs | 204 | 179 industrial-only, 7 shared, 18 SEZ-only | table view only; 179 target met |
-| Companies and agencies | 143 | 121 with a project role, 22 reference-only | V4 target 300 |
+| Companies and agencies | 314 | 300 with a role, 14 reference-only | V4 target 300 met; 271 project role links and 186 estate developer links |
 | Sources | 140 | 58 official, 55 secondary, 27 company | V4 target 250 |
 | Indicators | 45 | 28 dated values | V4 target 300 |
 | Dated events | 77 | 2018–2026 | exact dates only |

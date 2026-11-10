@@ -1,23 +1,60 @@
 id,name,short_name,org_type,country_code,parent_id,website,notes
 org-abdi-waluyo,Rumah Sakit Abdi Waluyo,Abdi Waluyo,private,ID,,,Developer of the IKN hospital under construction.
+org-aditya-prima-perkasa,PT. Aditya Prima Perkasa,Aditya Prima Perkasa,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-aman-sejati-propertindo,PT. Aman Sejati Propertindo,Aman Sejati Propertindo,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
 org-amman-mineral-industri,PT Amman Mineral Industri,AMIN,private,ID,org-amman-mineral-international,https://www.amman.co.id/amman-mineral-industri,Owner and operator of the Benete copper smelter and precious metal refinery.
 org-amman-mineral-international,PT Amman Mineral Internasional Tbk,Amman,private,ID,,https://www.amman.co.id,Parent of PT Amman Mineral Industri.
+org-aneka-bumi-cipta,PT. Aneka Bumi Cipta,Aneka Bumi Cipta,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
 org-angakasa-pura-i,PT Angkasa Pura I (Persero),AP I,soe,ID,,https://www.angkasapura1.co.id,Airport operator for central and eastern Indonesia.
 org-angakasa-pura-ii,PT Angkasa Pura II (Persero),AP II,soe,ID,,https://www.angkasapura2.co.id,Airport operator for western Indonesia.
 org-angel-nickel,PT Angel Nickel Industry,Angel Nickel,private,ID,,https://nickelindustries.com,Nickel Industries 80% owned RKEF project in IWIP.
+org-angkasa-pancabersaudara,PT. Angkasa Pancabersaudara,Angkasa Pancabersaudara,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-anugrah-tambang-industri,PT Anugrah Tambang Industri,Anugrah Tambang Industri,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-anugrah-tehnik-industry,PT. Anugrah Tehnik Industry,Anugrah Tehnik Industry,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-astasiti-mahadhana,PT. Astasiti Mahadhana,Astasiti Mahadhana,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
 org-badan-gizi-nasional,Badan Gizi Nasional,BGN,government,ID,,,National Nutrition Agency.
+org-badan-usaha-pembangun-dan-pengelola-kek-tanjung-kelayang,Badan Usaha Pembangun dan Pengelola (BUPP) KEK Tanjung Kelayang,Badan Usaha Pembangun dan Pengelola (BUPP) KEK Tanjung Kelayang,other,ID,,,Estate development body. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
 org-bakauheni-terbanggi-besar-toll,PT Bakauheni Terbanggi Besar Toll,Bakauheni Terbanggi Besar Toll,private,ID,,,Toll-road concession operator from the BPJT list.
+org-bali-turtle-island-development,PT Bali Turtle Island Development,Bali Turtle Island Development,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-bangun-laksana-persada,PT. Bangun Laksana Persada,Bangun Laksana Persada,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-bangun-palu-sulawesi-tengah,PT Bangun Palu Sulawesi Tengah,Bangun Palu Sulawesi Tengah,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
 org-bantaeng-sinergi-cemerlang,PT Bantaeng Sinergi Cemerlang (Perseroda),BSC,soe,ID,,,Regional enterprise managing Kawasan Industri Bantaeng.
+org-banten-west-java-tourism-development,PT Banten West Java Tourism Development,Banten West Java Tourism Development,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-baoshuo-taman-industry-investment-group,PT. Baoshuo Taman Industry Investment Group,Baoshuo Taman Industry Investment Group,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-batam-teknik,PT Batam Teknik (BAT),Batam Teknik (BAT),private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-batamindo-investment-cakrawala,PT Batamindo Investment Cakrawala,Batamindo Investment Cakrawala,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-batamraya-sukses-perkasa,PT Batamraya Sukses Perkasa,Batamraya Sukses Perkasa,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-batuta-chemical-industrial-park,PT Batuta Chemical Industrial Park,Batuta Chemical Industrial Park,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
 org-bayan-laju-trans-kalimantan,PT Bayan Laju Trans Kalimantan,BLTK,private,ID,,,Developer of the East Kalimantan logistics railway.
+org-bekasi-fajar-industrial-estate,PT. Bekasi Fajar Industrial Estate,Bekasi Fajar Industrial Estate,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-bekasi-matra-industrial-estate,PT. Bekasi Matra Industrial Estate,Bekasi Matra Industrial Estate,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-bekasi-surya-pratama,PT. Bekasi Surya Pratama,Bekasi Surya Pratama,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
 org-berdikari,PT Berdikari (Persero),Berdikari,soe,ID,,,State-owned food company. Signed the IKN integrated chicken downstreaming agreement on 14 October 2026.
+org-berkah-kawasan-manyar-sejahtera,PT Berkah Kawasan Manyar Sejahtera,Berkah Kawasan Manyar Sejahtera,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-besland-pertiwi,PT. Besland Pertiwi,Besland Pertiwi,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-bhumi-kencana-sejahtera,PT Bhumi Kencana Sejahtera,Bhumi Kencana Sejahtera,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-bintan-inti-industrial-estate,PT. Bintan Inti Industrial Estate,Bintan Inti Industrial Estate,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-bintang-propertindo,PT. Bintang Propertindo,Bintang Propertindo,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-bintang-puspita-dwikarya,PT. Bintang Puspita Dwikarya,Bintang Puspita Dwikarya,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
 org-bintaro-serpong-damai,PT. Bintaro Serpong Damai,Bintaro Serpong Damai,private,ID,,,Toll-road concession operator from the BPJT list.
+org-blessindo-intiland,PT. Blessindo Intiland,Blessindo Intiland,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
 org-bnpp,Badan Nasional Pengelola Perbatasan,BNPP,government,ID,,https://bnpp.go.id,National border management agency.
+org-bogorindo-cemerlang,PT. Bogorindo Cemerlang,Bogorindo Cemerlang,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
 org-boppj,Badan Otorita Pengelola Pantai Utara Jawa,BOPPJ,government,ID,,https://www.pu.go.id,North Java coast management authority.
 org-borneo-alumina,PT Borneo Alumina Indonesia,BAI,private,ID,org-inalum,https://www.bai.officespace.co.id,INALUM 60% and ANTAM 40% SGAR joint venture.
 org-btr,PT Indonesia BTR New Energy Material,BTR Indonesia,private,ID,,https://www.btrchina.com,BTR New Material Group anode plant in Kendal Industrial Park.
+org-bukit-asam,PT. Bukit Asam,Bukit Asam,soe,ID,,,State-owned estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-bumi-abadi-tegar-sakti,PT. Bumi Abadi Tegar Sakti,Bumi Abadi Tegar Sakti,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-bumi-aman-sejahtera,PT. Bumi Aman Sejahtera,Bumi Aman Sejahtera,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-bumi-cipta-khatulistiwa,PT. Bumi Cipta Khatulistiwa,Bumi Cipta Khatulistiwa,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-bumi-citra-permai,PT. Bumi Citra Permai,Bumi Citra Permai,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-bumi-raya-perkasa-nusantara,PT. Bumi Raya Perkasa Nusantara,Bumi Raya Perkasa Nusantara,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-bumi-serpong-damai,PT Bumi Serpong Damai,Bumi Serpong Damai,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
 org-buton-asphalt-indonesia,PT Buton Asphalt Indonesia,Buton Asphalt,private,ID,,https://www.butonasphalt.co.id,Buton natural asphalt processor.
 org-cbl,"Ningbo Contemporary Brunp Lygend Co., Ltd.",CBL,private,CN,,https://www.catl.com,CATL subsidiary and joint-venture partner with ANTAM and IBC.
+org-cfld-karawang-new-industry-city-development,PT. CFLD Karawang New Industry City Development,CFLD Karawang New Industry City Development,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
 org-chandra-asri,PT Chandra Asri Pacific Tbk,Chandra Asri,private,ID,,https://chandra-asri.com,Operator of the Cilegon naphtha cracker and petrochemical complex.
+org-cibinong-center-industrial-estate,PT. Cibinong Center Industrial Estate,Cibinong Center Industrial Estate,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
 org-cibitung-tanjung-priok-port-tollways,PT Cibitung Tanjung Priok Port Tollways,,private,ID,,,Toll-road concession operator from the BPJT list.
 org-cimanggis-cibitung-tollways,PT Cimanggis Cibitung Tollways,CCT,private,ID,,,Operator of the Cimanggis–Cibitung toll road.
 org-cinere-serpong-jaya,PT Cinere Serpong Jaya,CSJ,private,ID,,https://www.jasamarga.com,Operator of the Serpong–Cinere toll road.
@@ -26,37 +63,70 @@ org-citra-marga-lintas-jabar,PT. Citra Marga Lintas Jabar,Citra Marga Lintas Jab
 org-citra-marga-nusaphala-persada,PT Citra Marga Nusaphala Persada Tbk,Citra Marga,private,ID,,,v1 operator string: PT. Citra Marga Nusaphala Persada Tbk.
 org-citra-margatama-surabaya,PT Citra Margatama Surabaya,Citra Margatama Surabaya,private,ID,,,Toll-road concession operator from the BPJT list.
 org-citra-waspphutowa,PT Citra Waspphutowa,Citra Waspphutowa,private,ID,,,v1 operator string: PT Citra Waspphutowa
+org-comarindo-pratama,PT. Comarindo Pratama,Comarindo Pratama,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
 org-danantara,Badan Pengelola Investasi Daya Anagata Nusantara,Danantara,government,ID,,https://danantara.id,Sovereign investment authority; Hilirisasi Stage II sponsor.
+org-daya-kencanasia,PT. Daya Kencanasia,Daya Kencanasia,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
 org-dexin-steel,PT Dexin Steel Indonesia,Dexin Steel,private,ID,,https://www.dexin-steel.com,Delong and Tsingshan carbon steel joint venture in IMIP.
 org-dharma-inti-bersama,PT Dharma Inti Bersama,DIB,private,ID,,,Harita Group company developing Pulau Penebang.
 org-dian-jaya,PT Dian Jaya Indonesia,Dian Jaya,private,ID,,,Developer of the IKN apartment project under construction.
+org-dibiya-jaya-makmur,PT. Dibiya Jaya Makmur,Dibiya Jaya Makmur,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
 org-ditjen-perhubungan-laut,Directorate General of Sea Transportation,Hubla,government,ID,org-kemenhub,,Owner of the seaport PSNs.
 org-ditjen-perhubungan-udara,Directorate General of Civil Aviation,Hubud,government,ID,org-kemenhub,,Owner of the airport PSNs.
 org-ditjen-perkeretaapian,Directorate General of Railways,DJKA,government,ID,org-kemenhub,,Owner of the railway PSNs.
+org-dua-samudera-perkasa,PT Dua Samudera Perkasa,Dua Samudera Perkasa,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
 org-duta-graha-karya,PT Duta Graha Karya,Duta Graha Karya,private,ID,,,Toll-road concession operator from the BPJT list.
+org-dwipapuri-abadi,PT. Dwipapuri Abadi,Dwipapuri Abadi,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-east-jakarta-industrial-park,PT. East Jakarta Industrial Park,East Jakarta Industrial Park,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-emerald-ferrochromium-industry,PT. Emerald Ferrochromium Industry,Emerald Ferrochromium Industry,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-enam-sembilan-kawasan-industri,PT Enam Sembilan Kawasan Industri,Enam Sembilan Kawasan Industri,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
 org-fajar-maju,PT Fajar Maju Karya Gemilang,Fajar Maju,private,ID,,,Developer of the IKN mixed-use area under construction.
+org-feni-haltim,PT. Feni Haltim,Feni Haltim,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
 org-freeport-indonesia,PT Freeport Indonesia,Freeport Indonesia,private,ID,,https://ptfi.co.id,Operator of the Manyar smelter; subsidiary of Freeport-McMoRan and MIND ID.
 org-fyp-karya-perdana,PT FYP Karya Perdana,FYP Karya Perdana,private,ID,,,Signed an IKN cooperation agreement on 14 October 2026 for the Teras Padu sports and commercial hub.
+org-gbkek-industri-park,PT GBKEK Industri Park,GBKEK Industri Park,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-gerbang-teknologi-cikarang,PT. Gerbang Teknologi Cikarang,Gerbang Teknologi Cikarang,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
 org-gni,PT Gunbuster Nickel Industry,GNI,private,ID,,https://gunbusternickelindustry.com,Delong-backed NPI smelter in North Morowali; under PKPU in 2026.
+org-gobel-dharma-nusantara,PT. Gobel Dharma Nusantara,Gobel Dharma Nusantara,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-grahabuana-cikarang,PT. Grahabuana Cikarang,Grahabuana Cikarang,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-griya-lestari-jaya,PT. Griya Lestari Jaya,Griya Lestari Jaya,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
 org-gunadarma,Universitas Gunadarma,Gunadarma,private,ID,,,Developer of the Nusantara campus under construction.
 org-gunung-raja-paksi,PT Gunung Raja Paksi Tbk,GRP,private,ID,,https://gunungrajapaksi.com,Private steel producer at Cikarang Barat.
+org-hacaca-jaya-properti,PT. Hacaca Jaya Properti,Hacaca Jaya Properti,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-harapan-anang-bakri-sons,PT. Harapan Anang Bakri & Sons,Harapan Anang Bakri & Sons,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-hijrah-karya-mandiri,PT Hijrah Karya Mandiri,Hijrah Karya Mandiri,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-hotel-indonesia-natour,PT Hotel Indonesia Natour,Hotel Indonesia Natour,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
 org-hpl,PT Halmahera Persada Lygend,HPL,private,ID,,https://hpalnickel.com,Harita Nickel and Lygend HPAL joint venture on Obi Island.
 org-huadi,PT Huadi Nickel-Alloy Indonesia,Huadi,private,ID,,,"Nickel-alloy smelter at Pajukukang, Bantaeng."
 org-huafei,PT Huafei Nickel Cobalt,Huafei,private,ID,,,"Huayou, Tsingshan and EVE HPAL joint venture in IWIP."
 org-hutama-karya,PT Hutama Karya (Persero),Hutama Karya,soe,ID,,https://www.hutamakarya.com,v1 operator string: PT Hutama Karya (Persero)
 org-hutama-marga-waskita,PT Hutama Marga Waskita,Hutama Marga Waskita,private,ID,,,Toll-road concession operator from the BPJT list.
+org-hyundai-inti-development,PT. Hyundai Inti Development,Hyundai Inti Development,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
 org-inalum,PT Indonesia Asahan Aluminium (Persero),INALUM,soe,ID,,https://www.inalum.id,State aluminium smelter at Kuala Tanjung; MIND ID subsidiary.
+org-indo-permata-usahatama,PT. Indo Permata Usahatama,Indo Permata Usahatama,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-indocargomas-persada,PT. Indocargomas Persada,Indocargomas Persada,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
 org-indonesia-belt-road,PT Indonesia Belt Road High Tech Development Park,Indonesia Belt Road,private,ID,,,"Developer of Grand Vista Nusantara, signed in October 2026."
 org-indonesia-huali-industry-park,PT Indonesia Huali Industry Park,IHIP,private,ID,,,Developer of the Huali nickel industrial park in Luwu Timur.
+org-indonesia-konawe-industrial-park,PT. Indonesia Konawe Industrial Park,Indonesia Konawe Industrial Park,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-indonesia-morowali-industrial-park,PT Indonesia Morowali Industrial Park,Indonesia Morowali Industrial Park,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
 org-indonesia-pomalaa-industry-park,PT Indonesia Pomalaa Industry Park,IPIP,consortium,ID,,,"Joint-venture estate company at Pomalaa, Kolaka."
+org-indonesia-wedabay-industrial-park,PT. Indonesia Wedabay Industrial Park,Indonesia Wedabay Industrial Park,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-indotaisei-indah-development,PT. Indotaisei Indah Development,Indotaisei Indah Development,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
 org-inpex-masela,"INPEX Masela, Ltd.",INPEX Masela,private,ID,,https://www.inpex.co.jp/english/,Operator of the Abadi Masela LNG project.
+org-intelegensia-grahatama,PT Intelegensia Grahatama,Intelegensia Grahatama,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-intijaya-subang-industri,PT. Intijaya Subang Industri,Intijaya Subang Industri,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
 org-intiland,PT Intiland Development Tbk,Intiland,private,ID,,,Sponsor of 109 landed ASN houses signed in October 2026.
+org-intiland-sejahtera,PT. Intiland Sejahtera,Intiland Sejahtera,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-irama-gemilang-lestari,PT. Irama Gemilang Lestari,Irama Gemilang Lestari,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
 org-itss,PT Indonesia Tsingshan Stainless Steel,ITSS,private,ID,,,Tsingshan stainless steel unit in IMIP.
+org-jababeka-group,Jababeka Group,Jababeka Group,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-jabar-utama-wood-industry,PT. Jabar Utama Wood Industry,Jabar Utama Wood Industry,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-jakarta-industrial-estate-pulogadung,PT. Jakarta Industrial Estate Pulogadung,Jakarta Industrial Estate Pulogadung,soe,ID,,,State-owned estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
 org-jakarta-lingkar-baratsatu,PT. Jakarta Lingkar Baratsatu,Jakarta Lingkar Baratsatu,private,ID,,,Toll-road concession operator from the BPJT list.
 org-jakarta-tollroad-development,PT Jakarta Tollroad Development,Jakarta Tollroad Development,consortium,ID,,,v1 operator string: PT Jakarta Tollroad Development
 org-jalan-tol-seksi-empat,PT Jalan Tol Seksi Empat,Jalan Tol Seksi Empat,private,ID,,,Toll-road concession operator from the BPJT list.
 org-jasa-marga,PT Jasa Marga (Persero) Tbk,Jasa Marga,soe,ID,,https://www.jasamarga.com,
 org-jasa-marga-jogja-bawen,PT Jasa Marga Jogja Bawen,Jasa Marga Jogja Bawen,private,ID,org-jasa-marga,,v1 operator string: PT Jasa Marga Jogja Bawen
+org-jasa-semesta-utama,PT. Jasa Semesta Utama,Jasa Semesta Utama,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
 org-jasamarga-bali-tol,PT Jasamarga Bali Tol,Jasamarga Bali Tol,private,ID,,,Toll-road concession operator from the BPJT list.
 org-jasamarga-balikpapan-samarinda,PT Jasamarga Balikpapan Samarinda,,private,ID,,,Toll-road concession operator from the BPJT list.
 org-jasamarga-gempol-pasuruan,PT Jasamarga Gempol Pasuruan,Jasamarga Gempol Pasuruan,private,ID,,,Toll-road concession operator from the BPJT list.
@@ -75,7 +145,34 @@ org-jasamarga-solo-ngawi,PT Jasamarga Solo Ngawi,Jasamarga Solo Ngawi,private,ID
 org-jasamarga-surabaya-mojokerto,PT Jasamarga Surabaya Mojokerto,Jasamarga Surabaya Mojokerto,private,ID,,,Toll-road concession operator from the BPJT list.
 org-jasamarga-transjawa-tol,PT Jasamarga Transjawa Tol,Jasamarga Transjawa Tol,private,ID,,,Toll-road concession operator from the BPJT list.
 org-java-teak-indo,PT Java Teak Indo,Java Teak Indo,private,ID,,,Signed an IKN cooperation agreement on 14 October 2026 for a Jepara furniture showroom and office.
+org-jawa-tengah-lahan-andalan,PT. Jawa Tengah Lahan Andalan,Jawa Tengah Lahan Andalan,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-kabil-citranusa,PT. Kabil Citranusa,Kabil Citranusa,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-kabil-indonusa-estate,PT. Kabil Indonusa Estate,Kabil Indonusa Estate,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
 org-kai,PT Kereta Api Indonesia (Persero),KAI,soe,ID,,https://www.kai.id,State railway operator.
+org-kalimantan-industrial-park-indonesia,PT. Kalimantan Industrial Park Indonesia,Kalimantan Industrial Park Indonesia,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-kaltim-industrial-estate,PT. Kaltim Industrial Estate,Kaltim Industrial Estate,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-karawang-cipta-persada,PT. Karawang Cipta Persada,Karawang Cipta Persada,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-karawang-jabar-industrial-estate,PT. Karawang Jabar Industrial Estate,Karawang Jabar Industrial Estate,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-karawang-tatabina-ie,PT. Karawang Tatabina IE,Karawang Tatabina IE,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-karimun-indojaya-cakrawala,PT. Karimun Indojaya Cakrawala,Karimun Indojaya Cakrawala,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-karunia-praja-pesona,PT Karunia Praja Pesona,Karunia Praja Pesona,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-karyadeka-alam-lestari,PT. Karyadeka Alam Lestari,Karyadeka Alam Lestari,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-kawasan-berikat-nusantara,PT. Kawasan Berikat Nusantara,Kawasan Berikat Nusantara,soe,ID,,,State-owned estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-kawasan-industri-dumai,PT. Kawasan Industri Dumai,Kawasan Industri Dumai,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-kawasan-industri-gresik,PT. Kawasan Industri Gresik,Kawasan Industri Gresik,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-kawasan-industri-intiland,PT. Kawasan Industri Intiland,Kawasan Industri Intiland,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-kawasan-industri-jababeka,PT. Kawasan Industri Jababeka,Kawasan Industri Jababeka,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-kawasan-industri-kendal,PT Kawasan Industri Kendal,Kawasan Industri Kendal,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-kawasan-industri-kujang-cikampek,PT. Kawasan Industri Kujang Cikampek,Kawasan Industri Kujang Cikampek,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-kawasan-industri-makassar,PT. Kawasan Industri Makassar (KIMA),Kawasan Industri Makassar (KIMA),soe,ID,,,State-owned estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-kawasan-industri-medan,PT. Kawasan Industri Medan (Persero),Kawasan Industri Medan,soe,ID,,,State-owned estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-kawasan-industri-mongondow,PT. Kawasan Industri Mongondow,Kawasan Industri Mongondow,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-kawasan-industri-sidoarjo,PT. Kawasan Industri Sidoarjo,Kawasan Industri Sidoarjo,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-kawasan-industri-tanjung-buton,PT. Kawasan Industri Tanjung Buton,Kawasan Industri Tanjung Buton,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-kawasan-industri-terpadu-batang,PT Kawasan Industri Terpadu Batang,Kawasan Industri Terpadu Batang,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-kawasan-industri-terpadu-indonesia-china,PT. Kawasan Industri Terpadu Indonesia China,Kawasan Industri Terpadu Indonesia China,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-kawasan-industri-tiran,PT. Kawasan Industri Tiran,Kawasan Industri Tiran,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-kawasan-industri-wijayakusuma,PT. Kawasan Industri Wijayakusuma (Persero),Kawasan Industri Wijayakusuma,soe,ID,,,State-owned estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
 org-kcic,PT Kereta Cepat Indonesia China,KCIC,consortium,ID,,https://whoosh.co.id,Jakarta–Bandung high-speed rail consortium.
 org-kemendikdasmen,Kementerian Pendidikan Dasar dan Menengah,Kemendikdasmen,government,ID,,,Ministry of Primary and Secondary Education.
 org-kemenhub,Ministry of Transportation,Kemenhub,government,ID,,https://www.kemenhub.go.id,National transport ministry; sponsor of the 35 transport PSNs.
@@ -89,52 +186,125 @@ org-kementerian-pertanian,Kementerian Pertanian,Kementan,government,ID,,https://
 org-kementerian-pkp,Kementerian Perumahan dan Kawasan Permukiman,Kementerian PKP,government,ID,,,Ministry responsible for the IKN housing packages.
 org-kementerian-pu,Kementerian Pekerjaan Umum,Kementerian PU,government,ID,,https://www.pu.go.id,Ministry of Public Works; dams and coastal defence.
 org-kementerian-sosial,Kementerian Sosial,Kemensos,government,ID,,https://kemensos.go.id,Ministry of Social Affairs.
+org-ketapang-bangun-sarana,PT Ketapang Bangun Sarana,Ketapang Bangun Sarana,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-ketapang-ecology-and-agriculture-forestery,PT. Ketapang Ecology and Agriculture Forestery,Ketapang Ecology and Agriculture Forestery,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-krakatau-sarana-infrastruktur,PT. Krakatau Sarana Infrastruktur,Krakatau Sarana Infrastruktur,soe,ID,,,State-owned estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
 org-krakatau-steel,PT Krakatau Steel (Persero) Tbk,Krakatau Steel,soe,ID,,https://krakatausteel.com,Integrated steel producer in Cilegon.
 org-kresna-kusuma-dyandra-marga,PT Kresna Kusuma Dyandra Marga,Kresna Kusuma Dyandra Marga,private,ID,,,v1 operator string: PT Kresna Kusuma Dyandra Marga
+org-landak-barajaki,PT. Landak Barajaki,Landak Barajaki,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
 org-laziz-nusantara,PT Laziz Nusantara Grup,Laziz Nusantara,private,ID,,,"Signed an IKN cooperation agreement on 14 October 2026 for an Arabic restaurant, gelato outlet and multipurpose building."
 org-lintas-marga-sedaya,PT. Lintas Marga Sedaya,Lintas Marga Sedaya,private,ID,,,Toll-road concession operator from the BPJT list.
+org-lippo-cikarang,PT. Lippo Cikarang Tbk,Lippo Cikarang,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
 org-lotte-chemical-indonesia,PT Lotte Chemical Indonesia,LCI,private,ID,,https://www.lottechem.com,"Operator of the LINE naphtha cracker at Merak, Cilegon."
 org-lrt-jakarta,PT LRT Jakarta,LRT Jakarta,soe,ID,,https://www.lrtjakarta.co.id,Jakarta LRT operator.
 org-lrt-sumsel,PT LRT Sumatera Selatan,LRT Sumsel,soe,ID,,,South Sumatra LRT operator.
 org-makassar-metro-network,PT Makassar Metro Network,Makassar Metro Network,private,ID,,,Toll-road concession operator from the BPJT list.
+org-makmur-berkah-ananda,PT. Makmur Berkah Ananda,Makmur Berkah Ananda,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-malamoi-olom-wobok,PT Malamoi Olom Wobok,Malamoi Olom Wobok,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-maligi-permata-industrial-estate,PT. Maligi Permata Industrial Estate,Maligi Permata Industrial Estate,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-maloy-batuta-trans-kalimantan,PT Maloy Batuta Trans Kalimantan,Maloy Batuta Trans Kalimantan,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-mandalapratama-permai,PT. Mandalapratama Permai,Mandalapratama Permai,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
 org-marga-harjaya-infrastruktur,PT Marga Harjaya Infrastruktur,Marga Harjaya Infrastruktur,private,ID,,,Toll-road concession operator from the BPJT list.
 org-marga-lingkar-jakarta,PT Marga Lingkar Jakarta,Marga Lingkar Jakarta,private,ID,,,Toll-road concession operator from the BPJT list.
 org-marga-mandala-sakti,PT Marga Mandala Sakti,Marga Mandala Sakti,private,ID,,,Toll-road concession operator from the BPJT list.
 org-marga-sarana-jabar,PT Marga Sarana Jabar,Marga Sarana Jabar,private,ID,,,v1 operator string: PT. Marga Sarana Jabar
 org-marga-trans-nusantara,PT Marga Trans Nusantara,,private,ID,,,Toll-road concession operator from the BPJT list.
 org-margabumi-matraraya,PT. Margabumi Matraraya,Margabumi Matraraya,private,ID,,,Toll-road concession operator from the BPJT list.
+org-maspion-industrial-estate,PT. Maspion Industrial Estate,Maspion Industrial Estate,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
 org-medan-binjai-tol,PT Medan Binjai Tol,,private,ID,,,Toll-road concession operator from the BPJT list.
+org-megalopolis-manunggal-ind-dev,PT. Megalopolis Manunggal Ind. Dev.,Megalopolis Manunggal Ind. Dev.,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-membangun-sulut-hebat,PT Membangun Sulut Hebat (MSH),Membangun Sulut Hebat (MSH),private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-merdeka-wirastama,PT. Merdeka Wirastama,Merdeka Wirastama,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-minahasa-permai-resort-development,PT Minahasa Permai Resort Development,Minahasa Permai Resort Development,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-mitra-karawang-jaya,PT. Mitra Karawang Jaya,Mitra Karawang Jaya,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-mitra-propindo-lestari,PT. Mitra Propindo Lestari,Mitra Propindo Lestari,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-mitratangerang-bhumimas,PT. Mitratangerang Bhumimas,Mitratangerang Bhumimas,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-mncland-lido,PT MNCLand Lido,MNCLand Lido,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-modern-industrial-estate,PT. Modern Industrial Estate,Modern Industrial Estate,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
 org-morowali-industri-sejahtera,PT Morowali Industri Sejahtera,MIS,private,ID,,https://neoenergy.co.id,Neo Energy subsidiary managing NEMIE.
 org-mrt-jakarta,PT MRT Jakarta (Persero),MRT Jakarta,soe,ID,,https://www.mrtjakarta.co.id,Jakarta metro operator and developer.
+org-multi-optima-sentosa,PT. Multi Optima Sentosa,Multi Optima Sentosa,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-multi-persada-sejahtera,PT. Multi Persada Sejahtera,Multi Persada Sejahtera,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-multikarya-hasilprima,PT. Multikarya Hasilprima,Multikarya Hasilprima,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-multimas-nabati-asahan,PT. Multimas Nabati Asahan,Multimas Nabati Asahan,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-nikomas-gemilang,PT. Nikomas Gemilang,Nikomas Gemilang,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
 org-nindya-estate-management,PT Nindya Estate Management,Nindya Estate Management,private,ID,,,Co-initiator with PT Nindya Karya of the eight ASN apartment towers signed on 14 October 2026.
 org-nindya-karya,PT Nindya Karya (Persero),Nindya Karya,soe,ID,,,Sponsor of the eight ASN apartment towers signed in October 2026.
+org-nuraiti-tjermin,PT. Nuraiti Tjermin,Nuraiti Tjermin,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-nusantara-industri-sejati,PT. Nusantara Industri Sejati,Nusantara Industri Sejati,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-nusatama-properta-panbil,PT. Nusatama Properta Panbil,Nusatama Properta Panbil,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
 org-oki-pulp,PT OKI Pulp & Paper Mills,OKI Pulp,private,ID,,https://okipulppaper.co.id,APP/Sinar Mas pulp and tissue mill in Ogan Komering Ilir.
 org-onc,PT Obi Nickel Cobalt,ONC,private,ID,,https://tbpnickel.com,Harita Nickel and Lygend second Obi refinery.
 org-oss,PT Obsidian Stainless Steel,OSS,private,ID,,https://oss.co.id,Xiangyu and Delong stainless steel joint venture in Morosi.
 org-otorita-ikn,Otorita Ibu Kota Nusantara,OIKN,government,ID,,https://ikn.go.id,Nusantara capital authority.
+org-padang-industrial-park,PT. Padang Industrial Park,Padang Industrial Park,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-pancapuri-indoperkasa,PT. Pancapuri Indoperkasa,Pancapuri Indoperkasa,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-patriot-nusantara-aceh,PT Patriot Nusantara Aceh,Patriot Nusantara Aceh,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
 org-pejagan-pemalang-tol-road,PT. Pejagan Pemalang Tol Road,Pejagan Pemalang Tol Road,private,ID,,,Toll-road concession operator from the BPJT list.
 org-pelindo,PT Pelabuhan Indonesia (Persero),Pelindo,soe,ID,,https://www.pelindo.co.id,State port operator formed by the 2021 merger of Pelindo I–IV.
 org-pemalang-batang-tol-road,PT Pemalang Batang Tol Road,Pemalang Batang Tol Road,private,ID,,,Toll-road concession operator from the BPJT list.
+org-pembangunan-aceh,PT. Pembangunan Aceh,Pembangunan Aceh,soe,ID,,,State-owned estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-pembangunan-deltamas,PT. Pembangunan Deltamas,Pembangunan Deltamas,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-pengembangan-pariwisata-indonesia,PT Pengembangan Pariwisata Indonesia,Pengembangan Pariwisata Indonesia,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-perkebunan-dan-industri-segajung,PT. Perkebunan dan Industri Segajung,Perkebunan dan Industri Segajung,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-pertama-sarana-unggulan,PT. Pertama Sarana Unggulan,Pertama Sarana Unggulan,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
 org-pertamina,PT Pertamina (Persero),Pertamina,soe,ID,,https://www.pertamina.com,State oil and gas company; refiner and fuel distributor.
+org-pertiwi-lestari,PT. Pertiwi Lestari,Pertiwi Lestari,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-perumda-manuntu-sukses,Perumda Manuntu Sukses,Perumda Manuntu Sukses,soe,ID,,,State-owned estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
 org-petronas,Petroliam Nasional Berhad,Petronas,soe,MY,,https://www.petronas.com,Malaysian state energy company; Masela partner.
 org-plataran,PT Plataran Indonesia,Plataran,private,ID,,,Developer of Teras by Plataran.
 org-pln,PT Perusahaan Listrik Negara (Persero),PLN,soe,ID,,https://www.pln.co.id,State electricity company; solar programme implementer.
 org-pp,PT Pembangunan Perumahan (Persero) Tbk,PP,soe,ID,,https://www.ptpp.co.id,
 org-pp-semarang-demak,PT PP Semarang Demak,PP Semarang Demak,private,ID,org-pp,,v1 operator string: PT Pembangunan Perumahan Semarang Demak
 org-prima-pengembangan-kawasan,PT Prima Pengembangan Kawasan,PPK,soe,ID,,https://pelindo.co.id,Pelindo subsidiary managing Kawasan Industri Kuala Tanjung.
+org-prima-propertindo-utama,PT. Prima Propertindo Utama,Prima Propertindo Utama,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
 org-pt-smelting,PT Smelting,PT Smelting,private,ID,org-freeport-indonesia,https://www.ptsmelting.com,Gresik copper smelter and refinery; Freeport Indonesia is the majority shareholder.
 org-ptpn-iii,PT Perkebunan Nusantara III (Persero),PTPN III,soe,ID,,https://www.ptpn3.co.id,State plantation company; Sei Mangkei oleofood project.
+org-puncak-ardimulia-realty,PT. Puncak Ardimulia Realty,Puncak Ardimulia Realty,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
 org-pupuk-kaltim,PT Pupuk Kalimantan Timur,Pupuk Kaltim,soe,ID,,https://pupukkaltim.com,State fertiliser producer at Bontang.
+org-puradelta-lestari,"PT. Puradelta Lestari, Tbk",Puradelta Lestari,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-putera-daya-perkasa,PT. Putera Daya Perkasa,Putera Daya Perkasa,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-ration-bangka-abadi,PT. Ration Bangka Abadi,Ration Bangka Abadi,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-samudra-buana-texindo,PT. Samudra Buana Texindo,Samudra Buana Texindo,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-sarana-pembangunan-pekanbaru,PT. Sarana Pembangunan Pekanbaru,Sarana Pembangunan Pekanbaru,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-sebuku-baja-perkasa,PT. Sebuku Baja Perkasa,Sebuku Baja Perkasa,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-sejatibuana-jayadharma,PT. Sejatibuana Jayadharma,Sejatibuana Jayadharma,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-sekupang-makmur-abadi,PT Sekupang Makmur Abadi,Sekupang Makmur Abadi,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-selaras-cipta-lestari,PT. Selaras Cipta Lestari,Selaras Cipta Lestari,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-semesta-cipta-internasional,PT. Semesta Cipta Internasional,Semesta Cipta Internasional,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
 org-semesta-marga-raya,PT Semesta Marga Raya,Semesta Marga Raya,private,ID,,,Toll-road concession operator from the BPJT list.
+org-singa-purwakarta-jaya,PT. Singa Purwakarta Jaya,Singa Purwakarta Jaya,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
 org-star-bright,PT Star Bright International Investment,Star Bright,private,ID,,,Developer of the IKN apartment project under construction.
+org-stardust-estate-investment,PT. Stardust Estate Investment,Stardust Estate Investment,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-sumber-bina-sukses,PT. Sumber Bina Sukses,Sumber Bina Sukses,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-sumber-karja-international,PT. Sumber Karja International,Sumber Karja International,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-surabaya-industrial-estate-rungkut,PT. Surabaya Industrial Estate Rungkut,Surabaya Industrial Estate Rungkut,soe,ID,,,State-owned estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-surya-borneo-industri,PT. Surya Borneo Industri,Surya Borneo Industri,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-surya-inter-wisesa,PT Surya Inter Wisesa,Surya Inter Wisesa,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-surya-siti-indotama,PT. Surya Siti Indotama,Surya Siti Indotama,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-suryacipta-swadaya,PT. Suryacipta Swadaya,Suryacipta Swadaya,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-taifa-jaya-development,PT. Taifa Jaya Development,Taifa Jaya Development,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-taman-resor-internet,PT Taman Resor Internet,Taman Resor Internet,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-tamoratama-prakarsa,PT. Tamoratama Prakarsa,Tamoratama Prakarsa,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-tegar-primajaya,PT. Tegar Primajaya,Tegar Primajaya,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-teluk-pantaian-indah,PT. Teluk Pantaian Indah,Teluk Pantaian Indah,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-the-new-asia-industrial-estate,PT. The New Asia Industrial Estate,The New Asia Industrial Estate,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
 org-trans-bumi-serbaraja,PT Trans Bumi Serbaraja,,private,ID,,,Toll-road concession operator from the BPJT list.
 org-trans-jabar-tol,PT Trans Jabar Tol,Trans Jabar Tol,private,ID,,,v1 operator string: PT Trans Jabar Tol
 org-trans-jawa-paspro-jalan-tol,PT Trans Jawa Paspro Jalan Tol,,private,ID,,,Toll-road concession operator from the BPJT list.
 org-trans-marga-jateng,PT. Trans Marga Jateng,Trans Marga Jateng,private,ID,,,Toll-road concession operator from the BPJT list.
 org-translingkar-kita-jaya,PT Translingkar Kita Jaya,,private,ID,,,Toll-road concession operator from the BPJT list.
+org-transon-bumi-resources,PT. Transon Bumi Resources,Transon Bumi Resources,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-trimegah-bangun-persada,PT. Trimegah Bangun Persada,Trimegah Bangun Persada,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-tritunas-bangun-perkasa,PT. Tritunas Bangun Perkasa,Tritunas Bangun Perkasa,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-tumbuh-sejahtera-bersama,PT. Tumbuh Sejahtera Bersama,Tumbuh Sejahtera Bersama,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-union-batam-abadi,PT. Union Batam Abadi,Union Batam Abadi,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
 org-vale,PT Vale Indonesia Tbk,Vale Indonesia,private,ID,,https://www.valeindonesia.com,"MIND ID-controlled nickel miner and processor; operator of the Pomalaa, Bahodopi and Sorowako projects."
 org-vdni,PT Virtue Dragon Nickel Industry,VDNI,private,ID,,https://vdni.co.id,Operator of the Morosi nickel smelter and industrial park.
+org-virtue-dragon-nickel-industrial-park,PT. Virtue Dragon Nickel Industrial Park,Virtue Dragon Nickel Industrial Park,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
 org-wahana-mitra-semesta,PT Wahana Mitra Semesta,WMS,private,ID,,,Manager of Patimban Industrial Estate.
+org-wahyu-putra-ramadhan,PT. Wahyu Putra Ramadhan,Wahyu Putra Ramadhan,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
+org-wana-cipta-sejahtera,PT. Wana Cipta Sejahtera,Wana Cipta Sejahtera,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.
 org-waskita-bumi-wira,PT Waskita Bumi Wira,Waskita Bumi Wira,private,ID,org-waskita-karya,,v1 operator string: PT Waskita Bumi Wira
 org-waskita-karya,PT Waskita Karya (Persero) Tbk,Waskita Karya,soe,ID,,https://www.waskita.co.id,
 org-waskita-sriwijaya-tol,PT Waskita Sriwijaya Tol,Waskita Sriwijaya Tol,private,ID,org-waskita-karya,,v1 operator string: PT. Waskita Sriwijaya Tol
@@ -142,3 +312,4 @@ org-westerfield-alumina-indonesia,PT Westerfield Alumina Indonesia,WAI,private,I
 org-whw,PT Well Harvest Winning Alumina Refinery,WHW,private,ID,,https://whwalumina.com,"Harita, China Hongqiao and Winning alumina joint venture in Ketapang."
 org-wijaya-karya,PT Wijaya Karya (Persero) Tbk,Wijaya Karya,soe,ID,,https://www.wika.co.id,
 org-wijaya-karya-serang-panimbang,PT Wijaya Karya Serang Panimbang,Wijaya Karya Serang Panimbang,private,ID,org-wijaya-karya,,v1 operator string: PT Wijaya Karya Serang Panimbang
+org-yogyakarta-isti-parama,PT. Yogyakarta Isti Parama,Yogyakarta Isti Parama,private,ID,,,Estate developer. The developer role comes from the atlas estate layer; ownership follows the legal form in the source name.

@@ -11,7 +11,7 @@
       "rows": 204
     },
     "companies": {
-      "rows": 143
+      "rows": 314
     },
     "programmes": {
       "cards": 24
@@ -53,7 +53,7 @@
   },
   "protocols": {
     "http": {
-      "port": 51853,
+      "port": 53750,
       "ok": true
     },
     "file": {

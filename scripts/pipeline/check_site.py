@@ -240,7 +240,13 @@ def main() -> None:
         err("search.js: corridor coverage does not match corridors.csv")
     for company in company_payload:
         for role in company.get("roles", []):
-            if role.get("project_id") not in project_ids:
+            if role.get("kind") == "estate":
+                if role.get("estate_id") not in estate_ids:
+                    err(
+                        f"companies.js {company.get('id')}: unknown estate role "
+                        f"{role.get('estate_id')}"
+                    )
+            elif role.get("project_id") not in project_ids:
                 err(f"companies.js {company.get('id')}: unknown project role {role.get('project_id')}")
 
     programme_ids = set()
@@ -312,8 +318,13 @@ def main() -> None:
         err("stats.js: not every project is fully claimed")
     if stats.get("organizations", {}).get("total") != len(organizations):
         err("stats.js: organisation total does not match the curated table")
-    if stats.get("organizations", {}).get("links") != len(project_orgs):
+    estate_links = sum(1 for row in estates if row["developer_org_id"])
+    if stats.get("organizations", {}).get("links") != len(project_orgs) + estate_links:
         err("stats.js: organisation link count does not match the curated table")
+    if stats.get("organizations", {}).get("project_links") != len(project_orgs):
+        err("stats.js: project role count does not match project_organizations.csv")
+    if stats.get("organizations", {}).get("estate_links") != estate_links:
+        err("stats.js: estate role count does not match the estate developers")
     if stats.get("programmes", {}).get("total") != len(programmes):
         err("stats.js: programme total does not match the curated table")
     if stats.get("pkpn", {}).get("total") != len(pkpn_programmes):

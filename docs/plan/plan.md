@@ -34,7 +34,7 @@ V4 is complete when:
 | PSN programmes represented | 24 / 24 |
 | PKPN programmes | 8 / 8 |
 | Estates | 204 |
-| Companies and agencies | 143 |
+| Companies and agencies | 314 |
 | Sources | 140 |
 | Indicators / dated values / phases | 45 / 28 / 9 |
 | IKN package rows | 28 / 28 |
@@ -42,7 +42,7 @@ V4 is complete when:
 | Programme claims / PKPN claims | 48 / 27 |
 | Events | 77 |
 | Data dictionary | 286 fields across 28 tables |
-| Initial / data / total payload | 1,358 / 1,965 / 4,370 KB |
+| Initial / data / total payload | 1,398 / 2,149 / 4,600 KB |
 
 ### Reference-set accounting
 
@@ -65,7 +65,7 @@ records correspond to about 392 rows.
 | PSN project/estate records | 226 | 226 | 0 |
 | PSN programmes | 24 | 24 | 0 |
 | Strategic/private records | 120 | 174 | **54** |
-| Companies and agencies | 143 | 300 | **157** |
+| Companies and agencies | 314 | 300 | 0 |
 | Sources | 140 | 250 | **110** |
 | Indicators | 45 | 300 | **255** |
 | IKN package rows | 28 | 28 | 0 |
@@ -121,26 +121,21 @@ Acceptance for each record:
 - no duplicate of a PSN, estate or existing project record;
 - updated coverage count and changelog entry.
 
-### 4.2 Companies and agencies — 189 profiles
+### 4.2 Companies and agencies — target met
 
-Add profiles from existing project sources before adding new projects. Priorities:
+The 300-profile target is met at 314 organisations. 300 have a sourced role:
+271 project role links and 186 estate developer links. The 171 new profiles come
+from developers named in the Kemenperin/BAJRA estate directory and the KEK
+profiles already in the estate layer, so every new profile carries a sourced
+developer role rather than a bare reference record.
 
-- **Danantara holdings:** Bank Mandiri, BNI, BRI, MIND ID, Pertamina, PLN, Telkom.
-- **Infrastructure SOEs:** Hutama Karya, Jasa Marga, Pelindo, Angkasa Pura, KAI,
-  MRT Jakarta, KCIC, Waskita, Wijaya Karya, PP, Adhi, Brantas Abipraya.
-- **Industry SOEs:** Krakatau Steel, Pupuk Indonesia, Semen Indonesia, Inalum,
-  Antam, Vale Indonesia, Freeport Indonesia.
-- **Private and foreign groups:** Salim, Sinar Mas, Djarum, Lippo, Agung Sedayu,
-  Astra, Adaro, Harita, Merdeka Copper Gold, Amman, Tsingshan, CATL, Lotte,
-  Chandra Asri.
+Remaining review, not a coverage gap:
 
-Acceptance:
-
-- `organizations.csv` row with `org_type`, country and website where sourced;
-- at least one `project_organizations.csv` role where the source names a role;
-- no duplicate organisation names or aliases;
-- 22 reference-only profiles gain a sourced role where possible;
-- 100 projects that currently have no organisation role are reviewed.
+- 14 reference-only profiles (agencies and holdings named in sources without a
+  project or estate role) gain a sourced role where possible.
+- 100 projects still have no organisation role; review the source before adding
+  one.
+- Add websites and parent links where a source states them.
 
 ### 4.3 Sources — 110 documents
 
@@ -223,8 +218,8 @@ remains the available source.
 
 ## 7. Priority order
 
-1. **P0 — measurable coverage:** strategic records, companies, sources and
-   indicators. IKN coverage is complete at 28/28.
+1. **P0 — measurable coverage:** strategic records, sources and indicators.
+   IKN coverage is complete at 28/28 and the 300-company target is met at 314.
 2. **P0 — bilingual completion.**
 3. **P1 — UX rebuild:** bottom navigation, detail pages, map v3, editorial
    summaries.

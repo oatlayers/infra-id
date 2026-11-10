@@ -63,7 +63,7 @@ corridor group opens the matching corridor. Fuzzy ranking is still open.
 | Mobile filters were unreachable at peek height | Tapping the sheet handle cycles to half and full; filters are then reachable | `ux-rehearsal.json`, field-id profile |
 | Small `EN`/`ID` programme badge used muted-2 at 2.91:1 | Badge now uses muted at 4.73:1 | `check_contrast.py` |
 | Unknown status had no pill treatment | Added `.status-pill.s-unknown` with a grey border, soft fill and text label | style tile |
-| No companies or agencies view despite 101 organisation profiles | Full-width Companies view with type filter, role search, expandable project roles, filtered CSV and two downloads | `03d-companies-desktop.png` |
+| No companies or agencies view despite 101 organisation profiles | Full-width Companies view with type filter, role search, expandable project and estate roles, filtered CSV and two downloads | `03d-companies-desktop.png` |
 | The atlas had one IKN Phase 2 row against a 25-package target | Added 23 named IKN package and project rows with status, location and source claims; the census reached 28/28 with the 10 November private-investment batch | `09-ikn-search-desktop.png`, `09b-ikn-toll-drawer.png` |
 | Data had no charts | Native sector, status and freshness charts from the existing stats | `04b-data-charts.png` |
 | Data headers did not sort | The four coverage headers now sort by layer, current count, target and gap, with `aria-sort`, a visible arrow and focus retention. The curated order is unchanged until a header is activated. | `11-data-sort-desktop.png` |
@@ -75,12 +75,12 @@ corridor group opens the matching corridor. Fuzzy ranking is still open.
 
 | Pri | Finding | Why it matters | Next action |
 |---|---|---|---|
-| Medium | 255 project summaries are generated from fields, not written by an editor | The text is factual but telegraphic and does not explain why a project matters | Review the flagship and high-traffic summaries; keep the generated text for the long tail |
+| Medium | 294 project summaries are generated from fields, not written by an editor | The text is factual but telegraphic and does not explain why a project matters | Review the flagship and high-traffic summaries; keep the generated text for the long tail |
 | Medium | Explore now uses 13 px row titles and 10.5–12.5 px captions; the 14–16 px body scale is not complete | The plan targets a 14–16 px body and 12–13 px captions | Finish the body scale in Release 4.3 and re-test 320/390 px overflow |
 | Medium | Search ranking is still token containment, with no edit distance or arrow-key result navigation | Grouped counts and synonyms fix discovery, but typo tolerance and keyboard result movement remain | Add fuzzy ranking and result-list arrow navigation |
 | Medium | Data coverage `reference_set`, download labels/meta and dictionary descriptions remain English in the ID edition | These are methodological strings, not proper names | Move coverage labels and download labels into the catalogue; translate dictionary descriptions in Release 4.4 |
 | Forty-five indicators and nine phases are sourced | The layer is structurally complete but still thin against the 300-indicator target | Add ministry baseline values and project-level output indicators as official reporting is filed |
-| Only 116 of the 300 company profiles exist; 22 profiles have no project role and 100 projects have no organisation role | The Companies view is useful but the network is incomplete | Add profiles and role links from existing project sources before adding new projects |
+| Low | The 300-company target is met at 314 profiles; 14 profiles remain reference-only and 100 projects have no organisation role | The Companies view now covers project and estate roles, but the network is not complete | Add sourced roles where a source names one; do not add bare profiles |
 | Medium | No map-only mode or rail collapse | Explore still fixes 400 px for the rail | Add a collapse control and a map-only state |
 | Medium | Mobile navigation is still a tab row inside the sheet | The plan calls for a five-item bottom bar with “More” | Add the bottom bar and a full-screen filter sheet |
 | Medium | Drawer only; no shareable project, programme or company page | Deep links are hash-based and the drawer is not a page | Add detail routes and static printable pages |
@@ -101,11 +101,11 @@ corridor group opens the matching corridor. Fuzzy ranking is still open.
 | Indicators / values / phases | 45 / 28 / 9 |
 | Sortable coverage headers | 4 |
 | PKPN programmes | 8, with 27 claims |
-| Companies / role links | 143 / 271 |
+| Companies / role links | 314 / 457 (271 project, 186 estate) |
 | Sources / dictionary tables | 140 / 28 |
-| Initial payload (one locale + core Explore) | 1,358 KB |
-| Runtime data payload | 1,965 KB |
-| Total payload including downloads | 4,370 KB |
+| Initial payload (one locale + core Explore) | 1,398 KB |
+| Runtime data payload | 2,149 KB |
+| Total payload including downloads | 4,600 KB |
 | Mobile horizontal overflow | none at 390 px (EN and ID) |
 | External requests | none |
 | Console / page errors | none |

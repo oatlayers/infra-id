@@ -1028,6 +1028,7 @@ svg { display: block; }
 .company-role-list li:last-child { border-bottom: 0; }
 .company-role-list a { color: var(--ink); font-weight: 600; }
 .company-role-list span { display: block; color: var(--muted); font-size: 9.5px; }
+.company-role-list .company-estate { color: var(--ink); font-size: 10.5px; font-weight: 600; }
 .company-source { display: inline-block; margin-top: 2px; font-size: 9px; }
 .estate-row { border-top: 1px solid var(--line); }
 .estate-row button {

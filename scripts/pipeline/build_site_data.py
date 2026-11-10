@@ -256,6 +256,7 @@ def main() -> None:
         source = sources.get(link["source_id"])
         roles_by_org.setdefault(link["org_id"], []).append(
             {
+                "kind": "project",
                 "project_id": project["id"],
                 "project_name": project["name"],
                 "sector": project["sector"],
@@ -273,13 +274,39 @@ def main() -> None:
     for roles in roles_by_org.values():
         roles.sort(key=lambda record: record["project_name"])
 
+    estate_roles_by_org: dict[str, list[dict[str, object]]] = {}
+    for estate in estates:
+        org_id = estate["developer_org_id"]
+        if not org_id:
+            continue
+        source = sources.get(estate["source_id"])
+        estate_roles_by_org.setdefault(org_id, []).append(
+            {
+                "kind": "estate",
+                "estate_id": estate["id"],
+                "estate_name": estate["name"],
+                "province": estate["province"],
+                "status": estate["status"],
+                "role": "developer",
+                "source_id": estate["source_id"],
+                "source_title": source["title"] if source else "",
+                "source_url": source["url"] if source else "",
+                "notes": "",
+            }
+        )
+    for roles in estate_roles_by_org.values():
+        roles.sort(key=lambda record: record["estate_name"])
+
     company_payload = []
     for org in organizations:
-        roles = roles_by_org.get(org["id"], [])
+        project_roles = roles_by_org.get(org["id"], [])
+        estate_roles = estate_roles_by_org.get(org["id"], [])
+        roles = project_roles + estate_roles
         company_payload.append(
             {
                 **org,
-                "project_count": len({role["project_id"] for role in roles}),
+                "project_count": len({role["project_id"] for role in project_roles}),
+                "estate_count": len({role["estate_id"] for role in estate_roles}),
                 "role_count": len(roles),
                 "source_count": len({role["source_id"] for role in roles if role["source_id"]}),
                 "roles": roles,
@@ -651,8 +678,14 @@ def main() -> None:
         "organizations": {
             "total": len(organizations),
             "by_type": dict(sorted(Counter(row["org_type"] for row in organizations).items())),
-            "with_links": len(roles_by_org),
-            "links": len(project_orgs),
+            "with_links": len(set(roles_by_org) | set(estate_roles_by_org)),
+            "links": len(project_orgs) + sum(
+                1 for estate in estates if estate["developer_org_id"]
+            ),
+            "project_links": len(project_orgs),
+            "estate_links": sum(
+                1 for estate in estates if estate["developer_org_id"]
+            ),
             "countries": dict(sorted(Counter(row["country_code"] for row in organizations).items())),
         },
         "programmes": {
@@ -957,7 +990,10 @@ def main() -> None:
                             row["short_name"],
                             row["org_type"].replace("_", " "),
                             row["country_code"],
-                            " ".join(role["project_name"] for role in row["roles"]),
+                            " ".join(
+                                role.get("project_name") or role.get("estate_name") or ""
+                                for role in row["roles"]
+                            ),
                         ],
                     )
                 ),

@@ -3,6 +3,24 @@
 Public-facing changes to the atlas. Dates are the day the change landed in this
 repository. The Data view renders these entries from this file at build time.
 
+## 2026-11-10 — Estate developers as sourced company profiles
+
+- Created a company profile for every developer named in the estate layer and
+  linked all 186 developer-named estates through `developer_org_id`. One
+  developer, PT Perkebunan Nusantara III, already had a profile and is matched
+  instead of duplicated.
+- Companies grow from 143 to 314 and the 300-profile target is met. 300
+  organisations now carry a sourced role: 271 project role links and 186 estate
+  developer links. The 14 remaining profiles are reference-only.
+- The Companies view shows project and estate roles together, labels estate
+  roles with their province and status, and adds `estate_count` to the profile
+  and the filtered CSV. The company search index includes estate names.
+- Ownership type follows the legal form in the developer name; the profile note
+  says so. No ownership was inferred from outside the source.
+- Initial payload is 1,398 KB, data 2,149 KB and total 4,600 KB. Build,
+  `--check`, smoke test, five-profile rehearsal, contrast check and link check
+  pass. Nothing was pushed, deployed or published.
+
 ## 2026-11-10 — Complete BPJT toll-road register
 
 - Added the 39 non-PSN sections that were missing from the official BPJT

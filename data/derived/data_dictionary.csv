@@ -149,7 +149,7 @@ estates.csv,Estates and SEZs,Industrial estates and special economic zones.,prec
 estates.csv,Estates and SEZs,Industrial estates and special economic zones.,coordinate_source,enum,yes,"official, osm, regency, manual or unknown.",official; osm; regency; manual; unknown,official
 estates.csv,Estates and SEZs,Industrial estates and special economic zones.,area_ha,decimal,yes,Zone area in hectares.,,6.64
 estates.csv,Estates and SEZs,Industrial estates and special economic zones.,developer,text,yes,Developer display name from the source.,,PT Patriot Nusantara Aceh
-estates.csv,Estates and SEZs,Industrial estates and special economic zones.,developer_org_id,id,no,Foreign key to organizations.csv.,,org-prima-pengembangan-kawasan
+estates.csv,Estates and SEZs,Industrial estates and special economic zones.,developer_org_id,id,no,Foreign key to organizations.csv.,,org-patriot-nusantara-aceh
 estates.csv,Estates and SEZs,Industrial estates and special economic zones.,status,enum,yes,"Designation-level operating, under_construction, planned or unknown; not independently verified for most estates.",operating; under_construction; planned; unknown,operating
 estates.csv,Estates and SEZs,Industrial estates and special economic zones.,sector_focus,text,no,Estate or SEZ sector focus.,,Manufacturing
 estates.csv,Estates and SEZs,Industrial estates and special economic zones.,legal_basis,text,no,Legal instrument establishing the zone.,,Peraturan Pemerintah Nomor 5 Tahun 2017
