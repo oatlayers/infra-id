@@ -72,7 +72,9 @@ Priority order:
 
 Every new source needs publisher, title, URL, publication date, retrieval date,
 source type, language, snapshot hash and archive path. If a page cannot be
-archived, record why in `notes`.
+archived, record why in `notes`. At 13 November 2026, 83 of 144 sources are
+URL-only (43 secondary, 24 company, 16 official); archive them or record the
+reason before adding more URL-only rows.
 
 ## 4. Indicators — 228
 
@@ -95,6 +97,8 @@ Rules:
 - Do not copy a completion year from a different measure.
 - Link every indicator to a programme, a project, or both.
 - Add dated observations to `indicator_values.csv` with their own source.
+- 17 PKPN indicators still have no dated value; fill them from existing official
+  releases before adding new indicators.
 
 ## 5. UX workstream
 
