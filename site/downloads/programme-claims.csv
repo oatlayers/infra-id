@@ -47,3 +47,7 @@ prog-pantura-ponds,src-permenko-16-2025,psn,PSN programme 24,2025-09-24,"Permenk
 prog-pantura-ponds,src-permenko-16-2025,status,active,2025-09-24,"Permenko 16/2025 annex, programme section."
 prog-east-sumba-shrimp,src-permenko-16-2025,psn,PSN programme 25,2025-09-24,"Permenko 16/2025 annex, programme section."
 prog-east-sumba-shrimp,src-permenko-16-2025,status,active,2025-09-24,"Permenko 16/2025 annex, programme section."
+prog-electricity,src-esdm-37-projects-2025-01-20,capacity,"3,222.75 MW",2025-01-20,Total capacity of the 26 generating plants.
+prog-electricity,src-esdm-37-projects-2025-01-20,output,89% clean energy,2025-01-20,Share of the 3.2 GW total from gas and renewable energy.
+prog-electricity,src-esdm-37-projects-2025-01-20,length,739.71 kms,2025-01-20,Total transmission line length across the 11 projects.
+prog-electricity,src-esdm-37-projects-2025-01-20,design capacity,"1,740 MVA",2025-01-20,Total substation capacity across the 11 projects.

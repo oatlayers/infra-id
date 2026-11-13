@@ -210,3 +210,40 @@ project,tol-surabaya-gempol,name,id,Jalan Tol Surabaya–Gempol,reviewed,atlas-e
 project,tol-soedijatmo,name,id,Jalan Tol Prof. Dr. Ir. Soedijatmo,reviewed,atlas-editor,2026-11-10,src-bpjt-toll-road-list-2026-11-06
 project,tol-semarang-abc,name,id,Jalan Tol Semarang Seksi ABC,reviewed,atlas-editor,2026-11-10,src-bpjt-toll-road-list-2026-11-06
 project,tol-jakarta-bogor-ciawi,name,id,Jalan Tol Jakarta–Bogor–Ciawi,reviewed,atlas-editor,2026-11-10,src-bpjt-toll-road-list-2026-11-06
+project,power-asahan-3-unit-1,name,id,PLTA Asahan 3 Unit 1,reviewed,atlas-editor,2026-11-13,src-esdm-37-projects-2025-01-20
+project,power-asahan-3-unit-2,name,id,PLTA Asahan 3 Unit 2,reviewed,atlas-editor,2026-11-13,src-esdm-37-projects-2025-01-20
+project,power-sorik-marapi-2,name,id,PLTP Sorik Marapi Unit 2,reviewed,atlas-editor,2026-11-13,src-esdm-37-projects-2025-01-20
+project,power-jatigede,name,id,PLTA Jatigede,reviewed,atlas-editor,2026-11-13,src-esdm-37-projects-2025-01-20
+project,power-jawa-1,name,id,PLTGU Jawa 1,reviewed,atlas-editor,2026-11-13,src-esdm-37-projects-2025-01-20
+project,power-muara-tawar-add-on-2-3-4,name,id,PLTGU Muara Tawar Add-On Blok 2-4,reviewed,atlas-editor,2026-11-13,src-esdm-37-projects-2025-01-20
+project,power-tambak-lorok-block-3,name,id,PLTGU Tambak Lorok Blok 3,reviewed,atlas-editor,2026-11-13,src-esdm-37-projects-2025-01-20
+project,power-plts-ikn,name,id,PLTS IKN,reviewed,atlas-editor,2026-11-13,src-esdm-37-projects-2025-01-20
+project,power-kalselteng-2-unit-1,name,id,PLTU Kalselteng-2 Unit 1,reviewed,atlas-editor,2026-11-13,src-esdm-37-projects-2025-01-20
+project,power-kalselteng-2-unit-2,name,id,PLTU Kalselteng-2 Unit 2,reviewed,atlas-editor,2026-11-13,src-esdm-37-projects-2025-01-20
+project,power-mpp-sulselbar,name,id,MPP Sulselbar (BMPP Nusantara 1),reviewed,atlas-editor,2026-11-13,src-esdm-37-projects-2025-01-20
+project,power-palu-3-unit-1,name,id,PLTU Palu-3 Unit 1,reviewed,atlas-editor,2026-11-13,src-esdm-37-projects-2025-01-20
+project,power-palu-3-unit-2,name,id,PLTU Palu-3 Unit 2,reviewed,atlas-editor,2026-11-13,src-esdm-37-projects-2025-01-20
+project,power-sulut-1-unit-1,name,id,PLTU Sulut-1 Unit 1,reviewed,atlas-editor,2026-11-13,src-esdm-37-projects-2025-01-20
+project,power-pltm-aceh-tersebar,name,id,PLTM Minihidro Aceh Tersebar,reviewed,atlas-editor,2026-11-13,src-esdm-37-projects-2025-01-20
+project,power-pltbm-sadai,name,id,PLTBm Sadai Bangka Selatan,reviewed,atlas-editor,2026-11-13,src-esdm-37-projects-2025-01-20
+project,power-pltm-ordi-hulu,name,id,PLTM Ordi Hulu,reviewed,atlas-editor,2026-11-13,src-esdm-37-projects-2025-01-20
+project,power-pltbm-deli-serdang,name,id,PLTBm Deli Serdang,reviewed,atlas-editor,2026-11-13,src-esdm-37-projects-2025-01-20
+project,power-plts-pajangan,name,id,PLTS Lisdes Pajangan,reviewed,atlas-editor,2026-11-13,src-esdm-37-projects-2025-01-20
+project,power-plts-sadulang-kecil,name,id,PLTS Lisdes Sadulang Kecil,reviewed,atlas-editor,2026-11-13,src-esdm-37-projects-2025-01-20
+project,power-plts-sapapan,name,id,PLTS Lisdes Sapapan,reviewed,atlas-editor,2026-11-13,src-esdm-37-projects-2025-01-20
+project,power-plts-sapangkur-kecil,name,id,PLTS Lisdes Sapangkur Kecil,reviewed,atlas-editor,2026-11-13,src-esdm-37-projects-2025-01-20
+project,power-plts-saur,name,id,PLTS Lisdes Saur,reviewed,atlas-editor,2026-11-13,src-esdm-37-projects-2025-01-20
+project,power-pltm-koro-yaentu,name,id,PLTM Koro Yaentu,reviewed,atlas-editor,2026-11-13,src-esdm-37-projects-2025-01-20
+project,power-pltm-dominanga,name,id,PLTM Dominanga,reviewed,atlas-editor,2026-11-13,src-esdm-37-projects-2025-01-20
+project,power-plts-tanamalala,name,id,PLTS Lisdes Tanamalala,reviewed,atlas-editor,2026-11-13,src-esdm-37-projects-2025-01-20
+project,grid-muara-enim-gumawang,name,id,SUTET 275 kV Muara Enim-Gumawang dan GI 150 kV Lampung 1,reviewed,atlas-editor,2026-11-13,src-esdm-37-projects-2025-01-20
+project,grid-kendawangan-marau-sukamara,name,id,SUTT 150 kV Kendawangan-Marau-Sukamara dan GI 150 kV Sukamara Ext 2LB,reviewed,atlas-editor,2026-11-13,src-esdm-37-projects-2025-01-20
+project,grid-kariangau-kipp,name,id,GI 150 kV Kariangau arah GIS 4 KIPP dan SUTT 150 kV Kariangau-Landing Point GIS 4 KIPP,reviewed,atlas-editor,2026-11-13,src-esdm-37-projects-2025-01-20
+project,grid-kolaka-pomala,name,id,SUTT 150 kV GI Kolaka-PT Antam Pomala dan GI 150 kV Kolaka Ext,reviewed,atlas-editor,2026-11-13,src-esdm-37-projects-2025-01-20
+project,grid-luwuk,name,id,SUTT 150 kV PLTMG Luwuk-GI Luwuk dan GI 150 kV Luwuk,reviewed,atlas-editor,2026-11-13,src-esdm-37-projects-2025-01-20
+project,grid-flores-labuan-bajo,name,id,SUTT 70 kV GI PLTMG Flores-GI Labuan Bajo dan GI 66 kV Labuan Bajo (2 LB) dan GI 66 kV PLTMG Flores,reviewed,atlas-editor,2026-11-13,src-esdm-37-projects-2025-01-20
+project,grid-muara-karang-durikosambi,name,id,SUTET 500 kV Muara Karang Baru-Durikosambi,reviewed,atlas-editor,2026-11-13,src-esdm-37-projects-2025-01-20
+project,grid-ampel-boyolali-500,name,id,"GITET 500 kV Ampel Boyolali (2x500 MVA), SUTET 500 kV Ampel New/Boyolali Incomer Arah Ungaran dan Pedan Sirkit 1",reviewed,atlas-editor,2026-11-13,src-esdm-37-projects-2025-01-20
+project,grid-ampel-bringin-mojosongo,name,id,SUTT 150 kV Ampel New/Boyolali Incomer arah Bringin dan Mojosongo Sirkit 1 dan 2,reviewed,atlas-editor,2026-11-13,src-esdm-37-projects-2025-01-20
+project,grid-duren-tiga-depok,name,id,SUTT 150 kV Duren Tiga II/Ragunan (GIS)-Depok II Sirkit 1,reviewed,atlas-editor,2026-11-13,src-esdm-37-projects-2025-01-20
+project,grid-cilegon-ibt-4,name,id,Extension IBT 4 GITET 500 kV Cilegon,reviewed,atlas-editor,2026-11-13,src-esdm-37-projects-2025-01-20

@@ -23,6 +23,16 @@ from data_model import CURATED, ROOT, SITE_DATA, SITE_DOWNLOADS, read_csv
 SITE = ROOT / "site"
 CHOOSER = SITE / "index.html"
 LOCALES = ("en", "id")
+
+# The budget covers the 331-record build. The initial payload is the one-locale
+# Explore shell; the total adds the lazy view bundles and every generated
+# download. The 294-record build fitted 1.5 MB / 5 MB; the 37 electricity
+# records and their claims push both past those figures, so the budget is
+# raised instead of dropping sourced facts. Keep this in step with the README
+# payload row and revisit it when the next record batch lands.
+INITIAL_PAYLOAD_BUDGET = 1_750_000
+TOTAL_PAYLOAD_BUDGET = 5_500_000
+
 errors: list[str] = []
 
 
@@ -401,12 +411,15 @@ def main() -> None:
     download_bytes = sum(
         path.stat().st_size for path in SITE_DOWNLOADS.glob("*") if path.is_file()
     )
-    if initial_bytes > 1_500_000:
-        err(f"payload: initial {initial_bytes / 1024:.0f} KB exceeds the 1.5 MB budget")
-    if data_bytes + download_bytes > 5_000_000:
+    if initial_bytes > INITIAL_PAYLOAD_BUDGET:
+        err(
+            f"payload: initial {initial_bytes / 1024:.0f} KB exceeds the "
+            f"{INITIAL_PAYLOAD_BUDGET / 1_000_000:.2f} MB budget"
+        )
+    if data_bytes + download_bytes > TOTAL_PAYLOAD_BUDGET:
         err(
             f"payload: total {(data_bytes + download_bytes) / 1024:.0f} KB "
-            "exceeds the 5 MB budget"
+            f"exceeds the {TOTAL_PAYLOAD_BUDGET / 1_000_000:.1f} MB budget"
         )
 
     if errors:

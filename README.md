@@ -12,21 +12,21 @@ HTTP server, with no tile server, CDN or remote request.
 
 | Measure | Current |
 |---|---:|
-| Project rows | 294 |
+| Project rows | 331 |
 | Active PSN project/estate records represented | 226 / 226 |
 | Active PSN programmes represented | 24 / 24 |
 | 2027 PKPN programmes | 8 / 8 |
 | Industrial estates and SEZs | 204 |
 | Companies and agencies | 314 |
-| Sources | 140 |
-| Indicators / dated values / phases | 45 / 28 / 9 |
+| Sources | 144 |
+| Indicators / dated values / phases | 72 / 55 / 9 |
 | IKN package rows | 28 / 28 |
-| Project claims / estate claims | 1,169 / 115 |
-| Programme claims / PKPN claims | 48 / 27 |
-| Initial / data / total payload | 1,422 / 2,175 / 4,661 KB |
+| Project claims / estate claims | 1,330 / 115 |
+| Programme claims / PKPN claims | 52 / 27 |
+| Initial / data / total payload | 1,560 / 2,342 / 5,132 KB |
 
-**Reference set:** 346 of 400 records are represented — all 226 active PSN
-records plus 120 strategic and private records. The remaining **54 records are
+**Reference set:** 383 of 400 records are represented — all 226 active PSN
+records plus 157 strategic and private records. The remaining **17 records are
 strategic/private**, not PSN. The 400 target counts reference records, not
 project-table rows, because 44 PSN records live in the estate layer.
 
@@ -222,7 +222,8 @@ site/id/index.html   <html lang="id">
 
 UI strings live in `data/i18n/ui.en.json` and `data/i18n/ui.id.json`. Entity
 translations live in `data/curated/translations.csv`. Programmes carry bilingual
-names and summaries; project aliases carry the 88 official Indonesian PSN names.
+names and summaries; project aliases carry the 88 official Indonesian PSN names
+and the ESDM project-list spellings for the 37 electricity records.
 
 The build fails if the two catalogues drift or if a programme or corridor loses
 a required translation. Numbers, dates and coordinates use `Intl` with `en-GB`
@@ -241,15 +242,15 @@ text inside the Indonesian edition carries `lang="en"` and an `EN` tag.
 | Airports | 8 | 8 operating | 7/7 PSN airports plus Nusantara International |
 | Seaports | 15 | 11 operating, 1 under construction, 1 recently completed, 2 planned | 15/15 PSN seaports |
 | Transport PSN total | 35 | 24 operating, 1 recently completed, 6 under construction, 4 planned | Status as of 19 February 2026 |
-| All projects | 294 | 98 operating, 5 recently completed, 74 under construction, 28 planned, 1 stalled, 88 unknown | 88 register-only PSN rows |
+| All projects | 331 | 98 operating, 42 recently completed, 74 under construction, 28 planned, 1 stalled, 88 unknown | 88 register-only PSN rows |
 | PSN projects (active) | 226 | 226/226 represented | 182 matches on 174 project rows plus 44 estate rows; 0 outstanding |
 | PSN programmes (active) | 24 | 24/24 | one row per official number; 48 claims |
 | 2027 PKPN | 8 | 8/8 | bilingual summaries, sourced targets and budgets |
 | Factories | 34 | 19 operating, 3 recently completed, 11 under construction, 1 stalled | 27 capacity figures, 18 investment figures |
 | Industrial estates / SEZs | 204 | 179 industrial-only, 7 shared, 18 SEZ-only | table view only; 179 target met |
-| Companies and agencies | 314 | 300 with a role, 14 reference-only | V4 target 300 met; 271 project role links and 186 estate developer links |
-| Sources | 140 | 58 official, 55 secondary, 27 company | V4 target 250 |
-| Indicators | 45 | 28 dated values | V4 target 300 |
+| Companies and agencies | 314 | 300 with a role, 14 reference-only | V4 target 300 met; 282 project role links and 186 estate developer links |
+| Sources | 144 | 60 official, 57 secondary, 27 company | V4 target 250 |
+| Indicators | 72 | 55 dated values | V4 target 300 |
 | Dated events | 77 | 2018–2026 | exact dates only |
 | Conflicts | 23 | 13 resolved, 10 open | both values and both sources |
 | Data dictionary | 286 fields | 28 tables | generated from the schema |

@@ -1168,3 +1168,164 @@ tol-jakarta-bogor-ciawi,src-bpjt-toll-road-list-2026-11-06,operational,59 km,202
 tol-jakarta-bogor-ciawi,src-bpjt-toll-road-list-2026-11-06,opening,1978-03-09,2026-11-06,BPJT operation decree (SK operasi).
 tol-kuala-tanjung-tebing-tinggi-parapat,src-bpjt-toll-road-list-2026-11-06,operator,PT Hutama Marga Waskita,2026-11-06,
 tol-kuala-tanjung-tebing-tinggi-parapat,src-bpjt-toll-road-list-2026-11-06,operational,96.402 km,2026-11-06,
+power-asahan-3-unit-1,src-esdm-37-projects-2025-01-20,status,recently_completed,2025-01-20,Inaugurated on 20 January 2025.
+power-asahan-3-unit-1,src-esdm-37-projects-2025-01-20,location,"Upper Asahan River, Toba Samosir Regency, North Sumatra",2025-01-20,
+power-asahan-3-unit-1,src-esdm-37-projects-2025-01-20,opening,2025-01-20,2025-01-20,Inauguration date.
+power-asahan-3-unit-1,src-gnfi-26-plants-2025-01-26,location,Sumatra,2025-01-26,GNFI island grouping for the 26 plants.
+power-asahan-3-unit-1,src-esdm-37-projects-details-2025-01-20,capacity,87 MW (unit of the 174 MW plant),2025-01-20,
+power-asahan-3-unit-2,src-esdm-37-projects-2025-01-20,status,recently_completed,2025-01-20,Inaugurated on 20 January 2025.
+power-asahan-3-unit-2,src-esdm-37-projects-2025-01-20,location,"Upper Asahan River, Toba Samosir Regency, North Sumatra",2025-01-20,
+power-asahan-3-unit-2,src-esdm-37-projects-2025-01-20,opening,2025-01-20,2025-01-20,Inauguration date.
+power-asahan-3-unit-2,src-gnfi-26-plants-2025-01-26,location,Sumatra,2025-01-26,GNFI island grouping for the 26 plants.
+power-asahan-3-unit-2,src-esdm-37-projects-details-2025-01-20,capacity,87 MW (unit of the 174 MW plant),2025-01-20,
+power-sorik-marapi-2,src-esdm-37-projects-2025-01-20,status,recently_completed,2025-01-20,Inaugurated on 20 January 2025.
+power-sorik-marapi-2,src-esdm-37-projects-2025-01-20,location,"Sorik Marapi, Mandailing Natal Regency, North Sumatra",2025-01-20,
+power-sorik-marapi-2,src-esdm-37-projects-2025-01-20,opening,2025-01-20,2025-01-20,Inauguration date.
+power-sorik-marapi-2,src-gnfi-26-plants-2025-01-26,location,Sumatra,2025-01-26,GNFI island grouping for the 26 plants.
+power-jatigede,src-esdm-37-projects-2025-01-20,status,recently_completed,2025-01-20,Inaugurated on 20 January 2025.
+power-jatigede,src-esdm-37-projects-2025-01-20,location,"Jatigede Dam, Sumedang Regency, West Java",2025-01-20,
+power-jatigede,src-esdm-37-projects-2025-01-20,opening,2025-01-20,2025-01-20,Inauguration date.
+power-jatigede,src-gnfi-26-plants-2025-01-26,location,Java,2025-01-26,GNFI island grouping for the 26 plants.
+power-jatigede,src-esdm-37-projects-details-2025-01-20,capacity,110 MW (2x55 MW),2025-01-20,
+power-jawa-1,src-esdm-37-projects-2025-01-20,status,recently_completed,2025-01-20,Inaugurated on 20 January 2025.
+power-jawa-1,src-esdm-37-projects-2025-01-20,location,"Cilamaya Wetan, Karawang Regency, West Java",2025-01-20,
+power-jawa-1,src-esdm-37-projects-2025-01-20,opening,2025-01-20,2025-01-20,Inauguration date.
+power-jawa-1,src-gnfi-26-plants-2025-01-26,location,Java,2025-01-26,GNFI island grouping for the 26 plants.
+power-muara-tawar-add-on-2-3-4,src-esdm-37-projects-2025-01-20,status,recently_completed,2025-01-20,Inaugurated on 20 January 2025.
+power-muara-tawar-add-on-2-3-4,src-esdm-37-projects-2025-01-20,location,"Muara Tawar, Bekasi Regency, West Java",2025-01-20,
+power-muara-tawar-add-on-2-3-4,src-esdm-37-projects-2025-01-20,opening,2025-01-20,2025-01-20,Inauguration date.
+power-muara-tawar-add-on-2-3-4,src-gnfi-26-plants-2025-01-26,location,Java,2025-01-26,GNFI island grouping for the 26 plants.
+power-tambak-lorok-block-3,src-esdm-37-projects-2025-01-20,status,recently_completed,2025-01-20,Inaugurated on 20 January 2025.
+power-tambak-lorok-block-3,src-esdm-37-projects-2025-01-20,location,"Tambak Lorok, Semarang, Central Java",2025-01-20,
+power-tambak-lorok-block-3,src-esdm-37-projects-2025-01-20,opening,2025-01-20,2025-01-20,Inauguration date.
+power-tambak-lorok-block-3,src-gnfi-26-plants-2025-01-26,location,Java,2025-01-26,GNFI island grouping for the 26 plants.
+power-plts-ikn,src-esdm-37-projects-2025-01-20,status,recently_completed,2025-01-20,Inaugurated on 20 January 2025.
+power-plts-ikn,src-esdm-37-projects-2025-01-20,location,"KIPP Nusantara, Penajam Paser Utara Regency, East Kalimantan",2025-01-20,
+power-plts-ikn,src-esdm-37-projects-2025-01-20,opening,2025-01-20,2025-01-20,Inauguration date.
+power-plts-ikn,src-gnfi-26-plants-2025-01-26,location,Kalimantan,2025-01-26,GNFI island grouping for the 26 plants.
+power-plts-ikn,src-esdm-37-projects-details-2025-01-20,design capacity,50 MWac / 72 MWp,2025-01-20,The ESDM project list names the 10 MW entry.
+power-plts-ikn,src-esdm-37-projects-details-2025-01-20,capacity,10.32 MWh battery storage,2025-01-20,
+power-plts-ikn,src-esdm-37-projects-details-2025-01-20,output,92.8 GWh/yr,2025-01-20,
+power-kalselteng-2-unit-1,src-esdm-37-projects-2025-01-20,status,recently_completed,2025-01-20,Inaugurated on 20 January 2025.
+power-kalselteng-2-unit-1,src-esdm-37-projects-2025-01-20,location,"Kalselteng-2 project, South Kalimantan",2025-01-20,
+power-kalselteng-2-unit-1,src-esdm-37-projects-2025-01-20,opening,2025-01-20,2025-01-20,Inauguration date.
+power-kalselteng-2-unit-1,src-gnfi-26-plants-2025-01-26,location,Kalimantan,2025-01-26,GNFI island grouping for the 26 plants.
+power-kalselteng-2-unit-2,src-esdm-37-projects-2025-01-20,status,recently_completed,2025-01-20,Inaugurated on 20 January 2025.
+power-kalselteng-2-unit-2,src-esdm-37-projects-2025-01-20,location,"Kalselteng-2 project, South Kalimantan",2025-01-20,
+power-kalselteng-2-unit-2,src-esdm-37-projects-2025-01-20,opening,2025-01-20,2025-01-20,Inauguration date.
+power-kalselteng-2-unit-2,src-gnfi-26-plants-2025-01-26,location,Kalimantan,2025-01-26,GNFI island grouping for the 26 plants.
+power-mpp-sulselbar,src-esdm-37-projects-2025-01-20,status,recently_completed,2025-01-20,Inaugurated on 20 January 2025.
+power-mpp-sulselbar,src-esdm-37-projects-2025-01-20,location,Sulawesi Barat-Sulawesi Selatan (Sulselbar) area,2025-01-20,
+power-mpp-sulselbar,src-esdm-37-projects-2025-01-20,opening,2025-01-20,2025-01-20,Inauguration date.
+power-mpp-sulselbar,src-gnfi-26-plants-2025-01-26,location,Sulawesi,2025-01-26,GNFI island grouping for the 26 plants.
+power-palu-3-unit-1,src-esdm-37-projects-2025-01-20,status,recently_completed,2025-01-20,Inaugurated on 20 January 2025.
+power-palu-3-unit-1,src-esdm-37-projects-2025-01-20,location,"Palu-3 project, Central Sulawesi",2025-01-20,
+power-palu-3-unit-1,src-esdm-37-projects-2025-01-20,opening,2025-01-20,2025-01-20,Inauguration date.
+power-palu-3-unit-1,src-gnfi-26-plants-2025-01-26,location,Sulawesi,2025-01-26,GNFI island grouping for the 26 plants.
+power-palu-3-unit-2,src-esdm-37-projects-2025-01-20,status,recently_completed,2025-01-20,Inaugurated on 20 January 2025.
+power-palu-3-unit-2,src-esdm-37-projects-2025-01-20,location,"Palu-3 project, Central Sulawesi",2025-01-20,
+power-palu-3-unit-2,src-esdm-37-projects-2025-01-20,opening,2025-01-20,2025-01-20,Inauguration date.
+power-palu-3-unit-2,src-gnfi-26-plants-2025-01-26,location,Sulawesi,2025-01-26,GNFI island grouping for the 26 plants.
+power-sulut-1-unit-1,src-esdm-37-projects-2025-01-20,status,recently_completed,2025-01-20,Inaugurated on 20 January 2025.
+power-sulut-1-unit-1,src-esdm-37-projects-2025-01-20,location,"Sulut-1 project, North Sulawesi",2025-01-20,
+power-sulut-1-unit-1,src-esdm-37-projects-2025-01-20,opening,2025-01-20,2025-01-20,Inauguration date.
+power-sulut-1-unit-1,src-gnfi-26-plants-2025-01-26,location,Sulawesi,2025-01-26,GNFI island grouping for the 26 plants.
+power-pltm-aceh-tersebar,src-esdm-37-projects-2025-01-20,status,recently_completed,2025-01-20,Inaugurated on 20 January 2025.
+power-pltm-aceh-tersebar,src-esdm-37-projects-2025-01-20,location,Scattered sites across Aceh,2025-01-20,
+power-pltm-aceh-tersebar,src-esdm-37-projects-2025-01-20,opening,2025-01-20,2025-01-20,Inauguration date.
+power-pltm-aceh-tersebar,src-gnfi-26-plants-2025-01-26,location,Sumatra,2025-01-26,GNFI island grouping for the 26 plants.
+power-pltbm-sadai,src-esdm-37-projects-2025-01-20,status,recently_completed,2025-01-20,Inaugurated on 20 January 2025.
+power-pltbm-sadai,src-esdm-37-projects-2025-01-20,location,"Sadai, Bangka Selatan Regency, Bangka Belitung",2025-01-20,
+power-pltbm-sadai,src-esdm-37-projects-2025-01-20,opening,2025-01-20,2025-01-20,Inauguration date.
+power-pltbm-sadai,src-gnfi-26-plants-2025-01-26,location,Sumatra,2025-01-26,GNFI island grouping for the 26 plants.
+power-pltm-ordi-hulu,src-esdm-37-projects-2025-01-20,status,recently_completed,2025-01-20,Inaugurated on 20 January 2025.
+power-pltm-ordi-hulu,src-esdm-37-projects-2025-01-20,location,"Ordi Hulu, North Sumatra",2025-01-20,
+power-pltm-ordi-hulu,src-esdm-37-projects-2025-01-20,opening,2025-01-20,2025-01-20,Inauguration date.
+power-pltm-ordi-hulu,src-gnfi-26-plants-2025-01-26,location,Sumatra,2025-01-26,GNFI island grouping for the 26 plants.
+power-pltbm-deli-serdang,src-esdm-37-projects-2025-01-20,status,recently_completed,2025-01-20,Inaugurated on 20 January 2025.
+power-pltbm-deli-serdang,src-esdm-37-projects-2025-01-20,location,"Deli Serdang Regency, North Sumatra",2025-01-20,
+power-pltbm-deli-serdang,src-esdm-37-projects-2025-01-20,opening,2025-01-20,2025-01-20,Inauguration date.
+power-pltbm-deli-serdang,src-gnfi-26-plants-2025-01-26,location,Sumatra,2025-01-26,GNFI island grouping for the 26 plants.
+power-plts-pajangan,src-esdm-37-projects-2025-01-20,status,recently_completed,2025-01-20,Inaugurated on 20 January 2025.
+power-plts-pajangan,src-esdm-37-projects-2025-01-20,location,"Pajangan, Sumenep Regency, East Java",2025-01-20,
+power-plts-pajangan,src-esdm-37-projects-2025-01-20,opening,2025-01-20,2025-01-20,Inauguration date.
+power-plts-pajangan,src-gnfi-26-plants-2025-01-26,location,Java,2025-01-26,GNFI island grouping for the 26 plants.
+power-plts-pajangan,src-listrikindonesia-6-plts-2025-01-23,capacity,25 kWp,2025-01-23,
+power-plts-sadulang-kecil,src-esdm-37-projects-2025-01-20,status,recently_completed,2025-01-20,Inaugurated on 20 January 2025.
+power-plts-sadulang-kecil,src-esdm-37-projects-2025-01-20,location,"Sadulang Kecil, Sumenep Regency, East Java",2025-01-20,
+power-plts-sadulang-kecil,src-esdm-37-projects-2025-01-20,opening,2025-01-20,2025-01-20,Inauguration date.
+power-plts-sadulang-kecil,src-gnfi-26-plants-2025-01-26,location,Java,2025-01-26,GNFI island grouping for the 26 plants.
+power-plts-sadulang-kecil,src-listrikindonesia-6-plts-2025-01-23,capacity,50 kWp,2025-01-23,
+power-plts-sapapan,src-esdm-37-projects-2025-01-20,status,recently_completed,2025-01-20,Inaugurated on 20 January 2025.
+power-plts-sapapan,src-esdm-37-projects-2025-01-20,location,"Sapapan, Sumenep Regency, East Java",2025-01-20,
+power-plts-sapapan,src-esdm-37-projects-2025-01-20,opening,2025-01-20,2025-01-20,Inauguration date.
+power-plts-sapapan,src-gnfi-26-plants-2025-01-26,location,Java,2025-01-26,GNFI island grouping for the 26 plants.
+power-plts-sapapan,src-listrikindonesia-6-plts-2025-01-23,capacity,50 kWp,2025-01-23,
+power-plts-sapangkur-kecil,src-esdm-37-projects-2025-01-20,status,recently_completed,2025-01-20,Inaugurated on 20 January 2025.
+power-plts-sapangkur-kecil,src-esdm-37-projects-2025-01-20,location,"Sapangkur Kecil, Sumenep Regency, East Java",2025-01-20,
+power-plts-sapangkur-kecil,src-esdm-37-projects-2025-01-20,opening,2025-01-20,2025-01-20,Inauguration date.
+power-plts-sapangkur-kecil,src-gnfi-26-plants-2025-01-26,location,Java,2025-01-26,GNFI island grouping for the 26 plants.
+power-plts-sapangkur-kecil,src-listrikindonesia-6-plts-2025-01-23,capacity,50 kWp,2025-01-23,
+power-plts-saur,src-esdm-37-projects-2025-01-20,status,recently_completed,2025-01-20,Inaugurated on 20 January 2025.
+power-plts-saur,src-esdm-37-projects-2025-01-20,location,"Saur, Sumenep Regency, East Java",2025-01-20,
+power-plts-saur,src-esdm-37-projects-2025-01-20,opening,2025-01-20,2025-01-20,Inauguration date.
+power-plts-saur,src-gnfi-26-plants-2025-01-26,location,Java,2025-01-26,GNFI island grouping for the 26 plants.
+power-plts-saur,src-listrikindonesia-6-plts-2025-01-23,capacity,150 kWp,2025-01-23,
+power-pltm-koro-yaentu,src-esdm-37-projects-2025-01-20,status,recently_completed,2025-01-20,Inaugurated on 20 January 2025.
+power-pltm-koro-yaentu,src-esdm-37-projects-2025-01-20,location,"Koro Yaentu, Central Sulawesi",2025-01-20,
+power-pltm-koro-yaentu,src-esdm-37-projects-2025-01-20,opening,2025-01-20,2025-01-20,Inauguration date.
+power-pltm-koro-yaentu,src-gnfi-26-plants-2025-01-26,location,Sulawesi,2025-01-26,GNFI island grouping for the 26 plants.
+power-pltm-dominanga,src-esdm-37-projects-2025-01-20,status,recently_completed,2025-01-20,Inaugurated on 20 January 2025.
+power-pltm-dominanga,src-esdm-37-projects-2025-01-20,location,"Dominanga, North Sulawesi",2025-01-20,
+power-pltm-dominanga,src-esdm-37-projects-2025-01-20,opening,2025-01-20,2025-01-20,Inauguration date.
+power-pltm-dominanga,src-gnfi-26-plants-2025-01-26,location,Sulawesi,2025-01-26,GNFI island grouping for the 26 plants.
+power-plts-tanamalala,src-esdm-37-projects-2025-01-20,status,recently_completed,2025-01-20,Inaugurated on 20 January 2025.
+power-plts-tanamalala,src-esdm-37-projects-2025-01-20,location,"Tanamalala, Selayar Islands Regency, South Sulawesi",2025-01-20,
+power-plts-tanamalala,src-esdm-37-projects-2025-01-20,opening,2025-01-20,2025-01-20,Inauguration date.
+power-plts-tanamalala,src-gnfi-26-plants-2025-01-26,location,Sulawesi,2025-01-26,GNFI island grouping for the 26 plants.
+power-plts-tanamalala,src-listrikindonesia-6-plts-2025-01-23,capacity,189.6 kWp,2025-01-23,
+grid-muara-enim-gumawang,src-esdm-37-projects-2025-01-20,status,recently_completed,2025-01-20,Inaugurated on 20 January 2025.
+grid-muara-enim-gumawang,src-esdm-37-projects-2025-01-20,location,"Muara Enim-Gumawang, South Sumatra, and Lampung 1 substation, Lampung",2025-01-20,
+grid-muara-enim-gumawang,src-esdm-37-projects-2025-01-20,opening,2025-01-20,2025-01-20,Inauguration date.
+grid-muara-enim-gumawang,src-esdm-37-projects-2025-01-20,operator,PT PLN (Persero),2025-01-20,PLN operates the transmission and substation network named in the ESDM list.
+grid-kendawangan-marau-sukamara,src-esdm-37-projects-2025-01-20,status,recently_completed,2025-01-20,Inaugurated on 20 January 2025.
+grid-kendawangan-marau-sukamara,src-esdm-37-projects-2025-01-20,location,"Kendawangan-Marau-Sukamara, West Kalimantan",2025-01-20,
+grid-kendawangan-marau-sukamara,src-esdm-37-projects-2025-01-20,opening,2025-01-20,2025-01-20,Inauguration date.
+grid-kendawangan-marau-sukamara,src-esdm-37-projects-2025-01-20,operator,PT PLN (Persero),2025-01-20,PLN operates the transmission and substation network named in the ESDM list.
+grid-kariangau-kipp,src-esdm-37-projects-2025-01-20,status,recently_completed,2025-01-20,Inaugurated on 20 January 2025.
+grid-kariangau-kipp,src-esdm-37-projects-2025-01-20,location,"Kariangau-Landing Point GIS 4 KIPP, East Kalimantan",2025-01-20,
+grid-kariangau-kipp,src-esdm-37-projects-2025-01-20,opening,2025-01-20,2025-01-20,Inauguration date.
+grid-kariangau-kipp,src-esdm-37-projects-2025-01-20,operator,PT PLN (Persero),2025-01-20,PLN operates the transmission and substation network named in the ESDM list.
+grid-kolaka-pomala,src-esdm-37-projects-2025-01-20,status,recently_completed,2025-01-20,Inaugurated on 20 January 2025.
+grid-kolaka-pomala,src-esdm-37-projects-2025-01-20,location,"Kolaka-PT Antam Pomala, Southeast Sulawesi",2025-01-20,
+grid-kolaka-pomala,src-esdm-37-projects-2025-01-20,opening,2025-01-20,2025-01-20,Inauguration date.
+grid-kolaka-pomala,src-esdm-37-projects-2025-01-20,operator,PT PLN (Persero),2025-01-20,PLN operates the transmission and substation network named in the ESDM list.
+grid-luwuk,src-esdm-37-projects-2025-01-20,status,recently_completed,2025-01-20,Inaugurated on 20 January 2025.
+grid-luwuk,src-esdm-37-projects-2025-01-20,location,"PLTMG Luwuk-GI Luwuk, Banggai Regency, Central Sulawesi",2025-01-20,
+grid-luwuk,src-esdm-37-projects-2025-01-20,opening,2025-01-20,2025-01-20,Inauguration date.
+grid-luwuk,src-esdm-37-projects-2025-01-20,operator,PT PLN (Persero),2025-01-20,PLN operates the transmission and substation network named in the ESDM list.
+grid-luwuk,src-listrikindonesia-6-plts-2025-01-23,output,connects the 40 MW PLTMG Luwuk,2025-01-23,"The gas plant replaces a rented 40 MW diesel plant and can save 500,000 L of fuel per year."
+grid-flores-labuan-bajo,src-esdm-37-projects-2025-01-20,status,recently_completed,2025-01-20,Inaugurated on 20 January 2025.
+grid-flores-labuan-bajo,src-esdm-37-projects-2025-01-20,location,"PLTMG Flores-Labuan Bajo, East Nusa Tenggara",2025-01-20,
+grid-flores-labuan-bajo,src-esdm-37-projects-2025-01-20,opening,2025-01-20,2025-01-20,Inauguration date.
+grid-flores-labuan-bajo,src-esdm-37-projects-2025-01-20,operator,PT PLN (Persero),2025-01-20,PLN operates the transmission and substation network named in the ESDM list.
+grid-muara-karang-durikosambi,src-esdm-37-projects-2025-01-20,status,recently_completed,2025-01-20,Inaugurated on 20 January 2025.
+grid-muara-karang-durikosambi,src-esdm-37-projects-2025-01-20,location,"Muara Karang Baru-Durikosambi, DKI Jakarta",2025-01-20,
+grid-muara-karang-durikosambi,src-esdm-37-projects-2025-01-20,opening,2025-01-20,2025-01-20,Inauguration date.
+grid-muara-karang-durikosambi,src-esdm-37-projects-2025-01-20,operator,PT PLN (Persero),2025-01-20,PLN operates the transmission and substation network named in the ESDM list.
+grid-ampel-boyolali-500,src-esdm-37-projects-2025-01-20,status,recently_completed,2025-01-20,Inaugurated on 20 January 2025.
+grid-ampel-boyolali-500,src-esdm-37-projects-2025-01-20,location,"Ampel New/Boyolali, Central Java",2025-01-20,
+grid-ampel-boyolali-500,src-esdm-37-projects-2025-01-20,opening,2025-01-20,2025-01-20,Inauguration date.
+grid-ampel-boyolali-500,src-esdm-37-projects-2025-01-20,operator,PT PLN (Persero),2025-01-20,PLN operates the transmission and substation network named in the ESDM list.
+grid-ampel-bringin-mojosongo,src-esdm-37-projects-2025-01-20,status,recently_completed,2025-01-20,Inaugurated on 20 January 2025.
+grid-ampel-bringin-mojosongo,src-esdm-37-projects-2025-01-20,location,"Ampel New/Boyolali-Bringin-Mojosongo, Central Java",2025-01-20,
+grid-ampel-bringin-mojosongo,src-esdm-37-projects-2025-01-20,opening,2025-01-20,2025-01-20,Inauguration date.
+grid-ampel-bringin-mojosongo,src-esdm-37-projects-2025-01-20,operator,PT PLN (Persero),2025-01-20,PLN operates the transmission and substation network named in the ESDM list.
+grid-duren-tiga-depok,src-esdm-37-projects-2025-01-20,status,recently_completed,2025-01-20,Inaugurated on 20 January 2025.
+grid-duren-tiga-depok,src-esdm-37-projects-2025-01-20,location,"Duren Tiga II/Ragunan (GIS)-Depok II, DKI Jakarta-West Java",2025-01-20,
+grid-duren-tiga-depok,src-esdm-37-projects-2025-01-20,opening,2025-01-20,2025-01-20,Inauguration date.
+grid-duren-tiga-depok,src-esdm-37-projects-2025-01-20,operator,PT PLN (Persero),2025-01-20,PLN operates the transmission and substation network named in the ESDM list.
+grid-cilegon-ibt-4,src-esdm-37-projects-2025-01-20,status,recently_completed,2025-01-20,Inaugurated on 20 January 2025.
+grid-cilegon-ibt-4,src-esdm-37-projects-2025-01-20,location,"Cilegon, Banten",2025-01-20,
+grid-cilegon-ibt-4,src-esdm-37-projects-2025-01-20,opening,2025-01-20,2025-01-20,Inauguration date.
+grid-cilegon-ibt-4,src-esdm-37-projects-2025-01-20,operator,PT PLN (Persero),2025-01-20,PLN operates the transmission and substation network named in the ESDM list.

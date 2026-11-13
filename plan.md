@@ -1,27 +1,27 @@
 # Indonesia Infrastructure Atlas — Remaining Work
 
 **Status:** V4 in progress. Local-only build; nothing is published.
-**Baseline data:** 10 November 2026 build.
+**Baseline data:** 13 November 2026 build.
 
 ## 1. Remaining coverage
 
 | Layer | Current | Target | Remaining |
 |---|---:|---:|---:|
-| Strategic and private records | 120 | 174 | **54** |
-| Sources | 140 | 250 | **110** |
-| Indicators | 45 | 300 | **255** |
+| Strategic and private records | 157 | 174 | **17** |
+| Sources | 144 | 250 | **106** |
+| Indicators | 72 | 300 | **228** |
 
 Everything else is met: 226/226 PSN project and estate records, 24/24 PSN
 programmes, 28/28 IKN packages, 314 companies against a 300 target, 204 estates,
 34 factories, and the road, rail, airport, seaport and transport targets.
 
 The 400-record reference set is **226 PSN records + 174 strategic/private
-records**. The atlas has 120 strategic records, so 54 remain. The project table
+records**. The atlas has 157 strategic records, so 17 remain. The project table
 will grow to about 348 rows when they are added; 44 PSN records live in the
 estate layer and eight share an existing project row, so 400 reference records
 correspond to about 392 rows.
 
-## 2. Strategic and private records — 54
+## 2. Strategic and private records — 17
 
 Add sourced records outside the PSN list. Search `projects.csv`,
 `psn_register.csv` and `estates.csv` first; upgrade an existing row instead of
@@ -29,30 +29,25 @@ creating a duplicate.
 
 Candidate areas, in rough priority order:
 
-- **Roads and bridges:** JORR 3, Demak–Tuban, Pejagan/Tegal–Cilacap,
-  Cilacap–Yogyakarta, Gilimanuk–Mengwi, Semarang Harbour, strategic regional
-  roads and bridges.
-- **Rail:** MRT Jakarta Phase 2A and 2B, MRT East–West, LRT Jakarta Phase 1B,
-  Jakarta–Bandung high-speed rail extension study, Trans Sulawesi rail,
-  Kalimantan logistics rail, Yogyakarta airport rail, station revitalisation.
-- **Airports:** North Bali, Kertajati, Soekarno–Hatta expansion, Komodo, Lombok
-  Praya, Yogyakarta International, Kediri/Dhoho, Nabire, Siboru Fakfak, Karimun.
-- **Seaports and ferries:** remaining Patimban phases, Makassar New Port,
-  Kijing, Sorong, Kupang, Teluk Palu, Likupang, Sanur, Maloy, New Palembang,
-  Muaro Jambi, fishing ports and RoRo links.
-- **Energy:** Tangguh Train 3, Jambaran–Tiung Biru, IDD, RDMP Cilacap, Dumai and
-  Balongan, GRR Tuban and Bontang, the 37 electricity projects, Sumatra 500 kV,
-  Central–West Java 500 kV, geothermal, Batang Toru, waste-to-energy, gas plants
-  and B50 biodiesel.
-- **Water and flood control:** Jakarta sewerage, SPAM Jatiluhur, Lampung and
-  Semarang Barat, regional water supply and Jakarta flood control.
-- **Industry and downstreaming:** remaining Hilirisasi Stage II projects, IWIP
-  battery-material packages, CATL-CBL and the national car and motor ecosystem.
+- **Roads and bridges:** strategic regional roads and bridges outside the BPJT
+  register, and any remaining toll sections not yet in `projects.csv`.
+- **Rail:** the Jakarta–Bandung high-speed rail extension study, Trans Sulawesi
+  rail, the Yogyakarta airport rail link and station revitalisation.
+- **Airports:** North Bali, Kertajati and the Soekarno–Hatta expansion.
+- **Seaports and ferries:** remaining Patimban phases, fishing ports and RoRo
+  links.
+- **Energy:** Sumatra 500 kV, Central–West Java 500 kV, Batang Toru,
+  waste-to-energy, gas plants and B50 biodiesel.
+- **Water and flood control:** remaining regional water-supply systems and
+  Jakarta flood control.
+- **Industry and downstreaming:** remaining Hilirisasi Stage II projects,
+  remaining IWIP battery-material packages, and the national car and motor
+  ecosystem.
 - **Social infrastructure:** representative schools, hospitals, housing and
   free-meal kitchens at programme level; do not create 10,000 facility rows.
-- **Digital, tourism and fisheries:** Palapa Ring, Satria, data centres, 5G,
-  government cloud and AI, the five super-priority destinations, fishing
-  villages, cold chain and fish ports.
+- **Digital, tourism and fisheries:** Satria, data centres, 5G, government cloud
+  and AI, the five super-priority destinations, fishing villages, cold chain
+  and fish ports.
 
 Acceptance for each record:
 
@@ -63,7 +58,7 @@ Acceptance for each record:
 - no duplicate of a PSN, estate or existing project record;
 - updated coverage count.
 
-## 3. Sources — 110 documents
+## 3. Sources — 106 documents
 
 Priority order:
 
@@ -79,7 +74,7 @@ Every new source needs publisher, title, URL, publication date, retrieval date,
 source type, language, snapshot hash and archive path. If a page cannot be
 archived, record why in `notes`.
 
-## 4. Indicators — 255
+## 4. Indicators — 228
 
 Add an indicator only when the source states the name, unit and at least one of:
 a baseline, a target or a dated observation. Never infer a target from the
@@ -124,12 +119,16 @@ Rules:
   possible.
 - Geocode the remaining large estates and review the 12 PSN road rows with
   `psn=unknown`.
-- 14 company profiles remain reference-only and 100 projects have no
+- 14 company profiles remain reference-only and 126 projects have no
   organisation role; add a role only where a source names one.
+- Reconcile the 26-plant total with the published technology breakdown: the
+  archived ESDM and GNFI releases give 3,222.75 MW across 26 plants but do not
+  state per-plant capacity for 16 of them, so the rows stay blank rather than
+  infer a share.
 
 ## 7. Priority order
 
-1. **P0 — measurable coverage:** the 54 strategic records, 110 sources and 255
+1. **P0 — measurable coverage:** the 17 strategic records, 106 sources and 228
    indicators.
 2. **P1 — UX rebuild:** bottom navigation, detail pages, map v3, editorial
    summaries.

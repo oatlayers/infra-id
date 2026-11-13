@@ -579,6 +579,7 @@ def main() -> None:
             if row["status"] == "active" and row["sector"] == "industrial_areas"
             and row["match_status"].startswith("matched")
         ),
+        "strategic_records": sum(1 for row in rows if row["psn"] != "yes"),
         "industrial_estates": estate_types.get("industrial_estate", 0)
         + estate_types.get("both", 0),
         "sezs": estate_types.get("sez", 0) + estate_types.get("both", 0),
