@@ -2,7 +2,6 @@
 
 **Status:** V4 in progress. Local-only build; nothing is published.
 **Baseline data:** 10 November 2026 build.
-**Completed work:** recorded in [`CHANGELOG.md`](CHANGELOG.md) and git history.
 
 ## 1. Remaining coverage
 
@@ -62,7 +61,7 @@ Acceptance for each record:
 - status, location and at least one atomic claim;
 - bilingual display name and generated summary;
 - no duplicate of a PSN, estate or existing project record;
-- updated coverage count and changelog entry.
+- updated coverage count.
 
 ## 3. Sources — 110 documents
 
@@ -177,5 +176,5 @@ python scripts/dev/check_contrast.py
 ```
 
 A change is complete only when the build is deterministic, the smoke tests pass
-in both locales, and the coverage table, dictionary and changelog reflect the
+in both locales, and the coverage table, dictionary reflect the
 change.

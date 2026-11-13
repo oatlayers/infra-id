@@ -167,15 +167,12 @@ FIELD = {
     "sez_id": ("text", "no", "KEK National Council identifier when known."),
     "layer": ("text", "yes", "Coverage layer key used by the build."),
     "label": ("text", "yes", "Human-readable layer label."),
-    "unit": ("text", "yes", "Unit counted by the coverage target."),
     "target_count": ("integer", "yes", "Target number of rows for the layer."),
     "reference_set": ("text", "yes", "Definition of the target reference set."),
     "definition": ("text", "yes", "What the corridor includes and excludes."),
     "metric": ("text", "yes", "Metric used for the corridor figure."),
     "total_km": ("decimal", "yes", "Published corridor total in kilometres."),
-    "as_of": ("date", "yes", "Date of the corridor figures."),
     "scope": ("enum", "yes", "Conflict scope: project, corridor, estate, dataset or method."),
-    "field": ("text", "yes", "Field or fact in dispute."),
     "value_a": ("text", "yes", "First value, with its date or scope when needed."),
     "value_b": ("text", "yes", "Second value, with its date or scope when needed."),
     "resolution": ("text", "yes", "What the atlas does with the conflict."),
@@ -196,7 +193,7 @@ FIELD = {
     "programme_id": ("id", "yes", "Foreign key to programmes.csv."),
 }
 
-# Context-specific overrides: status and type mean different things by table.
+# Context-specific overrides where a field means different things by table.
 OVERRIDES = {
     ("projects.csv", "status"): ("enum", "yes", "planned, under_construction, operating, recently_completed, stalled or unknown. Unknown marks a register-only record whose implementation status is not yet sourced.", "planned; under_construction; operating; recently_completed; stalled; unknown"),
     ("estates.csv", "status"): ("enum", "yes", "Designation-level operating, under_construction, planned or unknown; not independently verified for most estates.", "operating; under_construction; planned; unknown"),
@@ -217,6 +214,9 @@ OVERRIDES = {
     ("corridor_segments.csv", "segment_type"): ("enum", "yes", "section, phase, package or other.", "section; phase; package; other"),
     ("estates.csv", "coordinate_source"): ("enum", "yes", "official, osm, regency, manual or unknown.", "official; osm; regency; manual; unknown"),
     ("conflicts.csv", "scope"): ("enum", "yes", "project, corridor, estate, dataset or method.", "project; corridor; estate; dataset; method"),
+    ("conflicts.csv", "field"): ("text", "yes", "Field or fact in dispute.", ""),
+    ("corridors.csv", "as_of"): ("date", "yes", "Date of the corridor figures.", ""),
+    ("coverage_targets.csv", "unit"): ("text", "yes", "Unit counted by the coverage target.", ""),
     ("project_sources.csv", "claim"): ("enum", "yes", "One atomic fact type; commas are not allowed.", ""),
     ("estate_sources.csv", "claim"): ("enum", "yes", "One atomic fact type; commas are not allowed.", ""),
     ("project_organizations.csv", "role"): ("enum", "yes", "sponsor, operator, contractor, lender, off_taker, developer or owner.", "sponsor; operator; contractor; lender; off_taker; developer; owner"),

@@ -22,7 +22,6 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 import json
-from datetime import date
 
 from data_model import (
     CURATED,
@@ -32,7 +31,6 @@ from data_model import (
     PROJECT_ORG_FIELDS,
     PROJECT_SOURCE_FIELDS,
     ROOT,
-    is_blank,
     read_csv,
     write_csv,
 )

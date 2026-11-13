@@ -28,8 +28,8 @@ from data_model import (
     ESTATE_TYPES,
     EVENT_TYPES,
     GEOMETRY_KINDS,
-    INSTRUMENTS,
     INDICATOR_DIRECTIONS,
+    INSTRUMENTS,
     ISLANDS,
     LANGUAGES,
     LAW_LEVELS,
@@ -40,8 +40,8 @@ from data_model import (
     PROGRAMME_STATUSES,
     PROGRAMME_THEMES,
     PSN_VALUES,
-    ROOT,
     ROLES,
+    ROOT,
     SECTORS,
     SEGMENT_TYPES,
     SOURCE_TYPES,
@@ -225,9 +225,10 @@ def main() -> None:
                 err(f"{where}: progress_pct must be 0-100")
 
         opened = as_int(row["opened_year"])
-        if not is_blank(row["opened_year"]):
-            if opened is None or not 1900 <= opened <= 2030:
-                err(f"{where}: opened_year is not a plausible year")
+        if not is_blank(row["opened_year"]) and (
+            opened is None or not 1900 <= opened <= 2030
+        ):
+            err(f"{where}: opened_year is not a plausible year")
         if row["status"] in {"operating", "recently_completed"} and opened is None:
             err(f"{where}: {row['status']} requires opened_year")
         if row["status"] == "recently_completed" and opened is not None and opened < 2024:

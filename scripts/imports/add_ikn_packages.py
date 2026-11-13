@@ -30,7 +30,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from data_model import (  # noqa: E402
+from data_model import (
     CURATED,
     EVENT_FIELDS,
     ORG_FIELDS,

@@ -28,6 +28,7 @@ from __future__ import annotations
 import json
 import tempfile
 import time
+from functools import partial
 from pathlib import Path
 
 from playwright.sync_api import Page, sync_playwright
@@ -57,7 +58,7 @@ def timed(task) -> tuple[bool, float, str]:
         note = task()
         elapsed = time.perf_counter() - started
         return True, round(elapsed, 3), note or "ok"
-    except Exception as error:  # noqa: BLE001 - report the failed step
+    except Exception as error:
         elapsed = time.perf_counter() - started
         return False, round(elapsed, 3), str(error).splitlines()[0][:160]
 
@@ -154,7 +155,7 @@ def main() -> None:
                 ("province", task_province),
                 ("language", task_language),
             ):
-                ok, seconds, note = timed(lambda task=task: task(page, profile))
+                ok, seconds, note = timed(partial(task, page, profile))
                 row["tasks"][name] = {"ok": ok, "seconds": seconds, "note": note}
                 if not ok:
                     failures += 1

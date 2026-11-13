@@ -42,7 +42,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from data_model import (  # noqa: E402
+from data_model import (
     CONFLICT_FIELDS,
     CURATED,
     EVENT_FIELDS,

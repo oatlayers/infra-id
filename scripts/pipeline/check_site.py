@@ -345,8 +345,6 @@ def main() -> None:
         err("stats.js: freshness report does not cover every project and estate")
     if not stats.get("freshness", {}).get("next_due"):
         err("stats.js: freshness next_due is missing")
-    if not stats.get("changelog"):
-        err("stats.js: changelog is empty")
     if len(stats.get("dictionary", [])) < 100:
         err("stats.js: data dictionary looks incomplete")
     dictionary = stats.get("dictionary", [])
@@ -417,12 +415,6 @@ def main() -> None:
             print(" -", message)
         raise SystemExit(1)
 
-    size = sum(
-        path.stat().st_size
-        for directory in (SITE_DATA, SITE_DOWNLOADS)
-        for path in directory.glob("*")
-        if path.is_file()
-    )
     print(
         f"OK: {len(features)} projects, {len(estate_payload)} estates, "
         f"{len(company_payload)} companies, {len(pkpn_payload)} PKPN programmes, "

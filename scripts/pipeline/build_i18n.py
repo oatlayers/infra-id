@@ -29,7 +29,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from data_model import (  # noqa: E402
+from data_model import (
     CURATED,
     DERIVED,
     ROOT,
@@ -184,7 +184,7 @@ def province_text(value: str, locale: str) -> str:
         return "Indonesia"
     if len(parts) == 1:
         return parts[0]
-    separator = ", " if locale == "en" else ", "
+    separator = ", "
     return separator.join(parts[:-1]) + (" and " if locale == "en" else " dan ") + parts[-1]
 
 
@@ -248,10 +248,7 @@ def generated_summary(project: dict[str, str], locale: str) -> str:
             else f"dibuka {project['opened_year']}"
         )
     elif project["expected_open_year"]:
-        facts.append(
-            f"target {project['expected_open_year']}" if locale == "en"
-            else f"target {project['expected_open_year']}"
-        )
+        facts.append(f"target {project['expected_open_year']}")
 
     if locale == "id":
         sentence = f"{sector.capitalize()} {status} di {province}."
@@ -335,7 +332,6 @@ def main() -> None:
     programmes = read_csv(CURATED / "programmes.csv")
     corridors = read_csv(CURATED / "corridors.csv")
     estates = read_csv(CURATED / "estates.csv")
-    sources = {row["id"] for row in read_csv(CURATED / "sources.csv")}
     translations = read_csv(CURATED / "translations.csv")
     aliases = official_alias_names()
 

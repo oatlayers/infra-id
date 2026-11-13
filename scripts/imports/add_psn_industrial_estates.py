@@ -486,7 +486,7 @@ def main() -> None:
     managed_ids = set()
     for (
         estate_id,
-        psn_no,
+        _psn_no,
         official_name,
         source_id,
         province,

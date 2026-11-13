@@ -21,13 +21,13 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from data_model import (
+    ALIAS_FIELDS,
     CURATED,
     DERIVED,
+    ORG_FIELDS,
     PROJECT_FIELDS,
     PROJECT_ORG_FIELDS,
     PROJECT_SOURCE_FIELDS,
-    ALIAS_FIELDS,
-    ORG_FIELDS,
     read_csv,
     write_csv,
 )
@@ -185,6 +185,30 @@ def upsert(rows: list[dict[str, str]], key: str, incoming: dict[str, str]) -> No
     rows.append(incoming)
 
 
+def claim(item: dict[str, str], kind: str, value: str) -> dict[str, str]:
+    return {
+        "project_id": item["id"],
+        "source_id": SOURCE_ID,
+        "claim": kind,
+        "claim_value": value,
+        "claim_date": STATUS_AS_OF,
+        "notes": f"Kemenhub deck {item['page_ref']}.",
+    }
+
+
+def link(item: dict[str, str], org_id: str, role: str) -> dict[str, str]:
+    return {
+        "project_id": item["id"],
+        "org_id": org_id,
+        "role": role,
+        "share_pct": "",
+        "start_year": "",
+        "end_year": "",
+        "source_id": SOURCE_ID,
+        "notes": "",
+    }
+
+
 def main() -> None:
     staging = read_csv(STAGING)
     if len(staging) != 35:
@@ -245,43 +269,21 @@ def main() -> None:
         }
         projects.append(project)
 
-        def claim(kind: str, value: str) -> dict[str, str]:
-            return {
-                "project_id": item["id"],
-                "source_id": SOURCE_ID,
-                "claim": kind,
-                "claim_value": value,
-                "claim_date": STATUS_AS_OF,
-                "notes": f"Kemenhub deck {item['page_ref']}.",
-            }
-
-        claims.append(claim("status", item["status"]))
-        claims.append(claim("location", f"{item['province']} — {item['route']}"))
+        claims.append(claim(item, "status", item["status"]))
+        claims.append(claim(item, "location", f"{item['province']} — {item['route']}"))
         if item["opened_year"]:
-            claims.append(claim("opening", item["opened_year"]))
+            claims.append(claim(item, "opening", item["opened_year"]))
         if item["expected_open_year"]:
-            claims.append(claim("target", item["expected_open_year"]))
+            claims.append(claim(item, "target", item["expected_open_year"]))
         if item["investment_idr_t"]:
-            claims.append(claim("investment", f"Rp {item['investment_idr_t']} T"))
+            claims.append(claim(item, "investment", f"Rp {item['investment_idr_t']} T"))
         if item["progress_pct"]:
-            claims.append(claim("progress", f"{item['progress_pct']}%"))
+            claims.append(claim(item, "progress", f"{item['progress_pct']}%"))
 
-        def link(org_id: str, role: str) -> dict[str, str]:
-            return {
-                "project_id": item["id"],
-                "org_id": org_id,
-                "role": role,
-                "share_pct": "",
-                "start_year": "",
-                "end_year": "",
-                "source_id": SOURCE_ID,
-                "notes": "",
-            }
-
-        links.append(link("org-kemenhub", "sponsor"))
-        links.append(link(SECTOR_OWNER[item["sector"]], "owner"))
+        links.append(link(item, "org-kemenhub", "sponsor"))
+        links.append(link(item, SECTOR_OWNER[item["sector"]], "owner"))
         if item["operator_org_id"]:
-            links.append(link(item["operator_org_id"], "operator"))
+            links.append(link(item, item["operator_org_id"], "operator"))
 
         for alias in [part.strip() for part in item["aliases"].split(";") if part.strip()]:
             aliases.append(

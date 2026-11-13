@@ -1333,9 +1333,6 @@ svg { display: block; }
 .freshness-dot.stale, .freshness-dot.unknown { background: var(--stalled); }
 .gap-list { margin: 0; padding: 0 0 0 15px; font-size: 10.5px; line-height: 1.55; }
 .gap-list li { margin-bottom: 5px; }
-.changelog { margin: 0; padding: 0; list-style: none; font-size: 10.5px; line-height: 1.5; }
-.changelog li { display: flex; gap: 8px; padding: 5px 0; border-bottom: 1px solid #f1f2f4; }
-.changelog time { flex: none; color: var(--muted); font-variant-numeric: tabular-nums; }
 
 /* ---------- Map ---------- */
 

@@ -93,7 +93,6 @@ site/index.html#/data
 infra-id/
 ├─ README.md                     this file
 ├─ plan.md                       remaining V4 work
-├─ CHANGELOG.md                  public change log, parsed into the Data view
 ├─ requirements.txt              Python dependencies for data scripts
 ├─ data/
 │  ├─ curated/                   editable source of truth (28 tables)
@@ -197,7 +196,7 @@ needs an official source or two independent sources. Disagreements go in
     python scripts/build_all.py --check
     ```
 
-11. Update `coverage_targets.csv`, `CHANGELOG.md` and any affected doc if
+11. Update `coverage_targets.csv` and any affected doc if
     coverage or behaviour changed.
 12. Commit curated rows, rebuilt exports and site data together. Do not push.
 
@@ -290,7 +289,6 @@ The Data view renders coverage from `data/curated/coverage_targets.csv` and
 |---|---|
 | [`plan.md`](plan.md) | Remaining V4 work and acceptance criteria |
 | [`scripts/README.md`](scripts/README.md) | Every build step, importer and development check |
-| [`CHANGELOG.md`](CHANGELOG.md) | Public change log, rendered in the Data view |
 
 ## Agent quick reference
 
@@ -317,10 +315,23 @@ The Data view renders coverage from `data/curated/coverage_targets.csv` and
 
 - Python 3.10 or newer.
 - `pip install -r requirements.txt` for extraction and basemap scripts
-  (BeautifulSoup, lxml, Shapely).
+  (BeautifulSoup, lxml, Shapely). The same dependencies are declared in
+  `pyproject.toml` for `uv`.
 - No Node.js or build tooling is needed to view the site.
 - Optional: `pip install playwright` and Microsoft Edge for the browser smoke
   test. Playwright is not in `requirements.txt` and is not needed by the build.
+
+## Linting
+
+Ruff is pinned as a uv development dependency:
+
+```bash
+uv sync
+uv run ruff check        # report
+uv run ruff check --fix  # apply safe fixes
+```
+
+The rule set and excludes live in `pyproject.toml`.
 
 ## Licensing and credits
 

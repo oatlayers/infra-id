@@ -35,7 +35,8 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "pipeline"))
 
-from data_model import (  # noqa: E402
+from build_psn_ledger import ESTATE_MATCH, PROJECT_MATCH, TRANSPORT_MATCH
+from data_model import (
     ALIAS_FIELDS,
     CURATED,
     DERIVED,
@@ -47,7 +48,6 @@ from data_model import (  # noqa: E402
     read_csv,
     write_csv,
 )
-from build_psn_ledger import ESTATE_MATCH, PROJECT_MATCH, TRANSPORT_MATCH  # noqa: E402
 
 RETRIEVED = "2026-11-09"
 LAST_VERIFIED = "2026-11-09"

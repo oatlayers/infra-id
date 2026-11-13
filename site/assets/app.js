@@ -2556,18 +2556,6 @@
       }).join('') + '</div></section>';
   }
 
-  function changelogSection() {
-    const entries = stats.changelog || [];
-    if (!entries.length) return '<section class="data-section"><h3>' + esc(t('data.changelog')) + '</h3><p>' + esc(t('data.no_changelog')) + '</p></section>';
-    return '<section class="data-section"><h3>' + esc(t('data.changelog')) + '</h3><ul class="changelog">' +
-      entries.map(function (entry) {
-        return '<li><time>' + esc(fmtDate(entry.date)) + '</time><span><b>' +
-          esc(entry.title) + '</b><br>' + entry.items.map(function (item) {
-            return esc(item);
-          }).join('<br>') + '</span></li>';
-      }).join('') + '</ul></section>';
-  }
-
   function renderData() {
     dom.exploreContent.hidden = true;
     dom.exploreContent.style.display = 'none';
@@ -2700,7 +2688,6 @@
       '<section class="data-section"><h3>' + esc(t('data.downloads')) + '</h3>' + downloadList() + '</section>' +
 
       dictionarySection() +
-      changelogSection() +
       '</div>';
   }
 

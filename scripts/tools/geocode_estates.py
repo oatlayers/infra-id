@@ -29,7 +29,6 @@ import re
 import time
 import urllib.parse
 import urllib.request
-from datetime import date
 from pathlib import Path
 
 from data_model import (
@@ -51,7 +50,7 @@ USER_AGENT = "infra-id-atlas/0.1 (local research; contact: repository owner)"
 STOP = {
     "kawasan", "industri", "industrial", "estate", "park", "city", "town",
     "terpadu", "kota", "kabupaten", "the", "and", "of", "pt", "tbk", "ie",
-    "ki", "kawasan", "indonesia",
+    "ki", "indonesia",
 }
 
 

@@ -484,7 +484,7 @@ def mobile(page: Page) -> None:
 
 
 class QuietHandler(SimpleHTTPRequestHandler):
-    def log_message(self, *args):  # noqa: D401 - silence the test server
+    def log_message(self, *args):
         return
 
 

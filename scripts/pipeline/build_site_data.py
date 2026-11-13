@@ -19,7 +19,6 @@ from __future__ import annotations
 
 import json
 import os
-import re
 import sys
 from collections import Counter
 from pathlib import Path
@@ -42,7 +41,6 @@ from data_model import (
     PROGRAMME_PROJECT_FIELDS,
     PROGRAMME_SOURCE_FIELDS,
     PROJECT_ORG_FIELDS,
-    ROOT,
     SEGMENT_FIELDS,
     SITE_DATA,
     SITE_DOWNLOADS,
@@ -52,7 +50,6 @@ from data_model import (
 )
 
 PROJECTS_CSV = EXPORTS / "projects.csv"
-CHANGELOG = ROOT / "CHANGELOG.md"
 
 CLAIM_DOWNLOAD_FIELDS = [
     "project_id", "project_name", "sector", "claim", "claim_value", "claim_date",
@@ -96,27 +93,6 @@ def write_global(name: str, global_name: str, value: object) -> None:
     )
 
 
-def read_changelog() -> list[dict[str, object]]:
-    """Parse ``## YYYY-MM-DD`` sections and their bullet lists."""
-    if not CHANGELOG.exists():
-        return []
-    entries: list[dict[str, object]] = []
-    current: dict[str, object] | None = None
-    for line in CHANGELOG.read_text(encoding="utf-8").splitlines():
-        heading = re.match(r"^##\s+(\d{4}-\d{2}-\d{2})\s*[-—:]?\s*(.*)$", line)
-        if heading:
-            current = {
-                "date": heading.group(1),
-                "title": heading.group(2).strip(),
-                "items": [],
-            }
-            entries.append(current)
-            continue
-        if current is not None and line.startswith(("- ", "* ")):
-            current["items"].append(line[2:].strip())
-    return entries
-
-
 def main() -> None:
     rows = read_csv(PROJECTS_CSV)
     sources = {row["id"]: row for row in read_csv(CURATED / "sources.csv")}
@@ -143,7 +119,6 @@ def main() -> None:
     freshness = read_csv(DERIVED / "freshness_report.csv")
     dictionary = read_csv(DERIVED / "data_dictionary.csv")
     claims_audit = read_csv(DERIVED / "claims_audit.csv")
-    changelog = read_changelog()
 
     freshness_by_entity = {
         (row["entity_type"], row["entity_id"]): row for row in freshness
@@ -764,7 +739,6 @@ def main() -> None:
             }
             for row in dictionary
         ],
-        "changelog": changelog,
         "coverage": coverage,
         "sources": [
             source_record(source)
