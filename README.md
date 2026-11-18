@@ -1,38 +1,40 @@
 # Indonesia Infrastructure Atlas
 
-A curated, source-linked atlas of major Indonesian infrastructure, PSN projects
-and national programmes. Every record carries a source, a verification date and
-an explicit confidence level. The atlas is deliberately **major and curated, not
-exhaustive**.
+A curated, source-linked atlas of major Indonesian infrastructure: 348 projects,
+204 industrial estates and SEZs, 24 PSN programmes, the eight 2027 PKPN
+priorities and the companies behind them. Every record carries a source, a
+verification date and an explicit confidence level. The atlas is deliberately
+**major and curated, not exhaustive**.
 
-The site is a static, offline build. It works from `file://` and from any local
-HTTP server, with no tile server, CDN or remote request.
+The site is a static, offline build with English and Indonesian editions. It
+works from `file://` and from any local HTTP server, with no tile server, CDN or
+remote request.
+
+**Data baseline:** 13 November 2026.
 
 ## At a glance
 
 | Measure | Current |
 |---|---:|
-| Project rows | 331 |
+| Project rows | 348 |
 | Active PSN project/estate records represented | 226 / 226 |
 | Active PSN programmes represented | 24 / 24 |
 | 2027 PKPN programmes | 8 / 8 |
 | Industrial estates and SEZs | 204 |
 | Companies and agencies | 314 |
-| Sources | 144 |
-| Indicators / dated values / phases | 72 / 55 / 9 |
+| Sources | 163 |
+| Indicators / dated values / phases | 105 / 88 / 9 |
 | IKN package rows | 28 / 28 |
-| Project claims / estate claims | 1,330 / 115 |
-| Programme claims / PKPN claims | 52 / 27 |
-| Initial / data / total payload | 1,560 / 2,342 / 5,132 KB |
+| Project claims / estate claims | 1,422 / 115 |
+| Programme claims / PKPN claims | 61 / 27 |
+| Initial / data / total payload | 1,654 / 2,452 / 5,421 KB |
 
-**Reference set:** 383 of 400 records are represented — all 226 active PSN
-records plus 157 strategic and private records. The remaining **17 records are
-strategic/private**, not PSN. The 400 target counts reference records, not
+**Reference set:** all 400 records are represented — 226 active PSN records plus
+174 strategic and private records. The 400 target counts reference records, not
 project-table rows, because 44 PSN records live in the estate layer.
 
-Nothing is published. The site in this repository is the current local V4 build;
-there is no remote, deployment or public URL. Remaining work is in
-[`plan.md`](plan.md).
+The generated site is committed under `site/`, so a clone is immediately
+viewable. Remaining work is tracked in [`plan.md`](plan.md).
 
 ## What this is, and what it is not
 
@@ -54,12 +56,15 @@ supports its status.
 The generated site is committed, so no build is needed to view it.
 
 ```bash
-# Option 1: open the language chooser directly
-#   site/index.html
+git clone https://github.com/oatlayers/infra-id.git
+cd infra-id
 
-# Option 2: serve the site locally
+# Option 1: serve the site locally
 python -m http.server 8765 --directory site
 # then open http://localhost:8765/
+
+# Option 2: open the language chooser directly
+#   site/index.html
 ```
 
 Rebuild and verify:
@@ -92,8 +97,11 @@ site/index.html#/data
 ```text
 infra-id/
 ├─ README.md                     this file
-├─ plan.md                       remaining V4 work
-├─ requirements.txt              Python dependencies for data scripts
+├─ LICENSE                       MIT licence for the code and curated tables
+├─ plan.md                       remaining V4 work and acceptance criteria
+├─ pyproject.toml                project metadata, Ruff configuration
+├─ requirements.txt              optional dependencies for import tools
+├─ uv.lock                       reproducible development environment
 ├─ data/
 │  ├─ curated/                   editable source of truth (28 tables)
 │  ├─ derived/                   generated reports, caches and audits
@@ -141,7 +149,8 @@ Do not edit generated files by hand. The main generated paths are
     offline assets.
 
 `--check` hashes all generated files before and after the run and fails if a
-rebuild changes a byte. The build never touches git, a remote or a deployment.
+rebuild changes a byte. The build never fetches a remote resource and writes only
+inside the repository.
 
 See [`scripts/README.md`](scripts/README.md) for every script and importer.
 
@@ -198,7 +207,8 @@ needs an official source or two independent sources. Disagreements go in
 
 11. Update `coverage_targets.csv` and any affected doc if
     coverage or behaviour changed.
-12. Commit curated rows, rebuilt exports and site data together. Do not push.
+12. Commit curated rows, rebuilt exports and site data together. Push only when
+    the build and checks pass.
 
 Rules for every row:
 
@@ -238,19 +248,19 @@ text inside the Indonesian edition carries `lang="en"` and an `EN` tag.
 | Layer | Rows | Status | Notes |
 |---|---:|---|---|
 | Toll roads | 95 | 48 operating, 33 under construction, 13 planned, 1 recently completed | all 77 BPJT register sections represented; 50 PSN road entries across 36 PSN rows plus 59 non-PSN road rows |
-| Railways | 13 | 6 operating, 5 under construction, 2 planned | 13/13 PSN railways |
-| Airports | 8 | 8 operating | 7/7 PSN airports plus Nusantara International |
-| Seaports | 15 | 11 operating, 1 under construction, 1 recently completed, 2 planned | 15/15 PSN seaports |
+| Railways | 15 | 7 operating, 6 under construction, 2 planned | 13/13 PSN railways plus SHIA Express and Trans Sulawesi |
+| Airports | 10 | 9 operating, 1 planned | 7/7 PSN airports plus Nusantara International, Kertajati and North Bali |
+| Seaports | 18 | 11 operating, 3 under construction, 1 recently completed, 3 planned | 15/15 PSN seaports plus CBL, Pengambengan and Kejawanan |
 | Transport PSN total | 35 | 24 operating, 1 recently completed, 6 under construction, 4 planned | Status as of 19 February 2026 |
-| All projects | 331 | 98 operating, 42 recently completed, 74 under construction, 28 planned, 1 stalled, 88 unknown | 88 register-only PSN rows |
+| All projects | 348 | 105 operating, 42 recently completed, 80 under construction, 32 planned, 1 stalled, 88 unknown | 88 register-only PSN rows |
 | PSN projects (active) | 226 | 226/226 represented | 182 matches on 174 project rows plus 44 estate rows; 0 outstanding |
-| PSN programmes (active) | 24 | 24/24 | one row per official number; 48 claims |
+| PSN programmes (active) | 24 | 24/24 | one row per official number; 61 claims |
 | 2027 PKPN | 8 | 8/8 | bilingual summaries, sourced targets and budgets |
-| Factories | 34 | 19 operating, 3 recently completed, 11 under construction, 1 stalled | 27 capacity figures, 18 investment figures |
+| Factories | 35 | 20 operating, 3 recently completed, 11 under construction, 1 stalled | 28 capacity figures, 19 investment figures |
 | Industrial estates / SEZs | 204 | 179 industrial-only, 7 shared, 18 SEZ-only | table view only; 179 target met |
-| Companies and agencies | 314 | 300 with a role, 14 reference-only | V4 target 300 met; 282 project role links and 186 estate developer links |
-| Sources | 144 | 60 official, 57 secondary, 27 company | V4 target 250 |
-| Indicators | 72 | 55 dated values | V4 target 300 |
+| Companies and agencies | 314 | 301 with a role, 13 reference-only | V4 target 300 met; 293 project role links and 186 estate developer links |
+| Sources | 163 | 77 official, 58 secondary, 28 company | V4 target 250 |
+| Indicators | 105 | 88 dated values | V4 target 300 |
 | Dated events | 77 | 2018–2026 | exact dates only |
 | Conflicts | 23 | 13 resolved, 10 open | both values and both sources |
 | Data dictionary | 286 fields | 28 tables | generated from the schema |
@@ -282,42 +292,24 @@ The Data view renders coverage from `data/curated/coverage_targets.csv` and
   the real test.
 - **The atlas is not a live tracker.** It is refreshed monthly from published
   sources.
-- **The release is local only.** Do not create a remote, push, deploy or publish.
+- **Archived sources keep their own terms.** PDFs and HTML snapshots in
+  `data/raw/` remain © their publishers and are included for verification.
 
-## Documentation
+## Publishing
 
-| Document | Use |
-|---|---|
-| [`plan.md`](plan.md) | Remaining V4 work and acceptance criteria |
-| [`scripts/README.md`](scripts/README.md) | Every build step, importer and development check |
+`site/` is a complete static build. Publish its contents to any static host, or
+serve it locally. All paths are relative and the build makes no remote request.
 
-## Agent quick reference
-
-- Read [`plan.md`](plan.md) before starting a new increment.
-- Edit `data/curated/` and `site/templates/`. Do not hand-edit generated files.
-- Add a source, an atomic claim and a verification date for every new fact.
-- Keep English and Indonesian in step; update both catalogues when adding UI text.
-- Keep the build deterministic and offline. No `fetch`, CDN or remote asset.
-- Run the full verification before committing:
-
-  ```bash
-  python scripts/build_all.py
-  python scripts/build_all.py --check
-  python scripts/pipeline/check_site.py
-  python scripts/dev/smoke_site.py
-  python scripts/dev/ux_rehearsal.py
-  python scripts/dev/check_contrast.py
-  ```
-
-- Check Markdown links after moving or renaming a document.
-- Never push, add a remote, deploy or publish.
+For GitHub Pages, upload `site/` as the Pages artifact, for example with an
+Actions workflow. Pushing the repository alone does not publish the site.
 
 ## Requirements
 
 - Python 3.10 or newer.
-- `pip install -r requirements.txt` for extraction and basemap scripts
-  (BeautifulSoup, lxml, Shapely). The same dependencies are declared in
-  `pyproject.toml` for `uv`.
+- The deterministic build uses only the Python standard library.
+- `pip install -r requirements.txt` installs the optional BeautifulSoup, lxml
+  and Shapely dependencies used by the import, extraction and basemap tools. The
+  same dependencies are declared in `pyproject.toml` for `uv`.
 - No Node.js or build tooling is needed to view the site.
 - Optional: `pip install playwright` and Microsoft Edge for the browser smoke
   test. Playwright is not in `requirements.txt` and is not needed by the build.
@@ -334,11 +326,47 @@ uv run ruff check --fix  # apply safe fixes
 
 The rule set and excludes live in `pyproject.toml`.
 
-## Licensing and credits
+## Documentation
 
-- **Code:** no licence has been chosen yet. Treat it as all rights reserved until
-  one is added.
+| Document | Use |
+|---|---|
+| [`plan.md`](plan.md) | Remaining V4 work and acceptance criteria |
+| [`scripts/README.md`](scripts/README.md) | Every build step, importer and development check |
+| [`LICENSE`](LICENSE) | MIT licence text |
+
+## Contributing
+
+Issues and pull requests are welcome. Before opening a pull request:
+
+1. Keep `data/curated/` as the only source of truth.
+2. Add a source, an atomic claim and a verification date for every new fact.
+3. Keep English and Indonesian in step; update both catalogues when adding UI
+   text.
+4. Keep the build deterministic and offline. No `fetch`, CDN or remote asset.
+5. Run the full verification:
+
+   ```bash
+   python scripts/build_all.py
+   python scripts/build_all.py --check
+   python scripts/pipeline/check_site.py
+   python scripts/dev/smoke_site.py
+   python scripts/dev/ux_rehearsal.py
+   python scripts/dev/check_contrast.py
+   ```
+
+6. Commit curated rows, rebuilt exports and site data together.
+7. Check Markdown links after moving or renaming a document.
+
+## Licence and credits
+
+The code and the curated tables are released under the [MIT Licence](LICENSE).
+The licence does not relicense archived third-party material:
+
 - **Wikipedia text:** CC BY-SA 4.0. Reuse requires attribution and share-alike.
   Facts still need a primary source.
 - **Natural Earth:** public domain. Credited in the map attribution.
 - **OpenStreetMap / Nominatim:** data © OpenStreetMap contributors, ODbL 1.0.
+- **Vendored Leaflet:** BSD-2-Clause. **Leaflet.markercluster:** MIT. The licence
+  files are in `site/vendor/`.
+- **Archived sources:** PDFs and HTML snapshots in `data/raw/` remain © their
+  publishers. Check the publisher's terms before reuse.

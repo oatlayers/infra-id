@@ -1,53 +1,32 @@
 # Indonesia Infrastructure Atlas — Remaining Work
 
-**Status:** V4 in progress. Local-only build; nothing is published.
+**Status:** V4 data baseline complete; sources, indicators, UX and trust work remain.
 **Baseline data:** 13 November 2026 build.
 
 ## 1. Remaining coverage
 
 | Layer | Current | Target | Remaining |
 |---|---:|---:|---:|
-| Strategic and private records | 157 | 174 | **17** |
-| Sources | 144 | 250 | **106** |
-| Indicators | 72 | 300 | **228** |
+| Strategic and private records | 174 | 174 | **0** |
+| Sources | 163 | 250 | **87** |
+| Indicators | 105 | 300 | **195** |
 
 Everything else is met: 226/226 PSN project and estate records, 24/24 PSN
 programmes, 28/28 IKN packages, 314 companies against a 300 target, 204 estates,
-34 factories, and the road, rail, airport, seaport and transport targets.
+35 factories, and the road, rail, airport, seaport and transport targets.
 
-The 400-record reference set is **226 PSN records + 174 strategic/private
-records**. The atlas has 157 strategic records, so 17 remain. The project table
-will grow to about 348 rows when they are added; 44 PSN records live in the
-estate layer and eight share an existing project row, so 400 reference records
-correspond to about 392 rows.
+The 400-record reference set is complete: **226 PSN records + 174
+strategic/private records**. The project table has 348 rows; 44 PSN records live
+in the estate layer and eight share an existing project row, so 400 reference
+records correspond to about 392 rows.
 
-## 2. Strategic and private records — 17
+## 2. Strategic and private records — complete
 
-Add sourced records outside the PSN list. Search `projects.csv`,
-`psn_register.csv` and `estates.csv` first; upgrade an existing row instead of
-creating a duplicate.
-
-Candidate areas, in rough priority order:
-
-- **Roads and bridges:** strategic regional roads and bridges outside the BPJT
-  register, and any remaining toll sections not yet in `projects.csv`.
-- **Rail:** the Jakarta–Bandung high-speed rail extension study, Trans Sulawesi
-  rail, the Yogyakarta airport rail link and station revitalisation.
-- **Airports:** North Bali, Kertajati and the Soekarno–Hatta expansion.
-- **Seaports and ferries:** remaining Patimban phases, fishing ports and RoRo
-  links.
-- **Energy:** Sumatra 500 kV, Central–West Java 500 kV, Batang Toru,
-  waste-to-energy, gas plants and B50 biodiesel.
-- **Water and flood control:** remaining regional water-supply systems and
-  Jakarta flood control.
-- **Industry and downstreaming:** remaining Hilirisasi Stage II projects,
-  remaining IWIP battery-material packages, and the national car and motor
-  ecosystem.
-- **Social infrastructure:** representative schools, hospitals, housing and
-  free-meal kitchens at programme level; do not create 10,000 facility rows.
-- **Digital, tourism and fisheries:** Satria, data centres, 5G, government cloud
-  and AI, the five super-priority destinations, fishing villages, cold chain
-  and fish ports.
+The 17 remaining strategic and private records were added in the 13 November
+2026 build. See
+[`scripts/imports/add_17_strategic_records.py`](scripts/imports/add_17_strategic_records.py).
+For future additions, search `projects.csv`, `psn_register.csv` and `estates.csv`
+first; upgrade an existing row instead of creating a duplicate.
 
 Acceptance for each record:
 
@@ -58,7 +37,7 @@ Acceptance for each record:
 - no duplicate of a PSN, estate or existing project record;
 - updated coverage count.
 
-## 3. Sources — 106 documents
+## 3. Sources — 87 documents
 
 Priority order:
 
@@ -72,11 +51,11 @@ Priority order:
 
 Every new source needs publisher, title, URL, publication date, retrieval date,
 source type, language, snapshot hash and archive path. If a page cannot be
-archived, record why in `notes`. At 13 November 2026, 83 of 144 sources are
+archived, record why in `notes`. At 13 November 2026, 83 of 163 sources are
 URL-only (43 secondary, 24 company, 16 official); archive them or record the
 reason before adding more URL-only rows.
 
-## 4. Indicators — 228
+## 4. Indicators — 195
 
 Add an indicator only when the source states the name, unit and at least one of:
 a baseline, a target or a dated observation. Never infer a target from the
@@ -123,7 +102,7 @@ Rules:
   possible.
 - Geocode the remaining large estates and review the 12 PSN road rows with
   `psn=unknown`.
-- 14 company profiles remain reference-only and 126 projects have no
+- 13 company profiles remain reference-only and 132 projects have no
   organisation role; add a role only where a source names one.
 - Reconcile the 26-plant total with the published technology breakdown: the
   archived ESDM and GNFI releases give 3,222.75 MW across 26 plants but do not
@@ -132,8 +111,7 @@ Rules:
 
 ## 7. Priority order
 
-1. **P0 — measurable coverage:** the 17 strategic records, 106 sources and 228
-   indicators.
+1. **P0 — measurable coverage:** the 87 sources and 195 indicators.
 2. **P1 — UX rebuild:** bottom navigation, detail pages, map v3, editorial
    summaries.
 3. **P2 — Data and search polish:** column chooser, fuzzy ranking, type scale,
@@ -163,7 +141,6 @@ Rules:
 - Every new record needs a source, a status date and a verification level.
 - Both locales must be updated together.
 - The build is deterministic and offline. No `fetch`, CDN or remote tile server.
-- The release is local only. Do not create a remote, push, deploy or publish.
 
 ## 10. Verification
 
@@ -179,5 +156,4 @@ python scripts/dev/check_contrast.py
 ```
 
 A change is complete only when the build is deterministic, the smoke tests pass
-in both locales, and the coverage table, dictionary reflect the
-change.
+in both locales, and the coverage table and dictionary reflect the change.

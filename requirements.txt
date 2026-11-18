@@ -1,3 +1,5 @@
+# Optional dependencies for the batch import, extraction and basemap tools.
+# The deterministic build (scripts/build_all.py) uses only the standard library.
 beautifulsoup4
 lxml
 shapely

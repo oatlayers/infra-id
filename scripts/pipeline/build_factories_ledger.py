@@ -1,4 +1,4 @@
-"""Write the frozen 27-plant factory ledger for the 8 November 2026 build.
+"""Write the frozen 35-plant factory ledger for the 13 November 2026 build.
 
 The ledger is derived from the curated tables after the factory import. It is a
 reviewable snapshot, not a new source of truth: edit `data/curated/` and rerun

@@ -1,7 +1,26 @@
+# Python
 __pycache__/
-*.pyc
+*.py[cod]
 .venv/
+venv/
 .ruff_cache/
-node_modules/
+.pytest_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# Editors and operating systems
+.idea/
+.vscode/
 .DS_Store
 Thumbs.db
+desktop.ini
+
+# Node tooling, if a local formatter is ever used
+node_modules/
+
+# Local scratch and secrets
+*.log
+*.tmp
+.env
+.env.*
