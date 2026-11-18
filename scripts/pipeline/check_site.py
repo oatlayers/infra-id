@@ -24,14 +24,14 @@ SITE = ROOT / "site"
 CHOOSER = SITE / "index.html"
 LOCALES = ("en", "id")
 
-# The budget covers the 331-record build. The initial payload is the one-locale
+# The budget covers the 348-record build. The initial payload is the one-locale
 # Explore shell; the total adds the lazy view bundles and every generated
-# download. The 294-record build fitted 1.5 MB / 5 MB; the 37 electricity
-# records and their claims push both past those figures, so the budget is
-# raised instead of dropping sourced facts. Keep this in step with the README
-# payload row and revisit it when the next record batch lands.
+# download. The 294-record build fitted 1.5 MB / 5 MB; the 37 electricity and
+# 17 strategic records and their claims push both past those figures, so the
+# budget is raised instead of dropping sourced facts. Keep this in step with the
+# README payload row and revisit it when the next record batch lands.
 INITIAL_PAYLOAD_BUDGET = 1_750_000
-TOTAL_PAYLOAD_BUDGET = 5_500_000
+TOTAL_PAYLOAD_BUDGET = 6_000_000
 
 errors: list[str] = []
 

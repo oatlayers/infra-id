@@ -71,3 +71,36 @@ ind-plts-tanamalala-households,,power-plts-tanamalala,Households served by Tanam
 ind-plts-tanamalala-output,,power-plts-tanamalala,Tanamalala annual output,Keluaran tahunan Tanamalala,kWh/yr,increase,,,,,src-listrikindonesia-6-plts-2025-01-23,"197,000 kWh per year."
 ind-plts-tanamalala-diesel,,power-plts-tanamalala,Diesel avoided by Tanamalala,BBM dihindari Tanamalala,L/yr,increase,,,,,src-listrikindonesia-6-plts-2025-01-23,"29,000 L of generator fuel avoided per year."
 ind-plts-tanamalala-co2,,power-plts-tanamalala,CO2 emissions avoided by Tanamalala,Emisi CO2 dihindari Tanamalala,t CO2/yr,increase,,,,,src-listrikindonesia-6-plts-2025-01-23,415 t CO2 per year.
+ind-bontang-refinery-capacity,,factory-bontang-refinery,Bontang refinery capacity,Kapasitas Kilang Bontang,bpd,increase,,,,,src-kppip-bontang-refinery-2026-11-13,"Minimum 300,000 barrels per day."
+ind-sumatra-500kv-length,,grid-sumatra-500kv,Sumatra 500 kV line length,Panjang Transmisi Sumatera 500 kV,km,increase,,,,,src-kppip-sumatra-500kv-2026-11-13,"1,330 km from Muara Enim to Langsa."
+ind-central-west-java-500kv-length,,grid-central-west-java-500kv,Central-West Java 500 kV line length,Panjang Transmisi Jawa Tengah-Jawa Barat 500 kV,km,increase,,,,,src-kppip-central-west-java-500kv-2026-11-13,"Four sections of 144, 397, 180 and 260 km."
+ind-indramayu-capacity,,power-pltu-indramayu,Indramayu planned capacity,Kapasitas rencana PLTU Indramayu,MW,increase,,,,,src-kppip-pltu-indramayu-2026-11-13,"1,000 MW at the preparation stage."
+ind-batang-capacity,,power-pltu-batang,Batang installed capacity,Kapasitas terpasang PLTU Batang,MW,increase,,,,,src-bpi-pltu-batang-cod-2022-09-06,"2 x 1,000 MW in commercial operation."
+ind-kertajati-capacity,,airport-kertajati,Kertajati passenger capacity,Kapasitas penumpang Kertajati,passengers/yr,increase,,,,,src-kemenhub-kertajati-2023-11-01,Upper bound of the 5.6-12 million passengers/yr range to 2024.
+ind-kertajati-terminal-area,,airport-kertajati,Kertajati passenger terminal area,Luas terminal penumpang Kertajati,m2,increase,,,,,src-kemenhub-kertajati-2023-11-01,"Passenger terminal; the cargo terminal is 90,000 m2."
+ind-batang-toru-capacity,,power-batang-toru,Batang Toru installed capacity,Kapasitas terpasang PLTA Batang Toru,MW,increase,,,,,src-esdm-batang-toru-2026-10-10,510 MW from four 127.5 MW units.
+ind-batang-toru-phase-2,,power-batang-toru,Batang Toru second-phase capacity,Kapasitas tahap kedua PLTA Batang Toru,MW,target,,,,,src-esdm-batang-toru-2026-10-10,Second-phase study prepared by NSHE.
+ind-sodetan-length,,flood-sodetan-ciliwung,Sodetan Ciliwung tunnel length,Panjang terowongan Sodetan Ciliwung,km,increase,,,,,src-pu-sodetan-ciliwung-2023-08-01,"1,268 m tunnel."
+ind-sodetan-capacity,,flood-sodetan-ciliwung,Sodetan Ciliwung flow capacity,Kapasitas aliran Sodetan Ciliwung,m3/s,increase,,,,,src-pu-sodetan-ciliwung-2023-08-01,Two 3.5 m pipes.
+ind-sodetan-flood-area,,flood-sodetan-ciliwung,Flood area removed by Sodetan Ciliwung,Luas banjir yang dikurangi Sodetan Ciliwung,ha,increase,,,,,src-pu-sodetan-ciliwung-2023-08-01,107 ha reduction in flood-affected area.
+ind-ciliwung-length,,flood-ciliwung-normalisation,Ciliwung normalisation scope,Lingkup normalisasi Ciliwung,km,increase,,,,,src-pu-ciliwung-normalisation-2023-02-21,33 km total scope.
+ind-ciliwung-completed,,flood-ciliwung-normalisation,Ciliwung normalisation completed length,Panjang normalisasi Ciliwung selesai,km,increase,,,,,src-pu-ciliwung-normalisation-2023-02-21,16.19 km completed; the remaining 17 km were targeted for end-2024.
+ind-ciliwung-capacity,,flood-ciliwung-normalisation,Ciliwung normalised flow capacity,Kapasitas aliran normalisasi Ciliwung,m3/s,increase,,,,,src-pu-ciliwung-normalisation-2023-02-21,Up from 200 m3/s.
+ind-pengambengan-vessels,,port-ppn-pengambengan,Pengambengan vessel capacity,Kapasitas kapal Pengambengan,vessels,increase,,,,,src-kkp-ppn-pengambengan-2026-09-29,"Up from 1,273 vessels."
+ind-pengambengan-landings,,port-ppn-pengambengan,Pengambengan fish landings,Pendaratan ikan Pengambengan,t/yr,increase,,,,,src-kkp-ppn-pengambengan-2026-09-29,"Up from 61,300 t/yr."
+ind-pengambengan-area,,port-ppn-pengambengan,Pengambengan port area,Luas pelabuhan Pengambengan,ha,increase,,,,,src-kkp-ppn-pengambengan-2026-09-29,Up from 13.5 ha.
+ind-pengambengan-workers,,port-ppn-pengambengan,Pengambengan workers,Tenaga kerja Pengambengan,workers,increase,,,,,src-kkp-ppn-pengambengan-2026-09-29,"About 25,000 workers, nearly three times the current workforce."
+ind-pengambengan-pnbp,,port-ppn-pengambengan,Pengambengan annual PNBP,PNBP tahunan Pengambengan,IDR bn/yr,increase,,,,,src-kkp-ppn-pengambengan-2026-09-29,Up from Rp48bn/yr.
+ind-kejawanan-vessels,,port-ppn-kejawanan,Kejawanan vessel capacity,Kapasitas kapal Kejawanan,vessels,increase,,,,,src-kkp-ppn-kejawanan-2026-09-18,Up from 241 vessels.
+ind-kejawanan-landings,,port-ppn-kejawanan,Kejawanan fish landings,Pendaratan ikan Kejawanan,t/yr,increase,,,,,src-kkp-ppn-kejawanan-2026-09-18,"Up from 5,600 t/yr."
+ind-kejawanan-workers,,port-ppn-kejawanan,Kejawanan workers,Tenaga kerja Kejawanan,workers,increase,,,,,src-kkp-ppn-kejawanan-2026-09-18,"Up from about 2,900."
+ind-kejawanan-pnbp,,port-ppn-kejawanan,Kejawanan annual PNBP,PNBP tahunan Kejawanan,IDR bn/yr,increase,,,,,src-kkp-ppn-kejawanan-2026-09-18,Up from Rp15bn/yr.
+ind-catib-capacity,,factory-catib-karawang,CATIB phase 1 capacity,Kapasitas tahap 1 CATIB,GWh/yr,increase,,,,,src-antara-catib-karawang-2026-08-21,Phase 1 battery cell capacity.
+ind-catib-workers,,factory-catib-karawang,CATIB workers,Tenaga kerja CATIB,workers,increase,,,,,src-antara-catib-karawang-2026-08-21,"About 3,000 workers at full operation."
+ind-catib-solar,,factory-catib-karawang,CATIB on-site solar capacity,Kapasitas PLTS CATIB,MWh,increase,,,,,src-antara-catib-karawang-2026-08-21,18 MWh PLTS for operations.
+ind-b50-fx-saving,,energy-b50-biodiesel,B50 foreign-exchange saving,Penghematan devisa B50,IDR T/yr,increase,,,,,src-esdm-b50-2026-07-10,Projected saving from ending diesel imports.
+ind-b50-workers,,energy-b50-biodiesel,B50 workers,Tenaga kerja B50,million workers,increase,,,,,src-esdm-b50-2026-07-10,Up from 1.8 million under B40.
+ind-b50-emissions,,energy-b50-biodiesel,B50 emissions reduction,Penurunan emisi B50,Mt CO2/yr,increase,,,,,src-esdm-b50-2026-07-10,Up from 39.66 Mt under B40.
+ind-trans-sulawesi-operating,,rail-trans-sulawesi,Trans Sulawesi operating length,Panjang Trans Sulawesi beroperasi,km,increase,,,,,src-kemenhub-trans-sulawesi-2023-04-05,90 km of the Maros-Barru section operating.
+ind-trans-sulawesi-built,,rail-trans-sulawesi,Trans Sulawesi built length,Panjang Trans Sulawesi terbangun,km,increase,,,,,src-kemenhub-trans-sulawesi-2023-04-05,118 km built of the 157.7 km Makassar-Parepare alignment.
+ind-trans-sulawesi-segment,,rail-trans-sulawesi,Makassar-Parepare segment length,Panjang ruas Makassar-Parepare,km,increase,,,,,src-kemenhub-trans-sulawesi-2023-04-05,150 km Makassar-Parepare section.

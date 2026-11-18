@@ -43,3 +43,17 @@ prog-electricity,grid-ampel-boyolali-500,component,src-esdm-37-projects-2025-01-
 prog-electricity,grid-ampel-bringin-mojosongo,component,src-esdm-37-projects-2025-01-20,One of the 37 strategic electricity projects inaugurated on 20 January 2025.
 prog-electricity,grid-duren-tiga-depok,component,src-esdm-37-projects-2025-01-20,One of the 37 strategic electricity projects inaugurated on 20 January 2025.
 prog-electricity,grid-cilegon-ibt-4,component,src-esdm-37-projects-2025-01-20,One of the 37 strategic electricity projects inaugurated on 20 January 2025.
+prog-electricity,grid-sumatra-500kv,component,src-kppip-sumatra-500kv-2026-11-13,500 kV transmission project listed on the KPPIP priority page.
+prog-electricity,grid-central-west-java-500kv,component,src-kppip-central-west-java-500kv-2026-11-13,500 kV transmission project listed on the KPPIP priority page.
+prog-electricity,power-pltu-indramayu,component,src-kppip-pltu-indramayu-2026-11-13,"1,000 MW coal plant listed on the KPPIP priority page."
+prog-electricity,power-pltu-batang,component,src-kppip-pltu-batang-2026-11-13,"2x1,000 MW coal plant listed on the KPPIP priority page."
+prog-electricity,power-batang-toru,component,src-esdm-batang-toru-2026-10-10,510 MW hydropower plant under construction.
+prog-jakarta-flood-control,flood-sodetan-ciliwung,component,src-pu-sodetan-ciliwung-2023-08-01,Ciliwung diversion tunnel inaugurated in 2023.
+prog-jakarta-flood-control,flood-ciliwung-normalisation,component,src-pu-ciliwung-normalisation-2023-02-21,Ciliwung normalisation under construction.
+prog-tourism-aviation,rail-shia-express,component,src-kppip-shia-express-2026-11-13,Airport rail access to Soekarno-Hatta.
+prog-tourism-aviation,airport-north-bali,component,src-kppip-north-bali-airport-2026-11-13,New airport at the preparation stage.
+prog-tourism-aviation,airport-kertajati,component,src-kemenhub-kertajati-2023-11-01,Kertajati airport in full operation since 2023.
+prog-superhub,port-cbl-inland-waterway,component,src-kppip-cbl-2026-11-13,Inland waterway link to Tanjung Priok.
+prog-food-supply,port-ppn-pengambengan,component,src-kkp-ppn-pengambengan-2026-09-29,Fishing port modernisation.
+prog-food-supply,port-ppn-kejawanan,component,src-kkp-ppn-kejawanan-2026-09-18,Fishing port modernisation.
+prog-sugar-palm-downstreaming,energy-b50-biodiesel,component,src-esdm-b50-2026-07-10,National B50 biodiesel mandate.

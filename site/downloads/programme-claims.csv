@@ -51,3 +51,12 @@ prog-electricity,src-esdm-37-projects-2025-01-20,capacity,"3,222.75 MW",2025-01-
 prog-electricity,src-esdm-37-projects-2025-01-20,output,89% clean energy,2025-01-20,Share of the 3.2 GW total from gas and renewable energy.
 prog-electricity,src-esdm-37-projects-2025-01-20,length,739.71 kms,2025-01-20,Total transmission line length across the 11 projects.
 prog-electricity,src-esdm-37-projects-2025-01-20,design capacity,"1,740 MVA",2025-01-20,Total substation capacity across the 11 projects.
+prog-electricity,src-kppip-pltu-batang-2026-11-13,capacity,"2,000 MW",2026-11-13,Batang plant capacity.
+prog-electricity,src-esdm-batang-toru-2026-10-10,capacity,510 MW,2026-10-10,Batang Toru capacity under construction.
+prog-jakarta-flood-control,src-pu-sodetan-ciliwung-2023-08-01,capacity,60 m3/s,2023-08-01,Sodetan Ciliwung diversion capacity.
+prog-jakarta-flood-control,src-pu-ciliwung-normalisation-2023-02-21,capacity,570 m3/s,2023-02-21,Ciliwung normalisation target capacity.
+prog-tourism-aviation,src-kemenhub-kertajati-2023-11-01,capacity,12 million passengers/yr (upper bound),2023-11-01,Kertajati upper bound of the 5.6-12 million range to 2024.
+prog-food-supply,src-kkp-ppn-pengambengan-2026-09-29,capacity,"1,600 vessels",2026-09-29,Pengambengan vessel capacity after expansion.
+prog-food-supply,src-kkp-ppn-kejawanan-2026-09-18,capacity,500 vessels,2026-09-18,Kejawanan vessel capacity after expansion.
+prog-sugar-palm-downstreaming,src-esdm-b50-2026-07-10,design capacity,50% biodiesel blend,2026-07-10,National B50 mandate.
+prog-superhub,src-kppip-cbl-2026-11-13,investment,Rp3.41T,2026-11-13,CBL inland waterway investment.

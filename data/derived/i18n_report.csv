@@ -743,6 +743,40 @@ project,grid-duren-tiga-depok,name,en,source,
 project,grid-duren-tiga-depok,summary,en,generated,Generated from curated fields; not editorial.
 project,grid-cilegon-ibt-4,name,en,source,
 project,grid-cilegon-ibt-4,summary,en,generated,Generated from curated fields; not editorial.
+project,rail-shia-express,name,en,source,
+project,rail-shia-express,summary,en,generated,Generated from curated fields; not editorial.
+project,factory-bontang-refinery,name,en,source,
+project,factory-bontang-refinery,summary,en,generated,Generated from curated fields; not editorial.
+project,grid-sumatra-500kv,name,en,source,
+project,grid-sumatra-500kv,summary,en,generated,Generated from curated fields; not editorial.
+project,grid-central-west-java-500kv,name,en,source,
+project,grid-central-west-java-500kv,summary,en,generated,Generated from curated fields; not editorial.
+project,power-pltu-indramayu,name,en,source,
+project,power-pltu-indramayu,summary,en,generated,Generated from curated fields; not editorial.
+project,power-pltu-batang,name,en,source,
+project,power-pltu-batang,summary,en,generated,Generated from curated fields; not editorial.
+project,port-cbl-inland-waterway,name,en,source,
+project,port-cbl-inland-waterway,summary,en,generated,Generated from curated fields; not editorial.
+project,airport-north-bali,name,en,source,
+project,airport-north-bali,summary,en,generated,Generated from curated fields; not editorial.
+project,airport-kertajati,name,en,source,
+project,airport-kertajati,summary,en,generated,Generated from curated fields; not editorial.
+project,power-batang-toru,name,en,source,
+project,power-batang-toru,summary,en,generated,Generated from curated fields; not editorial.
+project,flood-sodetan-ciliwung,name,en,source,
+project,flood-sodetan-ciliwung,summary,en,generated,Generated from curated fields; not editorial.
+project,flood-ciliwung-normalisation,name,en,source,
+project,flood-ciliwung-normalisation,summary,en,generated,Generated from curated fields; not editorial.
+project,port-ppn-pengambengan,name,en,source,
+project,port-ppn-pengambengan,summary,en,generated,Generated from curated fields; not editorial.
+project,port-ppn-kejawanan,name,en,source,
+project,port-ppn-kejawanan,summary,en,generated,Generated from curated fields; not editorial.
+project,factory-catib-karawang,name,en,source,
+project,factory-catib-karawang,summary,en,generated,Generated from curated fields; not editorial.
+project,energy-b50-biodiesel,name,en,source,
+project,energy-b50-biodiesel,summary,en,generated,Generated from curated fields; not editorial.
+project,rail-trans-sulawesi,name,en,source,
+project,rail-trans-sulawesi,summary,en,generated,Generated from curated fields; not editorial.
 estate,sez-arun-lhokseumawe,name,en,source,
 estate,sez-batam-aero-technic,name,en,source,
 estate,sez-bitung,name,en,source,
@@ -1691,6 +1725,40 @@ project,grid-duren-tiga-depok,name,id,translated,src-esdm-37-projects-2025-01-20
 project,grid-duren-tiga-depok,summary,id,generated,Generated from curated fields; not editorial.
 project,grid-cilegon-ibt-4,name,id,translated,src-esdm-37-projects-2025-01-20
 project,grid-cilegon-ibt-4,summary,id,generated,Generated from curated fields; not editorial.
+project,rail-shia-express,name,id,translated,src-kppip-shia-express-2026-11-13
+project,rail-shia-express,summary,id,generated,Generated from curated fields; not editorial.
+project,factory-bontang-refinery,name,id,translated,src-kppip-bontang-refinery-2026-11-13
+project,factory-bontang-refinery,summary,id,generated,Generated from curated fields; not editorial.
+project,grid-sumatra-500kv,name,id,translated,src-kppip-sumatra-500kv-2026-11-13
+project,grid-sumatra-500kv,summary,id,generated,Generated from curated fields; not editorial.
+project,grid-central-west-java-500kv,name,id,translated,src-kppip-central-west-java-500kv-2026-11-13
+project,grid-central-west-java-500kv,summary,id,generated,Generated from curated fields; not editorial.
+project,power-pltu-indramayu,name,id,translated,src-kppip-pltu-indramayu-2026-11-13
+project,power-pltu-indramayu,summary,id,generated,Generated from curated fields; not editorial.
+project,power-pltu-batang,name,id,translated,src-kppip-pltu-batang-2026-11-13
+project,power-pltu-batang,summary,id,generated,Generated from curated fields; not editorial.
+project,port-cbl-inland-waterway,name,id,translated,src-kppip-cbl-2026-11-13
+project,port-cbl-inland-waterway,summary,id,generated,Generated from curated fields; not editorial.
+project,airport-north-bali,name,id,translated,src-kppip-north-bali-airport-2026-11-13
+project,airport-north-bali,summary,id,generated,Generated from curated fields; not editorial.
+project,airport-kertajati,name,id,translated,src-kemenhub-kertajati-2023-11-01
+project,airport-kertajati,summary,id,generated,Generated from curated fields; not editorial.
+project,power-batang-toru,name,id,translated,src-esdm-batang-toru-2026-10-10
+project,power-batang-toru,summary,id,generated,Generated from curated fields; not editorial.
+project,flood-sodetan-ciliwung,name,id,translated,src-pu-sodetan-ciliwung-2023-08-01
+project,flood-sodetan-ciliwung,summary,id,generated,Generated from curated fields; not editorial.
+project,flood-ciliwung-normalisation,name,id,translated,src-pu-ciliwung-normalisation-2023-02-21
+project,flood-ciliwung-normalisation,summary,id,generated,Generated from curated fields; not editorial.
+project,port-ppn-pengambengan,name,id,translated,src-kkp-ppn-pengambengan-2026-09-29
+project,port-ppn-pengambengan,summary,id,generated,Generated from curated fields; not editorial.
+project,port-ppn-kejawanan,name,id,translated,src-kkp-ppn-kejawanan-2026-09-18
+project,port-ppn-kejawanan,summary,id,generated,Generated from curated fields; not editorial.
+project,factory-catib-karawang,name,id,translated,src-antara-catib-karawang-2026-08-21
+project,factory-catib-karawang,summary,id,generated,Generated from curated fields; not editorial.
+project,energy-b50-biodiesel,name,id,translated,src-esdm-b50-2026-07-10
+project,energy-b50-biodiesel,summary,id,generated,Generated from curated fields; not editorial.
+project,rail-trans-sulawesi,name,id,translated,src-kemenhub-trans-sulawesi-2023-04-05
+project,rail-trans-sulawesi,summary,id,generated,Generated from curated fields; not editorial.
 estate,sez-arun-lhokseumawe,name,id,source,
 estate,sez-batam-aero-technic,name,id,source,
 estate,sez-bitung,name,id,source,

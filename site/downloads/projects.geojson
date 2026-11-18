@@ -24801,6 +24801,2115 @@
         "freshness_age_days": "0",
         "freshness_due": "2027-05-15"
       }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.8,
+          -6.2
+        ]
+      },
+      "properties": {
+        "id": "rail-shia-express",
+        "name": "SHIA Airport Express Railway",
+        "sector": "railway",
+        "subsector": "airport rail",
+        "status": "operating",
+        "status_basis": "KPPIP lists the project as completed and says the airport train from SHIA to central Jakarta has operated since the end of 2018.",
+        "corridor_id": "",
+        "island": "Java",
+        "province": "DKI Jakarta",
+        "route": "Soekarno-Hatta International Airport-central Jakarta, DKI Jakarta-Banten",
+        "length_km": "",
+        "operational_km": "",
+        "construction_km": "",
+        "progress_pct": "",
+        "investment_idr_t": "24.5",
+        "capacity": "",
+        "capacity_unit": "",
+        "psn": "unknown",
+        "opened_year": "2018",
+        "opened_date": "",
+        "expected_open_year": "",
+        "status_as_of": "2026-11-13",
+        "verification": "official",
+        "precision": "province",
+        "operator": "tba",
+        "source_url": "https://kppip.go.id/proyek-prioritas/kereta-api/kereta-api-ekspres-shia/",
+        "source_type": "official",
+        "retrieved_on": "2026-11-13",
+        "last_verified": "2026-11-13",
+        "notes": "KPPIP priority-project page (undated; captured 13 November 2026) gives Rp24.5T, KPBU and BUMN funding, Kementerian Perhubungan as responsible party, planned construction in 2015 and planned operation in 2017. The page says the airport train has operated since the end of 2018. It names the 2013 alignment via Halim-Manggarai-Dukuh Atas-Tanah Abang-Pluit-SHIA and a 2015 proposal to reroute via Gambir. The current 226-row PSN register does not list the project, so psn=unknown.",
+        "corridor_name": "",
+        "aliases": [
+          "KA Bandara SHIA"
+        ],
+        "indicators": [],
+        "phases": [],
+        "sources": [
+          {
+            "id": "src-kppip-shia-express-2026-11-13",
+            "publisher": "KPPIP",
+            "title": "Kereta Api Ekspres SHIA",
+            "url": "https://kppip.go.id/proyek-prioritas/kereta-api/kereta-api-ekspres-shia/",
+            "published_on": "",
+            "retrieved_on": "2026-11-13",
+            "source_type": "official",
+            "language": "id",
+            "archive_path": "data/raw/2026-11-13/kppip_shia_express_2026.html",
+            "notes": "Undated priority-project page captured 13 November 2026. Gives Rp24.5T, KPBU and BUMN funding, DKI Jakarta-Banten, Kemenhub as responsible party, planned construction 2015 and operation 2017, status Selesai, and operation since the end of 2018.",
+            "claim": "status; location; investment; opening"
+          }
+        ],
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "0",
+        "freshness_due": "2027-05-15"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          117.5,
+          -0.13
+        ]
+      },
+      "properties": {
+        "id": "factory-bontang-refinery",
+        "name": "Bontang Refinery",
+        "sector": "energy",
+        "subsector": "refinery",
+        "status": "planned",
+        "status_basis": "KPPIP lists the refinery at the transaction stage, with planned operation in 2027.",
+        "corridor_id": "",
+        "island": "Kalimantan",
+        "province": "East Kalimantan",
+        "route": "Bontang, East Kalimantan",
+        "length_km": "",
+        "operational_km": "",
+        "construction_km": "",
+        "progress_pct": "",
+        "investment_idr_t": "197.586",
+        "capacity": "300000",
+        "capacity_unit": "bpd (minimum)",
+        "psn": "unknown",
+        "opened_year": "",
+        "opened_date": "",
+        "expected_open_year": "2027",
+        "status_as_of": "2026-11-13",
+        "verification": "official",
+        "precision": "approximate",
+        "operator": "tba",
+        "source_url": "https://kppip.go.id/proyek-prioritas/minyak-gas/kilang-minyak-bontang/",
+        "source_type": "official",
+        "retrieved_on": "2026-11-13",
+        "last_verified": "2026-11-13",
+        "notes": "KPPIP priority-project page (undated; captured 13 November 2026) gives Rp197.586T, BUMN assignment, Pertamina as responsible party, a minimum capacity of 300,000 barrels per day, planned operation in 2027 and the transaction stage. The page says the configuration will consider petrochemicals. The current 226-row PSN register does not list the project, so psn=unknown.",
+        "corridor_name": "",
+        "aliases": [
+          "Kilang Bontang"
+        ],
+        "indicators": [
+          {
+            "id": "ind-bontang-refinery-capacity",
+            "programme_id": "",
+            "project_id": "factory-bontang-refinery",
+            "name_en": "Bontang refinery capacity",
+            "name_id": "Kapasitas Kilang Bontang",
+            "unit": "bpd",
+            "direction": "increase",
+            "baseline_value": "",
+            "baseline_date": "",
+            "target_value": "",
+            "target_date": "",
+            "source_id": "src-kppip-bontang-refinery-2026-11-13",
+            "notes": "Minimum 300,000 barrels per day.",
+            "source_publisher": "KPPIP",
+            "source_title": "Kilang Minyak Bontang",
+            "source_url": "https://kppip.go.id/proyek-prioritas/minyak-gas/kilang-minyak-bontang/",
+            "values": [
+              {
+                "value": "300000",
+                "as_of": "2026-11-13",
+                "source_id": "src-kppip-bontang-refinery-2026-11-13",
+                "source_title": "Kilang Minyak Bontang",
+                "source_url": "https://kppip.go.id/proyek-prioritas/minyak-gas/kilang-minyak-bontang/",
+                "notes": ""
+              }
+            ]
+          }
+        ],
+        "phases": [],
+        "sources": [
+          {
+            "id": "src-kppip-bontang-refinery-2026-11-13",
+            "publisher": "KPPIP",
+            "title": "Kilang Minyak Bontang",
+            "url": "https://kppip.go.id/proyek-prioritas/minyak-gas/kilang-minyak-bontang/",
+            "published_on": "",
+            "retrieved_on": "2026-11-13",
+            "source_type": "official",
+            "language": "id",
+            "archive_path": "data/raw/2026-11-13/kppip_bontang_refinery_2026.html",
+            "notes": "Undated priority-project page captured 13 November 2026. Gives Rp197.586T, BUMN assignment, Bontang in East Kalimantan, Pertamina as responsible party, planned operation 2027, transaction stage and a minimum capacity of 300,000 bpd.",
+            "claim": "status; location; investment; capacity; target"
+          }
+        ],
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "0",
+        "freshness_due": "2027-05-15"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.77,
+          -3.65
+        ]
+      },
+      "properties": {
+        "id": "grid-sumatra-500kv",
+        "name": "Sumatra 500 kV Transmission",
+        "sector": "energy",
+        "subsector": "transmission",
+        "status": "under_construction",
+        "status_basis": "KPPIP lists the 1,330 km Muara Enim-Langsa line at the construction stage.",
+        "corridor_id": "",
+        "island": "Sumatra",
+        "province": "South Sumatra",
+        "route": "Muara Enim, South Sumatra-Langsa, Aceh",
+        "length_km": "1330",
+        "operational_km": "",
+        "construction_km": "",
+        "progress_pct": "",
+        "investment_idr_t": "24.4",
+        "capacity": "",
+        "capacity_unit": "",
+        "psn": "unknown",
+        "opened_year": "",
+        "opened_date": "",
+        "expected_open_year": "",
+        "status_as_of": "2026-11-13",
+        "verification": "official",
+        "precision": "approximate",
+        "operator": "PT Perusahaan Listrik Negara (Persero)",
+        "source_url": "https://kppip.go.id/proyek-prioritas/ketenaga-listrikan/transmisi-sumatera-500-kv/",
+        "source_type": "official",
+        "retrieved_on": "2026-11-13",
+        "last_verified": "2026-11-13",
+        "notes": "KPPIP priority-project page (undated; captured 13 November 2026) gives Rp24.4T, BUMN assignment, PLN as responsible party, a 1,330 km line from Muara Enim in South Sumatra to Langsa in Aceh, and the construction stage. It still gives a planned start of operation in 2019, which has passed; no newer completion date is stated. The map point is the Muara Enim end of the corridor. The current 226-row PSN register does not list the project, so psn=unknown.",
+        "corridor_name": "",
+        "aliases": [
+          "Transmisi Sumatera 500 kV"
+        ],
+        "indicators": [
+          {
+            "id": "ind-sumatra-500kv-length",
+            "programme_id": "",
+            "project_id": "grid-sumatra-500kv",
+            "name_en": "Sumatra 500 kV line length",
+            "name_id": "Panjang Transmisi Sumatera 500 kV",
+            "unit": "km",
+            "direction": "increase",
+            "baseline_value": "",
+            "baseline_date": "",
+            "target_value": "",
+            "target_date": "",
+            "source_id": "src-kppip-sumatra-500kv-2026-11-13",
+            "notes": "1,330 km from Muara Enim to Langsa.",
+            "source_publisher": "KPPIP",
+            "source_title": "Transmisi Sumatera 500 kV",
+            "source_url": "https://kppip.go.id/proyek-prioritas/ketenaga-listrikan/transmisi-sumatera-500-kv/",
+            "values": [
+              {
+                "value": "1330",
+                "as_of": "2026-11-13",
+                "source_id": "src-kppip-sumatra-500kv-2026-11-13",
+                "source_title": "Transmisi Sumatera 500 kV",
+                "source_url": "https://kppip.go.id/proyek-prioritas/ketenaga-listrikan/transmisi-sumatera-500-kv/",
+                "notes": ""
+              }
+            ]
+          }
+        ],
+        "phases": [],
+        "sources": [
+          {
+            "id": "src-kppip-sumatra-500kv-2026-11-13",
+            "publisher": "KPPIP",
+            "title": "Transmisi Sumatera 500 kV",
+            "url": "https://kppip.go.id/proyek-prioritas/ketenaga-listrikan/transmisi-sumatera-500-kv/",
+            "published_on": "",
+            "retrieved_on": "2026-11-13",
+            "source_type": "official",
+            "language": "id",
+            "archive_path": "data/raw/2026-11-13/kppip_sumatra_500kv_2026.html",
+            "notes": "Undated priority-project page captured 13 November 2026. Gives Rp24.4T, BUMN assignment, PLN as responsible party, 1,330 km from Muara Enim to Langsa, construction stage, planned construction 2016 and operation 2019.",
+            "claim": "status; location; length; investment; operator"
+          }
+        ],
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "0",
+        "freshness_due": "2027-05-15"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.3,
+          -6.35
+        ]
+      },
+      "properties": {
+        "id": "grid-central-west-java-500kv",
+        "name": "Central-West Java 500 kV Transmission",
+        "sector": "energy",
+        "subsector": "transmission",
+        "status": "operating",
+        "status_basis": "KPPIP lists the project as partially operating (beroperasi sebagian).",
+        "corridor_id": "",
+        "island": "Java",
+        "province": "West Java",
+        "route": "Tanjung Jati-Ungaran/Pedan-Mandirancan-Indramayu-Cibatu, Central Java-West Java",
+        "length_km": "981",
+        "operational_km": "",
+        "construction_km": "",
+        "progress_pct": "",
+        "investment_idr_t": "7.64",
+        "capacity": "",
+        "capacity_unit": "",
+        "psn": "unknown",
+        "opened_year": "2019",
+        "opened_date": "",
+        "expected_open_year": "",
+        "status_as_of": "2026-11-13",
+        "verification": "official",
+        "precision": "province",
+        "operator": "PT Perusahaan Listrik Negara (Persero)",
+        "source_url": "https://kppip.go.id/proyek-prioritas/ketenaga-listrikan/central-west-java-transmission-line-500-kv/",
+        "source_type": "official",
+        "retrieved_on": "2026-11-13",
+        "last_verified": "2026-11-13",
+        "notes": "KPPIP priority-project page (undated; captured 13 November 2026) gives Rp7.64T, a PLN budget, West Java-Central Java, and a partially operating status. The four sections are 144 km (Tanjung Jati-Ungaran/Pedan), 397 km (Ungaran/Pedan-Mandirancan), 180 km (Mandirancan-Indramayu) and 260 km (Indramayu-Cibatu), totalling 981 km. The page does not say which sections are energised, so operational_km is blank. It gives a planned start of operation in 2019, which has passed. The current 226-row PSN register does not list the project, so psn=unknown.",
+        "corridor_name": "",
+        "aliases": [
+          "Transmisi Jawa Tengah-Jawa Barat 500 kV"
+        ],
+        "indicators": [
+          {
+            "id": "ind-central-west-java-500kv-length",
+            "programme_id": "",
+            "project_id": "grid-central-west-java-500kv",
+            "name_en": "Central-West Java 500 kV line length",
+            "name_id": "Panjang Transmisi Jawa Tengah-Jawa Barat 500 kV",
+            "unit": "km",
+            "direction": "increase",
+            "baseline_value": "",
+            "baseline_date": "",
+            "target_value": "",
+            "target_date": "",
+            "source_id": "src-kppip-central-west-java-500kv-2026-11-13",
+            "notes": "Four sections of 144, 397, 180 and 260 km.",
+            "source_publisher": "KPPIP",
+            "source_title": "Central - West Java Transmission Line 500 kV",
+            "source_url": "https://kppip.go.id/proyek-prioritas/ketenaga-listrikan/central-west-java-transmission-line-500-kv/",
+            "values": [
+              {
+                "value": "981",
+                "as_of": "2026-11-13",
+                "source_id": "src-kppip-central-west-java-500kv-2026-11-13",
+                "source_title": "Central - West Java Transmission Line 500 kV",
+                "source_url": "https://kppip.go.id/proyek-prioritas/ketenaga-listrikan/central-west-java-transmission-line-500-kv/",
+                "notes": ""
+              }
+            ]
+          }
+        ],
+        "phases": [],
+        "sources": [
+          {
+            "id": "src-kppip-central-west-java-500kv-2026-11-13",
+            "publisher": "KPPIP",
+            "title": "Central - West Java Transmission Line 500 kV",
+            "url": "https://kppip.go.id/proyek-prioritas/ketenaga-listrikan/central-west-java-transmission-line-500-kv/",
+            "published_on": "",
+            "retrieved_on": "2026-11-13",
+            "source_type": "official",
+            "language": "id",
+            "archive_path": "data/raw/2026-11-13/kppip_central_west_java_500kv_2026.html",
+            "notes": "Undated priority-project page captured 13 November 2026. Gives Rp7.64T, PLN budget, West Java-Central Java, partially operating status, and four sections of 144, 397, 180 and 260 km.",
+            "claim": "status; location; length; investment; operator; opening"
+          }
+        ],
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "0",
+        "freshness_due": "2027-05-15"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.32,
+          -6.33
+        ]
+      },
+      "properties": {
+        "id": "power-pltu-indramayu",
+        "name": "Indramayu Coal-Fired Power Plant (1,000 MW)",
+        "sector": "energy",
+        "subsector": "coal",
+        "status": "planned",
+        "status_basis": "KPPIP lists the 1,000 MW plant at the preparation stage, with planned operation in 2026.",
+        "corridor_id": "",
+        "island": "Java",
+        "province": "West Java",
+        "route": "Indramayu, West Java",
+        "length_km": "",
+        "operational_km": "",
+        "construction_km": "",
+        "progress_pct": "",
+        "investment_idr_t": "29.5",
+        "capacity": "1000",
+        "capacity_unit": "MW",
+        "psn": "unknown",
+        "opened_year": "",
+        "opened_date": "",
+        "expected_open_year": "2026",
+        "status_as_of": "2026-11-13",
+        "verification": "official",
+        "precision": "approximate",
+        "operator": "tba",
+        "source_url": "https://kppip.go.id/proyek-prioritas/ketenaga-listrikan/pltu-indramayu/",
+        "source_type": "official",
+        "retrieved_on": "2026-11-13",
+        "last_verified": "2026-11-13",
+        "notes": "KPPIP priority-project page (undated; captured 13 November 2026) gives Rp29.5T, APBN funding with a foreign loan, PLN as responsible party, 1,000 MW, the preparation stage, planned construction in 2022 and planned operation in 2026. The page still shows preparation, so the 2026 date is a plan and not an opening. The current 226-row PSN register does not list the project, so psn=unknown.",
+        "corridor_name": "",
+        "aliases": [
+          "PLTU Indramayu"
+        ],
+        "indicators": [
+          {
+            "id": "ind-indramayu-capacity",
+            "programme_id": "",
+            "project_id": "power-pltu-indramayu",
+            "name_en": "Indramayu planned capacity",
+            "name_id": "Kapasitas rencana PLTU Indramayu",
+            "unit": "MW",
+            "direction": "increase",
+            "baseline_value": "",
+            "baseline_date": "",
+            "target_value": "",
+            "target_date": "",
+            "source_id": "src-kppip-pltu-indramayu-2026-11-13",
+            "notes": "1,000 MW at the preparation stage.",
+            "source_publisher": "KPPIP",
+            "source_title": "PLTU Indramayu",
+            "source_url": "https://kppip.go.id/proyek-prioritas/ketenaga-listrikan/pltu-indramayu/",
+            "values": [
+              {
+                "value": "1000",
+                "as_of": "2026-11-13",
+                "source_id": "src-kppip-pltu-indramayu-2026-11-13",
+                "source_title": "PLTU Indramayu",
+                "source_url": "https://kppip.go.id/proyek-prioritas/ketenaga-listrikan/pltu-indramayu/",
+                "notes": ""
+              }
+            ]
+          }
+        ],
+        "phases": [],
+        "sources": [
+          {
+            "id": "src-kppip-pltu-indramayu-2026-11-13",
+            "publisher": "KPPIP",
+            "title": "PLTU Indramayu",
+            "url": "https://kppip.go.id/proyek-prioritas/ketenaga-listrikan/pltu-indramayu/",
+            "published_on": "",
+            "retrieved_on": "2026-11-13",
+            "source_type": "official",
+            "language": "id",
+            "archive_path": "data/raw/2026-11-13/kppip_pltu_indramayu_2026.html",
+            "notes": "Undated priority-project page captured 13 November 2026. Gives Rp29.5T, APBN with a foreign loan, Indramayu in West Java, PLN as responsible party, 1,000 MW, preparation stage, planned construction 2022 and operation 2026.",
+            "claim": "status; location; capacity; investment; target; operator"
+          }
+        ],
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "0",
+        "freshness_due": "2027-05-15"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.73,
+          -6.91
+        ]
+      },
+      "properties": {
+        "id": "power-pltu-batang",
+        "name": "Batang Coal-Fired Power Plant (2x1,000 MW)",
+        "sector": "energy",
+        "subsector": "coal",
+        "status": "operating",
+        "status_basis": "BPI announced commercial operation of Unit 1 on 15 August 2022 and Unit 2 on 31 August 2022.",
+        "corridor_id": "",
+        "island": "Java",
+        "province": "Central Java",
+        "route": "Batang, Central Java",
+        "length_km": "",
+        "operational_km": "",
+        "construction_km": "",
+        "progress_pct": "",
+        "investment_idr_t": "56.7",
+        "capacity": "2000",
+        "capacity_unit": "MW",
+        "psn": "unknown",
+        "opened_year": "2022",
+        "opened_date": "2022-08-31",
+        "expected_open_year": "",
+        "status_as_of": "2022-09-06",
+        "verification": "dual",
+        "precision": "approximate",
+        "operator": "tba",
+        "source_url": "https://kppip.go.id/proyek-prioritas/ketenaga-listrikan/pltu-batang/",
+        "source_type": "official",
+        "retrieved_on": "2026-11-13",
+        "last_verified": "2026-11-13",
+        "notes": "BPI, the IPP, says Unit 1 reached commercial operation on 15 August 2022 and Unit 2 on 31 August 2022, so the 2x1,000 MW USC plant is fully operational. The KPPIP priority-project page (undated; captured 13 November 2026) still says construction and is treated as stale. KPPIP gives Rp56.7T, KPBU with BPI, PLN as responsible party, and the J-Power (34%), Adaro (34%) and Itochu (32%) sponsors. The current 226-row PSN register does not list the project, so psn=unknown.",
+        "corridor_name": "",
+        "aliases": [
+          "PLTU Batang",
+          "Central Java Power Plant",
+          "Central Java Coal-Fired Power Plant"
+        ],
+        "indicators": [
+          {
+            "id": "ind-batang-capacity",
+            "programme_id": "",
+            "project_id": "power-pltu-batang",
+            "name_en": "Batang installed capacity",
+            "name_id": "Kapasitas terpasang PLTU Batang",
+            "unit": "MW",
+            "direction": "increase",
+            "baseline_value": "",
+            "baseline_date": "",
+            "target_value": "",
+            "target_date": "",
+            "source_id": "src-bpi-pltu-batang-cod-2022-09-06",
+            "notes": "2 x 1,000 MW in commercial operation.",
+            "source_publisher": "PT Bhimasena Power Indonesia (BPI)",
+            "source_title": "Batang Power Plant 2 x 1.000 MW Project Achieves Commercial Operation",
+            "source_url": "https://www.bhimasenapower.co.id/content/3050/proyek-pltu-batang-2-x-1.000-mw-mencapai-operasi-komersial-penuh",
+            "values": [
+              {
+                "value": "2000",
+                "as_of": "2022-09-06",
+                "source_id": "src-bpi-pltu-batang-cod-2022-09-06",
+                "source_title": "Batang Power Plant 2 x 1.000 MW Project Achieves Commercial Operation",
+                "source_url": "https://www.bhimasenapower.co.id/content/3050/proyek-pltu-batang-2-x-1.000-mw-mencapai-operasi-komersial-penuh",
+                "notes": ""
+              }
+            ]
+          }
+        ],
+        "phases": [],
+        "sources": [
+          {
+            "id": "src-bpi-pltu-batang-cod-2022-09-06",
+            "publisher": "PT Bhimasena Power Indonesia (BPI)",
+            "title": "Batang Power Plant 2 x 1.000 MW Project Achieves Commercial Operation",
+            "url": "https://www.bhimasenapower.co.id/content/3050/proyek-pltu-batang-2-x-1.000-mw-mencapai-operasi-komersial-penuh",
+            "published_on": "2022-09-06",
+            "retrieved_on": "2026-11-13",
+            "source_type": "company",
+            "language": "en",
+            "archive_path": "data/raw/2026-11-13/bpi_pltu_batang_cod_2022-09-06.html",
+            "notes": "Unit 1 reached commercial operation on 15 August 2022 and Unit 2 on 31 August 2022. Gives 2x1,000 MW USC, the J-Power, Adaro and Itochu sponsors, and a 25-year supply contract with PLN.",
+            "claim": "status; capacity; opening; operator"
+          },
+          {
+            "id": "src-kppip-pltu-batang-2026-11-13",
+            "publisher": "KPPIP",
+            "title": "PLTU Batang / Central Java Power Plant",
+            "url": "https://kppip.go.id/proyek-prioritas/ketenaga-listrikan/pltu-batang/",
+            "published_on": "",
+            "retrieved_on": "2026-11-13",
+            "source_type": "official",
+            "language": "id",
+            "archive_path": "data/raw/2026-11-13/kppip_pltu_batang_2026.html",
+            "notes": "Undated priority-project page captured 13 November 2026. Gives Rp56.7T, KPBU with PT Bhimasena Power Indonesia, Batang in Central Java, PLN as responsible party, 2x1,000 MW USC, and a construction-stage status that the BPI COD release supersedes.",
+            "claim": "investment; capacity; location"
+          }
+        ],
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "0",
+        "freshness_due": "2027-05-15"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.0,
+          -6.2
+        ]
+      },
+      "properties": {
+        "id": "port-cbl-inland-waterway",
+        "name": "Cikarang-Bekasi-Laut (CBL) Inland Waterway",
+        "sector": "seaport",
+        "subsector": "inland waterway",
+        "status": "planned",
+        "status_basis": "KPPIP lists the inland waterway at the preparation stage.",
+        "corridor_id": "",
+        "island": "Java",
+        "province": "DKI Jakarta",
+        "route": "Cikarang-Bekasi-Marunda, DKI Jakarta-West Java",
+        "length_km": "",
+        "operational_km": "",
+        "construction_km": "",
+        "progress_pct": "",
+        "investment_idr_t": "3.41",
+        "capacity": "",
+        "capacity_unit": "",
+        "psn": "unknown",
+        "opened_year": "",
+        "opened_date": "",
+        "expected_open_year": "",
+        "status_as_of": "2026-11-13",
+        "verification": "official",
+        "precision": "province",
+        "operator": "tba",
+        "source_url": "https://kppip.go.id/proyek-prioritas/pelabuhan/inland-waterways-cikarang-bekasi-laut-jawa-cbl/",
+        "source_type": "official",
+        "retrieved_on": "2026-11-13",
+        "last_verified": "2026-11-13",
+        "notes": "KPPIP priority-project page (undated; captured 13 November 2026) gives Rp3.41T, a potential BUMN assignment, Pelindo II as responsible party, and the preparation stage. Phase 1 uses the existing Cikarang-Bekasi-Laut canal via Marunda; phase 2 would extend from Tanjung Priok to Cikampek. Planned construction in 2019 and operation in 2021 have passed without a completion source. The current 226-row PSN register does not list the project, so psn=unknown.",
+        "corridor_name": "",
+        "aliases": [
+          "CBL"
+        ],
+        "indicators": [],
+        "phases": [],
+        "sources": [
+          {
+            "id": "src-kppip-cbl-2026-11-13",
+            "publisher": "KPPIP",
+            "title": "Inland Waterways / Cikarang-Bekasi-Laut Jawa (CBL)",
+            "url": "https://kppip.go.id/proyek-prioritas/pelabuhan/inland-waterways-cikarang-bekasi-laut-jawa-cbl/",
+            "published_on": "",
+            "retrieved_on": "2026-11-13",
+            "source_type": "official",
+            "language": "id",
+            "archive_path": "data/raw/2026-11-13/kppip_cbl_2026.html",
+            "notes": "Undated priority-project page captured 13 November 2026. Gives Rp3.41T, potential BUMN assignment, DKI Jakarta-West Java, Pelindo II as responsible party, preparation stage, planned construction 2019 and operation 2021.",
+            "claim": "status; location; investment; operator"
+          }
+        ],
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "0",
+        "freshness_due": "2027-05-15"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.95,
+          -8.15
+        ]
+      },
+      "properties": {
+        "id": "airport-north-bali",
+        "name": "North Bali Airport",
+        "sector": "airport",
+        "subsector": "international airport",
+        "status": "planned",
+        "status_basis": "KPPIP lists the new airport at the preparation stage under an APBN scheme.",
+        "corridor_id": "",
+        "island": "Bali-Nusa Tenggara",
+        "province": "Bali",
+        "route": "North Bali",
+        "length_km": "",
+        "operational_km": "",
+        "construction_km": "",
+        "progress_pct": "",
+        "investment_idr_t": "",
+        "capacity": "",
+        "capacity_unit": "",
+        "psn": "unknown",
+        "opened_year": "",
+        "opened_date": "",
+        "expected_open_year": "",
+        "status_as_of": "2026-11-13",
+        "verification": "official",
+        "precision": "province",
+        "operator": "tba",
+        "source_url": "https://kppip.go.id/proyek-strategis-nasional/f-proyek-pembangunan-bandar-udara-baru/pembangunan-bandar-udara-bali-utara/",
+        "source_type": "official",
+        "retrieved_on": "2026-11-13",
+        "last_verified": "2026-11-13",
+        "notes": "KPPIP priority-project page (undated; captured 13 November 2026) gives APBN funding, Bali, and the preparation stage. It states no investment total, responsible party, construction date or operation date. The map point is northern Bali, not a surveyed site. The current 226-row PSN register does not list the project, so psn=unknown.",
+        "corridor_name": "",
+        "aliases": [
+          "Bandara Bali Utara"
+        ],
+        "indicators": [],
+        "phases": [],
+        "sources": [
+          {
+            "id": "src-kppip-north-bali-airport-2026-11-13",
+            "publisher": "KPPIP",
+            "title": "Pembangunan Bandar Udara Bali Utara",
+            "url": "https://kppip.go.id/proyek-strategis-nasional/f-proyek-pembangunan-bandar-udara-baru/pembangunan-bandar-udara-bali-utara/",
+            "published_on": "",
+            "retrieved_on": "2026-11-13",
+            "source_type": "official",
+            "language": "id",
+            "archive_path": "data/raw/2026-11-13/kppip_north_bali_airport_2026.html",
+            "notes": "Undated priority-project page captured 13 November 2026. Gives APBN funding, Bali, preparation stage, and no investment total, responsible party, construction date or operation date.",
+            "claim": "status; location"
+          }
+        ],
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "0",
+        "freshness_due": "2027-05-15"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.17,
+          -6.65
+        ]
+      },
+      "properties": {
+        "id": "airport-kertajati",
+        "name": "Kertajati International Airport",
+        "sector": "airport",
+        "subsector": "international airport",
+        "status": "operating",
+        "status_basis": "Kemenhub reports that the airport was fully operated on 29 October 2023.",
+        "corridor_id": "",
+        "island": "Java",
+        "province": "West Java",
+        "route": "Kertajati, West Java",
+        "length_km": "",
+        "operational_km": "",
+        "construction_km": "",
+        "progress_pct": "",
+        "investment_idr_t": "",
+        "capacity": "12000000",
+        "capacity_unit": "passengers/year (upper bound)",
+        "psn": "unknown",
+        "opened_year": "2023",
+        "opened_date": "2023-10-29",
+        "expected_open_year": "",
+        "status_as_of": "2023-11-01",
+        "verification": "official",
+        "precision": "approximate",
+        "operator": "tba",
+        "source_url": "https://www.kemenhub.go.id/post/read/%E2%80%8Bbandara-kertajati-resmi-beroperasi-penuh,-menhub-targetkan-layani-12-juta-penumpang-hingga-tahun-2024",
+        "source_type": "official",
+        "retrieved_on": "2026-11-13",
+        "last_verified": "2026-11-13",
+        "notes": "Kemenhub reports full operation from 29 October 2023. It gives 1,800 ha, a 121,000 m2 passenger terminal, a 90,000 m2 cargo terminal, a 3,000x60 m runway, a projected 5.6-12 million passengers per year to 2024, 29.3 million by 2032, and 16 daily flights with 32,760 seats per week at the time. The capacity field records the upper bound of the 5.6-12 million range. The current 226-row PSN register does not list the airport, so psn=unknown.",
+        "corridor_name": "",
+        "aliases": [
+          "BIJB Kertajati",
+          "Bandara Internasional Jawa Barat"
+        ],
+        "indicators": [
+          {
+            "id": "ind-kertajati-capacity",
+            "programme_id": "",
+            "project_id": "airport-kertajati",
+            "name_en": "Kertajati passenger capacity",
+            "name_id": "Kapasitas penumpang Kertajati",
+            "unit": "passengers/yr",
+            "direction": "increase",
+            "baseline_value": "",
+            "baseline_date": "",
+            "target_value": "",
+            "target_date": "",
+            "source_id": "src-kemenhub-kertajati-2023-11-01",
+            "notes": "Upper bound of the 5.6-12 million passengers/yr range to 2024.",
+            "source_publisher": "Kementerian Perhubungan (Kemenhub)",
+            "source_title": "Bandara Kertajati Resmi Beroperasi Penuh, Menhub Targetkan Layani 12 Juta Penumpang Hingga Tahun 2024",
+            "source_url": "https://www.kemenhub.go.id/post/read/%E2%80%8Bbandara-kertajati-resmi-beroperasi-penuh,-menhub-targetkan-layani-12-juta-penumpang-hingga-tahun-2024",
+            "values": [
+              {
+                "value": "12000000",
+                "as_of": "2023-11-01",
+                "source_id": "src-kemenhub-kertajati-2023-11-01",
+                "source_title": "Bandara Kertajati Resmi Beroperasi Penuh, Menhub Targetkan Layani 12 Juta Penumpang Hingga Tahun 2024",
+                "source_url": "https://www.kemenhub.go.id/post/read/%E2%80%8Bbandara-kertajati-resmi-beroperasi-penuh,-menhub-targetkan-layani-12-juta-penumpang-hingga-tahun-2024",
+                "notes": ""
+              }
+            ]
+          },
+          {
+            "id": "ind-kertajati-terminal-area",
+            "programme_id": "",
+            "project_id": "airport-kertajati",
+            "name_en": "Kertajati passenger terminal area",
+            "name_id": "Luas terminal penumpang Kertajati",
+            "unit": "m2",
+            "direction": "increase",
+            "baseline_value": "",
+            "baseline_date": "",
+            "target_value": "",
+            "target_date": "",
+            "source_id": "src-kemenhub-kertajati-2023-11-01",
+            "notes": "Passenger terminal; the cargo terminal is 90,000 m2.",
+            "source_publisher": "Kementerian Perhubungan (Kemenhub)",
+            "source_title": "Bandara Kertajati Resmi Beroperasi Penuh, Menhub Targetkan Layani 12 Juta Penumpang Hingga Tahun 2024",
+            "source_url": "https://www.kemenhub.go.id/post/read/%E2%80%8Bbandara-kertajati-resmi-beroperasi-penuh,-menhub-targetkan-layani-12-juta-penumpang-hingga-tahun-2024",
+            "values": [
+              {
+                "value": "121000",
+                "as_of": "2023-11-01",
+                "source_id": "src-kemenhub-kertajati-2023-11-01",
+                "source_title": "Bandara Kertajati Resmi Beroperasi Penuh, Menhub Targetkan Layani 12 Juta Penumpang Hingga Tahun 2024",
+                "source_url": "https://www.kemenhub.go.id/post/read/%E2%80%8Bbandara-kertajati-resmi-beroperasi-penuh,-menhub-targetkan-layani-12-juta-penumpang-hingga-tahun-2024",
+                "notes": ""
+              }
+            ]
+          }
+        ],
+        "phases": [],
+        "sources": [
+          {
+            "id": "src-kemenhub-kertajati-2023-11-01",
+            "publisher": "Kementerian Perhubungan (Kemenhub)",
+            "title": "Bandara Kertajati Resmi Beroperasi Penuh, Menhub Targetkan Layani 12 Juta Penumpang Hingga Tahun 2024",
+            "url": "https://www.kemenhub.go.id/post/read/%E2%80%8Bbandara-kertajati-resmi-beroperasi-penuh,-menhub-targetkan-layani-12-juta-penumpang-hingga-tahun-2024",
+            "published_on": "2023-11-01",
+            "retrieved_on": "2026-11-13",
+            "source_type": "official",
+            "language": "id",
+            "archive_path": "data/raw/2026-11-13/kemenhub_kertajati_2023-11-01.html",
+            "notes": "Full operation from 29 October 2023. Gives 1,800 ha, a 121,000 m2 passenger terminal, a 90,000 m2 cargo terminal, a 3,000x60 m runway, 5.6-12 million passengers/yr to 2024, 29.3 million by 2032, and 16 daily flights at the time.",
+            "claim": "status; opening; capacity; location; length"
+          }
+        ],
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "0",
+        "freshness_due": "2027-05-15"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          99.07,
+          1.5
+        ]
+      },
+      "properties": {
+        "id": "power-batang-toru",
+        "name": "Batang Toru Hydropower Plant",
+        "sector": "energy",
+        "subsector": "hydro",
+        "status": "under_construction",
+        "status_basis": "ESDM reports the reservoir began impounding on 9 October 2026 and targets operation around the Christmas-New Year period; the plant is not yet commercially operating.",
+        "corridor_id": "",
+        "island": "Sumatra",
+        "province": "North Sumatra",
+        "route": "Batang Toru River, Tapanuli Selatan, North Sumatra",
+        "length_km": "",
+        "operational_km": "",
+        "construction_km": "",
+        "progress_pct": "",
+        "investment_idr_t": "21.6",
+        "capacity": "510",
+        "capacity_unit": "MW",
+        "psn": "unknown",
+        "opened_year": "",
+        "opened_date": "",
+        "expected_open_year": "2026",
+        "status_as_of": "2026-10-10",
+        "verification": "official",
+        "precision": "approximate",
+        "operator": "tba",
+        "source_url": "https://www.esdm.go.id/id/media-center/arsip-berita/waduk-plta-batang-toru-mulai-digenangi-pasokan-listrik-sumatera-utara-kian-andal-jelang-nataru",
+        "source_type": "official",
+        "retrieved_on": "2026-11-13",
+        "last_verified": "2026-11-13",
+        "notes": "ESDM reports the 510 MW (4x127.5 MW) plant at Batang Toru in Tapanuli Selatan, North Sumatra, with a Rp21.6T investment and PT North Sumatera Hydro Energy (NSHE) as developer. Reservoir impounding began on 9 October 2026, and the plant is targeted to operate for the 2026 Christmas-New Year period; it was not yet commercially operating. NSHE has prepared a 160 MW second-phase study. ESDM calls it a PSN, but it is absent from the current 226-row register, so psn=unknown.",
+        "corridor_name": "",
+        "aliases": [
+          "PLTA Batang Toru"
+        ],
+        "indicators": [
+          {
+            "id": "ind-batang-toru-capacity",
+            "programme_id": "",
+            "project_id": "power-batang-toru",
+            "name_en": "Batang Toru installed capacity",
+            "name_id": "Kapasitas terpasang PLTA Batang Toru",
+            "unit": "MW",
+            "direction": "increase",
+            "baseline_value": "",
+            "baseline_date": "",
+            "target_value": "",
+            "target_date": "",
+            "source_id": "src-esdm-batang-toru-2026-10-10",
+            "notes": "510 MW from four 127.5 MW units.",
+            "source_publisher": "Kementerian Energi dan Sumber Daya Mineral (ESDM)",
+            "source_title": "Waduk PLTA Batang Toru Mulai Digenangi, Pasokan Listrik Sumatera Utara Kian Andal Jelang Nataru",
+            "source_url": "https://www.esdm.go.id/id/media-center/arsip-berita/waduk-plta-batang-toru-mulai-digenangi-pasokan-listrik-sumatera-utara-kian-andal-jelang-nataru",
+            "values": [
+              {
+                "value": "510",
+                "as_of": "2026-10-10",
+                "source_id": "src-esdm-batang-toru-2026-10-10",
+                "source_title": "Waduk PLTA Batang Toru Mulai Digenangi, Pasokan Listrik Sumatera Utara Kian Andal Jelang Nataru",
+                "source_url": "https://www.esdm.go.id/id/media-center/arsip-berita/waduk-plta-batang-toru-mulai-digenangi-pasokan-listrik-sumatera-utara-kian-andal-jelang-nataru",
+                "notes": ""
+              }
+            ]
+          },
+          {
+            "id": "ind-batang-toru-phase-2",
+            "programme_id": "",
+            "project_id": "power-batang-toru",
+            "name_en": "Batang Toru second-phase capacity",
+            "name_id": "Kapasitas tahap kedua PLTA Batang Toru",
+            "unit": "MW",
+            "direction": "target",
+            "baseline_value": "",
+            "baseline_date": "",
+            "target_value": "",
+            "target_date": "",
+            "source_id": "src-esdm-batang-toru-2026-10-10",
+            "notes": "Second-phase study prepared by NSHE.",
+            "source_publisher": "Kementerian Energi dan Sumber Daya Mineral (ESDM)",
+            "source_title": "Waduk PLTA Batang Toru Mulai Digenangi, Pasokan Listrik Sumatera Utara Kian Andal Jelang Nataru",
+            "source_url": "https://www.esdm.go.id/id/media-center/arsip-berita/waduk-plta-batang-toru-mulai-digenangi-pasokan-listrik-sumatera-utara-kian-andal-jelang-nataru",
+            "values": [
+              {
+                "value": "160",
+                "as_of": "2026-10-10",
+                "source_id": "src-esdm-batang-toru-2026-10-10",
+                "source_title": "Waduk PLTA Batang Toru Mulai Digenangi, Pasokan Listrik Sumatera Utara Kian Andal Jelang Nataru",
+                "source_url": "https://www.esdm.go.id/id/media-center/arsip-berita/waduk-plta-batang-toru-mulai-digenangi-pasokan-listrik-sumatera-utara-kian-andal-jelang-nataru",
+                "notes": ""
+              }
+            ]
+          }
+        ],
+        "phases": [],
+        "sources": [
+          {
+            "id": "src-esdm-batang-toru-2026-10-10",
+            "publisher": "Kementerian Energi dan Sumber Daya Mineral (ESDM)",
+            "title": "Waduk PLTA Batang Toru Mulai Digenangi, Pasokan Listrik Sumatera Utara Kian Andal Jelang Nataru",
+            "url": "https://www.esdm.go.id/id/media-center/arsip-berita/waduk-plta-batang-toru-mulai-digenangi-pasokan-listrik-sumatera-utara-kian-andal-jelang-nataru",
+            "published_on": "2026-10-10",
+            "retrieved_on": "2026-11-13",
+            "source_type": "official",
+            "language": "id",
+            "archive_path": "data/raw/2026-11-13/esdm_batang_toru_2026-10-10.html",
+            "notes": "Reservoir impounding began on 9 October 2026. Gives 510 MW (4x127.5 MW), Rp21.6T, NSHE as developer, a 160 MW second-phase study, and a target to operate for the 2026 Christmas-New Year period.",
+            "claim": "status; location; capacity; investment; target; design capacity; operator"
+          }
+        ],
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "0",
+        "freshness_due": "2027-05-15"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.87,
+          -6.23
+        ]
+      },
+      "properties": {
+        "id": "flood-sodetan-ciliwung",
+        "name": "Ciliwung Diversion Tunnel (Sodetan Ciliwung)",
+        "sector": "water",
+        "subsector": "flood control",
+        "status": "operating",
+        "status_basis": "President Joko Widodo inaugurated the diversion on 31 July 2023; PU reports the tunnel is complete.",
+        "corridor_id": "",
+        "island": "Java",
+        "province": "DKI Jakarta",
+        "route": "Ciliwung River-Kanal Banjir Timur/Kali Cipinang, Jakarta",
+        "length_km": "1.268",
+        "operational_km": "",
+        "construction_km": "",
+        "progress_pct": "",
+        "investment_idr_t": "1.2",
+        "capacity": "60",
+        "capacity_unit": "m3/s",
+        "psn": "unknown",
+        "opened_year": "2023",
+        "opened_date": "2023-07-31",
+        "expected_open_year": "",
+        "status_as_of": "2023-08-01",
+        "verification": "official",
+        "precision": "approximate",
+        "operator": "tba",
+        "source_url": "https://pu.go.id/berita/presiden-jokowi-resmikan-sodetan-ciliwung-12-km-bagian-dari-penanganan-dari-hulu-ke-hilir-untuk-kendalikan-banjir-jakarta",
+        "source_type": "official",
+        "retrieved_on": "2026-11-13",
+        "last_verified": "2026-11-13",
+        "notes": "PU reports a 1,268 m tunnel with two 3.5 m pipes, a 60 m3/s capacity, an about Rp1.2T budget, the WIKA-Jaya Konstruksi KSO contractor, and inauguration on 31 July 2023. The diversion reduces the flood-affected area by 107 ha. Work started in 2013, 650 m was completed by 2015, and the remaining 580 m resumed in 2021. The current 226-row PSN register does not list the project, so psn=unknown.",
+        "corridor_name": "",
+        "aliases": [
+          "Sodetan Ciliwung 1,2 km"
+        ],
+        "indicators": [
+          {
+            "id": "ind-sodetan-length",
+            "programme_id": "",
+            "project_id": "flood-sodetan-ciliwung",
+            "name_en": "Sodetan Ciliwung tunnel length",
+            "name_id": "Panjang terowongan Sodetan Ciliwung",
+            "unit": "km",
+            "direction": "increase",
+            "baseline_value": "",
+            "baseline_date": "",
+            "target_value": "",
+            "target_date": "",
+            "source_id": "src-pu-sodetan-ciliwung-2023-08-01",
+            "notes": "1,268 m tunnel.",
+            "source_publisher": "Kementerian Pekerjaan Umum (PU)",
+            "source_title": "Presiden Jokowi Resmikan Sodetan Ciliwung 1.2 Km, Bagian dari Penanganan dari Hulu ke Hilir untuk Kendalikan Banjir Jakarta",
+            "source_url": "https://pu.go.id/berita/presiden-jokowi-resmikan-sodetan-ciliwung-12-km-bagian-dari-penanganan-dari-hulu-ke-hilir-untuk-kendalikan-banjir-jakarta",
+            "values": [
+              {
+                "value": "1.268",
+                "as_of": "2023-08-01",
+                "source_id": "src-pu-sodetan-ciliwung-2023-08-01",
+                "source_title": "Presiden Jokowi Resmikan Sodetan Ciliwung 1.2 Km, Bagian dari Penanganan dari Hulu ke Hilir untuk Kendalikan Banjir Jakarta",
+                "source_url": "https://pu.go.id/berita/presiden-jokowi-resmikan-sodetan-ciliwung-12-km-bagian-dari-penanganan-dari-hulu-ke-hilir-untuk-kendalikan-banjir-jakarta",
+                "notes": ""
+              }
+            ]
+          },
+          {
+            "id": "ind-sodetan-capacity",
+            "programme_id": "",
+            "project_id": "flood-sodetan-ciliwung",
+            "name_en": "Sodetan Ciliwung flow capacity",
+            "name_id": "Kapasitas aliran Sodetan Ciliwung",
+            "unit": "m3/s",
+            "direction": "increase",
+            "baseline_value": "",
+            "baseline_date": "",
+            "target_value": "",
+            "target_date": "",
+            "source_id": "src-pu-sodetan-ciliwung-2023-08-01",
+            "notes": "Two 3.5 m pipes.",
+            "source_publisher": "Kementerian Pekerjaan Umum (PU)",
+            "source_title": "Presiden Jokowi Resmikan Sodetan Ciliwung 1.2 Km, Bagian dari Penanganan dari Hulu ke Hilir untuk Kendalikan Banjir Jakarta",
+            "source_url": "https://pu.go.id/berita/presiden-jokowi-resmikan-sodetan-ciliwung-12-km-bagian-dari-penanganan-dari-hulu-ke-hilir-untuk-kendalikan-banjir-jakarta",
+            "values": [
+              {
+                "value": "60",
+                "as_of": "2023-08-01",
+                "source_id": "src-pu-sodetan-ciliwung-2023-08-01",
+                "source_title": "Presiden Jokowi Resmikan Sodetan Ciliwung 1.2 Km, Bagian dari Penanganan dari Hulu ke Hilir untuk Kendalikan Banjir Jakarta",
+                "source_url": "https://pu.go.id/berita/presiden-jokowi-resmikan-sodetan-ciliwung-12-km-bagian-dari-penanganan-dari-hulu-ke-hilir-untuk-kendalikan-banjir-jakarta",
+                "notes": ""
+              }
+            ]
+          },
+          {
+            "id": "ind-sodetan-flood-area",
+            "programme_id": "",
+            "project_id": "flood-sodetan-ciliwung",
+            "name_en": "Flood area removed by Sodetan Ciliwung",
+            "name_id": "Luas banjir yang dikurangi Sodetan Ciliwung",
+            "unit": "ha",
+            "direction": "increase",
+            "baseline_value": "",
+            "baseline_date": "",
+            "target_value": "",
+            "target_date": "",
+            "source_id": "src-pu-sodetan-ciliwung-2023-08-01",
+            "notes": "107 ha reduction in flood-affected area.",
+            "source_publisher": "Kementerian Pekerjaan Umum (PU)",
+            "source_title": "Presiden Jokowi Resmikan Sodetan Ciliwung 1.2 Km, Bagian dari Penanganan dari Hulu ke Hilir untuk Kendalikan Banjir Jakarta",
+            "source_url": "https://pu.go.id/berita/presiden-jokowi-resmikan-sodetan-ciliwung-12-km-bagian-dari-penanganan-dari-hulu-ke-hilir-untuk-kendalikan-banjir-jakarta",
+            "values": [
+              {
+                "value": "107",
+                "as_of": "2023-08-01",
+                "source_id": "src-pu-sodetan-ciliwung-2023-08-01",
+                "source_title": "Presiden Jokowi Resmikan Sodetan Ciliwung 1.2 Km, Bagian dari Penanganan dari Hulu ke Hilir untuk Kendalikan Banjir Jakarta",
+                "source_url": "https://pu.go.id/berita/presiden-jokowi-resmikan-sodetan-ciliwung-12-km-bagian-dari-penanganan-dari-hulu-ke-hilir-untuk-kendalikan-banjir-jakarta",
+                "notes": ""
+              }
+            ]
+          }
+        ],
+        "phases": [],
+        "sources": [
+          {
+            "id": "src-pu-sodetan-ciliwung-2023-08-01",
+            "publisher": "Kementerian Pekerjaan Umum (PU)",
+            "title": "Presiden Jokowi Resmikan Sodetan Ciliwung 1.2 Km, Bagian dari Penanganan dari Hulu ke Hilir untuk Kendalikan Banjir Jakarta",
+            "url": "https://pu.go.id/berita/presiden-jokowi-resmikan-sodetan-ciliwung-12-km-bagian-dari-penanganan-dari-hulu-ke-hilir-untuk-kendalikan-banjir-jakarta",
+            "published_on": "2023-08-01",
+            "retrieved_on": "2026-11-13",
+            "source_type": "official",
+            "language": "id",
+            "archive_path": "data/raw/2026-11-13/pu_sodetan_ciliwung_2023-08-01.html",
+            "notes": "Inaugurated on 31 July 2023. Gives a 1,268 m tunnel with two 3.5 m pipes, 60 m3/s, about Rp1.2T, the WIKA-Jaya Konstruksi KSO contractor, and a 107 ha reduction in flood-affected area.",
+            "claim": "status; opening; length; capacity; investment; location"
+          }
+        ],
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "0",
+        "freshness_due": "2027-05-15"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.85,
+          -6.25
+        ]
+      },
+      "properties": {
+        "id": "flood-ciliwung-normalisation",
+        "name": "Ciliwung River Normalisation",
+        "sector": "water",
+        "subsector": "flood control",
+        "status": "under_construction",
+        "status_basis": "PU reported 16.19 km of the 33 km normalisation completed and the remaining 17 km targeted for completion by the end of 2024; no later status source was found.",
+        "corridor_id": "",
+        "island": "Java",
+        "province": "DKI Jakarta",
+        "route": "Ciliwung River, Jakarta",
+        "length_km": "33",
+        "operational_km": "16.19",
+        "construction_km": "17",
+        "progress_pct": "",
+        "investment_idr_t": "",
+        "capacity": "570",
+        "capacity_unit": "m3/s",
+        "psn": "unknown",
+        "opened_year": "",
+        "opened_date": "",
+        "expected_open_year": "2024",
+        "status_as_of": "2023-02-21",
+        "verification": "official",
+        "precision": "province",
+        "operator": "tba",
+        "source_url": "https://sda.pu.go.id/balai/bwsbalipenida/berita/detail/396-normalisasi-sungai-ciliwung-untuk-pengendalian-banjir-jakarta-ditargetkan-rampung-tahun-2024-presi",
+        "source_type": "official",
+        "retrieved_on": "2026-11-13",
+        "last_verified": "2026-11-13",
+        "notes": "PU reports normalising the river to a 35-50 m width, raising capacity from 200 to 570 m3/s, 16.19 km completed of 33 km, and the remaining 17 km targeted for the end of 2024. No later official status was found, so the row remains under construction as of 21 February 2023. The completed and remaining lengths add to 33.19 km because the source rounds the remaining 17 km. The current 226-row PSN register does not list the project, so psn=unknown.",
+        "corridor_name": "",
+        "aliases": [
+          "Normalisasi Ciliwung"
+        ],
+        "indicators": [
+          {
+            "id": "ind-ciliwung-length",
+            "programme_id": "",
+            "project_id": "flood-ciliwung-normalisation",
+            "name_en": "Ciliwung normalisation scope",
+            "name_id": "Lingkup normalisasi Ciliwung",
+            "unit": "km",
+            "direction": "increase",
+            "baseline_value": "",
+            "baseline_date": "",
+            "target_value": "",
+            "target_date": "",
+            "source_id": "src-pu-ciliwung-normalisation-2023-02-21",
+            "notes": "33 km total scope.",
+            "source_publisher": "Kementerian Pekerjaan Umum (PU)",
+            "source_title": "Normalisasi Sungai Ciliwung untuk Pengendalian Banjir Jakarta, Ditargetkan Rampung Tahun 2024. Presiden Jokowi Tinjau Langsung Lokasi Pekerjaan.",
+            "source_url": "https://sda.pu.go.id/balai/bwsbalipenida/berita/detail/396-normalisasi-sungai-ciliwung-untuk-pengendalian-banjir-jakarta-ditargetkan-rampung-tahun-2024-presi",
+            "values": [
+              {
+                "value": "33",
+                "as_of": "2023-02-21",
+                "source_id": "src-pu-ciliwung-normalisation-2023-02-21",
+                "source_title": "Normalisasi Sungai Ciliwung untuk Pengendalian Banjir Jakarta, Ditargetkan Rampung Tahun 2024. Presiden Jokowi Tinjau Langsung Lokasi Pekerjaan.",
+                "source_url": "https://sda.pu.go.id/balai/bwsbalipenida/berita/detail/396-normalisasi-sungai-ciliwung-untuk-pengendalian-banjir-jakarta-ditargetkan-rampung-tahun-2024-presi",
+                "notes": ""
+              }
+            ]
+          },
+          {
+            "id": "ind-ciliwung-completed",
+            "programme_id": "",
+            "project_id": "flood-ciliwung-normalisation",
+            "name_en": "Ciliwung normalisation completed length",
+            "name_id": "Panjang normalisasi Ciliwung selesai",
+            "unit": "km",
+            "direction": "increase",
+            "baseline_value": "",
+            "baseline_date": "",
+            "target_value": "",
+            "target_date": "",
+            "source_id": "src-pu-ciliwung-normalisation-2023-02-21",
+            "notes": "16.19 km completed; the remaining 17 km were targeted for end-2024.",
+            "source_publisher": "Kementerian Pekerjaan Umum (PU)",
+            "source_title": "Normalisasi Sungai Ciliwung untuk Pengendalian Banjir Jakarta, Ditargetkan Rampung Tahun 2024. Presiden Jokowi Tinjau Langsung Lokasi Pekerjaan.",
+            "source_url": "https://sda.pu.go.id/balai/bwsbalipenida/berita/detail/396-normalisasi-sungai-ciliwung-untuk-pengendalian-banjir-jakarta-ditargetkan-rampung-tahun-2024-presi",
+            "values": [
+              {
+                "value": "16.19",
+                "as_of": "2023-02-21",
+                "source_id": "src-pu-ciliwung-normalisation-2023-02-21",
+                "source_title": "Normalisasi Sungai Ciliwung untuk Pengendalian Banjir Jakarta, Ditargetkan Rampung Tahun 2024. Presiden Jokowi Tinjau Langsung Lokasi Pekerjaan.",
+                "source_url": "https://sda.pu.go.id/balai/bwsbalipenida/berita/detail/396-normalisasi-sungai-ciliwung-untuk-pengendalian-banjir-jakarta-ditargetkan-rampung-tahun-2024-presi",
+                "notes": ""
+              }
+            ]
+          },
+          {
+            "id": "ind-ciliwung-capacity",
+            "programme_id": "",
+            "project_id": "flood-ciliwung-normalisation",
+            "name_en": "Ciliwung normalised flow capacity",
+            "name_id": "Kapasitas aliran normalisasi Ciliwung",
+            "unit": "m3/s",
+            "direction": "increase",
+            "baseline_value": "",
+            "baseline_date": "",
+            "target_value": "",
+            "target_date": "",
+            "source_id": "src-pu-ciliwung-normalisation-2023-02-21",
+            "notes": "Up from 200 m3/s.",
+            "source_publisher": "Kementerian Pekerjaan Umum (PU)",
+            "source_title": "Normalisasi Sungai Ciliwung untuk Pengendalian Banjir Jakarta, Ditargetkan Rampung Tahun 2024. Presiden Jokowi Tinjau Langsung Lokasi Pekerjaan.",
+            "source_url": "https://sda.pu.go.id/balai/bwsbalipenida/berita/detail/396-normalisasi-sungai-ciliwung-untuk-pengendalian-banjir-jakarta-ditargetkan-rampung-tahun-2024-presi",
+            "values": [
+              {
+                "value": "570",
+                "as_of": "2023-02-21",
+                "source_id": "src-pu-ciliwung-normalisation-2023-02-21",
+                "source_title": "Normalisasi Sungai Ciliwung untuk Pengendalian Banjir Jakarta, Ditargetkan Rampung Tahun 2024. Presiden Jokowi Tinjau Langsung Lokasi Pekerjaan.",
+                "source_url": "https://sda.pu.go.id/balai/bwsbalipenida/berita/detail/396-normalisasi-sungai-ciliwung-untuk-pengendalian-banjir-jakarta-ditargetkan-rampung-tahun-2024-presi",
+                "notes": ""
+              }
+            ]
+          }
+        ],
+        "phases": [],
+        "sources": [
+          {
+            "id": "src-pu-ciliwung-normalisation-2023-02-21",
+            "publisher": "Kementerian Pekerjaan Umum (PU)",
+            "title": "Normalisasi Sungai Ciliwung untuk Pengendalian Banjir Jakarta, Ditargetkan Rampung Tahun 2024. Presiden Jokowi Tinjau Langsung Lokasi Pekerjaan.",
+            "url": "https://sda.pu.go.id/balai/bwsbalipenida/berita/detail/396-normalisasi-sungai-ciliwung-untuk-pengendalian-banjir-jakarta-ditargetkan-rampung-tahun-2024-presi",
+            "published_on": "2023-02-21",
+            "retrieved_on": "2026-11-13",
+            "source_type": "official",
+            "language": "id",
+            "archive_path": "data/raw/2026-11-13/pu_ciliwung_normalisation_2023-02-21.html",
+            "notes": "Gives a 35-50 m normalised width, capacity rising from 200 to 570 m3/s, 16.19 km completed of 33 km, and the remaining 17 km targeted for the end of 2024.",
+            "claim": "status; location; length; operational; capacity; progress"
+          }
+        ],
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "0",
+        "freshness_due": "2027-05-15"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.57,
+          -8.37
+        ]
+      },
+      "properties": {
+        "id": "port-ppn-pengambengan",
+        "name": "Pengambengan National Fishing Port",
+        "sector": "seaport",
+        "subsector": "fishing port",
+        "status": "under_construction",
+        "status_basis": "KKP held the groundbreaking on 29 September 2026 and targets completion by the end of 2029.",
+        "corridor_id": "",
+        "island": "Bali-Nusa Tenggara",
+        "province": "Bali",
+        "route": "Jembrana, Bali",
+        "length_km": "",
+        "operational_km": "",
+        "construction_km": "",
+        "progress_pct": "",
+        "investment_idr_t": "1.27",
+        "capacity": "1600",
+        "capacity_unit": "vessels",
+        "psn": "unknown",
+        "opened_year": "",
+        "opened_date": "",
+        "expected_open_year": "2029",
+        "status_as_of": "2026-09-29",
+        "verification": "official",
+        "precision": "approximate",
+        "operator": "tba",
+        "source_url": "https://kkp.go.id/news/news-detail/menteri-trenggono-siapkan-ppn-pengambengan-jadi-pelabuhan-perikanan-kelas-dunia-wKBM.html",
+        "source_type": "official",
+        "retrieved_on": "2026-11-13",
+        "last_verified": "2026-11-13",
+        "notes": "KKP held the groundbreaking for the Integrated Fishing Ports and International Fish Market Phase I on 29 September 2026. It gives a port area of 13.5 to 49.3 ha, a harbour basin of 24 to 88.3 ha, vessel capacity of 1,273 to 1,600, landings of 61,300 to 124,000 t/yr, PNBP of Rp48bn to Rp104bn/yr, about 25,000 workers, a Rp1.27T contract with Islamic Development Bank support, and an end-2029 completion target. The current 226-row PSN register does not list the project, so psn=unknown.",
+        "corridor_name": "",
+        "aliases": [
+          "PPN Pengambengan"
+        ],
+        "indicators": [
+          {
+            "id": "ind-pengambengan-vessels",
+            "programme_id": "",
+            "project_id": "port-ppn-pengambengan",
+            "name_en": "Pengambengan vessel capacity",
+            "name_id": "Kapasitas kapal Pengambengan",
+            "unit": "vessels",
+            "direction": "increase",
+            "baseline_value": "",
+            "baseline_date": "",
+            "target_value": "",
+            "target_date": "",
+            "source_id": "src-kkp-ppn-pengambengan-2026-09-29",
+            "notes": "Up from 1,273 vessels.",
+            "source_publisher": "Kementerian Kelautan dan Perikanan (KKP)",
+            "source_title": "Menteri Trenggono Siapkan PPN Pengambengan Jadi Pelabuhan Perikanan Kelas Dunia",
+            "source_url": "https://kkp.go.id/news/news-detail/menteri-trenggono-siapkan-ppn-pengambengan-jadi-pelabuhan-perikanan-kelas-dunia-wKBM.html",
+            "values": [
+              {
+                "value": "1600",
+                "as_of": "2026-09-29",
+                "source_id": "src-kkp-ppn-pengambengan-2026-09-29",
+                "source_title": "Menteri Trenggono Siapkan PPN Pengambengan Jadi Pelabuhan Perikanan Kelas Dunia",
+                "source_url": "https://kkp.go.id/news/news-detail/menteri-trenggono-siapkan-ppn-pengambengan-jadi-pelabuhan-perikanan-kelas-dunia-wKBM.html",
+                "notes": ""
+              }
+            ]
+          },
+          {
+            "id": "ind-pengambengan-landings",
+            "programme_id": "",
+            "project_id": "port-ppn-pengambengan",
+            "name_en": "Pengambengan fish landings",
+            "name_id": "Pendaratan ikan Pengambengan",
+            "unit": "t/yr",
+            "direction": "increase",
+            "baseline_value": "",
+            "baseline_date": "",
+            "target_value": "",
+            "target_date": "",
+            "source_id": "src-kkp-ppn-pengambengan-2026-09-29",
+            "notes": "Up from 61,300 t/yr.",
+            "source_publisher": "Kementerian Kelautan dan Perikanan (KKP)",
+            "source_title": "Menteri Trenggono Siapkan PPN Pengambengan Jadi Pelabuhan Perikanan Kelas Dunia",
+            "source_url": "https://kkp.go.id/news/news-detail/menteri-trenggono-siapkan-ppn-pengambengan-jadi-pelabuhan-perikanan-kelas-dunia-wKBM.html",
+            "values": [
+              {
+                "value": "124000",
+                "as_of": "2026-09-29",
+                "source_id": "src-kkp-ppn-pengambengan-2026-09-29",
+                "source_title": "Menteri Trenggono Siapkan PPN Pengambengan Jadi Pelabuhan Perikanan Kelas Dunia",
+                "source_url": "https://kkp.go.id/news/news-detail/menteri-trenggono-siapkan-ppn-pengambengan-jadi-pelabuhan-perikanan-kelas-dunia-wKBM.html",
+                "notes": ""
+              }
+            ]
+          },
+          {
+            "id": "ind-pengambengan-area",
+            "programme_id": "",
+            "project_id": "port-ppn-pengambengan",
+            "name_en": "Pengambengan port area",
+            "name_id": "Luas pelabuhan Pengambengan",
+            "unit": "ha",
+            "direction": "increase",
+            "baseline_value": "",
+            "baseline_date": "",
+            "target_value": "",
+            "target_date": "",
+            "source_id": "src-kkp-ppn-pengambengan-2026-09-29",
+            "notes": "Up from 13.5 ha.",
+            "source_publisher": "Kementerian Kelautan dan Perikanan (KKP)",
+            "source_title": "Menteri Trenggono Siapkan PPN Pengambengan Jadi Pelabuhan Perikanan Kelas Dunia",
+            "source_url": "https://kkp.go.id/news/news-detail/menteri-trenggono-siapkan-ppn-pengambengan-jadi-pelabuhan-perikanan-kelas-dunia-wKBM.html",
+            "values": [
+              {
+                "value": "49.3",
+                "as_of": "2026-09-29",
+                "source_id": "src-kkp-ppn-pengambengan-2026-09-29",
+                "source_title": "Menteri Trenggono Siapkan PPN Pengambengan Jadi Pelabuhan Perikanan Kelas Dunia",
+                "source_url": "https://kkp.go.id/news/news-detail/menteri-trenggono-siapkan-ppn-pengambengan-jadi-pelabuhan-perikanan-kelas-dunia-wKBM.html",
+                "notes": ""
+              }
+            ]
+          },
+          {
+            "id": "ind-pengambengan-workers",
+            "programme_id": "",
+            "project_id": "port-ppn-pengambengan",
+            "name_en": "Pengambengan workers",
+            "name_id": "Tenaga kerja Pengambengan",
+            "unit": "workers",
+            "direction": "increase",
+            "baseline_value": "",
+            "baseline_date": "",
+            "target_value": "",
+            "target_date": "",
+            "source_id": "src-kkp-ppn-pengambengan-2026-09-29",
+            "notes": "About 25,000 workers, nearly three times the current workforce.",
+            "source_publisher": "Kementerian Kelautan dan Perikanan (KKP)",
+            "source_title": "Menteri Trenggono Siapkan PPN Pengambengan Jadi Pelabuhan Perikanan Kelas Dunia",
+            "source_url": "https://kkp.go.id/news/news-detail/menteri-trenggono-siapkan-ppn-pengambengan-jadi-pelabuhan-perikanan-kelas-dunia-wKBM.html",
+            "values": [
+              {
+                "value": "25000",
+                "as_of": "2026-09-29",
+                "source_id": "src-kkp-ppn-pengambengan-2026-09-29",
+                "source_title": "Menteri Trenggono Siapkan PPN Pengambengan Jadi Pelabuhan Perikanan Kelas Dunia",
+                "source_url": "https://kkp.go.id/news/news-detail/menteri-trenggono-siapkan-ppn-pengambengan-jadi-pelabuhan-perikanan-kelas-dunia-wKBM.html",
+                "notes": ""
+              }
+            ]
+          },
+          {
+            "id": "ind-pengambengan-pnbp",
+            "programme_id": "",
+            "project_id": "port-ppn-pengambengan",
+            "name_en": "Pengambengan annual PNBP",
+            "name_id": "PNBP tahunan Pengambengan",
+            "unit": "IDR bn/yr",
+            "direction": "increase",
+            "baseline_value": "",
+            "baseline_date": "",
+            "target_value": "",
+            "target_date": "",
+            "source_id": "src-kkp-ppn-pengambengan-2026-09-29",
+            "notes": "Up from Rp48bn/yr.",
+            "source_publisher": "Kementerian Kelautan dan Perikanan (KKP)",
+            "source_title": "Menteri Trenggono Siapkan PPN Pengambengan Jadi Pelabuhan Perikanan Kelas Dunia",
+            "source_url": "https://kkp.go.id/news/news-detail/menteri-trenggono-siapkan-ppn-pengambengan-jadi-pelabuhan-perikanan-kelas-dunia-wKBM.html",
+            "values": [
+              {
+                "value": "104",
+                "as_of": "2026-09-29",
+                "source_id": "src-kkp-ppn-pengambengan-2026-09-29",
+                "source_title": "Menteri Trenggono Siapkan PPN Pengambengan Jadi Pelabuhan Perikanan Kelas Dunia",
+                "source_url": "https://kkp.go.id/news/news-detail/menteri-trenggono-siapkan-ppn-pengambengan-jadi-pelabuhan-perikanan-kelas-dunia-wKBM.html",
+                "notes": ""
+              }
+            ]
+          }
+        ],
+        "phases": [],
+        "sources": [
+          {
+            "id": "src-kkp-ppn-pengambengan-2026-09-29",
+            "publisher": "Kementerian Kelautan dan Perikanan (KKP)",
+            "title": "Menteri Trenggono Siapkan PPN Pengambengan Jadi Pelabuhan Perikanan Kelas Dunia",
+            "url": "https://kkp.go.id/news/news-detail/menteri-trenggono-siapkan-ppn-pengambengan-jadi-pelabuhan-perikanan-kelas-dunia-wKBM.html",
+            "published_on": "2026-09-29",
+            "retrieved_on": "2026-11-13",
+            "source_type": "official",
+            "language": "id",
+            "archive_path": "data/raw/2026-11-13/kkp_ppn_pengambengan_2026-09-29.html",
+            "notes": "Groundbreaking on 29 September 2026. Gives 13.5 to 49.3 ha, a harbour basin of 24 to 88.3 ha, 1,273 to 1,600 vessels, 61,300 to 124,000 t/yr landings, Rp48bn to Rp104bn PNBP, about 25,000 workers, a Rp1.27T contract with IsDB support and an end-2029 completion target.",
+            "claim": "status; location; investment; capacity; target; output"
+          }
+        ],
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "0",
+        "freshness_due": "2027-05-15"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.56,
+          -6.73
+        ]
+      },
+      "properties": {
+        "id": "port-ppn-kejawanan",
+        "name": "Kejawanan National Fishing Port",
+        "sector": "seaport",
+        "subsector": "fishing port",
+        "status": "under_construction",
+        "status_basis": "KKP held the groundbreaking on 17 September 2026.",
+        "corridor_id": "",
+        "island": "Java",
+        "province": "West Java",
+        "route": "Cirebon, West Java",
+        "length_km": "",
+        "operational_km": "",
+        "construction_km": "",
+        "progress_pct": "",
+        "investment_idr_t": "",
+        "capacity": "500",
+        "capacity_unit": "vessels",
+        "psn": "unknown",
+        "opened_year": "",
+        "opened_date": "",
+        "expected_open_year": "",
+        "status_as_of": "2026-09-18",
+        "verification": "official",
+        "precision": "approximate",
+        "operator": "tba",
+        "source_url": "https://www.kkp.go.id/news/news-detail/kkp-modernisasi-pelabuhan-perikanan-ppn-kejawanan-jadi-langkah-awal-6BEV.html",
+        "source_type": "official",
+        "retrieved_on": "2026-11-13",
+        "last_verified": "2026-11-13",
+        "notes": "KKP held the groundbreaking on 17 September 2026. It gives vessel capacity of 241 to 500, landings of 5,600 to 32,000 t/yr, workers of 2,900 to 8,000, and annual PNBP of Rp15bn to Rp53bn. No investment or completion date is stated. The current 226-row PSN register does not list the project, so psn=unknown.",
+        "corridor_name": "",
+        "aliases": [
+          "PPN Kejawanan"
+        ],
+        "indicators": [
+          {
+            "id": "ind-kejawanan-vessels",
+            "programme_id": "",
+            "project_id": "port-ppn-kejawanan",
+            "name_en": "Kejawanan vessel capacity",
+            "name_id": "Kapasitas kapal Kejawanan",
+            "unit": "vessels",
+            "direction": "increase",
+            "baseline_value": "",
+            "baseline_date": "",
+            "target_value": "",
+            "target_date": "",
+            "source_id": "src-kkp-ppn-kejawanan-2026-09-18",
+            "notes": "Up from 241 vessels.",
+            "source_publisher": "Kementerian Kelautan dan Perikanan (KKP)",
+            "source_title": "KKP Modernisasi Pelabuhan Perikanan, PPN Kejawanan Jadi Langkah Awal",
+            "source_url": "https://www.kkp.go.id/news/news-detail/kkp-modernisasi-pelabuhan-perikanan-ppn-kejawanan-jadi-langkah-awal-6BEV.html",
+            "values": [
+              {
+                "value": "500",
+                "as_of": "2026-09-18",
+                "source_id": "src-kkp-ppn-kejawanan-2026-09-18",
+                "source_title": "KKP Modernisasi Pelabuhan Perikanan, PPN Kejawanan Jadi Langkah Awal",
+                "source_url": "https://www.kkp.go.id/news/news-detail/kkp-modernisasi-pelabuhan-perikanan-ppn-kejawanan-jadi-langkah-awal-6BEV.html",
+                "notes": ""
+              }
+            ]
+          },
+          {
+            "id": "ind-kejawanan-landings",
+            "programme_id": "",
+            "project_id": "port-ppn-kejawanan",
+            "name_en": "Kejawanan fish landings",
+            "name_id": "Pendaratan ikan Kejawanan",
+            "unit": "t/yr",
+            "direction": "increase",
+            "baseline_value": "",
+            "baseline_date": "",
+            "target_value": "",
+            "target_date": "",
+            "source_id": "src-kkp-ppn-kejawanan-2026-09-18",
+            "notes": "Up from 5,600 t/yr.",
+            "source_publisher": "Kementerian Kelautan dan Perikanan (KKP)",
+            "source_title": "KKP Modernisasi Pelabuhan Perikanan, PPN Kejawanan Jadi Langkah Awal",
+            "source_url": "https://www.kkp.go.id/news/news-detail/kkp-modernisasi-pelabuhan-perikanan-ppn-kejawanan-jadi-langkah-awal-6BEV.html",
+            "values": [
+              {
+                "value": "32000",
+                "as_of": "2026-09-18",
+                "source_id": "src-kkp-ppn-kejawanan-2026-09-18",
+                "source_title": "KKP Modernisasi Pelabuhan Perikanan, PPN Kejawanan Jadi Langkah Awal",
+                "source_url": "https://www.kkp.go.id/news/news-detail/kkp-modernisasi-pelabuhan-perikanan-ppn-kejawanan-jadi-langkah-awal-6BEV.html",
+                "notes": ""
+              }
+            ]
+          },
+          {
+            "id": "ind-kejawanan-workers",
+            "programme_id": "",
+            "project_id": "port-ppn-kejawanan",
+            "name_en": "Kejawanan workers",
+            "name_id": "Tenaga kerja Kejawanan",
+            "unit": "workers",
+            "direction": "increase",
+            "baseline_value": "",
+            "baseline_date": "",
+            "target_value": "",
+            "target_date": "",
+            "source_id": "src-kkp-ppn-kejawanan-2026-09-18",
+            "notes": "Up from about 2,900.",
+            "source_publisher": "Kementerian Kelautan dan Perikanan (KKP)",
+            "source_title": "KKP Modernisasi Pelabuhan Perikanan, PPN Kejawanan Jadi Langkah Awal",
+            "source_url": "https://www.kkp.go.id/news/news-detail/kkp-modernisasi-pelabuhan-perikanan-ppn-kejawanan-jadi-langkah-awal-6BEV.html",
+            "values": [
+              {
+                "value": "8000",
+                "as_of": "2026-09-18",
+                "source_id": "src-kkp-ppn-kejawanan-2026-09-18",
+                "source_title": "KKP Modernisasi Pelabuhan Perikanan, PPN Kejawanan Jadi Langkah Awal",
+                "source_url": "https://www.kkp.go.id/news/news-detail/kkp-modernisasi-pelabuhan-perikanan-ppn-kejawanan-jadi-langkah-awal-6BEV.html",
+                "notes": ""
+              }
+            ]
+          },
+          {
+            "id": "ind-kejawanan-pnbp",
+            "programme_id": "",
+            "project_id": "port-ppn-kejawanan",
+            "name_en": "Kejawanan annual PNBP",
+            "name_id": "PNBP tahunan Kejawanan",
+            "unit": "IDR bn/yr",
+            "direction": "increase",
+            "baseline_value": "",
+            "baseline_date": "",
+            "target_value": "",
+            "target_date": "",
+            "source_id": "src-kkp-ppn-kejawanan-2026-09-18",
+            "notes": "Up from Rp15bn/yr.",
+            "source_publisher": "Kementerian Kelautan dan Perikanan (KKP)",
+            "source_title": "KKP Modernisasi Pelabuhan Perikanan, PPN Kejawanan Jadi Langkah Awal",
+            "source_url": "https://www.kkp.go.id/news/news-detail/kkp-modernisasi-pelabuhan-perikanan-ppn-kejawanan-jadi-langkah-awal-6BEV.html",
+            "values": [
+              {
+                "value": "53",
+                "as_of": "2026-09-18",
+                "source_id": "src-kkp-ppn-kejawanan-2026-09-18",
+                "source_title": "KKP Modernisasi Pelabuhan Perikanan, PPN Kejawanan Jadi Langkah Awal",
+                "source_url": "https://www.kkp.go.id/news/news-detail/kkp-modernisasi-pelabuhan-perikanan-ppn-kejawanan-jadi-langkah-awal-6BEV.html",
+                "notes": ""
+              }
+            ]
+          }
+        ],
+        "phases": [],
+        "sources": [
+          {
+            "id": "src-kkp-ppn-kejawanan-2026-09-18",
+            "publisher": "Kementerian Kelautan dan Perikanan (KKP)",
+            "title": "KKP Modernisasi Pelabuhan Perikanan, PPN Kejawanan Jadi Langkah Awal",
+            "url": "https://www.kkp.go.id/news/news-detail/kkp-modernisasi-pelabuhan-perikanan-ppn-kejawanan-jadi-langkah-awal-6BEV.html",
+            "published_on": "2026-09-18",
+            "retrieved_on": "2026-11-13",
+            "source_type": "official",
+            "language": "id",
+            "archive_path": "data/raw/2026-11-13/kkp_ppn_kejawanan_2026-09-18.html",
+            "notes": "Groundbreaking on 17 September 2026. Gives 241 to 500 vessels, 5,600 to 32,000 t/yr landings, 2,900 to 8,000 workers and Rp15bn to Rp53bn annual PNBP. No investment or completion date is stated.",
+            "claim": "status; location; capacity; output"
+          }
+        ],
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "0",
+        "freshness_due": "2027-05-15"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.3,
+          -6.3
+        ]
+      },
+      "properties": {
+        "id": "factory-catib-karawang",
+        "name": "CATIB EV Battery Cell Plant, Karawang",
+        "sector": "factory",
+        "subsector": "battery",
+        "status": "operating",
+        "status_basis": "ESDM reports construction is complete and the plant has started gradual operation; the official inauguration was awaiting a presidential schedule.",
+        "corridor_id": "",
+        "island": "Java",
+        "province": "West Java",
+        "route": "Artha Industrial Hills, Karawang, West Java",
+        "length_km": "",
+        "operational_km": "",
+        "construction_km": "",
+        "progress_pct": "",
+        "investment_idr_t": "7",
+        "capacity": "6.9",
+        "capacity_unit": "GWh/yr",
+        "psn": "unknown",
+        "opened_year": "2026",
+        "opened_date": "",
+        "expected_open_year": "",
+        "status_as_of": "2026-08-21",
+        "verification": "single",
+        "precision": "approximate",
+        "operator": "tba",
+        "source_url": "https://www.antaranews.com/berita/5705060/esdm-sebut-pembangunan-pabrik-baterai-ev-di-karawang-sudah-rampung",
+        "source_type": "secondary",
+        "retrieved_on": "2026-11-13",
+        "last_verified": "2026-11-13",
+        "notes": "ANTARA quotes the ESDM Secretary General and a CATIB director: construction of the 6.9 GWh/yr plant is complete, gradual operation has started, and the inauguration was awaiting a presidential schedule. It gives an investment of about Rp7T, an 18 MWh PLTS and about 3,000 workers. PT CATIB is a joint venture of Indonesia Battery Corporation and the CATL-Brunp-Lygend consortium. The plant is part of the integrated EV battery ecosystem whose groundbreaking was on 29 June 2025; the ecosystem is described as a PSN but CATIB is absent from the current 226-row register, so psn=unknown.",
+        "corridor_name": "",
+        "aliases": [
+          "Pabrik Baterai EV Karawang",
+          "PT CATIB"
+        ],
+        "indicators": [
+          {
+            "id": "ind-catib-capacity",
+            "programme_id": "",
+            "project_id": "factory-catib-karawang",
+            "name_en": "CATIB phase 1 capacity",
+            "name_id": "Kapasitas tahap 1 CATIB",
+            "unit": "GWh/yr",
+            "direction": "increase",
+            "baseline_value": "",
+            "baseline_date": "",
+            "target_value": "",
+            "target_date": "",
+            "source_id": "src-antara-catib-karawang-2026-08-21",
+            "notes": "Phase 1 battery cell capacity.",
+            "source_publisher": "ANTARA News",
+            "source_title": "ESDM sebut pembangunan pabrik baterai EV di Karawang sudah rampung",
+            "source_url": "https://www.antaranews.com/berita/5705060/esdm-sebut-pembangunan-pabrik-baterai-ev-di-karawang-sudah-rampung",
+            "values": [
+              {
+                "value": "6.9",
+                "as_of": "2026-08-21",
+                "source_id": "src-antara-catib-karawang-2026-08-21",
+                "source_title": "ESDM sebut pembangunan pabrik baterai EV di Karawang sudah rampung",
+                "source_url": "https://www.antaranews.com/berita/5705060/esdm-sebut-pembangunan-pabrik-baterai-ev-di-karawang-sudah-rampung",
+                "notes": ""
+              }
+            ]
+          },
+          {
+            "id": "ind-catib-workers",
+            "programme_id": "",
+            "project_id": "factory-catib-karawang",
+            "name_en": "CATIB workers",
+            "name_id": "Tenaga kerja CATIB",
+            "unit": "workers",
+            "direction": "increase",
+            "baseline_value": "",
+            "baseline_date": "",
+            "target_value": "",
+            "target_date": "",
+            "source_id": "src-antara-catib-karawang-2026-08-21",
+            "notes": "About 3,000 workers at full operation.",
+            "source_publisher": "ANTARA News",
+            "source_title": "ESDM sebut pembangunan pabrik baterai EV di Karawang sudah rampung",
+            "source_url": "https://www.antaranews.com/berita/5705060/esdm-sebut-pembangunan-pabrik-baterai-ev-di-karawang-sudah-rampung",
+            "values": [
+              {
+                "value": "3000",
+                "as_of": "2026-08-21",
+                "source_id": "src-antara-catib-karawang-2026-08-21",
+                "source_title": "ESDM sebut pembangunan pabrik baterai EV di Karawang sudah rampung",
+                "source_url": "https://www.antaranews.com/berita/5705060/esdm-sebut-pembangunan-pabrik-baterai-ev-di-karawang-sudah-rampung",
+                "notes": ""
+              }
+            ]
+          },
+          {
+            "id": "ind-catib-solar",
+            "programme_id": "",
+            "project_id": "factory-catib-karawang",
+            "name_en": "CATIB on-site solar capacity",
+            "name_id": "Kapasitas PLTS CATIB",
+            "unit": "MWh",
+            "direction": "increase",
+            "baseline_value": "",
+            "baseline_date": "",
+            "target_value": "",
+            "target_date": "",
+            "source_id": "src-antara-catib-karawang-2026-08-21",
+            "notes": "18 MWh PLTS for operations.",
+            "source_publisher": "ANTARA News",
+            "source_title": "ESDM sebut pembangunan pabrik baterai EV di Karawang sudah rampung",
+            "source_url": "https://www.antaranews.com/berita/5705060/esdm-sebut-pembangunan-pabrik-baterai-ev-di-karawang-sudah-rampung",
+            "values": [
+              {
+                "value": "18",
+                "as_of": "2026-08-21",
+                "source_id": "src-antara-catib-karawang-2026-08-21",
+                "source_title": "ESDM sebut pembangunan pabrik baterai EV di Karawang sudah rampung",
+                "source_url": "https://www.antaranews.com/berita/5705060/esdm-sebut-pembangunan-pabrik-baterai-ev-di-karawang-sudah-rampung",
+                "notes": ""
+              }
+            ]
+          }
+        ],
+        "phases": [],
+        "sources": [
+          {
+            "id": "src-antara-catib-karawang-2026-08-21",
+            "publisher": "ANTARA News",
+            "title": "ESDM sebut pembangunan pabrik baterai EV di Karawang sudah rampung",
+            "url": "https://www.antaranews.com/berita/5705060/esdm-sebut-pembangunan-pabrik-baterai-ev-di-karawang-sudah-rampung",
+            "published_on": "2026-08-21",
+            "retrieved_on": "2026-11-13",
+            "source_type": "secondary",
+            "language": "id",
+            "archive_path": "data/raw/2026-11-13/antara_catib_karawang_2026-08-21.html",
+            "notes": "Quotes the ESDM Secretary General and a CATIB director. Gives a completed 6.9 GWh/yr plant, gradual operation, about Rp7T, an 18 MWh PLTS and about 3,000 workers; the inauguration was awaiting a presidential schedule.",
+            "claim": "status; location; capacity; investment; output; operator; opening"
+          }
+        ],
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "0",
+        "freshness_due": "2027-05-15"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          118.09,
+          -2.5
+        ]
+      },
+      "properties": {
+        "id": "energy-b50-biodiesel",
+        "name": "B50 Biodiesel Programme",
+        "sector": "energy",
+        "subsector": "biofuel",
+        "status": "operating",
+        "status_basis": "ESDM launched B50 on 9 July 2026 and the 50% blend mandate is in force.",
+        "corridor_id": "",
+        "island": "National",
+        "province": "Indonesia",
+        "route": "National",
+        "length_km": "",
+        "operational_km": "",
+        "construction_km": "",
+        "progress_pct": "",
+        "investment_idr_t": "",
+        "capacity": "",
+        "capacity_unit": "",
+        "psn": "no",
+        "opened_year": "2026",
+        "opened_date": "2026-07-09",
+        "expected_open_year": "",
+        "status_as_of": "2026-07-10",
+        "verification": "official",
+        "precision": "province",
+        "operator": "tba",
+        "source_url": "https://www.esdm.go.id/id/media-center/arsip-berita/b50-diluncurkan-pemerintah-targetkan-hemat-devisa-rp170-triliun-dan-stop-impor-solar",
+        "source_type": "official",
+        "retrieved_on": "2026-11-13",
+        "last_verified": "2026-11-13",
+        "notes": "ESDM launched B50 on 9 July 2026. The programme blends 50% biodiesel into diesel and is projected to save Rp170T of foreign exchange, raise CPO demand from 15.2 to 16.3 Mt, lift CPO value added from Rp20.92T to Rp23.49T, raise workers from 1.8 to 2.1 million, and cut emissions from 39.66 to 44.46 Mt CO2. National diesel consumption is 38-40 million kL/yr, with 3-4 million kL previously imported. This is a national programme-level record, not a single facility. The map point is a national centroid, not a site.",
+        "corridor_name": "",
+        "aliases": [
+          "B50",
+          "Biodiesel B50"
+        ],
+        "indicators": [
+          {
+            "id": "ind-b50-fx-saving",
+            "programme_id": "",
+            "project_id": "energy-b50-biodiesel",
+            "name_en": "B50 foreign-exchange saving",
+            "name_id": "Penghematan devisa B50",
+            "unit": "IDR T/yr",
+            "direction": "increase",
+            "baseline_value": "",
+            "baseline_date": "",
+            "target_value": "",
+            "target_date": "",
+            "source_id": "src-esdm-b50-2026-07-10",
+            "notes": "Projected saving from ending diesel imports.",
+            "source_publisher": "Kementerian Energi dan Sumber Daya Mineral (ESDM)",
+            "source_title": "B50 Diluncurkan, Pemerintah Targetkan Hemat Devisa Rp170 Triliun dan Stop Impor Solar",
+            "source_url": "https://www.esdm.go.id/id/media-center/arsip-berita/b50-diluncurkan-pemerintah-targetkan-hemat-devisa-rp170-triliun-dan-stop-impor-solar",
+            "values": [
+              {
+                "value": "170",
+                "as_of": "2026-07-10",
+                "source_id": "src-esdm-b50-2026-07-10",
+                "source_title": "B50 Diluncurkan, Pemerintah Targetkan Hemat Devisa Rp170 Triliun dan Stop Impor Solar",
+                "source_url": "https://www.esdm.go.id/id/media-center/arsip-berita/b50-diluncurkan-pemerintah-targetkan-hemat-devisa-rp170-triliun-dan-stop-impor-solar",
+                "notes": ""
+              }
+            ]
+          },
+          {
+            "id": "ind-b50-workers",
+            "programme_id": "",
+            "project_id": "energy-b50-biodiesel",
+            "name_en": "B50 workers",
+            "name_id": "Tenaga kerja B50",
+            "unit": "million workers",
+            "direction": "increase",
+            "baseline_value": "",
+            "baseline_date": "",
+            "target_value": "",
+            "target_date": "",
+            "source_id": "src-esdm-b50-2026-07-10",
+            "notes": "Up from 1.8 million under B40.",
+            "source_publisher": "Kementerian Energi dan Sumber Daya Mineral (ESDM)",
+            "source_title": "B50 Diluncurkan, Pemerintah Targetkan Hemat Devisa Rp170 Triliun dan Stop Impor Solar",
+            "source_url": "https://www.esdm.go.id/id/media-center/arsip-berita/b50-diluncurkan-pemerintah-targetkan-hemat-devisa-rp170-triliun-dan-stop-impor-solar",
+            "values": [
+              {
+                "value": "2.1",
+                "as_of": "2026-07-10",
+                "source_id": "src-esdm-b50-2026-07-10",
+                "source_title": "B50 Diluncurkan, Pemerintah Targetkan Hemat Devisa Rp170 Triliun dan Stop Impor Solar",
+                "source_url": "https://www.esdm.go.id/id/media-center/arsip-berita/b50-diluncurkan-pemerintah-targetkan-hemat-devisa-rp170-triliun-dan-stop-impor-solar",
+                "notes": ""
+              }
+            ]
+          },
+          {
+            "id": "ind-b50-emissions",
+            "programme_id": "",
+            "project_id": "energy-b50-biodiesel",
+            "name_en": "B50 emissions reduction",
+            "name_id": "Penurunan emisi B50",
+            "unit": "Mt CO2/yr",
+            "direction": "increase",
+            "baseline_value": "",
+            "baseline_date": "",
+            "target_value": "",
+            "target_date": "",
+            "source_id": "src-esdm-b50-2026-07-10",
+            "notes": "Up from 39.66 Mt under B40.",
+            "source_publisher": "Kementerian Energi dan Sumber Daya Mineral (ESDM)",
+            "source_title": "B50 Diluncurkan, Pemerintah Targetkan Hemat Devisa Rp170 Triliun dan Stop Impor Solar",
+            "source_url": "https://www.esdm.go.id/id/media-center/arsip-berita/b50-diluncurkan-pemerintah-targetkan-hemat-devisa-rp170-triliun-dan-stop-impor-solar",
+            "values": [
+              {
+                "value": "44.46",
+                "as_of": "2026-07-10",
+                "source_id": "src-esdm-b50-2026-07-10",
+                "source_title": "B50 Diluncurkan, Pemerintah Targetkan Hemat Devisa Rp170 Triliun dan Stop Impor Solar",
+                "source_url": "https://www.esdm.go.id/id/media-center/arsip-berita/b50-diluncurkan-pemerintah-targetkan-hemat-devisa-rp170-triliun-dan-stop-impor-solar",
+                "notes": ""
+              }
+            ]
+          }
+        ],
+        "phases": [],
+        "sources": [
+          {
+            "id": "src-esdm-b50-2026-07-10",
+            "publisher": "Kementerian Energi dan Sumber Daya Mineral (ESDM)",
+            "title": "B50 Diluncurkan, Pemerintah Targetkan Hemat Devisa Rp170 Triliun dan Stop Impor Solar",
+            "url": "https://www.esdm.go.id/id/media-center/arsip-berita/b50-diluncurkan-pemerintah-targetkan-hemat-devisa-rp170-triliun-dan-stop-impor-solar",
+            "published_on": "2026-07-10",
+            "retrieved_on": "2026-11-13",
+            "source_type": "official",
+            "language": "id",
+            "archive_path": "data/raw/2026-11-13/esdm_b50_2026-07-10.html",
+            "notes": "Launch on 9 July 2026. Gives a 50% blend, Rp170T foreign-exchange saving, CPO demand of 15.2 to 16.3 Mt, value added of Rp20.92T to Rp23.49T, 1.8 to 2.1 million workers, 39.66 to 44.46 Mt CO2, and 38-40 million kL/yr diesel consumption.",
+            "claim": "status; opening; location; design capacity; target; output"
+          }
+        ],
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "0",
+        "freshness_due": "2027-05-15"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          119.53,
+          -4.58
+        ]
+      },
+      "properties": {
+        "id": "rail-trans-sulawesi",
+        "name": "Trans Sulawesi Railway",
+        "sector": "railway",
+        "subsector": "intercity rail",
+        "status": "under_construction",
+        "status_basis": "Kemenhub describes the Makassar-Manado Trans Sulawesi railway as a mega-project; the 90 km Maros-Barru section is operating while the wider corridor remains under construction.",
+        "corridor_id": "",
+        "island": "Sulawesi",
+        "province": "South Sulawesi",
+        "route": "Makassar-Parepare-Manado, Sulawesi",
+        "length_km": "",
+        "operational_km": "",
+        "construction_km": "",
+        "progress_pct": "",
+        "investment_idr_t": "",
+        "capacity": "",
+        "capacity_unit": "",
+        "psn": "unknown",
+        "opened_year": "",
+        "opened_date": "",
+        "expected_open_year": "",
+        "status_as_of": "2026-06-12",
+        "verification": "official",
+        "precision": "approximate",
+        "operator": "tba",
+        "source_url": "https://www.kemenhub.go.id/index.php/post/read/kemenhub-terus-percepat-pembangunan-jaringan-kereta-api-nasional",
+        "source_type": "official",
+        "retrieved_on": "2026-11-13",
+        "last_verified": "2026-11-13",
+        "notes": "Kemenhub describes the Makassar-Manado Trans Sulawesi railway as a mega-project and the 150 km Makassar-Parepare section as its first part. By April 2023, 118 km of the 157.7 km Makassar-Parepare alignment had been built and 90 km of the Maros-Barru section was operating. Kemenhub still listed completion of Makassar-Parepare operations as a priority in June 2026. This umbrella record covers the operating segment and planned extensions. The PSN register lists only the Makassar-Parepare stage (No. 73), so psn=unknown. The map point is Makassar, the southern terminus.",
+        "corridor_name": "",
+        "aliases": [
+          "Jalan Baja Trans Sulawesi",
+          "KA Trans Sulawesi"
+        ],
+        "indicators": [
+          {
+            "id": "ind-trans-sulawesi-operating",
+            "programme_id": "",
+            "project_id": "rail-trans-sulawesi",
+            "name_en": "Trans Sulawesi operating length",
+            "name_id": "Panjang Trans Sulawesi beroperasi",
+            "unit": "km",
+            "direction": "increase",
+            "baseline_value": "",
+            "baseline_date": "",
+            "target_value": "",
+            "target_date": "",
+            "source_id": "src-kemenhub-trans-sulawesi-2023-04-05",
+            "notes": "90 km of the Maros-Barru section operating.",
+            "source_publisher": "Kementerian Perhubungan (Kemenhub)",
+            "source_title": "Kereta Api dan Mimpi Rakyat Sulawesi",
+            "source_url": "https://kemenhub.go.id/post/read/kereta-api-dan-mimpi-rakyat-sulawesi",
+            "values": [
+              {
+                "value": "90",
+                "as_of": "2023-04-05",
+                "source_id": "src-kemenhub-trans-sulawesi-2023-04-05",
+                "source_title": "Kereta Api dan Mimpi Rakyat Sulawesi",
+                "source_url": "https://kemenhub.go.id/post/read/kereta-api-dan-mimpi-rakyat-sulawesi",
+                "notes": ""
+              }
+            ]
+          },
+          {
+            "id": "ind-trans-sulawesi-built",
+            "programme_id": "",
+            "project_id": "rail-trans-sulawesi",
+            "name_en": "Trans Sulawesi built length",
+            "name_id": "Panjang Trans Sulawesi terbangun",
+            "unit": "km",
+            "direction": "increase",
+            "baseline_value": "",
+            "baseline_date": "",
+            "target_value": "",
+            "target_date": "",
+            "source_id": "src-kemenhub-trans-sulawesi-2023-04-05",
+            "notes": "118 km built of the 157.7 km Makassar-Parepare alignment.",
+            "source_publisher": "Kementerian Perhubungan (Kemenhub)",
+            "source_title": "Kereta Api dan Mimpi Rakyat Sulawesi",
+            "source_url": "https://kemenhub.go.id/post/read/kereta-api-dan-mimpi-rakyat-sulawesi",
+            "values": [
+              {
+                "value": "118",
+                "as_of": "2023-04-05",
+                "source_id": "src-kemenhub-trans-sulawesi-2023-04-05",
+                "source_title": "Kereta Api dan Mimpi Rakyat Sulawesi",
+                "source_url": "https://kemenhub.go.id/post/read/kereta-api-dan-mimpi-rakyat-sulawesi",
+                "notes": ""
+              }
+            ]
+          },
+          {
+            "id": "ind-trans-sulawesi-segment",
+            "programme_id": "",
+            "project_id": "rail-trans-sulawesi",
+            "name_en": "Makassar-Parepare segment length",
+            "name_id": "Panjang ruas Makassar-Parepare",
+            "unit": "km",
+            "direction": "increase",
+            "baseline_value": "",
+            "baseline_date": "",
+            "target_value": "",
+            "target_date": "",
+            "source_id": "src-kemenhub-trans-sulawesi-2023-04-05",
+            "notes": "150 km Makassar-Parepare section.",
+            "source_publisher": "Kementerian Perhubungan (Kemenhub)",
+            "source_title": "Kereta Api dan Mimpi Rakyat Sulawesi",
+            "source_url": "https://kemenhub.go.id/post/read/kereta-api-dan-mimpi-rakyat-sulawesi",
+            "values": [
+              {
+                "value": "150",
+                "as_of": "2023-04-05",
+                "source_id": "src-kemenhub-trans-sulawesi-2023-04-05",
+                "source_title": "Kereta Api dan Mimpi Rakyat Sulawesi",
+                "source_url": "https://kemenhub.go.id/post/read/kereta-api-dan-mimpi-rakyat-sulawesi",
+                "notes": ""
+              }
+            ]
+          }
+        ],
+        "phases": [],
+        "sources": [
+          {
+            "id": "src-kemenhub-rail-network-2026-06-12",
+            "publisher": "Kementerian Perhubungan (Kemenhub)",
+            "title": "Kemenhub Terus Percepat Pembangunan Jaringan Kereta Api Nasional",
+            "url": "https://www.kemenhub.go.id/index.php/post/read/kemenhub-terus-percepat-pembangunan-jaringan-kereta-api-nasional",
+            "published_on": "2026-06-12",
+            "retrieved_on": "2026-11-13",
+            "source_type": "official",
+            "language": "id",
+            "archive_path": "data/raw/2026-11-13/kemenhub_rail_network_2026-06-12.html",
+            "notes": "Confirms that completion of Makassar-Parepare operations remains a priority. Gives a 6,927 km active national network and a 10,524 km target.",
+            "claim": "status"
+          },
+          {
+            "id": "src-kemenhub-trans-sulawesi-2023-04-05",
+            "publisher": "Kementerian Perhubungan (Kemenhub)",
+            "title": "Kereta Api dan Mimpi Rakyat Sulawesi",
+            "url": "https://kemenhub.go.id/post/read/kereta-api-dan-mimpi-rakyat-sulawesi",
+            "published_on": "2023-04-05",
+            "retrieved_on": "2026-11-13",
+            "source_type": "official",
+            "language": "id",
+            "archive_path": "data/raw/2026-11-13/kemenhub_trans_sulawesi_2023-04-05.html",
+            "notes": "Describes the Makassar-Manado Trans Sulawesi railway, the 150 km Makassar-Parepare section, 118 km built, 90 km of Maros-Barru operating, and a 157.7 km Makassar-Parepare alignment including 15.7 km of siding track.",
+            "claim": "status; location; operational; progress; length"
+          }
+        ],
+        "events": [],
+        "freshness_state": "fresh",
+        "freshness_age_days": "0",
+        "freshness_due": "2027-05-15"
+      }
     }
   ]
 }

@@ -1329,3 +1329,95 @@ grid-cilegon-ibt-4,src-esdm-37-projects-2025-01-20,status,recently_completed,202
 grid-cilegon-ibt-4,src-esdm-37-projects-2025-01-20,location,"Cilegon, Banten",2025-01-20,
 grid-cilegon-ibt-4,src-esdm-37-projects-2025-01-20,opening,2025-01-20,2025-01-20,Inauguration date.
 grid-cilegon-ibt-4,src-esdm-37-projects-2025-01-20,operator,PT PLN (Persero),2025-01-20,PLN operates the transmission and substation network named in the ESDM list.
+rail-shia-express,src-kppip-shia-express-2026-11-13,status,operating,2026-11-13,Page says the airport train has operated since the end of 2018.
+rail-shia-express,src-kppip-shia-express-2026-11-13,location,"Soekarno-Hatta International Airport-central Jakarta, DKI Jakarta-Banten",2026-11-13,
+rail-shia-express,src-kppip-shia-express-2026-11-13,investment,Rp24.5T,2026-11-13,
+factory-bontang-refinery,src-kppip-bontang-refinery-2026-11-13,status,planned,2026-11-13,Page status is Tahap Transaksi.
+factory-bontang-refinery,src-kppip-bontang-refinery-2026-11-13,location,"Bontang, East Kalimantan",2026-11-13,
+factory-bontang-refinery,src-kppip-bontang-refinery-2026-11-13,investment,Rp197.586T,2026-11-13,
+factory-bontang-refinery,src-kppip-bontang-refinery-2026-11-13,capacity,"at least 300,000 bpd",2026-11-13,"The page says a minimum of 300,000 barrels per day."
+factory-bontang-refinery,src-kppip-bontang-refinery-2026-11-13,target,2027,2026-11-13,Planned start of operation.
+grid-sumatra-500kv,src-kppip-sumatra-500kv-2026-11-13,status,under_construction,2026-11-13,Page status is Tahap Konstruksi.
+grid-sumatra-500kv,src-kppip-sumatra-500kv-2026-11-13,location,"Muara Enim, South Sumatra-Langsa, Aceh",2026-11-13,
+grid-sumatra-500kv,src-kppip-sumatra-500kv-2026-11-13,length,"1,330 km",2026-11-13,
+grid-sumatra-500kv,src-kppip-sumatra-500kv-2026-11-13,investment,Rp24.4T,2026-11-13,
+grid-sumatra-500kv,src-kppip-sumatra-500kv-2026-11-13,operator,PT PLN (Persero),2026-11-13,PLN is the responsible party named on the page.
+grid-central-west-java-500kv,src-kppip-central-west-java-500kv-2026-11-13,status,operating (partially),2026-11-13,Page status is Beroperasi Sebagian; the page does not say which sections are energised.
+grid-central-west-java-500kv,src-kppip-central-west-java-500kv-2026-11-13,location,"Tanjung Jati-Ungaran/Pedan-Mandirancan-Indramayu-Cibatu, Central Java-West Java",2026-11-13,
+grid-central-west-java-500kv,src-kppip-central-west-java-500kv-2026-11-13,length,981 km across four sections,2026-11-13,144 + 397 + 180 + 260 km.
+grid-central-west-java-500kv,src-kppip-central-west-java-500kv-2026-11-13,investment,Rp7.64T,2026-11-13,
+grid-central-west-java-500kv,src-kppip-central-west-java-500kv-2026-11-13,operator,PT PLN (Persero),2026-11-13,PLN is the responsible party named on the page.
+power-pltu-indramayu,src-kppip-pltu-indramayu-2026-11-13,status,planned,2026-11-13,Page status is Tahap Penyiapan.
+power-pltu-indramayu,src-kppip-pltu-indramayu-2026-11-13,location,"Indramayu, West Java",2026-11-13,
+power-pltu-indramayu,src-kppip-pltu-indramayu-2026-11-13,capacity,"1,000 MW",2026-11-13,
+power-pltu-indramayu,src-kppip-pltu-indramayu-2026-11-13,investment,Rp29.5T,2026-11-13,
+power-pltu-indramayu,src-kppip-pltu-indramayu-2026-11-13,target,2026,2026-11-13,Planned start of operation; the page still shows preparation.
+power-pltu-batang,src-bpi-pltu-batang-cod-2022-09-06,status,operating,2022-09-06,Both units are in commercial operation.
+power-pltu-batang,src-bpi-pltu-batang-cod-2022-09-06,capacity,"2 x 1,000 MW",2022-09-06,Ultra Super Critical technology.
+power-pltu-batang,src-bpi-pltu-batang-cod-2022-09-06,opening,2022-08-31,2022-09-06,Unit 1 on 15 August 2022; Unit 2 on 31 August 2022.
+power-pltu-batang,src-bpi-pltu-batang-cod-2022-09-06,operator,PT Bhimasena Power Indonesia,2022-09-06,BPI operates the plant and sells electricity to PLN for 25 years.
+power-pltu-batang,src-kppip-pltu-batang-2026-11-13,investment,Rp56.7T,2026-11-13,
+power-pltu-batang,src-kppip-pltu-batang-2026-11-13,capacity,"2 x 1,000 MW",2026-11-13,
+power-pltu-batang,src-kppip-pltu-batang-2026-11-13,location,"Batang, Central Java",2026-11-13,
+port-cbl-inland-waterway,src-kppip-cbl-2026-11-13,status,planned,2026-11-13,Page status is Tahap Penyiapan.
+port-cbl-inland-waterway,src-kppip-cbl-2026-11-13,location,"Cikarang-Bekasi-Marunda, DKI Jakarta-West Java",2026-11-13,
+port-cbl-inland-waterway,src-kppip-cbl-2026-11-13,investment,Rp3.41T,2026-11-13,
+airport-north-bali,src-kppip-north-bali-airport-2026-11-13,status,planned,2026-11-13,Page status is Penyiapan.
+airport-north-bali,src-kppip-north-bali-airport-2026-11-13,location,North Bali,2026-11-13,
+airport-kertajati,src-kemenhub-kertajati-2023-11-01,status,operating,2023-11-01,Fully operated from 29 October 2023.
+airport-kertajati,src-kemenhub-kertajati-2023-11-01,opening,2023-10-29,2023-11-01,Full operation date.
+airport-kertajati,src-kemenhub-kertajati-2023-11-01,capacity,5.6-12 million passengers/year,2023-11-01,Projected range to 2024; the project row records the upper bound.
+airport-kertajati,src-kemenhub-kertajati-2023-11-01,location,"Kertajati, West Java",2023-11-01,
+power-batang-toru,src-esdm-batang-toru-2026-10-10,status,under_construction,2026-10-10,Reservoir impounding began on 9 October 2026; not yet commercially operating.
+power-batang-toru,src-esdm-batang-toru-2026-10-10,location,"Batang Toru River, Tapanuli Selatan, North Sumatra",2026-10-10,
+power-batang-toru,src-esdm-batang-toru-2026-10-10,capacity,510 MW (4x127.5 MW),2026-10-10,
+power-batang-toru,src-esdm-batang-toru-2026-10-10,investment,Rp21.6T,2026-10-10,
+power-batang-toru,src-esdm-batang-toru-2026-10-10,target,operation around the 2026 Christmas-New Year period,2026-10-10,No exact date is stated.
+power-batang-toru,src-esdm-batang-toru-2026-10-10,design capacity,160 MW second phase under study,2026-10-10,
+flood-sodetan-ciliwung,src-pu-sodetan-ciliwung-2023-08-01,status,operating,2023-08-01,Inaugurated on 31 July 2023.
+flood-sodetan-ciliwung,src-pu-sodetan-ciliwung-2023-08-01,opening,2023-07-31,2023-08-01,Inauguration date.
+flood-sodetan-ciliwung,src-pu-sodetan-ciliwung-2023-08-01,length,"1,268 m",2023-08-01,
+flood-sodetan-ciliwung,src-pu-sodetan-ciliwung-2023-08-01,capacity,60 m3/s,2023-08-01,Two 3.5 m pipes.
+flood-sodetan-ciliwung,src-pu-sodetan-ciliwung-2023-08-01,investment,about Rp1.2T,2023-08-01,
+flood-sodetan-ciliwung,src-pu-sodetan-ciliwung-2023-08-01,location,"Ciliwung River-Kanal Banjir Timur/Kali Cipinang, Jakarta",2023-08-01,
+flood-ciliwung-normalisation,src-pu-ciliwung-normalisation-2023-02-21,status,under_construction,2023-02-21,16.19 km of 33 km completed; the remaining 17 km were targeted for the end of 2024.
+flood-ciliwung-normalisation,src-pu-ciliwung-normalisation-2023-02-21,location,"Ciliwung River, Jakarta",2023-02-21,
+flood-ciliwung-normalisation,src-pu-ciliwung-normalisation-2023-02-21,length,33 km,2023-02-21,
+flood-ciliwung-normalisation,src-pu-ciliwung-normalisation-2023-02-21,operational,16.19 km completed,2023-02-21,
+flood-ciliwung-normalisation,src-pu-ciliwung-normalisation-2023-02-21,capacity,570 m3/s after normalisation,2023-02-21,Up from 200 m3/s.
+flood-ciliwung-normalisation,src-pu-ciliwung-normalisation-2023-02-21,progress,16.19 km of 33 km,2023-02-21,
+port-ppn-pengambengan,src-kkp-ppn-pengambengan-2026-09-29,status,under_construction,2026-09-29,Groundbreaking on 29 September 2026.
+port-ppn-pengambengan,src-kkp-ppn-pengambengan-2026-09-29,location,"Jembrana, Bali",2026-09-29,
+port-ppn-pengambengan,src-kkp-ppn-pengambengan-2026-09-29,investment,Rp1.27T contract,2026-09-29,Islamic Development Bank support.
+port-ppn-pengambengan,src-kkp-ppn-pengambengan-2026-09-29,capacity,"1,600 vessels",2026-09-29,"Up from 1,273 vessels."
+port-ppn-pengambengan,src-kkp-ppn-pengambengan-2026-09-29,target,end-2029,2026-09-29,Projected completion.
+port-ppn-pengambengan,src-kkp-ppn-pengambengan-2026-09-29,output,"124,000 t/yr landings",2026-09-29,"Up from 61,300 t/yr."
+port-ppn-kejawanan,src-kkp-ppn-kejawanan-2026-09-18,status,under_construction,2026-09-18,Groundbreaking on 17 September 2026.
+port-ppn-kejawanan,src-kkp-ppn-kejawanan-2026-09-18,location,"Cirebon, West Java",2026-09-18,
+port-ppn-kejawanan,src-kkp-ppn-kejawanan-2026-09-18,capacity,500 vessels,2026-09-18,Up from 241 vessels.
+port-ppn-kejawanan,src-kkp-ppn-kejawanan-2026-09-18,output,"32,000 t/yr landings",2026-09-18,"Up from 5,600 t/yr."
+factory-catib-karawang,src-antara-catib-karawang-2026-08-21,status,operating (gradual),2026-08-21,Construction complete; gradual operation started; inauguration awaiting a presidential schedule.
+factory-catib-karawang,src-antara-catib-karawang-2026-08-21,location,"Artha Industrial Hills, Karawang, West Java",2026-08-21,
+factory-catib-karawang,src-antara-catib-karawang-2026-08-21,capacity,6.9 GWh/yr,2026-08-21,
+factory-catib-karawang,src-antara-catib-karawang-2026-08-21,investment,about Rp7T,2026-08-21,
+factory-catib-karawang,src-antara-catib-karawang-2026-08-21,output,18 MWh PLTS,2026-08-21,On-site solar plant for operations.
+energy-b50-biodiesel,src-esdm-b50-2026-07-10,status,operating,2026-07-10,Launched on 9 July 2026.
+energy-b50-biodiesel,src-esdm-b50-2026-07-10,opening,2026-07-09,2026-07-10,Launch date.
+energy-b50-biodiesel,src-esdm-b50-2026-07-10,location,Indonesia,2026-07-10,
+energy-b50-biodiesel,src-esdm-b50-2026-07-10,design capacity,50% biodiesel blend,2026-07-10,
+energy-b50-biodiesel,src-esdm-b50-2026-07-10,target,Rp170T foreign-exchange saving,2026-07-10,
+energy-b50-biodiesel,src-esdm-b50-2026-07-10,output,44.46 Mt CO2 reduction,2026-07-10,Up from 39.66 Mt under B40.
+rail-trans-sulawesi,src-kemenhub-rail-network-2026-06-12,status,under_construction,2026-06-12,Kemenhub still lists completion of Makassar-Parepare operations as a priority.
+rail-trans-sulawesi,src-kemenhub-trans-sulawesi-2023-04-05,status,under_construction,2023-04-05,Umbrella over the operating Maros-Barru segment and planned extensions.
+rail-trans-sulawesi,src-kemenhub-trans-sulawesi-2023-04-05,location,"Makassar-Parepare-Manado, Sulawesi",2023-04-05,
+rail-trans-sulawesi,src-kemenhub-trans-sulawesi-2023-04-05,operational,90 km Maros-Barru operating,2023-04-05,
+rail-trans-sulawesi,src-kemenhub-trans-sulawesi-2023-04-05,progress,118 km built of the 157.7 km Makassar-Parepare section,2023-04-05,
+rail-trans-sulawesi,src-kemenhub-trans-sulawesi-2023-04-05,length,150 km Makassar-Parepare section,2023-04-05,
+power-pltu-indramayu,src-kppip-pltu-indramayu-2026-11-13,operator,PT PLN (Persero),2026-11-13,PLN is the responsible party named on the page.
+port-cbl-inland-waterway,src-kppip-cbl-2026-11-13,operator,PT Pelabuhan Indonesia II,2026-11-13,Pelindo II is the responsible party named on the page.
+airport-kertajati,src-kemenhub-kertajati-2023-11-01,length,"3,000 m x 60 m runway",2023-11-01,The terminal areas are recorded as an indicator.
+power-batang-toru,src-esdm-batang-toru-2026-10-10,operator,PT North Sumatera Hydro Energy (NSHE),2026-10-10,ESDM calls NSHE the developer; the claim is recorded as the operating company because 'developer' is not a claim type.
+factory-catib-karawang,src-antara-catib-karawang-2026-08-21,operator,PT Contemporary Amperex Technology Indonesia Battery (CATIB),2026-08-21,The project company operates the plant; the workforce is recorded as an indicator.
+rail-shia-express,src-kppip-shia-express-2026-11-13,opening,end of 2018,2026-11-13,The page says the airport train has operated since the end of 2018; no exact date is stated.
+grid-central-west-java-500kv,src-kppip-central-west-java-500kv-2026-11-13,opening,2019 (planned start of operation),2026-11-13,The page says the project is partially operating and gives a planned start of operation in 2019; it does not say which sections are energised.
+factory-catib-karawang,src-antara-catib-karawang-2026-08-21,opening,2026 (gradual operation),2026-08-21,Construction is complete and gradual operation has started; no exact date is stated and the inauguration was awaiting a presidential schedule.

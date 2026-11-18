@@ -194,3 +194,26 @@ grid-ampel-boyolali-500,"GITET 500 kV Ampel Boyolali (2x500 MVA), SUTET 500 kV A
 grid-ampel-bringin-mojosongo,SUTT 150 kV Ampel New/Boyolali Incomer arah Bringin dan Mojosongo Sirkit 1 dan 2,src-esdm-37-projects-2025-01-20,Official ESDM list name.
 grid-duren-tiga-depok,SUTT 150 kV Duren Tiga II / Ragunan (GIS) - Depok II Sirkit 1,src-esdm-37-projects-2025-01-20,Official ESDM list name.
 grid-cilegon-ibt-4,Extension IBT 4 GITET 500 kV Cilegon,src-esdm-37-projects-2025-01-20,Official ESDM list name.
+rail-shia-express,KA Bandara SHIA,src-kppip-shia-express-2026-11-13,KPPIP calls it the KA Bandara from SHIA to central Jakarta.
+factory-bontang-refinery,Kilang Bontang,src-kppip-bontang-refinery-2026-11-13,Short form of Kilang Minyak Bontang.
+grid-sumatra-500kv,Transmisi Sumatera 500 kV,src-kppip-sumatra-500kv-2026-11-13,Official KPPIP page title.
+grid-central-west-java-500kv,Transmisi Jawa Tengah-Jawa Barat 500 kV,src-kppip-central-west-java-500kv-2026-11-13,Official KPPIP page title.
+power-pltu-indramayu,PLTU Indramayu,src-kppip-pltu-indramayu-2026-11-13,Official KPPIP page title.
+power-pltu-batang,PLTU Batang,src-kppip-pltu-batang-2026-11-13,Official KPPIP page title.
+power-pltu-batang,Central Java Power Plant,src-kppip-pltu-batang-2026-11-13,Alternative name used in the KPPIP page title.
+power-pltu-batang,Central Java Coal-Fired Power Plant,src-bpi-pltu-batang-cod-2022-09-06,"BPI says this was the former project name, renamed Batang Power Plant."
+port-cbl-inland-waterway,CBL,src-kppip-cbl-2026-11-13,Short form used in the KPPIP page title.
+airport-north-bali,Bandara Bali Utara,src-kppip-north-bali-airport-2026-11-13,Short form of Pembangunan Bandar Udara Bali Utara.
+airport-kertajati,BIJB Kertajati,src-kemenhub-kertajati-2023-11-01,Kemenhub uses BIJB for Bandara Internasional Jawa Barat.
+airport-kertajati,Bandara Internasional Jawa Barat,src-kemenhub-kertajati-2023-11-01,Full name of the BIJB airport.
+power-batang-toru,PLTA Batang Toru,src-esdm-batang-toru-2026-10-10,Official ESDM name.
+flood-sodetan-ciliwung,"Sodetan Ciliwung 1,2 km",src-pu-sodetan-ciliwung-2023-08-01,PU headline name.
+flood-ciliwung-normalisation,Normalisasi Ciliwung,src-pu-ciliwung-normalisation-2023-02-21,Short form of Normalisasi Sungai Ciliwung.
+port-ppn-pengambengan,PPN Pengambengan,src-kkp-ppn-pengambengan-2026-09-29,Short form of Pelabuhan Perikanan Nusantara Pengambengan.
+port-ppn-kejawanan,PPN Kejawanan,src-kkp-ppn-kejawanan-2026-09-18,Short form of Pelabuhan Perikanan Nusantara Kejawanan.
+factory-catib-karawang,Pabrik Baterai EV Karawang,src-antara-catib-karawang-2026-08-21,ANTARA headline name.
+factory-catib-karawang,PT CATIB,src-antara-catib-karawang-2026-08-21,Project company.
+energy-b50-biodiesel,B50,src-esdm-b50-2026-07-10,Programme short name.
+energy-b50-biodiesel,Biodiesel B50,src-esdm-b50-2026-07-10,Common programme name.
+rail-trans-sulawesi,Jalan Baja Trans Sulawesi,src-kemenhub-trans-sulawesi-2023-04-05,Kemenhub calls it the trans Sulawesi rail mega-project.
+rail-trans-sulawesi,KA Trans Sulawesi,src-kemenhub-trans-sulawesi-2023-04-05,Short form.

@@ -281,3 +281,14 @@ grid-ampel-boyolali-500,org-pln,operator,,,,src-esdm-37-projects-2025-01-20,PLN 
 grid-ampel-bringin-mojosongo,org-pln,operator,,,,src-esdm-37-projects-2025-01-20,PLN operates the transmission and substation network; ESDM quotes PLN's commitment to manage the electricity infrastructure.
 grid-duren-tiga-depok,org-pln,operator,,,,src-esdm-37-projects-2025-01-20,PLN operates the transmission and substation network; ESDM quotes PLN's commitment to manage the electricity infrastructure.
 grid-cilegon-ibt-4,org-pln,operator,,,,src-esdm-37-projects-2025-01-20,PLN operates the transmission and substation network; ESDM quotes PLN's commitment to manage the electricity infrastructure.
+factory-bontang-refinery,org-pertamina,owner,,,,src-kppip-bontang-refinery-2026-11-13,Pertamina is the responsible party named on the KPPIP page.
+grid-sumatra-500kv,org-pln,operator,,,,src-kppip-sumatra-500kv-2026-11-13,PLN is the responsible party named on the KPPIP page.
+grid-central-west-java-500kv,org-pln,operator,,,,src-kppip-central-west-java-500kv-2026-11-13,PLN is the responsible party named on the KPPIP page.
+power-pltu-indramayu,org-pln,owner,,,,src-kppip-pltu-indramayu-2026-11-13,PLN is the responsible party named on the KPPIP page.
+power-pltu-batang,org-pln,off_taker,,,,src-bpi-pltu-batang-cod-2022-09-06,BPI sells the plant's output to PLN under a 25-year contract.
+port-cbl-inland-waterway,org-pelindo,owner,,,,src-kppip-cbl-2026-11-13,Pelindo II is the responsible party named on the KPPIP page; it is now part of PT Pelabuhan Indonesia (Persero).
+flood-sodetan-ciliwung,org-kementerian-pu,sponsor,,,,src-pu-sodetan-ciliwung-2023-08-01,PU built and inaugurated the diversion.
+flood-ciliwung-normalisation,org-kementerian-pu,sponsor,,,,src-pu-ciliwung-normalisation-2023-02-21,PU is normalising the river.
+port-ppn-pengambengan,org-kementerian-kkp,sponsor,,,,src-kkp-ppn-pengambengan-2026-09-29,KKP is developing the fishing port.
+port-ppn-kejawanan,org-kementerian-kkp,sponsor,,,,src-kkp-ppn-kejawanan-2026-09-18,KKP is developing the fishing port.
+energy-b50-biodiesel,org-kementerian-esdm,sponsor,,,,src-esdm-b50-2026-07-10,ESDM launched the B50 mandate.

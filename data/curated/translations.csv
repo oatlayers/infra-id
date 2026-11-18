@@ -247,3 +247,20 @@ project,grid-ampel-boyolali-500,name,id,"GITET 500 kV Ampel Boyolali (2x500 MVA)
 project,grid-ampel-bringin-mojosongo,name,id,SUTT 150 kV Ampel New/Boyolali Incomer arah Bringin dan Mojosongo Sirkit 1 dan 2,reviewed,atlas-editor,2026-11-13,src-esdm-37-projects-2025-01-20
 project,grid-duren-tiga-depok,name,id,SUTT 150 kV Duren Tiga II/Ragunan (GIS)-Depok II Sirkit 1,reviewed,atlas-editor,2026-11-13,src-esdm-37-projects-2025-01-20
 project,grid-cilegon-ibt-4,name,id,Extension IBT 4 GITET 500 kV Cilegon,reviewed,atlas-editor,2026-11-13,src-esdm-37-projects-2025-01-20
+project,rail-shia-express,name,id,Kereta Api Ekspres SHIA,reviewed,atlas-editor,2026-11-13,src-kppip-shia-express-2026-11-13
+project,factory-bontang-refinery,name,id,Kilang Minyak Bontang,reviewed,atlas-editor,2026-11-13,src-kppip-bontang-refinery-2026-11-13
+project,grid-sumatra-500kv,name,id,Transmisi Sumatera 500 kV,reviewed,atlas-editor,2026-11-13,src-kppip-sumatra-500kv-2026-11-13
+project,grid-central-west-java-500kv,name,id,Transmisi Jawa Tengah-Jawa Barat 500 kV,reviewed,atlas-editor,2026-11-13,src-kppip-central-west-java-500kv-2026-11-13
+project,power-pltu-indramayu,name,id,PLTU Indramayu 1.000 MW,reviewed,atlas-editor,2026-11-13,src-kppip-pltu-indramayu-2026-11-13
+project,power-pltu-batang,name,id,PLTU Batang (2x1.000 MW),reviewed,atlas-editor,2026-11-13,src-kppip-pltu-batang-2026-11-13
+project,port-cbl-inland-waterway,name,id,Inland Waterways Cikarang-Bekasi-Laut (CBL),reviewed,atlas-editor,2026-11-13,src-kppip-cbl-2026-11-13
+project,airport-north-bali,name,id,Bandar Udara Bali Utara,reviewed,atlas-editor,2026-11-13,src-kppip-north-bali-airport-2026-11-13
+project,airport-kertajati,name,id,Bandar Udara Internasional Kertajati,reviewed,atlas-editor,2026-11-13,src-kemenhub-kertajati-2023-11-01
+project,power-batang-toru,name,id,PLTA Batang Toru,reviewed,atlas-editor,2026-11-13,src-esdm-batang-toru-2026-10-10
+project,flood-sodetan-ciliwung,name,id,Sodetan Ciliwung,reviewed,atlas-editor,2026-11-13,src-pu-sodetan-ciliwung-2023-08-01
+project,flood-ciliwung-normalisation,name,id,Normalisasi Sungai Ciliwung,reviewed,atlas-editor,2026-11-13,src-pu-ciliwung-normalisation-2023-02-21
+project,port-ppn-pengambengan,name,id,Pelabuhan Perikanan Nusantara Pengambengan,reviewed,atlas-editor,2026-11-13,src-kkp-ppn-pengambengan-2026-09-29
+project,port-ppn-kejawanan,name,id,Pelabuhan Perikanan Nusantara Kejawanan,reviewed,atlas-editor,2026-11-13,src-kkp-ppn-kejawanan-2026-09-18
+project,factory-catib-karawang,name,id,Pabrik Sel Baterai EV CATIB Karawang,reviewed,atlas-editor,2026-11-13,src-antara-catib-karawang-2026-08-21
+project,energy-b50-biodiesel,name,id,Program Mandatori Biodiesel B50,reviewed,atlas-editor,2026-11-13,src-esdm-b50-2026-07-10
+project,rail-trans-sulawesi,name,id,Kereta Api Trans Sulawesi,reviewed,atlas-editor,2026-11-13,src-kemenhub-trans-sulawesi-2023-04-05
