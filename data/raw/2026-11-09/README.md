@@ -37,7 +37,12 @@
 | `warta_lutim_huali_2025.html` | Pemerintah Kabupaten Luwu Timur, IHIP agreement | `0df8ea220fa35a3d3d471f0c920b5ac9321f7204de9a0b6817ec3003c47826d3` |
 | `neo_energy_nemie_2026.html` | Neo Energy, NEMIE profile | `afcc0ee521dd20bf041759333fc45da31d2050a6be42839794b00572a6423857` |
 | `antara_penebang_2026-08-20.html` | ANTARA Kalbar, KIPP award | `8fc3eee6a1a090ee519d083dee69af8bf3fcdc7d3bbf5d9838f1e017237daa1a` |
-| `gem_alumina_toba_2026.html` | Global Energy Monitor, alumina power station | `f520e1852af9f6ad89a1e85e7e64338a7b8483be39f201a93ec8944d4bf29270` |
+| `gem_alumina_toba_2026.html` | Global Energy Monitor, alumina power station | `d77045be0ed2f751514fa87f29de06db0755a547735f3ee4723d2b3ae13a8844` |
+
+The Global Energy Monitor snapshot embeds a live third-party Google Maps API
+key. The key was redacted from the saved page on 18 November 2026, so the hash
+above reflects the redacted file. The page structure and every fact used by the
+atlas are unchanged.
 | `vale_pomalaa_2025.html` | Vale, Pomalaa HPAL milestone | `e74414947ef3947c8247a85a30733dd5ee585245c1a9dab0830cb9c116a15bcc` |
 
 ## 2027 PKPN sources
